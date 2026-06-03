@@ -1,0 +1,47 @@
+{
+  "id": 459142,
+  "slug": "459142-limitless-hatchet",
+  "type": "GEAR",
+  "name": {
+    "zh": "无限手斧",
+    "en": "Limitless Hatchet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/hatchet/HATCHET_450014.png",
+  "image": "/game/game/gear/hatchet/HATCHET_450014.png",
+  "grade": "COSMIC",
+  "gear": "HATCHET",
+  "level": 65,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 459142,
+      "BaseStat1_Value": 1582,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CriticalChance",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 448,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 869,
+      "InherentStat3_STATTYPE": "AreaOfEffect",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 440,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 644359884,
+    "cubeExp": 290043120
+  }
+}

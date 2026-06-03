@@ -1,0 +1,47 @@
+{
+  "id": 615121,
+  "slug": "615121-diamond-earring",
+  "type": "GEAR",
+  "name": {
+    "zh": "钻石耳环",
+    "en": "Diamond Earring"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/earing/EARING_610012.png",
+  "image": "/game/game/gear/earing/EARING_610012.png",
+  "grade": "ARCANA",
+  "gear": "EARING",
+  "level": 55,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 615121,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CriticalDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 258,
+      "InherentStat2_STATTYPE": "AreaOfEffect",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 127,
+      "InherentStat3_STATTYPE": "SkillDurationIncrease",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 148,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 5808672,
+    "cubeExp": 2536128
+  }
+}

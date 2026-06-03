@@ -1,0 +1,48 @@
+{
+  "id": 149002,
+  "slug": "aeon-ingot",
+  "type": "MATERIAL",
+  "name": {
+    "zh": "永恒锭",
+    "en": "Aeon Ingot"
+  },
+  "description": {
+    "zh": "可以用来制作某物的最高级材料。",
+    "en": "A premium material used to create something."
+  },
+  "icon": "/game/game/items/materials/Item_149002.png",
+  "image": "/game/game/items/materials/Item_149002.png",
+  "grade": "COSMIC",
+  "gear": null,
+  "level": null,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": {
+      "zh-Hans": "可以用来制作某物的最高级材料。",
+      "zh-Hant": "可以用來製作某物的最高級材料。",
+      "en-US": "A premium material used to create something.",
+      "fr-FR": "Un matériau de première qualité utilisé pour créer quelque chose.",
+      "de-DE": "Ein erstklassiges Material, das zur Herstellung von etwas verwendet werden kann.",
+      "id-ID": "Material premium yang digunakan untuk membuat sesuatu.",
+      "ja-JP": "何かを作るための最高級素材。",
+      "ko-KR": "무언가를 만들 수 있는 최고급 재료.",
+      "pl-PL": "Materiał najwyższej jakości używany do tworzenia czegoś.",
+      "pt-BR": "Um material premium usado para criar algo.",
+      "ru-RU": "Материал премиум-класса, используемый для создания чего-либо.",
+      "es-ES": "Un material premium utilizado para crear algo.",
+      "th-TH": "วัสดุพรีเมียมที่ใช้สร้างสิ่งของได้",
+      "tr-TR": "Bir şey yaratmak için kullanılan premium bir malzeme.",
+      "uk-UA": "Преміальний матеріал, що використовується для створення чогось.",
+      "vi-VN": "Nguyên liệu đặc biệt dùng để chế tạo vật phẩm."
+    },
+    "stats": null,
+    "synthType": "Material",
+    "dropKey": null,
+    "uniqueMod": null
+  }
+}

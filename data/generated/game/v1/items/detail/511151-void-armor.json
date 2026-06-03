@@ -1,0 +1,47 @@
+{
+  "id": 511151,
+  "slug": "511151-void-armor",
+  "type": "GEAR",
+  "name": {
+    "zh": "虚空铠甲",
+    "en": "Void Armor"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/armor/ARMOR_510015.png",
+  "image": "/game/game/gear/armor/ARMOR_510015.png",
+  "grade": "UNCOMMON",
+  "gear": "ARMOR",
+  "level": 70,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 511151,
+      "BaseStat1_Value": 951,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "HpRegenPerSec",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 1122,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 29460,
+    "cubeExp": 13464
+  }
+}

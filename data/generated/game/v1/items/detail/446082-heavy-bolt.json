@@ -1,0 +1,47 @@
+{
+  "id": 446082,
+  "slug": "446082-heavy-bolt",
+  "type": "GEAR",
+  "name": {
+    "zh": "重型弩箭",
+    "en": "Heavy Bolt"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bolt/BOLT_440008.png",
+  "image": "/game/game/gear/bolt/BOLT_440008.png",
+  "grade": "BEYOND",
+  "gear": "BOLT",
+  "level": 35,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 446082,
+      "BaseStat1_Value": 1232,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AreaOfEffect",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 182,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 299,
+      "InherentStat3_STATTYPE": "CooldownReduction",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 32,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 7481188,
+    "cubeExp": 2705856
+  }
+}

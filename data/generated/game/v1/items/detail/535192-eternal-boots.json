@@ -1,0 +1,47 @@
+{
+  "id": 535192,
+  "slug": "535192-eternal-boots",
+  "type": "GEAR",
+  "name": {
+    "zh": "永恒靴",
+    "en": "Eternal Boots"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/boots/BOOTS_530019.png",
+  "image": "/game/game/gear/boots/BOOTS_530019.png",
+  "grade": "ARCANA",
+  "gear": "BOOTS",
+  "level": 90,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 535192,
+      "BaseStat1_Value": 1954,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MovementSpeed",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 165,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 1250,
+      "InherentStat3_STATTYPE": "MaxHp",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 192,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 2226269,
+    "cubeExp": 1109556
+  }
+}

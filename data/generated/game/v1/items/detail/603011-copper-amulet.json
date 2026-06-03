@@ -1,0 +1,47 @@
+{
+  "id": 603011,
+  "slug": "603011-copper-amulet",
+  "type": "GEAR",
+  "name": {
+    "zh": "铜制护符",
+    "en": "Copper Amulet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/amulet/AMULET_600001.png",
+  "image": "/game/game/gear/amulet/AMULET_600001.png",
+  "grade": "LEGENDARY",
+  "gear": "AMULET",
+  "level": 1,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 603011,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 30,
+      "InherentStat2_STATTYPE": "CriticalChance",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 154,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 1080,
+    "cubeExp": 216
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 440016,
+  "slug": "440016-poison-bolt",
+  "type": "GEAR",
+  "name": {
+    "zh": "毒弩箭",
+    "en": "Poison Bolt"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bolt/BOLT_440016.png",
+  "image": "/game/game/gear/bolt/BOLT_440016.png",
+  "grade": "COMMON",
+  "gear": "BOLT",
+  "level": 75,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 440016,
+      "BaseStat1_Value": 1067,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "NONE",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 0,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 21080,
+    "cubeExp": 9792
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 606151,
+  "slug": "606151-celestial-amulet",
+  "type": "GEAR",
+  "name": {
+    "zh": "天界护符",
+    "en": "Celestial Amulet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/amulet/AMULET_600015.png",
+  "image": "/game/game/gear/amulet/AMULET_600015.png",
+  "grade": "BEYOND",
+  "gear": "AMULET",
+  "level": 70,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 606151,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 57,
+      "InherentStat2_STATTYPE": "AddAllSkillLevel",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 2,
+      "InherentStat3_STATTYPE": "CriticalChance",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 391,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 32578832,
+    "cubeExp": 14882208
+  }
+}

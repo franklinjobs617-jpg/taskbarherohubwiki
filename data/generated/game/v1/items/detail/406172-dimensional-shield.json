@@ -1,0 +1,47 @@
+{
+  "id": 406172,
+  "slug": "406172-dimensional-shield",
+  "type": "GEAR",
+  "name": {
+    "zh": "次元盾",
+    "en": "Dimensional Shield"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/shield/SHIELD_400017.png",
+  "image": "/game/game/gear/shield/SHIELD_400017.png",
+  "grade": "BEYOND",
+  "gear": "SHIELD",
+  "level": 80,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 406172,
+      "BaseStat1_Value": 335,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 106,
+      "InherentStat2_STATTYPE": "MaxHp",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 540,
+      "InherentStat3_STATTYPE": "AllElementalResistance",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 29,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 18578560,
+    "cubeExp": 8794032
+  }
+}

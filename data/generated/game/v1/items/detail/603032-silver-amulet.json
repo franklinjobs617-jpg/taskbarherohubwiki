@@ -1,0 +1,47 @@
+{
+  "id": 603032,
+  "slug": "603032-silver-amulet",
+  "type": "GEAR",
+  "name": {
+    "zh": "银制护符",
+    "en": "Silver Amulet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/amulet/AMULET_600003.png",
+  "image": "/game/game/gear/amulet/AMULET_600003.png",
+  "grade": "LEGENDARY",
+  "gear": "AMULET",
+  "level": 10,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 603032,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 84,
+      "InherentStat2_STATTYPE": "CastSpeed",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 161,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 27000,
+    "cubeExp": 8640
+  }
+}

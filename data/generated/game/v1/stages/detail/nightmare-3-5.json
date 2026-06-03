@@ -1,0 +1,52 @@
+{
+  "key": 2305,
+  "act": 3,
+  "no": 5,
+  "level": 50,
+  "type": "NORMAL",
+  "difficulty": "NIGHTMARE",
+  "name": {
+    "zh-Hans": "地狱之门",
+    "zh-Hant": "地獄之門",
+    "en-US": "Hell Gate",
+    "fr-FR": "Porte de l'Enfer",
+    "de-DE": "Höllenpforte",
+    "id-ID": "Gerbang Neraka",
+    "ja-JP": "地獄の関門",
+    "ko-KR": "지옥 관문",
+    "pl-PL": "Piekielna Brama",
+    "pt-BR": "Portão do Inferno",
+    "ru-RU": "Врата ада",
+    "es-ES": "Puerta del Infierno",
+    "th-TH": "ประตูนรก",
+    "tr-TR": "Cehennem Kapısı",
+    "uk-UA": "Врата пекла",
+    "vi-VN": "Cổng Địa ngục"
+  },
+  "waves": 23,
+  "monsterCount": 6,
+  "kills": 322,
+  "goldPerClear": 36342,
+  "expPerClear": 564358,
+  "boss": {
+    "name": {
+      "zh-Hans": "人造人",
+      "zh-Hant": "人造人",
+      "en-US": "Homunculus",
+      "fr-FR": "Homonculus",
+      "de-DE": "Homunculus",
+      "id-ID": "Homunculus",
+      "ja-JP": "ホムンクルス",
+      "ko-KR": "호문클루스",
+      "pl-PL": "Homunkulus",
+      "pt-BR": "Homúnculo",
+      "ru-RU": "Гомункул",
+      "es-ES": "Homúnculo",
+      "th-TH": "โฮมุนคูลุส",
+      "tr-TR": "Homunkulus",
+      "uk-UA": "Гомункул",
+      "vi-VN": "Homunculus"
+    },
+    "portrait": "/game/monsters/Homunculus/Homunculus_Idle_character_4.png"
+  }
+}

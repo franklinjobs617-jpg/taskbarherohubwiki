@@ -1,0 +1,47 @@
+{
+  "id": 429162,
+  "slug": "429162-void-orb",
+  "type": "GEAR",
+  "name": {
+    "zh": "虚空法球",
+    "en": "Void Orb"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/orb/ORB_420016.png",
+  "image": "/game/game/gear/orb/ORB_420016.png",
+  "grade": "COSMIC",
+  "gear": "ORB",
+  "level": 75,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 429162,
+      "BaseStat1_Value": 349,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 250,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 1000,
+      "InherentStat3_STATTYPE": "CastSpeed",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 300,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 749619556,
+    "cubeExp": 348051744
+  }
+}

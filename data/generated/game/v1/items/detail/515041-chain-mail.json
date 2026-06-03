@@ -1,0 +1,47 @@
+{
+  "id": 515041,
+  "slug": "515041-chain-mail",
+  "type": "GEAR",
+  "name": {
+    "zh": "锁子甲",
+    "en": "Chain Mail"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/armor/ARMOR_510004.png",
+  "image": "/game/game/gear/armor/ARMOR_510004.png",
+  "grade": "ARCANA",
+  "gear": "ARMOR",
+  "level": 15,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 515041,
+      "BaseStat1_Value": 306,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 44,
+      "InherentStat2_STATTYPE": "HpRegenPerSec",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 350,
+      "InherentStat3_STATTYPE": "Armor",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 350,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 228096,
+    "cubeExp": 62160
+  }
+}

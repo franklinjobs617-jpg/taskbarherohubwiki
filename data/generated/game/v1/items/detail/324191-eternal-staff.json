@@ -1,0 +1,47 @@
+{
+  "id": 324191,
+  "slug": "324191-eternal-staff",
+  "type": "GEAR",
+  "name": {
+    "zh": "永恒法杖",
+    "en": "Eternal Staff"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/staff/STAFF_320019.png",
+  "image": "/game/game/gear/staff/STAFF_320019.png",
+  "grade": "IMMORTAL",
+  "gear": "STAFF",
+  "level": 90,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 324191,
+      "BaseStat1_Value": 1071,
+      "BaseStat2_Value": 20,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 84,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 180,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 993870,
+    "cubeExp": 495720
+  }
+}

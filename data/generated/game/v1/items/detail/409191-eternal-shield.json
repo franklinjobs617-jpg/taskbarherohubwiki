@@ -1,0 +1,47 @@
+{
+  "id": 409191,
+  "slug": "409191-eternal-shield",
+  "type": "GEAR",
+  "name": {
+    "zh": "永恒盾",
+    "en": "Eternal Shield"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/shield/SHIELD_400019.png",
+  "image": "/game/game/gear/shield/SHIELD_400019.png",
+  "grade": "COSMIC",
+  "gear": "SHIELD",
+  "level": 90,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 409191,
+      "BaseStat1_Value": 600,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 800,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 10000,
+      "InherentStat3_STATTYPE": "HpRegenPerSec",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 4000,
+      "UniqueModKey": 10009
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "SkillCooldownReduce",
+    "sellGold": 872659578,
+    "cubeExp": 435064680
+  }
+}

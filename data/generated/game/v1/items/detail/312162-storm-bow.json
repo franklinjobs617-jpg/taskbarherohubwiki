@@ -1,0 +1,47 @@
+{
+  "id": 312162,
+  "slug": "312162-storm-bow",
+  "type": "GEAR",
+  "name": {
+    "zh": "暴风之弓",
+    "en": "Storm Bow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bow/BOW_310016.png",
+  "image": "/game/game/gear/bow/BOW_310016.png",
+  "grade": "RARE",
+  "gear": "BOW",
+  "level": 75,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 312162,
+      "BaseStat1_Value": 311,
+      "BaseStat2_Value": 50,
+      "InherentStat1_STATTYPE": "CriticalChance",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 17,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 94860,
+    "cubeExp": 44064
+  }
+}

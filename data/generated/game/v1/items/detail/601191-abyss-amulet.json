@@ -1,0 +1,47 @@
+{
+  "id": 601191,
+  "slug": "601191-abyss-amulet",
+  "type": "GEAR",
+  "name": {
+    "zh": "深渊护符",
+    "en": "Abyss Amulet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/amulet/AMULET_600019.png",
+  "image": "/game/game/gear/amulet/AMULET_600019.png",
+  "grade": "UNCOMMON",
+  "gear": "AMULET",
+  "level": 90,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 601191,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 147,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 147240,
+    "cubeExp": 73440
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 513181,
+  "slug": "513181-shadow-armor",
+  "type": "GEAR",
+  "name": {
+    "zh": "暗影铠甲",
+    "en": "Shadow Armor"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/armor/ARMOR_510018.png",
+  "image": "/game/game/gear/armor/ARMOR_510018.png",
+  "grade": "LEGENDARY",
+  "gear": "ARMOR",
+  "level": 85,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 513181,
+      "BaseStat1_Value": 2980,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "HpRegenPerSec",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 1925,
+      "InherentStat2_STATTYPE": "MaxHp",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 230,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 318060,
+    "cubeExp": 154224
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 522192,
+  "slug": "522192-eternal-gloves",
+  "type": "GEAR",
+  "name": {
+    "zh": "永恒手套",
+    "en": "Eternal Gloves"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/gloves/GLOVES_520019.png",
+  "image": "/game/game/gear/gloves/GLOVES_520019.png",
+  "grade": "RARE",
+  "gear": "GLOVES",
+  "level": 90,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 522192,
+      "BaseStat1_Value": 1334,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 119,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 82822,
+    "cubeExp": 41310
+  }
+}

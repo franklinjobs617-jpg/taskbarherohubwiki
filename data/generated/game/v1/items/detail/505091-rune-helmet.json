@@ -1,0 +1,47 @@
+{
+  "id": 505091,
+  "slug": "505091-rune-helmet",
+  "type": "GEAR",
+  "name": {
+    "zh": "符文头盔",
+    "en": "Rune Helmet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/helmet/HELMET_500009.png",
+  "image": "/game/game/gear/helmet/HELMET_500009.png",
+  "grade": "ARCANA",
+  "gear": "HELMET",
+  "level": 40,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 505091,
+      "BaseStat1_Value": 414,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 81,
+      "InherentStat2_STATTYPE": "SkillDurationIncrease",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 697,
+      "InherentStat3_STATTYPE": "Armor",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 348,
+      "UniqueModKey": 50001
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "ExplosiveBoltHalf",
+    "sellGold": 1076198,
+    "cubeExp": 422688
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 632081,
+  "slug": "632081-shadow-bracer",
+  "type": "GEAR",
+  "name": {
+    "zh": "暗影护腕",
+    "en": "Shadow Bracer"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bracer/BRACER_630008.png",
+  "image": "/game/game/gear/bracer/BRACER_630008.png",
+  "grade": "RARE",
+  "gear": "BRACER",
+  "level": 35,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 632081,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": 0,
+      "InherentStat1_STATTYPE": "MovementSpeed",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 65,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 121770,
+    "cubeExp": 44064
+  }
+}

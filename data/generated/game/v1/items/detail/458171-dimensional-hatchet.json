@@ -1,0 +1,47 @@
+{
+  "id": 458171,
+  "slug": "458171-dimensional-hatchet",
+  "type": "GEAR",
+  "name": {
+    "zh": "次元手斧",
+    "en": "Dimensional Hatchet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/hatchet/HATCHET_450017.png",
+  "image": "/game/game/gear/hatchet/HATCHET_450017.png",
+  "grade": "DIVINE",
+  "gear": "HATCHET",
+  "level": 80,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 458171,
+      "BaseStat1_Value": 1702,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 246,
+      "InherentStat2_STATTYPE": "CriticalChance",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 496,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 990,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 227588480,
+    "cubeExp": 107729544
+  }
+}

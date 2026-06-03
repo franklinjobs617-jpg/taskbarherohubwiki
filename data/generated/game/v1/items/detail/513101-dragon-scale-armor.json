@@ -1,0 +1,47 @@
+{
+  "id": 513101,
+  "slug": "513101-dragon-scale-armor",
+  "type": "GEAR",
+  "name": {
+    "zh": "龙鳞铠甲",
+    "en": "Dragon Scale Armor"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/armor/ARMOR_510010.png",
+  "image": "/game/game/gear/armor/ARMOR_510010.png",
+  "grade": "LEGENDARY",
+  "gear": "ARMOR",
+  "level": 45,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 513101,
+      "BaseStat1_Value": 485,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "HpRegenPerSec",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 885,
+      "InherentStat2_STATTYPE": "MaxHp",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 139,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 159840,
+    "cubeExp": 66096
+  }
+}

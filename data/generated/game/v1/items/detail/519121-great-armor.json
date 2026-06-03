@@ -1,0 +1,47 @@
+{
+  "id": 519121,
+  "slug": "519121-great-armor",
+  "type": "GEAR",
+  "name": {
+    "zh": "大铠甲",
+    "en": "Great Armor"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/armor/ARMOR_510012.png",
+  "image": "/game/game/gear/armor/ARMOR_510012.png",
+  "grade": "COSMIC",
+  "gear": "ARMOR",
+  "level": 55,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 519121,
+      "BaseStat1_Value": 4047,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 347,
+      "InherentStat2_STATTYPE": "HpRegenPerSec",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 3440,
+      "InherentStat3_STATTYPE": "MaxHp",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 363,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 265638429,
+    "cubeExp": 116017248
+  }
+}

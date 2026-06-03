@@ -1,0 +1,47 @@
+{
+  "id": 315042,
+  "slug": "315042-composite-bow",
+  "type": "GEAR",
+  "name": {
+    "zh": "复合弓",
+    "en": "Composite Bow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bow/BOW_310004.png",
+  "image": "/game/game/gear/bow/BOW_310004.png",
+  "grade": "ARCANA",
+  "gear": "BOW",
+  "level": 15,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 315042,
+      "BaseStat1_Value": 43,
+      "BaseStat2_Value": 65,
+      "InherentStat1_STATTYPE": "CriticalChance",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 7,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 292,
+      "InherentStat3_STATTYPE": "CooldownReduction",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 54,
+      "UniqueModKey": 0
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 228096,
+    "cubeExp": 62160
+  }
+}

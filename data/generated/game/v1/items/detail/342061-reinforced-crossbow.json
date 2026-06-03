@@ -1,0 +1,47 @@
+{
+  "id": 342061,
+  "slug": "342061-reinforced-crossbow",
+  "type": "GEAR",
+  "name": {
+    "zh": "强化弩",
+    "en": "Reinforced Crossbow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/crossbow/CROSSBOW_340006.png",
+  "image": "/game/game/gear/crossbow/CROSSBOW_340006.png",
+  "grade": "RARE",
+  "gear": "CROSSBOW",
+  "level": 25,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 342061,
+      "BaseStat1_Value": 43,
+      "BaseStat2_Value": 20,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 90,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 29700,
+    "cubeExp": 7344
+  }
+}

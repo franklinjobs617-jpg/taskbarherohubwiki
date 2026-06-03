@@ -1,0 +1,47 @@
+{
+  "id": 527112,
+  "slug": "527112-mystic-gloves",
+  "type": "GEAR",
+  "name": {
+    "zh": "神秘手套",
+    "en": "Mystic Gloves"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/gloves/GLOVES_520011.png",
+  "image": "/game/game/gear/gloves/GLOVES_520011.png",
+  "grade": "CELESTIAL",
+  "gear": "GLOVES",
+  "level": 50,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 527112,
+      "BaseStat1_Value": 798,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 170,
+      "InherentStat2_STATTYPE": "MaxHp",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 142,
+      "InherentStat3_STATTYPE": "HpRegenPerSec",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 899,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 14543529,
+    "cubeExp": 6215013
+  }
+}

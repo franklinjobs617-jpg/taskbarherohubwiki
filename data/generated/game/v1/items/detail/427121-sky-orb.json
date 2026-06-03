@@ -1,0 +1,47 @@
+{
+  "id": 427121,
+  "slug": "427121-sky-orb",
+  "type": "GEAR",
+  "name": {
+    "zh": "天空法球",
+    "en": "Sky Orb"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/orb/ORB_420012.png",
+  "image": "/game/game/gear/orb/ORB_420012.png",
+  "grade": "CELESTIAL",
+  "gear": "ORB",
+  "level": 55,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 427121,
+      "BaseStat1_Value": 255,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CriticalDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 530,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 85,
+      "InherentStat3_STATTYPE": "CooldownReduction",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 48,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 43369326,
+    "cubeExp": 18940992
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 434111,
+  "slug": "434111-fate-tome",
+  "type": "GEAR",
+  "name": {
+    "zh": "命运法典",
+    "en": "Fate Tome"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/tome/TOME_430011.png",
+  "image": "/game/game/gear/tome/TOME_430011.png",
+  "grade": "IMMORTAL",
+  "gear": "TOME",
+  "level": 50,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 434111,
+      "BaseStat1_Value": 194,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "BlockChance",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 68,
+      "InherentStat2_STATTYPE": "HpRegenPerSec",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 524,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 1082160,
+    "cubeExp": 462672
+  }
+}

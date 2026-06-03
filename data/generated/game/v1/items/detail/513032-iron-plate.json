@@ -1,0 +1,47 @@
+{
+  "id": 513032,
+  "slug": "513032-iron-plate",
+  "type": "GEAR",
+  "name": {
+    "zh": "铁板甲",
+    "en": "Iron Plate"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/armor/ARMOR_510003.png",
+  "image": "/game/game/gear/armor/ARMOR_510003.png",
+  "grade": "LEGENDARY",
+  "gear": "ARMOR",
+  "level": 10,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 513032,
+      "BaseStat1_Value": 106,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 29,
+      "InherentStat2_STATTYPE": "MaxHp",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 78,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 6750,
+    "cubeExp": 2160
+  }
+}

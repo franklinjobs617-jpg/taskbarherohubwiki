@@ -1,0 +1,47 @@
+{
+  "id": 435131,
+  "slug": "435131-storm-tome",
+  "type": "GEAR",
+  "name": {
+    "zh": "风暴魔法书",
+    "en": "Storm Tome"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/tome/TOME_430013.png",
+  "image": "/game/game/gear/tome/TOME_430013.png",
+  "grade": "ARCANA",
+  "gear": "TOME",
+  "level": 60,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 435131,
+      "BaseStat1_Value": 254,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "BlockChance",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 86,
+      "InherentStat2_STATTYPE": "HpRegenPerSec",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 722,
+      "InherentStat3_STATTYPE": "CooldownReduction",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 63,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 4287168,
+    "cubeExp": 1902096
+  }
+}

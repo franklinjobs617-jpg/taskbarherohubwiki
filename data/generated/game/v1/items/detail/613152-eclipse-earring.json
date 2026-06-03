@@ -1,0 +1,47 @@
+{
+  "id": 613152,
+  "slug": "613152-eclipse-earring",
+  "type": "GEAR",
+  "name": {
+    "zh": "日食耳环",
+    "en": "Eclipse Earring"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/earing/EARING_610015.png",
+  "image": "/game/game/gear/earing/EARING_610015.png",
+  "grade": "LEGENDARY",
+  "gear": "EARING",
+  "level": 70,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 613152,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "HpLeech",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 12,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 155,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 795420,
+    "cubeExp": 363528
+  }
+}

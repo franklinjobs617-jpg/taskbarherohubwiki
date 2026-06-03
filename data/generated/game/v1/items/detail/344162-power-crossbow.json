@@ -1,0 +1,47 @@
+{
+  "id": 344162,
+  "slug": "344162-power-crossbow",
+  "type": "GEAR",
+  "name": {
+    "zh": "力量弩",
+    "en": "Power Crossbow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/crossbow/CROSSBOW_340016.png",
+  "image": "/game/game/gear/crossbow/CROSSBOW_340016.png",
+  "grade": "IMMORTAL",
+  "gear": "CROSSBOW",
+  "level": 75,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 344162,
+      "BaseStat1_Value": 750,
+      "BaseStat2_Value": 20,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 182,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 754,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 853740,
+    "cubeExp": 396576
+  }
+}

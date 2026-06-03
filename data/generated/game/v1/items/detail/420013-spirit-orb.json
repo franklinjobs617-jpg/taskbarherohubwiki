@@ -1,0 +1,47 @@
+{
+  "id": 420013,
+  "slug": "420013-spirit-orb",
+  "type": "GEAR",
+  "name": {
+    "zh": "灵魂宝球",
+    "en": "Spirit Orb"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/orb/ORB_420013.png",
+  "image": "/game/game/gear/orb/ORB_420013.png",
+  "grade": "COMMON",
+  "gear": "ORB",
+  "level": 60,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 420013,
+      "BaseStat1_Value": "155 ",
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "NONE",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 0,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 16540,
+    "cubeExp": 7344
+  }
+}

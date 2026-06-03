@@ -1,0 +1,47 @@
+{
+  "id": 621132,
+  "slug": "621132-moonstone-ring",
+  "type": "GEAR",
+  "name": {
+    "zh": "月长石戒指",
+    "en": "Moonstone Ring"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/ring/RING_620013.png",
+  "image": "/game/game/gear/ring/RING_620013.png",
+  "grade": "UNCOMMON",
+  "gear": "RING",
+  "level": 60,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 621132,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 30,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 74430,
+    "cubeExp": 33048
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 605162,
+  "slug": "605162-astral-amulet",
+  "type": "GEAR",
+  "name": {
+    "zh": "星界护符",
+    "en": "Astral Amulet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/amulet/AMULET_600016.png",
+  "image": "/game/game/gear/amulet/AMULET_600016.png",
+  "grade": "ARCANA",
+  "gear": "AMULET",
+  "level": 75,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 605162,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 186,
+      "InherentStat2_STATTYPE": "CriticalChance",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 368,
+      "InherentStat3_STATTYPE": "AllElementalResistance",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 18,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 10927872,
+    "cubeExp": 5072256
+  }
+}

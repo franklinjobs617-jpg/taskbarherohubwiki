@@ -1,0 +1,47 @@
+{
+  "id": 626102,
+  "slug": "626102-garnet-ring",
+  "type": "GEAR",
+  "name": {
+    "zh": "石榴石戒指",
+    "en": "Garnet Ring"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/ring/RING_620010.png",
+  "image": "/game/game/gear/ring/RING_620010.png",
+  "grade": "BEYOND",
+  "gear": "RING",
+  "level": 45,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 626102,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 39,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 210,
+      "InherentStat3_STATTYPE": "AddHpPerKill",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 35,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 14730144,
+    "cubeExp": 6088176
+  }
+}

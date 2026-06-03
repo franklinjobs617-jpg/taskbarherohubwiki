@@ -1,0 +1,47 @@
+{
+  "id": 519171,
+  "slug": "519171-dimensional-armor",
+  "type": "GEAR",
+  "name": {
+    "zh": "次元铠甲",
+    "en": "Dimensional Armor"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/armor/ARMOR_510017.png",
+  "image": "/game/game/gear/armor/ARMOR_510017.png",
+  "grade": "COSMIC",
+  "gear": "ARMOR",
+  "level": 80,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 519171,
+      "BaseStat1_Value": 14029,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 500,
+      "InherentStat2_STATTYPE": "HpRegenPerSec",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 5000,
+      "InherentStat3_STATTYPE": "Armor",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 5000,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 398279840,
+    "cubeExp": 188528028
+  }
+}

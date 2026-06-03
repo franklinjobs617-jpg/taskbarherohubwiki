@@ -1,0 +1,12 @@
+{
+  "slug": "topaz",
+  "id": 112003,
+  "marketHash": "Topaz",
+  "lowest": 0.05,
+  "median": null,
+  "listings": 3062,
+  "trend7d": null,
+  "confidence": "low",
+  "updatedAt": "2026-06-03T12:41:31.757Z",
+  "source": "steamcommunity_market_search"
+}

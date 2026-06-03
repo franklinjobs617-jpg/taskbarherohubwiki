@@ -1,0 +1,48 @@
+{
+  "id": 140002,
+  "slug": "stone",
+  "type": "MATERIAL",
+  "name": {
+    "zh": "石头",
+    "en": "Stone"
+  },
+  "description": {
+    "zh": "可以用来制作某物的普通材料。",
+    "en": "A common material used to create something."
+  },
+  "icon": "/game/game/items/materials/Item_140002.png",
+  "image": "/game/game/items/materials/Item_140002.png",
+  "grade": "COMMON",
+  "gear": null,
+  "level": null,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": {
+      "zh-Hans": "可以用来制作某物的普通材料。",
+      "zh-Hant": "可以用來製作某物的普通材料。",
+      "en-US": "A common material used to create something.",
+      "fr-FR": "Un matériau commun utilisé pour créer quelque chose.",
+      "de-DE": "Ein gewöhnliches Material, das zur Herstellung von etwas verwendet werden kann.",
+      "id-ID": "Material umum yang digunakan untuk menciptakan sesuatu.",
+      "ja-JP": "何かを作るための一般的な素材。",
+      "ko-KR": "무언가를 만들 수 있는 흔한 재료.",
+      "pl-PL": "Zwykły materiał używany do tworzenia czegoś.",
+      "pt-BR": "Um material comum usado para criar algo.",
+      "ru-RU": "Обычный материал, используемый для создания чего-либо.",
+      "es-ES": "Un material común utilizado para crear algo.",
+      "th-TH": "วัสดุทั่วไปที่ใช้สร้างสิ่งของ",
+      "tr-TR": "Bir şey yaratmak için kullanılan yaygın bir malzeme.",
+      "uk-UA": "Звичайний матеріал, що використовується для створення чогось.",
+      "vi-VN": "Nguyên liệu thường dùng để tạo ra thứ gì đó."
+    },
+    "stats": null,
+    "synthType": "Material",
+    "dropKey": null,
+    "uniqueMod": null
+  }
+}

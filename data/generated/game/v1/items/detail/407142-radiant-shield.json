@@ -1,0 +1,47 @@
+{
+  "id": 407142,
+  "slug": "407142-radiant-shield",
+  "type": "GEAR",
+  "name": {
+    "zh": "光辉盾",
+    "en": "Radiant Shield"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/shield/SHIELD_400014.png",
+  "image": "/game/game/gear/shield/SHIELD_400014.png",
+  "grade": "CELESTIAL",
+  "gear": "SHIELD",
+  "level": 65,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 407142,
+      "BaseStat1_Value": 325,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "Armor",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 4621,
+      "InherentStat2_STATTYPE": "DamageReduction",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 133,
+      "InherentStat3_STATTYPE": "BlockChance",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 195,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 52600548,
+    "cubeExp": 23676240
+  }
+}

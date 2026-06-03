@@ -1,0 +1,47 @@
+{
+  "id": 433172,
+  "slug": "433172-dimensional-tome",
+  "type": "GEAR",
+  "name": {
+    "zh": "次元魔法书",
+    "en": "Dimensional Tome"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/tome/TOME_430017.png",
+  "image": "/game/game/gear/tome/TOME_430017.png",
+  "grade": "LEGENDARY",
+  "gear": "TOME",
+  "level": 80,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 433172,
+      "BaseStat1_Value": 323,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "HpRegenPerSec",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 738,
+      "InherentStat2_STATTYPE": "AreaOfEffect",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 234,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 604800,
+    "cubeExp": 286416
+  }
+}

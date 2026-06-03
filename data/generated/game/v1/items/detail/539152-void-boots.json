@@ -1,0 +1,47 @@
+{
+  "id": 539152,
+  "slug": "539152-void-boots",
+  "type": "GEAR",
+  "name": {
+    "zh": "虚空靴",
+    "en": "Void Boots"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/boots/BOOTS_530015.png",
+  "image": "/game/game/gear/boots/BOOTS_530015.png",
+  "grade": "COSMIC",
+  "gear": "BOOTS",
+  "level": 70,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 539152,
+      "BaseStat1_Value": 2435,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MovementSpeed",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 243,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 1939,
+      "InherentStat3_STATTYPE": "HpRegenPerSec",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 1939,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 244444252,
+    "cubeExp": 111666601
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 517091,
+  "slug": "517091-rune-plate",
+  "type": "GEAR",
+  "name": {
+    "zh": "符文板甲",
+    "en": "Rune Plate"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/armor/ARMOR_510009.png",
+  "image": "/game/game/gear/armor/ARMOR_510009.png",
+  "grade": "CELESTIAL",
+  "gear": "ARMOR",
+  "level": 40,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 517091,
+      "BaseStat1_Value": 1468,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 177,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 1705,
+      "InherentStat3_STATTYPE": "MaxHp",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 211,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 15066051,
+    "cubeExp": 5919060
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 538132,
+  "slug": "538132-ancient-boots",
+  "type": "GEAR",
+  "name": {
+    "zh": "远古靴子",
+    "en": "Ancient Boots"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/boots/BOOTS_530013.png",
+  "image": "/game/game/gear/boots/BOOTS_530013.png",
+  "grade": "DIVINE",
+  "gear": "BOOTS",
+  "level": 60,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 538132,
+      "BaseStat1_Value": 1067,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MovementSpeed",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 163,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 973,
+      "InherentStat3_STATTYPE": "MaxHp",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 189,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 58817398,
+    "cubeExp": 26103697
+  }
+}

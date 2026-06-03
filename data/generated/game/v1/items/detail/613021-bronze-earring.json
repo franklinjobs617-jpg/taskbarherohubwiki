@@ -1,0 +1,47 @@
+{
+  "id": 613021,
+  "slug": "613021-bronze-earring",
+  "type": "GEAR",
+  "name": {
+    "zh": "青铜耳环",
+    "en": "Bronze Earring"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/earing/EARING_610002.png",
+  "image": "/game/game/gear/earing/EARING_610002.png",
+  "grade": "LEGENDARY",
+  "gear": "EARING",
+  "level": 5,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 613021,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CriticalDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 155,
+      "InherentStat2_STATTYPE": "HpLeech",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 5,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 4050,
+    "cubeExp": 1620
+  }
+}

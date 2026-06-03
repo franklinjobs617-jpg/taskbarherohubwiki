@@ -1,0 +1,47 @@
+{
+  "id": 457161,
+  "slug": "457161-power-hatchet",
+  "type": "GEAR",
+  "name": {
+    "zh": "力量手斧",
+    "en": "Power Hatchet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/hatchet/HATCHET_450016.png",
+  "image": "/game/game/gear/hatchet/HATCHET_450016.png",
+  "grade": "CELESTIAL",
+  "gear": "HATCHET",
+  "level": 75,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 457161,
+      "BaseStat1_Value": 1496,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 64,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 770,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 770,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 61193132,
+    "cubeExp": 28411488
+  }
+}

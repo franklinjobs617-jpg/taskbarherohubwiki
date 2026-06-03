@@ -1,0 +1,47 @@
+{
+  "id": 316111,
+  "slug": "316111-mystic-bow",
+  "type": "GEAR",
+  "name": {
+    "zh": "神秘之弓",
+    "en": "Mystic Bow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bow/BOW_310011.png",
+  "image": "/game/game/gear/bow/BOW_310011.png",
+  "grade": "BEYOND",
+  "gear": "BOW",
+  "level": 50,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 316111,
+      "BaseStat1_Value": 473,
+      "BaseStat2_Value": 85,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 115,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 836,
+      "InherentStat3_STATTYPE": "CooldownReduction",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 75,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 5540392,
+    "cubeExp": 2367624
+  }
+}

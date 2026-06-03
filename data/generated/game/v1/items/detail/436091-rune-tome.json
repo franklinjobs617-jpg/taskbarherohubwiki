@@ -1,0 +1,47 @@
+{
+  "id": 436091,
+  "slug": "436091-rune-tome",
+  "type": "GEAR",
+  "name": {
+    "zh": "符文魔典",
+    "en": "Rune Tome"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/tome/TOME_430009.png",
+  "image": "/game/game/gear/tome/TOME_430009.png",
+  "grade": "BEYOND",
+  "gear": "TOME",
+  "level": 40,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 436091,
+      "BaseStat1_Value": 202,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "BlockChance",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 75,
+      "InherentStat2_STATTYPE": "HpRegenPerSec",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 604,
+      "InherentStat3_STATTYPE": "CooldownReduction",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 55,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 8609172,
+    "cubeExp": 3382320
+  }
+}

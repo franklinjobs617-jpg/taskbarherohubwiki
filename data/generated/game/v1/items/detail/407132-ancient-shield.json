@@ -1,0 +1,47 @@
+{
+  "id": 407132,
+  "slug": "407132-ancient-shield",
+  "type": "GEAR",
+  "name": {
+    "zh": "远古盾",
+    "en": "Ancient Shield"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/shield/SHIELD_400013.png",
+  "image": "/game/game/gear/shield/SHIELD_400013.png",
+  "grade": "CELESTIAL",
+  "gear": "SHIELD",
+  "level": 60,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 407132,
+      "BaseStat1_Value": 306,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 84,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 3677,
+      "InherentStat3_STATTYPE": "BlockChance",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 174,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 48013966,
+    "cubeExp": 21308616
+  }
+}

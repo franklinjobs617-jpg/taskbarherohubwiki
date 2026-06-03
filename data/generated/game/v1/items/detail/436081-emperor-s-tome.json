@@ -1,0 +1,47 @@
+{
+  "id": 436081,
+  "slug": "436081-emperor-s-tome",
+  "type": "GEAR",
+  "name": {
+    "zh": "皇帝魔典",
+    "en": "Emperor's Tome"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/tome/TOME_430008.png",
+  "image": "/game/game/gear/tome/TOME_430008.png",
+  "grade": "BEYOND",
+  "gear": "TOME",
+  "level": 35,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 436081,
+      "BaseStat1_Value": 189,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "SkillHealIncrease",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 182,
+      "InherentStat2_STATTYPE": "DamageAbsorption",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 142,
+      "InherentStat3_STATTYPE": "CooldownReduction",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 47,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 7481188,
+    "cubeExp": 2705856
+  }
+}

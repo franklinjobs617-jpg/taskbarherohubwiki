@@ -1,0 +1,47 @@
+{
+  "id": 315062,
+  "slug": "315062-scarlet-bow",
+  "type": "GEAR",
+  "name": {
+    "zh": "绯红之弓",
+    "en": "Scarlet Bow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bow/BOW_310006.png",
+  "image": "/game/game/gear/bow/BOW_310006.png",
+  "grade": "ARCANA",
+  "gear": "BOW",
+  "level": 25,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 315062,
+      "BaseStat1_Value": 97,
+      "BaseStat2_Value": 65,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 21,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 420,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 380,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 855360,
+    "cubeExp": 211344
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 616062,
+  "slug": "616062-crystal-earring",
+  "type": "GEAR",
+  "name": {
+    "zh": "水晶耳环",
+    "en": "Crystal Earring"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/earing/EARING_610006.png",
+  "image": "/game/game/gear/earing/EARING_610006.png",
+  "grade": "BEYOND",
+  "gear": "EARING",
+  "level": 25,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 616062,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "IncreaseExpAmount",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 50,
+      "InherentStat2_STATTYPE": "HpLeech",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 8,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 51,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 8211060,
+    "cubeExp": 2029392
+  }
+}

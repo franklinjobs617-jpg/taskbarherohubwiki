@@ -1,0 +1,47 @@
+{
+  "id": 357101,
+  "slug": "357101-legend-axe",
+  "type": "GEAR",
+  "name": {
+    "zh": "传说之斧",
+    "en": "Legend Axe"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/axe/AXE_350010.png",
+  "image": "/game/game/gear/axe/AXE_350010.png",
+  "grade": "CELESTIAL",
+  "gear": "AXE",
+  "level": 45,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 357101,
+      "BaseStat1_Value": 706,
+      "BaseStat2_Value": 32,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 129,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 890,
+      "InherentStat3_STATTYPE": "AttackSpeed",
+      "InherentStat3_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat3_Value": 183,
+      "UniqueModKey": 60001
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "AxeSpinBleedingChance",
+    "sellGold": 17185168,
+    "cubeExp": 7102872
+  }
+}

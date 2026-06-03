@@ -1,0 +1,47 @@
+{
+  "id": 627191,
+  "slug": "627191-abyss-ring",
+  "type": "GEAR",
+  "name": {
+    "zh": "深渊戒指",
+    "en": "Abyss Ring"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/ring/RING_620019.png",
+  "image": "/game/game/gear/ring/RING_620019.png",
+  "grade": "CELESTIAL",
+  "gear": "RING",
+  "level": 90,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 627191,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 192,
+      "InherentStat2_STATTYPE": "AddHpPerHit",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 28,
+      "InherentStat3_STATTYPE": "AddHpPerKill",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 95,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 106855749,
+    "cubeExp": 53271540
+  }
+}

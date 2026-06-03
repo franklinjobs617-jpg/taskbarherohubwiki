@@ -1,0 +1,47 @@
+{
+  "id": 525051,
+  "slug": "525051-chain-gloves",
+  "type": "GEAR",
+  "name": {
+    "zh": "锁链手套",
+    "en": "Chain Gloves"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/gloves/GLOVES_520005.png",
+  "image": "/game/game/gear/gloves/GLOVES_520005.png",
+  "grade": "ARCANA",
+  "gear": "GLOVES",
+  "level": 20,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 525051,
+      "BaseStat1_Value": 137,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 87,
+      "InherentStat2_STATTYPE": "MaxHp",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 41,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 167,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 427680,
+    "cubeExp": 93240
+  }
+}

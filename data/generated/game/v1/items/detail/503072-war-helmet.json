@@ -1,0 +1,47 @@
+{
+  "id": 503072,
+  "slug": "503072-war-helmet",
+  "type": "GEAR",
+  "name": {
+    "zh": "战争头盔",
+    "en": "War Helmet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/helmet/HELMET_500007.png",
+  "image": "/game/game/gear/helmet/HELMET_500007.png",
+  "grade": "LEGENDARY",
+  "gear": "HELMET",
+  "level": 30,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 503072,
+      "BaseStat1_Value": 131,
+      "BaseStat2_Value": 0,
+      "InherentStat1_STATTYPE": "Armor",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 280,
+      "InherentStat2_STATTYPE": "HpRegenPerSec",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 280,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 83808,
+    "cubeExp": 26438
+  }
+}

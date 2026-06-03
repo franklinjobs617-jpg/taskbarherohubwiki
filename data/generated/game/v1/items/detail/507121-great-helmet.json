@@ -1,0 +1,47 @@
+{
+  "id": 507121,
+  "slug": "507121-great-helmet",
+  "type": "GEAR",
+  "name": {
+    "zh": "大头盔",
+    "en": "Great Helmet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/helmet/HELMET_500012.png",
+  "image": "/game/game/gear/helmet/HELMET_500012.png",
+  "grade": "CELESTIAL",
+  "gear": "HELMET",
+  "level": 55,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 507121,
+      "BaseStat1_Value": 1175,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 150,
+      "InherentStat2_STATTYPE": "SkillDurationIncrease",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 1424,
+      "InherentStat3_STATTYPE": "HpRegenPerSec",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 1424,
+      "UniqueModKey": 60001
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "AxeSpinBleedingChance",
+    "sellGold": 17347730,
+    "cubeExp": 7576397
+  }
+}

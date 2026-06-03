@@ -1,0 +1,47 @@
+{
+  "id": 424111,
+  "slug": "424111-mystic-orb",
+  "type": "GEAR",
+  "name": {
+    "zh": "神秘宝珠",
+    "en": "Mystic Orb"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/orb/ORB_420011.png",
+  "image": "/game/game/gear/orb/ORB_420011.png",
+  "grade": "IMMORTAL",
+  "gear": "ORB",
+  "level": 50,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 424111,
+      "BaseStat1_Value": 190,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 31,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 316,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 1082160,
+    "cubeExp": 462672
+  }
+}

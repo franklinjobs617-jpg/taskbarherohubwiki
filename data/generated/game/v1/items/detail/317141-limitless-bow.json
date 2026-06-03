@@ -1,0 +1,47 @@
+{
+  "id": 317141,
+  "slug": "317141-limitless-bow",
+  "type": "GEAR",
+  "name": {
+    "zh": "无限弓",
+    "en": "Limitless Bow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bow/BOW_310014.png",
+  "image": "/game/game/gear/bow/BOW_310014.png",
+  "grade": "CELESTIAL",
+  "gear": "BOW",
+  "level": 65,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 317141,
+      "BaseStat1_Value": 961,
+      "BaseStat2_Value": 160,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 237,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 998,
+      "InherentStat3_STATTYPE": "CooldownReduction",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 91,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 26300274,
+    "cubeExp": 11838120
+  }
+}

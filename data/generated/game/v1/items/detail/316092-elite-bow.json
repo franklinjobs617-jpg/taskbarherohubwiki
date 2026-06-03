@@ -1,0 +1,47 @@
+{
+  "id": 316092,
+  "slug": "316092-elite-bow",
+  "type": "GEAR",
+  "name": {
+    "zh": "精英弓",
+    "en": "Elite Bow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bow/BOW_310009.png",
+  "image": "/game/game/gear/bow/BOW_310009.png",
+  "grade": "BEYOND",
+  "gear": "BOW",
+  "level": 40,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 316092,
+      "BaseStat1_Value": 314,
+      "BaseStat2_Value": 85,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 77,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 678,
+      "InherentStat3_STATTYPE": "AttackSpeed",
+      "InherentStat3_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat3_Value": 152,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 4304586,
+    "cubeExp": 1691160
+  }
+}

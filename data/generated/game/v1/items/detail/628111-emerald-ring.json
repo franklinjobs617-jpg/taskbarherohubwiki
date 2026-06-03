@@ -1,0 +1,47 @@
+{
+  "id": 628111,
+  "slug": "628111-emerald-ring",
+  "type": "GEAR",
+  "name": {
+    "zh": "翡翠戒指",
+    "en": "Emerald Ring"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/ring/RING_620011.png",
+  "image": "/game/game/gear/ring/RING_620011.png",
+  "grade": "DIVINE",
+  "gear": "RING",
+  "level": 50,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 628111,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 52,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 303,
+      "InherentStat3_STATTYPE": "CastSpeed",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 120,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 203610408,
+    "cubeExp": 87012324
+  }
+}

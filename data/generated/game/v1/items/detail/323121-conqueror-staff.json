@@ -1,0 +1,47 @@
+{
+  "id": 323121,
+  "slug": "323121-conqueror-staff",
+  "type": "GEAR",
+  "name": {
+    "zh": "征服者法杖",
+    "en": "Conqueror Staff"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/staff/STAFF_320012.png",
+  "image": "/game/game/gear/staff/STAFF_320012.png",
+  "grade": "LEGENDARY",
+  "gear": "STAFF",
+  "level": 55,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 323121,
+      "BaseStat1_Value": 300,
+      "BaseStat2_Value": 20,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 52,
+      "InherentStat2_STATTYPE": "CriticalChance",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 14,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 201690,
+    "cubeExp": 88128
+  }
+}

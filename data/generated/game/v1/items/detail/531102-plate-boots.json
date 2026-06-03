@@ -1,0 +1,47 @@
+{
+  "id": 531102,
+  "slug": "531102-plate-boots",
+  "type": "GEAR",
+  "name": {
+    "zh": "板甲靴子",
+    "en": "Plate Boots"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/boots/BOOTS_530010.png",
+  "image": "/game/game/gear/boots/BOOTS_530010.png",
+  "grade": "UNCOMMON",
+  "gear": "BOOTS",
+  "level": 45,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 531102,
+      "BaseStat1_Value": 78,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MovementSpeed",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 52,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 12432,
+    "cubeExp": 5141
+  }
+}

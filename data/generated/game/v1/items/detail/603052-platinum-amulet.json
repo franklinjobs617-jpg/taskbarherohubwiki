@@ -1,0 +1,47 @@
+{
+  "id": 603052,
+  "slug": "603052-platinum-amulet",
+  "type": "GEAR",
+  "name": {
+    "zh": "白金护符",
+    "en": "Platinum Amulet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/amulet/AMULET_600005.png",
+  "image": "/game/game/gear/amulet/AMULET_600005.png",
+  "grade": "LEGENDARY",
+  "gear": "AMULET",
+  "level": 20,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 603052,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 32,
+      "InherentStat2_STATTYPE": "AttackSpeed",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 88,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 237600,
+    "cubeExp": 51840
+  }
+}

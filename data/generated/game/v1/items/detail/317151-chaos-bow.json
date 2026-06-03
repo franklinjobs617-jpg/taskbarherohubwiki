@@ -1,0 +1,47 @@
+{
+  "id": 317151,
+  "slug": "317151-chaos-bow",
+  "type": "GEAR",
+  "name": {
+    "zh": "混沌之弓",
+    "en": "Chaos Bow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bow/BOW_310015.png",
+  "image": "/game/game/gear/bow/BOW_310015.png",
+  "grade": "CELESTIAL",
+  "gear": "BOW",
+  "level": 70,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 317151,
+      "BaseStat1_Value": 1157,
+      "BaseStat2_Value": 160,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 259,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 1095,
+      "InherentStat3_STATTYPE": "CriticalChance",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 35,
+      "UniqueModKey": 20002
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "ArrowRainCriticalCooldown",
+    "sellGold": 28506478,
+    "cubeExp": 13021932
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 507082,
+  "slug": "507082-emperor-helmet",
+  "type": "GEAR",
+  "name": {
+    "zh": "皇帝头盔",
+    "en": "Emperor Helmet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/helmet/HELMET_500008.png",
+  "image": "/game/game/gear/helmet/HELMET_500008.png",
+  "grade": "CELESTIAL",
+  "gear": "HELMET",
+  "level": 35,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 507082,
+      "BaseStat1_Value": 619,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 90,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 792,
+      "InherentStat3_STATTYPE": "HpRegenPerSec",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 792,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 10473663,
+    "cubeExp": 3788198
+  }
+}

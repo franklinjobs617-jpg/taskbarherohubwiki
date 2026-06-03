@@ -1,0 +1,47 @@
+{
+  "id": 507111,
+  "slug": "507111-fate-helmet",
+  "type": "GEAR",
+  "name": {
+    "zh": "命运头盔",
+    "en": "Fate Helmet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/helmet/HELMET_500011.png",
+  "image": "/game/game/gear/helmet/HELMET_500011.png",
+  "grade": "CELESTIAL",
+  "gear": "HELMET",
+  "level": 50,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 507111,
+      "BaseStat1_Value": 933,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 142,
+      "InherentStat2_STATTYPE": "CriticalChance",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 25,
+      "InherentStat3_STATTYPE": "Armor",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 1335,
+      "UniqueModKey": 50004
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "CrossbowTurretAddAmount",
+    "sellGold": 15513098,
+    "cubeExp": 6629347
+  }
+}

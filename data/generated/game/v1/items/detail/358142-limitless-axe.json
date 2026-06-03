@@ -1,0 +1,47 @@
+{
+  "id": 358142,
+  "slug": "358142-limitless-axe",
+  "type": "GEAR",
+  "name": {
+    "zh": "无限斧",
+    "en": "Limitless Axe"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/axe/AXE_350014.png",
+  "image": "/game/game/gear/axe/AXE_350014.png",
+  "grade": "DIVINE",
+  "gear": "AXE",
+  "level": 65,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 358142,
+      "BaseStat1_Value": 1694,
+      "BaseStat2_Value": 36,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 306,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 1150,
+      "InherentStat3_STATTYPE": "CriticalChance",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 37,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 92051412,
+    "cubeExp": 41434440
+  }
+}

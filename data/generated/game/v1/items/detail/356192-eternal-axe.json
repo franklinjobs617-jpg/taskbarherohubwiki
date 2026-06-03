@@ -1,0 +1,47 @@
+{
+  "id": 356192,
+  "slug": "356192-eternal-axe",
+  "type": "GEAR",
+  "name": {
+    "zh": "永恒斧",
+    "en": "Eternal Axe"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/axe/AXE_350019.png",
+  "image": "/game/game/gear/axe/AXE_350019.png",
+  "grade": "BEYOND",
+  "gear": "AXE",
+  "level": 90,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 356192,
+      "BaseStat1_Value": 1903,
+      "BaseStat2_Value": 28,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 288,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 1584,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 344,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 10176738,
+    "cubeExp": 5073480
+  }
+}

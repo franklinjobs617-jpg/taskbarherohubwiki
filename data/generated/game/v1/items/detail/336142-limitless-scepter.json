@@ -1,0 +1,47 @@
+{
+  "id": 336142,
+  "slug": "336142-limitless-scepter",
+  "type": "GEAR",
+  "name": {
+    "zh": "无限权杖",
+    "en": "Limitless Scepter"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/scepter/SCEPTER_330014.png",
+  "image": "/game/game/gear/scepter/SCEPTER_330014.png",
+  "grade": "BEYOND",
+  "gear": "SCEPTER",
+  "level": 65,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 336142,
+      "BaseStat1_Value": 631,
+      "BaseStat2_Value": 28,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 172,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 1048,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 866,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 7514364,
+    "cubeExp": 3382320
+  }
+}

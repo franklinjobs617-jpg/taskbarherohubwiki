@@ -1,0 +1,47 @@
+{
+  "id": 324142,
+  "slug": "324142-sacred-staff",
+  "type": "GEAR",
+  "name": {
+    "zh": "神圣法杖",
+    "en": "Sacred Staff"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/staff/STAFF_320014.png",
+  "image": "/game/game/gear/staff/STAFF_320014.png",
+  "grade": "IMMORTAL",
+  "gear": "STAFF",
+  "level": 65,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 324142,
+      "BaseStat1_Value": 533,
+      "BaseStat2_Value": 20,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 90,
+      "InherentStat2_STATTYPE": "CooldownReduction",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 71,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 733860,
+    "cubeExp": 330480
+  }
+}

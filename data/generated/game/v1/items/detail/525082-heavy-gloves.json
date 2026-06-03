@@ -1,0 +1,47 @@
+{
+  "id": 525082,
+  "slug": "525082-heavy-gloves",
+  "type": "GEAR",
+  "name": {
+    "zh": "重型手套",
+    "en": "Heavy Gloves"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/gloves/GLOVES_520008.png",
+  "image": "/game/game/gear/gloves/GLOVES_520008.png",
+  "grade": "ARCANA",
+  "gear": "GLOVES",
+  "level": 35,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 525082,
+      "BaseStat1_Value": 301,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 67,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 161,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 252,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 876744,
+    "cubeExp": 317016
+  }
+}

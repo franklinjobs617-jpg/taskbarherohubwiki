@@ -1,0 +1,47 @@
+{
+  "id": 318131,
+  "slug": "318131-ancient-bow",
+  "type": "GEAR",
+  "name": {
+    "zh": "远古弓",
+    "en": "Ancient Bow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bow/BOW_310013.png",
+  "image": "/game/game/gear/bow/BOW_310013.png",
+  "grade": "DIVINE",
+  "gear": "BOW",
+  "level": 60,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 318131,
+      "BaseStat1_Value": 1015,
+      "BaseStat2_Value": 235,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 244,
+      "InherentStat2_STATTYPE": "AttackSpeed",
+      "InherentStat2_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat2_Value": 243,
+      "InherentStat3_STATTYPE": "CooldownReduction",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 92,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 84024854,
+    "cubeExp": 37290996
+  }
+}

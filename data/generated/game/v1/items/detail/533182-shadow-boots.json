@@ -1,0 +1,47 @@
+{
+  "id": 533182,
+  "slug": "533182-shadow-boots",
+  "type": "GEAR",
+  "name": {
+    "zh": "暗影靴子",
+    "en": "Shadow Boots"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/boots/BOOTS_530018.png",
+  "image": "/game/game/gear/boots/BOOTS_530018.png",
+  "grade": "LEGENDARY",
+  "gear": "BOOTS",
+  "level": 85,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 533182,
+      "BaseStat1_Value": 852,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MovementSpeed",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 112,
+      "InherentStat2_STATTYPE": "MaxHp",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 124,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 222642,
+    "cubeExp": 107957
+  }
+}

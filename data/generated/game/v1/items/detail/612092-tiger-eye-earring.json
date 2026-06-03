@@ -1,0 +1,47 @@
+{
+  "id": 612092,
+  "slug": "612092-tiger-eye-earring",
+  "type": "GEAR",
+  "name": {
+    "zh": "虎眼耳环",
+    "en": "Tiger Eye Earring"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/earing/EARING_610009.png",
+  "image": "/game/game/gear/earing/EARING_610009.png",
+  "grade": "RARE",
+  "gear": "EARING",
+  "level": 40,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 612092,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": 0,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 42,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 140130,
+    "cubeExp": 55080
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 355051,
+  "slug": "355051-war-axe",
+  "type": "GEAR",
+  "name": {
+    "zh": "战斧",
+    "en": "War Axe"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/axe/AXE_350005.png",
+  "image": "/game/game/gear/axe/AXE_350005.png",
+  "grade": "ARCANA",
+  "gear": "AXE",
+  "level": 20,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 355051,
+      "BaseStat1_Value": 88,
+      "BaseStat2_Value": 24,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 14,
+      "InherentStat2_STATTYPE": "CriticalChance",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 8,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 389,
+      "UniqueModKey": 0
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 570240,
+    "cubeExp": 124320
+  }
+}

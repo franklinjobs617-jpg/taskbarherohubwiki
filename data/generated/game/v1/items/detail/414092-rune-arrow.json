@@ -1,0 +1,47 @@
+{
+  "id": 414092,
+  "slug": "414092-rune-arrow",
+  "type": "GEAR",
+  "name": {
+    "zh": "符文箭",
+    "en": "Rune Arrow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/arrow/ARROW_410009.png",
+  "image": "/game/game/gear/arrow/ARROW_410009.png",
+  "grade": "IMMORTAL",
+  "gear": "ARROW",
+  "level": 40,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 414092,
+      "BaseStat1_Value": 280,
+      "BaseStat2_Value": 0,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 21,
+      "InherentStat2_STATTYPE": "AttackSpeed",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 92,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 840780,
+    "cubeExp": 330480
+  }
+}

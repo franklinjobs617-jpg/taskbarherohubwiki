@@ -1,0 +1,47 @@
+{
+  "id": 536071,
+  "slug": "536071-war-boots",
+  "type": "GEAR",
+  "name": {
+    "zh": "战争靴",
+    "en": "War Boots"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/boots/BOOTS_530007.png",
+  "image": "/game/game/gear/boots/BOOTS_530007.png",
+  "grade": "BEYOND",
+  "gear": "BOOTS",
+  "level": 30,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 536071,
+      "BaseStat1_Value": 210,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MovementSpeed",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 67,
+      "InherentStat2_STATTYPE": "MaxHp",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 67,
+      "InherentStat3_STATTYPE": "Armor",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 157,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 2252650,
+    "cubeExp": 710287
+  }
+}

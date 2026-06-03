@@ -1,0 +1,47 @@
+{
+  "id": 456071,
+  "slug": "456071-battle-hatchet",
+  "type": "GEAR",
+  "name": {
+    "zh": "战斗手斧",
+    "en": "Battle Hatchet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/hatchet/HATCHET_450007.png",
+  "image": "/game/game/gear/hatchet/HATCHET_450007.png",
+  "grade": "BEYOND",
+  "gear": "HATCHET",
+  "level": 30,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 456071,
+      "BaseStat1_Value": 763,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 21,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 266,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 266,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 6436144,
+    "cubeExp": 2029392
+  }
+}

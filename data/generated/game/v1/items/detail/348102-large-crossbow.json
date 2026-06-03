@@ -1,0 +1,47 @@
+{
+  "id": 348102,
+  "slug": "348102-large-crossbow",
+  "type": "GEAR",
+  "name": {
+    "zh": "大型弩",
+    "en": "Large Crossbow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/crossbow/CROSSBOW_340010.png",
+  "image": "/game/game/gear/crossbow/CROSSBOW_340010.png",
+  "grade": "DIVINE",
+  "gear": "CROSSBOW",
+  "level": 45,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 348102,
+      "BaseStat1_Value": 1017,
+      "BaseStat2_Value": 36,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 170,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 1040,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 860,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 60148384,
+    "cubeExp": 24860664
+  }
+}

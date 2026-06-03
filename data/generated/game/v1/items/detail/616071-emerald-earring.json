@@ -1,0 +1,47 @@
+{
+  "id": 616071,
+  "slug": "616071-emerald-earring",
+  "type": "GEAR",
+  "name": {
+    "zh": "祖母绿耳环",
+    "en": "Emerald Earring"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/earing/EARING_610007.png",
+  "image": "/game/game/gear/earing/EARING_610007.png",
+  "grade": "BEYOND",
+  "gear": "EARING",
+  "level": 30,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 616071,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "HpLeech",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 9,
+      "InherentStat2_STATTYPE": "MovementSpeed",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 158,
+      "InherentStat3_STATTYPE": "SkillDurationIncrease",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 117,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 9654216,
+    "cubeExp": 3044088
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 343102,
+  "slug": "343102-large-crossbow",
+  "type": "GEAR",
+  "name": {
+    "zh": "大型弩",
+    "en": "Large Crossbow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/crossbow/CROSSBOW_340010.png",
+  "image": "/game/game/gear/crossbow/CROSSBOW_340010.png",
+  "grade": "LEGENDARY",
+  "gear": "CROSSBOW",
+  "level": 45,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 343102,
+      "BaseStat1_Value": 221,
+      "BaseStat2_Value": 20,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 61,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 488,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 159840,
+    "cubeExp": 66096
+  }
+}

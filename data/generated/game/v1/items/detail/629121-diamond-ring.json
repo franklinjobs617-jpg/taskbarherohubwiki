@@ -1,0 +1,47 @@
+{
+  "id": 629121,
+  "slug": "629121-diamond-ring",
+  "type": "GEAR",
+  "name": {
+    "zh": "钻石戒指",
+    "en": "Diamond Ring"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/ring/RING_620012.png",
+  "image": "/game/game/gear/ring/RING_620012.png",
+  "grade": "COSMIC",
+  "gear": "RING",
+  "level": 55,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 629121,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 61,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 357,
+      "InherentStat3_STATTYPE": "CastSpeed",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 146,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 796915287,
+    "cubeExp": 348051744
+  }
+}

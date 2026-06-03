@@ -1,0 +1,47 @@
+{
+  "id": 319192,
+  "slug": "319192-eternal-bow",
+  "type": "GEAR",
+  "name": {
+    "zh": "永恒之弓",
+    "en": "Eternal Bow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bow/BOW_310019.png",
+  "image": "/game/game/gear/bow/BOW_310019.png",
+  "grade": "COSMIC",
+  "gear": "BOW",
+  "level": 90,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 319192,
+      "BaseStat1_Value": 3319,
+      "BaseStat2_Value": 310,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 350,
+      "InherentStat2_STATTYPE": "CooldownReduction",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 120,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 500,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 436329789,
+    "cubeExp": 217532340
+  }
+}

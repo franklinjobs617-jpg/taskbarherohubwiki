@@ -1,0 +1,47 @@
+{
+  "id": 509161,
+  "slug": "509161-crystal-helmet",
+  "type": "GEAR",
+  "name": {
+    "zh": "水晶头盔",
+    "en": "Crystal Helmet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/helmet/HELMET_500016.png",
+  "image": "/game/game/gear/helmet/HELMET_500016.png",
+  "grade": "COSMIC",
+  "gear": "HELMET",
+  "level": 75,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 509161,
+      "BaseStat1_Value": 5555,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 300,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 3000,
+      "InherentStat3_STATTYPE": "CooldownReduction",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 80,
+      "UniqueModKey": 40001
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "WrathOfHeavenHeal",
+    "sellGold": 299847822,
+    "cubeExp": 139220698
+  }
+}

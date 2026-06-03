@@ -1,0 +1,45 @@
+{
+  "id": 330020,
+  "slug": "radiant-scepter",
+  "type": "GEAR",
+  "name": {
+    "zh": "辉耀权杖",
+    "en": "Radiant Scepter"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/scepter/SCEPTER_330020.png",
+  "image": "/game/game/gear/scepter/SCEPTER_330020.png",
+  "grade": "COMMON",
+  "gear": "SCEPTER",
+  "level": 100,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 330020,
+      "BaseStat1_Value": 70,
+      "BaseStat2_Value": 20,
+      "InherentStat1_STATTYPE": "NONE",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 0,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null
+  }
+}

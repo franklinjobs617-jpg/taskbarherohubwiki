@@ -1,0 +1,47 @@
+{
+  "id": 426062,
+  "slug": "426062-dark-orb",
+  "type": "GEAR",
+  "name": {
+    "zh": "暗黑法球",
+    "en": "Dark Orb"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/orb/ORB_420006.png",
+  "image": "/game/game/gear/orb/ORB_420006.png",
+  "grade": "BEYOND",
+  "gear": "ORB",
+  "level": 25,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 426062,
+      "BaseStat1_Value": 165,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 14,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 225,
+      "InherentStat3_STATTYPE": "CastSpeed",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 124,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 5474040,
+    "cubeExp": 1352928
+  }
+}

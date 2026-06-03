@@ -1,0 +1,47 @@
+{
+  "id": 405052,
+  "slug": "405052-heavy-shield",
+  "type": "GEAR",
+  "name": {
+    "zh": "重盾",
+    "en": "Heavy Shield"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/shield/SHIELD_400005.png",
+  "image": "/game/game/gear/shield/SHIELD_400005.png",
+  "grade": "ARCANA",
+  "gear": "SHIELD",
+  "level": 20,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 405052,
+      "BaseStat1_Value": 138,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "Armor",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 264,
+      "InherentStat2_STATTYPE": "MaxHp",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 97,
+      "InherentStat3_STATTYPE": "DamageReduction",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 52,
+      "UniqueModKey": 10004
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "SkillCooldownReduce",
+    "sellGold": 1140480,
+    "cubeExp": 248640
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 422101,
+  "slug": "422101-fate-orb",
+  "type": "GEAR",
+  "name": {
+    "zh": "命运法球",
+    "en": "Fate Orb"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/orb/ORB_420010.png",
+  "image": "/game/game/gear/orb/ORB_420010.png",
+  "grade": "RARE",
+  "gear": "ORB",
+  "level": 45,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 422101,
+      "BaseStat1_Value": 170,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CastSpeed",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 126,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 106560,
+    "cubeExp": 44064
+  }
+}

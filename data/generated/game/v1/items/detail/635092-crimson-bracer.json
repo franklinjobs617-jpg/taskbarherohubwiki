@@ -1,0 +1,47 @@
+{
+  "id": 635092,
+  "slug": "635092-crimson-bracer",
+  "type": "GEAR",
+  "name": {
+    "zh": "绯红腕甲",
+    "en": "Crimson Bracer"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bracer/BRACER_630009.png",
+  "image": "/game/game/gear/bracer/BRACER_630009.png",
+  "grade": "ARCANA",
+  "gear": "BRACER",
+  "level": 40,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 635092,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "BlockChance",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 67,
+      "InherentStat2_STATTYPE": "DamageReduction",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 76,
+      "InherentStat3_STATTYPE": "HpRegenPerSec",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 517,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 4035744,
+    "cubeExp": 1585080
+  }
+}

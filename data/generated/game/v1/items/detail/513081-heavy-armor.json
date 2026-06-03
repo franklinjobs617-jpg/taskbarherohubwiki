@@ -1,0 +1,47 @@
+{
+  "id": 513081,
+  "slug": "513081-heavy-armor",
+  "type": "GEAR",
+  "name": {
+    "zh": "重甲",
+    "en": "Heavy Armor"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/armor/ARMOR_510008.png",
+  "image": "/game/game/gear/armor/ARMOR_510008.png",
+  "grade": "LEGENDARY",
+  "gear": "ARMOR",
+  "level": 35,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 513081,
+      "BaseStat1_Value": 332,
+      "BaseStat2_Value": 0,
+      "InherentStat1_STATTYPE": "HpRegenPerSec",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 612,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 612,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 121770,
+    "cubeExp": 44064
+  }
+}

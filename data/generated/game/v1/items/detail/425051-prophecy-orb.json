@@ -1,0 +1,47 @@
+{
+  "id": 425051,
+  "slug": "425051-prophecy-orb",
+  "type": "GEAR",
+  "name": {
+    "zh": "预言宝珠",
+    "en": "Prophecy Orb"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/orb/ORB_420005.png",
+  "image": "/game/game/gear/orb/ORB_420005.png",
+  "grade": "ARCANA",
+  "gear": "ORB",
+  "level": 20,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 425051,
+      "BaseStat1_Value": 142,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CriticalChance",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 176,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 186,
+      "InherentStat3_STATTYPE": "CooldownReduction",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 24,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 1140480,
+    "cubeExp": 248640
+  }
+}

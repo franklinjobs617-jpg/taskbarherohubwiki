@@ -1,0 +1,47 @@
+{
+  "id": 518131,
+  "slug": "518131-ancient-armor",
+  "type": "GEAR",
+  "name": {
+    "zh": "远古铠甲",
+    "en": "Ancient Armor"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/armor/ARMOR_510013.png",
+  "image": "/game/game/gear/armor/ARMOR_510013.png",
+  "grade": "DIVINE",
+  "gear": "ARMOR",
+  "level": 60,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 518131,
+      "BaseStat1_Value": 3729,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 309,
+      "InherentStat2_STATTYPE": "HpRegenPerSec",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 3055,
+      "InherentStat3_STATTYPE": "MaxHp",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 329,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 84024854,
+    "cubeExp": 37290996
+  }
+}

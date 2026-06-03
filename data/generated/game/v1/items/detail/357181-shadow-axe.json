@@ -1,0 +1,47 @@
+{
+  "id": 357181,
+  "slug": "357181-shadow-axe",
+  "type": "GEAR",
+  "name": {
+    "zh": "暗影斧",
+    "en": "Shadow Axe"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/axe/AXE_350018.png",
+  "image": "/game/game/gear/axe/AXE_350018.png",
+  "grade": "CELESTIAL",
+  "gear": "AXE",
+  "level": 85,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 357181,
+      "BaseStat1_Value": 2314,
+      "BaseStat2_Value": 32,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 318,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 1358,
+      "InherentStat3_STATTYPE": "CriticalChance",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 45,
+      "UniqueModKey": 60001
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "AxeSpinBleedingChance",
+    "sellGold": 34196162,
+    "cubeExp": 16573368
+  }
+}

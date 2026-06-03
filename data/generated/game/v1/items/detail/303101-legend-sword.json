@@ -1,0 +1,47 @@
+{
+  "id": 303101,
+  "slug": "303101-legend-sword",
+  "type": "GEAR",
+  "name": {
+    "zh": "传说之剑",
+    "en": "Legend Sword"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/sword/SWORD_300010.png",
+  "image": "/game/game/gear/sword/SWORD_300010.png",
+  "grade": "LEGENDARY",
+  "gear": "SWORD",
+  "level": 45,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 303101,
+      "BaseStat1_Value": 153,
+      "BaseStat2_Value": 30,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 123,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 488,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 159840,
+    "cubeExp": 66096
+  }
+}

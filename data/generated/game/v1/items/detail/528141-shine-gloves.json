@@ -1,0 +1,47 @@
+{
+  "id": 528141,
+  "slug": "528141-shine-gloves",
+  "type": "GEAR",
+  "name": {
+    "zh": "闪光手套",
+    "en": "Shine Gloves"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/gloves/GLOVES_520014.png",
+  "image": "/game/game/gear/gloves/GLOVES_520014.png",
+  "grade": "DIVINE",
+  "gear": "GLOVES",
+  "level": 65,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 528141,
+      "BaseStat1_Value": 2200,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 218,
+      "InherentStat2_STATTYPE": "HpLeech",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 36,
+      "InherentStat3_STATTYPE": "HpRegenPerSec",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 1431,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 69038559,
+    "cubeExp": 31075830
+  }
+}

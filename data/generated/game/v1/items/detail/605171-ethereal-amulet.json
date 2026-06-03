@@ -1,0 +1,47 @@
+{
+  "id": 605171,
+  "slug": "605171-ethereal-amulet",
+  "type": "GEAR",
+  "name": {
+    "zh": "以太护符",
+    "en": "Ethereal Amulet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/amulet/AMULET_600017.png",
+  "image": "/game/game/gear/amulet/AMULET_600017.png",
+  "grade": "ARCANA",
+  "gear": "AMULET",
+  "level": 80,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 605171,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 197,
+      "InherentStat2_STATTYPE": "BaseAttackCountReduction",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 1,
+      "InherentStat3_STATTYPE": "CriticalChance",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 388,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 11612160,
+    "cubeExp": 5494944
+  }
+}

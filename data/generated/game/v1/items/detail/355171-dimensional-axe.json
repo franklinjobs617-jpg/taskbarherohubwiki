@@ -1,0 +1,47 @@
+{
+  "id": 355171,
+  "slug": "355171-dimensional-axe",
+  "type": "GEAR",
+  "name": {
+    "zh": "次元斧",
+    "en": "Dimensional Axe"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/axe/AXE_350017.png",
+  "image": "/game/game/gear/axe/AXE_350017.png",
+  "grade": "ARCANA",
+  "gear": "AXE",
+  "level": 80,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 355171,
+      "BaseStat1_Value": 1119,
+      "BaseStat2_Value": 24,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 223,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 936,
+      "InherentStat3_STATTYPE": "CriticalChance",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 29,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 2903040,
+    "cubeExp": 1373736
+  }
+}

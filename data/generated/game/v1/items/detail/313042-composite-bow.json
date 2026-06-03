@@ -1,0 +1,47 @@
+{
+  "id": 313042,
+  "slug": "313042-composite-bow",
+  "type": "GEAR",
+  "name": {
+    "zh": "复合弓",
+    "en": "Composite Bow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bow/BOW_310004.png",
+  "image": "/game/game/gear/bow/BOW_310004.png",
+  "grade": "LEGENDARY",
+  "gear": "BOW",
+  "level": 15,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 313042,
+      "BaseStat1_Value": 21,
+      "BaseStat2_Value": 40,
+      "InherentStat1_STATTYPE": "CriticalChance",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 6,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 332,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 23760,
+    "cubeExp": 6480
+  }
+}

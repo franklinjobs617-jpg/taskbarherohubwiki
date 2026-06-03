@@ -1,0 +1,47 @@
+{
+  "id": 357091,
+  "slug": "357091-rune-axe",
+  "type": "GEAR",
+  "name": {
+    "zh": "符文斧",
+    "en": "Rune Axe"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/axe/AXE_350009.png",
+  "image": "/game/game/gear/axe/AXE_350009.png",
+  "grade": "CELESTIAL",
+  "gear": "AXE",
+  "level": 40,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 357091,
+      "BaseStat1_Value": 564,
+      "BaseStat2_Value": 32,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 73,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 789,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 103,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 15066051,
+    "cubeExp": 5919060
+  }
+}

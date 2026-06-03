@@ -1,0 +1,47 @@
+{
+  "id": 333052,
+  "slug": "333052-sacred-scepter",
+  "type": "GEAR",
+  "name": {
+    "zh": "神圣权杖",
+    "en": "Sacred Scepter"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/scepter/SCEPTER_330005.png",
+  "image": "/game/game/gear/scepter/SCEPTER_330005.png",
+  "grade": "LEGENDARY",
+  "gear": "SCEPTER",
+  "level": 20,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 333052,
+      "BaseStat1_Value": 26,
+      "BaseStat2_Value": 20,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 7,
+      "InherentStat2_STATTYPE": "CooldownReduction",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 53,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 59400,
+    "cubeExp": 12960
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 528102,
+  "slug": "528102-plate-gloves",
+  "type": "GEAR",
+  "name": {
+    "zh": "板甲手套",
+    "en": "Plate Gloves"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/gloves/GLOVES_520010.png",
+  "image": "/game/game/gear/gloves/GLOVES_520010.png",
+  "grade": "DIVINE",
+  "gear": "GLOVES",
+  "level": 45,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 528102,
+      "BaseStat1_Value": 954,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 1117,
+      "InherentStat2_STATTYPE": "MaxHp",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 151,
+      "InherentStat3_STATTYPE": "AddHpPerKill",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 24,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 45111288,
+    "cubeExp": 18645498
+  }
+}

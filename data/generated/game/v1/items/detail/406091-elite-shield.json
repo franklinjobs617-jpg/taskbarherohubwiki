@@ -1,0 +1,47 @@
+{
+  "id": 406091,
+  "slug": "406091-elite-shield",
+  "type": "GEAR",
+  "name": {
+    "zh": "精英盾",
+    "en": "Elite Shield"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/shield/SHIELD_400009.png",
+  "image": "/game/game/gear/shield/SHIELD_400009.png",
+  "grade": "BEYOND",
+  "gear": "SHIELD",
+  "level": 40,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 406091,
+      "BaseStat1_Value": 205,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 55,
+      "InherentStat2_STATTYPE": "AreaOfEffect",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 233,
+      "InherentStat3_STATTYPE": "DamageReduction",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 82,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 8609172,
+    "cubeExp": 3382320
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 338161,
+  "slug": "338161-power-scepter",
+  "type": "GEAR",
+  "name": {
+    "zh": "力量权杖",
+    "en": "Power Scepter"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/scepter/SCEPTER_330016.png",
+  "image": "/game/game/gear/scepter/SCEPTER_330016.png",
+  "grade": "DIVINE",
+  "gear": "SCEPTER",
+  "level": 75,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 338161,
+      "BaseStat1_Value": 1591,
+      "BaseStat2_Value": 36,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 113,
+      "InherentStat2_STATTYPE": "AddHpPerHit",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 43,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 430,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 107088508,
+    "cubeExp": 49721328
+  }
+}

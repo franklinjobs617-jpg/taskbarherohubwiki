@@ -1,0 +1,47 @@
+{
+  "id": 608111,
+  "slug": "608111-emerald-amulet",
+  "type": "GEAR",
+  "name": {
+    "zh": "翡翠护符",
+    "en": "Emerald Amulet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/amulet/AMULET_600011.png",
+  "image": "/game/game/gear/amulet/AMULET_600011.png",
+  "grade": "DIVINE",
+  "gear": "AMULET",
+  "level": 50,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 608111,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 197,
+      "InherentStat2_STATTYPE": "CriticalChance",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 389,
+      "InherentStat3_STATTYPE": "BaseAttackCountReduction",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 1,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 271480544,
+    "cubeExp": 116016432
+  }
+}

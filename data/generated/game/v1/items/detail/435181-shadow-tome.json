@@ -1,0 +1,47 @@
+{
+  "id": 435181,
+  "slug": "435181-shadow-tome",
+  "type": "GEAR",
+  "name": {
+    "zh": "暗影魔典",
+    "en": "Shadow Tome"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/tome/TOME_430018.png",
+  "image": "/game/game/gear/tome/TOME_430018.png",
+  "grade": "ARCANA",
+  "gear": "TOME",
+  "level": 85,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 435181,
+      "BaseStat1_Value": 577,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "SkillHealIncrease",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 329,
+      "InherentStat2_STATTYPE": "DamageAbsorption",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 308,
+      "InherentStat3_STATTYPE": "HpRegenPerSec",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 1190,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 6106752,
+    "cubeExp": 2958816
+  }
+}

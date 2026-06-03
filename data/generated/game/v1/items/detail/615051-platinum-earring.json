@@ -1,0 +1,47 @@
+{
+  "id": 615051,
+  "slug": "615051-platinum-earring",
+  "type": "GEAR",
+  "name": {
+    "zh": "白金耳环",
+    "en": "Platinum Earring"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/earing/EARING_610005.png",
+  "image": "/game/game/gear/earing/EARING_610005.png",
+  "grade": "ARCANA",
+  "gear": "EARING",
+  "level": 20,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 615051,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CriticalDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 176,
+      "InherentStat2_STATTYPE": "MovementSpeed",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 148,
+      "InherentStat3_STATTYPE": "SkillDurationIncrease",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 96,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 1710720,
+    "cubeExp": 372960
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 347081,
+  "slug": "347081-wing-crossbow",
+  "type": "GEAR",
+  "name": {
+    "zh": "羽翼弩",
+    "en": "Wing Crossbow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/crossbow/CROSSBOW_340008.png",
+  "image": "/game/game/gear/crossbow/CROSSBOW_340008.png",
+  "grade": "CELESTIAL",
+  "gear": "CROSSBOW",
+  "level": 35,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 347081,
+      "BaseStat1_Value": 469,
+      "BaseStat2_Value": 32,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 148,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 653,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 602,
+      "UniqueModKey": 50006
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "SkillElementChange",
+    "sellGold": 13092079,
+    "cubeExp": 4735248
+  }
+}

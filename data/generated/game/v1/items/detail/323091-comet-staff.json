@@ -1,0 +1,47 @@
+{
+  "id": 323091,
+  "slug": "323091-comet-staff",
+  "type": "GEAR",
+  "name": {
+    "zh": "彗星法杖",
+    "en": "Comet Staff"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/staff/STAFF_320009.png",
+  "image": "/game/game/gear/staff/STAFF_320009.png",
+  "grade": "LEGENDARY",
+  "gear": "STAFF",
+  "level": 40,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 323091,
+      "BaseStat1_Value": 170,
+      "BaseStat2_Value": 20,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 59,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 440,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 140130,
+    "cubeExp": 55080
+  }
+}

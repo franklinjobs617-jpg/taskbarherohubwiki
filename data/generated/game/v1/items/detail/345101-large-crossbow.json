@@ -1,0 +1,47 @@
+{
+  "id": 345101,
+  "slug": "345101-large-crossbow",
+  "type": "GEAR",
+  "name": {
+    "zh": "大型弩",
+    "en": "Large Crossbow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/crossbow/CROSSBOW_340010.png",
+  "image": "/game/game/gear/crossbow/CROSSBOW_340010.png",
+  "grade": "ARCANA",
+  "gear": "CROSSBOW",
+  "level": 45,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 345101,
+      "BaseStat1_Value": 430,
+      "BaseStat2_Value": 24,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 68,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 73,
+      "InherentStat3_STATTYPE": "AttackSpeed",
+      "InherentStat3_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat3_Value": 149,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 1534464,
+    "cubeExp": 634032
+  }
+}

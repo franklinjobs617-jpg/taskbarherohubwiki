@@ -1,0 +1,47 @@
+{
+  "id": 623141,
+  "slug": "623141-eclipse-ring",
+  "type": "GEAR",
+  "name": {
+    "zh": "蚀月戒指",
+    "en": "Eclipse Ring"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/ring/RING_620014.png",
+  "image": "/game/game/gear/ring/RING_620014.png",
+  "grade": "LEGENDARY",
+  "gear": "RING",
+  "level": 65,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 623141,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 34,
+      "InherentStat2_STATTYPE": "CriticalChance",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 109,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 733860,
+    "cubeExp": 330480
+  }
+}

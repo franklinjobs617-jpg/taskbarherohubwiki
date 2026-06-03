@@ -1,0 +1,47 @@
+{
+  "id": 346181,
+  "slug": "346181-shadow-crossbow",
+  "type": "GEAR",
+  "name": {
+    "zh": "暗影弩",
+    "en": "Shadow Crossbow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/crossbow/CROSSBOW_340018.png",
+  "image": "/game/game/gear/crossbow/CROSSBOW_340018.png",
+  "grade": "BEYOND",
+  "gear": "CROSSBOW",
+  "level": 85,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 346181,
+      "BaseStat1_Value": 1856,
+      "BaseStat2_Value": 28,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 310,
+      "InherentStat2_STATTYPE": "AttackSpeed",
+      "InherentStat2_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat2_Value": 273,
+      "InherentStat3_STATTYPE": "CooldownReduction",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 100,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 9770332,
+    "cubeExp": 4735248
+  }
+}

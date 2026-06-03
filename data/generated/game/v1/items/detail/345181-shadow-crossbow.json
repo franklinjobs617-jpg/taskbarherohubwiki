@@ -1,0 +1,47 @@
+{
+  "id": 345181,
+  "slug": "345181-shadow-crossbow",
+  "type": "GEAR",
+  "name": {
+    "zh": "暗影弩",
+    "en": "Shadow Crossbow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/crossbow/CROSSBOW_340018.png",
+  "image": "/game/game/gear/crossbow/CROSSBOW_340018.png",
+  "grade": "ARCANA",
+  "gear": "CROSSBOW",
+  "level": 85,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 345181,
+      "BaseStat1_Value": 1357,
+      "BaseStat2_Value": 24,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 90,
+      "InherentStat2_STATTYPE": "AddHpPerHit",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 23,
+      "InherentStat3_STATTYPE": "AttackSpeed",
+      "InherentStat3_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat3_Value": 235,
+      "UniqueModKey": 50002
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "ChargeTrapExplosiveCooldown",
+    "sellGold": 3053376,
+    "cubeExp": 1479408
+  }
+}

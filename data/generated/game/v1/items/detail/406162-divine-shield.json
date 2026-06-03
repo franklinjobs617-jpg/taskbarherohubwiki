@@ -1,0 +1,47 @@
+{
+  "id": 406162,
+  "slug": "406162-divine-shield",
+  "type": "GEAR",
+  "name": {
+    "zh": "神圣之盾",
+    "en": "Divine Shield"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/shield/SHIELD_400016.png",
+  "image": "/game/game/gear/shield/SHIELD_400016.png",
+  "grade": "BEYOND",
+  "gear": "SHIELD",
+  "level": 75,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 406162,
+      "BaseStat1_Value": 315,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 495,
+      "InherentStat2_STATTYPE": "CooldownReduction",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 98,
+      "InherentStat3_STATTYPE": "DamageReduction",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 136,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 17483752,
+    "cubeExp": 8117568
+  }
+}

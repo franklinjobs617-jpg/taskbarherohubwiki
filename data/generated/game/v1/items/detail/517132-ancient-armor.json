@@ -1,0 +1,47 @@
+{
+  "id": 517132,
+  "slug": "517132-ancient-armor",
+  "type": "GEAR",
+  "name": {
+    "zh": "远古铠甲",
+    "en": "Ancient Armor"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/armor/ARMOR_510013.png",
+  "image": "/game/game/gear/armor/ARMOR_510013.png",
+  "grade": "CELESTIAL",
+  "gear": "ARMOR",
+  "level": 60,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 517132,
+      "BaseStat1_Value": 2814,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 258,
+      "InherentStat2_STATTYPE": "MaxHp",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 283,
+      "InherentStat3_STATTYPE": "HpRegenPerSec",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 2527,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 24006983,
+    "cubeExp": 10654308
+  }
+}

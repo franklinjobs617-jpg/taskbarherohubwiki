@@ -1,0 +1,47 @@
+{
+  "id": 405071,
+  "slug": "405071-war-shield",
+  "type": "GEAR",
+  "name": {
+    "zh": "战争盾",
+    "en": "War Shield"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/shield/SHIELD_400007.png",
+  "image": "/game/game/gear/shield/SHIELD_400007.png",
+  "grade": "ARCANA",
+  "gear": "SHIELD",
+  "level": 30,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 405071,
+      "BaseStat1_Value": 156,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 145,
+      "InherentStat2_STATTYPE": "AllElementalResistance",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 12,
+      "InherentStat3_STATTYPE": "Armor",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 612,
+      "UniqueModKey": 10005
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "SkillMultiStrikeCountUp",
+    "sellGold": 2011392,
+    "cubeExp": 634032
+  }
+}

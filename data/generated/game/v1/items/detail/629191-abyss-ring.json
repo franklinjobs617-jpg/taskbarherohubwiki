@@ -1,0 +1,47 @@
+{
+  "id": 629191,
+  "slug": "629191-abyss-ring",
+  "type": "GEAR",
+  "name": {
+    "zh": "深渊戒指",
+    "en": "Abyss Ring"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/ring/RING_620019.png",
+  "image": "/game/game/gear/ring/RING_620019.png",
+  "grade": "COSMIC",
+  "gear": "RING",
+  "level": 90,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 629191,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 80,
+      "InherentStat2_STATTYPE": "AddHpPerHit",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 30,
+      "InherentStat3_STATTYPE": "CastSpeed",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 200,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 1308989367,
+    "cubeExp": 652597020
+  }
+}

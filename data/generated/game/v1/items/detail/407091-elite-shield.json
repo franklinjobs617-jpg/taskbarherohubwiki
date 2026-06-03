@@ -1,0 +1,47 @@
+{
+  "id": 407091,
+  "slug": "407091-elite-shield",
+  "type": "GEAR",
+  "name": {
+    "zh": "精英盾",
+    "en": "Elite Shield"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/shield/SHIELD_400009.png",
+  "image": "/game/game/gear/shield/SHIELD_400009.png",
+  "grade": "CELESTIAL",
+  "gear": "SHIELD",
+  "level": 40,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 407091,
+      "BaseStat1_Value": 239,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "Armor",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 2046,
+      "InherentStat2_STATTYPE": "HpRegenPerSec",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 1411,
+      "InherentStat3_STATTYPE": "BlockChance",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 132,
+      "UniqueModKey": 10003
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "SkillBaseAttackCountReduce",
+    "sellGold": 30132102,
+    "cubeExp": 11838120
+  }
+}

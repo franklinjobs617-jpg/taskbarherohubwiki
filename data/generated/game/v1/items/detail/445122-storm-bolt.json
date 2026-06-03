@@ -1,0 +1,47 @@
+{
+  "id": 445122,
+  "slug": "445122-storm-bolt",
+  "type": "GEAR",
+  "name": {
+    "zh": "风暴弩矢",
+    "en": "Storm Bolt"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bolt/BOLT_440012.png",
+  "image": "/game/game/gear/bolt/BOLT_440012.png",
+  "grade": "ARCANA",
+  "gear": "BOLT",
+  "level": 55,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 445122,
+      "BaseStat1_Value": 1483,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CriticalChance",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 258,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 392,
+      "InherentStat3_STATTYPE": "AreaOfEffect",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 224,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 3872448,
+    "cubeExp": 1690752
+  }
+}

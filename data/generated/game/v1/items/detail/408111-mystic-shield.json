@@ -1,0 +1,47 @@
+{
+  "id": 408111,
+  "slug": "408111-mystic-shield",
+  "type": "GEAR",
+  "name": {
+    "zh": "神秘盾牌",
+    "en": "Mystic Shield"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/shield/SHIELD_400011.png",
+  "image": "/game/game/gear/shield/SHIELD_400011.png",
+  "grade": "DIVINE",
+  "gear": "SHIELD",
+  "level": 50,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 408111,
+      "BaseStat1_Value": 316,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "Armor",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 4054,
+      "InherentStat2_STATTYPE": "MaxHp",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 443,
+      "InherentStat3_STATTYPE": "HpRegenPerSec",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 2192,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 135740272,
+    "cubeExp": 58008216
+  }
+}

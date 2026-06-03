@@ -1,0 +1,47 @@
+{
+  "id": 445061,
+  "slug": "445061-swift-bolt",
+  "type": "GEAR",
+  "name": {
+    "zh": "迅捷弩箭",
+    "en": "Swift Bolt"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bolt/BOLT_440006.png",
+  "image": "/game/game/gear/bolt/BOLT_440006.png",
+  "grade": "ARCANA",
+  "gear": "BOLT",
+  "level": 25,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 445061,
+      "BaseStat1_Value": 920,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CriticalChance",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 185,
+      "InherentStat2_STATTYPE": "CooldownReduction",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 26,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 208,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 1710720,
+    "cubeExp": 422688
+  }
+}

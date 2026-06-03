@@ -1,0 +1,47 @@
+{
+  "id": 633071,
+  "slug": "633071-obsidian-bracer",
+  "type": "GEAR",
+  "name": {
+    "zh": "黑曜石腕甲",
+    "en": "Obsidian Bracer"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bracer/BRACER_630007.png",
+  "image": "/game/game/gear/bracer/BRACER_630007.png",
+  "grade": "LEGENDARY",
+  "gear": "BRACER",
+  "level": 30,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 633071,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": 0,
+      "InherentStat1_STATTYPE": "MovementSpeed",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 66,
+      "InherentStat2_STATTYPE": "AreaOfEffect",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 70,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 314280,
+    "cubeExp": 99144
+  }
+}

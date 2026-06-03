@@ -1,0 +1,47 @@
+{
+  "id": 436062,
+  "slug": "436062-commander-s-tome",
+  "type": "GEAR",
+  "name": {
+    "zh": "统帅魔法书",
+    "en": "Commander's Tome"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/tome/TOME_430006.png",
+  "image": "/game/game/gear/tome/TOME_430006.png",
+  "grade": "BEYOND",
+  "gear": "TOME",
+  "level": 25,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 436062,
+      "BaseStat1_Value": 165,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AreaOfEffect",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 148,
+      "InherentStat2_STATTYPE": "BlockChance",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 50,
+      "InherentStat3_STATTYPE": "CooldownReduction",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 36,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 5474040,
+    "cubeExp": 1352928
+  }
+}

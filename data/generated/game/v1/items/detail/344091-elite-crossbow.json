@@ -1,0 +1,47 @@
+{
+  "id": 344091,
+  "slug": "344091-elite-crossbow",
+  "type": "GEAR",
+  "name": {
+    "zh": "精英弩",
+    "en": "Elite Crossbow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/crossbow/CROSSBOW_340009.png",
+  "image": "/game/game/gear/crossbow/CROSSBOW_340009.png",
+  "grade": "IMMORTAL",
+  "gear": "CROSSBOW",
+  "level": 40,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 344091,
+      "BaseStat1_Value": 235,
+      "BaseStat2_Value": 20,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 125,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 502,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 420390,
+    "cubeExp": 165240
+  }
+}

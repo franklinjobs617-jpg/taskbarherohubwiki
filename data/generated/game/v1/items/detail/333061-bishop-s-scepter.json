@@ -1,0 +1,47 @@
+{
+  "id": 333061,
+  "slug": "333061-bishop-s-scepter",
+  "type": "GEAR",
+  "name": {
+    "zh": "主教权杖",
+    "en": "Bishop's Scepter"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/scepter/SCEPTER_330006.png",
+  "image": "/game/game/gear/scepter/SCEPTER_330006.png",
+  "grade": "LEGENDARY",
+  "gear": "SCEPTER",
+  "level": 25,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 333061,
+      "BaseStat1_Value": 40,
+      "BaseStat2_Value": 20,
+      "InherentStat1_STATTYPE": "CastSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 103,
+      "InherentStat2_STATTYPE": "AddHpPerHit",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 2,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 89100,
+    "cubeExp": 22032
+  }
+}

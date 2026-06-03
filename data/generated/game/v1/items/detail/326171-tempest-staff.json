@@ -1,0 +1,47 @@
+{
+  "id": 326171,
+  "slug": "326171-tempest-staff",
+  "type": "GEAR",
+  "name": {
+    "zh": "暴风之杖",
+    "en": "Tempest Staff"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/staff/STAFF_320017.png",
+  "image": "/game/game/gear/staff/STAFF_320017.png",
+  "grade": "BEYOND",
+  "gear": "STAFF",
+  "level": 80,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 326171,
+      "BaseStat1_Value": 1652,
+      "BaseStat2_Value": 28,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 276,
+      "InherentStat2_STATTYPE": "CastSpeed",
+      "InherentStat2_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat2_Value": 356,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 1089,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 9289280,
+    "cubeExp": 4397016
+  }
+}

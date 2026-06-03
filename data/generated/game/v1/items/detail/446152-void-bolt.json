@@ -1,0 +1,47 @@
+{
+  "id": 446152,
+  "slug": "446152-void-bolt",
+  "type": "GEAR",
+  "name": {
+    "zh": "虚空弩矢",
+    "en": "Void Bolt"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bolt/BOLT_440015.png",
+  "image": "/game/game/gear/bolt/BOLT_440015.png",
+  "grade": "BEYOND",
+  "gear": "BOLT",
+  "level": 70,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 446152,
+      "BaseStat1_Value": 1951,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 104,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 592,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 592,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 16289416,
+    "cubeExp": 7441104
+  }
+}

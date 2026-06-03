@@ -1,0 +1,47 @@
+{
+  "id": 615152,
+  "slug": "615152-eclipse-earring",
+  "type": "GEAR",
+  "name": {
+    "zh": "日食耳环",
+    "en": "Eclipse Earring"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/earing/EARING_610015.png",
+  "image": "/game/game/gear/earing/EARING_610015.png",
+  "grade": "ARCANA",
+  "gear": "EARING",
+  "level": 70,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 615152,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "IncreaseExpAmount",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 104,
+      "InherentStat2_STATTYPE": "HpLeech",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 16,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 307,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 7636032,
+    "cubeExp": 3487176
+  }
+}

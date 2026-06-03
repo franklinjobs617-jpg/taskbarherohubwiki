@@ -1,0 +1,47 @@
+{
+  "id": 346141,
+  "slug": "346141-limitless-crossbow",
+  "type": "GEAR",
+  "name": {
+    "zh": "无限弩",
+    "en": "Limitless Crossbow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/crossbow/CROSSBOW_340014.png",
+  "image": "/game/game/gear/crossbow/CROSSBOW_340014.png",
+  "grade": "BEYOND",
+  "gear": "CROSSBOW",
+  "level": 65,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 346141,
+      "BaseStat1_Value": 1026,
+      "BaseStat2_Value": 28,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 172,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 866,
+      "InherentStat3_STATTYPE": "AttackSpeed",
+      "InherentStat3_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat3_Value": 207,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 7514364,
+    "cubeExp": 3382320
+  }
+}

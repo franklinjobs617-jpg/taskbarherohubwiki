@@ -1,0 +1,47 @@
+{
+  "id": 332032,
+  "slug": "332032-blessed-scepter",
+  "type": "GEAR",
+  "name": {
+    "zh": "祝福之杖",
+    "en": "Blessed Scepter"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/scepter/SCEPTER_330003.png",
+  "image": "/game/game/gear/scepter/SCEPTER_330003.png",
+  "grade": "RARE",
+  "gear": "SCEPTER",
+  "level": 10,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 332032,
+      "BaseStat1_Value": 7,
+      "BaseStat2_Value": 15,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 3,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 2250,
+    "cubeExp": 720
+  }
+}

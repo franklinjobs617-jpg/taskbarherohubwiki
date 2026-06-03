@@ -1,0 +1,31 @@
+{
+  "id": 920052,
+  "slug": "920052-stage-boss-box-6",
+  "type": "STAGEBOX",
+  "name": {
+    "zh": "Stage Boss Box 6",
+    "en": "Stage Boss Box 6"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/items/boxes/Item_920011.png",
+  "image": "/game/game/items/boxes/Item_920011.png",
+  "grade": "RARE",
+  "gear": null,
+  "level": null,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": null,
+    "synthType": null,
+    "dropKey": 9200521,
+    "uniqueMod": null
+  }
+}

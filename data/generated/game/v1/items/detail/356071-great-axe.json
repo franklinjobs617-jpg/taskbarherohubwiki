@@ -1,0 +1,47 @@
+{
+  "id": 356071,
+  "slug": "356071-great-axe",
+  "type": "GEAR",
+  "name": {
+    "zh": "巨斧",
+    "en": "Great Axe"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/axe/AXE_350007.png",
+  "image": "/game/game/gear/axe/AXE_350007.png",
+  "grade": "BEYOND",
+  "gear": "AXE",
+  "level": 30,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 356071,
+      "BaseStat1_Value": 238,
+      "BaseStat2_Value": 28,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 62,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 500,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 40,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 3218072,
+    "cubeExp": 1014696
+  }
+}

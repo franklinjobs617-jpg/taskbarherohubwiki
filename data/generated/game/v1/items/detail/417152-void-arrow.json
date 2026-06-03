@@ -1,0 +1,47 @@
+{
+  "id": 417152,
+  "slug": "417152-void-arrow",
+  "type": "GEAR",
+  "name": {
+    "zh": "虚空之箭",
+    "en": "Void Arrow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/arrow/ARROW_410015.png",
+  "image": "/game/game/gear/arrow/ARROW_410015.png",
+  "grade": "CELESTIAL",
+  "gear": "ARROW",
+  "level": 70,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 417152,
+      "BaseStat1_Value": 550,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 140,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 703,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 703,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 57012956,
+    "cubeExp": 26043864
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 614132,
+  "slug": "614132-moonstone-earring",
+  "type": "GEAR",
+  "name": {
+    "zh": "月长石耳环",
+    "en": "Moonstone Earring"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/earing/EARING_610013.png",
+  "image": "/game/game/gear/earing/EARING_610013.png",
+  "grade": "IMMORTAL",
+  "gear": "EARING",
+  "level": 60,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 614132,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "HpLeech",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 11,
+      "InherentStat2_STATTYPE": "SkillDurationIncrease",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 136,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 2009610,
+    "cubeExp": 892296
+  }
+}

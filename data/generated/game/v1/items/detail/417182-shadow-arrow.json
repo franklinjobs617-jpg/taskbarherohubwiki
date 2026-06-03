@@ -1,0 +1,47 @@
+{
+  "id": 417182,
+  "slug": "417182-shadow-arrow",
+  "type": "GEAR",
+  "name": {
+    "zh": "暗影箭",
+    "en": "Shadow Arrow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/arrow/ARROW_410018.png",
+  "image": "/game/game/gear/arrow/ARROW_410018.png",
+  "grade": "CELESTIAL",
+  "gear": "ARROW",
+  "level": 85,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 417182,
+      "BaseStat1_Value": 632,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CriticalChance",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 458,
+      "InherentStat2_STATTYPE": "AttackSpeed",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 270,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 896,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 68392324,
+    "cubeExp": 33146736
+  }
+}

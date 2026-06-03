@@ -1,0 +1,47 @@
+{
+  "id": 635162,
+  "slug": "635162-astral-bracer",
+  "type": "GEAR",
+  "name": {
+    "zh": "星界护腕",
+    "en": "Astral Bracer"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bracer/BRACER_630016.png",
+  "image": "/game/game/gear/bracer/BRACER_630016.png",
+  "grade": "ARCANA",
+  "gear": "BRACER",
+  "level": 75,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 635162,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "DamageReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 118,
+      "InherentStat2_STATTYPE": "DamageAbsorption",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 161,
+      "InherentStat3_STATTYPE": "BlockChance",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 112,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 8195904,
+    "cubeExp": 3804192
+  }
+}

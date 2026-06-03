@@ -1,0 +1,47 @@
+{
+  "id": 535051,
+  "slug": "535051-chain-boots",
+  "type": "GEAR",
+  "name": {
+    "zh": "锁链靴",
+    "en": "Chain Boots"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/boots/BOOTS_530005.png",
+  "image": "/game/game/gear/boots/BOOTS_530005.png",
+  "grade": "ARCANA",
+  "gear": "BOOTS",
+  "level": 20,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 535051,
+      "BaseStat1_Value": 91,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MovementSpeed",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 46,
+      "InherentStat2_STATTYPE": "MaxHp",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 41,
+      "InherentStat3_STATTYPE": "Armor",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 52,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 399168,
+    "cubeExp": 87024
+  }
+}

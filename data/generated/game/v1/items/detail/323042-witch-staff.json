@@ -1,0 +1,47 @@
+{
+  "id": 323042,
+  "slug": "323042-witch-staff",
+  "type": "GEAR",
+  "name": {
+    "zh": "女巫法杖",
+    "en": "Witch Staff"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/staff/STAFF_320004.png",
+  "image": "/game/game/gear/staff/STAFF_320004.png",
+  "grade": "LEGENDARY",
+  "gear": "STAFF",
+  "level": 15,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 323042,
+      "BaseStat1_Value": 26,
+      "BaseStat2_Value": 20,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 52,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 248,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 23760,
+    "cubeExp": 6480
+  }
+}

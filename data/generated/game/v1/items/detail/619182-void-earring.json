@@ -1,0 +1,47 @@
+{
+  "id": 619182,
+  "slug": "619182-void-earring",
+  "type": "GEAR",
+  "name": {
+    "zh": "虚空耳环",
+    "en": "Void Earring"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/earing/EARING_610018.png",
+  "image": "/game/game/gear/earing/EARING_610018.png",
+  "grade": "COSMIC",
+  "gear": "EARING",
+  "level": 85,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 619182,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MovementSpeed",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 250,
+      "InherentStat2_STATTYPE": "HpLeech",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 30,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 1000,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 1256715138,
+    "cubeExp": 609090552
+  }
+}

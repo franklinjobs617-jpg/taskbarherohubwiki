@@ -1,0 +1,47 @@
+{
+  "id": 303191,
+  "slug": "303191-eternal-sword",
+  "type": "GEAR",
+  "name": {
+    "zh": "永恒之剑",
+    "en": "Eternal Sword"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/sword/SWORD_300019.png",
+  "image": "/game/game/gear/sword/SWORD_300019.png",
+  "grade": "LEGENDARY",
+  "gear": "SWORD",
+  "level": 90,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 303191,
+      "BaseStat1_Value": 584,
+      "BaseStat2_Value": 30,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 939,
+      "InherentStat2_STATTYPE": "AttackSpeed",
+      "InherentStat2_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat2_Value": 191,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 331290,
+    "cubeExp": 165240
+  }
+}

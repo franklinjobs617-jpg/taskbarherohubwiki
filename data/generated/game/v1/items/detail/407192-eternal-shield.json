@@ -1,0 +1,47 @@
+{
+  "id": 407192,
+  "slug": "407192-eternal-shield",
+  "type": "GEAR",
+  "name": {
+    "zh": "永恒盾",
+    "en": "Eternal Shield"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/shield/SHIELD_400019.png",
+  "image": "/game/game/gear/shield/SHIELD_400019.png",
+  "grade": "CELESTIAL",
+  "gear": "SHIELD",
+  "level": 90,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 407192,
+      "BaseStat1_Value": 441,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 143,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 9274,
+      "InherentStat3_STATTYPE": "BlockChance",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 287,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 71237166,
+    "cubeExp": 35514360
+  }
+}

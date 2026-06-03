@@ -1,0 +1,47 @@
+{
+  "id": 504132,
+  "slug": "504132-storm-helmet",
+  "type": "GEAR",
+  "name": {
+    "zh": "风暴头盔",
+    "en": "Storm Helmet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/helmet/HELMET_500013.png",
+  "image": "/game/game/gear/helmet/HELMET_500013.png",
+  "grade": "IMMORTAL",
+  "gear": "HELMET",
+  "level": 60,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 504132,
+      "BaseStat1_Value": 542,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "Armor",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 427,
+      "InherentStat2_STATTYPE": "SkillDurationIncrease",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 799,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 535896,
+    "cubeExp": 237946
+  }
+}

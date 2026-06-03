@@ -1,0 +1,47 @@
+{
+  "id": 615091,
+  "slug": "615091-tiger-eye-earring",
+  "type": "GEAR",
+  "name": {
+    "zh": "虎眼耳环",
+    "en": "Tiger Eye Earring"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/earing/EARING_610009.png",
+  "image": "/game/game/gear/earing/EARING_610009.png",
+  "grade": "ARCANA",
+  "gear": "EARING",
+  "level": 40,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 615091,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "HpLeech",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 10,
+      "InherentStat2_STATTYPE": "AreaOfEffect",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 105,
+      "InherentStat3_STATTYPE": "SkillDurationIncrease",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 128,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 4035744,
+    "cubeExp": 1585080
+  }
+}

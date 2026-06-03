@@ -1,0 +1,47 @@
+{
+  "id": 401021,
+  "slug": "401021-wooden-shield",
+  "type": "GEAR",
+  "name": {
+    "zh": "木盾",
+    "en": "Wooden Shield"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/shield/SHIELD_400002.png",
+  "image": "/game/game/gear/shield/SHIELD_400002.png",
+  "grade": "UNCOMMON",
+  "gear": "SHIELD",
+  "level": 5,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 401021,
+      "BaseStat1_Value": 62,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "Armor",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 25,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 300,
+    "cubeExp": 120
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 449172,
+  "slug": "449172-dimensional-bolt",
+  "type": "GEAR",
+  "name": {
+    "zh": "次元弩箭",
+    "en": "Dimensional Bolt"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bolt/BOLT_440017.png",
+  "image": "/game/game/gear/bolt/BOLT_440017.png",
+  "grade": "COSMIC",
+  "gear": "BOLT",
+  "level": 80,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 449172,
+      "BaseStat1_Value": 2749,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AreaOfEffect",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 500,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 1000,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 1000,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 796559680,
+    "cubeExp": 377056056
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 634031,
+  "slug": "634031-silver-bracer",
+  "type": "GEAR",
+  "name": {
+    "zh": "银制臂甲",
+    "en": "Silver Bracer"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bracer/BRACER_630003.png",
+  "image": "/game/game/gear/bracer/BRACER_630003.png",
+  "grade": "IMMORTAL",
+  "gear": "BRACER",
+  "level": 10,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 634031,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "Armor",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 94,
+      "InherentStat2_STATTYPE": "DamageReduction",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 44,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 60750,
+    "cubeExp": 19440
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": 118002,
+  "slug": "abyssal-pearl",
+  "type": "MATERIAL",
+  "name": {
+    "zh": "深渊珍珠",
+    "en": "Abyssal Pearl"
+  },
+  "description": {
+    "zh": "顶级装饰材料。用于装饰物品,根据装备类型授予巨大的属性提升。",
+    "en": "Premium decoration material. Used to decorate an item, granting an enormous stat boost preset by equipment type."
+  },
+  "icon": "/game/game/items/materials/Item_118002.png",
+  "image": "/game/game/items/materials/Item_118002.png",
+  "grade": "DIVINE",
+  "gear": null,
+  "level": null,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": {
+      "zh-Hans": "顶级装饰材料。用于装饰物品,根据装备类型授予巨大的属性提升。",
+      "zh-Hant": "頂級裝飾材料。用於裝飾物品,根據裝備類型授予巨大的屬性提升。",
+      "en-US": "Premium decoration material. Used to decorate an item, granting an enormous stat boost preset by equipment type.",
+      "fr-FR": "Matériau de décoration premium. Utilisé pour décorer un objet, accorde un bonus de statistique énorme défini selon le type d'équipement.",
+      "de-DE": "Erstklassiges Dekorationsmaterial. Wird zum Dekorieren genutzt und verleiht je nach Ausrüstungstyp einen gewaltigen Statuswert.",
+      "id-ID": "Material dekorasi premium. Digunakan untuk menghias item, memberi peningkatan stat besar yang ditentukan oleh jenis peralatan.",
+      "ja-JP": "最高級の装飾材料。アイテムに装飾し、装備種類に応じた絶大な能力向上効果を付与する。",
+      "ko-KR": "최고급 장식 재료. 아이템에 장식해 장비 종류에 따라 정해진 막대한 능력 향상 효과를 부여한다.",
+      "pl-PL": "Najwyższej klasy materiał dekoracyjny. Używany do dekorowania przedmiotu, daje ogromny bonus statystyki ustalony przez typ ekwipunku.",
+      "pt-BR": "Material de decoração premium. Usado para decorar um item, concede um aumento enorme de atributo definido pelo tipo de equipamento.",
+      "ru-RU": "Премиум материал украшения. Украшает предмет, давая огромный прирост характеристики, определённый типом снаряжения.",
+      "es-ES": "Material de decoración premium. Se usa para decorar un objeto y otorga un aumento enorme de estadística según el tipo de equipo.",
+      "th-TH": "วัสดุตกแต่งระดับสูงสุด ใช้ตกแต่งไอเทมเพื่อมอบสเตตัสบูสต์มหาศาลที่กำหนดตามประเภทอุปกรณ์",
+      "tr-TR": "Üst düzey dekorasyon malzemesi. Bir eşyayı dekore ederek ekipman türüne göre belirlenmiş muazzam bir stat artışı verir.",
+      "uk-UA": "Преміум матеріал прикраси. Прикрашає предмет, даючи величезне підвищення характеристики, визначене типом спорядження.",
+      "vi-VN": "Nguyên liệu trang trí thượng hạng. Dùng để trang trí trang bị, cấp chỉ số khổng lồ theo loại trang bị."
+    },
+    "stats": null,
+    "synthType": "Material",
+    "dropKey": null,
+    "uniqueMod": null,
+    "matEffects": {
+      "type": "DECORATION",
+      "groups": {
+        "WEAPON": [
+          {
+            "stat": "AddHpPerHit",
+            "mod": "FLAT",
+            "min": 10,
+            "max": 12,
+            "tier": 10,
+            "chance": 100
+          }
+        ],
+        "ARMOR": [
+          {
+            "stat": "HpRegenPerSec",
+            "mod": "FLAT",
+            "min": 1000,
+            "max": 1500,
+            "tier": 9,
+            "chance": 100
+          }
+        ],
+        "ACCESSORY": [
+          {
+            "stat": "HpLeech",
+            "mod": "FLAT",
+            "min": 50,
+            "max": 60,
+            "tier": 9,
+            "chance": 100
+          }
+        ]
+      }
+    }
+  }
+}

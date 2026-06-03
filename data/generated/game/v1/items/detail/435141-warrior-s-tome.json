@@ -1,0 +1,47 @@
+{
+  "id": 435141,
+  "slug": "435141-warrior-s-tome",
+  "type": "GEAR",
+  "name": {
+    "zh": "战士魔法书",
+    "en": "Warrior's Tome"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/tome/TOME_430014.png",
+  "image": "/game/game/gear/tome/TOME_430014.png",
+  "grade": "ARCANA",
+  "gear": "TOME",
+  "level": 65,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 435141,
+      "BaseStat1_Value": 285,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "DamageAbsorption",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 223,
+      "InherentStat2_STATTYPE": "HpRegenPerSec",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 829,
+      "InherentStat3_STATTYPE": "CooldownReduction",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 70,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 4696704,
+    "cubeExp": 2113440
+  }
+}

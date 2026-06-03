@@ -1,0 +1,83 @@
+---
+gameVersion: "game-v1"
+tldr: "Read chests by source, level range, and drop table — all three matter|No real drop rate = no profit calculation — use source context only|Tradable drops need BOTH rate and price to calculate value|Farm chests you can obtain consistently — reliability beats theoretical value"
+mistakes: "Estimating profit from incomplete or missing drop rates|Reading only the chest name without checking source and level|Ignoring clear time when comparing chest farming routes|Assuming 'possible drops' equals 'expected income'|Mixing chest drop value into pure gold/XP farming calculations"
+faq: "What if drop rates are missing for a chest=>Use only what you know: source stage, level range, and item list. Do not invent rates or estimate profit.|Can chest market value be calculated=>Only when both real drop rates AND real market prices exist. Missing either = no calculation.|Which chest should I farm=>Farm the chest you can obtain most reliably from a stage you clear consistently. Consistency beats theoretical best drops.|How do I read a chest page=>Source stage → level band → item list → drop rates (if available) → market link (if tradable). Missing layers = conservative conclusions only.|What's the difference between chest types=>Normal Monster Box (small pool), Stage Boss Box (medium pool), Act Boss Box (large pool, rare items). Each has different farming strategies.|Can I farm multiple chest types at once=>Yes, if the same stage drops multiple chest types. Check the stage detail page for its complete chest list."
+relatedItems: "normal-monster-box-1|stage-boss-box-1|act-boss-box-1"
+relatedTools: "profit-calculator|farming-compare"
+---
+
+## Three Dimensions of Every Chest
+
+Chests are not loot boxes with random contents. Each chest has a defined structure that, when understood, tells you exactly what to expect and what remains unknown.
+
+Read every chest by these three dimensions:
+1. **Source** — What stage, monster, or activity drops this chest? Can you obtain it reliably?
+2. **Level range** — What gear level band does this chest cover? Does it match your current progression?
+3. **Drop table** — What items are possible, and (when data exists) at what rates?
+
+If any of these three layers is missing or unclear, your conclusions about the chest must be conservative.
+
+## The Drop Rate Boundary
+
+This is the most important concept on this page. Without real chest → item → dropRate mapping data, we cannot calculate:
+- Expected items per hour
+- Market value per clear
+- Profit per minute
+
+This site's policy: **when rates are missing, show data status — do not show invented numbers.** You'll see "掉率数据不足" (Drop data unavailable) rather than a random percentage. This protects you from making decisions based on fiction.
+
+### When Drop Rates Exist
+- Compare rates across chests for target items
+- Multiply by clear time for items-per-hour estimates
+- Combine with market prices (when available) for profit estimates
+
+### When Drop Rates Don't Exist
+- Use only source and level context
+- Farm for known drops, not theoretical ones
+- Don't build a market strategy around unrated chests
+
+## Market Link: The Two-Key Lock
+
+Converting chest drops into market income requires two keys:
+1. **Drop rate** — how often the item drops
+2. **Market price** — what the item sells for
+
+Without BOTH, the chest-to-market pipeline cannot produce reliable estimates. A price without a rate cannot be converted to hourly value. A rate without a price cannot be converted to dollar value.
+
+### The Profit Calculator's Honesty
+The profit calculator on this site will refuse to output a market profit number when either key is missing. This is by design. A tool that invents data is worse than no tool at all.
+
+## Practical Chest Farming Strategy
+
+### Step 1: Find Your Stage
+Use the stage page (`/stages`) to find a stage you can clear consistently. Check:
+- Gold per clear
+- XP per clear
+- Kill count
+- Clear time estimate
+
+### Step 2: Check the Chests
+Which chests drop on your chosen stage? Open each chest page and check:
+- Item list — any items you specifically want?
+- Level range — does it match your current gear needs?
+- Drop rates — are they available?
+
+### Step 3: Set a Target
+Before farming, know what you're farming FOR:
+- **Gold farming** → Optimize gold per minute, chests are bonus
+- **XP farming** → Optimize XP per minute, chests are bonus
+- **Item hunting** → Farm the chest with the best chance of your target item
+- **Market farming** → Only when rates AND prices exist
+
+### Step 4: Measure and Adjust
+After 10-20 runs, check your actual results against expectations. If you're getting fewer drops than expected, try a different stage or chest type.
+
+## Chest Types Reference
+
+| Chest Type | Typical Source | Pool Size | Best Use |
+|---|---|---|---|
+| Normal Monster Box | Regular monsters | Small (3-8 items) | Targeted material/gear farming |
+| Stage Boss Box | Stage boss kills | Medium (8-20 items) | Balanced drops, higher rarity |
+| Act Boss Box | Act completion | Large (15-40 items) | Rare/high-value items |
+| Special/Event Box | Events, achievements | Varies | Unique or event-limited items |

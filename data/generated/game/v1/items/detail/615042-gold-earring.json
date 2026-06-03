@@ -1,0 +1,47 @@
+{
+  "id": 615042,
+  "slug": "615042-gold-earring",
+  "type": "GEAR",
+  "name": {
+    "zh": "黄金耳环",
+    "en": "Gold Earring"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/earing/EARING_610004.png",
+  "image": "/game/game/gear/earing/EARING_610004.png",
+  "grade": "ARCANA",
+  "gear": "EARING",
+  "level": 15,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 615042,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "HpLeech",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 6,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 168,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 17,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 684288,
+    "cubeExp": 186480
+  }
+}

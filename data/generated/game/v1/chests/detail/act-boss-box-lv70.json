@@ -1,0 +1,24 @@
+{
+  "id": 930701,
+  "slug": "act-boss-box-lv70",
+  "type": "STAGEBOX",
+  "name": {
+    "zh": "Act Boss Box Lv70",
+    "en": "Act Boss Box Lv70"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/items/boxes/Item_930011.png",
+  "image": "/game/game/items/boxes/Item_930011.png",
+  "grade": "LEGENDARY",
+  "gear": null,
+  "level": null,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined"
+}

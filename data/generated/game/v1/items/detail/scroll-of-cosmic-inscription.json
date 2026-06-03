@@ -1,0 +1,202 @@
+{
+  "id": 139001,
+  "slug": "scroll-of-cosmic-inscription",
+  "type": "MATERIAL",
+  "name": {
+    "zh": "宇宙铭文卷轴",
+    "en": "Scroll of Cosmic Inscription"
+  },
+  "description": {
+    "zh": "蕴含特殊力量的卷轴。铭刻于物品上,随机授予多种属性提升中的一种。",
+    "en": "A scroll containing special powers. Inscribed onto an item to randomly grant one of several stat boosts."
+  },
+  "icon": "/game/game/items/materials/Item_139001.png",
+  "image": "/game/game/items/materials/Item_139001.png",
+  "grade": "COSMIC",
+  "gear": null,
+  "level": null,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": {
+      "zh-Hans": "蕴含特殊力量的卷轴。铭刻于物品上,随机授予多种属性提升中的一种。",
+      "zh-Hant": "蘊含特殊力量的卷軸。銘刻於物品上,隨機授予多種屬性提升中的一種。",
+      "en-US": "A scroll containing special powers. Inscribed onto an item to randomly grant one of several stat boosts.",
+      "fr-FR": "Un parchemin contenant des pouvoirs spéciaux. Inscrit sur un objet pour accorder aléatoirement un parmi plusieurs bonus de statistique.",
+      "de-DE": "Eine Schriftrolle mit besonderen Kräften. Wird auf einen Gegenstand graviert und verleiht zufällig einen von mehreren Statuswerten.",
+      "id-ID": "Gulungan berisi kekuatan khusus. Diinskripsi pada item untuk secara acak memberi salah satu dari beberapa peningkatan stat.",
+      "ja-JP": "特別な能力を秘めた巻物。アイテムに碑文を刻み、複数の能力向上効果のうち1つをランダムに付与する。",
+      "ko-KR": "특별한 능력을 담고 있는 두루마리. 아이템에 각인해 여러 능력 향상 효과 중 한 가지를 무작위로 부여한다.",
+      "pl-PL": "Zwój zawierający specjalne moce. Wpisywany na przedmiot, losowo daje jeden z kilku bonusów statystyki.",
+      "pt-BR": "Um pergaminho contendo poderes especiais. Inscrito em um item para conceder aleatoriamente um de vários aumentos de atributo.",
+      "ru-RU": "Свиток с особыми силами. Наносится на предмет и случайно даёт один из нескольких приростов характеристик.",
+      "es-ES": "Un pergamino que contiene poderes especiales. Se inscribe en un objeto para otorgar aleatoriamente uno de varios aumentos de estadística.",
+      "th-TH": "ม้วนคัมภีร์ที่บรรจุพลังพิเศษ จารึกลงบนไอเทมเพื่อมอบสเตตัสบูสต์หนึ่งในหลายแบบแบบสุ่ม",
+      "tr-TR": "Özel güçler içeren bir parşömen. Bir eşyaya yazılarak birkaç stat artışından birini rastgele verir.",
+      "uk-UA": "Сувій з особливими силами. Наноситься на предмет, випадково даючи одне з кількох підвищень характеристик.",
+      "vi-VN": "Cuộn giấy chứa sức mạnh đặc biệt. Khắc ấn lên trang bị, ngẫu nhiên cấp một trong nhiều chỉ số."
+    },
+    "stats": null,
+    "synthType": "Material",
+    "dropKey": null,
+    "uniqueMod": null,
+    "matEffects": {
+      "type": "INSCRIPTION",
+      "groups": {
+        "COMMON": [
+          {
+            "stat": "AttackDamage",
+            "mod": "FLAT",
+            "min": 150,
+            "max": 300,
+            "tier": 10,
+            "chance": 5.6
+          },
+          {
+            "stat": "AttackDamage",
+            "mod": "ADDITIVE",
+            "min": 1000,
+            "max": 1500,
+            "tier": 10,
+            "chance": 5.6
+          },
+          {
+            "stat": "MaxHp",
+            "mod": "FLAT",
+            "min": 270,
+            "max": 300,
+            "tier": 10,
+            "chance": 5.6
+          },
+          {
+            "stat": "MaxHp",
+            "mod": "ADDITIVE",
+            "min": 400,
+            "max": 500,
+            "tier": 10,
+            "chance": 5.6
+          },
+          {
+            "stat": "DodgeChance",
+            "mod": "FLAT",
+            "min": 200,
+            "max": 300,
+            "tier": 10,
+            "chance": 5.6
+          },
+          {
+            "stat": "BlockChance",
+            "mod": "FLAT",
+            "min": 200,
+            "max": 300,
+            "tier": 10,
+            "chance": 5.6
+          },
+          {
+            "stat": "AttackSpeed",
+            "mod": "ADDITIVE",
+            "min": 200,
+            "max": 250,
+            "tier": 10,
+            "chance": 5.6
+          },
+          {
+            "stat": "CastSpeed",
+            "mod": "ADDITIVE",
+            "min": 400,
+            "max": 500,
+            "tier": 10,
+            "chance": 5.6
+          },
+          {
+            "stat": "AreaOfEffect",
+            "mod": "ADDITIVE",
+            "min": 280,
+            "max": 350,
+            "tier": 10,
+            "chance": 5.6
+          },
+          {
+            "stat": "CooldownReduction",
+            "mod": "FLAT",
+            "min": 145,
+            "max": 160,
+            "tier": 10,
+            "chance": 5.6
+          },
+          {
+            "stat": "SkillDurationIncrease",
+            "mod": "ADDITIVE",
+            "min": 453,
+            "max": 500,
+            "tier": 10,
+            "chance": 5.6
+          },
+          {
+            "stat": "MovementSpeed",
+            "mod": "FLAT",
+            "min": 76,
+            "max": 83,
+            "tier": 10,
+            "chance": 5.6
+          },
+          {
+            "stat": "MovementSpeed",
+            "mod": "ADDITIVE",
+            "min": 550,
+            "max": 600,
+            "tier": 10,
+            "chance": 5.6
+          },
+          {
+            "stat": "CriticalChance",
+            "mod": "ADDITIVE",
+            "min": 550,
+            "max": 600,
+            "tier": 10,
+            "chance": 5.6
+          },
+          {
+            "stat": "CriticalDamage",
+            "mod": "FLAT",
+            "min": 1000,
+            "max": 1500,
+            "tier": 10,
+            "chance": 5.6
+          },
+          {
+            "stat": "AllElementalResistance",
+            "mod": "FLAT",
+            "min": 25,
+            "max": 30,
+            "tier": 10,
+            "chance": 5.6
+          },
+          {
+            "stat": "ChaosResistance",
+            "mod": "FLAT",
+            "min": 50,
+            "max": 55,
+            "tier": 10,
+            "chance": 5.6
+          },
+          {
+            "stat": "HpLeech",
+            "mod": "FLAT",
+            "min": 50,
+            "max": 65,
+            "tier": [
+              9,
+              10
+            ],
+            "chance": 5.6
+          }
+        ]
+      }
+    }
+  }
+}

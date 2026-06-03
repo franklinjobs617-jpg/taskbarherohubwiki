@@ -1,0 +1,12 @@
+{
+  "slug": "diamond",
+  "id": 114001,
+  "marketHash": "Diamond",
+  "lowest": 0.57,
+  "median": null,
+  "listings": 2703,
+  "trend7d": null,
+  "confidence": "low",
+  "updatedAt": "2026-06-03T12:41:31.757Z",
+  "source": "steamcommunity_market_search"
+}

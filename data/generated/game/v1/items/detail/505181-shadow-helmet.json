@@ -1,0 +1,47 @@
+{
+  "id": 505181,
+  "slug": "505181-shadow-helmet",
+  "type": "GEAR",
+  "name": {
+    "zh": "暗影头盔",
+    "en": "Shadow Helmet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/helmet/HELMET_500018.png",
+  "image": "/game/game/gear/helmet/HELMET_500018.png",
+  "grade": "ARCANA",
+  "gear": "HELMET",
+  "level": 85,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 505181,
+      "BaseStat1_Value": 2760,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 181,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 1359,
+      "InherentStat3_STATTYPE": "Armor",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 1742,
+      "UniqueModKey": 50003
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "CrossbowTurretCooldown",
+    "sellGold": 2442701,
+    "cubeExp": 1183526
+  }
+}

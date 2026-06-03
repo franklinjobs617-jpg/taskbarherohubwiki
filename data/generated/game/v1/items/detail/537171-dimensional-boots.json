@@ -1,0 +1,47 @@
+{
+  "id": 537171,
+  "slug": "537171-dimensional-boots",
+  "type": "GEAR",
+  "name": {
+    "zh": "次元靴",
+    "en": "Dimensional Boots"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/boots/BOOTS_530017.png",
+  "image": "/game/game/gear/boots/BOOTS_530017.png",
+  "grade": "CELESTIAL",
+  "gear": "BOOTS",
+  "level": 80,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 537171,
+      "BaseStat1_Value": 2328,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MovementSpeed",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 209,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 1485,
+      "InherentStat3_STATTYPE": "HpRegenPerSec",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 1633,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 22758736,
+    "cubeExp": 10772689
+  }
+}

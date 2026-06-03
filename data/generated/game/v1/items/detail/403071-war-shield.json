@@ -1,0 +1,47 @@
+{
+  "id": 403071,
+  "slug": "403071-war-shield",
+  "type": "GEAR",
+  "name": {
+    "zh": "战争盾",
+    "en": "War Shield"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/shield/SHIELD_400007.png",
+  "image": "/game/game/gear/shield/SHIELD_400007.png",
+  "grade": "LEGENDARY",
+  "gear": "SHIELD",
+  "level": 30,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 403071,
+      "BaseStat1_Value": 114,
+      "BaseStat2_Value": 0,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 30,
+      "InherentStat2_STATTYPE": "MaxHp",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 99,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 209520,
+    "cubeExp": 66096
+  }
+}

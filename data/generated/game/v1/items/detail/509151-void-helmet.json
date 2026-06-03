@@ -1,0 +1,47 @@
+{
+  "id": 509151,
+  "slug": "509151-void-helmet",
+  "type": "GEAR",
+  "name": {
+    "zh": "虚空头盔",
+    "en": "Void Helmet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/helmet/HELMET_500015.png",
+  "image": "/game/game/gear/helmet/HELMET_500015.png",
+  "grade": "COSMIC",
+  "gear": "HELMET",
+  "level": 70,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 509151,
+      "BaseStat1_Value": 4257,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 291,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 2867,
+      "InherentStat3_STATTYPE": "SkillRangeExpansion",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 2424,
+      "UniqueModKey": 10001
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "ShieldChargeKillCooldown",
+    "sellGold": 279364859,
+    "cubeExp": 127618973
+  }
+}

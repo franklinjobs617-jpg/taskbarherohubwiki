@@ -1,0 +1,47 @@
+{
+  "id": 406152,
+  "slug": "406152-void-shield",
+  "type": "GEAR",
+  "name": {
+    "zh": "虚空之盾",
+    "en": "Void Shield"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/shield/SHIELD_400015.png",
+  "image": "/game/game/gear/shield/SHIELD_400015.png",
+  "grade": "BEYOND",
+  "gear": "SHIELD",
+  "level": 70,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 406152,
+      "BaseStat1_Value": 296,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "Armor",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 4122,
+      "InherentStat2_STATTYPE": "BlockChance",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 184,
+      "InherentStat3_STATTYPE": "CooldownReduction",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 90,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 16289416,
+    "cubeExp": 7441104
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 459122,
+  "slug": "459122-swift-hatchet",
+  "type": "GEAR",
+  "name": {
+    "zh": "迅捷手斧",
+    "en": "Swift Hatchet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/hatchet/HATCHET_450012.png",
+  "image": "/game/game/gear/hatchet/HATCHET_450012.png",
+  "grade": "COSMIC",
+  "gear": "HATCHET",
+  "level": 55,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 459122,
+      "BaseStat1_Value": 1416,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 145,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 720,
+      "InherentStat3_STATTYPE": "AreaOfEffect",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 373,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 531276858,
+    "cubeExp": 232034496
+  }
+}

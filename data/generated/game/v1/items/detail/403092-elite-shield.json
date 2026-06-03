@@ -1,0 +1,47 @@
+{
+  "id": 403092,
+  "slug": "403092-elite-shield",
+  "type": "GEAR",
+  "name": {
+    "zh": "精英盾",
+    "en": "Elite Shield"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/shield/SHIELD_400009.png",
+  "image": "/game/game/gear/shield/SHIELD_400009.png",
+  "grade": "LEGENDARY",
+  "gear": "SHIELD",
+  "level": 40,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 403092,
+      "BaseStat1_Value": 129,
+      "BaseStat2_Value": 0,
+      "InherentStat1_STATTYPE": "Armor",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 581,
+      "InherentStat2_STATTYPE": "MaxHp",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 141,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 280260,
+    "cubeExp": 110160
+  }
+}

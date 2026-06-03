@@ -1,0 +1,47 @@
+{
+  "id": 431022,
+  "slug": "431022-empire-tome",
+  "type": "GEAR",
+  "name": {
+    "zh": "帝国魔法书",
+    "en": "Empire Tome"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/tome/TOME_430002.png",
+  "image": "/game/game/gear/tome/TOME_430002.png",
+  "grade": "UNCOMMON",
+  "gear": "TOME",
+  "level": 5,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 431022,
+      "BaseStat1_Value": 85,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AreaOfEffect",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 102,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 300,
+    "cubeExp": 120
+  }
+}

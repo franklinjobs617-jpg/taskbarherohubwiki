@@ -1,0 +1,47 @@
+{
+  "id": 345062,
+  "slug": "345062-reinforced-crossbow",
+  "type": "GEAR",
+  "name": {
+    "zh": "强化弩",
+    "en": "Reinforced Crossbow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/crossbow/CROSSBOW_340006.png",
+  "image": "/game/game/gear/crossbow/CROSSBOW_340006.png",
+  "grade": "ARCANA",
+  "gear": "CROSSBOW",
+  "level": 25,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 345062,
+      "BaseStat1_Value": 142,
+      "BaseStat2_Value": 24,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 57,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 420,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 380,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 855360,
+    "cubeExp": 211344
+  }
+}

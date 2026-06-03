@@ -1,0 +1,47 @@
+{
+  "id": 328132,
+  "slug": "328132-ancient-staff",
+  "type": "GEAR",
+  "name": {
+    "zh": "远古法杖",
+    "en": "Ancient Staff"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/staff/STAFF_320013.png",
+  "image": "/game/game/gear/staff/STAFF_320013.png",
+  "grade": "DIVINE",
+  "gear": "STAFF",
+  "level": 60,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 328132,
+      "BaseStat1_Value": 1460,
+      "BaseStat2_Value": 36,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 92,
+      "InherentStat2_STATTYPE": "CastSpeed",
+      "InherentStat2_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat2_Value": 333,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 1024,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 84024854,
+    "cubeExp": 37290996
+  }
+}

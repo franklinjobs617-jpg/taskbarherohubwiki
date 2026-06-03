@@ -1,0 +1,47 @@
+{
+  "id": 531032,
+  "slug": "531032-iron-boots",
+  "type": "GEAR",
+  "name": {
+    "zh": "铁制靴子",
+    "en": "Iron Boots"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/boots/BOOTS_530003.png",
+  "image": "/game/game/gear/boots/BOOTS_530003.png",
+  "grade": "UNCOMMON",
+  "gear": "BOOTS",
+  "level": 10,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 531032,
+      "BaseStat1_Value": 12,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "Armor",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 5,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 525,
+    "cubeExp": 168
+  }
+}

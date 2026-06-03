@@ -1,0 +1,47 @@
+{
+  "id": 633061,
+  "slug": "633061-crystal-bracer",
+  "type": "GEAR",
+  "name": {
+    "zh": "水晶护腕",
+    "en": "Crystal Bracer"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bracer/BRACER_630006.png",
+  "image": "/game/game/gear/bracer/BRACER_630006.png",
+  "grade": "LEGENDARY",
+  "gear": "BRACER",
+  "level": 25,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 633061,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "SkillHealIncrease",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 44,
+      "InherentStat2_STATTYPE": "DamageReduction",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 47,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 267300,
+    "cubeExp": 66096
+  }
+}

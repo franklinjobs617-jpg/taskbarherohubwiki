@@ -1,0 +1,47 @@
+{
+  "id": 300018,
+  "slug": "300018-shadow-blade",
+  "type": "GEAR",
+  "name": {
+    "zh": "暗影剑",
+    "en": "Shadow Blade"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/sword/SWORD_300018.png",
+  "image": "/game/game/gear/sword/SWORD_300018.png",
+  "grade": "COMMON",
+  "gear": "SWORD",
+  "level": 85,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 300018,
+      "BaseStat1_Value": 270,
+      "BaseStat2_Value": 30,
+      "InherentStat1_STATTYPE": "NONE",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 0,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 11780,
+    "cubeExp": 5712
+  }
+}

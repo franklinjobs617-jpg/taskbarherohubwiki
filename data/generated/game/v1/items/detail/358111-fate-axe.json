@@ -1,0 +1,47 @@
+{
+  "id": 358111,
+  "slug": "358111-fate-axe",
+  "type": "GEAR",
+  "name": {
+    "zh": "命运之斧",
+    "en": "Fate Axe"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/axe/AXE_350011.png",
+  "image": "/game/game/gear/axe/AXE_350011.png",
+  "grade": "DIVINE",
+  "gear": "AXE",
+  "level": 50,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 358111,
+      "BaseStat1_Value": 1124,
+      "BaseStat2_Value": 36,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 223,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 1155,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 937,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 67870136,
+    "cubeExp": 29004108
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 306171,
+  "slug": "306171-dimensional-sword",
+  "type": "GEAR",
+  "name": {
+    "zh": "次元之剑",
+    "en": "Dimensional Sword"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/sword/SWORD_300017.png",
+  "image": "/game/game/gear/sword/SWORD_300017.png",
+  "grade": "BEYOND",
+  "gear": "SWORD",
+  "level": 80,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 306171,
+      "BaseStat1_Value": 1143,
+      "BaseStat2_Value": 43,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 1384,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 1089,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 276,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 9289280,
+    "cubeExp": 4397016
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 637132,
+  "slug": "637132-stardust-bracer",
+  "type": "GEAR",
+  "name": {
+    "zh": "星尘臂甲",
+    "en": "Stardust Bracer"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bracer/BRACER_630013.png",
+  "image": "/game/game/gear/bracer/BRACER_630013.png",
+  "grade": "CELESTIAL",
+  "gear": "BRACER",
+  "level": 60,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 637132,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "DodgeChance",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 89,
+      "InherentStat2_STATTYPE": "HpRegenPerSec",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 1041,
+      "InherentStat3_STATTYPE": "SkillHealIncrease",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 164,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 72020949,
+    "cubeExp": 31962924
+  }
+}

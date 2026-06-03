@@ -1,0 +1,47 @@
+{
+  "id": 505161,
+  "slug": "505161-crystal-helmet",
+  "type": "GEAR",
+  "name": {
+    "zh": "水晶头盔",
+    "en": "Crystal Helmet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/helmet/HELMET_500016.png",
+  "image": "/game/game/gear/helmet/HELMET_500016.png",
+  "grade": "ARCANA",
+  "gear": "HELMET",
+  "level": 75,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 505161,
+      "BaseStat1_Value": 1762,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 156,
+      "InherentStat2_STATTYPE": "SkillDurationIncrease",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 1478,
+      "InherentStat3_STATTYPE": "Armor",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 1478,
+      "UniqueModKey": 50002
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "ChargeTrapExplosiveCooldown",
+    "sellGold": 2185574,
+    "cubeExp": 1014451
+  }
+}

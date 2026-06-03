@@ -1,0 +1,47 @@
+{
+  "id": 448102,
+  "slug": "448102-hero-bolt",
+  "type": "GEAR",
+  "name": {
+    "zh": "英雄弩箭",
+    "en": "Hero Bolt"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bolt/BOLT_440010.png",
+  "image": "/game/game/gear/bolt/BOLT_440010.png",
+  "grade": "DIVINE",
+  "gear": "BOLT",
+  "level": 45,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 448102,
+      "BaseStat1_Value": 1734,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 86,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 531,
+      "InherentStat3_STATTYPE": "AreaOfEffect",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 287,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 120296768,
+    "cubeExp": 49721328
+  }
+}

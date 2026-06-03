@@ -1,0 +1,47 @@
+{
+  "id": 505141,
+  "slug": "505141-fighter-s-helmet",
+  "type": "GEAR",
+  "name": {
+    "zh": "战士头盔",
+    "en": "Fighter's Helmet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/helmet/HELMET_500014.png",
+  "image": "/game/game/gear/helmet/HELMET_500014.png",
+  "grade": "ARCANA",
+  "gear": "HELMET",
+  "level": 65,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 505141,
+      "BaseStat1_Value": 1069,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 127,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 767,
+      "InherentStat3_STATTYPE": "Armor",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 1181,
+      "UniqueModKey": 30001
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "FlameHydraBerserk",
+    "sellGold": 1878682,
+    "cubeExp": 845376
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 518112,
+  "slug": "518112-mystic-armor",
+  "type": "GEAR",
+  "name": {
+    "zh": "神秘盔甲",
+    "en": "Mystic Armor"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/armor/ARMOR_510011.png",
+  "image": "/game/game/gear/armor/ARMOR_510011.png",
+  "grade": "DIVINE",
+  "gear": "ARMOR",
+  "level": 50,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 518112,
+      "BaseStat1_Value": 2469,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 275,
+      "InherentStat2_STATTYPE": "AllElementalResistance",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 12,
+      "InherentStat3_STATTYPE": "MaxHp",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 298,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 67870136,
+    "cubeExp": 29004108
+  }
+}

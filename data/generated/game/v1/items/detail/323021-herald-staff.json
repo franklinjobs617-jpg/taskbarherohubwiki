@@ -1,0 +1,47 @@
+{
+  "id": 323021,
+  "slug": "323021-herald-staff",
+  "type": "GEAR",
+  "name": {
+    "zh": "传令使法杖",
+    "en": "Herald Staff"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/staff/STAFF_320002.png",
+  "image": "/game/game/gear/staff/STAFF_320002.png",
+  "grade": "LEGENDARY",
+  "gear": "STAFF",
+  "level": 5,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 323021,
+      "BaseStat1_Value": 12,
+      "BaseStat2_Value": 10,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 51,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 3,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 1350,
+    "cubeExp": 540
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 506191,
+  "slug": "506191-eternal-helmet",
+  "type": "GEAR",
+  "name": {
+    "zh": "永恒头盔",
+    "en": "Eternal Helmet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/helmet/HELMET_500019.png",
+  "image": "/game/game/gear/helmet/HELMET_500019.png",
+  "grade": "BEYOND",
+  "gear": "HELMET",
+  "level": 90,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 506191,
+      "BaseStat1_Value": 4701,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 235,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 2062,
+      "InherentStat3_STATTYPE": "Armor",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 2318,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 8141390,
+    "cubeExp": 4058784
+  }
+}

@@ -1,0 +1,225 @@
+# TaskBar Hero Wiki - Full LLM Reference (llms-full.txt)
+> Complete guide content and key entity descriptions for AI model extraction.
+> Site: https://taskbarhero.nanobananas.me
+
+---
+
+## Getting Started Guide
+
+### Opening Goal
+The first goal is not finding the most expensive item. Build a stable loop around stage unlocks, gear slots, basic materials, and hero growth. Every run should answer three questions: can you clear the stage reliably, did the drop improve level or slot coverage, and does the material have a clear decoration, engraving, or inscription use?
+
+### Gear Handling
+Judge gear by level and slot before rarity. If a new item is much higher level in the same slot, test it first. If it is only rarer but much lower level, do not swap blindly. Weapons improve clear speed, armor and shields improve stability, and accessories become more important once clears are already reliable.
+
+### Material Handling
+Do not sell every material early. Gems, ores, leather, soulstones, and scrolls can matter later for crafting or stat control. Use this order: tradability, clear effect, and current class relevance. If real market data is missing, mark the item as watchlisted instead of treating a listing as income.
+
+### Progression Route
+Farm the highest normal stage you can clear consistently, then compare gold and XP efficiency. If a higher stage takes much longer, a lower stage can be better. When using tools, enter clear time first. If drop rates or market data are missing, do not use market profit as a decision input.
+
+### TL;DR
+- Unlock core systems before chasing prices
+- Judge gear by level and slot first
+- Keep tradable or effect-bearing materials
+- Use only real market data
+
+### Common Mistakes
+- Chasing rarity too early
+- Treating tradable as automatically valuable
+- Talking about market profit without clear time
+
+---
+
+## Class Guide
+
+### Decision Order
+Choose a class by the gear path you can support, not by the class name. Check whether your main weapon can keep upgrading, whether offhand or armor covers survival, and whether material effects support the class's main stats.
+
+### Beginner Picks
+Knight has more room for mistakes and helps you learn stages, gear, and materials. Ranger is better when you want faster clears and already have weapon support. Sorcerer, Priest, Hunter, and Slayer need clearer stat stacking, so do not force a switch because of one rare item.
+
+### Avoid Single-Item Decisions
+A high-rarity weapon is not a full route. Without matching materials, level range, and defense, it can perform worse. Class choice should combine weapon growth, core stats, clear time, death risk, and material cost.
+
+### Reading Builds
+Build pages are recommendations or community references, not absolute strongest claims. Use them as checklists: core stat, gear direction, material effect, and stage fit.
+
+### TL;DR
+- Pick by weapon path first
+- Knight is stable, Ranger is faster, Sorcerer needs stats
+- Do not switch class because of one item
+- Builds are references, not absolute answers
+
+---
+
+## Cube and Materials Guide
+
+### Why Materials Matter
+Materials are not bag clutter. They connect gear stats, Cube crafting, market trading, and late-game tuning. Judge them by effect type first, rarity second, and market state last.
+
+### Three Layers
+The first layer is effect type: Decoration, Engraving, and Inscription do different jobs. The second layer is gear part: weapons, armor, and accessories point toward different outcomes. The third layer is phase: early game values stability, while later phases care more about specific affixes.
+
+### Cube Checklist
+Do not use Cube just because materials are available. Pick a target first: damage, defense, clear speed, or preparation for a later item. Crafting without a target often consumes materials you will need later.
+
+### Market Decision
+Tradable materials can be sold, but they are not automatically sell items. Without real market data, you can only decide whether to keep watching them. With real prices, also check supply and use case, not just the lowest listing.
+
+### TL;DR
+- Classify materials by effect first
+- Do not auto-sell tradable materials
+- Use Cube only with a target stat
+- Missing market data means keep/sell remains uncertain
+
+---
+
+## Steam Market Guide
+
+### Reading the Market Page
+The market page is not a promise of income. Its first job is to show whether an item is tradable, whether its Steam market name is matched, and whether real price data exists. If real data is missing, the page should not show a price number.
+
+### Three Concepts
+A listing price is what a seller asks for. A sale price is what a buyer actually paid. Supply is the number of active sell orders. Do not mix them. Listings without volume show that someone is selling, not that someone is buying.
+
+### Before Listing
+Check tradability first, then the English market name, then price and supply. Materials are usually easier to read because names are stable. Gear requires more care because level, rarity, and specific naming can affect matching.
+
+### Risk Boundary
+This site does not make guaranteed profit claims. Market data is a risk signal: no price means no estimate, and a price still needs supply and use-case context.
+
+### TL;DR
+- Listing price is not sale price
+- No real market data means no price display
+- Match marketHash before pricing
+- Low supply is not demand
+
+---
+
+## Tradable Items Guide
+
+### What Tradable Means
+Tradable only means an item can enter the Steam Market. It does not mean there is demand or that selling now is correct. Use this order: self-use value, market matching, real price data, and supply state.
+
+### Gear Decision
+Gear depends on level, slot, class fit, and replacement cost. A weapon or armor piece required by your current route should not be sold just because it can be sold. Low-level duplicates are better market candidates.
+
+### Material Decision
+Material names are more stable, so they are usually easier to match. But materials can also be needed for Cube or stat tuning. Basic materials can be handled in batches; high-tier materials without real price data should usually be kept.
+
+### Final Check
+Ask four questions before selling: will I use it soon, does it have real market data, is supply unusual, and is replacement expensive? If you cannot answer, do not count it as income.
+
+---
+
+## Chest Drop Guide
+
+### Three Dimensions
+Read a chest by source, level, and drop table. Source tells whether you can obtain it reliably. Level tells the gear band. The table tells target items. Missing any layer forces a conservative conclusion.
+
+### Drop Rate Boundary
+Without real rates, do not turn possible drops into expected profit. The site should show missing data clearly instead of using random candidate items.
+
+### Market Link
+Tradable drops can enter profit tools only when both drop rates and real market prices exist. Price without rate cannot produce hourly value; rate without price cannot produce market value.
+
+### Practical Route
+Pick a stage you can farm consistently, then check its chest. If the goal is gold or XP, use stage base data. If the goal is market value, wait until both rate and price exist.
+
+---
+
+## Gold Farming Route
+
+### Gold Efficiency
+Gold farming starts with stage gold, then divides it by clear time. A higher reward per run does not always mean higher hourly value. If clear time doubles, a lower stage can be better.
+
+### Reliability First
+Deaths, stalls, and frequent gear changes all reduce efficiency. Test a new route for several runs before trusting it.
+
+### Keep Market Separate
+Market items are not base gold. Without real prices and sales context, mixing them into gold farming creates inflated decisions. Treat in-game gold and market value separately.
+
+### Tool Use
+Use farming compare for gold and XP first. Add your real clear time to get a route that reflects your account.
+
+---
+
+## EXP Farming Route
+
+### XP Decision
+XP farming is not simply farming the highest stage. Compare XP per run, kill count, and clear time. Stable clears make the leveling curve predictable.
+
+### Stable Stages Matter
+Barely clearing a stage creates time variance and failure risk. For leveling, repeatedly clearing a slightly lower stage is often better than forcing a higher one.
+
+### Gear and Skill Fit
+The route should support your class's clear rhythm. Weapon upgrades, attack speed, area coverage, and survival stats all affect XP efficiency. Do not read stage level alone.
+
+### Separate From Market
+The goal of XP farming is leveling. Tradable materials and gear can be recorded, but they should not decide the XP route.
+
+---
+
+## Hero Profiles
+
+### Knight
+- **Role**: Stable frontliner
+- **Difficulty**: Low
+- **Best Phase**: Early progress / safe farming
+- **Priority Stats**: HP, Armor, Block, Physical damage
+- **Weapons**: Sword + Shield
+- **Decision**: Use Knight as the baseline class when judging stage pressure, gear level, and chest source quality.
+- **Risk**: Clear speed is usually not the highest, so farming decisions still need clear-time context.
+
+### Ranger
+- **Role**: Ranged clearer
+- **Difficulty**: Medium
+- **Best Phase**: Mid-game farming / material stockpiling
+- **Priority Stats**: Attack speed, Physical damage, Critical, Movement speed
+- **Weapons**: Bow + Arrow
+- **Decision**: Use Ranger as the efficiency reference when the goal is faster clears.
+- **Risk**: Lower defensive margin means output-only gear can fail when item level is behind.
+
+### Sorcerer
+- **Role**: Caster burst
+- **Difficulty**: Medium-high
+- **Best Phase**: Mid to late game / effect filtering
+- **Priority Stats**: Caster damage, Cooldown, Cast speed, Area damage
+- **Weapons**: Staff/Scepter
+- **Decision**: Good for checking whether an effect actually supports the damage loop.
+- **Risk**: Without real skill scaling and clear-time data, avoid absolute profit claims.
+
+### Priest
+- **Role**: Sustain support
+- **Difficulty**: Medium
+- **Best Phase**: Stable progress / long-session farming
+- **Priority Stats**: HP, Recovery, Cooldown, Armor
+- **Decision**: Use Priest when the user cares more about stability than peak speed.
+- **Risk**: Class stability does not replace drop-rate and real market data.
+
+### Hunter (DLC)
+- **Role**: DLC ranged burst
+- **Difficulty**: Medium-high
+- **Best Phase**: Advanced farming / DLC route
+- **Priority Stats**: Attack speed, Critical, Physical damage, Material effects
+- **Decision**: Do not present Hunter as the default beginner choice when DLC or gear base is missing.
+- **Risk**: DLC availability must be labeled clearly.
+
+### Slayer (DLC)
+- **Role**: DLC high-risk damage
+- **Difficulty**: High
+- **Best Phase**: Late game / damage route
+- **Priority Stats**: Damage, Critical, Attack speed, Minimum survival
+- **Decision**: Use Slayer as a late-game reference, not an unsupported best route.
+- **Risk**: High-risk classes need explicit evidence labels before users invest resources.
+
+---
+
+## Data Integrity Principles
+- All data sourced from obtained game JSON and normalized
+- No invented Steam prices, drop rates, or market profit numbers
+- Evidence labels: datamined > editorial > community > unverified
+- Market data confidence: high > medium > low > missing
+- When data is incomplete, pages show status notices instead of made-up values
+- 5,934 items, 6 heroes, 120 stages, 197 runes, 214 skills, 61 monsters

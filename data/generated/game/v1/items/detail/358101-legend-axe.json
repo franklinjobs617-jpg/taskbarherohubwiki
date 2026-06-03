@@ -1,0 +1,47 @@
+{
+  "id": 358101,
+  "slug": "358101-legend-axe",
+  "type": "GEAR",
+  "name": {
+    "zh": "传说之斧",
+    "en": "Legend Axe"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/axe/AXE_350010.png",
+  "image": "/game/game/gear/axe/AXE_350010.png",
+  "grade": "DIVINE",
+  "gear": "AXE",
+  "level": 45,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 358101,
+      "BaseStat1_Value": 935,
+      "BaseStat2_Value": 36,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 206,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 860,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 170,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 60148384,
+    "cubeExp": 24860664
+  }
+}

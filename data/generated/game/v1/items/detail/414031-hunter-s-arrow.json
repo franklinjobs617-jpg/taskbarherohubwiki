@@ -1,0 +1,47 @@
+{
+  "id": 414031,
+  "slug": "414031-hunter-s-arrow",
+  "type": "GEAR",
+  "name": {
+    "zh": "猎人之箭",
+    "en": "Hunter's Arrow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/arrow/ARROW_410003.png",
+  "image": "/game/game/gear/arrow/ARROW_410003.png",
+  "grade": "IMMORTAL",
+  "gear": "ARROW",
+  "level": 10,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 414031,
+      "BaseStat1_Value": 160,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 147,
+      "InherentStat2_STATTYPE": "AttackSpeed",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 58,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 40500,
+    "cubeExp": 12960
+  }
+}

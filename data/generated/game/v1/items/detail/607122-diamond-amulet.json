@@ -1,0 +1,47 @@
+{
+  "id": 607122,
+  "slug": "607122-diamond-amulet",
+  "type": "GEAR",
+  "name": {
+    "zh": "钻石护符",
+    "en": "Diamond Amulet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/amulet/AMULET_600012.png",
+  "image": "/game/game/gear/amulet/AMULET_600012.png",
+  "grade": "CELESTIAL",
+  "gear": "AMULET",
+  "level": 55,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 607122,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 53,
+      "InherentStat2_STATTYPE": "AllElementalResistance",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 18,
+      "InherentStat3_STATTYPE": "AttackSpeed",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 182,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 86738652,
+    "cubeExp": 37881984
+  }
+}

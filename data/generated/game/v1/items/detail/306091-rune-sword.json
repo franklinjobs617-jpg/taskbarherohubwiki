@@ -1,0 +1,47 @@
+{
+  "id": 306091,
+  "slug": "306091-rune-sword",
+  "type": "GEAR",
+  "name": {
+    "zh": "符文剑",
+    "en": "Rune Sword"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/sword/SWORD_300009.png",
+  "image": "/game/game/gear/sword/SWORD_300009.png",
+  "grade": "BEYOND",
+  "gear": "SWORD",
+  "level": 40,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 306091,
+      "BaseStat1_Value": 314,
+      "BaseStat2_Value": 43,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 152,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 619,
+      "InherentStat3_STATTYPE": "CooldownReduction",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 69,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 4304586,
+    "cubeExp": 1691160
+  }
+}

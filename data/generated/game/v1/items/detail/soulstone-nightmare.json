@@ -1,0 +1,48 @@
+{
+  "id": 190002,
+  "slug": "soulstone-nightmare",
+  "type": "MATERIAL",
+  "name": {
+    "zh": "灵魂石 - 噩梦",
+    "en": "Soulstone - Nightmare"
+  },
+  "description": {
+    "zh": "召唤噩梦难度首领所需的材料。",
+    "en": "Material required to summon Nightmare difficulty bosses."
+  },
+  "icon": "/game/game/items/materials/Item_190002.png",
+  "image": "/game/game/items/materials/Item_190002.png",
+  "grade": "ARCANA",
+  "gear": null,
+  "level": null,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": {
+      "zh-Hans": "召唤噩梦难度首领所需的材料。",
+      "zh-Hant": "召喚噩夢難度首領所需的材料。",
+      "en-US": "Material required to summon Nightmare difficulty bosses.",
+      "fr-FR": "Matériau requis pour invoquer les boss de difficulté Cauchemar.",
+      "de-DE": "Material, das benötigt wird, um Bosse der Alptraum-Schwierigkeit zu beschwören.",
+      "id-ID": "Material yang dibutuhkan untuk memanggil boss tingkat kesulitan Nightmare.",
+      "ja-JP": "ナイトメア難易度のボス召喚に必要な素材。",
+      "ko-KR": "악몽 난이도 보스를 소환하는 데 필요한 재료.",
+      "pl-PL": "Materiał wymagany do przywołania bossów trudności Koszmaru.",
+      "pt-BR": "Material necessário para invocar chefes de dificuldade Pesadelo.",
+      "ru-RU": "Материал, необходимый для призыва боссов кошмарной сложности.",
+      "es-ES": "Material requerido para invocar jefes de dificultad Pesadilla.",
+      "th-TH": "วัสดุที่ต้องใช้ในการเรียกบอสระดับความยากฝันร้าย",
+      "tr-TR": "Kabus zorluk patron çağırmak için gerekli malzeme.",
+      "uk-UA": "Матеріал, необхідний для виклику босів кошмарної складності.",
+      "vi-VN": "Nguyên liệu cần thiết để triệu hồi boss độ khó Ác mộng."
+    },
+    "stats": null,
+    "synthType": null,
+    "dropKey": null,
+    "uniqueMod": null
+  }
+}

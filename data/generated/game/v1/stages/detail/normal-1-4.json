@@ -1,0 +1,52 @@
+{
+  "key": 1104,
+  "act": 1,
+  "no": 4,
+  "level": 5,
+  "type": "NORMAL",
+  "difficulty": "NORMAL",
+  "name": {
+    "zh-Hans": "阴森峡谷",
+    "zh-Hant": "陰森峽谷",
+    "en-US": "Eerie Canyon",
+    "fr-FR": "Canyon Sinistre",
+    "de-DE": "Unheimliche Schlucht",
+    "id-ID": "Ngarai Mengerikan",
+    "ja-JP": "不気味な峡谷",
+    "ko-KR": "으스스한 협곡",
+    "pl-PL": "Upiorna Dolina",
+    "pt-BR": "Desfiladeiro Sinistro",
+    "ru-RU": "Жуткий каньон",
+    "es-ES": "Cañón Escalofriante",
+    "th-TH": "หุบเขาอ้าง",
+    "tr-TR": "Ürkütücü Kanyon",
+    "uk-UA": "Моторошний каньйон",
+    "vi-VN": "Hẻm núi rùng rợn"
+  },
+  "waves": 12,
+  "monsterCount": 4,
+  "kills": 36,
+  "goldPerClear": 197,
+  "expPerClear": 292,
+  "boss": {
+    "name": {
+      "zh-Hans": "兽人战士",
+      "zh-Hant": "獸人戰士",
+      "en-US": "Orc Warrior",
+      "fr-FR": "Guerrier orc",
+      "de-DE": "Orkkrieger",
+      "id-ID": "Pejuang Orc",
+      "ja-JP": "オークウォリアー",
+      "ko-KR": "오크 전사",
+      "pl-PL": "Ork wojownik",
+      "pt-BR": "Guerreiro orc",
+      "ru-RU": "Орк-воин",
+      "es-ES": "Guerrero orco",
+      "th-TH": "ออร์คนักรบ",
+      "tr-TR": "Ork Savaşçısı",
+      "uk-UA": "Орк-воїн",
+      "vi-VN": "Chiến binh Orc"
+    },
+    "portrait": "/game/monsters/ArmoredOrc/ArmoredOrc_Idle_character_3.png"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "version": "game-v1",
+  "generatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "tbh_data local JSON",
+  "locales": [
+    "zh",
+    "en"
+  ],
+  "entityCounts": {
+    "items": 5944,
+    "heroes": 6,
+    "stages": 120,
+    "runes": 197,
+    "skills": 106,
+    "chests": 59
+  }
+}

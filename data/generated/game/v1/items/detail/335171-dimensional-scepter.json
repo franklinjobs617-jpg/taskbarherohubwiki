@@ -1,0 +1,47 @@
+{
+  "id": 335171,
+  "slug": "335171-dimensional-scepter",
+  "type": "GEAR",
+  "name": {
+    "zh": "次元权杖",
+    "en": "Dimensional Scepter"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/scepter/SCEPTER_330017.png",
+  "image": "/game/game/gear/scepter/SCEPTER_330017.png",
+  "grade": "ARCANA",
+  "gear": "SCEPTER",
+  "level": 80,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 335171,
+      "BaseStat1_Value": 746,
+      "BaseStat2_Value": 24,
+      "InherentStat1_STATTYPE": "CriticalChance",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 29,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 203,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 936,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 2903040,
+    "cubeExp": 1373736
+  }
+}

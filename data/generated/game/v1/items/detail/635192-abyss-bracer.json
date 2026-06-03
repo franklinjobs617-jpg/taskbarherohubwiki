@@ -1,0 +1,47 @@
+{
+  "id": 635192,
+  "slug": "635192-abyss-bracer",
+  "type": "GEAR",
+  "name": {
+    "zh": "深渊腕甲",
+    "en": "Abyss Bracer"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bracer/BRACER_630019.png",
+  "image": "/game/game/gear/bracer/BRACER_630019.png",
+  "grade": "ARCANA",
+  "gear": "BRACER",
+  "level": 90,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 635192,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "Armor",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 942,
+      "InherentStat2_STATTYPE": "BlockChance",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 135,
+      "InherentStat3_STATTYPE": "DodgeChance",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 104,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 9541152,
+    "cubeExp": 4755240
+  }
+}

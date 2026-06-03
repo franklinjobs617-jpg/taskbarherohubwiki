@@ -1,0 +1,47 @@
+{
+  "id": 532011,
+  "slug": "532011-wooden-boots",
+  "type": "GEAR",
+  "name": {
+    "zh": "木制靴子",
+    "en": "Wooden Boots"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/boots/BOOTS_530001.png",
+  "image": "/game/game/gear/boots/BOOTS_530001.png",
+  "grade": "RARE",
+  "gear": "BOOTS",
+  "level": 1,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 532011,
+      "BaseStat1_Value": 12,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "Armor",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 4,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 63,
+    "cubeExp": 13
+  }
+}

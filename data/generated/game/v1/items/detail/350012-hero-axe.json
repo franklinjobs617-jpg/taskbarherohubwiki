@@ -1,0 +1,47 @@
+{
+  "id": 350012,
+  "slug": "350012-hero-axe",
+  "type": "GEAR",
+  "name": {
+    "zh": "英雄之斧",
+    "en": "Hero Axe"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/axe/AXE_350012.png",
+  "image": "/game/game/gear/axe/AXE_350012.png",
+  "grade": "COMMON",
+  "gear": "AXE",
+  "level": 55,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 350012,
+      "BaseStat1_Value": 147,
+      "BaseStat2_Value": 20,
+      "InherentStat1_STATTYPE": "NONE",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 0,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 7470,
+    "cubeExp": 3264
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 431041,
+  "slug": "431041-knight-s-tome",
+  "type": "GEAR",
+  "name": {
+    "zh": "骑士魔法书",
+    "en": "Knight's Tome"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/tome/TOME_430004.png",
+  "image": "/game/game/gear/tome/TOME_430004.png",
+  "grade": "UNCOMMON",
+  "gear": "TOME",
+  "level": 15,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 431041,
+      "BaseStat1_Value": 105,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "SkillHealIncrease",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 105,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 5280,
+    "cubeExp": 1440
+  }
+}

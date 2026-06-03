@@ -1,0 +1,47 @@
+{
+  "id": 513061,
+  "slug": "513061-fate-armor",
+  "type": "GEAR",
+  "name": {
+    "zh": "命运铠甲",
+    "en": "Fate Armor"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/armor/ARMOR_510006.png",
+  "image": "/game/game/gear/armor/ARMOR_510006.png",
+  "grade": "LEGENDARY",
+  "gear": "ARMOR",
+  "level": 25,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 513061,
+      "BaseStat1_Value": 200,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "HpRegenPerSec",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 363,
+      "InherentStat2_STATTYPE": "MaxHp",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 93,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 89100,
+    "cubeExp": 22032
+  }
+}

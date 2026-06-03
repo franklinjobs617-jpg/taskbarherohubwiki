@@ -1,0 +1,52 @@
+{
+  "key": 1210,
+  "act": 2,
+  "no": 10,
+  "level": 22,
+  "type": "ACTBOSS",
+  "difficulty": "NORMAL",
+  "name": {
+    "zh-Hans": "法老地下水道",
+    "zh-Hant": "法老地下水道",
+    "en-US": "Pharaoh's Underchannel",
+    "fr-FR": "Canal Souterrain du Pharaon",
+    "de-DE": "Unterkanal des Pharaos",
+    "id-ID": "Saluran Bawah Firaun",
+    "ja-JP": "ファラオの地下水路",
+    "ko-KR": "파라오의 지하수도",
+    "pl-PL": "Podziemny Kanał Faraona",
+    "pt-BR": "Canal Subterrâneo do Faraó",
+    "ru-RU": "Подземный канал фараона",
+    "es-ES": "Canal Subterráneo del Faraón",
+    "th-TH": "ทางน้ำใต้ดินฟาโรห์",
+    "tr-TR": "Firavunun Yeraltı Kanalı",
+    "uk-UA": "Підземний канал фараона",
+    "vi-VN": "Cống Ngầm Pharaoh"
+  },
+  "waves": null,
+  "monsterCount": 0,
+  "kills": 0,
+  "goldPerClear": 850,
+  "expPerClear": 281,
+  "boss": {
+    "name": {
+      "zh-Hans": "沙漠的支配者",
+      "zh-Hant": "沙漠的支配者",
+      "en-US": "Desert Overlord",
+      "fr-FR": "Seigneur du Désert",
+      "de-DE": "Herrscher der Wüste",
+      "id-ID": "Penguasa Gurun",
+      "ja-JP": "砂漠の支配者",
+      "ko-KR": "사막의 지배자",
+      "pl-PL": "Władca Pustyni",
+      "pt-BR": "Senhor do Deserto",
+      "ru-RU": "Властелин пустыни",
+      "es-ES": "Señor del Desierto",
+      "th-TH": "ผู้ครองทะเลทราย",
+      "tr-TR": "Çölün Hükümdarı",
+      "uk-UA": "Володар пустелі",
+      "vi-VN": "Kẻ Thống Trị Sa Mạc"
+    },
+    "portrait": "/game/monsters/Sibuna/Sibuna_Idle_Character_4.png"
+  }
+}

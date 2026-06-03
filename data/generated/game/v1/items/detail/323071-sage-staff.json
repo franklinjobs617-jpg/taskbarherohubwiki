@@ -1,0 +1,47 @@
+{
+  "id": 323071,
+  "slug": "323071-sage-staff",
+  "type": "GEAR",
+  "name": {
+    "zh": "贤者之杖",
+    "en": "Sage Staff"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/staff/STAFF_320007.png",
+  "image": "/game/game/gear/staff/STAFF_320007.png",
+  "grade": "LEGENDARY",
+  "gear": "STAFF",
+  "level": 30,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 323071,
+      "BaseStat1_Value": 92,
+      "BaseStat2_Value": 20,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 15,
+      "InherentStat2_STATTYPE": "AddHpPerHit",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 2,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 104760,
+    "cubeExp": 33048
+  }
+}

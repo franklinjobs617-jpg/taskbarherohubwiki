@@ -1,0 +1,47 @@
+{
+  "id": 431081,
+  "slug": "431081-emperor-s-tome",
+  "type": "GEAR",
+  "name": {
+    "zh": "皇帝魔典",
+    "en": "Emperor's Tome"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/tome/TOME_430008.png",
+  "image": "/game/game/gear/tome/TOME_430008.png",
+  "grade": "UNCOMMON",
+  "gear": "TOME",
+  "level": 35,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 431081,
+      "BaseStat1_Value": 145,
+      "BaseStat2_Value": 0,
+      "InherentStat1_STATTYPE": "BlockChance",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 38,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 27060,
+    "cubeExp": 9792
+  }
+}

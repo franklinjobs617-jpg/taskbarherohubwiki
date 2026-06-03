@@ -1,0 +1,47 @@
+{
+  "id": 419171,
+  "slug": "419171-dimensional-arrow",
+  "type": "GEAR",
+  "name": {
+    "zh": "次元箭",
+    "en": "Dimensional Arrow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/arrow/ARROW_410017.png",
+  "image": "/game/game/gear/arrow/ARROW_410017.png",
+  "grade": "COSMIC",
+  "gear": "ARROW",
+  "level": 80,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 419171,
+      "BaseStat1_Value": 715,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 1000,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 250,
+      "InherentStat3_STATTYPE": "AttackSpeed",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 300,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 796559680,
+    "cubeExp": 377056056
+  }
+}

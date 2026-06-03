@@ -1,0 +1,47 @@
+{
+  "id": 500002,
+  "slug": "500002-empire-helmet",
+  "type": "GEAR",
+  "name": {
+    "zh": "帝国头盔",
+    "en": "Empire Helmet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/helmet/HELMET_500002.png",
+  "image": "/game/game/gear/helmet/HELMET_500002.png",
+  "grade": "COMMON",
+  "gear": "HELMET",
+  "level": 5,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 500002,
+      "BaseStat1_Value": 10,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "NONE",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 0,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 40,
+    "cubeExp": 16
+  }
+}

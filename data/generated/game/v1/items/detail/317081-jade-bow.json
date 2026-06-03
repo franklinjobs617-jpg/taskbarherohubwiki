@@ -1,0 +1,47 @@
+{
+  "id": 317081,
+  "slug": "317081-jade-bow",
+  "type": "GEAR",
+  "name": {
+    "zh": "翡翠弓",
+    "en": "Jade Bow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bow/BOW_310008.png",
+  "image": "/game/game/gear/bow/BOW_310008.png",
+  "grade": "CELESTIAL",
+  "gear": "BOW",
+  "level": 35,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 317081,
+      "BaseStat1_Value": 327,
+      "BaseStat2_Value": 160,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 148,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 602,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 71,
+      "UniqueModKey": 20004
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "SkillMultiStrikeCountUp",
+    "sellGold": 13092079,
+    "cubeExp": 4735248
+  }
+}

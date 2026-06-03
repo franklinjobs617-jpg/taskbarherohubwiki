@@ -1,0 +1,47 @@
+{
+  "id": 305072,
+  "slug": "305072-knight-sword",
+  "type": "GEAR",
+  "name": {
+    "zh": "骑士之剑",
+    "en": "Knight Sword"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/sword/SWORD_300007.png",
+  "image": "/game/game/gear/sword/SWORD_300007.png",
+  "grade": "ARCANA",
+  "gear": "SWORD",
+  "level": 30,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 305072,
+      "BaseStat1_Value": 138,
+      "BaseStat2_Value": 37,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 32,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 449,
+      "InherentStat3_STATTYPE": "AttackSpeed",
+      "InherentStat3_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat3_Value": 117,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 1005696,
+    "cubeExp": 317016
+  }
+}

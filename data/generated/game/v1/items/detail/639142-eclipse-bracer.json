@@ -1,0 +1,47 @@
+{
+  "id": 639142,
+  "slug": "639142-eclipse-bracer",
+  "type": "GEAR",
+  "name": {
+    "zh": "日食臂甲",
+    "en": "Eclipse Bracer"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bracer/BRACER_630014.png",
+  "image": "/game/game/gear/bracer/BRACER_630014.png",
+  "grade": "COSMIC",
+  "gear": "BRACER",
+  "level": 65,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 639142,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "BlockChance",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 175,
+      "InherentStat2_STATTYPE": "SkillHealIncrease",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 260,
+      "InherentStat3_STATTYPE": "HpRegenPerSec",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 1717,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 966539826,
+    "cubeExp": 435064680
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 523011,
+  "slug": "523011-leather-gloves",
+  "type": "GEAR",
+  "name": {
+    "zh": "皮革手套",
+    "en": "Leather Gloves"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/gloves/GLOVES_520001.png",
+  "image": "/game/game/gear/gloves/GLOVES_520001.png",
+  "grade": "LEGENDARY",
+  "gear": "GLOVES",
+  "level": 1,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 523011,
+      "BaseStat1_Value": 30,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 72,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 108,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 202,
+    "cubeExp": 40
+  }
+}

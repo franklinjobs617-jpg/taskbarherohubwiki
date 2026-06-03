@@ -1,0 +1,47 @@
+{
+  "id": 501062,
+  "slug": "501062-medium-helmet",
+  "type": "GEAR",
+  "name": {
+    "zh": "中级头盔",
+    "en": "Medium Helmet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/helmet/HELMET_500006.png",
+  "image": "/game/game/gear/helmet/HELMET_500006.png",
+  "grade": "UNCOMMON",
+  "gear": "HELMET",
+  "level": 25,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 501062,
+      "BaseStat1_Value": 46,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "SkillDurationIncrease",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 117,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 7920,
+    "cubeExp": 1958
+  }
+}

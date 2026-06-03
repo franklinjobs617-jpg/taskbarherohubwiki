@@ -1,0 +1,47 @@
+{
+  "id": 410007,
+  "slug": "410007-gale-arrow",
+  "type": "GEAR",
+  "name": {
+    "zh": "疾风箭",
+    "en": "Gale Arrow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/arrow/ARROW_410007.png",
+  "image": "/game/game/gear/arrow/ARROW_410007.png",
+  "grade": "COMMON",
+  "gear": "ARROW",
+  "level": 30,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 410007,
+      "BaseStat1_Value": "190 ",
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "NONE",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 0,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 7760,
+    "cubeExp": 2448
+  }
+}

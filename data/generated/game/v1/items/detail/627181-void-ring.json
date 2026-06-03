@@ -1,0 +1,47 @@
+{
+  "id": 627181,
+  "slug": "627181-void-ring",
+  "type": "GEAR",
+  "name": {
+    "zh": "虚空戒指",
+    "en": "Void Ring"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/ring/RING_620018.png",
+  "image": "/game/game/gear/ring/RING_620018.png",
+  "grade": "CELESTIAL",
+  "gear": "RING",
+  "level": 85,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 627181,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 182,
+      "InherentStat2_STATTYPE": "CriticalChance",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 270,
+      "InherentStat3_STATTYPE": "AddHpPerKill",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 89,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 102588486,
+    "cubeExp": 49720104
+  }
+}

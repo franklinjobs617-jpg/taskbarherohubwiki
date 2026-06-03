@@ -1,0 +1,47 @@
+{
+  "id": 523072,
+  "slug": "523072-war-gloves",
+  "type": "GEAR",
+  "name": {
+    "zh": "战争手套",
+    "en": "War Gloves"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/gloves/GLOVES_520007.png",
+  "image": "/game/game/gear/gloves/GLOVES_520007.png",
+  "grade": "LEGENDARY",
+  "gear": "GLOVES",
+  "level": 30,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 523072,
+      "BaseStat1_Value": 112,
+      "BaseStat2_Value": 0,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 42,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 55,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 78570,
+    "cubeExp": 24786
+  }
+}

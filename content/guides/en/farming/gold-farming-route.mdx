@@ -1,0 +1,80 @@
+---
+gameVersion: "game-v1"
+tldr: "Gold per run divided by clear time = gold efficiency|Higher stage is NOT always better — check clear time|Deaths reduce efficiency dramatically — stay on stable stages|Market drops are NOT base gold — keep them separate|Use the farming compare tool with YOUR actual clear times"
+mistakes: "Reading gold per run without dividing by clear time|Automatically assuming higher stage = more gold|Ignoring deaths and their impact on gold per hour|Mixing market-valuable drops into gold farming calculations|Using aspirational clear times instead of real measured times"
+faq: "How is gold farming efficiency calculated=>Stage gold reward divided by your actual average clear time. Gold per minute is what matters, not gold per run.|Is a higher stage always better for gold=>No. If a stage takes twice as long but only gives 50% more gold, the lower stage is better. Always divide by time.|Do market items count as gold income=>No, unless real sale data exists AND you actually sell the item. Market drops are potential value, not gold.|How many runs should I test before committing=>Minimum 10 runs per stage. 20+ is better. Variance in drops, deaths, and clear time smooths out with more data.|What if I die occasionally on a stage=>Each death costs time (the failed run) and potential efficiency loss. Subtract death runs from your total when calculating average gold per hour.|Should I include chest gold in my calculation=>Yes — chest gold is reliable income. But don't count the market value of chest items as gold unless you're actively selling them."
+relatedItems: "copper-nugget|silver-ingot|gold-ingot"
+relatedTools: "farming-compare"
+---
+
+## Gold Efficiency: Time Is the Real Currency
+
+Gold farming has one rule: **gold per minute beats gold per run.** A stage that gives 10,000 gold in 2 minutes (5,000/min) is better than a stage that gives 14,000 gold in 4 minutes (3,500/min).
+
+The formula is simple:
+```
+Gold Efficiency = Stage Gold Reward ÷ Average Clear Time (minutes)
+```
+
+But measuring it honestly is harder than it looks.
+
+### Step 1: Measure Real Clear Times
+Run the stage 10 times. Record each clear time. Calculate the **average** — don't cherry-pick your fastest run. If you die on any run, count that time too (or exclude the run entirely and reduce your total count).
+
+### Step 2: Account for Inconsistency
+If your clear times vary widely (e.g., 2 minutes on good runs, 4 minutes on bad runs), your route isn't stable. Fix the inconsistency before trusting the numbers. Common causes:
+- Inconsistent gear loadout
+- Deaths on certain monster waves
+- Variable boss kill times
+- Manual vs. auto-play differences
+
+### Step 3: Compare Multiple Stages
+Use the farming compare tool to see gold efficiency across stages at a glance. But remember: the tool uses your inputs. Garbage in = garbage out. Always enter your **actual measured clear time.**
+
+## Stability Over Ambition
+
+Deaths are the hidden gold killer. A single death on a run means:
+- Time wasted on the failed attempt
+- Zero gold from that run
+- Potentially lost consumables or buffs
+
+A stage you can clear 100% reliably at 4,000 gold/min is **better** than a stage you clear 80% reliably at 5,000 gold/min. The math:
+- Stable stage: 4,000 × 1.0 = 4,000/min effective
+- Risky stage: 5,000 × 0.8 = 4,000/min effective (and that's before counting wasted time)
+
+### When to Push Higher
+Move up when:
+- You can clear the higher stage with 95%+ reliability
+- The gold increase is at least 15-20% after dividing by clear time
+- Your gear has improved by 5+ levels since you last tested
+
+## Keep Market Value Separate
+
+Tradable drops during gold farming are **bonus potential**, not guaranteed gold income. Until an item is actually sold, it contributes exactly $0 to your gold balance.
+
+### What Counts as Gold
+- Stage completion gold reward → YES
+- Chest gold → YES
+- Direct gold drops from monsters → YES
+- Market-sold item proceeds → Only after actual sale
+
+### What Does NOT Count as Gold
+- "I could sell this for $X" → NO (unsold)
+- "This item is worth $X" → NO (unsold)
+- "If I sell everything, I'll make $X" → NO (hypothetical)
+
+Mix market speculation into gold farming and you'll make decisions based on money you don't have yet.
+
+## Multi-Hero Gold Farming
+
+With multiple heroes active, gold income increases because more stages can be cleared simultaneously. Each hero should be on their most efficient gold stage. Don't move all heroes to the same stage unless it's clearly the best for each individually.
+
+## Tool Integration
+
+The **farming compare** tool sorts stages by gold efficiency. Use it to:
+1. Find your top 5 stages by theoretical gold/min
+2. Test each one with 10+ real runs
+3. Re-sort by actual (not theoretical) efficiency
+4. Re-test after gear upgrades or class changes
+
+The **profit calculator** adds market context but only when drop rates and prices are available. Don't use it for gold-only decisions.

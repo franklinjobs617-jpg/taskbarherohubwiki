@@ -1,0 +1,47 @@
+{
+  "id": 347171,
+  "slug": "347171-dimensional-crossbow",
+  "type": "GEAR",
+  "name": {
+    "zh": "次元弩",
+    "en": "Dimensional Crossbow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/crossbow/CROSSBOW_340017.png",
+  "image": "/game/game/gear/crossbow/CROSSBOW_340017.png",
+  "grade": "CELESTIAL",
+  "gear": "CROSSBOW",
+  "level": 80,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 347171,
+      "BaseStat1_Value": 2230,
+      "BaseStat2_Value": 32,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 299,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 1274,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 372,
+      "UniqueModKey": 50004
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "CrossbowTurretAddAmount",
+    "sellGold": 32512480,
+    "cubeExp": 15389556
+  }
+}

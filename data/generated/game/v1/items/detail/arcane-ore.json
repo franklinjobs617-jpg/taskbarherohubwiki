@@ -1,0 +1,48 @@
+{
+  "id": 145002,
+  "slug": "arcane-ore",
+  "type": "MATERIAL",
+  "name": {
+    "zh": "奥术矿石",
+    "en": "Arcane Ore"
+  },
+  "description": {
+    "zh": "可以用来制作某物的中级材料。",
+    "en": "An intermediate material that can be used to craft something."
+  },
+  "icon": "/game/game/items/materials/Item_145002.png",
+  "image": "/game/game/items/materials/Item_145002.png",
+  "grade": "ARCANA",
+  "gear": null,
+  "level": null,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": {
+      "zh-Hans": "可以用来制作某物的中级材料。",
+      "zh-Hant": "可以用來製作某物的中級材料。",
+      "en-US": "An intermediate material that can be used to craft something.",
+      "fr-FR": "Un matériau intermédiaire pouvant être utilisé pour fabriquer quelque chose.",
+      "de-DE": "Ein mittleres Material, das zur Herstellung von etwas verwendet werden kann.",
+      "id-ID": "Material tingkat menengah yang dapat digunakan untuk membuat sesuatu.",
+      "ja-JP": "何かを作るのに使える中級の素材。",
+      "ko-KR": "무언가를 만들 수 있는 중급 재료.",
+      "pl-PL": "Pośredni materiał, który można użyć do stworzenia czegoś.",
+      "pt-BR": "Um material intermediário que pode ser usado para criar algo.",
+      "ru-RU": "Средний материал, из которого можно что-нибудь создать.",
+      "es-ES": "Un material intermedio que se puede usar para fabricar algo.",
+      "th-TH": "วัสดุระดับกลางที่สามารถใช้สร้างสิ่งของได้",
+      "tr-TR": "Bir şeyler yapmak için kullanılabilecek orta düzey bir malzeme.",
+      "uk-UA": "Середній матеріал, з якого можна щось створити.",
+      "vi-VN": "Nguyên liệu trung cấp có thể dùng để chế tạo vật phẩm."
+    },
+    "stats": null,
+    "synthType": "Material",
+    "dropKey": null,
+    "uniqueMod": null
+  }
+}

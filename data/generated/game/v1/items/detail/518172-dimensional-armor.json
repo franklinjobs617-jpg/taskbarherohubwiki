@@ -1,0 +1,47 @@
+{
+  "id": 518172,
+  "slug": "518172-dimensional-armor",
+  "type": "GEAR",
+  "name": {
+    "zh": "次元铠甲",
+    "en": "Dimensional Armor"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/armor/ARMOR_510017.png",
+  "image": "/game/game/gear/armor/ARMOR_510017.png",
+  "grade": "DIVINE",
+  "gear": "ARMOR",
+  "level": 80,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 518172,
+      "BaseStat1_Value": 10791,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 494,
+      "InherentStat2_STATTYPE": "MaxHp",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 495,
+      "InherentStat3_STATTYPE": "Armor",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 4943,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 113794240,
+    "cubeExp": 53864772
+  }
+}

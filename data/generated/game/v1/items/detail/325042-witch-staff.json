@@ -1,0 +1,47 @@
+{
+  "id": 325042,
+  "slug": "325042-witch-staff",
+  "type": "GEAR",
+  "name": {
+    "zh": "女巫法杖",
+    "en": "Witch Staff"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/staff/STAFF_320004.png",
+  "image": "/game/game/gear/staff/STAFF_320004.png",
+  "grade": "ARCANA",
+  "gear": "STAFF",
+  "level": 15,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 325042,
+      "BaseStat1_Value": 62,
+      "BaseStat2_Value": 24,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 9,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 292,
+      "InherentStat3_STATTYPE": "CastSpeed",
+      "InherentStat3_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat3_Value": 101,
+      "UniqueModKey": 1000009
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "SorcererLightningShock",
+    "sellGold": 228096,
+    "cubeExp": 62160
+  }
+}

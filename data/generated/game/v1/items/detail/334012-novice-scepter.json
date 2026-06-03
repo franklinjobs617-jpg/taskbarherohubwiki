@@ -1,0 +1,47 @@
+{
+  "id": 334012,
+  "slug": "334012-novice-scepter",
+  "type": "GEAR",
+  "name": {
+    "zh": "新手权杖",
+    "en": "Novice Scepter"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/scepter/SCEPTER_330001.png",
+  "image": "/game/game/gear/scepter/SCEPTER_330001.png",
+  "grade": "IMMORTAL",
+  "gear": "SCEPTER",
+  "level": 1,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 334012,
+      "BaseStat1_Value": 8,
+      "BaseStat2_Value": 10,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 3,
+      "InherentStat2_STATTYPE": "CooldownReduction",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 51,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 810,
+    "cubeExp": 162
+  }
+}

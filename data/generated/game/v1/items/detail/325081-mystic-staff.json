@@ -1,0 +1,47 @@
+{
+  "id": 325081,
+  "slug": "325081-mystic-staff",
+  "type": "GEAR",
+  "name": {
+    "zh": "神秘法杖",
+    "en": "Mystic Staff"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/staff/STAFF_320008.png",
+  "image": "/game/game/gear/staff/STAFF_320008.png",
+  "grade": "ARCANA",
+  "gear": "STAFF",
+  "level": 35,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 325081,
+      "BaseStat1_Value": 267,
+      "BaseStat2_Value": 24,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 41,
+      "InherentStat2_STATTYPE": "AddHpPerHit",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 5,
+      "InherentStat3_STATTYPE": "CriticalChance",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 13,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 1168992,
+    "cubeExp": 422688
+  }
+}

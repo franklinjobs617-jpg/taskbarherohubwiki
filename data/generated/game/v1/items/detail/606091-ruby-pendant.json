@@ -1,0 +1,47 @@
+{
+  "id": 606091,
+  "slug": "606091-ruby-pendant",
+  "type": "GEAR",
+  "name": {
+    "zh": "红宝石吊坠",
+    "en": "Ruby Pendant"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/amulet/AMULET_600009.png",
+  "image": "/game/game/gear/amulet/AMULET_600009.png",
+  "grade": "BEYOND",
+  "gear": "AMULET",
+  "level": 40,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 606091,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 43,
+      "InherentStat2_STATTYPE": "AddAllSkillLevel",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 1,
+      "InherentStat3_STATTYPE": "CriticalChance",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 269,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 17218344,
+    "cubeExp": 6764640
+  }
+}

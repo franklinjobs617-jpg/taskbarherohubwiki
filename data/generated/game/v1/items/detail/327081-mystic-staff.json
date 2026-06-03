@@ -1,0 +1,47 @@
+{
+  "id": 327081,
+  "slug": "327081-mystic-staff",
+  "type": "GEAR",
+  "name": {
+    "zh": "神秘法杖",
+    "en": "Mystic Staff"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/staff/STAFF_320008.png",
+  "image": "/game/game/gear/staff/STAFF_320008.png",
+  "grade": "CELESTIAL",
+  "gear": "STAFF",
+  "level": 35,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 327081,
+      "BaseStat1_Value": 470,
+      "BaseStat2_Value": 32,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 68,
+      "InherentStat2_STATTYPE": "CriticalChance",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 16,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 602,
+      "UniqueModKey": 30003
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "SnowstormEnhanceFrozenEnemy",
+    "sellGold": 13092079,
+    "cubeExp": 4735248
+  }
+}

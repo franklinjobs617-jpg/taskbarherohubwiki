@@ -1,0 +1,47 @@
+{
+  "id": 307141,
+  "slug": "307141-vengeance-sword",
+  "type": "GEAR",
+  "name": {
+    "zh": "复仇之剑",
+    "en": "Vengeance Sword"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/sword/SWORD_300014.png",
+  "image": "/game/game/gear/sword/SWORD_300014.png",
+  "grade": "CELESTIAL",
+  "gear": "SWORD",
+  "level": 65,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 307141,
+      "BaseStat1_Value": 959,
+      "BaseStat2_Value": 50,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 232,
+      "InherentStat2_STATTYPE": "AddHpPerHit",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 24,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 998,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 26300274,
+    "cubeExp": 11838120
+  }
+}

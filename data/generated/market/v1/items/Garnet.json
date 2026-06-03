@@ -1,0 +1,12 @@
+{
+  "slug": "garnet",
+  "id": 113004,
+  "marketHash": "Garnet",
+  "lowest": 0.1,
+  "median": null,
+  "listings": 1009,
+  "trend7d": null,
+  "confidence": "low",
+  "updatedAt": "2026-06-03T12:41:31.757Z",
+  "source": "steamcommunity_market_search"
+}

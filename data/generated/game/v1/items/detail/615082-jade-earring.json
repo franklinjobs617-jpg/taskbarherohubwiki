@@ -1,0 +1,47 @@
+{
+  "id": 615082,
+  "slug": "615082-jade-earring",
+  "type": "GEAR",
+  "name": {
+    "zh": "翡翠耳环",
+    "en": "Jade Earring"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/earing/EARING_610008.png",
+  "image": "/game/game/gear/earing/EARING_610008.png",
+  "grade": "ARCANA",
+  "gear": "EARING",
+  "level": 35,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 615082,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "IncreaseExpAmount",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 59,
+      "InherentStat2_STATTYPE": "HpLeech",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 9,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 82,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 3506976,
+    "cubeExp": 1268064
+  }
+}

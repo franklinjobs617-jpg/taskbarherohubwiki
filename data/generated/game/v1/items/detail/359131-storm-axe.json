@@ -1,0 +1,47 @@
+{
+  "id": 359131,
+  "slug": "359131-storm-axe",
+  "type": "GEAR",
+  "name": {
+    "zh": "风暴战斧",
+    "en": "Storm Axe"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/axe/AXE_350013.png",
+  "image": "/game/game/gear/axe/AXE_350013.png",
+  "grade": "COSMIC",
+  "gear": "AXE",
+  "level": 60,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 359131,
+      "BaseStat1_Value": 1753,
+      "BaseStat2_Value": 40,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 101,
+      "InherentStat2_STATTYPE": "CriticalChance",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 38,
+      "InherentStat3_STATTYPE": "AttackSpeed",
+      "InherentStat3_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat3_Value": 276,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 294086989,
+    "cubeExp": 130519404
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "key": 2307,
+  "act": 3,
+  "no": 7,
+  "level": 51,
+  "type": "NORMAL",
+  "difficulty": "NIGHTMARE",
+  "name": {
+    "zh-Hans": "痛苦平原",
+    "zh-Hant": "痛苦平原",
+    "en-US": "Plains of Torment",
+    "fr-FR": "Plaines du Tourment",
+    "de-DE": "Ebenen der Qual",
+    "id-ID": "Dataran Penderitaan",
+    "ja-JP": "苦痛の平原",
+    "ko-KR": "고통의 벌판",
+    "pl-PL": "Pola Udręki",
+    "pt-BR": "Planícies do Tormento",
+    "ru-RU": "Равнины мучений",
+    "es-ES": "Llanuras del Tormento",
+    "th-TH": "ทุ่งทรมาน",
+    "tr-TR": "Azap Ovaları",
+    "uk-UA": "Рівнини мук",
+    "vi-VN": "Đồng bằng Đau khổ"
+  },
+  "waves": 23,
+  "monsterCount": 5,
+  "kills": 345,
+  "goldPerClear": 59037,
+  "expPerClear": 1124588,
+  "boss": {
+    "name": {
+      "zh-Hans": "瘟疫鼠",
+      "zh-Hant": "瘟疫鼠",
+      "en-US": "Plague Rat",
+      "fr-FR": "Rat Pestiféré",
+      "de-DE": "Pestratte",
+      "id-ID": "Tikus Wabah",
+      "ja-JP": "疫病ネズミ",
+      "ko-KR": "역병쥐",
+      "pl-PL": "Szczur Zarazy",
+      "pt-BR": "Rato da Peste",
+      "ru-RU": "Чумная крыса",
+      "es-ES": "Rata Pestilente",
+      "th-TH": "หนูโรคระบาด",
+      "tr-TR": "Veba Sıçanı",
+      "uk-UA": "Чумний щур",
+      "vi-VN": "Chuột Dịch"
+    },
+    "portrait": "/game/monsters/ZombieRatRace/ZombieRatRace_Idle_character_2.png"
+  }
+}

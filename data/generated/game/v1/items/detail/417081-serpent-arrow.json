@@ -1,0 +1,47 @@
+{
+  "id": 417081,
+  "slug": "417081-serpent-arrow",
+  "type": "GEAR",
+  "name": {
+    "zh": "毒蛇箭",
+    "en": "Serpent Arrow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/arrow/ARROW_410008.png",
+  "image": "/game/game/gear/arrow/ARROW_410008.png",
+  "grade": "CELESTIAL",
+  "gear": "ARROW",
+  "level": 35,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 417081,
+      "BaseStat1_Value": 360,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 341,
+      "InherentStat2_STATTYPE": "AttackSpeed",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 113,
+      "InherentStat3_STATTYPE": "IncreaseProjectileDamage",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 276,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 26184158,
+    "cubeExp": 9470496
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 635042,
+  "slug": "635042-gold-bracer",
+  "type": "GEAR",
+  "name": {
+    "zh": "黄金臂甲",
+    "en": "Gold Bracer"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bracer/BRACER_630004.png",
+  "image": "/game/game/gear/bracer/BRACER_630004.png",
+  "grade": "ARCANA",
+  "gear": "BRACER",
+  "level": 15,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 635042,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MovementSpeed",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 60,
+      "InherentStat2_STATTYPE": "DamageAbsorption",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 44,
+      "InherentStat3_STATTYPE": "BlockChance",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 39,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 684288,
+    "cubeExp": 186480
+  }
+}

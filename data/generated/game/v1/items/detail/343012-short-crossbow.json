@@ -1,0 +1,47 @@
+{
+  "id": 343012,
+  "slug": "343012-short-crossbow",
+  "type": "GEAR",
+  "name": {
+    "zh": "短弩",
+    "en": "Short Crossbow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/crossbow/CROSSBOW_340001.png",
+  "image": "/game/game/gear/crossbow/CROSSBOW_340001.png",
+  "grade": "LEGENDARY",
+  "gear": "CROSSBOW",
+  "level": 1,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 343012,
+      "BaseStat1_Value": 6,
+      "BaseStat2_Value": 10,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 3,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 215,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 270,
+    "cubeExp": 54
+  }
+}

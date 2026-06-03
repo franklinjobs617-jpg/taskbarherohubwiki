@@ -1,0 +1,31 @@
+{
+  "id": 930601,
+  "slug": "act-boss-box-lv60",
+  "type": "STAGEBOX",
+  "name": {
+    "zh": "Act Boss Box Lv60",
+    "en": "Act Boss Box Lv60"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/items/boxes/Item_930011.png",
+  "image": "/game/game/items/boxes/Item_930011.png",
+  "grade": "LEGENDARY",
+  "gear": null,
+  "level": null,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": null,
+    "synthType": null,
+    "dropKey": 9306011,
+    "uniqueMod": null
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 337192,
+  "slug": "337192-eternal-scepter",
+  "type": "GEAR",
+  "name": {
+    "zh": "永恒权杖",
+    "en": "Eternal Scepter"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/scepter/SCEPTER_330019.png",
+  "image": "/game/game/gear/scepter/SCEPTER_330019.png",
+  "grade": "CELESTIAL",
+  "gear": "SCEPTER",
+  "level": 90,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 337192,
+      "BaseStat1_Value": 1713,
+      "BaseStat2_Value": 32,
+      "InherentStat1_STATTYPE": "CriticalDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 1438,
+      "InherentStat2_STATTYPE": "CastSpeed",
+      "InherentStat2_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat2_Value": 478,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 1907,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 35618583,
+    "cubeExp": 17757180
+  }
+}

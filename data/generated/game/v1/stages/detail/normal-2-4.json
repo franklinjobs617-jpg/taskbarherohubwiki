@@ -1,0 +1,52 @@
+{
+  "key": 1204,
+  "act": 2,
+  "no": 4,
+  "level": 16,
+  "type": "NORMAL",
+  "difficulty": "NORMAL",
+  "name": {
+    "zh-Hans": "虫巢",
+    "zh-Hant": "蟲巢",
+    "en-US": "Bug Nest",
+    "fr-FR": "Nid d'Insectes",
+    "de-DE": "Insektennest",
+    "id-ID": "Sarang Serangga",
+    "ja-JP": "虫の巣",
+    "ko-KR": "벌레 둥지",
+    "pl-PL": "Gniazdo Robactwa",
+    "pt-BR": "Ninho de Insetos",
+    "ru-RU": "Гнездо жуков",
+    "es-ES": "Nido de Insectos",
+    "th-TH": "รังแมลง",
+    "tr-TR": "Böcek Yuvası",
+    "uk-UA": "Гніздо комах",
+    "vi-VN": "Tổ Bọ"
+  },
+  "waves": 15,
+  "monsterCount": 5,
+  "kills": 105,
+  "goldPerClear": 1437,
+  "expPerClear": 15155,
+  "boss": {
+    "name": {
+      "zh-Hans": "毒虫",
+      "zh-Hant": "毒蟲",
+      "en-US": "Venom Insect",
+      "fr-FR": "Insecte Venimeux",
+      "de-DE": "Giftinsekt",
+      "id-ID": "Serangga Racun",
+      "ja-JP": "毒虫",
+      "ko-KR": "독충",
+      "pl-PL": "Jadowity Owad",
+      "pt-BR": "Inseto Venenoso",
+      "ru-RU": "Ядовитое насекомое",
+      "es-ES": "Insecto Venenoso",
+      "th-TH": "แมลงพิษ",
+      "tr-TR": "Zehirli Böcek",
+      "uk-UA": "Отруйна комаха",
+      "vi-VN": "Côn Trùng Độc"
+    },
+    "portrait": "/game/monsters/PoisonInsect/PoisonInsect_Idle_character_3.png"
+  }
+}

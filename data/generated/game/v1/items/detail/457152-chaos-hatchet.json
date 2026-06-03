@@ -1,0 +1,47 @@
+{
+  "id": 457152,
+  "slug": "457152-chaos-hatchet",
+  "type": "GEAR",
+  "name": {
+    "zh": "混沌手斧",
+    "en": "Chaos Hatchet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/hatchet/HATCHET_450015.png",
+  "image": "/game/game/gear/hatchet/HATCHET_450015.png",
+  "grade": "CELESTIAL",
+  "gear": "HATCHET",
+  "level": 70,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 457152,
+      "BaseStat1_Value": 1427,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 140,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 703,
+      "InherentStat3_STATTYPE": "CooldownReduction",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 60,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 57012956,
+    "cubeExp": 26043864
+  }
+}

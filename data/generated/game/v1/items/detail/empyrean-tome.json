@@ -1,0 +1,45 @@
+{
+  "id": 430020,
+  "slug": "empyrean-tome",
+  "type": "GEAR",
+  "name": {
+    "zh": "天界魔法书",
+    "en": "Empyrean Tome"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/tome/TOME_430020.png",
+  "image": "/game/game/gear/tome/TOME_430020.png",
+  "grade": "COMMON",
+  "gear": "TOME",
+  "level": 100,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 430020,
+      "BaseStat1_Value": 195,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "NONE",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 0,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null
+  }
+}

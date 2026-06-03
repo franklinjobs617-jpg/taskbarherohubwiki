@@ -1,0 +1,47 @@
+{
+  "id": 309122,
+  "slug": "309122-hero-sword",
+  "type": "GEAR",
+  "name": {
+    "zh": "英雄之剑",
+    "en": "Hero Sword"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/sword/SWORD_300012.png",
+  "image": "/game/game/gear/sword/SWORD_300012.png",
+  "grade": "COSMIC",
+  "gear": "SWORD",
+  "level": 55,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 309122,
+      "BaseStat1_Value": 1204,
+      "BaseStat2_Value": 63,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 264,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 1118,
+      "InherentStat3_STATTYPE": "CooldownReduction",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 98,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 265638429,
+    "cubeExp": 116017248
+  }
+}

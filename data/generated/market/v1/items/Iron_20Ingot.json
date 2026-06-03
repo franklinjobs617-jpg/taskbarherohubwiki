@@ -1,0 +1,12 @@
+{
+  "slug": "iron-ingot",
+  "id": 141002,
+  "marketHash": "Iron Ingot",
+  "lowest": 0.11,
+  "median": null,
+  "listings": 13310,
+  "trend7d": null,
+  "confidence": "low",
+  "updatedAt": "2026-06-03T12:41:31.757Z",
+  "source": "steamcommunity_market_search"
+}

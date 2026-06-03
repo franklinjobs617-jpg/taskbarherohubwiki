@@ -1,0 +1,31 @@
+{
+  "id": 920501,
+  "slug": "stage-boss-box-lv50",
+  "type": "STAGEBOX",
+  "name": {
+    "zh": "Stage Boss Box Lv50",
+    "en": "Stage Boss Box Lv50"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/items/boxes/Item_920011.png",
+  "image": "/game/game/items/boxes/Item_920011.png",
+  "grade": "RARE",
+  "gear": null,
+  "level": null,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": null,
+    "synthType": null,
+    "dropKey": 9205011,
+    "uniqueMod": null
+  }
+}

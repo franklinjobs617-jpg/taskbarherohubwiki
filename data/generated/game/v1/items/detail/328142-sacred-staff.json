@@ -1,0 +1,47 @@
+{
+  "id": 328142,
+  "slug": "328142-sacred-staff",
+  "type": "GEAR",
+  "name": {
+    "zh": "神圣法杖",
+    "en": "Sacred Staff"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/staff/STAFF_320014.png",
+  "image": "/game/game/gear/staff/STAFF_320014.png",
+  "grade": "DIVINE",
+  "gear": "STAFF",
+  "level": 65,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 328142,
+      "BaseStat1_Value": 1835,
+      "BaseStat2_Value": 36,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 306,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 1150,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 1475,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 92051412,
+    "cubeExp": 41434440
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "key": 1309,
+  "act": 3,
+  "no": 9,
+  "level": 31,
+  "type": "NORMAL",
+  "difficulty": "NORMAL",
+  "name": {
+    "zh-Hans": "深渊之核",
+    "zh-Hant": "深淵之核",
+    "en-US": "Core of the Abyss",
+    "fr-FR": "Cœur de l'Abîme",
+    "de-DE": "Kern des Abgrunds",
+    "id-ID": "Inti Jurang",
+    "ja-JP": "深淵の中心",
+    "ko-KR": "심연의 중심",
+    "pl-PL": "Rdzeń Otchłani",
+    "pt-BR": "Núcleo do Abismo",
+    "ru-RU": "Ядро бездны",
+    "es-ES": "Núcleo del Abismo",
+    "th-TH": "แก่นกลางเหว",
+    "tr-TR": "Uçurumun Merkezi",
+    "uk-UA": "Ядро безодні",
+    "vi-VN": "Trung tâm Vực thẳm"
+  },
+  "waves": 18,
+  "monsterCount": 5,
+  "kills": 198,
+  "goldPerClear": 16054,
+  "expPerClear": 296901,
+  "boss": {
+    "name": {
+      "zh-Hans": "木乃伊",
+      "zh-Hant": "木乃伊",
+      "en-US": "Mummy",
+      "fr-FR": "Momie",
+      "de-DE": "Mumie",
+      "id-ID": "Mumi",
+      "ja-JP": "ミイラ",
+      "ko-KR": "미이라",
+      "pl-PL": "Mumia",
+      "pt-BR": "Múmia",
+      "ru-RU": "Мумия",
+      "es-ES": "Momia",
+      "th-TH": "มัมมี่",
+      "tr-TR": "Mumya",
+      "uk-UA": "Мумія",
+      "vi-VN": "Xác Ướp"
+    },
+    "portrait": "/game/monsters/SmallMummy/SmallMummy_Idle_character_1.png"
+  }
+}

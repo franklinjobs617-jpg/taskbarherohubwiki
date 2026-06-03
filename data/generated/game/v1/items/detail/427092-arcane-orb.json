@@ -1,0 +1,47 @@
+{
+  "id": 427092,
+  "slug": "427092-arcane-orb",
+  "type": "GEAR",
+  "name": {
+    "zh": "奥术法球",
+    "en": "Arcane Orb"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/orb/ORB_420009.png",
+  "image": "/game/game/gear/orb/ORB_420009.png",
+  "grade": "CELESTIAL",
+  "gear": "ORB",
+  "level": 40,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 427092,
+      "BaseStat1_Value": 219,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CastSpeed",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 165,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 408,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 52,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 30132102,
+    "cubeExp": 11838120
+  }
+}

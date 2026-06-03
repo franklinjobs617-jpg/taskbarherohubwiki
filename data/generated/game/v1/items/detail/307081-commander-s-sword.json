@@ -1,0 +1,47 @@
+{
+  "id": 307081,
+  "slug": "307081-commander-s-sword",
+  "type": "GEAR",
+  "name": {
+    "zh": "指挥官之剑",
+    "en": "Commander's Sword"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/sword/SWORD_300008.png",
+  "image": "/game/game/gear/sword/SWORD_300008.png",
+  "grade": "CELESTIAL",
+  "gear": "SWORD",
+  "level": 35,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 307081,
+      "BaseStat1_Value": 325,
+      "BaseStat2_Value": 50,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 653,
+      "InherentStat2_STATTYPE": "AddHpPerHit",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 8,
+      "InherentStat3_STATTYPE": "CooldownReduction",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 68,
+      "UniqueModKey": 10002
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "SkillMultiStrikeCountUp",
+    "sellGold": 13092079,
+    "cubeExp": 4735248
+  }
+}

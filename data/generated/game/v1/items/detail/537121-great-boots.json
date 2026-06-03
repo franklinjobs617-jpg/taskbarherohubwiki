@@ -1,0 +1,47 @@
+{
+  "id": 537121,
+  "slug": "537121-great-boots",
+  "type": "GEAR",
+  "name": {
+    "zh": "大靴子",
+    "en": "Great Boots"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/boots/BOOTS_530012.png",
+  "image": "/game/game/gear/boots/BOOTS_530012.png",
+  "grade": "CELESTIAL",
+  "gear": "BOOTS",
+  "level": 55,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 537121,
+      "BaseStat1_Value": 670,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MovementSpeed",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 132,
+      "InherentStat2_STATTYPE": "MaxHp",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 150,
+      "InherentStat3_STATTYPE": "HpRegenPerSec",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 958,
+      "UniqueModKey": 0
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 15179264,
+    "cubeExp": 6629347
+  }
+}

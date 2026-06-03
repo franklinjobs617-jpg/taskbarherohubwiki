@@ -1,0 +1,47 @@
+{
+  "id": 307161,
+  "slug": "307161-crystal-blade",
+  "type": "GEAR",
+  "name": {
+    "zh": "水晶刀刃",
+    "en": "Crystal Blade"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/sword/SWORD_300016.png",
+  "image": "/game/game/gear/sword/SWORD_300016.png",
+  "grade": "CELESTIAL",
+  "gear": "SWORD",
+  "level": 75,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 307161,
+      "BaseStat1_Value": 1349,
+      "BaseStat2_Value": 50,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 1530,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 1187,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 325,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 30596566,
+    "cubeExp": 14205744
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 355041,
+  "slug": "355041-steel-axe",
+  "type": "GEAR",
+  "name": {
+    "zh": "钢铁斧",
+    "en": "Steel Axe"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/axe/AXE_350004.png",
+  "image": "/game/game/gear/axe/AXE_350004.png",
+  "grade": "ARCANA",
+  "gear": "AXE",
+  "level": 15,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 355041,
+      "BaseStat1_Value": 57,
+      "BaseStat2_Value": 24,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 94,
+      "InherentStat2_STATTYPE": "CriticalChance",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 7,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 361,
+      "UniqueModKey": 1000008
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "SlayerLowHpAttackSpeed",
+    "sellGold": 228096,
+    "cubeExp": 62160
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 338181,
+  "slug": "338181-shadow-scepter",
+  "type": "GEAR",
+  "name": {
+    "zh": "暗影权杖",
+    "en": "Shadow Scepter"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/scepter/SCEPTER_330018.png",
+  "image": "/game/game/gear/scepter/SCEPTER_330018.png",
+  "grade": "DIVINE",
+  "gear": "SCEPTER",
+  "level": 85,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 338181,
+      "BaseStat1_Value": 2045,
+      "BaseStat2_Value": 36,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 120,
+      "InherentStat2_STATTYPE": "CriticalChance",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 50,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 1500,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 119687156,
+    "cubeExp": 58008216
+  }
+}

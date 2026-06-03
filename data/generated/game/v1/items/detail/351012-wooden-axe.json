@@ -1,0 +1,47 @@
+{
+  "id": 351012,
+  "slug": "351012-wooden-axe",
+  "type": "GEAR",
+  "name": {
+    "zh": "木斧",
+    "en": "Wooden Axe"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/axe/AXE_350001.png",
+  "image": "/game/game/gear/axe/AXE_350001.png",
+  "grade": "UNCOMMON",
+  "gear": "AXE",
+  "level": 1,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 351012,
+      "BaseStat1_Value": 3,
+      "BaseStat2_Value": 10,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 80,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 30,
+    "cubeExp": 6
+  }
+}

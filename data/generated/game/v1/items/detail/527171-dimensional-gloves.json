@@ -1,0 +1,47 @@
+{
+  "id": 527171,
+  "slug": "527171-dimensional-gloves",
+  "type": "GEAR",
+  "name": {
+    "zh": "次元手套",
+    "en": "Dimensional Gloves"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/gloves/GLOVES_520017.png",
+  "image": "/game/game/gear/gloves/GLOVES_520017.png",
+  "grade": "CELESTIAL",
+  "gear": "GLOVES",
+  "level": 80,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 527171,
+      "BaseStat1_Value": 3490,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 257,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 1485,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 830,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 24384360,
+    "cubeExp": 11542167
+  }
+}

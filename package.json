@@ -1,0 +1,39 @@
+{
+  "name": "tbh-fan-site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build --webpack",
+    "start": "next start",
+    "normalize": "node scripts/normalize-game-data.mjs",
+    "market:fetch": "node scripts/fetch-steam-market.mjs",
+    "upload:r2": "node scripts/upload-r2.mjs",
+    "deploy:worker": "cd workers/market-fetcher && npx wrangler deploy",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@mdx-js/react": "^3.1.1",
+    "fuse.js": "^7.4.1",
+    "lucide-react": "^1.17.0",
+    "next": "16.2.7",
+    "next-intl": "^4.13.0",
+    "next-mdx-remote": "^6.0.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "recharts": "^3.8.1",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20.19.41",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.7",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "undici": "^8.3.0",
+    "wrangler": "^4.97.0"
+  }
+}

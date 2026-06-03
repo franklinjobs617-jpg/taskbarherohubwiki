@@ -1,0 +1,47 @@
+{
+  "id": 357151,
+  "slug": "357151-chaos-axe",
+  "type": "GEAR",
+  "name": {
+    "zh": "混沌之斧",
+    "en": "Chaos Axe"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/axe/AXE_350015.png",
+  "image": "/game/game/gear/axe/AXE_350015.png",
+  "grade": "CELESTIAL",
+  "gear": "AXE",
+  "level": 70,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 357151,
+      "BaseStat1_Value": 1539,
+      "BaseStat2_Value": 32,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 278,
+      "InherentStat2_STATTYPE": "CriticalChance",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 35,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 1095,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 28506478,
+    "cubeExp": 13021932
+  }
+}

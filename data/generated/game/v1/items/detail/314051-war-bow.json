@@ -1,0 +1,47 @@
+{
+  "id": 314051,
+  "slug": "314051-war-bow",
+  "type": "GEAR",
+  "name": {
+    "zh": "战弓",
+    "en": "War Bow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bow/BOW_310005.png",
+  "image": "/game/game/gear/bow/BOW_310005.png",
+  "grade": "IMMORTAL",
+  "gear": "BOW",
+  "level": 20,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 314051,
+      "BaseStat1_Value": 44,
+      "BaseStat2_Value": 50,
+      "InherentStat1_STATTYPE": "CriticalChance",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 8,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 301,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 178200,
+    "cubeExp": 38880
+  }
+}

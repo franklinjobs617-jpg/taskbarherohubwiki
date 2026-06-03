@@ -1,0 +1,47 @@
+{
+  "id": 325152,
+  "slug": "325152-abyssal-staff",
+  "type": "GEAR",
+  "name": {
+    "zh": "深渊法杖",
+    "en": "Abyssal Staff"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/staff/STAFF_320015.png",
+  "image": "/game/game/gear/staff/STAFF_320015.png",
+  "grade": "ARCANA",
+  "gear": "STAFF",
+  "level": 70,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 325152,
+      "BaseStat1_Value": 916,
+      "BaseStat2_Value": 24,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 80,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 983,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 154,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 2545344,
+    "cubeExp": 1162392
+  }
+}

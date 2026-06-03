@@ -1,0 +1,52 @@
+{
+  "key": 1109,
+  "act": 1,
+  "no": 9,
+  "level": 11,
+  "type": "NORMAL",
+  "difficulty": "NORMAL",
+  "name": {
+    "zh-Hans": "诅咒之地",
+    "zh-Hant": "詛咒之地",
+    "en-US": "Cursed Land",
+    "fr-FR": "Terre maudite",
+    "de-DE": "Verfluchtes Land",
+    "id-ID": "Tanah Terkutuk",
+    "ja-JP": "呪われた大地",
+    "ko-KR": "저주받은 대지",
+    "pl-PL": "Przeklęta kraina",
+    "pt-BR": "Terra amaldiçoada",
+    "ru-RU": "Проклятая земля",
+    "es-ES": "Tierra maldita",
+    "th-TH": "ดินแดนต้องสาป",
+    "tr-TR": "Lanetli toprak",
+    "uk-UA": "Прокляті землі",
+    "vi-VN": "Vùng đất nguyền rủa"
+  },
+  "waves": 13,
+  "monsterCount": 6,
+  "kills": 91,
+  "goldPerClear": 1006,
+  "expPerClear": 5987,
+  "boss": {
+    "name": {
+      "zh-Hans": "精英兽人",
+      "zh-Hant": "精英獸人",
+      "en-US": "Elite Orc",
+      "fr-FR": "Orc d'élite",
+      "de-DE": "Elite-Ork",
+      "id-ID": "Orc Elite",
+      "ja-JP": "エリートオーク",
+      "ko-KR": "정예 오크",
+      "pl-PL": "Elitarny ork",
+      "pt-BR": "Orc de elite",
+      "ru-RU": "Элитный орк",
+      "es-ES": "Orco élite",
+      "th-TH": "ออร์คชั้นยอด",
+      "tr-TR": "Seçkin Ork",
+      "uk-UA": "Елітний орк",
+      "vi-VN": "Orc Tinh Nhuệ"
+    },
+    "portrait": "/game/monsters/EliteOrc/EliteOrc_Idle_character_3.png"
+  }
+}

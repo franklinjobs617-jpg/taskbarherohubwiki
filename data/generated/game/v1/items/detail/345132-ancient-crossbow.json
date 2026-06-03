@@ -1,0 +1,47 @@
+{
+  "id": 345132,
+  "slug": "345132-ancient-crossbow",
+  "type": "GEAR",
+  "name": {
+    "zh": "远古弩",
+    "en": "Ancient Crossbow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/crossbow/CROSSBOW_340013.png",
+  "image": "/game/game/gear/crossbow/CROSSBOW_340013.png",
+  "grade": "ARCANA",
+  "gear": "CROSSBOW",
+  "level": 60,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 345132,
+      "BaseStat1_Value": 610,
+      "BaseStat2_Value": 24,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 168,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 790,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 103,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 2143584,
+    "cubeExp": 951048
+  }
+}

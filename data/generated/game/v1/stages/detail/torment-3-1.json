@@ -1,0 +1,52 @@
+{
+  "key": 4301,
+  "act": 3,
+  "no": 1,
+  "level": 91,
+  "type": "NORMAL",
+  "difficulty": "TORMENT",
+  "name": {
+    "zh-Hans": "雪原前哨",
+    "zh-Hant": "雪原前哨",
+    "en-US": "Snowbound Outpost",
+    "fr-FR": "Avant-poste Enneigé",
+    "de-DE": "Verschneiter Außenposten",
+    "id-ID": "Pos Bersalju",
+    "ja-JP": "雪原の前哨地",
+    "ko-KR": "설원의 전초기지",
+    "pl-PL": "Zaśnieżona Placówka",
+    "pt-BR": "Posto Avançado Nevado",
+    "ru-RU": "Заснеженный аванпост",
+    "es-ES": "Puesto Cubierto de Nieve",
+    "th-TH": "ด่านหน้าหิมะ",
+    "tr-TR": "Karlı İleri Karakol",
+    "uk-UA": "Засніжений форпост",
+    "vi-VN": "Tiền đồn Tuyết"
+  },
+  "waves": 31,
+  "monsterCount": 3,
+  "kills": 620,
+  "goldPerClear": 266824,
+  "expPerClear": 5313457,
+  "boss": {
+    "name": {
+      "zh-Hans": "鼠族狂战士",
+      "zh-Hant": "鼠族狂戰士",
+      "en-US": "Ratfolk Berserker",
+      "fr-FR": "Berserker Ratte",
+      "de-DE": "Rattenvolk-Berserker",
+      "id-ID": "Berserker Tikus",
+      "ja-JP": "ラット族バーサーカー",
+      "ko-KR": "쥐족 광전사",
+      "pl-PL": "Berserker Szczurów",
+      "pt-BR": "Berserker Ratuno",
+      "ru-RU": "Берсерк крысолюдов",
+      "es-ES": "Berserker Ratuno",
+      "th-TH": "เบอร์เซิร์กเกอร์เผ่าหนู",
+      "tr-TR": "Sıçan Berserker",
+      "uk-UA": "Берсерк щуролюдів",
+      "vi-VN": "Berserker Chuột"
+    },
+    "portrait": "/game/monsters/BerserkerRatRace/BerserkerRatRace_Idle_character_2.png"
+  }
+}

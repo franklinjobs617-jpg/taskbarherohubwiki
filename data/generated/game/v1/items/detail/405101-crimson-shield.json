@@ -1,0 +1,47 @@
+{
+  "id": 405101,
+  "slug": "405101-crimson-shield",
+  "type": "GEAR",
+  "name": {
+    "zh": "赤红盾",
+    "en": "Crimson Shield"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/shield/SHIELD_400010.png",
+  "image": "/game/game/gear/shield/SHIELD_400010.png",
+  "grade": "ARCANA",
+  "gear": "SHIELD",
+  "level": 45,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 405101,
+      "BaseStat1_Value": 187,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 53,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 1445,
+      "InherentStat3_STATTYPE": "BlockChance",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 114,
+      "UniqueModKey": 10008
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "SkillCooldownReduce",
+    "sellGold": 3068928,
+    "cubeExp": 1268064
+  }
+}

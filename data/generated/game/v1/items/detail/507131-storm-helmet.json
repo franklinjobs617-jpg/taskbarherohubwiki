@@ -1,0 +1,47 @@
+{
+  "id": 507131,
+  "slug": "507131-storm-helmet",
+  "type": "GEAR",
+  "name": {
+    "zh": "风暴头盔",
+    "en": "Storm Helmet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/helmet/HELMET_500013.png",
+  "image": "/game/game/gear/helmet/HELMET_500013.png",
+  "grade": "CELESTIAL",
+  "gear": "HELMET",
+  "level": 60,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 507131,
+      "BaseStat1_Value": 1409,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 159,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 1102,
+      "InherentStat3_STATTYPE": "Armor",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 1511,
+      "UniqueModKey": 20002
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "ArrowRainCriticalCooldown",
+    "sellGold": 19205586,
+    "cubeExp": 8523446
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 356062,
+  "slug": "356062-knight-s-axe",
+  "type": "GEAR",
+  "name": {
+    "zh": "骑士之斧",
+    "en": "Knight's Axe"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/axe/AXE_350006.png",
+  "image": "/game/game/gear/axe/AXE_350006.png",
+  "grade": "BEYOND",
+  "gear": "AXE",
+  "level": 25,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 356062,
+      "BaseStat1_Value": 170,
+      "BaseStat2_Value": 28,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 112,
+      "InherentStat2_STATTYPE": "CriticalChance",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 10,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 415,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 2737020,
+    "cubeExp": 676464
+  }
+}

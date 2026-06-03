@@ -1,0 +1,47 @@
+{
+  "id": 353021,
+  "slug": "353021-iron-axe",
+  "type": "GEAR",
+  "name": {
+    "zh": "铁斧",
+    "en": "Iron Axe"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/axe/AXE_350002.png",
+  "image": "/game/game/gear/axe/AXE_350002.png",
+  "grade": "LEGENDARY",
+  "gear": "AXE",
+  "level": 5,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 353021,
+      "BaseStat1_Value": 14,
+      "BaseStat2_Value": 10,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 51,
+      "InherentStat2_STATTYPE": "CriticalChance",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 6,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 1350,
+    "cubeExp": 540
+  }
+}

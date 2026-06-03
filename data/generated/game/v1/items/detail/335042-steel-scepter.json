@@ -1,0 +1,47 @@
+{
+  "id": 335042,
+  "slug": "335042-steel-scepter",
+  "type": "GEAR",
+  "name": {
+    "zh": "钢铁权杖",
+    "en": "Steel Scepter"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/scepter/SCEPTER_330004.png",
+  "image": "/game/game/gear/scepter/SCEPTER_330004.png",
+  "grade": "ARCANA",
+  "gear": "SCEPTER",
+  "level": 15,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 335042,
+      "BaseStat1_Value": 38,
+      "BaseStat2_Value": 24,
+      "InherentStat1_STATTYPE": "CastSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 101,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 361,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 292,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 228096,
+    "cubeExp": 62160
+  }
+}

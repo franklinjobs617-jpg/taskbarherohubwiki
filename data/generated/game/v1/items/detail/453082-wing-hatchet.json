@@ -1,0 +1,47 @@
+{
+  "id": 453082,
+  "slug": "453082-wing-hatchet",
+  "type": "GEAR",
+  "name": {
+    "zh": "羽翼手斧",
+    "en": "Wing Hatchet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/hatchet/HATCHET_450008.png",
+  "image": "/game/game/gear/hatchet/HATCHET_450008.png",
+  "grade": "LEGENDARY",
+  "gear": "HATCHET",
+  "level": 35,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 453082,
+      "BaseStat1_Value": 637,
+      "BaseStat2_Value": 0,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 12,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 212,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 243540,
+    "cubeExp": 88128
+  }
+}

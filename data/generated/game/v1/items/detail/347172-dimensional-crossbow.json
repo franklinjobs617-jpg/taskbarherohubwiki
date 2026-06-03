@@ -1,0 +1,47 @@
+{
+  "id": 347172,
+  "slug": "347172-dimensional-crossbow",
+  "type": "GEAR",
+  "name": {
+    "zh": "次元弩",
+    "en": "Dimensional Crossbow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/crossbow/CROSSBOW_340017.png",
+  "image": "/game/game/gear/crossbow/CROSSBOW_340017.png",
+  "grade": "CELESTIAL",
+  "gear": "CROSSBOW",
+  "level": 80,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 347172,
+      "BaseStat1_Value": 2230,
+      "BaseStat2_Value": 32,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 107,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 1661,
+      "InherentStat3_STATTYPE": "AttackSpeed",
+      "InherentStat3_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat3_Value": 299,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 32512480,
+    "cubeExp": 15389556
+  }
+}

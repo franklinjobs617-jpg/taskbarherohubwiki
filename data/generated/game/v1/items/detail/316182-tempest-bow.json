@@ -1,0 +1,47 @@
+{
+  "id": 316182,
+  "slug": "316182-tempest-bow",
+  "type": "GEAR",
+  "name": {
+    "zh": "暴风弓",
+    "en": "Tempest Bow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bow/BOW_310018.png",
+  "image": "/game/game/gear/bow/BOW_310018.png",
+  "grade": "BEYOND",
+  "gear": "BOW",
+  "level": 85,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 316182,
+      "BaseStat1_Value": 1285,
+      "BaseStat2_Value": 85,
+      "InherentStat1_STATTYPE": "CriticalChance",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 37,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 1486,
+      "InherentStat3_STATTYPE": "CooldownReduction",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 100,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 9770332,
+    "cubeExp": 4735248
+  }
+}

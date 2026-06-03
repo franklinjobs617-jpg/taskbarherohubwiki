@@ -1,0 +1,47 @@
+{
+  "id": 348112,
+  "slug": "348112-mystic-crossbow",
+  "type": "GEAR",
+  "name": {
+    "zh": "神秘弩",
+    "en": "Mystic Crossbow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/crossbow/CROSSBOW_340011.png",
+  "image": "/game/game/gear/crossbow/CROSSBOW_340011.png",
+  "grade": "DIVINE",
+  "gear": "CROSSBOW",
+  "level": 50,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 348112,
+      "BaseStat1_Value": 1218,
+      "BaseStat2_Value": 36,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 223,
+      "InherentStat2_STATTYPE": "CooldownReduction",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 87,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 937,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 67870136,
+    "cubeExp": 29004108
+  }
+}

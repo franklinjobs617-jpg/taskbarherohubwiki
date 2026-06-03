@@ -1,0 +1,47 @@
+{
+  "id": 433071,
+  "slug": "433071-war-tome",
+  "type": "GEAR",
+  "name": {
+    "zh": "战争魔法书",
+    "en": "War Tome"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/tome/TOME_430007.png",
+  "image": "/game/game/gear/tome/TOME_430007.png",
+  "grade": "LEGENDARY",
+  "gear": "TOME",
+  "level": 30,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 433071,
+      "BaseStat1_Value": 145,
+      "BaseStat2_Value": 0,
+      "InherentStat1_STATTYPE": "DamageAbsorption",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 85,
+      "InherentStat2_STATTYPE": "HpRegenPerSec",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 248,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 209520,
+    "cubeExp": 66096
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "slug": "sapphire",
+  "id": 112002,
+  "marketHash": "Sapphire",
+  "lowest": 0.06,
+  "median": null,
+  "listings": 3031,
+  "trend7d": null,
+  "confidence": "low",
+  "updatedAt": "2026-06-03T12:41:31.757Z",
+  "source": "steamcommunity_market_search"
+}

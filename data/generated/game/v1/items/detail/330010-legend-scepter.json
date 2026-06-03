@@ -1,0 +1,47 @@
+{
+  "id": 330010,
+  "slug": "330010-legend-scepter",
+  "type": "GEAR",
+  "name": {
+    "zh": "传说权杖",
+    "en": "Legend Scepter"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/scepter/SCEPTER_330010.png",
+  "image": "/game/game/gear/scepter/SCEPTER_330010.png",
+  "grade": "COMMON",
+  "gear": "SCEPTER",
+  "level": 45,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 330010,
+      "BaseStat1_Value": 57,
+      "BaseStat2_Value": 20,
+      "InherentStat1_STATTYPE": "NONE",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 0,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 5920,
+    "cubeExp": 2448
+  }
+}

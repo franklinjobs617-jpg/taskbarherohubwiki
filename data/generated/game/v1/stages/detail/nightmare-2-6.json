@@ -1,0 +1,52 @@
+{
+  "key": 2206,
+  "act": 2,
+  "no": 6,
+  "level": 43,
+  "type": "NORMAL",
+  "difficulty": "NIGHTMARE",
+  "name": {
+    "zh-Hans": "夕阳废墟",
+    "zh-Hant": "夕陽廢墟",
+    "en-US": "Sunset Ruins",
+    "fr-FR": "Ruines du Crépuscule",
+    "de-DE": "Sonnenuntergangsruinen",
+    "id-ID": "Reruntuhan Senja",
+    "ja-JP": "夕暮れの廃墟",
+    "ko-KR": "석양의 폐허",
+    "pl-PL": "Ruiny Zachodu",
+    "pt-BR": "Ruínas do Pôr do Sol",
+    "ru-RU": "Руины заката",
+    "es-ES": "Ruinas del Crepúsculo",
+    "th-TH": "ซากปรักหักพังยามอาทิตย์ตก",
+    "tr-TR": "Gün Batımı Harabeleri",
+    "uk-UA": "Руїни заходу",
+    "vi-VN": "Phế tích Hoàng hôn"
+  },
+  "waves": 22,
+  "monsterCount": 4,
+  "kills": 286,
+  "goldPerClear": 36788,
+  "expPerClear": 699465,
+  "boss": {
+    "name": {
+      "zh-Hans": "食尸鬼",
+      "zh-Hant": "食屍鬼",
+      "en-US": "Ghoul",
+      "fr-FR": "Goule",
+      "de-DE": "Ghul",
+      "id-ID": "Ghoul",
+      "ja-JP": "グール",
+      "ko-KR": "구울",
+      "pl-PL": "Ghul",
+      "pt-BR": "Ghoul",
+      "ru-RU": "Гуль",
+      "es-ES": "Ghoul",
+      "th-TH": "กูล",
+      "tr-TR": "Gulyabani",
+      "uk-UA": "Гуль",
+      "vi-VN": "Xác Sống"
+    },
+    "portrait": "/game/monsters/Ghoul/Ghoul_Idle_character_2.png"
+  }
+}

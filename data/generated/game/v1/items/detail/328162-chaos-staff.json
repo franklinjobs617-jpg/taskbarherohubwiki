@@ -1,0 +1,47 @@
+{
+  "id": 328162,
+  "slug": "328162-chaos-staff",
+  "type": "GEAR",
+  "name": {
+    "zh": "混沌之杖",
+    "en": "Chaos Staff"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/staff/STAFF_320016.png",
+  "image": "/game/game/gear/staff/STAFF_320016.png",
+  "grade": "DIVINE",
+  "gear": "STAFF",
+  "level": 75,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 328162,
+      "BaseStat1_Value": 2583,
+      "BaseStat2_Value": 36,
+      "InherentStat1_STATTYPE": "CriticalDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 1380,
+      "InherentStat2_STATTYPE": "CastSpeed",
+      "InherentStat2_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat2_Value": 458,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 1819,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 107088508,
+    "cubeExp": 49721328
+  }
+}

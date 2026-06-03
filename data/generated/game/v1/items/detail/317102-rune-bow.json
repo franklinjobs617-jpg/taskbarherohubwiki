@@ -1,0 +1,47 @@
+{
+  "id": 317102,
+  "slug": "317102-rune-bow",
+  "type": "GEAR",
+  "name": {
+    "zh": "符文弓",
+    "en": "Rune Bow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bow/BOW_310010.png",
+  "image": "/game/game/gear/bow/BOW_310010.png",
+  "grade": "CELESTIAL",
+  "gear": "BOW",
+  "level": 45,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 317102,
+      "BaseStat1_Value": 532,
+      "BaseStat2_Value": 160,
+      "InherentStat1_STATTYPE": "CriticalChance",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 22,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 760,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 129,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 17185168,
+    "cubeExp": 7102872
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 332021,
+  "slug": "332021-iron-scepter",
+  "type": "GEAR",
+  "name": {
+    "zh": "铁权杖",
+    "en": "Iron Scepter"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/scepter/SCEPTER_330002.png",
+  "image": "/game/game/gear/scepter/SCEPTER_330002.png",
+  "grade": "RARE",
+  "gear": "SCEPTER",
+  "level": 5,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 332021,
+      "BaseStat1_Value": 5,
+      "BaseStat2_Value": 10,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 51,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 450,
+    "cubeExp": 180
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 409131,
+  "slug": "409131-ancient-shield",
+  "type": "GEAR",
+  "name": {
+    "zh": "远古盾",
+    "en": "Ancient Shield"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/shield/SHIELD_400013.png",
+  "image": "/game/game/gear/shield/SHIELD_400013.png",
+  "grade": "COSMIC",
+  "gear": "SHIELD",
+  "level": 60,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 409131,
+      "BaseStat1_Value": 416,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 114,
+      "InherentStat2_STATTYPE": "AllElementalResistance",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 31,
+      "InherentStat3_STATTYPE": "MaxHp",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 591,
+      "UniqueModKey": 10005
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "SkillMultiStrikeCountUp",
+    "sellGold": 588173978,
+    "cubeExp": 261038808
+  }
+}

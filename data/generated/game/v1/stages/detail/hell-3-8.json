@@ -1,0 +1,52 @@
+{
+  "key": 3308,
+  "act": 3,
+  "no": 8,
+  "level": 76,
+  "type": "NORMAL",
+  "difficulty": "HELL",
+  "name": {
+    "zh-Hans": "毁灭要塞",
+    "zh-Hant": "毀滅要塞",
+    "en-US": "Citadel of Ruin",
+    "fr-FR": "Citadelle de la Ruine",
+    "de-DE": "Zitadelle des Untergangs",
+    "id-ID": "Benteng Kehancuran",
+    "ja-JP": "破滅の要塞",
+    "ko-KR": "파멸의 성채",
+    "pl-PL": "Cytadela Zguby",
+    "pt-BR": "Cidadela da Ruína",
+    "ru-RU": "Цитадель гибели",
+    "es-ES": "Ciudadela de la Ruina",
+    "th-TH": "ป้อมปราการแห่งความหายนะ",
+    "tr-TR": "Yıkım Kalesi",
+    "uk-UA": "Цитадель загибелі",
+    "vi-VN": "Thành lũy Hủy diệt"
+  },
+  "waves": 27,
+  "monsterCount": 6,
+  "kills": 486,
+  "goldPerClear": 340398,
+  "expPerClear": 6681695,
+  "boss": {
+    "name": {
+      "zh-Hans": "狗头人卫兵",
+      "zh-Hant": "狗頭人衛兵",
+      "en-US": "Kobold Guard",
+      "fr-FR": "Garde Kobold",
+      "de-DE": "Kobold-Wache",
+      "id-ID": "Penjaga Kobold",
+      "ja-JP": "コボルト衛兵",
+      "ko-KR": "코볼트 경비병",
+      "pl-PL": "Strażnik Kobold",
+      "pt-BR": "Guarda Kobold",
+      "ru-RU": "Стражник кобольдов",
+      "es-ES": "Guardia Kobold",
+      "th-TH": "ทหารเฝ้าโคบอลด์",
+      "tr-TR": "Kobold Muhafız",
+      "uk-UA": "Охоронець кобольдів",
+      "vi-VN": "Lính Gác Kobold"
+    },
+    "portrait": "/game/monsters/SpearKobolt/SpearKobolt_Idle_character_2.png"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 305041,
+  "slug": "305041-bastard-sword",
+  "type": "GEAR",
+  "name": {
+    "zh": "长阔剑",
+    "en": "Bastard Sword"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/sword/SWORD_300004.png",
+  "image": "/game/game/gear/sword/SWORD_300004.png",
+  "grade": "ARCANA",
+  "gear": "SWORD",
+  "level": 15,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 305041,
+      "BaseStat1_Value": 42,
+      "BaseStat2_Value": 37,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 292,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 361,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 9,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 228096,
+    "cubeExp": 62160
+  }
+}

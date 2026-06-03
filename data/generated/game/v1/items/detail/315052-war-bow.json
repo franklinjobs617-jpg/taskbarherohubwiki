@@ -1,0 +1,47 @@
+{
+  "id": 315052,
+  "slug": "315052-war-bow",
+  "type": "GEAR",
+  "name": {
+    "zh": "战弓",
+    "en": "War Bow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bow/BOW_310005.png",
+  "image": "/game/game/gear/bow/BOW_310005.png",
+  "grade": "ARCANA",
+  "gear": "BOW",
+  "level": 20,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 315052,
+      "BaseStat1_Value": 65,
+      "BaseStat2_Value": 65,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 100,
+      "InherentStat2_STATTYPE": "CooldownReduction",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 55,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 334,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 570240,
+    "cubeExp": 124320
+  }
+}

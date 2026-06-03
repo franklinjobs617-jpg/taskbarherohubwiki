@@ -1,0 +1,47 @@
+{
+  "id": 615162,
+  "slug": "615162-astral-earring",
+  "type": "GEAR",
+  "name": {
+    "zh": "星界耳环",
+    "en": "Astral Earring"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/earing/EARING_610016.png",
+  "image": "/game/game/gear/earing/EARING_610016.png",
+  "grade": "ARCANA",
+  "gear": "EARING",
+  "level": 75,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 615162,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "SkillDurationIncrease",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 186,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 357,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 319,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 8195904,
+    "cubeExp": 3804192
+  }
+}

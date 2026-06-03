@@ -1,0 +1,47 @@
+{
+  "id": 434061,
+  "slug": "434061-commander-s-tome",
+  "type": "GEAR",
+  "name": {
+    "zh": "统帅魔法书",
+    "en": "Commander's Tome"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/tome/TOME_430006.png",
+  "image": "/game/game/gear/tome/TOME_430006.png",
+  "grade": "IMMORTAL",
+  "gear": "TOME",
+  "level": 25,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 434061,
+      "BaseStat1_Value": 140,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "DamageAbsorption",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 84,
+      "InherentStat2_STATTYPE": "HpRegenPerSec",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 244,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 534600,
+    "cubeExp": 132192
+  }
+}

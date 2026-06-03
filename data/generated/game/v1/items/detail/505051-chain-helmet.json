@@ -1,0 +1,47 @@
+{
+  "id": 505051,
+  "slug": "505051-chain-helmet",
+  "type": "GEAR",
+  "name": {
+    "zh": "锁链头盔",
+    "en": "Chain Helmet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/helmet/HELMET_500005.png",
+  "image": "/game/game/gear/helmet/HELMET_500005.png",
+  "grade": "ARCANA",
+  "gear": "HELMET",
+  "level": 20,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 505051,
+      "BaseStat1_Value": 160,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 41,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 78,
+      "InherentStat3_STATTYPE": "HpRegenPerSec",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 270,
+      "UniqueModKey": 20001
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "SkewerShotBleedingStrike",
+    "sellGold": 456192,
+    "cubeExp": 99456
+  }
+}

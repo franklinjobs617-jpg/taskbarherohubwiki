@@ -1,0 +1,47 @@
+{
+  "id": 507171,
+  "slug": "507171-dimensional-helmet",
+  "type": "GEAR",
+  "name": {
+    "zh": "次元头盔",
+    "en": "Dimensional Helmet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/helmet/HELMET_500017.png",
+  "image": "/game/game/gear/helmet/HELMET_500017.png",
+  "grade": "CELESTIAL",
+  "gear": "HELMET",
+  "level": 80,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 507171,
+      "BaseStat1_Value": 4072,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 247,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 2228,
+      "InherentStat3_STATTYPE": "HpRegenPerSec",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 2444,
+      "UniqueModKey": 20002
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "ArrowRainCriticalCooldown",
+    "sellGold": 26009984,
+    "cubeExp": 12311645
+  }
+}

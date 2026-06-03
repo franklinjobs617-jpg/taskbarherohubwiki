@@ -1,0 +1,47 @@
+{
+  "id": 405121,
+  "slug": "405121-grand-shield",
+  "type": "GEAR",
+  "name": {
+    "zh": "大盾",
+    "en": "Grand Shield"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/shield/SHIELD_400012.png",
+  "image": "/game/game/gear/shield/SHIELD_400012.png",
+  "grade": "ARCANA",
+  "gear": "SHIELD",
+  "level": 55,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 405121,
+      "BaseStat1_Value": 211,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 60,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 1885,
+      "InherentStat3_STATTYPE": "AreaOfEffect",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 255,
+      "UniqueModKey": 10002
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "SkillMultiStrikeCountUp",
+    "sellGold": 3872448,
+    "cubeExp": 1690752
+  }
+}

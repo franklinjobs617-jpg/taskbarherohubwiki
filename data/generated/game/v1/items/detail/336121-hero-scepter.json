@@ -1,0 +1,47 @@
+{
+  "id": 336121,
+  "slug": "336121-hero-scepter",
+  "type": "GEAR",
+  "name": {
+    "zh": "英雄权杖",
+    "en": "Hero Scepter"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/scepter/SCEPTER_330012.png",
+  "image": "/game/game/gear/scepter/SCEPTER_330012.png",
+  "grade": "BEYOND",
+  "gear": "SCEPTER",
+  "level": 55,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 336121,
+      "BaseStat1_Value": 460,
+      "BaseStat2_Value": 28,
+      "InherentStat1_STATTYPE": "CriticalDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 753,
+      "InherentStat2_STATTYPE": "AddHpPerHit",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 13,
+      "InherentStat3_STATTYPE": "CriticalChance",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 22,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 6195618,
+    "cubeExp": 2705856
+  }
+}

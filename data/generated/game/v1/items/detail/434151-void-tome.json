@@ -1,0 +1,47 @@
+{
+  "id": 434151,
+  "slug": "434151-void-tome",
+  "type": "GEAR",
+  "name": {
+    "zh": "虚空典籍",
+    "en": "Void Tome"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/tome/TOME_430015.png",
+  "image": "/game/game/gear/tome/TOME_430015.png",
+  "grade": "IMMORTAL",
+  "gear": "TOME",
+  "level": 70,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 434151,
+      "BaseStat1_Value": 277,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "DamageAbsorption",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 203,
+      "InherentStat2_STATTYPE": "HpRegenPerSec",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 745,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 1590840,
+    "cubeExp": 727056
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 625072,
+  "slug": "625072-amber-ring",
+  "type": "GEAR",
+  "name": {
+    "zh": "琥珀戒指",
+    "en": "Amber Ring"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/ring/RING_620007.png",
+  "image": "/game/game/gear/ring/RING_620007.png",
+  "grade": "ARCANA",
+  "gear": "RING",
+  "level": 30,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 625072,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 28,
+      "InherentStat2_STATTYPE": "AddHpPerKill",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 18,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 10,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 3017088,
+    "cubeExp": 951048
+  }
+}

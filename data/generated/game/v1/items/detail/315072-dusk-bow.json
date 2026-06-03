@@ -1,0 +1,47 @@
+{
+  "id": 315072,
+  "slug": "315072-dusk-bow",
+  "type": "GEAR",
+  "name": {
+    "zh": "黄昏之弓",
+    "en": "Dusk Bow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bow/BOW_310007.png",
+  "image": "/game/game/gear/bow/BOW_310007.png",
+  "grade": "ARCANA",
+  "gear": "BOW",
+  "level": 30,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 315072,
+      "BaseStat1_Value": 136,
+      "BaseStat2_Value": 65,
+      "InherentStat1_STATTYPE": "CriticalChance",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 11,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 466,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 449,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 1005696,
+    "cubeExp": 317016
+  }
+}

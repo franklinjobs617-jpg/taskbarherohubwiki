@@ -1,0 +1,47 @@
+{
+  "id": 356121,
+  "slug": "356121-hero-axe",
+  "type": "GEAR",
+  "name": {
+    "zh": "英雄之斧",
+    "en": "Hero Axe"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/axe/AXE_350012.png",
+  "image": "/game/game/gear/axe/AXE_350012.png",
+  "grade": "BEYOND",
+  "gear": "AXE",
+  "level": 55,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 356121,
+      "BaseStat1_Value": 691,
+      "BaseStat2_Value": 28,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 182,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 880,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 753,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 6195618,
+    "cubeExp": 2705856
+  }
+}

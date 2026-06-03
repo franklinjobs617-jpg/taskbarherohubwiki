@@ -1,0 +1,48 @@
+{
+  "id": 160008,
+  "slug": "empire-100th-anniversary-coin",
+  "type": "MATERIAL",
+  "name": {
+    "zh": "帝国百年纪念币",
+    "en": "Empire 100th Anniversary Coin"
+  },
+  "description": {
+    "zh": "纪念金币。怀着迫切的心愿投入魔方吧。",
+    "en": "A commemorative coin. Toss it into the cube with all your wishes."
+  },
+  "icon": "/game/game/items/materials/Item_160008.png",
+  "image": "/game/game/items/materials/Item_160008.png",
+  "grade": "CELESTIAL",
+  "gear": null,
+  "level": null,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": {
+      "zh-Hans": "纪念金币。怀着迫切的心愿投入魔方吧。",
+      "zh-Hant": "紀念金幣。懷著迫切的心願投入魔方吧。",
+      "en-US": "A commemorative coin. Toss it into the cube with all your wishes.",
+      "fr-FR": "Une pièce commémorative. Jetez-la dans le cube avec tous vos vœux.",
+      "de-DE": "Eine Gedenkmünze. Wirf sie voller Hoffnung in den Würfel.",
+      "id-ID": "Koin peringatan. Lemparkan ke dalam Cube beserta seluruh harapanmu.",
+      "ja-JP": "記念コイン。願いを込めてキューブに投げ入れよう。",
+      "ko-KR": "기념 주화. 간절한 마음을 담아 큐브에 던져보자.",
+      "pl-PL": "Pamiątkowa moneta. Wrzuć ją do kostki z całą swoją nadzieją.",
+      "pt-BR": "Uma moeda comemorativa. Jogue-a no cubo com todos os seus desejos.",
+      "ru-RU": "Памятная монета. Бросьте её в куб со всеми своими желаниями.",
+      "es-ES": "Una moneda conmemorativa. Lánzala al cubo con todos tus deseos.",
+      "th-TH": "เหรียญที่ระลึก โยนมันลงในคิวบ์พร้อมความปรารถนาทั้งหมดของคุณ",
+      "tr-TR": "Hatıra parası. Tüm dileklerinle birlikte küpün içine at.",
+      "uk-UA": "Пам'ятна монета. Киньте її в куб з усіма своїми бажаннями.",
+      "vi-VN": "Đồng xu kỷ niệm. Hãy ném nó vào Cube cùng tất cả ước nguyện của bạn."
+    },
+    "stats": null,
+    "synthType": null,
+    "dropKey": null,
+    "uniqueMod": null
+  }
+}

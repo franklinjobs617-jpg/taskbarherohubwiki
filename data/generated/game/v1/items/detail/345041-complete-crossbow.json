@@ -1,0 +1,47 @@
+{
+  "id": 345041,
+  "slug": "345041-complete-crossbow",
+  "type": "GEAR",
+  "name": {
+    "zh": "完整弩",
+    "en": "Complete Crossbow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/crossbow/CROSSBOW_340004.png",
+  "image": "/game/game/gear/crossbow/CROSSBOW_340004.png",
+  "grade": "ARCANA",
+  "gear": "CROSSBOW",
+  "level": 15,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 345041,
+      "BaseStat1_Value": 60,
+      "BaseStat2_Value": 24,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 94,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 9,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 361,
+      "UniqueModKey": 50005
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "SkillProjectileCountUp",
+    "sellGold": 228096,
+    "cubeExp": 62160
+  }
+}

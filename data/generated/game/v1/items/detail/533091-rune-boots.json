@@ -1,0 +1,47 @@
+{
+  "id": 533091,
+  "slug": "533091-rune-boots",
+  "type": "GEAR",
+  "name": {
+    "zh": "符文靴",
+    "en": "Rune Boots"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/boots/BOOTS_530009.png",
+  "image": "/game/game/gear/boots/BOOTS_530009.png",
+  "grade": "LEGENDARY",
+  "gear": "BOOTS",
+  "level": 40,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 533091,
+      "BaseStat1_Value": 116,
+      "BaseStat2_Value": 0,
+      "InherentStat1_STATTYPE": "MovementSpeed",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 59,
+      "InherentStat2_STATTYPE": "MaxHp",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 57,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 98091,
+    "cubeExp": 38556
+  }
+}

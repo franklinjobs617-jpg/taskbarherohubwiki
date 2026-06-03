@@ -1,0 +1,47 @@
+{
+  "id": 624091,
+  "slug": "624091-amethyst-ring",
+  "type": "GEAR",
+  "name": {
+    "zh": "紫水晶戒指",
+    "en": "Amethyst Ring"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/ring/RING_620009.png",
+  "image": "/game/game/gear/ring/RING_620009.png",
+  "grade": "IMMORTAL",
+  "gear": "RING",
+  "level": 40,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 624091,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": 0,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 30,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 150,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 1261170,
+    "cubeExp": 495720
+  }
+}

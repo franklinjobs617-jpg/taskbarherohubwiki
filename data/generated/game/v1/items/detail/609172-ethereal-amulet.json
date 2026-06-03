@@ -1,0 +1,47 @@
+{
+  "id": 609172,
+  "slug": "609172-ethereal-amulet",
+  "type": "GEAR",
+  "name": {
+    "zh": "以太护符",
+    "en": "Ethereal Amulet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/amulet/AMULET_600017.png",
+  "image": "/game/game/gear/amulet/AMULET_600017.png",
+  "grade": "COSMIC",
+  "gear": "AMULET",
+  "level": 80,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 609172,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 80,
+      "InherentStat2_STATTYPE": "CriticalChance",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 600,
+      "InherentStat3_STATTYPE": "AddAllSkillLevel",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 3,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 1593119360,
+    "cubeExp": 754112112
+  }
+}

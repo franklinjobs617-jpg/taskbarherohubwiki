@@ -1,0 +1,47 @@
+{
+  "id": 636182,
+  "slug": "636182-void-bracer",
+  "type": "GEAR",
+  "name": {
+    "zh": "虚空护腕",
+    "en": "Void Bracer"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bracer/BRACER_630018.png",
+  "image": "/game/game/gear/bracer/BRACER_630018.png",
+  "grade": "BEYOND",
+  "gear": "BRACER",
+  "level": 85,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 636182,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "Armor",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 1086,
+      "InherentStat2_STATTYPE": "DamageReduction",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 154,
+      "InherentStat3_STATTYPE": "BlockChance",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 151,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 29310996,
+    "cubeExp": 14205744
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 327102,
+  "slug": "327102-crystal-staff",
+  "type": "GEAR",
+  "name": {
+    "zh": "水晶法杖",
+    "en": "Crystal Staff"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/staff/STAFF_320010.png",
+  "image": "/game/game/gear/staff/STAFF_320010.png",
+  "grade": "CELESTIAL",
+  "gear": "STAFF",
+  "level": 45,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 327102,
+      "BaseStat1_Value": 767,
+      "BaseStat2_Value": 32,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 77,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 890,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 129,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 17185168,
+    "cubeExp": 7102872
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 302072,
+  "slug": "302072-knight-sword",
+  "type": "GEAR",
+  "name": {
+    "zh": "骑士之剑",
+    "en": "Knight Sword"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/sword/SWORD_300007.png",
+  "image": "/game/game/gear/sword/SWORD_300007.png",
+  "grade": "RARE",
+  "gear": "SWORD",
+  "level": 30,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 302072,
+      "BaseStat1_Value": 44,
+      "BaseStat2_Value": 30,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 297,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 34920,
+    "cubeExp": 11016
+  }
+}

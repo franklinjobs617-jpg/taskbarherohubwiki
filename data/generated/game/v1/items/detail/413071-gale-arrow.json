@@ -1,0 +1,47 @@
+{
+  "id": 413071,
+  "slug": "413071-gale-arrow",
+  "type": "GEAR",
+  "name": {
+    "zh": "疾风箭",
+    "en": "Gale Arrow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/arrow/ARROW_410007.png",
+  "image": "/game/game/gear/arrow/ARROW_410007.png",
+  "grade": "LEGENDARY",
+  "gear": "ARROW",
+  "level": 30,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 413071,
+      "BaseStat1_Value": 230,
+      "BaseStat2_Value": 0,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 189,
+      "InherentStat2_STATTYPE": "AttackSpeed",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 70,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 209520,
+    "cubeExp": 66096
+  }
+}

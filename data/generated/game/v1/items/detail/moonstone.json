@@ -1,0 +1,48 @@
+{
+  "id": 147001,
+  "slug": "moonstone",
+  "type": "MATERIAL",
+  "name": {
+    "zh": "月长石",
+    "en": "Moonstone"
+  },
+  "description": {
+    "zh": "可以用来制作某物的高级材料。",
+    "en": "An advanced material used to create something."
+  },
+  "icon": "/game/game/items/materials/Item_147001.png",
+  "image": "/game/game/items/materials/Item_147001.png",
+  "grade": "CELESTIAL",
+  "gear": null,
+  "level": null,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": {
+      "zh-Hans": "可以用来制作某物的高级材料。",
+      "zh-Hant": "可以用來製作某物的高級材料。",
+      "en-US": "An advanced material used to create something.",
+      "fr-FR": "Un matériau avancé utilisé pour créer quelque chose.",
+      "de-DE": "Ein fortgeschrittenes Material, das zur Herstellung von etwas verwendet werden kann.",
+      "id-ID": "Material tingkat lanjut yang digunakan untuk membuat sesuatu.",
+      "ja-JP": "何かを作るための高級素材。",
+      "ko-KR": "무언가를 만들 수 있는 고급 재료.",
+      "pl-PL": "Zaawansowany materiał używany do tworzenia czegoś.",
+      "pt-BR": "Um material avançado usado para criar algo.",
+      "ru-RU": "Продвинутый материал, используемый для создания чего-либо.",
+      "es-ES": "Un material avanzado utilizado para crear algo.",
+      "th-TH": "วัสดุขั้นสูงที่ใช้สร้างสิ่งของได้",
+      "tr-TR": "Bir şey yaratmak için kullanılan gelişmiş bir malzeme.",
+      "uk-UA": "Просунутий матеріал, що використовується для створення чогось.",
+      "vi-VN": "Nguyên liệu cao cấp dùng để chế tạo vật phẩm."
+    },
+    "stats": null,
+    "synthType": "Material",
+    "dropKey": null,
+    "uniqueMod": null
+  }
+}

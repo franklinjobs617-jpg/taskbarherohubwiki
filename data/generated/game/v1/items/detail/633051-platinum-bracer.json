@@ -1,0 +1,47 @@
+{
+  "id": 633051,
+  "slug": "633051-platinum-bracer",
+  "type": "GEAR",
+  "name": {
+    "zh": "铂金护腕",
+    "en": "Platinum Bracer"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bracer/BRACER_630005.png",
+  "image": "/game/game/gear/bracer/BRACER_630005.png",
+  "grade": "LEGENDARY",
+  "gear": "BRACER",
+  "level": 20,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 633051,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AreaOfEffect",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 60,
+      "InherentStat2_STATTYPE": "DodgeChance",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 35,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 178200,
+    "cubeExp": 38880
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": 320020,
+  "slug": "radiant-staff",
+  "type": "GEAR",
+  "name": {
+    "zh": "辉耀法杖",
+    "en": "Radiant Staff"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/staff/STAFF_320020.png",
+  "image": "/game/game/gear/staff/STAFF_320020.png",
+  "grade": "COMMON",
+  "gear": "STAFF",
+  "level": 100,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 320020,
+      "BaseStat1_Value": 114,
+      "BaseStat2_Value": 20,
+      "InherentStat1_STATTYPE": "NONE",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 0,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 310008,
+  "slug": "310008-jade-bow",
+  "type": "GEAR",
+  "name": {
+    "zh": "翡翠弓",
+    "en": "Jade Bow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bow/BOW_310008.png",
+  "image": "/game/game/gear/bow/BOW_310008.png",
+  "grade": "COMMON",
+  "gear": "BOW",
+  "level": 35,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 310008,
+      "BaseStat1_Value": 29,
+      "BaseStat2_Value": 40,
+      "InherentStat1_STATTYPE": "NONE",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 0,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 4510,
+    "cubeExp": 1632
+  }
+}

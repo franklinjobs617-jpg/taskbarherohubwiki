@@ -1,0 +1,47 @@
+{
+  "id": 319151,
+  "slug": "319151-chaos-bow",
+  "type": "GEAR",
+  "name": {
+    "zh": "混沌之弓",
+    "en": "Chaos Bow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bow/BOW_310015.png",
+  "image": "/game/game/gear/bow/BOW_310015.png",
+  "grade": "COSMIC",
+  "gear": "BOW",
+  "level": 70,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 319151,
+      "BaseStat1_Value": 1993,
+      "BaseStat2_Value": 310,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 342,
+      "InherentStat2_STATTYPE": "AttackDamage",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 1944,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 478,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 349206074,
+    "cubeExp": 159523716
+  }
+}

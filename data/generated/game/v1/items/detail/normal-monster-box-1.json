@@ -1,0 +1,31 @@
+{
+  "id": 910011,
+  "slug": "normal-monster-box-1",
+  "type": "STAGEBOX",
+  "name": {
+    "zh": "Normal Monster Box 1",
+    "en": "Normal Monster Box 1"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/items/boxes/Item_910011.png",
+  "image": "/game/game/items/boxes/Item_910011.png",
+  "grade": "COMMON",
+  "gear": null,
+  "level": null,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": null,
+    "synthType": null,
+    "dropKey": 9100111,
+    "uniqueMod": null
+  }
+}

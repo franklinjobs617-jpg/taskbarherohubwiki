@@ -1,0 +1,47 @@
+{
+  "id": 529162,
+  "slug": "529162-dragon-gloves",
+  "type": "GEAR",
+  "name": {
+    "zh": "龙鳞手套",
+    "en": "Dragon Gloves"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/gloves/GLOVES_520016.png",
+  "image": "/game/game/gear/gloves/GLOVES_520016.png",
+  "grade": "COSMIC",
+  "gear": "GLOVES",
+  "level": 75,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 529162,
+      "BaseStat1_Value": 4758,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 300,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 2000,
+      "InherentStat3_STATTYPE": "HpRegenPerSec",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 2000,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 281107334,
+    "cubeExp": 130519404
+  }
+}

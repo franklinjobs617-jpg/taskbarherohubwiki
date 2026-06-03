@@ -1,0 +1,47 @@
+{
+  "id": 327181,
+  "slug": "327181-nova-staff",
+  "type": "GEAR",
+  "name": {
+    "zh": "新星法杖",
+    "en": "Nova Staff"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/staff/STAFF_320018.png",
+  "image": "/game/game/gear/staff/STAFF_320018.png",
+  "grade": "CELESTIAL",
+  "gear": "STAFF",
+  "level": 85,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 327181,
+      "BaseStat1_Value": 2508,
+      "BaseStat2_Value": 32,
+      "InherentStat1_STATTYPE": "CastSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 450,
+      "InherentStat2_STATTYPE": "AddHpPerHit",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 42,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 1358,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 34196162,
+    "cubeExp": 16573368
+  }
+}

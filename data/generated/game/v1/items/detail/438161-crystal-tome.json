@@ -1,0 +1,47 @@
+{
+  "id": 438161,
+  "slug": "438161-crystal-tome",
+  "type": "GEAR",
+  "name": {
+    "zh": "水晶魔法书",
+    "en": "Crystal Tome"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/tome/TOME_430016.png",
+  "image": "/game/game/gear/tome/TOME_430016.png",
+  "grade": "DIVINE",
+  "gear": "TOME",
+  "level": 75,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 438161,
+      "BaseStat1_Value": 668,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "BlockChance",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 183,
+      "InherentStat2_STATTYPE": "HpRegenPerSec",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 1809,
+      "InherentStat3_STATTYPE": "SkillHealIncrease",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 460,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 214177016,
+    "cubeExp": 99442656
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 329151,
+  "slug": "329151-abyssal-staff",
+  "type": "GEAR",
+  "name": {
+    "zh": "深渊法杖",
+    "en": "Abyssal Staff"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/staff/STAFF_320015.png",
+  "image": "/game/game/gear/staff/STAFF_320015.png",
+  "grade": "COSMIC",
+  "gear": "STAFF",
+  "level": 70,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 329151,
+      "BaseStat1_Value": 2874,
+      "BaseStat2_Value": 40,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 118,
+      "InherentStat2_STATTYPE": "CriticalChance",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 49,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 1463,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 349206074,
+    "cubeExp": 159523716
+  }
+}

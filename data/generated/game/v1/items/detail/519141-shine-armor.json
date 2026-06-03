@@ -1,0 +1,47 @@
+{
+  "id": 519141,
+  "slug": "519141-shine-armor",
+  "type": "GEAR",
+  "name": {
+    "zh": "闪光铠甲",
+    "en": "Shine Armor"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/armor/ARMOR_510014.png",
+  "image": "/game/game/gear/armor/ARMOR_510014.png",
+  "grade": "COSMIC",
+  "gear": "ARMOR",
+  "level": 65,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 519141,
+      "BaseStat1_Value": 6679,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 428,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 4270,
+      "InherentStat3_STATTYPE": "MaxHp",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 436,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 322179942,
+    "cubeExp": 145021560
+  }
+}

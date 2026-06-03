@@ -1,0 +1,47 @@
+{
+  "id": 505061,
+  "slug": "505061-medium-helmet",
+  "type": "GEAR",
+  "name": {
+    "zh": "中级头盔",
+    "en": "Medium Helmet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/helmet/HELMET_500006.png",
+  "image": "/game/game/gear/helmet/HELMET_500006.png",
+  "grade": "ARCANA",
+  "gear": "HELMET",
+  "level": 25,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 505061,
+      "BaseStat1_Value": 220,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 48,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 116,
+      "InherentStat3_STATTYPE": "HpRegenPerSec",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 344,
+      "UniqueModKey": 50003
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "CrossbowTurretCooldown",
+    "sellGold": 684288,
+    "cubeExp": 169075
+  }
+}

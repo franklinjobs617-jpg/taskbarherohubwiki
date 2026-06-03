@@ -1,0 +1,47 @@
+{
+  "id": 342041,
+  "slug": "342041-complete-crossbow",
+  "type": "GEAR",
+  "name": {
+    "zh": "完整弩",
+    "en": "Complete Crossbow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/crossbow/CROSSBOW_340004.png",
+  "image": "/game/game/gear/crossbow/CROSSBOW_340004.png",
+  "grade": "RARE",
+  "gear": "CROSSBOW",
+  "level": 15,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 342041,
+      "BaseStat1_Value": 17,
+      "BaseStat2_Value": 15,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 85,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 7920,
+    "cubeExp": 2160
+  }
+}

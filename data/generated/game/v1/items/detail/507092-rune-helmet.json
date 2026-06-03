@@ -1,0 +1,47 @@
+{
+  "id": 507092,
+  "slug": "507092-rune-helmet",
+  "type": "GEAR",
+  "name": {
+    "zh": "符文头盔",
+    "en": "Rune Helmet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/helmet/HELMET_500009.png",
+  "image": "/game/game/gear/helmet/HELMET_500009.png",
+  "grade": "CELESTIAL",
+  "gear": "HELMET",
+  "level": 40,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 507092,
+      "BaseStat1_Value": 733,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 112,
+      "InherentStat2_STATTYPE": "CooldownReduction",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 36,
+      "InherentStat3_STATTYPE": "Armor",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 613,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 12052841,
+    "cubeExp": 4735248
+  }
+}

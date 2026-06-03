@@ -1,0 +1,47 @@
+{
+  "id": 353032,
+  "slug": "353032-battle-axe",
+  "type": "GEAR",
+  "name": {
+    "zh": "战斧",
+    "en": "Battle Axe"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/axe/AXE_350003.png",
+  "image": "/game/game/gear/axe/AXE_350003.png",
+  "grade": "LEGENDARY",
+  "gear": "AXE",
+  "level": 10,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 353032,
+      "BaseStat1_Value": 21,
+      "BaseStat2_Value": 15,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 51,
+      "InherentStat2_STATTYPE": "CriticalChance",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 6,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 6750,
+    "cubeExp": 2160
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 335091,
+  "slug": "335091-rune-scepter",
+  "type": "GEAR",
+  "name": {
+    "zh": "符文权杖",
+    "en": "Rune Scepter"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/scepter/SCEPTER_330009.png",
+  "image": "/game/game/gear/scepter/SCEPTER_330009.png",
+  "grade": "ARCANA",
+  "gear": "SCEPTER",
+  "level": 40,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 335091,
+      "BaseStat1_Value": 213,
+      "BaseStat2_Value": 24,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 65,
+      "InherentStat2_STATTYPE": "CriticalChance",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 15,
+      "InherentStat3_STATTYPE": "CriticalDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 563,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 1345248,
+    "cubeExp": 528360
+  }
+}

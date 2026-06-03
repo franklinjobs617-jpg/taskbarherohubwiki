@@ -1,0 +1,47 @@
+{
+  "id": 352022,
+  "slug": "352022-iron-axe",
+  "type": "GEAR",
+  "name": {
+    "zh": "铁斧",
+    "en": "Iron Axe"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/axe/AXE_350002.png",
+  "image": "/game/game/gear/axe/AXE_350002.png",
+  "grade": "RARE",
+  "gear": "AXE",
+  "level": 5,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 352022,
+      "BaseStat1_Value": 9,
+      "BaseStat2_Value": 15,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 82,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 450,
+    "cubeExp": 180
+  }
+}

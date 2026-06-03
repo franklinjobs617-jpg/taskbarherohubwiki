@@ -1,0 +1,47 @@
+{
+  "id": 418131,
+  "slug": "418131-obsidian-arrow",
+  "type": "GEAR",
+  "name": {
+    "zh": "黑曜石箭",
+    "en": "Obsidian Arrow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/arrow/ARROW_410013.png",
+  "image": "/game/game/gear/arrow/ARROW_410013.png",
+  "grade": "DIVINE",
+  "gear": "ARROW",
+  "level": 60,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 418131,
+      "BaseStat1_Value": 540,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 122,
+      "InherentStat2_STATTYPE": "AttackSpeed",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 201,
+      "InherentStat3_STATTYPE": "IncreaseProjectileDamage",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 522,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 168049708,
+    "cubeExp": 74581992
+  }
+}

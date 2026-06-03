@@ -1,0 +1,52 @@
+{
+  "key": 4106,
+  "act": 1,
+  "no": 6,
+  "level": 83,
+  "type": "NORMAL",
+  "difficulty": "TORMENT",
+  "name": {
+    "zh-Hans": "朗姆街广场",
+    "zh-Hant": "蘭姆街廣場",
+    "en-US": "Rumstreet Square",
+    "fr-FR": "Place de Rumstreet",
+    "de-DE": "Rumstraßenplatz",
+    "id-ID": "Alun-alun Rumstreet",
+    "ja-JP": "ラムストリート広場",
+    "ko-KR": "럼스트리트 광장",
+    "pl-PL": "Plac Rumstreet",
+    "pt-BR": "Praça Rumstreet",
+    "ru-RU": "Площадь Рамстрит",
+    "es-ES": "Plaza Rumstreet",
+    "th-TH": "จัตุรัสรัมสตรีท",
+    "tr-TR": "Rumstreet Meydanı",
+    "uk-UA": "Площа Рамстріт",
+    "vi-VN": "Quảng trường Rumstreet"
+  },
+  "waves": 29,
+  "monsterCount": 4,
+  "kills": 522,
+  "goldPerClear": 289163,
+  "expPerClear": 5759076,
+  "boss": {
+    "name": {
+      "zh-Hans": "食尸鬼",
+      "zh-Hant": "食屍鬼",
+      "en-US": "Ghoul",
+      "fr-FR": "Goule",
+      "de-DE": "Ghul",
+      "id-ID": "Ghoul",
+      "ja-JP": "グール",
+      "ko-KR": "구울",
+      "pl-PL": "Ghul",
+      "pt-BR": "Ghoul",
+      "ru-RU": "Гуль",
+      "es-ES": "Ghoul",
+      "th-TH": "กูล",
+      "tr-TR": "Gulyabani",
+      "uk-UA": "Гуль",
+      "vi-VN": "Xác Sống"
+    },
+    "portrait": "/game/monsters/Ghoul/Ghoul_Idle_character_2.png"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 424131,
+  "slug": "424131-spirit-orb",
+  "type": "GEAR",
+  "name": {
+    "zh": "灵魂宝球",
+    "en": "Spirit Orb"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/orb/ORB_420013.png",
+  "image": "/game/game/gear/orb/ORB_420013.png",
+  "grade": "IMMORTAL",
+  "gear": "ORB",
+  "level": 60,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 424131,
+      "BaseStat1_Value": 210,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CastSpeed",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 151,
+      "InherentStat2_STATTYPE": "CriticalChance",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 239,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 1339740,
+    "cubeExp": 594864
+  }
+}

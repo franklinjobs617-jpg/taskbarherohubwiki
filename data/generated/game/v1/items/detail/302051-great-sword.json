@@ -1,0 +1,47 @@
+{
+  "id": 302051,
+  "slug": "302051-great-sword",
+  "type": "GEAR",
+  "name": {
+    "zh": "大剑",
+    "en": "Great Sword"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/sword/SWORD_300005.png",
+  "image": "/game/game/gear/sword/SWORD_300005.png",
+  "grade": "RARE",
+  "gear": "SWORD",
+  "level": 20,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 302051,
+      "BaseStat1_Value": 20,
+      "BaseStat2_Value": 30,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 4,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 19800,
+    "cubeExp": 4320
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 312022,
+  "slug": "312022-hunting-bow",
+  "type": "GEAR",
+  "name": {
+    "zh": "狩猎弓",
+    "en": "Hunting Bow"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/bow/BOW_310002.png",
+  "image": "/game/game/gear/bow/BOW_310002.png",
+  "grade": "RARE",
+  "gear": "BOW",
+  "level": 5,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 312022,
+      "BaseStat1_Value": 8,
+      "BaseStat2_Value": 40,
+      "InherentStat1_STATTYPE": "CriticalChance",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 5,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 450,
+    "cubeExp": 180
+  }
+}

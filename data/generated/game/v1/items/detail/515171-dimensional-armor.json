@@ -1,0 +1,47 @@
+{
+  "id": 515171,
+  "slug": "515171-dimensional-armor",
+  "type": "GEAR",
+  "name": {
+    "zh": "次元铠甲",
+    "en": "Dimensional Armor"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/armor/ARMOR_510017.png",
+  "image": "/game/game/gear/armor/ARMOR_510017.png",
+  "grade": "ARCANA",
+  "gear": "ARMOR",
+  "level": 80,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 515171,
+      "BaseStat1_Value": 4429,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 274,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "ADDITIVE",
+      "InherentStat2_Value": 2697,
+      "InherentStat3_STATTYPE": "DamageReduction",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 16,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 2903040,
+    "cubeExp": 1373736
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "site": {
+    "title": "TBH Guide",
+    "subtitle": "Task Bar Hero Guides & Item Database",
+    "description": "The most comprehensive TBH: Task Bar Hero guide site. Item database, Steam Market prices, profit calculator, and class guides."
+  },
+  "nav": {
+    "home": "Home",
+    "items": "Items",
+    "heroes": "Heroes",
+    "stages": "Stages",
+    "market": "Market",
+    "guides": "Guides",
+    "tools": "Tools",
+    "builds": "Builds",
+    "monsters": "Monsters",
+    "runes": "Runes",
+    "skills": "Skills",
+    "pets": "Pets",
+    "search": "Search items, heroes, guides...",
+    "language": "Language"
+  },
+  "home": {
+    "hero_title": "TBH: Task Bar Hero",
+    "hero_subtitle": "Complete Guide Hub & Item Database",
+    "cta_explore": "Explore Database",
+    "cta_market": "Market Prices",
+    "hot_items": "Trending Items",
+    "market_live": "Live Market Prices",
+    "latest_guides": "Latest Guides",
+    "item_database": "Item Database",
+    "item_count": "{count} items indexed",
+    "quick_links": "Quick Links",
+    "search_placeholder": "Search items, heroes, guides..."
+  },
+  "items": {
+    "title": "Item Database",
+    "subtitle": "{count} gear items · 125 materials · 59 stage boxes",
+    "filter_rarity": "Rarity",
+    "filter_slot": "Slot",
+    "filter_level": "Level",
+    "filter_type": "Type",
+    "all": "All",
+    "search": "Search items...",
+    "no_results": "No items found",
+    "market_price": "Market Price",
+    "drop_sources": "Drop Sources",
+    "synthesis": "Synthesis",
+    "related_guides": "Related Guides",
+    "suitable_heroes": "Suitable Heroes"
+  },
+  "market": {
+    "title": "Steam Market",
+    "subtitle": "Live price tracking · Updated every 15 minutes",
+    "price": "Price",
+    "change_24h": "24h Change",
+    "supply": "Supply",
+    "demand_rank": "Demand",
+    "top_movers": "Top Movers",
+    "best_profit": "Best Profit",
+    "price_history": "Price History (7 days)",
+    "data_stale": "Data may be delayed. For reference only.",
+    "source": "Source: Steam Community Market"
+  },
+  "guides": {
+    "title": "Guides",
+    "subtitle": "From beginner to expert — comprehensive TBH guides",
+    "categories": {
+      "beginner": "Beginner",
+      "farming": "Farming",
+      "economy": "Economy",
+      "builds": "Builds",
+      "mechanics": "Mechanics"
+    },
+    "evidence_level": "Evidence Level",
+    "evidence": {
+      "datamined": "Datamined",
+      "community": "Community Verified",
+      "editorial": "Editorial",
+      "unverified": "Unverified"
+    }
+  },
+  "tools": {
+    "title": "Tools",
+    "profit_calculator": "Profit Calculator",
+    "profit_desc": "Calculate expected profit per stage",
+    "farming_compare": "Farming Compare",
+    "farming_compare_desc": "Compare farming efficiency across stages",
+    "select_stage": "Select Stage",
+    "select_difficulty": "Select Difficulty",
+    "estimated_profit": "Estimated Profit",
+    "per_run": "Per Run",
+    "per_hour": "Per Hour",
+    "per_day": "24h AFK",
+    "insufficient_data": "Insufficient data to calculate"
+  },
+  "builds": {
+    "title": "Featured Builds",
+    "subtitle": "Curated builds with evidence levels",
+    "hero": "Hero",
+    "gear_slots": "Recommended Gear",
+    "skills": "Skill Allocation",
+    "runes": "Rune Priority",
+    "source": "Source"
+  },
+  "common": {
+    "level": "Level",
+    "rarity": "Rarity",
+    "grade": "Grade",
+    "slot": "Slot",
+    "class": "Class",
+    "source_url": "Source",
+    "view_all": "View All",
+    "loading": "Loading...",
+    "error": "Failed to load",
+    "retry": "Retry"
+  },
+  "rarity": {
+    "COMMON": "Common",
+    "UNCOMMON": "Uncommon",
+    "RARE": "Rare",
+    "LEGENDARY": "Legendary",
+    "IMMORTAL": "Immortal",
+    "ARCANA": "Arcana",
+    "BEYOND": "Beyond",
+    "CELESTIAL": "Celestial",
+    "DIVINE": "Divine",
+    "COSMIC": "Cosmic"
+  },
+  "slots": {
+    "SWORD": "Sword",
+    "BOW": "Bow",
+    "STAFF": "Staff",
+    "SCEPTER": "Scepter",
+    "TOME": "Tome",
+    "CROSSBOW": "Crossbow",
+    "HATCHET": "Hatchet",
+    "ORB": "Orb",
+    "ARROW": "Arrow",
+    "BOLT": "Bolt",
+    "ARMOR": "Armor",
+    "HELMET": "Helmet",
+    "GLOVES": "Gloves",
+    "BOOTS": "Boots",
+    "SHIELD": "Shield",
+    "AMULET": "Amulet",
+    "RING": "Ring",
+    "BRACER": "Bracer",
+    "EARING": "Earring",
+    "AXE": "Axe"
+  },
+  "heroes": {
+    "Knight": "Knight",
+    "Ranger": "Ranger",
+    "Sorcerer": "Sorcerer",
+    "Priest": "Priest",
+    "Hunter": "Hunter",
+    "Slayer": "Slayer"
+  },
+  "difficulty": {
+    "NORMAL": "Normal",
+    "HARD": "Hard",
+    "BRUTAL": "Brutal",
+    "NIGHTMARE": "Nightmare",
+    "HELL": "Hell",
+    "TORMENT": "Torment"
+  },
+  "footer": {
+    "disclaimer": "This is a fan-made site and is not affiliated with the TBH: Task Bar Hero developers.",
+    "market_disclaimer": "Market prices are estimates only, not guaranteed execution prices.",
+    "copyright": "© 2026 TBH Guide · Fan-made",
+    "privacy": "Privacy Policy"
+  }
+}

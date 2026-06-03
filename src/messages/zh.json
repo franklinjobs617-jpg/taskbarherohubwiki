@@ -1,0 +1,174 @@
+{
+  "site": {
+    "title": "TBH 攻略站",
+    "subtitle": "塔斯克巴·英雄 中文攻略 & 装备数据库",
+    "description": "最全面的 TBH: Task Bar Hero 中文攻略站。装备数据库、Steam市场价格、收益计算器、职业攻略。"
+  },
+  "nav": {
+    "home": "首页",
+    "items": "物品",
+    "heroes": "英雄",
+    "stages": "关卡",
+    "market": "市场",
+    "guides": "攻略",
+    "tools": "工具",
+    "builds": "配装",
+    "monsters": "怪物",
+    "runes": "符文",
+    "skills": "技能",
+    "pets": "宠物",
+    "search": "搜索物品、英雄、攻略...",
+    "language": "语言"
+  },
+  "home": {
+    "hero_title": "TBH: 塔斯克巴·英雄",
+    "hero_subtitle": "最全面的中文攻略站 & 装备数据库",
+    "cta_explore": "开始探索",
+    "cta_market": "市场价格",
+    "hot_items": "热门物品",
+    "market_live": "实时市场行情",
+    "latest_guides": "最新攻略",
+    "item_database": "装备数据库",
+    "item_count": "收录 {count} 件装备",
+    "quick_links": "快捷入口",
+    "search_placeholder": "搜索装备、英雄、攻略..."
+  },
+  "items": {
+    "title": "物品数据库",
+    "subtitle": "{count} 件装备 · 125 种材料 · 59 种宝箱",
+    "filter_rarity": "稀有度",
+    "filter_slot": "装备槽",
+    "filter_level": "等级",
+    "filter_type": "类型",
+    "all": "全部",
+    "search": "搜索物品名称...",
+    "no_results": "没有找到匹配的物品",
+    "market_price": "市场价",
+    "drop_sources": "掉落来源",
+    "synthesis": "合成路径",
+    "related_guides": "相关攻略",
+    "suitable_heroes": "适用英雄"
+  },
+  "market": {
+    "title": "Steam 市场",
+    "subtitle": "实时价格追踪 · 每15分钟更新",
+    "price": "价格",
+    "change_24h": "24h涨跌",
+    "supply": "供给",
+    "demand_rank": "热度",
+    "top_movers": "涨幅榜",
+    "best_profit": "利润排行",
+    "price_history": "价格走势 (7天)",
+    "data_stale": "数据可能有延迟，仅供参考",
+    "source": "数据来源: Steam Community Market"
+  },
+  "guides": {
+    "title": "攻略中心",
+    "subtitle": "从新手到精通，最全面的 TBH 中文攻略",
+    "categories": {
+      "beginner": "新手入门",
+      "farming": "刷图效率",
+      "economy": "市场赚钱",
+      "builds": "配装思路",
+      "mechanics": "机制解析"
+    },
+    "evidence_level": "证据等级",
+    "evidence": {
+      "datamined": "数据挖掘",
+      "community": "社区验证",
+      "editorial": "编辑整理",
+      "unverified": "待验证"
+    }
+  },
+  "tools": {
+    "title": "工具",
+    "profit_calculator": "收益计算器",
+    "profit_desc": "计算每个关卡的预期收益",
+    "farming_compare": "刷图对比",
+    "farming_compare_desc": "对比不同关卡的效率",
+    "select_stage": "选择关卡",
+    "select_difficulty": "选择难度",
+    "estimated_profit": "预估收益",
+    "per_run": "每轮",
+    "per_hour": "每小时",
+    "per_day": "24h挂机",
+    "insufficient_data": "数据不足，无法计算"
+  },
+  "builds": {
+    "title": "精选配装",
+    "subtitle": "编辑精选 Build，标注证据等级",
+    "hero": "英雄",
+    "gear_slots": "装备推荐",
+    "skills": "技能加点",
+    "runes": "符文优先",
+    "source": "来源"
+  },
+  "common": {
+    "level": "等级",
+    "rarity": "稀有度",
+    "grade": "品级",
+    "slot": "装备槽",
+    "class": "职业",
+    "source_url": "数据来源",
+    "view_all": "查看全部",
+    "loading": "加载中...",
+    "error": "加载失败",
+    "retry": "重试"
+  },
+  "rarity": {
+    "COMMON": "普通",
+    "UNCOMMON": "非凡",
+    "RARE": "稀有",
+    "LEGENDARY": "传说",
+    "IMMORTAL": "不朽",
+    "ARCANA": "奥秘",
+    "BEYOND": "超越",
+    "CELESTIAL": "天界",
+    "DIVINE": "神圣",
+    "COSMIC": "宇宙"
+  },
+  "slots": {
+    "SWORD": "长剑",
+    "BOW": "弓",
+    "STAFF": "法杖",
+    "SCEPTER": "权杖",
+    "TOME": "圣典",
+    "CROSSBOW": "十字弩",
+    "HATCHET": "手斧",
+    "ORB": "法球",
+    "ARROW": "箭矢",
+    "BOLT": "弩箭",
+    "ARMOR": "铠甲",
+    "HELMET": "头盔",
+    "GLOVES": "手套",
+    "BOOTS": "战靴",
+    "SHIELD": "盾牌",
+    "AMULET": "护符",
+    "RING": "戒指",
+    "BRACER": "护腕",
+    "EARING": "耳环",
+    "AXE": "战斧"
+  },
+  "heroes": {
+    "Knight": "骑士",
+    "Ranger": "游侠",
+    "Sorcerer": "法师",
+    "Priest": "祭司",
+    "Hunter": "猎人",
+    "Slayer": "狂战"
+  },
+  "difficulty": {
+    "NORMAL": "普通",
+    "HARD": "困难",
+    "BRUTAL": "残酷",
+    "NIGHTMARE": "噩梦",
+    "HELL": "地狱",
+    "TORMENT": "折磨"
+  },
+  "footer": {
+    "disclaimer": "本站为玩家自制粉丝站点，与 TBH: Task Bar Hero 开发商无关。",
+    "market_disclaimer": "市场价格仅供参考，非成交保证。",
+    "copyright": "© 2026 TBH 攻略站 · 玩家自制",
+    "privacy": "隐私政策"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 302061,
+  "slug": "302061-heavy-blade",
+  "type": "GEAR",
+  "name": {
+    "zh": "重型刀刃",
+    "en": "Heavy Blade"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/sword/SWORD_300006.png",
+  "image": "/game/game/gear/sword/SWORD_300006.png",
+  "grade": "RARE",
+  "gear": "SWORD",
+  "level": 25,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 302061,
+      "BaseStat1_Value": 30,
+      "BaseStat2_Value": 30,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 90,
+      "InherentStat2_STATTYPE": "NONE",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 0,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 29700,
+    "cubeExp": 7344
+  }
+}

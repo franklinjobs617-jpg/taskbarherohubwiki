@@ -1,0 +1,47 @@
+{
+  "id": 306152,
+  "slug": "306152-void-blade",
+  "type": "GEAR",
+  "name": {
+    "zh": "虚空之刃",
+    "en": "Void Blade"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/sword/SWORD_300015.png",
+  "image": "/game/game/gear/sword/SWORD_300015.png",
+  "grade": "BEYOND",
+  "gear": "SWORD",
+  "level": 70,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 306152,
+      "BaseStat1_Value": 855,
+      "BaseStat2_Value": 43,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "ADDITIVE",
+      "InherentStat1_Value": 1166,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 944,
+      "InherentStat3_STATTYPE": "AttackDamage",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 207,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 8144708,
+    "cubeExp": 3720552
+  }
+}

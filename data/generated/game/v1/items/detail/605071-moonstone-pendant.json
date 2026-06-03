@@ -1,0 +1,47 @@
+{
+  "id": 605071,
+  "slug": "605071-moonstone-pendant",
+  "type": "GEAR",
+  "name": {
+    "zh": "月光石吊坠",
+    "en": "Moonstone Pendant"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/amulet/AMULET_600007.png",
+  "image": "/game/game/gear/amulet/AMULET_600007.png",
+  "grade": "ARCANA",
+  "gear": "AMULET",
+  "level": 30,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 605071,
+      "BaseStat1_Value": 0,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "CooldownReduction",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 37,
+      "InherentStat2_STATTYPE": "AddAllSkillLevel",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 1,
+      "InherentStat3_STATTYPE": "CriticalChance",
+      "InherentStat3_MODTYPE": "ADDITIVE",
+      "InherentStat3_Value": 212,
+      "UniqueModKey": null
+    },
+    "synthType": "Accessory",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 4022784,
+    "cubeExp": 1268064
+  }
+}

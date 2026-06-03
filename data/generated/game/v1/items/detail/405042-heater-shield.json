@@ -1,0 +1,47 @@
+{
+  "id": 405042,
+  "slug": "405042-heater-shield",
+  "type": "GEAR",
+  "name": {
+    "zh": "希特盾",
+    "en": "Heater Shield"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/shield/SHIELD_400004.png",
+  "image": "/game/game/gear/shield/SHIELD_400004.png",
+  "grade": "ARCANA",
+  "gear": "SHIELD",
+  "level": 15,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 405042,
+      "BaseStat1_Value": 130,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 79,
+      "InherentStat2_STATTYPE": "CooldownReduction",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 27,
+      "InherentStat3_STATTYPE": "Armor",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 162,
+      "UniqueModKey": 10003
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": "SkillBaseAttackCountReduce",
+    "sellGold": 456192,
+    "cubeExp": 124320
+  }
+}

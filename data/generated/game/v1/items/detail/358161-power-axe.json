@@ -1,0 +1,47 @@
+{
+  "id": 358161,
+  "slug": "358161-power-axe",
+  "type": "GEAR",
+  "name": {
+    "zh": "力量之斧",
+    "en": "Power Axe"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/axe/AXE_350016.png",
+  "image": "/game/game/gear/axe/AXE_350016.png",
+  "grade": "DIVINE",
+  "gear": "AXE",
+  "level": 75,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 358161,
+      "BaseStat1_Value": 2386,
+      "BaseStat2_Value": 36,
+      "InherentStat1_STATTYPE": "AttackSpeed",
+      "InherentStat1_MODTYPE": "MULTIPLICATIVE",
+      "InherentStat1_Value": 323,
+      "InherentStat2_STATTYPE": "CriticalDamage",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 1380,
+      "InherentStat3_STATTYPE": "CriticalChance",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 45,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 107088508,
+    "cubeExp": 49721328
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 323011,
+  "slug": "323011-wooden-staff",
+  "type": "GEAR",
+  "name": {
+    "zh": "木制法杖",
+    "en": "Wooden Staff"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/staff/STAFF_320001.png",
+  "image": "/game/game/gear/staff/STAFF_320001.png",
+  "grade": "LEGENDARY",
+  "gear": "STAFF",
+  "level": 1,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": true,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 323011,
+      "BaseStat1_Value": 8,
+      "BaseStat2_Value": 10,
+      "InherentStat1_STATTYPE": "AttackDamage",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 3,
+      "InherentStat2_STATTYPE": "AddHpPerHit",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 1,
+      "InherentStat3_STATTYPE": "NONE",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 0,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 270,
+    "cubeExp": 54
+  }
+}

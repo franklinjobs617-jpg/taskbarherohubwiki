@@ -1,0 +1,47 @@
+{
+  "id": 509142,
+  "slug": "509142-fighter-s-helmet",
+  "type": "GEAR",
+  "name": {
+    "zh": "战士头盔",
+    "en": "Fighter's Helmet"
+  },
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "icon": "/game/game/gear/helmet/HELMET_500014.png",
+  "image": "/game/game/gear/helmet/HELMET_500014.png",
+  "grade": "COSMIC",
+  "gear": "HELMET",
+  "level": 65,
+  "gameVersion": "game-v1",
+  "updatedAt": "2026-06-03T11:43:00.360Z",
+  "source": "local-json",
+  "marketable": false,
+  "removed": false,
+  "confidence": "datamined",
+  "detail": {
+    "desc": null,
+    "stats": {
+      "GearKey": 509142,
+      "BaseStat1_Value": 3339,
+      "BaseStat2_Value": null,
+      "InherentStat1_STATTYPE": "MaxHp",
+      "InherentStat1_MODTYPE": "FLAT",
+      "InherentStat1_Value": 258,
+      "InherentStat2_STATTYPE": "Armor",
+      "InherentStat2_MODTYPE": "FLAT",
+      "InherentStat2_Value": 2383,
+      "InherentStat3_STATTYPE": "HpRegenPerSec",
+      "InherentStat3_MODTYPE": "FLAT",
+      "InherentStat3_Value": 2560,
+      "UniqueModKey": null
+    },
+    "synthType": "Gear",
+    "dropKey": null,
+    "uniqueMod": null,
+    "sellGold": 257743954,
+    "cubeExp": 116017248
+  }
+}
