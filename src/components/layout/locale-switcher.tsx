@@ -9,7 +9,7 @@ const LOCALES = [
   { code: "ja", label: "日本語", short: "日" },
 ] as const;
 
-const KNOWN = ["zh", "ja"];
+const KNOWN = ["en", "zh", "ja"];
 
 function getLocale(pathname: string) {
   const seg = pathname.split("/")[1];
@@ -26,17 +26,10 @@ export function LocaleSwitcher() {
 
   const switchTo = (code: string) => {
     if (code === currentLocale) { setOpen(false); return; }
-    let next: string;
-    if (currentLocale === "en") {
-      // English at root → add prefix
-      next = `/${code}${pathname}`;
-    } else if (code === "en") {
-      // Switching to English → remove prefix
-      next = pathname.replace(`/${currentLocale}`, "") || "/";
-    } else {
-      // zh ↔ ja → replace prefix
-      next = pathname.replace(`/${currentLocale}`, `/${code}`);
-    }
+    const parts = pathname.split("/").filter(Boolean);
+    const base = KNOWN.includes(parts[0]) ? `/${parts.slice(1).join("/")}` : pathname;
+    const normalizedBase = base === "/" ? "" : base;
+    const next = `/${code}${normalizedBase}`;
     router.push(next);
     setOpen(false);
   };
