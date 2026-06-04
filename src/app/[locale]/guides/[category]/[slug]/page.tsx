@@ -179,8 +179,8 @@ export default async function GuideDetailPage({ params }: Props) {
 /* ─── Sub-components ─── */
 
 function BlockRender({ block, i }: { block: MarkdownBlock; i: number }) {
-  if (block.type === "h2") return <h2 key={i} className="pt-4 text-[20px] font-semibold leading-tight text-[#f6e8c8] sm:pt-5 sm:text-[22px]">{block.text}</h2>;
-  if (block.type === "h3") return <h3 key={i} className="pt-2 text-[17px] font-semibold leading-tight text-[#f1d39a] sm:text-[18px]">{block.text}</h3>;
+  if (block.type === "h2") return <h2 key={i} className="pt-4 text-[20px] font-semibold leading-tight text-[#f6e8c8] sm:pt-5 sm:text-[22px]"><Rich text={block.text} /></h2>;
+  if (block.type === "h3") return <h3 key={i} className="pt-2 text-[17px] font-semibold leading-tight text-[#f1d39a] sm:text-[18px]"><Rich text={block.text} /></h3>;
   if (block.type === "ul") return <ul key={i} className="space-y-1.5">{block.items.map((item, j) => <li key={j} className="flex gap-2.5"><span className="mt-[0.55rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[#c87925]" /><span><Rich text={item} /></span></li>)}</ul>;
   if (block.type === "ol") return <ol key={i} className="space-y-1.5">{block.items.map((item, j) => <li key={j} className="flex gap-2"><span className="w-5 shrink-0 text-right text-sm font-semibold text-[#c87925]">{j + 1}.</span><span><Rich text={item} /></span></li>)}</ol>;
   if (block.type === "img") return <figure key={i} className="my-6 overflow-hidden border border-[#2f2b22] bg-[#0a0a08]"><Image src={block.src.startsWith("http") ? "/game/screenshots/screenshot-1.jpg" : block.src} alt={block.alt} width={1200} height={600} className="w-full object-cover" unoptimized /></figure>;

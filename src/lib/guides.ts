@@ -79,28 +79,109 @@ export type MarkdownBlock =
   | { type: "table"; headers: string[]; rows: string[][] };
 
 export function renderMarkdownish(content: string): MarkdownBlock[] {
-  return content
-    .split(/\n{2,}/)
-    .map((block) => block.trim())
-    .filter(Boolean)
-    .map((block) => {
-      if (block.startsWith("## ")) return { type: "h2" as const, text: block.slice(3).trim() };
-      if (block.startsWith("### ")) return { type: "h3" as const, text: block.slice(4).trim() };
-      if (block.startsWith("- ")) return { type: "ul" as const, items: block.split("\n").map((line) => line.replace(/^- /, "").trim()) };
-      if (/^\d+\.\s/.test(block)) return { type: "ol" as const, items: block.split("\n").map((line) => line.replace(/^\d+\.\s/, "").trim()) };
-      const imgMatch = block.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
-      if (imgMatch) return { type: "img" as const, alt: imgMatch[1] ?? "", src: imgMatch[2] ?? "" };
-      // Simple table: each line is | col1 | col2 | col3 |
-      if (block.includes("|") && block.split("\n").every((line) => line.trim().startsWith("|"))) {
-        const lines = block.split("\n").map((line) => line.trim()).filter(Boolean);
-        if (lines.length >= 2) {
-          const headers = lines[0].split("|").map((cell) => cell.trim()).filter(Boolean);
-          const rows = lines.slice(1).map((line) =>
-            line.split("|").map((cell) => cell.trim()).filter(Boolean),
-          );
-          return { type: "table" as const, headers, rows };
-        }
+  const blocks: MarkdownBlock[] = [];
+  const lines = content.replace(/\r\n/g, "\n").split("\n");
+  let paragraph: string[] = [];
+  let list: { type: "ul" | "ol"; items: string[] } | null = null;
+  let table: string[] = [];
+
+  const flushParagraph = () => {
+    if (!paragraph.length) return;
+    blocks.push({ type: "p", text: paragraph.join(" ").trim() });
+    paragraph = [];
+  };
+
+  const flushList = () => {
+    if (!list) return;
+    blocks.push(list);
+    list = null;
+  };
+
+  const flushTable = () => {
+    if (table.length < 2) {
+      table = [];
+      return;
+    }
+    const headers = splitTableRow(table[0]);
+    const rows = table.slice(1).map(splitTableRow);
+    blocks.push({ type: "table", headers, rows });
+    table = [];
+  };
+
+  const flushAll = () => {
+    flushParagraph();
+    flushList();
+    flushTable();
+  };
+
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+    if (!line) {
+      flushAll();
+      continue;
+    }
+
+    if (line.startsWith("|")) {
+      flushParagraph();
+      flushList();
+      table.push(line);
+      continue;
+    }
+
+    flushTable();
+
+    const imgMatch = line.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+    if (imgMatch) {
+      flushParagraph();
+      flushList();
+      blocks.push({ type: "img", alt: imgMatch[1] ?? "", src: imgMatch[2] ?? "" });
+      continue;
+    }
+
+    if (line.startsWith("### ")) {
+      flushParagraph();
+      flushList();
+      blocks.push({ type: "h3", text: line.slice(4).trim() });
+      continue;
+    }
+
+    if (line.startsWith("## ")) {
+      flushParagraph();
+      flushList();
+      blocks.push({ type: "h2", text: line.slice(3).trim() });
+      continue;
+    }
+
+    if (line.startsWith("- ")) {
+      flushParagraph();
+      const item = line.replace(/^- /, "").trim();
+      if (!list || list.type !== "ul") {
+        flushList();
+        list = { type: "ul", items: [] };
       }
-      return { type: "p" as const, text: block.replace(/\n/g, " ") };
-    });
+      list.items.push(item);
+      continue;
+    }
+
+    if (/^\d+\.\s/.test(line)) {
+      flushParagraph();
+      const item = line.replace(/^\d+\.\s/, "").trim();
+      if (!list || list.type !== "ol") {
+        flushList();
+        list = { type: "ol", items: [] };
+      }
+      list.items.push(item);
+      continue;
+    }
+
+    flushList();
+    paragraph.push(line);
+  }
+
+  flushAll();
+  return blocks;
+}
+
+function splitTableRow(line: string) {
+  return line.split("|").map((cell) => cell.trim()).filter(Boolean);
 }
