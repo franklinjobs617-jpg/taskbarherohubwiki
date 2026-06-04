@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import Image from "next/image";
 import { Coins, Gem, Maximize2, Minus, Plus, Search, Target, UnlockKeyhole, Zap } from "lucide-react";
 import type { Locale } from "@/lib/game-data/data";
 
@@ -282,8 +283,21 @@ export function RuneTreePlanner({ runes, locale }: { runes: RuneNode[]; locale: 
                     boxShadow: active || inRoute ? `0 0 20px ${tone.glow}` : "0 2px 8px rgba(0,0,0,0.45)",
                   }}
                 >
-                  <span className="absolute inset-[4px] rounded-[2px] border border-white/15" style={{ backgroundColor: tone.border }} />
-                  <span className="absolute inset-[8px] rounded-full bg-[#fff7df]/85" />
+                  {rune.icon ? (
+                    <Image
+                      src={runeIconSrc(rune.icon)!}
+                      alt={rune.name}
+                      width={22}
+                      height={22}
+                      className="absolute inset-0 h-full w-full rounded-[3px] object-cover"
+                      unoptimized
+                    />
+                  ) : (
+                    <>
+                      <span className="absolute inset-[4px] rounded-[2px] border border-white/15" style={{ backgroundColor: tone.border }} />
+                      <span className="absolute inset-[8px] rounded-full bg-[#fff7df]/85" />
+                    </>
+                  )}
                   <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 border border-[#2e2619] bg-[#060504] px-1 text-[9px] font-semibold leading-3 text-[#f5db9a]">
                     {rune.maxLevel}
                   </span>
@@ -315,8 +329,14 @@ function RuneDetail({ rune, locale, route, routeStep }: { rune: RuneNode; locale
     <aside className="border border-[#3b2b17] bg-[#100c08] p-4 xl:sticky xl:top-20 xl:self-start">
       <div className="flex items-start gap-3">
         <div className="relative h-12 w-12 rounded-[6px] border" style={{ backgroundColor: tone.bg, borderColor: tone.border }}>
-          <span className="absolute inset-[9px] rounded-[3px]" style={{ backgroundColor: tone.border }} />
-          <span className="absolute inset-[18px] rounded-full bg-[#fff7df]" />
+          {rune.icon ? (
+            <Image src={runeIconSrc(rune.icon)!} alt={rune.name} width={48} height={48} className="h-full w-full rounded-[5px] object-cover" unoptimized />
+          ) : (
+            <>
+              <span className="absolute inset-[9px] rounded-[3px]" style={{ backgroundColor: tone.border }} />
+              <span className="absolute inset-[18px] rounded-full bg-[#fff7df]" />
+            </>
+          )}
         </div>
         <div className="min-w-0">
           <p className="truncate text-lg font-semibold text-[#fff7df]">{rune.name}</p>
