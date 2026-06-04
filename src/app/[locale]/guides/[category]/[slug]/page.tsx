@@ -10,16 +10,22 @@ import { getGuideContent, getGuideStaticParams, renderMarkdownish, type Markdown
 
 type Props = { params: Promise<{ locale: Locale; category: string; slug: string }> };
 
-const guideVisuals: Record<string, { image: string; zh: string; en: string }> = {
-  "getting-started": { image: "/game/guide-images/getting-started.jpg", zh: "先把路线跑稳，再谈稀有度和市场。", en: "Stabilize the route before chasing rarity or market value." },
-  "class-guide": { image: "/game/guide-images/class-guide.jpg", zh: "职业选择本质是武器路径、容错和清图目标的组合。", en: "Class choice is a mix of weapon path, safety margin, and farming goal." },
-  "cube-materials": { image: "/game/guide-images/cube-materials.jpg", zh: "材料不是杂物，它们决定装备后期方向。", en: "Materials are not clutter; they define late gear direction." },
-  "steam-market-guide": { image: "/game/guide-images/steam-market-guide.jpg", zh: "市场数据只做风险判断，不做收益承诺。", en: "Market data is a risk signal, not a profit promise." },
-  "tradable-items": { image: "/game/guide-images/tradable-items.jpg", zh: "可交易是状态，不是立刻出售的命令。", en: "Tradable is a state, not an instruction to sell immediately." },
-  "chest-drop-guide": { image: "/game/guide-images/chest-drop-guide.jpg", zh: "宝箱要同时看来源、等级范围和真实掉率。", en: "Chests need source, level range, and real drop-rate context." },
-  "gold-farming-route": { image: "/game/guide-images/gold-farming-route.jpg", zh: "金币效率来自稳定清图，不来自想象中的高价掉落。", en: "Gold efficiency comes from stable clears, not imagined rare drops." },
-  "exp-farming-route": { image: "/game/guide-images/exp-farming-route.jpg", zh: "经验路线要看每分钟击杀、每轮经验和清图时间。", en: "EXP routes depend on kills per minute, XP per run, and clear time." },
+const guideVisuals: Record<string, { image: string; zh: string; en: string; ja: string }> = {
+  "getting-started": { image: "/game/guide-images/getting-started.jpg", zh: "先把路线跑稳，再谈稀有度和市场。", en: "Stabilize the route before chasing rarity or market value.", ja: "レア度や市場価値の前に、まず安定ルートを作る。" },
+  "class-guide": { image: "/game/guide-images/class-guide.jpg", zh: "职业选择本质是武器路径、容错和清图目标的组合。", en: "Class choice is a mix of weapon path, safety margin, and farming goal.", ja: "職業選択は武器ルート、安全性、周回目的の組み合わせ。" },
+  "cube-materials": { image: "/game/guide-images/cube-materials.jpg", zh: "材料不是杂物，它们决定装备后期方向。", en: "Materials are not clutter; they define late gear direction.", ja: "素材はゴミではなく、終盤装備の方向性を決める。" },
+  "steam-market-guide": { image: "/game/guide-images/steam-market-guide.jpg", zh: "市场数据只做风险判断，不做收益承诺。", en: "Market data is a risk signal, not a profit promise.", ja: "市場データはリスク判断であり、利益保証ではない。" },
+  "tradable-items": { image: "/game/guide-images/tradable-items.jpg", zh: "可交易是状态，不是立刻出售的命令。", en: "Tradable is a state, not an instruction to sell immediately.", ja: "取引可能は状態であり、すぐ売る命令ではない。" },
+  "chest-drop-guide": { image: "/game/guide-images/chest-drop-guide.jpg", zh: "宝箱要同时看来源、等级范围和真实掉率。", en: "Chests need source, level range, and real drop-rate context.", ja: "宝箱は来源、レベル範囲、実ドロップ率を合わせて見る。" },
+  "gold-farming-route": { image: "/game/guide-images/gold-farming-route.jpg", zh: "金币效率来自稳定清图，不来自想象中的高价掉落。", en: "Gold efficiency comes from stable clears, not imagined rare drops.", ja: "ゴールド効率は安定周回から生まれ、想像上の高額ドロップからは生まれない。" },
+  "exp-farming-route": { image: "/game/guide-images/exp-farming-route.jpg", zh: "经验路线要看每分钟击杀、每轮经验和清图时间。", en: "EXP routes depend on kills per minute, XP per run, and clear time.", ja: "経験値ルートは撃破密度、1周経験値、クリア時間で判断する。" },
 };
+
+function copy(locale: Locale, zh: string, en: string, ja: string) {
+  if (locale === "zh") return zh;
+  if (locale === "ja") return ja;
+  return en;
+}
 
 export function generateStaticParams() { return getGuideStaticParams(); }
 
@@ -40,7 +46,6 @@ export default async function GuideDetailPage({ params }: Props) {
   if (!guide) notFound();
   const relatedItems = allItems().filter((i) => guide.relatedItems.includes(i.slug)).slice(0, 8);
   const visual = guideVisuals[slug] ?? guideVisuals["getting-started"];
-  const isZh = locale === "zh";
   const bodyBlocks = renderMarkdownish(guide.body);
   const imageInsertIndex = bodyBlocks.findIndex((block, index) => block.type === "h2" && index > 1);
 
@@ -57,7 +62,7 @@ export default async function GuideDetailPage({ params }: Props) {
           <article className="min-w-0">
             {/* Breadcrumb */}
             <div className="mb-4 flex flex-wrap items-center gap-2 text-[12px] text-[#8b8170]">
-              <Link href={`/${locale}/guides`} className="hover:text-[#f0c040] transition-colors">{isZh ? "攻略" : "Guides"}</Link>
+              <Link href={`/${locale}/guides`} className="hover:text-[#f0c040] transition-colors">{copy(locale, "攻略", "Guides", "ガイド")}</Link>
               <span className="text-[#555]">/</span>
               <span className="uppercase tracking-[0.16em] text-[#c87925]">{guide.category}</span>
             </div>
@@ -75,7 +80,7 @@ export default async function GuideDetailPage({ params }: Props) {
 
             {/* Key insight */}
             <div className="mt-5 border-l-[3px] border-[#c87925] bg-gradient-to-r from-[rgba(200,121,37,0.1)] to-transparent px-4 py-3 sm:px-5 sm:py-3.5">
-              <p className="text-[14px] font-semibold leading-6 text-[#f0c040] sm:text-[15px]">{isZh ? visual.zh : visual.en}</p>
+              <p className="text-[14px] font-semibold leading-6 text-[#f0c040] sm:text-[15px]">{visual[locale]}</p>
             </div>
 
             {/* Hero image */}
@@ -85,7 +90,7 @@ export default async function GuideDetailPage({ params }: Props) {
 
             {/* TL;DR Quick Take */}
             <section className="my-8 border-y border-[#2c281f] py-6">
-              <h2 className="mb-4 text-[18px] font-semibold text-[#f6e8c8] sm:text-[20px]">{isZh ? "快速结论" : "Quick Take"}</h2>
+              <h2 className="mb-4 text-[18px] font-semibold text-[#f6e8c8] sm:text-[20px]">{copy(locale, "快速结论", "Quick Take", "要点")}</h2>
               <ol className="space-y-3">
                 {guide.tldr.map((item, i) => (
                   <li key={item} className="flex gap-3 text-[14px] leading-7 text-[#dfd2b8] sm:text-[15px]">
@@ -103,7 +108,7 @@ export default async function GuideDetailPage({ params }: Props) {
                   return (
                     <div key={`img-${i}`} className="space-y-5 sm:space-y-6">
                       <figure className="overflow-hidden border border-[#2f2b22] bg-[#0a0a08]">
-                        <Image src={visual.image} alt={isZh ? "游戏界面参考" : "Gameplay reference"} width={1200} height={600} className="w-full object-cover" unoptimized />
+                        <Image src={visual.image} alt={copy(locale, "游戏界面参考", "Gameplay reference", "ゲーム画面参考")} width={1200} height={600} className="w-full object-cover" unoptimized />
                       </figure>
                       <BlockRender block={block} i={i} />
                     </div>
@@ -115,7 +120,7 @@ export default async function GuideDetailPage({ params }: Props) {
 
             {/* Mistakes */}
             <section className="mt-12 border-t border-[#2c281f] pt-8">
-              <h2 className="mb-5 text-[20px] font-semibold text-[#f6e8c8] sm:text-[22px]">{isZh ? "常见错误" : "Common Mistakes"}</h2>
+              <h2 className="mb-5 text-[20px] font-semibold text-[#f6e8c8] sm:text-[22px]">{copy(locale, "常见错误", "Common Mistakes", "よくあるミス")}</h2>
               <div className="grid gap-3 sm:grid-cols-2">
                 {guide.mistakes.map((m) => (
                   <div key={m} className="flex gap-3 rounded-sm border border-[#2c281f] bg-[#0d0c0a] p-4">
@@ -128,7 +133,7 @@ export default async function GuideDetailPage({ params }: Props) {
 
             {/* FAQ */}
             <section className="mt-12 border-t border-[#2c281f] pt-8">
-              <h2 className="mb-5 text-[20px] font-semibold text-[#f6e8c8] sm:text-[22px]">{isZh ? "常见问题" : "FAQ"}</h2>
+              <h2 className="mb-5 text-[20px] font-semibold text-[#f6e8c8] sm:text-[22px]">{copy(locale, "常见问题", "FAQ", "よくある質問")}</h2>
               <div className="space-y-4">
                 {guide.faq.map((entry) => (
                   <div key={entry.question}>
@@ -142,7 +147,7 @@ export default async function GuideDetailPage({ params }: Props) {
             {/* Related items */}
             {relatedItems.length > 0 && (
               <section className="mt-12 border-t border-[#2c281f] pt-8">
-                <h2 className="mb-5 text-[20px] font-semibold text-[#f6e8c8] sm:text-[22px]">{isZh ? "文中提到的物品" : "Items Mentioned"}</h2>
+                <h2 className="mb-5 text-[20px] font-semibold text-[#f6e8c8] sm:text-[22px]">{copy(locale, "文中提到的物品", "Items Mentioned", "関連アイテム")}</h2>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {relatedItems.map((item) => <RefItem key={item.id} item={item} locale={locale} />)}
                 </div>
@@ -153,21 +158,21 @@ export default async function GuideDetailPage({ params }: Props) {
           {/* ── Sidebar ── */}
           <aside className="mt-12 hidden lg:block lg:sticky lg:top-24 lg:mt-0 lg:self-start">
             <div className="space-y-7">
-              <SidebarBlock title={isZh ? "文章信息" : "Article"}>
-                <SidebarRow label={isZh ? "版本" : "Version"} value={guide.gameVersion} />
-                <SidebarRow label={isZh ? "更新" : "Updated"} value={guide.updatedAt} />
-                <SidebarRow label={isZh ? "证据" : "Evidence"} value={guide.evidence} />
+              <SidebarBlock title={copy(locale, "文章信息", "Article", "記事情報")}>
+                <SidebarRow label={copy(locale, "版本", "Version", "バージョン")} value={guide.gameVersion} />
+                <SidebarRow label={copy(locale, "更新", "Updated", "更新日")} value={guide.updatedAt} />
+                <SidebarRow label={copy(locale, "证据", "Evidence", "根拠")} value={guide.evidence} />
               </SidebarBlock>
               {relatedItems.length > 0 && (
-                <SidebarBlock title={isZh ? "速查物品" : "Quick Refs"}>
+                <SidebarBlock title={copy(locale, "速查物品", "Quick Refs", "関連参照")}>
                   {relatedItems.slice(0, 5).map((item) => <RefItem key={item.id} item={item} locale={locale} compact />)}
                 </SidebarBlock>
               )}
-              <SidebarBlock title={isZh ? "下一步" : "Next"}>
-                <SidebarLink href={`/${locale}/market`} icon={<Coins className="h-3.5 w-3.5" />} label={isZh ? "市场价格" : "Market"} />
-                <SidebarLink href={`/${locale}/chests`} icon={<PackageCheck className="h-3.5 w-3.5" />} label={isZh ? "宝箱掉落" : "Chests"} />
+              <SidebarBlock title={copy(locale, "下一步", "Next", "次に見る")}>
+                <SidebarLink href={`/${locale}/market`} icon={<Coins className="h-3.5 w-3.5" />} label={copy(locale, "市场价格", "Market", "市場")} />
+                <SidebarLink href={`/${locale}/chests`} icon={<PackageCheck className="h-3.5 w-3.5" />} label={copy(locale, "宝箱掉落", "Chests", "宝箱")} />
                 {guide.relatedTools.map((tool) => <SidebarLink key={tool} href={`/${locale}/tools/${tool}`} icon={<Clock3 className="h-3.5 w-3.5" />} label={tool} />)}
-                <SidebarLink href={`/${locale}/guides`} icon={<ArrowRight className="h-3.5 w-3.5" />} label={isZh ? "全部攻略" : "All guides"} />
+                <SidebarLink href={`/${locale}/guides`} icon={<ArrowRight className="h-3.5 w-3.5" />} label={copy(locale, "全部攻略", "All guides", "全ガイド")} />
               </SidebarBlock>
             </div>
           </aside>

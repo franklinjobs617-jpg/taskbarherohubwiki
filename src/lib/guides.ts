@@ -61,7 +61,7 @@ export async function getGuideContent(locale: Locale, category: string, slug: st
 
 export function getGuideStaticParams() {
   return guides.flatMap((guide) =>
-    (["zh", "en"] as const).map((locale) => ({
+    (["zh", "en", "ja"] as const).map((locale) => ({
       locale,
       category: guide.category,
       slug: guide.slug,

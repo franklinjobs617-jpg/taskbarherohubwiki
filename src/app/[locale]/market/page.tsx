@@ -56,7 +56,7 @@ export default async function MarketPage({ params, searchParams }: Props) {
               <th className="px-3 py-2">{isZh ? "物品" : "Item"}</th>
               <th className="px-3 py-2">{isZh ? "稀有度" : "Rarity"}</th>
               <th className="px-3 py-2">{isZh ? "类型" : "Type"}</th>
-              <th className="px-3 py-2">Steam marketHash</th>
+              <th className="px-3 py-2">{isZh ? "Steam 市场名称" : "Steam Market Name"}</th>
               <th className="px-3 py-2">{isZh ? "市场价" : "Price"}</th>
               <th className="px-3 py-2">{isZh ? "状态" : "Status"}</th>
             </tr>

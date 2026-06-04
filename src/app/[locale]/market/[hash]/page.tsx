@@ -55,7 +55,7 @@ export default async function MarketDetailPage({ params }: Props) {
           : (isZh ? "这个物品还没有 Steam 市场真实价格数据。在价格数据获取到之前，无法显示价格、挂单数或价格趋势。" : "Real Steam Market price data is not available for this item yet. Price, listings, and trends will appear once data is obtained.")}
       </DataNotice>
       <div className="mt-5 grid gap-3 md:grid-cols-3">
-        <div className="border border-[#27272a] bg-[#0d0d0d] p-4"><p className="text-xs text-[#6c6c6c]">Steam marketHash</p><p className="mt-2 text-[#ffffff]">{market.marketHash}</p></div>
+        <div className="border border-[#27272a] bg-[#0d0d0d] p-4"><p className="text-xs text-[#6c6c6c]">{isZh ? "Steam 市场名称" : "Steam Market Name"}</p><p className="mt-2 text-[#ffffff]">{market.marketHash}</p></div>
         <div className="border border-[#27272a] bg-[#0d0d0d] p-4">
           <p className="text-xs text-[#6c6c6c]">{isZh ? "市场价" : "Price"}</p>
           {market.lowest ? (
