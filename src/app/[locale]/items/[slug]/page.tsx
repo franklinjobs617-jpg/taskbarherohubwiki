@@ -132,7 +132,7 @@ export default async function ItemDetailPage({ params }: Props) {
             <Section title={isZh ? "掉落来源" : "Drop Sources"} eyebrow={isZh ? `${dropSources.length} 个关卡掉落` : `Drops from ${dropSources.length} stages`}>
               <div className="overflow-x-auto border border-[#27272a]">
                 <table className="w-full min-w-[500px] text-left text-sm">
-                  <thead className="bg-[#151515] text-xs text-[#6c6c6c]">
+                  <thead className="bg-[#18181b] text-xs text-[#6c6c6c]">
                     <tr>
                       <th className="px-3 py-2.5">{isZh ? "关卡" : "Stage"}</th>
                       <th className="px-3 py-2.5">{isZh ? "难度" : "Diff"}</th>

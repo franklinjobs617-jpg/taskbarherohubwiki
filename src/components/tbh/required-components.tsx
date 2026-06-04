@@ -50,7 +50,7 @@ export function EffectTable({ locale }: { locale: Locale }) {
   return (
     <div className="overflow-x-auto border border-[#27272a]">
       <table className="w-full min-w-[720px] text-left text-sm">
-        <thead className="bg-[#151515] text-xs text-[#6c6c6c]">
+        <thead className="bg-[#18181b] text-xs text-[#6c6c6c]">
           <tr><th className="px-3 py-2">Material</th><th className="px-3 py-2">Part</th><th className="px-3 py-2">Type</th><th className="px-3 py-2">Stat</th><th className="px-3 py-2">Value</th></tr>
         </thead>
         <tbody>

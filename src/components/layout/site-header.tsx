@@ -45,7 +45,7 @@ export function SiteHeader() {
                 href={href}
                 className={`flex h-full items-center gap-1.5 border-b-2 px-2.5 text-xs transition ${
                   active
-                    ? "border-[#d4a017] bg-[#151515] text-[#f0c040]"
+                    ? "border-[#d4a017] bg-[#18181b] text-[#f0c040]"
                     : "border-transparent text-[#8c8577] hover:bg-[#111] hover:text-[#ffffff]"
                 }`}
               >
@@ -57,12 +57,12 @@ export function SiteHeader() {
         </nav>
 
         {/* Search */}
-        <form action={`/${locale}/items`} className="ml-auto hidden w-48 items-center border border-[#2b2b2b] bg-[#0d0d0d] px-2 lg:flex xl:w-64">
+        <form action={`/${locale}/items`} className="ml-auto hidden w-48 items-center border border-[#27272a] bg-[#0d0d0d] px-2 lg:flex xl:w-64">
           <Search className="h-3.5 w-3.5 shrink-0 text-[#666]" />
           <input
             name="q"
             placeholder={locale === "zh" ? "搜索物品..." : "Search items..."}
-            className="h-8 w-full bg-transparent px-2 text-xs text-[#ffffff] outline-none placeholder:text-[#555]"
+            className="h-8 w-full bg-transparent px-2 text-xs text-[#ffffff] outline-none placeholder:text-[#6c6c6c]"
           />
         </form>
 
@@ -71,7 +71,7 @@ export function SiteHeader() {
         {/* Hamburger */}
         <button
           onClick={toggleMenu}
-          className="flex h-8 w-8 items-center justify-center rounded border border-[#2b2b2b] text-[#9d9d9d] hover:border-[#d4a017] lg:hidden"
+          className="flex h-8 w-8 items-center justify-center rounded border border-[#27272a] text-[#9d9d9d] hover:border-[#d4a017] lg:hidden"
           aria-label="Menu"
         >
           {menuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
@@ -83,12 +83,12 @@ export function SiteHeader() {
         <div className="fixed inset-0 top-12 z-40 lg:hidden">
           <div className="absolute inset-0 bg-black/60" onClick={closeMenu} />
           <nav className="absolute right-0 top-0 h-full w-64 overflow-y-auto border-l border-[#27272a] bg-[#0d0d0d] p-4">
-            <form action={`/${locale}/items`} className="mb-4 flex items-center border border-[#2b2b2b] bg-[#0d0d0d] px-2">
+            <form action={`/${locale}/items`} className="mb-4 flex items-center border border-[#27272a] bg-[#0d0d0d] px-2">
               <Search className="h-3.5 w-3.5 text-[#666]" />
               <input
                 name="q"
                 placeholder={locale === "zh" ? "搜索物品..." : "Search items..."}
-                className="h-9 w-full bg-transparent px-2 text-sm text-[#ffffff] outline-none placeholder:text-[#555]"
+                className="h-9 w-full bg-transparent px-2 text-sm text-[#ffffff] outline-none placeholder:text-[#6c6c6c]"
               />
             </form>
             <p className="mb-2 text-[10px] uppercase tracking-[0.16em] text-[#666]">

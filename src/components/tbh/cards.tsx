@@ -68,11 +68,11 @@ export function ItemCard({ item, locale }: { item: RawItem; locale: Locale }) {
       className="group grid min-h-28 grid-rows-[auto_1fr_auto] border border-[#27272a] bg-[#0d0d0d] p-3 transition hover:border-[#d4a017]"
     >
       <div className="flex items-start gap-3">
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-[#2b2b2b] bg-[#0a0a0a]">
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-[#27272a] bg-[#0a0a0a]">
           {icon ? (
             <Image src={icon} alt={name} width={40} height={40} className="object-contain" data-pixel unoptimized />
           ) : (
-            <span className="text-xs text-[#555]">IMG</span>
+            <span className="text-xs text-[#6c6c6c]">IMG</span>
           )}
         </div>
         <div className="min-w-0">
@@ -94,7 +94,7 @@ export function ItemCard({ item, locale }: { item: RawItem; locale: Locale }) {
 
 export function MarketPrice({ item, compact = false }: { item: RawItem; compact?: boolean }) {
   const market = marketForItem(item);
-  if (!item.marketable) return <span className="text-[11px] text-[#555]">不可交易</span>;
+  if (!item.marketable) return <span className="text-[11px] text-[#6c6c6c]">不可交易</span>;
   if (!market?.lowest) return <span className="text-[11px] text-[#6c6c6c]">暂无市场数据</span>;
   return (
     <span className={compact ? "text-[12px] font-semibold text-[#f0c040]" : "text-lg font-semibold text-[#f0c040]"}>
@@ -106,7 +106,7 @@ export function MarketPrice({ item, compact = false }: { item: RawItem; compact?
 export function PriceChart({ values }: { values: number[] }) {
   const max = Math.max(...values, 1);
   return (
-    <div className="flex h-20 items-end gap-1 border border-[#27272a] bg-[#0b0b0b] p-2">
+    <div className="flex h-20 items-end gap-1 border border-[#27272a] bg-[#0d0d0d] p-2">
       {values.map((value, index) => (
         <div
           key={`${value}-${index}`}
@@ -173,8 +173,8 @@ export function HeroCard({ hero, locale }: { hero: Hero; locale: Locale }) {
         <div className="mt-3 flex items-center gap-2">
           <div className="flex gap-1.5">
             {[mainIcon, subIcon].map((icon, index) => (
-              <div key={`${slug}-${index}`} className="flex h-9 w-9 items-center justify-center border border-[#2b2b2b] bg-[#0a0a0a]">
-                {icon ? <Image src={icon} alt="" width={30} height={30} className="object-contain" data-pixel unoptimized /> : <span className="text-[10px] text-[#555]">-</span>}
+              <div key={`${slug}-${index}`} className="flex h-9 w-9 items-center justify-center border border-[#27272a] bg-[#0a0a0a]">
+                {icon ? <Image src={icon} alt="" width={30} height={30} className="object-contain" data-pixel unoptimized /> : <span className="text-[10px] text-[#6c6c6c]">-</span>}
               </div>
             ))}
           </div>
@@ -184,9 +184,9 @@ export function HeroCard({ hero, locale }: { hero: Hero; locale: Locale }) {
         <p className="mt-3 line-clamp-2 min-h-10 text-sm leading-5 text-[#9d9d9d]">{profile.playstyle}</p>
 
         <div className="mt-4 grid grid-cols-3 gap-2 text-center text-xs">
-          <span className="border border-[#27272a] bg-[#0b0b0b] px-2 py-1.5 text-[#ffffff]">HP {hero.MaxHp ?? "-"}</span>
-          <span className="border border-[#27272a] bg-[#0b0b0b] px-2 py-1.5 text-[#ffffff]">ATK {hero.AttackDamage ?? "-"}</span>
-          <span className="border border-[#27272a] bg-[#0b0b0b] px-2 py-1.5 text-[#ffffff]">{isZh ? "难度" : "Diff"} {profile.difficulty}</span>
+          <span className="border border-[#27272a] bg-[#0d0d0d] px-2 py-1.5 text-[#ffffff]">HP {hero.MaxHp ?? "-"}</span>
+          <span className="border border-[#27272a] bg-[#0d0d0d] px-2 py-1.5 text-[#ffffff]">ATK {hero.AttackDamage ?? "-"}</span>
+          <span className="border border-[#27272a] bg-[#0d0d0d] px-2 py-1.5 text-[#ffffff]">{isZh ? "难度" : "Diff"} {profile.difficulty}</span>
         </div>
 
         <div className="mt-3 flex items-center justify-between gap-3 border-t border-[#27272a] pt-3">
@@ -220,7 +220,7 @@ export function DropRateTable({ rows }: { rows: Array<{ name: string; rate: stri
   return (
     <div className="overflow-x-auto border border-[#27272a]">
       <table className="w-full min-w-[520px] text-left text-sm">
-        <thead className="bg-[#151515] text-xs text-[#6c6c6c]">
+        <thead className="bg-[#18181b] text-xs text-[#6c6c6c]">
           <tr>
             <th className="px-3 py-2">掉落物</th>
             <th className="px-3 py-2">掉率</th>

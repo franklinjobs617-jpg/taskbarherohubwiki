@@ -7,7 +7,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-[1440px] gap-3 px-3 py-6 text-xs text-[#6c6c6c] md:grid-cols-[1fr_auto]">
         <p>
           非官方粉丝站。游戏内容归开发商所有。Steam 市场价格只作参考，不代表成交价，不保证收益。
-          <span className="ml-2 text-[#555]">
+          <span className="ml-2 text-[#6c6c6c]">
             {DATA_VERSION} / {UPDATED_AT}
           </span>
         </p>

@@ -51,7 +51,7 @@ export default async function MarketPage({ params, searchParams }: Props) {
       </form>
       <div className="overflow-x-auto border border-[#27272a]">
         <table className="w-full min-w-[860px] text-left text-sm">
-          <thead className="bg-[#151515] text-xs text-[#6c6c6c]">
+          <thead className="bg-[#18181b] text-xs text-[#6c6c6c]">
             <tr>
               <th className="px-3 py-2">{isZh ? "物品" : "Item"}</th>
               <th className="px-3 py-2">{isZh ? "稀有度" : "Rarity"}</th>

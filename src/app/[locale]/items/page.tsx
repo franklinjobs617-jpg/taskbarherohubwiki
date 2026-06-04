@@ -108,11 +108,7 @@ export default async function ItemsPage({ params, searchParams }: Props) {
             <Link
               key={cls}
               href={`/${locale}/items?class=${cls}`}
-              className={`border px-2 py-1 text-xs transition-colors ${
-                sp.class === cls
-                  ? "border-[#d4a017] bg-[#1a1508] text-[#f0c040]"
-                  : "border-[#3b3b3b] text-[#9d9d9d] hover:border-[#d4a017]"
-              }`}
+              className={`pill text-xs ${sp.class === cls ? "active" : ""}`}
             >
               {cls} <span className="text-[#6c6c6c]">{classCounts[cls] ?? 0}</span>
             </Link>
@@ -120,21 +116,21 @@ export default async function ItemsPage({ params, searchParams }: Props) {
         </div>
         {/* Type + market quick links */}
         <div className="flex flex-wrap gap-1.5">
-          <Link href={`/${locale}/items?market=1`} className={`border px-2 py-1 text-xs ${sp.market === "1" ? "border-[#d4a017] text-[#f0c040]" : "border-[#3b3b3b] text-[#9d9d9d] hover:border-[#d4a017]"}`}>
+          <Link href={`/${locale}/items?market=1`} className={`pill text-xs ${sp.market === "1" ? "active" : ""}`}>
             {isZh ? "可交易" : "Marketable"}
           </Link>
-          <Link href={`/${locale}/items?type=GEAR`} className={`border px-2 py-1 text-xs ${sp.type === "GEAR" ? "border-[#d4a017] text-[#f0c040]" : "border-[#3b3b3b] text-[#9d9d9d] hover:border-[#d4a017]"}`}>
+          <Link href={`/${locale}/items?type=GEAR`} className={`pill text-xs ${sp.type === "GEAR" ? "active" : ""}`}>
             {isZh ? "装备" : "Gear"}
           </Link>
-          <Link href={`/${locale}/items?type=MATERIAL`} className={`border px-2 py-1 text-xs ${sp.type === "MATERIAL" ? "border-[#d4a017] text-[#f0c040]" : "border-[#3b3b3b] text-[#9d9d9d] hover:border-[#d4a017]"}`}>
+          <Link href={`/${locale}/items?type=MATERIAL`} className={`pill text-xs ${sp.type === "MATERIAL" ? "active" : ""}`}>
             {isZh ? "材料" : "Materials"}
           </Link>
-          <Link href={`/${locale}/items?type=STAGEBOX`} className={`border px-2 py-1 text-xs ${sp.type === "STAGEBOX" ? "border-[#d4a017] text-[#f0c040]" : "border-[#3b3b3b] text-[#9d9d9d] hover:border-[#d4a017]"}`}>
+          <Link href={`/${locale}/items?type=STAGEBOX`} className={`pill text-xs ${sp.type === "STAGEBOX" ? "active" : ""}`}>
             {isZh ? "宝箱" : "Chests"}
           </Link>
           {(sp.class || sp.type || sp.grade || sp.slot || sp.market) ? (
-            <Link href={`/${locale}/items`} className="border border-[#5a3a1a] px-2 py-1 text-xs text-[#ff6b6b] hover:border-[#ff6b6b]">
-              {isZh ? "清除筛选" : "Clear filters"}
+            <Link href={`/${locale}/items`} className="pill text-xs text-[#9d9d9d] hover:text-[#ffffff]">
+              {isZh ? "清除" : "Clear"}
             </Link>
           ) : null}
         </div>

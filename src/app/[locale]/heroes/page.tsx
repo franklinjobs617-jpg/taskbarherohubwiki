@@ -110,7 +110,7 @@ export default async function HeroesPage({ params }: Props) {
       <Section title={isZh ? "各个职业怎么比较？" : "How do the classes compare?"} eyebrow={isZh ? "决策表" : "Decision table"}>
         <div className="overflow-x-auto border border-[#27272a]">
           <table className="w-full min-w-[760px] text-left text-sm">
-            <thead className="bg-[#151515] text-xs text-[#6c6c6c]">
+            <thead className="bg-[#18181b] text-xs text-[#6c6c6c]">
               <tr>
                 <th className="px-3 py-2">{isZh ? "英雄" : "Hero"}</th>
                 <th className="px-3 py-2">{isZh ? "定位" : "Role"}</th>

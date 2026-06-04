@@ -61,7 +61,7 @@ export default async function StageDetailPage({ params }: Props) {
         <Section title={isZh ? "掉落物品" : "Drop Table"} eyebrow={isZh ? "含掉率" : "With drop rates"}>
           <div className="overflow-x-auto border border-[#27272a]">
             <table className="w-full min-w-[600px] text-left text-sm">
-              <thead className="bg-[#151515] text-xs text-[#6c6c6c]">
+              <thead className="bg-[#18181b] text-xs text-[#6c6c6c]">
                 <tr>
                   <th className="px-3 py-2.5">{isZh ? "物品" : "Item"}</th>
                   <th className="px-3 py-2.5">{isZh ? "稀有度" : "Grade"}</th>
