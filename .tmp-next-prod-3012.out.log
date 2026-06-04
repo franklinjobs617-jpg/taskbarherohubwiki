@@ -1,0 +1,8 @@
+
+> tbh-fan-site@0.1.0 start
+> next start -p 3012
+
+▲ Next.js 16.2.7
+- Local:         http://localhost:3012
+- Network:       http://192.168.100.12:3012
+✓ Ready in 156ms

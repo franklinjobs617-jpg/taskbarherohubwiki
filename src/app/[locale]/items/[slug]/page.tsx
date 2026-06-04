@@ -11,10 +11,6 @@ import { extIconPath, extItems, extStages, formatDropRate } from "@/lib/game-dat
 
 type Props = { params: Promise<{ locale: Locale; slug: string }> };
 
-export async function generateStaticParams() {
-  return [];
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const item = itemBySlug(slug);

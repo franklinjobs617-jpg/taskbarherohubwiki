@@ -9,10 +9,6 @@ import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale; hash: string }> };
 
-export async function generateStaticParams() {
-  return [];
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, hash } = await params;
   const row = marketBySlug(hash);

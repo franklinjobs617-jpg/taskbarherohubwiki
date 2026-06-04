@@ -7,6 +7,7 @@ import type { Locale } from "@/lib/game-data/data";
 export type RuneNode = {
   key: number;
   name: string;
+  icon?: string;
   x: number;
   y: number;
   maxLevel: number;
@@ -20,6 +21,13 @@ export type RuneNode = {
   levels: Array<{ level: number; value: string | null; cost: number }>;
   totalCost: number;
 };
+
+/** Convert ext rune icon name (e.g. "Rune_AllHeroAttackDamage") to a public asset path. */
+export function runeIconSrc(icon?: string): string | null {
+  if (!icon) return null;
+  const name = icon.startsWith("Rune_") ? icon.slice(5) : icon;
+  return `/game/runes/${name}.png`;
+}
 
 type RouteKey = "early" | "heroSlots" | "farming" | "automation";
 

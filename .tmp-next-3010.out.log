@@ -1,0 +1,14 @@
+
+> tbh-fan-site@0.1.0 dev
+> next dev -p 3010
+
+▲ Next.js 16.2.7 (Turbopack)
+- Local:         http://localhost:3010
+- Network:       http://192.168.100.12:3010
+✓ Ready in 525ms
+- Experiments (use with caution):
+  · cpus: 1
+  · staticGenerationMaxConcurrency: 1
+
+ GET /zh/stages/normal-1-1 200 in 2.2s (next.js: 1077ms, proxy.ts: 200ms, application-code: 952ms)
+✓ Compiled in 520ms
