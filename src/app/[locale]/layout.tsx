@@ -60,6 +60,10 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <html lang={locale} className="h-full">
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-87KVJGHX8D" />
+        <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-87KVJGHX8D');` }} />
+      </head>
       <body className="min-h-full bg-[#090909] text-[#d8d1c2] antialiased">
         <NextIntlClientProvider messages={messages}>
           <div className="flex min-h-screen flex-col">
