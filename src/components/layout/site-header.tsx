@@ -22,14 +22,17 @@ const NAV_ITEMS = [
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const locale = pathname.split("/")[1] === "en" ? "en" : "zh";
+  const seg = pathname.split("/")[1];
+  const locale = ["zh", "ja"].includes(seg) ? seg : "en";
   const { menuOpen, toggleMenu, closeMenu } = useNav();
+
+  const lpath = (path: string) => locale === "en" ? path : `/${locale}${path}`;
 
   return (
     <header className="sticky top-0 z-50 border-b border-[#27272a] bg-[#0a0a0a]/95 backdrop-blur">
       <div className="mx-auto flex h-12 max-w-[1440px] items-center gap-1 px-3">
         {/* Logo */}
-        <Link href={`/${locale}`} className="flex shrink-0 items-center gap-2 font-semibold text-[#f0c040]">
+        <Link href={lpath("/")} className="flex shrink-0 items-center gap-2 font-semibold text-[#f0c040]">
           <span className="text-sm tracking-wide">TBH Wiki</span>
         </Link>
 
@@ -37,7 +40,7 @@ export function SiteHeader() {
         <nav className="hidden h-full items-center lg:flex">
           {NAV_ITEMS.slice(0, 8).map((item) => {
             const Icon = item.icon;
-            const href = `/${locale}${item.href}`;
+            const href = lpath(item.href);
             const active = pathname.startsWith(href);
             return (
               <Link
@@ -57,7 +60,7 @@ export function SiteHeader() {
         </nav>
 
         {/* Search */}
-        <form action={`/${locale}/items`} className="ml-auto hidden w-48 items-center border border-[#27272a] bg-[#0d0d0d] px-2 lg:flex xl:w-64">
+        <form action={lpath("/items")} className="ml-auto hidden w-48 items-center border border-[#27272a] bg-[#0d0d0d] px-2 lg:flex xl:w-64">
           <Search className="h-3.5 w-3.5 shrink-0 text-[#666]" />
           <input
             name="q"
@@ -83,7 +86,7 @@ export function SiteHeader() {
         <div className="fixed inset-0 top-12 z-40 lg:hidden">
           <div className="absolute inset-0 bg-black/60" onClick={closeMenu} />
           <nav className="absolute right-0 top-0 h-full w-64 overflow-y-auto border-l border-[#27272a] bg-[#0d0d0d] p-4">
-            <form action={`/${locale}/items`} className="mb-4 flex items-center border border-[#27272a] bg-[#0d0d0d] px-2">
+            <form action={lpath("/items")} className="mb-4 flex items-center border border-[#27272a] bg-[#0d0d0d] px-2">
               <Search className="h-3.5 w-3.5 text-[#666]" />
               <input
                 name="q"
@@ -96,7 +99,7 @@ export function SiteHeader() {
             </p>
             {NAV_ITEMS.map((item) => {
               const Icon = item.icon;
-              const href = `/${locale}${item.href}`;
+              const href = lpath(item.href);
               const active = pathname.startsWith(href);
               return (
                 <Link

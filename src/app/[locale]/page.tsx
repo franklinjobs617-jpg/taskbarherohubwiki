@@ -19,13 +19,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: locale === "zh"
       ? "中文优先的 TaskBar Hero 数据库，覆盖物品、英雄、技能、符文、宝箱、关卡、材料效果、攻略和 Steam 市场状态。"
       : "A bilingual TaskBar Hero database for items, heroes, skills, runes, chests, stages, material effects, guides, and Steam Market status.",
-    alternates: { canonical: `/${locale}`, languages: { zh: "/zh", en: "/en", "x-default": "/zh" } },
+    alternates: { canonical: locale === "en" ? "/" : `/${locale}`, languages: { en: "/", zh: "/zh", ja: "/ja", "x-default": "/" } },
   };
 }
 
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
   const isZh = locale === "zh";
+  const lp = (path: string) => locale === "en" ? path : `/${locale}${path}`;
   const items = allItems();
   const heroes = allHeroes();
   const chests = chestItems();
@@ -54,7 +55,7 @@ export default async function HomePage({ params }: Props) {
   return (
     <PageShell>
       <SeoJsonLd data={[
-        { "@context": "https://schema.org", "@type": "WebSite", name: "TaskBar Hero Wiki", url: SITE_URL, potentialAction: { "@type": "SearchAction", target: `${SITE_URL}/${locale}/items?q={search_term_string}`, "query-input": "required name=search_term_string" } },
+        { "@context": "https://schema.org", "@type": "WebSite", name: "TaskBar Hero Wiki", url: SITE_URL, potentialAction: { "@type": "SearchAction", target: `${SITE_URL}/items?q={search_term_string}`, "query-input": "required name=search_term_string" } },
         { "@context": "https://schema.org", "@type": "VideoGame", name: "TaskBar Hero", genre: "Idle RPG" },
       ]} />
 
@@ -70,7 +71,7 @@ export default async function HomePage({ params }: Props) {
               ? "物品 · 英雄 · 宝箱 · 关卡 · 符文 · 技能 · Steam 市场"
               : "Items · Heroes · Chests · Stages · Runes · Skills · Steam Market"}
           </p>
-          <form action={`/${locale}/items`} className="mx-auto mt-6 flex max-w-lg border border-[#3b3b3b] bg-[#0d0d0d]">
+          <form action={lp("/items")} className="mx-auto mt-6 flex max-w-lg border border-[#3b3b3b] bg-[#0d0d0d]">
             <Search className="ml-3 h-4 w-4 shrink-0 self-center text-[#6c6c6c]" />
             <input name="q" className="min-w-0 flex-1 bg-transparent px-3 py-3 text-[14px] outline-none placeholder:text-[#6c6c6c]"
               placeholder={isZh ? "搜索物品、材料、宝箱..." : "Search items, materials, chests..."} />
@@ -85,7 +86,7 @@ export default async function HomePage({ params }: Props) {
       <div className="border-b border-[#27272a] py-6">
         <div className="grid grid-cols-4 sm:grid-cols-8">
           {stats.map((stat) => (
-            <Link key={stat.href} href={`/${locale}${stat.href}`}
+            <Link key={stat.href} href={lp(stat.href)}
               className="group flex flex-col items-center gap-1.5 py-2 text-center transition-colors hover:bg-[#18181b]/50">
               <span className="font-mono text-[22px] font-medium text-[#ffffff] group-hover:text-[#f0c040] transition-colors">
                 {stat.value.toLocaleString()}
@@ -104,7 +105,7 @@ export default async function HomePage({ params }: Props) {
             <h2 className="text-[12px] font-semibold uppercase tracking-[0.15em] text-[#6c6c6c]">
               {isZh ? "英雄职业" : "Hero Classes"}
             </h2>
-            <Link href={`/${locale}/heroes`} className="flex items-center gap-1 text-[12px] text-[#d4a017] hover:text-[#f0c040] transition-colors">
+            <Link href={lp("/heroes")} className="flex items-center gap-1 text-[12px] text-[#d4a017] hover:text-[#f0c040] transition-colors">
               {isZh ? "全部英雄" : "All heroes"} <ArrowRight className="h-3 w-3" />
             </Link>
           </div>
@@ -121,7 +122,7 @@ export default async function HomePage({ params }: Props) {
               <h2 className="text-[12px] font-semibold uppercase tracking-[0.15em] text-[#6c6c6c]">
                 {isZh ? "市场行情" : "Market"}
               </h2>
-              <Link href={`/${locale}/market`} className="text-[12px] text-[#d4a017] hover:text-[#f0c040] transition-colors">
+              <Link href={lp("/market")} className="text-[12px] text-[#d4a017] hover:text-[#f0c040] transition-colors">
                 {isZh ? "全部 →" : "All →"}
               </Link>
             </div>
@@ -138,7 +139,7 @@ export default async function HomePage({ params }: Props) {
                   {liquidMarketRows.slice(0, 7).map(({ item, market: row }) => (
                     <tr key={item.id} className="border-b border-[#27272a] hover:bg-[#18181b]">
                       <td className="px-3 py-2">
-                        <Link href={`/${locale}/market/${item.slug}`} className="text-[#ffffff] hover:text-[#f0c040] transition-colors">
+                        <Link href={lp(`/market/${item.slug}`)} className="text-[#ffffff] hover:text-[#f0c040] transition-colors">
                           {item.name[locale === "zh" ? "zh-Hans" : "en-US"] ?? item.slug}
                         </Link>
                       </td>
@@ -160,7 +161,7 @@ export default async function HomePage({ params }: Props) {
             {quickLinks.map((link) => {
               const Icon = link.icon;
               return (
-                <Link key={link.href} href={`/${locale}${link.href}`}
+                <Link key={link.href} href={lp(link.href)}
                   className="card flex flex-col gap-1.5 p-3 transition hover:border-[#d4a017]/60">
                   <Icon className="h-4 w-4 text-[#d4a017]" />
                   <p className="text-[13px] font-medium text-[#ffffff]">{link.label}</p>
@@ -180,7 +181,7 @@ export default async function HomePage({ params }: Props) {
             <h2 className="text-[12px] font-semibold uppercase tracking-[0.15em] text-[#d4a017]">
               {isZh ? "更新日志" : "Patch Notes"}
             </h2>
-            <Link href={`/${locale}/updates`} className="text-[12px] text-[#9d9d9d] hover:text-[#f0c040] transition-colors">
+            <Link href={lp("/updates")} className="text-[12px] text-[#9d9d9d] hover:text-[#f0c040] transition-colors">
               {isZh ? "完整记录 →" : "Full log →"}
             </Link>
           </div>
@@ -216,7 +217,7 @@ export default async function HomePage({ params }: Props) {
             <h2 className="text-[12px] font-semibold uppercase tracking-[0.15em] text-[#d4a017]">
               {isZh ? "常见问题" : "FAQ"}
             </h2>
-            <Link href={`/${locale}/faq`} className="text-[12px] text-[#9d9d9d] hover:text-[#f0c040] transition-colors">
+            <Link href={lp("/faq")} className="text-[12px] text-[#9d9d9d] hover:text-[#f0c040] transition-colors">
               {isZh ? "全部 FAQ →" : "All FAQs →"}
             </Link>
           </div>
