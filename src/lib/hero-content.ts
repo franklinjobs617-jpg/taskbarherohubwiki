@@ -10,7 +10,7 @@ type HeroProfile = {
   risk: string;
 };
 
-const profiles: Record<string, Record<Locale, HeroProfile>> = {
+const profiles: Record<string, Partial<Record<Locale, HeroProfile>>> = {
   Knight: {
     zh: {
       role: "稳推进前排",
@@ -133,7 +133,7 @@ const profiles: Record<string, Record<Locale, HeroProfile>> = {
   },
 };
 
-const fallback: Record<Locale, HeroProfile> = {
+const fallback: Partial<Record<Locale, HeroProfile>> = {
   zh: {
     role: "资料待分类",
     difficulty: "未评估",
@@ -155,7 +155,7 @@ const fallback: Record<Locale, HeroProfile> = {
 };
 
 export function heroProfile(hero: Hero, locale: Locale) {
-  return profiles[hero.ClassType ?? ""]?.[locale] ?? fallback[locale];
+  return profiles[hero.ClassType ?? ""]?.[locale] ?? fallback[locale] ?? fallback["en"]!;
 }
 
 export function heroWeaponLabel(hero: Hero, locale: Locale) {

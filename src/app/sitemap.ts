@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { allHeroes, allItems, allStages, builds, chestItems, guides, SITE_URL, stageSlug, UPDATED_AT } from "@/lib/game-data/data";
 
-const locales = ["zh", "en"] as const;
+const locales = ["zh", "en", "ja"] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const updated = new Date(UPDATED_AT);

@@ -1,0 +1,42 @@
+{
+  "site": {
+    "title": "TBH ガイド",
+    "subtitle": "Task Bar Hero ガイド & アイテムデータベース",
+    "description": "TBH: Task Bar Heroの最も包括的なガイドサイト。アイテムデータベース、Steam市場価格、利益計算機、クラスガイド。"
+  },
+  "nav": {
+    "home": "ホーム",
+    "items": "アイテム",
+    "heroes": "ヒーロー",
+    "stages": "ステージ",
+    "market": "マーケット",
+    "guides": "ガイド",
+    "tools": "ツール",
+    "builds": "ビルド",
+    "monsters": "モンスター",
+    "runes": "ルーン",
+    "skills": "スキル",
+    "pets": "ペット",
+    "search": "アイテム、ヒーロー、ガイドを検索..."
+  },
+  "home": {
+    "heroTitle": "ヒーロー職業",
+    "marketTitle": "マーケット",
+    "guidesTitle": "ガイド",
+    "toolsTitle": "ツール",
+    "patchNotes": "更新情報",
+    "faq": "よくある質問",
+    "viewAll": "すべて見る",
+    "search": "検索"
+  },
+  "common": {
+    "view": "見る",
+    "back": "戻る",
+    "all": "すべて",
+    "filter": "フィルター",
+    "clear": "クリア",
+    "loading": "読み込み中...",
+    "noData": "データなし",
+    "updated": "更新日"
+  }
+}

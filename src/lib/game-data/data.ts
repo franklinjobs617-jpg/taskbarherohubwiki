@@ -7,7 +7,7 @@ import skillsJson from "@/../tbh_data/skills.json";
 import monstersJson from "@/../tbh_data/monsters.json";
 import marketLatestJson from "@/../data/generated/market/v1/latest.json";
 
-export type Locale = "zh" | "en";
+export type Locale = "zh" | "en" | "ja";
 export type Localized = Record<string, string>;
 
 export type RawItem = {
@@ -154,49 +154,49 @@ export const UPDATED_AT = "2026-06-03";
 export const MARKET_UPDATED_AT = marketLatest.updatedAt ?? UPDATED_AT;
 
 export const gradeNames: Record<string, Record<Locale, string>> = {
-  COMMON: { zh: "普通", en: "Common" },
-  UNCOMMON: { zh: "优秀", en: "Uncommon" },
-  RARE: { zh: "稀有", en: "Rare" },
-  LEGENDARY: { zh: "传说", en: "Legendary" },
-  IMMORTAL: { zh: "不朽", en: "Immortal" },
-  ARCANA: { zh: "奥秘", en: "Arcana" },
-  BEYOND: { zh: "超越", en: "Beyond" },
-  CELESTIAL: { zh: "天界", en: "Celestial" },
-  DIVINE: { zh: "神圣", en: "Divine" },
-  COSMIC: { zh: "宇宙", en: "Cosmic" },
+  COMMON: { zh: "普通", en: "Common", ja: "コモン" },
+  UNCOMMON: { zh: "优秀", en: "Uncommon", ja: "アンコモン" },
+  RARE: { zh: "稀有", en: "Rare", ja: "レア" },
+  LEGENDARY: { zh: "传说", en: "Legendary", ja: "レジェンダリー" },
+  IMMORTAL: { zh: "不朽", en: "Immortal", ja: "イモータル" },
+  ARCANA: { zh: "奥秘", en: "Arcana", ja: "アルカナ" },
+  BEYOND: { zh: "超越", en: "Beyond", ja: "ビヨンド" },
+  CELESTIAL: { zh: "天界", en: "Celestial", ja: "セレスティアル" },
+  DIVINE: { zh: "神圣", en: "Divine", ja: "ディバイン" },
+  COSMIC: { zh: "宇宙", en: "Cosmic", ja: "コズミック" },
 };
 
 export const slotNames: Record<string, Record<Locale, string>> = {
-  SWORD: { zh: "剑", en: "Sword" },
-  BOW: { zh: "弓", en: "Bow" },
-  STAFF: { zh: "法杖", en: "Staff" },
-  SCEPTER: { zh: "权杖", en: "Scepter" },
-  TOME: { zh: "法典", en: "Tome" },
-  CROSSBOW: { zh: "弩", en: "Crossbow" },
-  HATCHET: { zh: "手斧", en: "Hatchet" },
-  ORB: { zh: "法球", en: "Orb" },
-  ARROW: { zh: "箭矢", en: "Arrow" },
-  BOLT: { zh: "弩箭", en: "Bolt" },
-  AXE: { zh: "斧", en: "Axe" },
-  ARMOR: { zh: "护甲", en: "Armor" },
-  HELMET: { zh: "头盔", en: "Helmet" },
-  GLOVES: { zh: "手套", en: "Gloves" },
-  BOOTS: { zh: "靴子", en: "Boots" },
-  SHIELD: { zh: "盾牌", en: "Shield" },
-  AMULET: { zh: "护符", en: "Amulet" },
-  RING: { zh: "戒指", en: "Ring" },
-  BRACER: { zh: "护腕", en: "Bracer" },
-  EARING: { zh: "耳环", en: "Earring" },
+  SWORD: { zh: "剑", en: "Sword", ja: "剣" },
+  BOW: { zh: "弓", en: "Bow", ja: "弓" },
+  STAFF: { zh: "法杖", en: "Staff", ja: "杖" },
+  SCEPTER: { zh: "权杖", en: "Scepter", ja: "王笏" },
+  TOME: { zh: "法典", en: "Tome", ja: "書物" },
+  CROSSBOW: { zh: "弩", en: "Crossbow", ja: "クロスボウ" },
+  HATCHET: { zh: "手斧", en: "Hatchet", ja: "手斧" },
+  ORB: { zh: "法球", en: "Orb", ja: "オーブ" },
+  ARROW: { zh: "箭矢", en: "Arrow", ja: "矢" },
+  BOLT: { zh: "弩箭", en: "Bolt", ja: "ボルト" },
+  AXE: { zh: "斧", en: "Axe", ja: "斧" },
+  ARMOR: { zh: "护甲", en: "Armor", ja: "鎧" },
+  HELMET: { zh: "头盔", en: "Helmet", ja: "兜" },
+  GLOVES: { zh: "手套", en: "Gloves", ja: "手袋" },
+  BOOTS: { zh: "靴子", en: "Boots", ja: "靴" },
+  SHIELD: { zh: "盾牌", en: "Shield", ja: "盾" },
+  AMULET: { zh: "护符", en: "Amulet", ja: "お守り" },
+  RING: { zh: "戒指", en: "Ring", ja: "指輪" },
+  BRACER: { zh: "护腕", en: "Bracer", ja: "腕輪" },
+  EARING: { zh: "耳环", en: "Earring", ja: "耳飾り" },
 };
 
 export function isLocale(value: string): value is Locale {
-  return value === "zh" || value === "en";
+  return value === "zh" || value === "en" || value === "ja";
 }
 
 export function text(value: Localized | string | null | undefined, locale: Locale, fallback = "") {
   if (!value) return fallback;
   if (typeof value === "string") return value;
-  const key = locale === "zh" ? "zh-Hans" : "en-US";
+  const key = locale === "zh" ? "zh-Hans" : locale === "ja" ? "ja-JP" : "en-US";
   return value[key] ?? value["en-US"] ?? value["zh-Hans"] ?? Object.values(value)[0] ?? fallback;
 }
 
@@ -336,64 +336,64 @@ export const guides: Guide[] = [
   {
     slug: "getting-started",
     category: "beginner",
-    title: { zh: "新手开局攻略", en: "Beginner Guide" },
-    description: { zh: "按解锁、装备、材料和风险顺序建立前期路线。", en: "Build an early route around unlocks, gear, materials, and risk control." },
+    title: { zh: "新手开局攻略", en: "Beginner Guide", ja: "初心者ガイド" },
+    description: { ja: "ゲームデータに基づくガイド。", zh: "按解锁、装备、材料和风险顺序建立前期路线。", en: "Build an early route around unlocks, gear, materials, and risk control." },
     evidence: "editorial",
     updatedAt: UPDATED_AT,
   },
   {
     slug: "class-guide",
     category: "beginner",
-    title: { zh: "职业选择指南", en: "Class Selection Guide" },
-    description: { zh: "根据武器路径、属性需求和刷图目标选择职业。", en: "Choose a class by weapon path, stat needs, and farming goal." },
+    title: { zh: "职业选择指南", en: "Class Selection Guide", ja: "クラス選択ガイド" },
+    description: { ja: "ゲームデータに基づくガイド。", zh: "根据武器路径、属性需求和刷图目标选择职业。", en: "Choose a class by weapon path, stat needs, and farming goal." },
     evidence: "editorial",
     updatedAt: UPDATED_AT,
   },
   {
     slug: "cube-materials",
     category: "cube",
-    title: { zh: "Cube 合成与材料指南", en: "Cube and Materials Guide" },
-    description: { zh: "用材料效果、稀有度和可交易状态决定保留顺序。", en: "Use material effects, rarity, and tradability to decide what to keep." },
+    title: { zh: "Cube 合成与材料指南", en: "Cube and Materials Guide", ja: "キューブと素材ガイド" },
+    description: { ja: "ゲームデータに基づくガイド。", zh: "用材料效果、稀有度和可交易状态决定保留顺序。", en: "Use material effects, rarity, and tradability to decide what to keep." },
     evidence: "datamined",
     updatedAt: UPDATED_AT,
   },
   {
     slug: "steam-market-guide",
     category: "economy",
-    title: { zh: "Steam 市场卖东西教程", en: "Steam Market Selling Guide" },
-    description: { zh: "区分挂单、成交、供应和市场匹配状态。", en: "Separate listings, sales, supply, and market matching status." },
+    title: { zh: "Steam 市场卖东西教程", en: "Steam Market Selling Guide", ja: "Steamマーケット販売ガイド" },
+    description: { ja: "ゲームデータに基づくガイド。", zh: "区分挂单、成交、供应和市场匹配状态。", en: "Separate listings, sales, supply, and market matching status." },
     evidence: "editorial",
     updatedAt: UPDATED_AT,
   },
   {
     slug: "tradable-items",
     category: "economy",
-    title: { zh: "可交易装备怎么看", en: "Tradable Items Guide" },
-    description: { zh: "可交易不等于值得卖，先判断用途再判断价格。", en: "Tradable does not automatically mean worth selling." },
+    title: { zh: "可交易装备怎么看", en: "Tradable Items Guide", ja: "トレード可能アイテムガイド" },
+    description: { ja: "ゲームデータに基づくガイド。", zh: "可交易不等于值得卖，先判断用途再判断价格。", en: "Tradable does not automatically mean worth selling." },
     evidence: "editorial",
     updatedAt: UPDATED_AT,
   },
   {
     slug: "chest-drop-guide",
     category: "farming",
-    title: { zh: "宝箱掉率怎么用", en: "Chest Drop Guide" },
-    description: { zh: "用宝箱等级、来源关卡和掉率数据判断刷取目标。", en: "Use chest level, source stage, and rates to choose farming targets." },
+    title: { zh: "宝箱掉率怎么用", en: "Chest Drop Guide", ja: "宝箱ドロップ率ガイド" },
+    description: { ja: "ゲームデータに基づくガイド。", zh: "用宝箱等级、来源关卡和掉率数据判断刷取目标。", en: "Use chest level, source stage, and rates to choose farming targets." },
     evidence: "editorial",
     updatedAt: UPDATED_AT,
   },
   {
     slug: "gold-farming-route",
     category: "farming",
-    title: { zh: "刷金币路线", en: "Gold Farming Route" },
-    description: { zh: "优先比较金币、清图时间和稳定性，不伪造市场收益。", en: "Compare gold, clear time, and reliability without invented market profit." },
+    title: { zh: "刷金币路线", en: "Gold Farming Route", ja: "ゴールド稼ぎルート" },
+    description: { ja: "ゲームデータに基づくガイド。", zh: "优先比较金币、清图时间和稳定性，不伪造市场收益。", en: "Compare gold, clear time, and reliability without invented market profit." },
     evidence: "editorial",
     updatedAt: UPDATED_AT,
   },
   {
     slug: "exp-farming-route",
     category: "farming",
-    title: { zh: "刷经验路线", en: "EXP Farming Route" },
-    description: { zh: "用关卡经验、击杀数量和清图速度建立升级路线。", en: "Use stage XP, kill count, and clear speed to plan leveling." },
+    title: { zh: "刷经验路线", en: "EXP Farming Route", ja: "経験値稼ぎルート" },
+    description: { ja: "ゲームデータに基づくガイド。", zh: "用关卡经验、击杀数量和清图速度建立升级路线。", en: "Use stage XP, kill count, and clear speed to plan leveling." },
     evidence: "editorial",
     updatedAt: UPDATED_AT,
   },
@@ -405,8 +405,8 @@ export const builds: Build[] = [
     hero: "Knight",
     phase: "early",
     goal: "survival",
-    title: { zh: "骑士前期盾牌路线", en: "Knight Early Shield Route" },
-    description: { zh: "优先生命、防御和格挡，适合稳定推进。", en: "Prioritize HP, armor, and block for stable progression." },
+    title: { zh: "骑士前期盾牌路线", en: "Knight Early Shield Route", ja: "ナイト盾ルート" },
+    description: { ja: "ゲームデータに基づくガイド。", zh: "优先生命、防御和格挡，适合稳定推进。", en: "Prioritize HP, armor, and block for stable progression." },
     evidence: "editorial",
     updatedAt: UPDATED_AT,
   },
@@ -415,8 +415,8 @@ export const builds: Build[] = [
     hero: "Ranger",
     phase: "mid",
     goal: "farming",
-    title: { zh: "游侠中期刷图路线", en: "Ranger Mid Farming Route" },
-    description: { zh: "优先攻速、物理伤害和清图效率。", en: "Prioritize attack speed, physical damage, and clear speed." },
+    title: { zh: "游侠中期刷图路线", en: "Ranger Mid Farming Route", ja: "レンジャー中盤ルート" },
+    description: { ja: "ゲームデータに基づくガイド。", zh: "优先攻速、物理伤害和清图效率。", en: "Prioritize attack speed, physical damage, and clear speed." },
     evidence: "editorial",
     updatedAt: UPDATED_AT,
   },
@@ -425,8 +425,8 @@ export const builds: Build[] = [
     hero: "Sorcerer",
     phase: "endgame",
     goal: "materials",
-    title: { zh: "法师后期材料路线", en: "Sorcerer Endgame Material Route" },
-    description: { zh: "围绕高阶材料和法系属性建立保守路线。", en: "Use high-tier materials and caster stats as the route anchor." },
+    title: { zh: "法师后期材料路线", en: "Sorcerer Endgame Material Route", ja: "ソーサラー後期ルート" },
+    description: { ja: "ゲームデータに基づくガイド。", zh: "围绕高阶材料和法系属性建立保守路线。", en: "Use high-tier materials and caster stats as the route anchor." },
     evidence: "unverified",
     updatedAt: UPDATED_AT,
   },

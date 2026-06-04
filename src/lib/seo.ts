@@ -8,6 +8,7 @@ export function pageAlternates(locale: Locale, path: string): Metadata["alternat
     languages: {
       zh: `/zh${normalizedPath}`,
       en: `/en${normalizedPath}`,
+      ja: `/ja${normalizedPath}`,
       "x-default": `/zh${normalizedPath}`,
     },
   };
