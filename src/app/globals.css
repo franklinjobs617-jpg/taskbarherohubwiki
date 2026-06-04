@@ -1,23 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Press+Start+2P&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Press+Start+2P&family=VT323&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
-/* === TBH Taskbar Aesthetic === */
-/* The game lives in the Windows taskbar. The site should feel like an extension of that. */
+/* === Design System: Rarible-inspired dark terminal + TBH game aesthetic === */
 
 @theme inline {
-  --color-bg-primary: #0a0a0a;
-  --color-bg-secondary: #121212;
-  --color-bg-tertiary: #1a1a1a;
-  --color-bg-hover: #252525;
-  --color-border: #2a2a2a;
-  --color-border-light: #333;
-  --color-text: #ccc;
-  --color-text-dim: #888;
-  --color-text-muted: #666;
-  --color-gold: #d4a017;
-  --color-gold-bright: #f0c040;
+  /* ── Surfaces (terminal canvas) ── */
+  --color-canvas: #0a0a0a;
+  --color-surface: #0d0d0d;
+  --color-surface-raised: #18181b;
+  --color-surface-hover: #1a1a1e;
 
-  /* Rarity — in-game order, desaturated to match pixel art */
+  /* ── Borders (hairline-first, no shadow dependency) ── */
+  --color-hairline: #27272a;
+  --color-border-soft: #2a2a2e;
+  --color-border-input: #3b3b3b;
+
+  /* ── Single accent (gold — one voice, like Rarible's lime) ── */
+  --color-accent: #d4a017;
+  --color-accent-bright: #f0c040;
+  --color-accent-dim: #996e10;
+
+  /* ── Text hierarchy ── */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #9d9d9d;
+  --color-text-tertiary: #6c6c6c;
+  --color-text-link: #d4a017;
+
+  /* ── Rarity colors (desaturated for pixel aesthetic) ── */
   --color-c: #888888;
   --color-u: #33aa33;
   --color-r: #3355cc;
@@ -29,31 +38,188 @@
   --color-d: #ccaa22;
   --color-co: #cc33cc;
 
-  --font-pixel: 'Press Start 2P', monospace;
-  --font-mono: 'VT323', monospace;
+  /* ── Typography ── */
+  --font-mono: 'JetBrains Mono', 'VT323', ui-monospace, monospace;
+  --font-display: 'Inter', 'Noto Sans SC', sans-serif;
   --font-body: 'Inter', 'Noto Sans SC', sans-serif;
+  --font-pixel: 'Press Start 2P', monospace;
+
+  /* ── Type scale ── */
+  --text-caption: 10px;
+  --text-body-sm: 13px;
+  --text-body: 14px;
+  --text-body-lg: 16px;
+  --text-subheading: 18px;
+  --text-heading: 24px;
+  --text-heading-lg: 28px;
+
+  /* ── Spacing (8px base) ── */
+  --spacing-unit: 8px;
+
+  /* ── Border radius ── */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Legacy compat aliases */
+  --color-bg-primary: var(--color-canvas);
+  --color-bg-secondary: var(--color-surface);
+  --color-bg-tertiary: var(--color-surface-raised);
+  --color-bg-hover: var(--color-surface-hover);
+  --color-border: var(--color-hairline);
+  --color-border-light: var(--color-border-soft);
+  --color-text: var(--color-text-secondary);
+  --color-text-dim: var(--color-text-tertiary);
+  --color-text-muted: var(--color-text-tertiary);
+  --color-gold: var(--color-accent);
+  --color-gold-bright: var(--color-accent-bright);
 }
 
+/* ── Base ── */
 body {
-  background: var(--color-bg-primary);
-  color: var(--color-text);
+  background: var(--color-canvas);
+  color: var(--color-text-secondary);
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: var(--text-body);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Pixel-perfect for game sprites */
+/* ── Pixel art rendering ── */
 img[data-pixel] {
   image-rendering: pixelated;
   image-rendering: crisp-edges;
 }
 
-/* Scrollbar — thin, dark, taskbar style */
-::-webkit-scrollbar { width: 5px; height: 5px; }
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #333; border-radius: 0; }
-::-webkit-scrollbar-thumb:hover { background: #555; }
+::-webkit-scrollbar-thumb { background: var(--color-hairline); border-radius: 0; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-border-input); }
+
+/* ── Universal card: flat surface, hairline border, no shadow ── */
+.card {
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  transition: border-color 0.15s ease;
+}
+.card:hover {
+  border-color: var(--color-accent-dim);
+}
+
+/* ── Data table: compact, terminal-style ── */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-body-sm);
+  font-family: var(--font-mono);
+}
+.data-table th {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--color-hairline);
+  color: var(--color-text-tertiary);
+  font-size: var(--text-caption);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: left;
+}
+.data-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--color-hairline);
+  color: var(--color-text-secondary);
+}
+.data-table tr:hover td {
+  background: var(--color-surface);
+}
+.data-table .numeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Pill badge ── */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-full);
+  font-size: var(--text-caption);
+  font-family: var(--font-mono);
+  color: var(--color-text-secondary);
+  background: transparent;
+  transition: all 0.15s ease;
+}
+.pill.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #000;
+  font-weight: 500;
+}
+.pill:hover:not(.active) {
+  border-color: var(--color-accent-dim);
+  color: var(--color-text-primary);
+}
+
+/* ── Filter bar ── */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 0;
+}
+
+/* ── Section divider ── */
+.section-divider {
+  border: 0;
+  border-top: 1px solid var(--color-hairline);
+  margin: 32px 0;
+}
+
+/* ── Ghost button ── */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: var(--text-body-sm);
+  font-family: var(--font-mono);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.btn-ghost:hover {
+  border-color: var(--color-accent-dim);
+  color: var(--color-text-primary);
+}
+
+/* ── Primary button (single accent voice) ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-accent);
+  color: #000;
+  font-size: var(--text-body-sm);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.btn-primary:hover {
+  background: var(--color-accent-bright);
+}
 
 /* === Game-authentic components === */
 

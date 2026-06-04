@@ -29,10 +29,10 @@ export function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="space-y-3">
+    <section className="mt-8 space-y-3 first:mt-0">
       <div>
-        {eyebrow ? <p className="text-[11px] uppercase tracking-[0.18em] text-[#777]">{eyebrow}</p> : null}
-        <h2 className="text-lg font-semibold text-[#e6e0d0]">{title}</h2>
+        {eyebrow ? <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#6c6c6c]">{eyebrow}</p> : null}
+        <h2 className="text-[18px] font-semibold leading-tight text-[#ffffff]">{title}</h2>
       </div>
       {children}
     </section>
@@ -51,9 +51,9 @@ export function EntityCard({
   children?: React.ReactNode;
 }) {
   return (
-    <Link href={href} className="block border border-[#252525] bg-[#111] p-3 transition hover:border-[#d4a017]">
-      <p className="text-sm font-medium text-[#ddd]">{title}</p>
-      {meta ? <p className="mt-1 text-xs text-[#777]">{meta}</p> : null}
+    <Link href={href} className="card block transition hover:border-[#d4a017]/60">
+      <p className="text-[14px] font-medium text-[#ffffff]">{title}</p>
+      {meta ? <p className="mt-1 text-[12px] text-[#6c6c6c]">{meta}</p> : null}
       {children ? <div className="mt-3">{children}</div> : null}
     </Link>
   );
