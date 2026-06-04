@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Skull, Star, Swords } from "lucide-react";
 import { PageHeader, PageShell } from "@/components/tbh/page";
@@ -65,7 +66,10 @@ function PetCard({ pet, locale, isZh }: { pet: ExtPet; locale: Locale; isZh: boo
   return (
     <div className={`border bg-[#0d0d0d] p-5 ${pet.dlc ? "border-[#5a3a1a]" : "border-[#27272a]"}`}>
       {/* Header */}
-      <div className="flex items-start justify-between gap-3">
+      <div className="flex items-start gap-4">
+        <div className="flex h-14 w-14 shrink-0 items-center justify-center border border-[#27272a] bg-[#0a0a0a]">
+          <Image src={`/game/pets/${pet.icon}.png`} alt={pet.name} width={40} height={40} className="object-contain" data-pixel unoptimized />
+        </div>
         <div>
           <div className="flex items-center gap-2">
             <h3 className="text-lg font-semibold text-[#f1e8d5]">{pet.name}</h3>

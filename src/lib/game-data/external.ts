@@ -90,15 +90,15 @@ export function extIconPath(extIcon: string, type?: string): string {
   if (!extIcon) return "";
   if (type === "GEAR" || /^[A-Z]+_\d+/.test(extIcon)) {
     const gearType = extIcon.split("_")[0]?.toLowerCase() ?? "";
-    return `/game/gear/${gearType}/${extIcon}.png`;
+    return `/game/game/gear/${gearType}/${extIcon}.png`;
   }
   if (type === "MATERIAL" || /^Item_1\d+/.test(extIcon)) {
-    return `/game/items/materials/${extIcon}.png`;
+    return `/game/game/items/materials/${extIcon}.png`;
   }
   if (type === "STAGEBOX" || /^Item_9\d+/.test(extIcon)) {
-    return `/game/items/boxes/${extIcon}.png`;
+    return `/game/game/items/boxes/${extIcon}.png`;
   }
-  return `/game/items/materials/${extIcon}.png`;
+  return `/game/game/items/materials/${extIcon}.png`;
 }
 
 // ── Cross-link helpers ──
