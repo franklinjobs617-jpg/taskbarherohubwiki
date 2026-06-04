@@ -2,7 +2,7 @@
 gameVersion: "game-v1"
 tldr: "A listing price is NOT a sale price — never confuse them|No real market data means no price display — this is intentional|Always match marketHash before checking prices|Low supply is not the same as high demand|Market data is a risk signal, not a profit guarantee"
 mistakes: "Treating lowest listing price as guaranteed income|Hoarding items because supply appears low|Pricing items before confirming the Steam market name match|Ignoring supply volume — 1 listing at $100 is not a $100 item|Using market estimates without real data"
-faq: "Why do many items show no price=>Either the Steam market name isn't matched yet, or real price data hasn't been fetched. This site intentionally shows 'no data' rather than inventing numbers.|Is the lowest listing the sale price=>No. A listing is what a seller asks. A sale is what a buyer actually paid. These are often very different, especially for low-volume items.|Can market profit be guaranteed=>No. Market profit requires real drop rates AND real sale prices AND volume context. Without all three, only risk can be described — not income.|How often does market data update=>Match status is checked every 15 minutes via Cloudflare Worker. Real price data depends on external sources and is shown only when verified.|What does supply mean=>Supply is the number of active sell orders. Low supply means few sellers — it does NOT mean buyers are waiting. Without recent sale history, low-supply items are the riskiest to value.|Should I sell everything that's tradable=>No. Check self-use value first, then market data. Materials needed by your class should not be sold just because they're tradable."
+faq: "Why do many items show no price=>Either the Steam market name isn't matched yet, or real price data hasn't been fetched. This site intentionally shows 'no data' rather than inventing numbers.|Is the lowest listing the sale price=>No. A listing is what a seller asks. A sale is what a buyer actually paid. These are often very different, especially for low-volume items.|Can market profit be guaranteed=>No. Market profit requires real drop rates AND real sale prices AND volume context. Without all three, only risk can be described — not income.|How often does market data update=>Match status is checked on a schedule. Real price data depends on external sources and is shown only when verified.|What does supply mean=>Supply is the number of active sell orders. Low supply means few sellers — it does NOT mean buyers are waiting. Without recent sale history, low-supply items are the riskiest to value.|Should I sell everything that's tradable=>No. Check self-use value first, then market data. Materials needed by your class should not be sold just because they're tradable."
 relatedItems: "minor-ruby|diamond|void-ichor|kingdom-50th-anniversary-coin|opal|soulstone-hell"
 relatedTools: "profit-calculator"
 ---
@@ -30,8 +30,8 @@ For low-volume items (few sales per day or week), the gap between listing and sa
 
 Items with "low supply" are often misinterpreted as "rare and valuable." They might simply be items nobody wants. Without buy order data, treat low-supply items with extra caution.
 
-### 3. Market Hash Matching
-Every Steam market item has a unique `marketHash` identifier. Before a price can be shown, the item must be matched to its correct Steam market name and hash. Unmatched items show as tradable but unpriced — this is a data issue, not a value judgment.
+### 3. Market Name Matching
+Every Steam market item must be matched to its correct English market name. Before a price can be shown, that match must be verified. Unmatched items show as tradable but unpriced — this is a data issue, not a value judgment.
 
 ## Before Listing an Item for Sale
 
@@ -78,4 +78,4 @@ A profitable market strategy complements efficient farming; it doesn't replace i
 
 ## Evidence Used
 
-This article treats Steam Market data as risk context, not a money promise. Mobalytics' [Tips and Tricks](https://mobalytics.gg/news/guides/tbh-taskbar-hero-tips-and-tricks) covers market, mailbox, item locking, and offline-gain basics; this site adds marketHash matching, supply/demand separation, and strict real-price display rules. Without real price, volume, and drop-rate data, the site does not generate profit numbers.
+This article treats Steam Market data as risk context, not a money promise. Mobalytics' [Tips and Tricks](https://mobalytics.gg/news/guides/tbh-taskbar-hero-tips-and-tricks) covers market, mailbox, item locking, and offline-gain basics; this site adds market-name matching, supply/demand separation, and strict real-price display rules. Without real price, volume, and drop-rate data, the site does not generate profit numbers.

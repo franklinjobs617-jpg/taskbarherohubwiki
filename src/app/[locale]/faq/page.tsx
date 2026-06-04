@@ -32,7 +32,7 @@ export default async function FaqPage({ params }: Props) {
         ["宠物怎么解锁？", "宠物通过击杀特定怪物解锁。每种宠物有对应的怪物目标、所需击杀数和推荐关卡。详见宠物页面。"],
         ["符文系统怎么用？", "符文提供被动属性加成，有多级升级路径。符文页面按类别分组展示，包含效果说明和升级消耗。"],
         ["如何判断物品该留还是卖？", "按以下顺序判断：是否当前职业可用 → 是否可交易且有真实市场价 → 是否可用于 Cube 制作 → 替换成本是否高。"],
-        ["市场价格多久更新一次？", "市场数据通过 Cloudflare Worker 每 15 分钟检查一次匹配状态。真实价格在有数据源接入后才会显示。"],
+        ["市场价格多久更新一次？", "市场匹配状态会定时检查。真实价格只在有可靠数据源并通过验证后显示。"],
         ["如何报告错误或建议？", "通过联系页面发送物品 slug、页面 URL、问题截图和期望的修正。不接受没有证据的修改请求。"],
       ]
     : [
@@ -46,7 +46,7 @@ export default async function FaqPage({ params }: Props) {
         ["How do pets unlock?", "Pets unlock by killing specific monsters. Each pet has a target monster, required kill count, and recommended stage. See the Pets page for details."],
         ["How do runes work?", "Runes provide passive stat bonuses with multi-level upgrade paths. The Runes page groups them by category with effect descriptions and upgrade costs."],
         ["How do I decide keep or sell?", "Check in this order: useful for current class → tradable with real market price → usable for Cube crafting → replacement cost is low."],
-        ["How often does market data update?", "Market data match status is checked every 15 minutes via a Cloudflare Worker. Real price data is shown only when a data source is connected."],
+        ["How often does market data update?", "Market match status is checked on a schedule. Real price data is shown only after a reliable source is available and verified."],
         ["How do I report errors or suggest changes?", "Send the item slug, page URL, screenshot, and expected fix via the Contact page. Requests without evidence are not accepted."],
       ];
 
