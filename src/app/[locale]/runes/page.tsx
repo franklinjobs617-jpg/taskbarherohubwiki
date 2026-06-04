@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Coins, TrendingUp } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Coins, Route, ShieldCheck, Sparkles, UnlockKeyhole } from "lucide-react";
 import { PageHeader, PageShell } from "@/components/tbh/page";
+import { RuneTreePlanner, type RuneNode } from "@/components/tbh/rune-tree-planner";
 import { type Locale } from "@/lib/game-data/data";
-import { extRunes, type ExtRune } from "@/lib/game-data/external";
+import { extRunes } from "@/lib/game-data/external";
 import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale }> };
@@ -10,115 +12,120 @@ type Props = { params: Promise<{ locale: Locale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: locale === "zh" ? "TaskBar Hero 符文树｜效果、升级消耗与路线" : "TaskBar Hero Rune Tree — Effects, Costs & Routes",
-    description: locale === "zh"
-      ? "全部符文的效果说明、升级消耗和分支路线。按类别分组，点击展开查看每级消耗和总价。"
-      : "All runes with effects, upgrade costs, and branching routes. Grouped by category — click to expand costs.",
+    title: copy(
+      locale,
+      "TaskBar Hero 符文树加点｜Rune of Growth、英雄槽与自动开箱",
+      "TaskBar Hero Rune Tree Planner | Growth, Hero Slots & Auto-Open",
+      "TaskBar Hero ルーンツリー｜Growth、英雄枠、自動開封",
+    ),
+    description: copy(
+      locale,
+      "用可视化符文树查看 197 个符文、连接路线、每级成本、推荐加点顺序和关键解锁节点。",
+      "Use a visual rune tree to inspect 197 runes, links, level costs, recommended priorities, and key unlock nodes.",
+      "197個のルーン、接続、レベルコスト、推奨順、重要解放ノードを可視化します。",
+    ),
     alternates: pageAlternates(locale, "/runes"),
   };
 }
 
-const CATEGORY_LABELS: Record<string, { zh: string; en: string }> = {
-  Hero: { zh: "英雄属性", en: "Hero Stats" },
-  Gold: { zh: "金币", en: "Gold" },
-  EXP: { zh: "经验", en: "EXP" },
-  Drop: { zh: "掉落", en: "Drops" },
-  Damage: { zh: "伤害", en: "Damage" },
-  Defense: { zh: "防御", en: "Defense" },
-  Utility: { zh: "功能", en: "Utility" },
-};
-
-function getCat(cat: string, isZh: boolean) {
-  return CATEGORY_LABELS[cat]?.[isZh ? "zh" : "en"] ?? cat;
-}
-
 export default async function RunesPage({ params }: Props) {
   const { locale } = await params;
-  const isZh = locale === "zh";
-  const runes = extRunes();
-
-  const grouped = new Map<string, ExtRune[]>();
-  for (const r of runes) {
-    const cat = r.category || "Other";
-    if (!grouped.has(cat)) grouped.set(cat, []);
-    grouped.get(cat)!.push(r);
-  }
+  const runes = extRunes() as RuneNode[];
+  const categories = Array.from(new Set(runes.map((rune) => rune.category || "Other")));
+  const unlocks = runes.filter((rune) => rune.isUnlock);
+  const totalCost = runes.reduce((sum, rune) => sum + rune.totalCost, 0);
+  const edges = runes.reduce((sum, rune) => sum + rune.next.length, 0);
 
   return (
     <PageShell>
       <PageHeader
-        kicker="Runes"
-        title={isZh ? "符文树" : "Rune Tree"}
-        description={isZh
-          ? `${runes.length} 个符文 · ${grouped.size} 个类别。点击展开查看每级效果和消耗。`
-          : `${runes.length} runes · ${grouped.size} categories. Click to expand level costs.`}
+        kicker="Rune planner"
+        title={copy(locale, "符文树加点", "Rune Tree Planner", "ルーンツリー")}
+        description={copy(
+          locale,
+          "这页不是普通资料表。它按游戏内坐标还原符文树，用推荐路线告诉你先点 Growth、Command、离线收益、自动开箱还是金币/经验。",
+          "This is not a plain table. It rebuilds the rune tree from in-game coordinates and shows whether to prioritize Growth, Command, offline gains, auto-open, gold, or EXP.",
+          "単なる表ではありません。ゲーム内座標からツリーを再現し、Growth、Command、放置報酬、自動開封、金策、経験値の優先度を示します。",
+        )}
       />
 
-      <div className="space-y-8">
-        {[...grouped.entries()].map(([category, items]) => (
-          <section key={category}>
-            <h2 className="mb-3 flex items-center gap-2 text-lg font-semibold text-[#f6e8c8]">
-              <span className="h-2 w-2 rounded-full bg-[#d4a017]" />
-              {getCat(category, isZh)}
-              <span className="text-sm font-normal text-[#6c6c6c]">({items.length})</span>
-            </h2>
-            <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {items.map((rune) => (
-                <details key={rune.key} className="group border border-[#27272a] bg-[#0d0d0d] hover:border-[#3a3a3a] [&_summary::-webkit-details-marker]:hidden">
-                  <summary className="flex cursor-pointer items-start justify-between gap-2 p-3 select-none">
-                    <div className="min-w-0 flex-1">
-                      <p className="text-sm font-medium text-[#ffffff] group-open:text-[#f0c040]">{rune.name}</p>
-                      <p className="mt-1 text-xs text-[#9d9d9d]">{rune.effect}</p>
-                    </div>
-                    <div className="flex shrink-0 items-center gap-2 text-xs">
-                      <span className="text-[#6c6c6c]">Lv.{rune.maxLevel}</span>
-                      {rune.next.length > 0 && <span className="text-[#62d394]">→{rune.next.length}</span>}
-                    </div>
-                  </summary>
-                  <div className="border-t border-[#27272a] p-3 space-y-2">
-                    <div className="overflow-x-auto">
-                      <table className="w-full text-left text-xs">
-                        <thead>
-                          <tr className="text-[#6c6c6c]">
-                            <th className="pb-1 pr-3">{isZh ? "等级" : "Lv"}</th>
-                            <th className="pb-1 pr-3">{isZh ? "效果" : "Effect"}</th>
-                            <th className="pb-1 text-right">{isZh ? "消耗" : "Cost"}</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {rune.levels.map((lvl) => (
-                            <tr key={lvl.level} className="border-t border-[#1a1a1a]">
-                              <td className="py-1 pr-3 text-[#9d9d9d]">{lvl.level}</td>
-                              <td className="py-1 pr-3 text-[#ffffff]">{lvl.value}</td>
-                              <td className="py-1 text-right">
-                                <span className="inline-flex items-center gap-0.5 text-[#f0c040]">
-                                  <Coins className="h-3 w-3" />{lvl.cost.toLocaleString()}
-                                </span>
-                              </td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                    <div className="flex items-center justify-between border-t border-[#1a1a1a] pt-2 text-xs">
-                      <span className="text-[#6c6c6c]">{isZh ? "总消耗" : "Total"}</span>
-                      <span className="inline-flex items-center gap-0.5 font-semibold text-[#f0c040]">
-                        <Coins className="h-3 w-3" />{rune.totalCost.toLocaleString()}
-                      </span>
-                    </div>
-                    {rune.next.length > 0 && (
-                      <div className="flex items-center gap-1.5 pt-1 text-xs text-[#62d394]">
-                        <TrendingUp className="h-3 w-3" />
-                        <span>{isZh ? `解锁 ${rune.next.length} 个后续符文` : `Unlocks ${rune.next.length} more runes`}</span>
-                      </div>
-                    )}
-                  </div>
-                </details>
-              ))}
+      <section className="mb-6 overflow-hidden border border-[#2d281e] bg-[#0d0b08]">
+        <div className="grid gap-px bg-[#2d281e] md:grid-cols-4">
+          <Metric icon={<Sparkles className="h-4 w-4" />} label={copy(locale, "符文", "Runes", "ルーン")} value={runes.length} />
+          <Metric icon={<Route className="h-4 w-4" />} label={copy(locale, "连接", "Links", "接続")} value={edges} />
+          <Metric icon={<UnlockKeyhole className="h-4 w-4" />} label={copy(locale, "关键解锁", "Unlocks", "重要解放")} value={unlocks.length} />
+          <Metric icon={<Coins className="h-4 w-4" />} label={copy(locale, "全满总成本", "Full cost", "全取得コスト")} value={formatNumber(totalCost)} />
+        </div>
+      </section>
+
+      <section className="mb-6 grid gap-3 lg:grid-cols-[1fr_360px]">
+        <div className="border border-[#2d281e] bg-[#0d0b08] p-4">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#c87925]">{copy(locale, "调研结论", "Research verdict", "調査結論")}</p>
+          <h2 className="mt-2 text-xl font-semibold text-[#fff7df]">
+            {copy(locale, "数据库足够做符文树，但不能只做列表", "The database can support a real tree, not just a list", "データは一覧ではなくツリー表示に十分")}
+          </h2>
+          <p className="mt-3 text-sm leading-7 text-[#d8c7a6]">
+            {copy(
+              locale,
+              "Google Trends 里 rune、runes、rune tree 都在上涨，说明用户想要的是加点顺序。现有数据包含坐标、后续节点、前置等级、每级消耗和总消耗，已经能支撑类似 DNF 技能树的展示。",
+              "Google Trends shows rising demand for rune, runes, and rune tree. Users want priority order, not a spreadsheet. The data already contains coordinates, outgoing links, required levels, per-level costs, and total costs, enough for a DNF-like skill tree.",
+              "Google Trends では rune、runes、rune tree が上昇しています。ユーザーが欲しいのは表ではなく優先順です。既存データには座標、接続、前提レベル、各レベルコスト、総コストがあり、DNF風ツリー表示に十分です。",
+            )}
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {categories.map((category) => (
+              <span key={category} className="border border-[#342a1a] bg-[#11100d] px-2.5 py-1 text-xs text-[#d8c7a6]">
+                {category}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="border border-[#3a2a16] bg-[#171006] p-4">
+          <div className="flex items-start gap-3">
+            <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#f0c040]" />
+            <div>
+              <p className="font-semibold text-[#fff7df]">{copy(locale, "加点口径", "Planning rule", "優先ルール")}</p>
+              <p className="mt-2 text-sm leading-6 text-[#d8c7a6]">
+                {copy(
+                  locale,
+                  "推荐路线是数据决策，不写绝对最强。卡关先补英雄/防御，稳定后再补收益、宝箱和自动化。",
+                  "Routes are decision aids, not absolute best claims. If stuck, add hero/defense nodes first; after stable clears, add income, chests, and automation.",
+                  "推奨ルートは判断材料であり最強断定ではありません。詰まる時は英雄/防御を先に、安定後に報酬、宝箱、自動化を伸ばします。",
+                )}
+              </p>
+              <Link href={`/${locale}/guides/beginner/getting-started`} className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#f0c040] hover:text-[#ffd76a]">
+                {copy(locale, "查看新手路线", "Open beginner route", "初心者ルートを見る")}
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
-          </section>
-        ))}
-      </div>
+          </div>
+        </div>
+      </section>
+
+      <RuneTreePlanner runes={runes} locale={locale} />
     </PageShell>
   );
+}
+
+function Metric({ icon, label, value }: { icon: React.ReactNode; label: string; value: string | number }) {
+  return (
+    <div className="bg-[#0d0b08] p-4">
+      <div className="flex items-center gap-2 text-xs text-[#8f826b]">
+        <span className="text-[#c87925]">{icon}</span>
+        <span>{label}</span>
+      </div>
+      <p className="mt-2 text-2xl font-semibold text-[#fff7df]">{value}</p>
+    </div>
+  );
+}
+
+function copy(locale: Locale, zh: string, en: string, ja: string) {
+  if (locale === "zh") return zh;
+  if (locale === "ja") return ja;
+  return en;
+}
+
+function formatNumber(value: number) {
+  return new Intl.NumberFormat("en", { notation: value >= 100000 ? "compact" : "standard", maximumFractionDigits: 1 }).format(value);
 }
