@@ -92,7 +92,7 @@ export function ItemCard({ item, locale }: { item: RawItem; locale: Locale }) {
   );
 }
 
-const ML: Record<string,{no:String;na:String}> = {zh:{no:"不可交易",na:"暂无市场数据"},en:{no:"Not tradable",na:"No market data"},ja:{no:"取引不可",na:"データなし"}};
+const ML: Record<string, { no: string; na: string }> = { zh: { no: "不可交易", na: "暂无市场数据" }, en: { no: "Not tradable", na: "No market data" }, ja: { no: "取引不可", na: "データなし" } };
 export function MarketPrice({ item, locale, compact = false }: { item: RawItem; locale?: string; compact?: boolean }) {
   const ml = ML[locale ?? "en"] ?? ML.en;
   const market = marketForItem(item);
@@ -153,7 +153,6 @@ export function HeroCard({ hero, locale }: { hero: Hero; locale: Locale }) {
   const mainIcon = assetPath(gearPreviewItem(hero.MainWeaponGearType)?.icon);
   const subIcon = assetPath(gearPreviewItem(hero.SubWeaponGearType)?.icon);
   const name = heroName(hero, locale);
-  const isZh = locale === "zh";
 
   return (
     <Link

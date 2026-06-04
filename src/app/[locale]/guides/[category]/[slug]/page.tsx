@@ -6,7 +6,7 @@ import { ArrowRight, CheckCircle2, Clock3, Coins, PackageCheck, ShieldAlert } fr
 import { ConfidenceBadge } from "@/components/tbh/badges";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
 import { allItems, assetPath, itemName, marketForItem, type Locale, type RawItem } from "@/lib/game-data/data";
-import { getGuideContent, getGuideStaticParams, renderMarkdownish, type GuideContent, type MarkdownBlock } from "@/lib/guides";
+import { getGuideContent, getGuideStaticParams, renderMarkdownish, type MarkdownBlock } from "@/lib/guides";
 
 type Props = { params: Promise<{ locale: Locale; category: string; slug: string }> };
 
@@ -41,6 +41,8 @@ export default async function GuideDetailPage({ params }: Props) {
   const relatedItems = allItems().filter((i) => guide.relatedItems.includes(i.slug)).slice(0, 8);
   const visual = guideVisuals[slug] ?? guideVisuals["getting-started"];
   const isZh = locale === "zh";
+  const bodyBlocks = renderMarkdownish(guide.body);
+  const imageInsertIndex = bodyBlocks.findIndex((block, index) => block.type === "h2" && index > 1);
 
   return (
     <div className="min-h-screen bg-[#070706]" style={{ backgroundImage: "radial-gradient(circle at 18% 0%, rgba(200,121,37,0.06), transparent 34rem)" }}>
@@ -96,9 +98,8 @@ export default async function GuideDetailPage({ params }: Props) {
 
             {/* Article body */}
             <section className="space-y-5 text-[15px] leading-[1.8] text-[#d8cab0] sm:space-y-6 sm:text-[16px]">
-              {renderMarkdownish(guide.body).map((block, i) => {
-                const imgIdx = (() => { let found = -1; for (let j = 0; j < renderMarkdownish(guide.body).length; j++) { if (renderMarkdownish(guide.body)[j].type === "h2" && j > 1) { found = j; break; } } return found; })();
-                if (i === imgIdx) {
+              {bodyBlocks.map((block, i) => {
+                if (i === imageInsertIndex) {
                   return (
                     <div key={`img-${i}`} className="space-y-5 sm:space-y-6">
                       <figure className="overflow-hidden border border-[#2f2b22] bg-[#0a0a08]">
