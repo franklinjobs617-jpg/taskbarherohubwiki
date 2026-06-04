@@ -12,42 +12,42 @@ type Props = { params: Promise<{ locale: Locale; category: string; slug: string 
 
 const guideVisuals: Record<string, { image: string; zh: string; en: string }> = {
   "getting-started": {
-    image: "/game/screenshots/screenshot-9.jpg",
+    image: "/game/guide-images/getting-started.jpg",
     zh: "先把路线跑稳，再谈稀有度和市场。",
     en: "Stabilize the route before chasing rarity or market value.",
   },
   "class-guide": {
-    image: "/game/screenshots/screenshot-6.jpg",
+    image: "/game/guide-images/class-guide.jpg",
     zh: "职业选择本质是武器路径、容错和清图目标的组合。",
     en: "Class choice is a mix of weapon path, safety margin, and farming goal.",
   },
   "cube-materials": {
-    image: "/game/screenshots/screenshot-10.jpg",
+    image: "/game/guide-images/cube-materials.jpg",
     zh: "材料不是杂物，它们决定装备后期方向。",
     en: "Materials are not clutter; they define late gear direction.",
   },
   "steam-market-guide": {
-    image: "/game/screenshots/screenshot-5.jpg",
+    image: "/game/guide-images/steam-market-guide.jpg",
     zh: "市场数据只做风险判断，不做收益承诺。",
     en: "Market data is a risk signal, not a profit promise.",
   },
   "tradable-items": {
-    image: "/game/screenshots/screenshot-4.jpg",
+    image: "/game/guide-images/tradable-items.jpg",
     zh: "可交易是状态，不是立刻出售的命令。",
     en: "Tradable is a state, not an instruction to sell immediately.",
   },
   "chest-drop-guide": {
-    image: "/game/screenshots/screenshot-3.jpg",
+    image: "/game/guide-images/chest-drop-guide.jpg",
     zh: "宝箱要同时看来源、等级范围和真实掉率。",
     en: "Chests need source, level range, and real drop-rate context.",
   },
   "gold-farming-route": {
-    image: "/game/screenshots/screenshot-7.jpg",
+    image: "/game/guide-images/gold-farming-route.jpg",
     zh: "金币效率来自稳定清图，不来自想象中的高价掉落。",
     en: "Gold efficiency comes from stable clears, not imagined rare drops.",
   },
   "exp-farming-route": {
-    image: "/game/screenshots/screenshot-8.jpg",
+    image: "/game/guide-images/exp-farming-route.jpg",
     zh: "经验路线要看每分钟击杀、每轮经验和清图时间。",
     en: "EXP routes depend on kills per minute, XP per run, and clear time.",
   },
@@ -173,13 +173,12 @@ function QuickTake({ guide, locale }: { guide: GuideContent; locale: Locale }) {
 }
 
 function ArticleBody({ blocks, fallbackImage, locale }: { blocks: MarkdownBlock[]; fallbackImage: string; locale: Locale }) {
-  let inserted = false;
+  const imageBeforeIndex = blocks.findIndex((block, index) => block.type === "h2" && index > 1);
   return (
     <section className="guide-body">
       {blocks.map((block, index) => {
         const rendered = renderBlock(block, index);
-        if (!inserted && block.type === "h2" && index > 1) {
-          inserted = true;
+        if (index === imageBeforeIndex) {
           return (
             <div key={`image-${index}`}>
               <InlineImage src={fallbackImage} alt={locale === "zh" ? "游戏界面参考" : "Gameplay reference"} />

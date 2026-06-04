@@ -18,7 +18,7 @@ const nextConfig: NextConfig = {
     unoptimized: false,
   },
   experimental: {
-    cpus: 2,
+    cpus: 1,
     staticGenerationMaxConcurrency: 1,
   },
   // Enable React strict mode for development
