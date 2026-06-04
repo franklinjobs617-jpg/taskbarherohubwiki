@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BarChart3, BookOpen, Boxes, Database, Map, Search, Shield, Sparkles, Swords, Wrench } from "lucide-react";
 import { HeroCard } from "@/components/tbh/cards";
@@ -61,7 +62,19 @@ export default async function HomePage({ params }: Props) {
 
       {/* ══════ Hero ══════ */}
       <section className="border-b border-[#27272a] pb-10">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-4xl text-center">
+          <div className="mx-auto mb-6 overflow-hidden border border-[#4d281e] bg-[#1e2c3d] shadow-[0_18px_60px_rgba(0,0,0,0.35)]">
+            <Image
+              src="/game/home-hero-overview.png"
+              alt="TaskBar Hero Game Overview"
+              width={786}
+              height={186}
+              priority
+              unoptimized
+              className="h-auto w-full object-cover"
+              data-pixel
+            />
+          </div>
           <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-[#d4a017]">Database Console</p>
           <h1 className="mt-3 text-[32px] font-semibold leading-tight text-[#ffffff]">
             {isZh ? "TaskBar Hero 中文 Wiki" : "TaskBar Hero Wiki"}
