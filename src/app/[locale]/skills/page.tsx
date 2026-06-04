@@ -52,10 +52,10 @@ export default async function SkillsPage({ params, searchParams }: Props & { sea
 
       {/* Hero quick filters */}
       <div className="mb-5 flex flex-wrap gap-1.5">
-        <span className="self-center text-xs text-[#777] mr-1">{isZh ? "筛选：" : "Filter:"}</span>
+        <span className="self-center text-xs text-[#6c6c6c] mr-1">{isZh ? "筛选：" : "Filter:"}</span>
         <Link
           href={`/${locale}/skills`}
-          className={`border px-2.5 py-1 text-xs ${!selectedHero ? "border-[#d4a017] bg-[#1a1508] text-[#f0c040]" : "border-[#333] text-[#aaa] hover:border-[#d4a017]"}`}
+          className={`border px-2.5 py-1 text-xs ${!selectedHero ? "border-[#d4a017] bg-[#1a1508] text-[#f0c040]" : "border-[#3b3b3b] text-[#9d9d9d] hover:border-[#d4a017]"}`}
         >
           {isZh ? "全部" : "All"}
         </Link>
@@ -66,7 +66,7 @@ export default async function SkillsPage({ params, searchParams }: Props & { sea
             className={`border px-2.5 py-1 text-xs ${
               (selectedHero?.HeroKey === hero.HeroKey)
                 ? "border-[#d4a017] bg-[#1a1508] text-[#f0c040]"
-                : "border-[#333] text-[#aaa] hover:border-[#d4a017]"
+                : "border-[#3b3b3b] text-[#9d9d9d] hover:border-[#d4a017]"
             }`}
           >
             {heroName(hero, locale)}
@@ -75,9 +75,9 @@ export default async function SkillsPage({ params, searchParams }: Props & { sea
       </div>
 
       {/* Skills table */}
-      <div className="overflow-x-auto border border-[#252525]">
+      <div className="overflow-x-auto border border-[#27272a]">
         <table className="w-full min-w-[640px] text-left text-sm">
-          <thead className="bg-[#151515] text-xs text-[#777]">
+          <thead className="bg-[#151515] text-xs text-[#6c6c6c]">
             <tr>
               <th className="px-3 py-2.5">{isZh ? "技能名" : "Skill"}</th>
               <th className="px-3 py-2.5">{isZh ? "类型" : "Type"}</th>
@@ -91,19 +91,19 @@ export default async function SkillsPage({ params, searchParams }: Props & { sea
             {filteredSkills.map((skill) => {
               const hero = heroes.find((h) => h.SkillKey === skill.SkillKey);
               return (
-                <tr key={skill.SkillKey} className="border-t border-[#252525] hover:bg-[#0d0d0d]">
-                  <td className="px-3 py-3 font-medium text-[#ddd]">{skillName(skill, locale)}</td>
-                  <td className="px-3 py-3 text-[#aaa]">{skill.ACTIVATIONTYPE ?? skill.SLOTTYPE ?? "-"}</td>
-                  <td className="px-3 py-3 text-[#aaa]">{skill.DamageType ?? "-"}</td>
-                  <td className="px-3 py-3 text-[#aaa]">{skill.Range ?? "-"}</td>
-                  <td className="px-3 py-3 text-[#aaa]">{skill.Value ?? "-"}</td>
+                <tr key={skill.SkillKey} className="border-t border-[#27272a] hover:bg-[#0d0d0d]">
+                  <td className="px-3 py-3 font-medium text-[#ffffff]">{skillName(skill, locale)}</td>
+                  <td className="px-3 py-3 text-[#9d9d9d]">{skill.ACTIVATIONTYPE ?? skill.SLOTTYPE ?? "-"}</td>
+                  <td className="px-3 py-3 text-[#9d9d9d]">{skill.DamageType ?? "-"}</td>
+                  <td className="px-3 py-3 text-[#9d9d9d]">{skill.Range ?? "-"}</td>
+                  <td className="px-3 py-3 text-[#9d9d9d]">{skill.Value ?? "-"}</td>
                   {selectedHero ? null : (
                     <td className="px-3 py-3">
                       {hero ? (
                         <Link href={`/${locale}/heroes/${hero.ClassType?.toLowerCase() ?? hero.HeroKey}`} className="text-[#f0c040] hover:underline">
                           {heroName(hero, locale)}
                         </Link>
-                      ) : <span className="text-[#777]">-</span>}
+                      ) : <span className="text-[#6c6c6c]">-</span>}
                     </td>
                   )}
                 </tr>

@@ -63,7 +63,7 @@ export default async function PetsPage({ params }: Props) {
 
 function PetCard({ pet, locale, isZh }: { pet: ExtPet; locale: Locale; isZh: boolean }) {
   return (
-    <div className={`border bg-[#101010] p-5 ${pet.dlc ? "border-[#5a3a1a]" : "border-[#252525]"}`}>
+    <div className={`border bg-[#0d0d0d] p-5 ${pet.dlc ? "border-[#5a3a1a]" : "border-[#27272a]"}`}>
       {/* Header */}
       <div className="flex items-start justify-between gap-3">
         <div>
@@ -80,19 +80,19 @@ function PetCard({ pet, locale, isZh }: { pet: ExtPet; locale: Locale; isZh: boo
       <div className="mt-3 space-y-1.5">
         {pet.stats.map((s) => (
           <div key={s.stat} className="flex items-center justify-between text-sm">
-            <span className="text-[#888]">{s.label}</span>
+            <span className="text-[#9d9d9d]">{s.label}</span>
             <span className="font-semibold text-[#62d394]">{s.disp}</span>
           </div>
         ))}
       </div>
 
       {/* Unlock info */}
-      <div className="mt-4 border-t border-[#242424] pt-4">
+      <div className="mt-4 border-t border-[#27272a] pt-4">
         {pet.unlock.type === "KillMonster" ? (
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-sm">
               <Skull className="h-4 w-4 text-[#d4a017]" />
-              <span className="text-[#aaa]">
+              <span className="text-[#9d9d9d]">
                 {isZh ? `击杀 ${pet.unlock.monsterName ?? "?"}` : `Kill ${pet.unlock.monsterName ?? "?"}`}
               </span>
               <span className="font-semibold text-[#f0c040]">×{(pet.unlock.count ?? 0).toLocaleString()}</span>
@@ -101,7 +101,7 @@ function PetCard({ pet, locale, isZh }: { pet: ExtPet; locale: Locale; isZh: boo
               <>
                 <div className="flex items-center gap-2 text-sm">
                   <MapPin className="h-4 w-4 text-[#ff6b6b]" />
-                  <span className="text-[#aaa]">{isZh ? "推荐关卡" : "Best stage"}:</span>
+                  <span className="text-[#9d9d9d]">{isZh ? "推荐关卡" : "Best stage"}:</span>
                   <Link
                     href={`/${locale}/stages/${pet.unlock.farm.label.toLowerCase().replace(".", "-")}`}
                     className="font-semibold text-[#f0c040] hover:underline"
@@ -109,7 +109,7 @@ function PetCard({ pet, locale, isZh }: { pet: ExtPet; locale: Locale; isZh: boo
                     {pet.unlock.farm.label} {pet.unlock.farm.stageName}
                   </Link>
                 </div>
-                <div className="flex items-center gap-2 text-xs text-[#777]">
+                <div className="flex items-center gap-2 text-xs text-[#6c6c6c]">
                   <Swords className="h-3 w-3" />
                   <span>
                     {isZh
@@ -123,7 +123,7 @@ function PetCard({ pet, locale, isZh }: { pet: ExtPet; locale: Locale; isZh: boo
         ) : (
           <div className="flex items-center gap-2 text-sm">
             <Star className="h-4 w-4 text-[#f0c040]" />
-            <span className="text-[#aaa]">
+            <span className="text-[#9d9d9d]">
               {isZh ? `解锁方式：${pet.unlock.note ?? "DLC"}` : `Unlock: ${pet.unlock.note ?? "DLC"}`}
             </span>
           </div>

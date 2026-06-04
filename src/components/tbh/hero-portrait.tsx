@@ -47,7 +47,7 @@ export function HeroPortrait({
 
 function frameClass(size: string) {
   const base =
-    "flex items-end justify-center overflow-hidden border border-[#333] bg-[radial-gradient(circle_at_50%_82%,rgba(212,160,23,0.22),rgba(42,33,16,0.42)_34%,#080808_72%)]";
+    "flex items-end justify-center overflow-hidden border border-[#3b3b3b] bg-[radial-gradient(circle_at_50%_82%,rgba(212,160,23,0.22),rgba(42,33,16,0.42)_34%,#080808_72%)]";
   const sizes: Record<string, string> = {
     sm: "h-16 w-16 shrink-0 p-1",
     md: "h-32 w-28 shrink-0 px-2 pt-2",

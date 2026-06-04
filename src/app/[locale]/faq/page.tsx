@@ -74,7 +74,7 @@ export default async function FaqPage({ params }: Props) {
       />
       <div className="space-y-3">
         {rows.map(([q, a]) => (
-          <div key={q} className="border border-[#252525] bg-[#101010] p-5">
+          <div key={q} className="border border-[#27272a] bg-[#0d0d0d] p-5">
             <h2 className="text-base font-semibold text-[#f0c040]">{q}</h2>
             <p className="mt-2 text-sm leading-7 text-[#bbb]">{a}</p>
           </div>

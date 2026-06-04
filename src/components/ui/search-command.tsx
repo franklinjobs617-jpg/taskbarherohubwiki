@@ -61,7 +61,7 @@ export function SearchCommand({ locale, items, open, onClose }: Props) {
   return (
     <div className="fixed inset-0 z-[100] flex items-start justify-center pt-[15vh]" onClick={onClose}>
       <div className="fixed inset-0 bg-black/60" />
-      <div className="relative w-full max-w-lg border border-[#333] bg-[#111] shadow-2xl" onClick={(event) => event.stopPropagation()}>
+      <div className="relative w-full max-w-lg border border-[#3b3b3b] bg-[#111] shadow-2xl" onClick={(event) => event.stopPropagation()}>
         <div className="flex items-center gap-2 border-b border-[#222] px-3 py-2">
           <Search className="h-4 w-4 text-[#555]" />
           <input

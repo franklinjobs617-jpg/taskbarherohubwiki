@@ -59,9 +59,9 @@ export default async function StageDetailPage({ params }: Props) {
       {/* ── Drop Table ── */}
       {drops.length > 0 && (
         <Section title={isZh ? "掉落物品" : "Drop Table"} eyebrow={isZh ? "含掉率" : "With drop rates"}>
-          <div className="overflow-x-auto border border-[#252525]">
+          <div className="overflow-x-auto border border-[#27272a]">
             <table className="w-full min-w-[600px] text-left text-sm">
-              <thead className="bg-[#151515] text-xs text-[#777]">
+              <thead className="bg-[#151515] text-xs text-[#6c6c6c]">
                 <tr>
                   <th className="px-3 py-2.5">{isZh ? "物品" : "Item"}</th>
                   <th className="px-3 py-2.5">{isZh ? "稀有度" : "Grade"}</th>
@@ -74,13 +74,13 @@ export default async function StageDetailPage({ params }: Props) {
                 {uniqueChests.map((drop) => {
                   const icon = extIconPath(drop.icon, "STAGEBOX");
                   return (
-                    <tr key={drop.itemKey} className="border-t border-[#252525] hover:bg-[#0d0d0d]">
+                    <tr key={drop.itemKey} className="border-t border-[#27272a] hover:bg-[#0d0d0d]">
                       <td className="px-3 py-3">
                         <div className="flex items-center gap-3">
                           {icon ? (
                             <Image src={icon} alt={drop.name} width={32} height={32} className="object-contain" data-pixel unoptimized />
                           ) : null}
-                          <span className="font-medium text-[#ddd]">{drop.name}</span>
+                          <span className="font-medium text-[#ffffff]">{drop.name}</span>
                         </div>
                       </td>
                       <td className="px-3 py-3">
@@ -102,7 +102,7 @@ export default async function StageDetailPage({ params }: Props) {
                               {isZh ? "查看" : "View"} →
                             </Link>
                           ) : (
-                            <span className="text-xs text-[#666]">{isZh ? "详情" : "N/A"}</span>
+                            <span className="text-xs text-[#6c6c6c]">{isZh ? "详情" : "N/A"}</span>
                           );
                         })()}
                       </td>
@@ -118,21 +118,21 @@ export default async function StageDetailPage({ params }: Props) {
       {/* ── Farming tips ── */}
       <Section title={isZh ? "刷取建议" : "Farming Tips"} eyebrow={isZh ? "效率指南" : "Efficiency guide"}>
         <div className="grid gap-3 sm:grid-cols-2">
-          <div className="border border-[#252525] bg-[#101010] p-4">
+          <div className="border border-[#27272a] bg-[#0d0d0d] p-4">
             <h3 className="text-sm font-semibold text-[#f0c040]">
               {isZh ? "金币效率" : "Gold Efficiency"}
             </h3>
-            <p className="mt-2 text-sm leading-7 text-[#aaa]">
+            <p className="mt-2 text-sm leading-7 text-[#9d9d9d]">
               {isZh
                 ? `每轮 ${stage.goldPerClear ?? "?"} 金币。记录你的实际清图时间，除以分钟数得到每分钟金币效率。`
                 : `${stage.goldPerClear ?? "?"} gold per clear. Time your actual clears and divide to get gold per minute.`}
             </p>
           </div>
-          <div className="border border-[#252525] bg-[#101010] p-4">
+          <div className="border border-[#27272a] bg-[#0d0d0d] p-4">
             <h3 className="text-sm font-semibold text-[#f0c040]">
               {isZh ? "经验效率" : "EXP Efficiency"}
             </h3>
-            <p className="mt-2 text-sm leading-7 text-[#aaa]">
+            <p className="mt-2 text-sm leading-7 text-[#9d9d9d]">
               {isZh
                 ? `每轮 ${stage.expPerClear ?? "?"} 经验 + ${stage.kills ?? "?"} 击杀经验。稳定清理优于勉强推图。`
                 : `${stage.expPerClear ?? "?"} EXP per clear + ${stage.kills ?? "?"} kill EXP. Stable clears beat risky pushes.`}
@@ -144,17 +144,17 @@ export default async function StageDetailPage({ params }: Props) {
       {/* ── Cross-links ── */}
       <Section title={isZh ? "相关入口" : "Related Links"} eyebrow={isZh ? "更多数据" : "More data"}>
         <div className="flex flex-wrap gap-2">
-          <Link href={`/${locale}/map`} className="border border-[#333] px-3 py-2 text-sm text-[#ddd] hover:border-[#d4a017]">
+          <Link href={`/${locale}/map`} className="border border-[#3b3b3b] px-3 py-2 text-sm text-[#ffffff] hover:border-[#d4a017]">
             {isZh ? "关卡地图" : "Stage Map"}
           </Link>
-          <Link href={`/${locale}/chests`} className="border border-[#333] px-3 py-2 text-sm text-[#ddd] hover:border-[#d4a017]">
+          <Link href={`/${locale}/chests`} className="border border-[#3b3b3b] px-3 py-2 text-sm text-[#ffffff] hover:border-[#d4a017]">
             {isZh ? "全部宝箱" : "All Chests"}
           </Link>
-          <Link href={`/${locale}/tools/farming-compare`} className="border border-[#333] px-3 py-2 text-sm text-[#ddd] hover:border-[#d4a017]">
+          <Link href={`/${locale}/tools/farming-compare`} className="border border-[#3b3b3b] px-3 py-2 text-sm text-[#ffffff] hover:border-[#d4a017]">
             {isZh ? "刷图对比" : "Farming Compare"}
           </Link>
           {bossDrops.length > 0 && (
-            <Link href={`/${locale}/market`} className="border border-[#333] px-3 py-2 text-sm text-[#ddd] hover:border-[#d4a017]">
+            <Link href={`/${locale}/market`} className="border border-[#3b3b3b] px-3 py-2 text-sm text-[#ffffff] hover:border-[#d4a017]">
               {isZh ? "市场状态" : "Market"}
             </Link>
           )}
@@ -176,12 +176,12 @@ function StatCard({
   accent?: boolean;
 }) {
   return (
-    <div className="border border-[#252525] bg-[#101010] p-4">
-      <div className="flex items-center gap-2 text-xs text-[#777]">
+    <div className="border border-[#27272a] bg-[#0d0d0d] p-4">
+      <div className="flex items-center gap-2 text-xs text-[#6c6c6c]">
         {icon}
         <span>{label}</span>
       </div>
-      <p className={`mt-2 text-xl font-semibold ${accent ? "text-[#f0c040]" : "text-[#ddd]"}`}>
+      <p className={`mt-2 text-xl font-semibold ${accent ? "text-[#f0c040]" : "text-[#ffffff]"}`}>
         {value}
       </p>
     </div>

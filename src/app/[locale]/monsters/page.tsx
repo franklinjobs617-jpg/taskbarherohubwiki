@@ -16,7 +16,7 @@ export default async function MonstersPage({ params }: Props) {
     <PageShell>
       <PageHeader kicker="Monsters" title={locale === "zh" ? "怪物资料" : "Monsters"} description={locale === "zh" ? "怪物、奖励、出现关卡和宠物路线的底层数据。" : "Monster rewards, stages, and pet route base data."} />
       <div className="grid gap-2 md:grid-cols-3 xl:grid-cols-4">
-        {allMonsters().map((monster) => <div key={monster.MonsterKey} className="border border-[#252525] bg-[#101010] p-3"><p className="text-[#ddd]">{text(monster.MonsterNameStringKey_i18n, locale, String(monster.MonsterKey))}</p><p className="mt-1 text-xs text-[#777]">Gold {monster.RewardGold ?? "-"} / EXP {monster.RewardExp ?? "-"}</p></div>)}
+        {allMonsters().map((monster) => <div key={monster.MonsterKey} className="border border-[#27272a] bg-[#0d0d0d] p-3"><p className="text-[#ffffff]">{text(monster.MonsterNameStringKey_i18n, locale, String(monster.MonsterKey))}</p><p className="mt-1 text-xs text-[#6c6c6c]">Gold {monster.RewardGold ?? "-"} / EXP {monster.RewardExp ?? "-"}</p></div>)}
       </div>
     </PageShell>
   );

@@ -76,31 +76,31 @@ export default async function ItemDetailPage({ params }: Props) {
           },
         }] : []),
       ]} />
-      <nav className="mb-5 flex flex-wrap gap-2 text-xs text-[#777]">
+      <nav className="mb-5 flex flex-wrap gap-2 text-xs text-[#6c6c6c]">
         <Link href={`/${locale}`} className="hover:text-[#f0c040]">TBH</Link><span>/</span>
         <Link href={`/${locale}/items`} className="hover:text-[#f0c040]">{isZh ? "物品" : "Items"}</Link><span>/</span>
-        <span className="text-[#aaa]">{name}</span>
+        <span className="text-[#9d9d9d]">{name}</span>
       </nav>
       <section className="grid gap-6 lg:grid-cols-[340px_1fr]">
-        <aside className="h-fit border border-[#252525] bg-[#101010] p-5 lg:sticky lg:top-16">
+        <aside className="h-fit border border-[#27272a] bg-[#0d0d0d] p-5 lg:sticky lg:top-16">
           <div className="flex items-center gap-4">
-            <div className="flex h-24 w-24 shrink-0 items-center justify-center border border-[#333] bg-[#080808]">
-              {icon ? <Image src={icon} alt={name} width={80} height={80} className="object-contain" data-pixel unoptimized /> : <span className="text-xs text-[#555]">No image</span>}
+            <div className="flex h-24 w-24 shrink-0 items-center justify-center border border-[#3b3b3b] bg-[#0a0a0a]">
+              {icon ? <Image src={icon} alt={name} width={80} height={80} className="object-contain" data-pixel unoptimized /> : <span className="text-xs text-[#6c6c6c]">No image</span>}
             </div>
             <div className="min-w-0">
               <h1 className="text-xl font-semibold text-[#f1e8d5]">{name}</h1>
-              {enName !== name ? <p className="mt-1 text-sm text-[#777]">{enName}</p> : null}
-              <p className="mt-2 text-xs text-[#666]">ID {item.id}</p>
+              {enName !== name ? <p className="mt-1 text-sm text-[#6c6c6c]">{enName}</p> : null}
+              <p className="mt-2 text-xs text-[#6c6c6c]">ID {item.id}</p>
             </div>
           </div>
           <div className="mt-5 flex flex-wrap gap-2">
             <RarityBadge grade={item.grade} locale={locale} />
-            <span className="border border-[#333] px-2 py-0.5 text-[11px] text-[#aaa]">{item.type}</span>
-            {item.gear ? <span className="border border-[#333] px-2 py-0.5 text-[11px] text-[#aaa]">{slotNames[item.gear]?.[locale] ?? item.gear}</span> : null}
-            {item.level ? <span className="border border-[#333] px-2 py-0.5 text-[11px] text-[#aaa]">Lv.{item.level}</span> : null}
+            <span className="border border-[#3b3b3b] px-2 py-0.5 text-[11px] text-[#9d9d9d]">{item.type}</span>
+            {item.gear ? <span className="border border-[#3b3b3b] px-2 py-0.5 text-[11px] text-[#9d9d9d]">{slotNames[item.gear]?.[locale] ?? item.gear}</span> : null}
+            {item.level ? <span className="border border-[#3b3b3b] px-2 py-0.5 text-[11px] text-[#9d9d9d]">Lv.{item.level}</span> : null}
           </div>
-          <div className="mt-5 border-t border-[#242424] pt-4">
-            <p className="text-xs text-[#777]">{isZh ? "市场状态" : "Market status"}</p>
+          <div className="mt-5 border-t border-[#27272a] pt-4">
+            <p className="text-xs text-[#6c6c6c]">{isZh ? "市场状态" : "Market status"}</p>
             <div className="mt-2 flex items-center justify-between gap-3">
               <MarketPrice item={item} />
               <ConfidenceBadge value={market?.confidence ?? "missing"} />
@@ -110,29 +110,29 @@ export default async function ItemDetailPage({ params }: Props) {
         </aside>
         <div className="space-y-8">
           <Section title={isZh ? "基础说明" : "Overview"}>
-            <p className="border border-[#252525] bg-[#101010] p-4 text-sm leading-7 text-[#aaa]">{description}</p>
+            <p className="border border-[#27272a] bg-[#0d0d0d] p-4 text-sm leading-7 text-[#9d9d9d]">{description}</p>
           </Section>
           <Section title={isZh ? "属性与合成" : "Stats and Synthesis"}>
             <div className="grid gap-3 md:grid-cols-2">
-              <div className="border border-[#252525] bg-[#101010] p-4">
-                <p className="mb-3 text-sm font-medium text-[#ddd]">{isZh ? "结构化属性" : "Structured stats"}</p>
+              <div className="border border-[#27272a] bg-[#0d0d0d] p-4">
+                <p className="mb-3 text-sm font-medium text-[#ffffff]">{isZh ? "结构化属性" : "Structured stats"}</p>
                 {detail?.stats && Object.keys(detail.stats).length ? (
-                  <dl className="grid grid-cols-2 gap-2 text-sm">{Object.entries(detail.stats).map(([key, value]) => <div key={key} className="border border-[#242424] p-2"><dt className="text-xs text-[#777]">{key}</dt><dd className="text-[#ddd]">{String(value)}</dd></div>)}</dl>
-                ) : <p className="text-sm text-[#777]">{isZh ? "该物品没有结构化属性。" : "No structured stats for this item."}</p>}
+                  <dl className="grid grid-cols-2 gap-2 text-sm">{Object.entries(detail.stats).map(([key, value]) => <div key={key} className="border border-[#27272a] p-2"><dt className="text-xs text-[#6c6c6c]">{key}</dt><dd className="text-[#ffffff]">{String(value)}</dd></div>)}</dl>
+                ) : <p className="text-sm text-[#6c6c6c]">{isZh ? "该物品没有结构化属性。" : "No structured stats for this item."}</p>}
               </div>
-              <div className="border border-[#252525] bg-[#101010] p-4 text-sm text-[#aaa]">
-                <p><span className="text-[#777]">Synth:</span> {detail?.synthType ?? "-"}</p>
-                <p className="mt-2"><span className="text-[#777]">DropKey:</span> {detail?.dropKey ?? (isZh ? "掉率数据不足" : "Drop data unavailable")}</p>
-                <p className="mt-2"><span className="text-[#777]">Unique:</span> {detail?.uniqueMod ?? "-"}</p>
+              <div className="border border-[#27272a] bg-[#0d0d0d] p-4 text-sm text-[#9d9d9d]">
+                <p><span className="text-[#6c6c6c]">Synth:</span> {detail?.synthType ?? "-"}</p>
+                <p className="mt-2"><span className="text-[#6c6c6c]">DropKey:</span> {detail?.dropKey ?? (isZh ? "掉率数据不足" : "Drop data unavailable")}</p>
+                <p className="mt-2"><span className="text-[#6c6c6c]">Unique:</span> {detail?.uniqueMod ?? "-"}</p>
               </div>
             </div>
           </Section>
           {/* ── Drop Sources ── */}
           {dropSources.length > 0 && (
             <Section title={isZh ? "掉落来源" : "Drop Sources"} eyebrow={isZh ? `${dropSources.length} 个关卡掉落` : `Drops from ${dropSources.length} stages`}>
-              <div className="overflow-x-auto border border-[#252525]">
+              <div className="overflow-x-auto border border-[#27272a]">
                 <table className="w-full min-w-[500px] text-left text-sm">
-                  <thead className="bg-[#151515] text-xs text-[#777]">
+                  <thead className="bg-[#151515] text-xs text-[#6c6c6c]">
                     <tr>
                       <th className="px-3 py-2.5">{isZh ? "关卡" : "Stage"}</th>
                       <th className="px-3 py-2.5">{isZh ? "难度" : "Diff"}</th>
@@ -142,13 +142,13 @@ export default async function ItemDetailPage({ params }: Props) {
                   </thead>
                   <tbody>
                     {dropSources.map(({ stage: s, drop }) => (
-                      <tr key={s.key} className="border-t border-[#252525] hover:bg-[#0d0d0d]">
+                      <tr key={s.key} className="border-t border-[#27272a] hover:bg-[#0d0d0d]">
                         <td className="px-3 py-3">
                           <Link href={`/${locale}/stages/${s.label.toLowerCase().replace(".", "-")}`} className="font-medium text-[#f0c040] hover:underline">
                             {s.label} {s.name}
                           </Link>
                         </td>
-                        <td className="px-3 py-3 text-[#aaa]">{s.difficulty}</td>
+                        <td className="px-3 py-3 text-[#9d9d9d]">{s.difficulty}</td>
                         <td className="px-3 py-3">
                           <span className={`rounded-full px-2 py-0.5 text-[11px] ${drop.source === "boss" ? "bg-[#2a1515] text-[#ff6b6b]" : "bg-[#152a15] text-[#6bff6b]"}`}>
                             {drop.source === "boss" ? "Boss" : (isZh ? "怪物" : "Monster")}
@@ -171,7 +171,7 @@ export default async function ItemDetailPage({ params }: Props) {
                   <Link
                     key={cls}
                     href={`/${locale}/heroes/${cls.toLowerCase()}`}
-                    className="border border-[#333] bg-[#101010] px-3 py-2 text-sm text-[#ddd] hover:border-[#d4a017] hover:text-[#f0c040]"
+                    className="border border-[#3b3b3b] bg-[#0d0d0d] px-3 py-2 text-sm text-[#ffffff] hover:border-[#d4a017] hover:text-[#f0c040]"
                   >
                     {cls}
                   </Link>
@@ -181,7 +181,7 @@ export default async function ItemDetailPage({ params }: Props) {
           )}
 
           <Section title={isZh ? "决策建议" : "Decision Guide"}>
-            <div className="border border-[#252525] bg-[#101010] p-4 text-sm leading-7 text-[#aaa]">
+            <div className="border border-[#27272a] bg-[#0d0d0d] p-4 text-sm leading-7 text-[#9d9d9d]">
               {isZh
                 ? "使用顺序：先确认是否当前职业可用 → 再看是否可交易 → 最后看真实市场数据。有掉率时优先刷高掉率关卡，有市场价时结合掉率计算期望收益。"
                 : "Priority: check if your class can use it → check tradability → check real market data. Farm high-rate stages first, combine with market price for profit estimates when both exist."}

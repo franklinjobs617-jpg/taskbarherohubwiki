@@ -41,17 +41,17 @@ export default async function MarketPage({ params, searchParams }: Props) {
           : "Market data is a risk signal. Current prices are Steam listing prices and listing counts, not sale prices; items without real data still show no market data."}
       </DataNotice>
       <form className="my-5 grid gap-2 md:grid-cols-[1fr_auto_auto]">
-        <input name="q" defaultValue={sp.q} placeholder={isZh ? "搜索可交易物品" : "Search tradable items"} className="border border-[#333] bg-[#080808] px-3 py-2 text-sm outline-none" />
-        <select name="type" defaultValue={sp.type ?? ""} className="border border-[#333] bg-[#080808] px-3 py-2 text-sm">
+        <input name="q" defaultValue={sp.q} placeholder={isZh ? "搜索可交易物品" : "Search tradable items"} className="border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm outline-none" />
+        <select name="type" defaultValue={sp.type ?? ""} className="border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm">
           <option value="">{isZh ? "全部类型" : "All types"}</option>
           <option value="GEAR">{isZh ? "装备" : "Gear"}</option>
           <option value="MATERIAL">{isZh ? "材料" : "Materials"}</option>
         </select>
         <button className="bg-[#d4a017] px-4 py-2 text-sm font-semibold text-black">{isZh ? "筛选" : "Filter"}</button>
       </form>
-      <div className="overflow-x-auto border border-[#252525]">
+      <div className="overflow-x-auto border border-[#27272a]">
         <table className="w-full min-w-[860px] text-left text-sm">
-          <thead className="bg-[#151515] text-xs text-[#777]">
+          <thead className="bg-[#151515] text-xs text-[#6c6c6c]">
             <tr>
               <th className="px-3 py-2">{isZh ? "物品" : "Item"}</th>
               <th className="px-3 py-2">{isZh ? "稀有度" : "Rarity"}</th>
@@ -63,22 +63,22 @@ export default async function MarketPage({ params, searchParams }: Props) {
           </thead>
           <tbody>
             {rows.map(({ item, market }) => (
-              <tr key={item.id} className="border-t border-[#252525] hover:bg-[#101010]">
+              <tr key={item.id} className="border-t border-[#27272a] hover:bg-[#0d0d0d]">
                 <td className="px-3 py-2">
-                  <Link href={`/${locale}/market/${item.slug}`} className="font-medium text-[#ddd] hover:text-[#f0c040]">{itemName(item, locale)}</Link>
-                  <Link href={`/${locale}/items/${item.slug}`} className="ml-2 text-xs text-[#666] hover:text-[#f0c040]">item</Link>
+                  <Link href={`/${locale}/market/${item.slug}`} className="font-medium text-[#ffffff] hover:text-[#f0c040]">{itemName(item, locale)}</Link>
+                  <Link href={`/${locale}/items/${item.slug}`} className="ml-2 text-xs text-[#6c6c6c] hover:text-[#f0c040]">item</Link>
                 </td>
                 <td className="px-3 py-2"><RarityBadge grade={item.grade} locale={locale} /></td>
-                <td className="px-3 py-2 text-[#aaa]">{item.gear ? slotNames[item.gear]?.[locale] ?? item.gear : item.type}</td>
-                <td className="px-3 py-2 text-[#aaa]">{market.marketHash}</td>
+                <td className="px-3 py-2 text-[#9d9d9d]">{item.gear ? slotNames[item.gear]?.[locale] ?? item.gear : item.type}</td>
+                <td className="px-3 py-2 text-[#9d9d9d]">{market.marketHash}</td>
                 <td className="px-3 py-2">
                   {market.lowest ? (
                     <div>
                       <p className="font-semibold text-[#f0c040]">${market.lowest.toFixed(2)}</p>
-                      <p className="text-xs text-[#777]">{market.listings ? `${market.listings.toLocaleString()} ${isZh ? "挂单" : "listings"}` : isZh ? "挂单数不足" : "Listings unavailable"}</p>
+                      <p className="text-xs text-[#6c6c6c]">{market.listings ? `${market.listings.toLocaleString()} ${isZh ? "挂单" : "listings"}` : isZh ? "挂单数不足" : "Listings unavailable"}</p>
                     </div>
                   ) : (
-                    <span className="text-[#777]">{isZh ? "暂无市场数据" : "No market data"}</span>
+                    <span className="text-[#6c6c6c]">{isZh ? "暂无市场数据" : "No market data"}</span>
                   )}
                 </td>
                 <td className="px-3 py-2"><ConfidenceBadge value={market.confidence} /></td>

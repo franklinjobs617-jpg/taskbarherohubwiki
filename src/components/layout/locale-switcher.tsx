@@ -14,7 +14,7 @@ export function LocaleSwitcher() {
         const next = pathname.replace(`/${currentLocale}`, `/${target}`);
         router.push(next);
       }}
-      className="text-[10px] text-[#888] hover:text-[#ddd] bg-[#151515] border border-[#2a2a2a] rounded px-1.5 py-0.5 font-mono tracking-wider transition-colors"
+      className="text-[10px] text-[#9d9d9d] hover:text-[#ffffff] bg-[#151515] border border-[#2a2a2a] rounded px-1.5 py-0.5 font-mono tracking-wider transition-colors"
     >
       {target.toUpperCase()}
     </button>

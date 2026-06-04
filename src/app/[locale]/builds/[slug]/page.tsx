@@ -26,16 +26,16 @@ export default async function BuildDetailPage({ params }: Props) {
       <ConfidenceBadge value={build.evidence === "editorial" ? "medium" : "low"} />
       <Section title={isZh ? "路线结构" : "Route Structure"}>
         <div className="grid gap-3 md:grid-cols-3">
-          <div className="border border-[#252525] bg-[#101010] p-4"><p className="text-xs text-[#777]">{isZh ? "职业" : "Hero"}</p><p className="mt-2 text-[#ddd]">{build.hero}</p></div>
-          <div className="border border-[#252525] bg-[#101010] p-4"><p className="text-xs text-[#777]">{isZh ? "阶段" : "Phase"}</p><p className="mt-2 text-[#ddd]">{build.phase}</p></div>
-          <div className="border border-[#252525] bg-[#101010] p-4"><p className="text-xs text-[#777]">{isZh ? "目标" : "Goal"}</p><p className="mt-2 text-[#ddd]">{build.goal}</p></div>
+          <div className="border border-[#27272a] bg-[#0d0d0d] p-4"><p className="text-xs text-[#6c6c6c]">{isZh ? "职业" : "Hero"}</p><p className="mt-2 text-[#ffffff]">{build.hero}</p></div>
+          <div className="border border-[#27272a] bg-[#0d0d0d] p-4"><p className="text-xs text-[#6c6c6c]">{isZh ? "阶段" : "Phase"}</p><p className="mt-2 text-[#ffffff]">{build.phase}</p></div>
+          <div className="border border-[#27272a] bg-[#0d0d0d] p-4"><p className="text-xs text-[#6c6c6c]">{isZh ? "目标" : "Goal"}</p><p className="mt-2 text-[#ffffff]">{build.goal}</p></div>
         </div>
       </Section>
       <Section title={isZh ? "相关链接" : "Related Links"}>
         <div className="flex flex-wrap gap-2">
-          <Link href={`/${locale}/heroes/${build.hero.toLowerCase()}`} className="border border-[#333] px-3 py-2 text-sm hover:border-[#d4a017]">{isZh ? "英雄详情" : "Hero detail"}</Link>
-          <Link href={`/${locale}/items`} className="border border-[#333] px-3 py-2 text-sm hover:border-[#d4a017]">{isZh ? "物品数据库" : "Items"}</Link>
-          <Link href={`/${locale}/market`} className="border border-[#333] px-3 py-2 text-sm hover:border-[#d4a017]">{isZh ? "市场价格" : "Market"}</Link>
+          <Link href={`/${locale}/heroes/${build.hero.toLowerCase()}`} className="border border-[#3b3b3b] px-3 py-2 text-sm hover:border-[#d4a017]">{isZh ? "英雄详情" : "Hero detail"}</Link>
+          <Link href={`/${locale}/items`} className="border border-[#3b3b3b] px-3 py-2 text-sm hover:border-[#d4a017]">{isZh ? "物品数据库" : "Items"}</Link>
+          <Link href={`/${locale}/market`} className="border border-[#3b3b3b] px-3 py-2 text-sm hover:border-[#d4a017]">{isZh ? "市场价格" : "Market"}</Link>
         </div>
       </Section>
     </PageShell>

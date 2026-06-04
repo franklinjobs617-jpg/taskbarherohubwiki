@@ -58,19 +58,19 @@ export default async function ChestDetailPage({ params }: Props) {
 
       {/* ── Chest info ── */}
       <div className="grid gap-2.5 sm:grid-cols-3">
-        <div className="border border-[#252525] bg-[#101010] p-4">
-          <p className="text-xs text-[#777]">{isZh ? "稀有度" : "Rarity"}</p>
+        <div className="border border-[#27272a] bg-[#0d0d0d] p-4">
+          <p className="text-xs text-[#6c6c6c]">{isZh ? "稀有度" : "Rarity"}</p>
           <div className="mt-2"><RarityBadge grade={chest.grade} locale={locale} /></div>
         </div>
-        <div className="border border-[#252525] bg-[#101010] p-4">
-          <p className="text-xs text-[#777]">{isZh ? "可获取关卡" : "Available in"}</p>
+        <div className="border border-[#27272a] bg-[#0d0d0d] p-4">
+          <p className="text-xs text-[#6c6c6c]">{isZh ? "可获取关卡" : "Available in"}</p>
           <p className="mt-2 text-xl font-semibold text-[#f0c040]">{dropStages.length}</p>
         </div>
-        <div className="border border-[#252525] bg-[#101010] p-4">
-          <p className="text-xs text-[#777]">{isZh ? "难度分布" : "By difficulty"}</p>
+        <div className="border border-[#27272a] bg-[#0d0d0d] p-4">
+          <p className="text-xs text-[#6c6c6c]">{isZh ? "难度分布" : "By difficulty"}</p>
           <div className="mt-2 flex flex-wrap gap-1.5">
             {[...byDifficulty.entries()].map(([diff, count]) => (
-              <span key={diff} className="rounded border border-[#333] px-2 py-0.5 text-xs text-[#aaa]">
+              <span key={diff} className="rounded border border-[#3b3b3b] px-2 py-0.5 text-xs text-[#9d9d9d]">
                 {diff}: {count}
               </span>
             ))}
@@ -81,9 +81,9 @@ export default async function ChestDetailPage({ params }: Props) {
       {/* ── Drop Sources ── */}
       {dropStages.length > 0 ? (
         <Section title={isZh ? "掉落来源" : "Drop Sources"} eyebrow={isZh ? `${dropStages.length} 个关卡` : `${dropStages.length} stages`}>
-          <div className="overflow-x-auto border border-[#252525]">
+          <div className="overflow-x-auto border border-[#27272a]">
             <table className="w-full min-w-[500px] text-left text-sm">
-              <thead className="bg-[#151515] text-xs text-[#777]">
+              <thead className="bg-[#151515] text-xs text-[#6c6c6c]">
                 <tr>
                   <th className="px-3 py-2.5">{isZh ? "关卡" : "Stage"}</th>
                   <th className="px-3 py-2.5">Act</th>
@@ -94,7 +94,7 @@ export default async function ChestDetailPage({ params }: Props) {
               </thead>
               <tbody>
                 {dropStages.map(({ stage: s, drop }) => (
-                  <tr key={s.key} className="border-t border-[#252525] hover:bg-[#0d0d0d]">
+                  <tr key={s.key} className="border-t border-[#27272a] hover:bg-[#0d0d0d]">
                     <td className="px-3 py-3">
                       <Link href={`/${locale}/stages/${s.label.toLowerCase().replace(".", "-")}`} className="font-medium text-[#f0c040] hover:underline">
                         <span className="flex items-center gap-1.5">
@@ -103,8 +103,8 @@ export default async function ChestDetailPage({ params }: Props) {
                         </span>
                       </Link>
                     </td>
-                    <td className="px-3 py-3 text-[#aaa]">{s.act}</td>
-                    <td className="px-3 py-3 text-[#aaa]">{s.difficulty}</td>
+                    <td className="px-3 py-3 text-[#9d9d9d]">{s.act}</td>
+                    <td className="px-3 py-3 text-[#9d9d9d]">{s.difficulty}</td>
                     <td className="px-3 py-3">
                       <span className={`rounded-full px-2 py-0.5 text-[11px] ${drop.source === "boss" ? "bg-[#2a1515] text-[#ff6b6b]" : "bg-[#152a15] text-[#6bff6b]"}`}>
                         {drop.source === "boss" ? "Boss" : (isZh ? "怪物" : "Monster")}
@@ -119,7 +119,7 @@ export default async function ChestDetailPage({ params }: Props) {
         </Section>
       ) : (
         <Section title={isZh ? "掉落来源" : "Drop Sources"}>
-          <div className="border border-[#252525] bg-[#101010] p-6 text-center text-sm text-[#777]">
+          <div className="border border-[#27272a] bg-[#0d0d0d] p-6 text-center text-sm text-[#6c6c6c]">
             {isZh
               ? "暂未找到此宝箱的掉落来源数据。"
               : "No drop source data found for this chest yet."}
@@ -130,10 +130,10 @@ export default async function ChestDetailPage({ params }: Props) {
       {/* ── Cross-links ── */}
       <Section title={isZh ? "相关入口" : "Related"}>
         <div className="flex flex-wrap gap-2">
-          <Link href={`/${locale}/chests`} className="border border-[#333] px-3 py-2 text-sm text-[#ddd] hover:border-[#d4a017]">
+          <Link href={`/${locale}/chests`} className="border border-[#3b3b3b] px-3 py-2 text-sm text-[#ffffff] hover:border-[#d4a017]">
             {isZh ? "全部宝箱" : "All Chests"}
           </Link>
-          <Link href={`/${locale}/map`} className="border border-[#333] px-3 py-2 text-sm text-[#ddd] hover:border-[#d4a017]">
+          <Link href={`/${locale}/map`} className="border border-[#3b3b3b] px-3 py-2 text-sm text-[#ffffff] hover:border-[#d4a017]">
             {isZh ? "关卡地图" : "Map"}
           </Link>
         </div>

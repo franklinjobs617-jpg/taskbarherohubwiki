@@ -24,9 +24,9 @@ export default async function BuildsPage({ params }: Props) {
       />
       <div className="grid gap-2 md:grid-cols-3">
         {builds.map((build) => (
-          <Link key={build.slug} href={`/${locale}/builds/${build.slug}`} className="border border-[#252525] bg-[#101010] p-4 hover:border-[#d4a017]">
-            <p className="font-medium text-[#ddd]">{build.title[locale]}</p>
-            <p className="mt-2 text-sm text-[#888]">{build.description[locale]}</p>
+          <Link key={build.slug} href={`/${locale}/builds/${build.slug}`} className="border border-[#27272a] bg-[#0d0d0d] p-4 hover:border-[#d4a017]">
+            <p className="font-medium text-[#ffffff]">{build.title[locale]}</p>
+            <p className="mt-2 text-sm text-[#9d9d9d]">{build.description[locale]}</p>
             <div className="mt-3"><ConfidenceBadge value={build.evidence === "editorial" ? "medium" : "low"} /></div>
           </Link>
         ))}

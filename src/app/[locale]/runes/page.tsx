@@ -60,26 +60,26 @@ export default async function RunesPage({ params }: Props) {
             <h2 className="mb-3 flex items-center gap-2 text-lg font-semibold text-[#f6e8c8]">
               <span className="h-2 w-2 rounded-full bg-[#d4a017]" />
               {getCat(category, isZh)}
-              <span className="text-sm font-normal text-[#777]">({items.length})</span>
+              <span className="text-sm font-normal text-[#6c6c6c]">({items.length})</span>
             </h2>
             <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {items.map((rune) => (
-                <details key={rune.key} className="group border border-[#252525] bg-[#101010] hover:border-[#3a3a3a] [&_summary::-webkit-details-marker]:hidden">
+                <details key={rune.key} className="group border border-[#27272a] bg-[#0d0d0d] hover:border-[#3a3a3a] [&_summary::-webkit-details-marker]:hidden">
                   <summary className="flex cursor-pointer items-start justify-between gap-2 p-3 select-none">
                     <div className="min-w-0 flex-1">
-                      <p className="text-sm font-medium text-[#ddd] group-open:text-[#f0c040]">{rune.name}</p>
-                      <p className="mt-1 text-xs text-[#888]">{rune.effect}</p>
+                      <p className="text-sm font-medium text-[#ffffff] group-open:text-[#f0c040]">{rune.name}</p>
+                      <p className="mt-1 text-xs text-[#9d9d9d]">{rune.effect}</p>
                     </div>
                     <div className="flex shrink-0 items-center gap-2 text-xs">
-                      <span className="text-[#777]">Lv.{rune.maxLevel}</span>
+                      <span className="text-[#6c6c6c]">Lv.{rune.maxLevel}</span>
                       {rune.next.length > 0 && <span className="text-[#62d394]">→{rune.next.length}</span>}
                     </div>
                   </summary>
-                  <div className="border-t border-[#242424] p-3 space-y-2">
+                  <div className="border-t border-[#27272a] p-3 space-y-2">
                     <div className="overflow-x-auto">
                       <table className="w-full text-left text-xs">
                         <thead>
-                          <tr className="text-[#777]">
+                          <tr className="text-[#6c6c6c]">
                             <th className="pb-1 pr-3">{isZh ? "等级" : "Lv"}</th>
                             <th className="pb-1 pr-3">{isZh ? "效果" : "Effect"}</th>
                             <th className="pb-1 text-right">{isZh ? "消耗" : "Cost"}</th>
@@ -88,8 +88,8 @@ export default async function RunesPage({ params }: Props) {
                         <tbody>
                           {rune.levels.map((lvl) => (
                             <tr key={lvl.level} className="border-t border-[#1a1a1a]">
-                              <td className="py-1 pr-3 text-[#aaa]">{lvl.level}</td>
-                              <td className="py-1 pr-3 text-[#ddd]">{lvl.value}</td>
+                              <td className="py-1 pr-3 text-[#9d9d9d]">{lvl.level}</td>
+                              <td className="py-1 pr-3 text-[#ffffff]">{lvl.value}</td>
                               <td className="py-1 text-right">
                                 <span className="inline-flex items-center gap-0.5 text-[#f0c040]">
                                   <Coins className="h-3 w-3" />{lvl.cost.toLocaleString()}
@@ -101,7 +101,7 @@ export default async function RunesPage({ params }: Props) {
                       </table>
                     </div>
                     <div className="flex items-center justify-between border-t border-[#1a1a1a] pt-2 text-xs">
-                      <span className="text-[#777]">{isZh ? "总消耗" : "Total"}</span>
+                      <span className="text-[#6c6c6c]">{isZh ? "总消耗" : "Total"}</span>
                       <span className="inline-flex items-center gap-0.5 font-semibold text-[#f0c040]">
                         <Coins className="h-3 w-3" />{rune.totalCost.toLocaleString()}
                       </span>

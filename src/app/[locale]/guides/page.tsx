@@ -74,10 +74,10 @@ export default async function GuidesPage({ params }: Props) {
         {tasks.map((task) => {
           const Icon = task.icon;
           return (
-            <Link key={task.href} href={task.href} className="border border-[#252525] bg-[#101010] p-4 hover:border-[#d4a017]">
+            <Link key={task.href} href={task.href} className="border border-[#27272a] bg-[#0d0d0d] p-4 hover:border-[#d4a017]">
               <Icon className="mb-3 h-4 w-4 text-[#d4a017]" />
-              <p className="font-medium text-[#ddd]">{task.title}</p>
-              <p className="mt-2 text-sm leading-6 text-[#888]">{task.body}</p>
+              <p className="font-medium text-[#ffffff]">{task.title}</p>
+              <p className="mt-2 text-sm leading-6 text-[#9d9d9d]">{task.body}</p>
             </Link>
           );
         })}
@@ -89,7 +89,7 @@ export default async function GuidesPage({ params }: Props) {
         if (!rows.length) return null;
         return (
           <Section key={category.key} title={category.label} eyebrow={category.key}>
-            <div className="mb-3 flex items-center gap-2 text-xs text-[#777]">
+            <div className="mb-3 flex items-center gap-2 text-xs text-[#6c6c6c]">
               <Icon className="h-4 w-4 text-[#d4a017]" />
               <span>{isZh ? "按任务阅读，不按页面顺序硬读。" : "Read by task, not by page order."}</span>
             </div>

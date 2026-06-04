@@ -72,45 +72,45 @@ export default async function HeroDetailPage({ params }: Props) {
       />
 
       <section className="grid gap-4 lg:grid-cols-[360px_1fr]">
-        <div className="border border-[#2a2a2a] bg-[#101010] p-4">
+        <div className="border border-[#2a2a2a] bg-[#0d0d0d] p-4">
           <HeroPortrait heroKey={hero.HeroKey} fallbackText={heroName(hero, locale)} size="lg" />
           <div className="mt-3 grid grid-cols-2 gap-2">
             {[mainIcon, subIcon].map((icon, index) => (
-              <div key={index} className="flex h-20 items-center justify-center border border-[#252525] bg-[#080808]">
-                {icon ? <Image src={icon} alt="" width={54} height={54} className="object-contain" data-pixel unoptimized /> : <span className="text-xs text-[#555]">GEAR</span>}
+              <div key={index} className="flex h-20 items-center justify-center border border-[#27272a] bg-[#0a0a0a]">
+                {icon ? <Image src={icon} alt="" width={54} height={54} className="object-contain" data-pixel unoptimized /> : <span className="text-xs text-[#6c6c6c]">GEAR</span>}
               </div>
             ))}
           </div>
-          <p className="mt-3 text-sm text-[#aaa]">{heroWeaponLabel(hero, locale)}</p>
+          <p className="mt-3 text-sm text-[#9d9d9d]">{heroWeaponLabel(hero, locale)}</p>
         </div>
 
         <div className="space-y-4">
           <div className="grid gap-3 md:grid-cols-3">
-            <div className="border border-[#252525] bg-[#101010] p-4">
-              <p className="text-xs text-[#777]">{isZh ? "定位" : "Role"}</p>
-              <p className="mt-2 text-lg font-semibold text-[#eee]">{profile.role}</p>
+            <div className="border border-[#27272a] bg-[#0d0d0d] p-4">
+              <p className="text-xs text-[#6c6c6c]">{isZh ? "定位" : "Role"}</p>
+              <p className="mt-2 text-lg font-semibold text-[#ffffff]">{profile.role}</p>
             </div>
-            <div className="border border-[#252525] bg-[#101010] p-4">
-              <p className="text-xs text-[#777]">{isZh ? "上手难度" : "Difficulty"}</p>
-              <p className="mt-2 text-lg font-semibold text-[#eee]">{profile.difficulty}</p>
+            <div className="border border-[#27272a] bg-[#0d0d0d] p-4">
+              <p className="text-xs text-[#6c6c6c]">{isZh ? "上手难度" : "Difficulty"}</p>
+              <p className="mt-2 text-lg font-semibold text-[#ffffff]">{profile.difficulty}</p>
             </div>
-            <div className="border border-[#252525] bg-[#101010] p-4">
-              <p className="text-xs text-[#777]">{isZh ? "解锁" : "Unlock"}</p>
-              <p className="mt-2 text-lg font-semibold text-[#eee]">{hero.DLCAppId ? "DLC" : hero.UnlockCost ?? "-"}</p>
+            <div className="border border-[#27272a] bg-[#0d0d0d] p-4">
+              <p className="text-xs text-[#6c6c6c]">{isZh ? "解锁" : "Unlock"}</p>
+              <p className="mt-2 text-lg font-semibold text-[#ffffff]">{hero.DLCAppId ? "DLC" : hero.UnlockCost ?? "-"}</p>
             </div>
           </div>
 
-          <div className="border border-[#252525] bg-[#101010] p-4">
-            <p className="text-sm font-medium text-[#ddd]">{isZh ? "怎么用这个英雄做决策" : "How to use this hero for decisions"}</p>
-            <p className="mt-2 text-sm leading-7 text-[#aaa]">{profile.decision}</p>
-            <p className="mt-2 text-sm leading-7 text-[#888]">{profile.risk}</p>
+          <div className="border border-[#27272a] bg-[#0d0d0d] p-4">
+            <p className="text-sm font-medium text-[#ffffff]">{isZh ? "怎么用这个英雄做决策" : "How to use this hero for decisions"}</p>
+            <p className="mt-2 text-sm leading-7 text-[#9d9d9d]">{profile.decision}</p>
+            <p className="mt-2 text-sm leading-7 text-[#9d9d9d]">{profile.risk}</p>
           </div>
 
           <div className="grid gap-2 sm:grid-cols-2 xl:grid-cols-4">
             {stats.map(([label, value]) => (
-              <div key={String(label)} className="border border-[#252525] bg-[#0b0b0b] p-3">
-                <p className="text-xs text-[#777]">{label}</p>
-                <p className="mt-1 text-base font-semibold text-[#ddd]">{value ?? "-"}</p>
+              <div key={String(label)} className="border border-[#27272a] bg-[#0d0d0d] p-3">
+                <p className="text-xs text-[#6c6c6c]">{label}</p>
+                <p className="mt-1 text-base font-semibold text-[#ffffff]">{value ?? "-"}</p>
               </div>
             ))}
           </div>
@@ -120,10 +120,10 @@ export default async function HeroDetailPage({ params }: Props) {
       <Section title={isZh ? "这个英雄应该优先堆什么属性？" : "What stats should this hero prioritize?"} eyebrow={isZh ? "装备判断" : "Stat priority"}>
         <div className="grid gap-2 md:grid-cols-3">
           {profile.statPriority.map((stat) => (
-            <div key={stat} className="border border-[#252525] bg-[#101010] p-4">
+            <div key={stat} className="border border-[#27272a] bg-[#0d0d0d] p-4">
               <Shield className="mb-3 h-4 w-4 text-[#d4a017]" />
-              <p className="font-medium text-[#ddd]">{stat}</p>
-              <p className="mt-2 text-sm leading-6 text-[#888]">
+              <p className="font-medium text-[#ffffff]">{stat}</p>
+              <p className="mt-2 text-sm leading-6 text-[#9d9d9d]">
                 {isZh ? "在物品、材料效果和 Build 页面里优先查这个方向。" : "Use this as the first filter on items, material effects, and builds."}
               </p>
             </div>
@@ -138,7 +138,7 @@ export default async function HeroDetailPage({ params }: Props) {
               <Swords className="mt-1 h-4 w-4 text-[#f0c040]" />
               <div>
                 <p className="font-medium text-[#f1e8d5]">{skillName(activeSkill, locale)}</p>
-                <p className="mt-1 text-sm text-[#aaa]">
+                <p className="mt-1 text-sm text-[#9d9d9d]">
                   {activeSkill.DamageType ?? "-"} / {activeSkill.DamageDeliveryType ?? activeSkill.SLOTTYPE ?? "-"}
                 </p>
               </div>
@@ -152,10 +152,10 @@ export default async function HeroDetailPage({ params }: Props) {
             const passive = attr.passive as { name_i18n?: Record<string, string>; stat?: string; value?: string } | undefined;
             const active = attr.activeSkill as { name_i18n?: Record<string, string> } | undefined;
             return (
-              <div key={String(attr.key)} className="border border-[#252525] bg-[#101010] p-3 text-sm">
-                <p className="font-medium text-[#ddd]">{text(passive?.name_i18n ?? active?.name_i18n, locale, String(attr.type ?? attr.key))}</p>
-                <p className="mt-1 text-xs text-[#777]">{String(attr.type ?? "-")} / Lv {String(attr.maxLevel ?? "-")}</p>
-                {passive?.stat ? <p className="mt-1 text-xs text-[#aaa]">{passive.stat}: {passive.value}</p> : null}
+              <div key={String(attr.key)} className="border border-[#27272a] bg-[#0d0d0d] p-3 text-sm">
+                <p className="font-medium text-[#ffffff]">{text(passive?.name_i18n ?? active?.name_i18n, locale, String(attr.type ?? attr.key))}</p>
+                <p className="mt-1 text-xs text-[#6c6c6c]">{String(attr.type ?? "-")} / Lv {String(attr.maxLevel ?? "-")}</p>
+                {passive?.stat ? <p className="mt-1 text-xs text-[#9d9d9d]">{passive.stat}: {passive.value}</p> : null}
               </div>
             );
           })}
@@ -164,20 +164,20 @@ export default async function HeroDetailPage({ params }: Props) {
 
       <Section title={isZh ? "选了这个英雄之后该看什么？" : "What should I check after choosing this hero?"} eyebrow={isZh ? "下一步" : "Next steps"}>
         <div className="grid gap-2 md:grid-cols-3">
-          <Link href={`/${locale}/items?slot=${hero.MainWeaponGearType ?? ""}`} className="border border-[#252525] bg-[#101010] p-4 hover:border-[#d4a017]">
+          <Link href={`/${locale}/items?slot=${hero.MainWeaponGearType ?? ""}`} className="border border-[#27272a] bg-[#0d0d0d] p-4 hover:border-[#d4a017]">
             <BadgeInfo className="mb-3 h-4 w-4 text-[#d4a017]" />
-            <p className="font-medium text-[#ddd]">{isZh ? "查看主武器物品" : "Open main-weapon items"}</p>
-            <p className="mt-2 text-sm text-[#888]">{hero.MainWeaponGearType ? slotNames[hero.MainWeaponGearType]?.[locale] ?? hero.MainWeaponGearType : "-"}</p>
+            <p className="font-medium text-[#ffffff]">{isZh ? "查看主武器物品" : "Open main-weapon items"}</p>
+            <p className="mt-2 text-sm text-[#9d9d9d]">{hero.MainWeaponGearType ? slotNames[hero.MainWeaponGearType]?.[locale] ?? hero.MainWeaponGearType : "-"}</p>
           </Link>
-          <Link href={`/${locale}/effects`} className="border border-[#252525] bg-[#101010] p-4 hover:border-[#d4a017]">
+          <Link href={`/${locale}/effects`} className="border border-[#27272a] bg-[#0d0d0d] p-4 hover:border-[#d4a017]">
             <Shield className="mb-3 h-4 w-4 text-[#d4a017]" />
-            <p className="font-medium text-[#ddd]">{isZh ? "匹配材料效果" : "Match material effects"}</p>
-            <p className="mt-2 text-sm text-[#888]">{profile.statPriority.join(" / ")}</p>
+            <p className="font-medium text-[#ffffff]">{isZh ? "匹配材料效果" : "Match material effects"}</p>
+            <p className="mt-2 text-sm text-[#9d9d9d]">{profile.statPriority.join(" / ")}</p>
           </Link>
-          <Link href={`/${locale}/guides/beginner/class-guide`} className="border border-[#252525] bg-[#101010] p-4 hover:border-[#d4a017]">
+          <Link href={`/${locale}/guides/beginner/class-guide`} className="border border-[#27272a] bg-[#0d0d0d] p-4 hover:border-[#d4a017]">
             <ArrowRight className="mb-3 h-4 w-4 text-[#d4a017]" />
-            <p className="font-medium text-[#ddd]">{isZh ? "阅读职业选择指南" : "Read class guide"}</p>
-            <p className="mt-2 text-sm text-[#888]">{isZh ? "用阶段、武器和风险反推职业。" : "Choose by phase, weapons, and risk."}</p>
+            <p className="font-medium text-[#ffffff]">{isZh ? "阅读职业选择指南" : "Read class guide"}</p>
+            <p className="mt-2 text-sm text-[#9d9d9d]">{isZh ? "用阶段、武器和风险反推职业。" : "Choose by phase, weapons, and risk."}</p>
           </Link>
         </div>
       </Section>
@@ -186,9 +186,9 @@ export default async function HeroDetailPage({ params }: Props) {
         {relatedBuilds.length ? (
           <div className="grid gap-2 md:grid-cols-3">
             {relatedBuilds.map((build) => (
-              <Link key={build.slug} href={`/${locale}/builds/${build.slug}`} className="border border-[#252525] bg-[#101010] p-4 hover:border-[#d4a017]">
-                <p className="text-[#ddd]">{build.title[locale]}</p>
-                <p className="mt-2 text-xs text-[#777]">{build.evidence}</p>
+              <Link key={build.slug} href={`/${locale}/builds/${build.slug}`} className="border border-[#27272a] bg-[#0d0d0d] p-4 hover:border-[#d4a017]">
+                <p className="text-[#ffffff]">{build.title[locale]}</p>
+                <p className="mt-2 text-xs text-[#6c6c6c]">{build.evidence}</p>
               </Link>
             ))}
           </div>

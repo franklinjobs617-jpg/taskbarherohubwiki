@@ -23,9 +23,9 @@ export default async function EffectsPage({ params }: Props) {
         title={isZh ? "材料效果表" : "Material Effects"}
         description={isZh ? "查看材料效果类型、适用部位、属性和值，用于判断材料是否值得保留。" : "Review material effect type, part, stat, and value to decide whether a material is worth keeping."}
       />
-      <div className="overflow-x-auto border border-[#252525]">
+      <div className="overflow-x-auto border border-[#27272a]">
         <table className="w-full min-w-[860px] text-left text-sm">
-          <thead className="bg-[#151515] text-xs text-[#777]">
+          <thead className="bg-[#151515] text-xs text-[#6c6c6c]">
             <tr>
               <th className="px-3 py-2">{isZh ? "材料" : "Material"}</th>
               <th className="px-3 py-2">{isZh ? "部位" : "Part"}</th>
@@ -38,13 +38,13 @@ export default async function EffectsPage({ params }: Props) {
           </thead>
           <tbody>
             {rows.map((row) => (
-              <tr key={row.id} className="border-t border-[#252525]">
-                <td className="px-3 py-2"><Link href={`/${locale}/items/${row.item.slug}`} className="text-[#ddd] hover:text-[#f0c040]">{row.material}</Link></td>
-                <td className="px-3 py-2 text-[#aaa]">{row.part}</td>
-                <td className="px-3 py-2 text-[#aaa]">{row.effectType}</td>
-                <td className="px-3 py-2 text-[#ddd]">{row.stat}</td>
+              <tr key={row.id} className="border-t border-[#27272a]">
+                <td className="px-3 py-2"><Link href={`/${locale}/items/${row.item.slug}`} className="text-[#ffffff] hover:text-[#f0c040]">{row.material}</Link></td>
+                <td className="px-3 py-2 text-[#9d9d9d]">{row.part}</td>
+                <td className="px-3 py-2 text-[#9d9d9d]">{row.effectType}</td>
+                <td className="px-3 py-2 text-[#ffffff]">{row.stat}</td>
                 <td className="px-3 py-2 text-[#f0c040]">{row.value}</td>
-                <td className="px-3 py-2 text-[#777]">{row.market ? (isZh ? "可交易，暂无市场数据" : "Tradable, no market data") : "-"}</td>
+                <td className="px-3 py-2 text-[#6c6c6c]">{row.market ? (isZh ? "可交易，暂无市场数据" : "Tradable, no market data") : "-"}</td>
                 <td className="px-3 py-2"><ConfidenceBadge value={row.market ? "missing" : "low"} /></td>
               </tr>
             ))}
