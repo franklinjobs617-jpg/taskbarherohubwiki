@@ -21,9 +21,15 @@ export function RarityBadge({ grade, locale }: { grade: string; locale: Locale }
   );
 }
 
-export function ConfidenceBadge({ value }: { value?: string | null }) {
-  const label =
-    value === "high" ? "High" : value === "medium" ? "Medium" : value === "missing" ? "No data" : "Low";
+const CF_LABELS: Record<string, Record<string, string>> = {
+  zh: { high: "高置信度", medium: "中置信度", missing: "缺数据", low: "低置信度" },
+  en: { high: "High", medium: "Medium", missing: "No data", low: "Low" },
+  ja: { high: "高", medium: "中", missing: "データなし", low: "低" },
+};
+
+export function ConfidenceBadge({ value, locale }: { value?: string | null; locale?: string }) {
+  const labels = CF_LABELS[locale ?? "en"] ?? CF_LABELS.en;
+  const label = labels[value ?? "low"] ?? labels.low;
   const cls =
     value === "high"
       ? "border-green-700/50 text-green-400"
