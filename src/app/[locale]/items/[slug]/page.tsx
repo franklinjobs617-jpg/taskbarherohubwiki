@@ -7,6 +7,7 @@ import { DropRateTable, ItemCard, MarketPrice, Section } from "@/components/tbh/
 import { PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
 import { allItems, assetPath, itemBySlug, itemDetail, itemName, marketForItem, slotNames, text, type Locale } from "@/lib/game-data/data";
+import { extIconPath, extItems, extStages, formatDropRate } from "@/lib/game-data/external";
 
 type Props = { params: Promise<{ locale: Locale; slug: string }> };
 
@@ -38,6 +39,18 @@ export default async function ItemDetailPage({ params }: Props) {
   const icon = assetPath(item.icon);
   const description = text(detail?.desc, locale, isZh ? "该物品已有基础数据；详细来源取决于掉率数据是否完整。" : "Base data is available; detailed source depends on drop data completeness.");
   const related = allItems().filter((entry) => entry.id !== item.id && (entry.gear === item.gear || entry.grade === item.grade) && entry.type === item.type).slice(0, 8);
+
+  // Get drop sources from external data
+  const extItem = extItems().find((ei) => ei.key === item.id);
+  const dropSources = extItem
+    ? extStages()
+        .filter((s) => s.drops.some((d) => d.itemKey === item.id))
+        .map((s) => ({ stage: s, drop: s.drops.find((d) => d.itemKey === item.id)! }))
+        .slice(0, 12)
+    : [];
+
+  // Get which heroes can use this item
+  const usableBy = extItem?.classes ?? [];
 
   return (
     <PageShell>
@@ -114,13 +127,64 @@ export default async function ItemDetailPage({ params }: Props) {
               </div>
             </div>
           </Section>
-          <Section title={isZh ? "来源与决策" : "Source and Decision"}>
-            <DropRateTable rows={[
-              { name, rate: detail?.dropKey ? (isZh ? "掉率数据不足" : "Drop data unavailable") : (isZh ? "掉率数据不足" : "Drop data unavailable"), source: detail?.dropKey ? `DropKey ${detail.dropKey}` : "-" },
-              { name: isZh ? "市场状态" : "Market status", rate: market ? (isZh ? "可交易，暂无市场数据" : "Tradable, no market data") : (isZh ? "不可交易" : "Not tradable"), source: market?.marketHash ?? "-" },
-            ]} />
-            <div className="mt-3 border border-[#252525] bg-[#101010] p-4 text-sm leading-7 text-[#aaa]">
-              {isZh ? "决策顺序：先看是否自用，再看是否可交易，最后看真实市场数据。没有真实价格或掉率时，不计算市场收益。" : "Decision order: check self-use, then tradability, then real market data. Without real price or drop rates, market profit is not calculated."}
+          {/* ── Drop Sources ── */}
+          {dropSources.length > 0 && (
+            <Section title={isZh ? "掉落来源" : "Drop Sources"} eyebrow={isZh ? `${dropSources.length} 个关卡掉落` : `Drops from ${dropSources.length} stages`}>
+              <div className="overflow-x-auto border border-[#252525]">
+                <table className="w-full min-w-[500px] text-left text-sm">
+                  <thead className="bg-[#151515] text-xs text-[#777]">
+                    <tr>
+                      <th className="px-3 py-2.5">{isZh ? "关卡" : "Stage"}</th>
+                      <th className="px-3 py-2.5">{isZh ? "难度" : "Diff"}</th>
+                      <th className="px-3 py-2.5">{isZh ? "来源" : "Source"}</th>
+                      <th className="px-3 py-2.5">{isZh ? "掉率" : "Rate"}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {dropSources.map(({ stage: s, drop }) => (
+                      <tr key={s.key} className="border-t border-[#252525] hover:bg-[#0d0d0d]">
+                        <td className="px-3 py-3">
+                          <Link href={`/${locale}/stages/${s.label.toLowerCase().replace(".", "-")}`} className="font-medium text-[#f0c040] hover:underline">
+                            {s.label} {s.name}
+                          </Link>
+                        </td>
+                        <td className="px-3 py-3 text-[#aaa]">{s.difficulty}</td>
+                        <td className="px-3 py-3">
+                          <span className={`rounded-full px-2 py-0.5 text-[11px] ${drop.source === "boss" ? "bg-[#2a1515] text-[#ff6b6b]" : "bg-[#152a15] text-[#6bff6b]"}`}>
+                            {drop.source === "boss" ? "Boss" : (isZh ? "怪物" : "Monster")}
+                          </span>
+                        </td>
+                        <td className="px-3 py-3 font-semibold text-[#f0c040]">{formatDropRate(drop.rate)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </Section>
+          )}
+
+          {/* ── Hero compatibility ── */}
+          {usableBy.length > 0 && (
+            <Section title={isZh ? "适用职业" : "Usable By"} eyebrow={isZh ? "职业匹配" : "Class match"}>
+              <div className="flex flex-wrap gap-2">
+                {usableBy.map((cls) => (
+                  <Link
+                    key={cls}
+                    href={`/${locale}/heroes/${cls.toLowerCase()}`}
+                    className="border border-[#333] bg-[#101010] px-3 py-2 text-sm text-[#ddd] hover:border-[#d4a017] hover:text-[#f0c040]"
+                  >
+                    {cls}
+                  </Link>
+                ))}
+              </div>
+            </Section>
+          )}
+
+          <Section title={isZh ? "决策建议" : "Decision Guide"}>
+            <div className="border border-[#252525] bg-[#101010] p-4 text-sm leading-7 text-[#aaa]">
+              {isZh
+                ? "使用顺序：先确认是否当前职业可用 → 再看是否可交易 → 最后看真实市场数据。有掉率时优先刷高掉率关卡，有市场价时结合掉率计算期望收益。"
+                : "Priority: check if your class can use it → check tradability → check real market data. Farm high-rate stages first, combine with market price for profit estimates when both exist."}
             </div>
           </Section>
           <Section title={isZh ? "相关物品" : "Related Items"}>

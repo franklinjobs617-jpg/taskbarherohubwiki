@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { MobileNav } from "@/components/layout/mobile-nav";
+import { NavProvider } from "@/components/layout/nav-provider";
 import { SiteFooter } from "@/components/layout/site-footer";
-import { SiteHeader } from "@/components/layout/site-header";
 import { isLocale, SITE_URL } from "@/lib/game-data/data";
 
 type Props = {
@@ -64,10 +63,8 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body className="min-h-full bg-[#090909] text-[#d8d1c2] antialiased">
         <NextIntlClientProvider messages={messages}>
           <div className="flex min-h-screen flex-col">
-            <SiteHeader />
-            <main className="flex-1 pb-16 md:pb-0">{children}</main>
+            <NavProvider>{children}</NavProvider>
             <SiteFooter />
-            <MobileNav />
           </div>
         </NextIntlClientProvider>
       </body>
