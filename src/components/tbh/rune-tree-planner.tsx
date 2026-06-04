@@ -100,7 +100,14 @@ export function RuneTreePlanner({ runes, locale }: { runes: RuneNode[]; locale: 
     if (!node) return;
     const observer = new ResizeObserver(resetView);
     observer.observe(node);
-    return () => observer.disconnect();
+    const lockPageScroll = (event: WheelEvent) => {
+      event.preventDefault();
+    };
+    node.addEventListener("wheel", lockPageScroll, { passive: false });
+    return () => {
+      observer.disconnect();
+      node.removeEventListener("wheel", lockPageScroll);
+    };
   }, []);
 
   function zoomBy(delta: number) {
@@ -225,7 +232,7 @@ export function RuneTreePlanner({ runes, locale }: { runes: RuneNode[]; locale: 
           onPointerUp={() => {
             dragRef.current = null;
           }}
-          className="relative h-[520px] touch-none overflow-hidden bg-[#161008] cursor-grab active:cursor-grabbing sm:h-[620px]"
+          className="relative h-[520px] touch-none overscroll-contain overflow-hidden bg-[#161008] cursor-grab active:cursor-grabbing sm:h-[620px]"
           style={{
             backgroundImage: "radial-gradient(circle at 1px 1px, rgba(240,192,64,0.14) 1px, transparent 0)",
             backgroundSize: "32px 32px",
