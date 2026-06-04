@@ -75,6 +75,7 @@ export type MarkdownBlock =
   | { type: "ul"; items: string[] }
   | { type: "ol"; items: string[] }
   | { type: "p"; text: string }
+  | { type: "code"; text: string }
   | { type: "img"; src: string; alt: string }
   | { type: "table"; headers: string[]; rows: string[][] };
 
@@ -84,6 +85,7 @@ export function renderMarkdownish(content: string): MarkdownBlock[] {
   let paragraph: string[] = [];
   let list: { type: "ul" | "ol"; items: string[] } | null = null;
   let table: string[] = [];
+  let code: string[] | null = null;
 
   const flushParagraph = () => {
     if (!paragraph.length) return;
@@ -116,6 +118,23 @@ export function renderMarkdownish(content: string): MarkdownBlock[] {
 
   for (const rawLine of lines) {
     const line = rawLine.trim();
+
+    if (line.startsWith("```")) {
+      flushAll();
+      if (code) {
+        blocks.push({ type: "code", text: code.join("\n").trim() });
+        code = null;
+      } else {
+        code = [];
+      }
+      continue;
+    }
+
+    if (code) {
+      code.push(rawLine.trimEnd());
+      continue;
+    }
+
     if (!line) {
       flushAll();
       continue;
