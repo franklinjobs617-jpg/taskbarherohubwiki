@@ -321,22 +321,22 @@ img[data-pixel] {
 
 .guide-deck {
   max-width: 700px;
-  margin: 18px 0 0;
-  color: #d7c8aa;
-  font-size: 18px;
-  line-height: 1.85;
+  margin: 14px 0 0;
+  color: #b8a98a;
+  font-size: 16px;
+  line-height: 1.7;
 }
 
 .guide-answer {
   max-width: 700px;
-  margin: 22px 0 0;
+  margin: 18px 0 0;
   border-left: 3px solid #c87925;
-  background: linear-gradient(90deg, rgba(200, 121, 37, 0.16), transparent);
-  padding: 14px 18px;
+  background: linear-gradient(90deg, rgba(200, 121, 37, 0.12), transparent);
+  padding: 12px 16px;
   color: #f0c040;
-  font-size: 17px;
-  font-weight: 650;
-  line-height: 1.7;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.6;
 }
 
 .guide-figure {
@@ -425,42 +425,42 @@ img[data-pixel] {
 
 .guide-body {
   margin-top: 44px;
-  color: #eadfca;
-  font-size: 18px;
-  line-height: 1.9;
+  color: #d8cab0;
+  font-size: 16px;
+  line-height: 1.75;
 }
 
 .guide-body h2 {
-  margin-top: 52px;
+  margin-top: 44px;
 }
 
 .guide-body h3 {
-  margin: 34px 0 10px;
+  margin: 28px 0 8px;
   color: #f1d39a;
-  font-size: 22px;
-  font-weight: 720;
-  line-height: 1.35;
+  font-size: 18px;
+  font-weight: 650;
+  line-height: 1.4;
 }
 
 .guide-body p {
-  margin: 0 0 22px;
+  margin: 0 0 16px;
 }
 
 .guide-body strong {
   color: #fff2c7;
-  font-weight: 760;
+  font-weight: 650;
 }
 
 .guide-body ul,
 .guide-body ol {
   display: grid;
-  gap: 10px;
-  margin: 18px 0 26px;
-  padding-left: 1.4em;
+  gap: 6px;
+  margin: 14px 0 20px;
+  padding-left: 1.3em;
 }
 
 .guide-body li {
-  padding-left: 0.25em;
+  padding-left: 0.2em;
 }
 
 .guide-table-wrap {
@@ -688,11 +688,11 @@ img[data-pixel] {
   .guide-deck,
   .guide-answer,
   .guide-body {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .guide-body {
-    line-height: 1.85;
+    line-height: 1.7;
   }
 
   .guide-section h2,
