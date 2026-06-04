@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: locale === "zh"
       ? "中文优先的 TaskBar Hero 数据库，覆盖物品、英雄、技能、符文、宝箱、关卡、材料效果、攻略和 Steam 市场状态。"
       : "A bilingual TaskBar Hero database for items, heroes, skills, runes, chests, stages, material effects, guides, and Steam Market status.",
-    alternates: { canonical: locale === "en" ? "/" : `/${locale}`, languages: { en: "/", zh: "/zh", ja: "/ja", "x-default": "/" } },
+    alternates: { canonical: `/${locale}`, languages: { en: "/en", zh: "/zh", ja: "/ja", "x-default": "/en" } },
   };
 }
 

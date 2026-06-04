@@ -23,10 +23,10 @@ const NAV_ITEMS = [
 export function SiteHeader() {
   const pathname = usePathname();
   const seg = pathname.split("/")[1];
-  const locale = ["zh", "ja"].includes(seg) ? seg : "en";
+  const locale = ["en", "zh", "ja"].includes(seg) ? seg : "en";
   const { menuOpen, toggleMenu, closeMenu } = useNav();
 
-  const lpath = (path: string) => locale === "en" ? path : `/${locale}${path}`;
+  const lpath = (path: string) => `/${locale}${path === "/" ? "" : path}`;
 
   return (
     <header className="sticky top-0 z-50 border-b border-[#27272a] bg-[#0a0a0a]/95 backdrop-blur">

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useNav } from "./nav-provider";
 
-const KNOWN_LOCALES = ["zh", "ja"];
+const KNOWN_LOCALES = ["en", "zh", "ja"];
 
 function useLocale() {
   const pathname = usePathname();
@@ -14,7 +14,7 @@ function useLocale() {
 }
 
 function lpath(locale: string, path: string) {
-  return locale === "en" ? path : `/${locale}${path}`;
+  return `/${locale}${path === "/" ? "" : path}`;
 }
 
 export function MobileNav() {

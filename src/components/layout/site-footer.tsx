@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { DATA_VERSION, UPDATED_AT } from "@/lib/game-data/data";
 
-const KNOWN = ["zh", "ja"];
+const KNOWN = ["en", "zh", "ja"];
 
 const T = {
   zh: {
@@ -32,7 +32,7 @@ export function SiteFooter() {
   const seg = pathname.split("/")[1];
   const locale = KNOWN.includes(seg) ? seg : "en";
   const t = T[locale as keyof typeof T] ?? T.en;
-  const lpath = (path: string) => locale === "en" ? path : `/${locale}${path}`;
+  const lpath = (path: string) => `/${locale}${path === "/" ? "" : path}`;
 
   return (
     <footer className="border-t border-[#27272a] bg-[#0a0a0a]">
