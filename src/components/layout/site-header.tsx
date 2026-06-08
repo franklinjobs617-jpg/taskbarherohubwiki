@@ -1,6 +1,6 @@
 "use client";
 
-import { BarChart3, BookOpen, Boxes, Database, Map, Menu, Search, Shield, Swords, X } from "lucide-react";
+import { BarChart3, BookOpen, Boxes, Bug, Calculator, Database, Map, Menu, Search, Shield, Skull, Swords, Wrench, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { LocaleSwitcher } from "./locale-switcher";
@@ -9,15 +9,18 @@ import { useNav } from "./nav-provider";
 const NAV_ITEMS = [
   { href: "/items", icon: Database, zh: "物品", en: "Items" },
   { href: "/heroes", icon: Swords, zh: "英雄", en: "Heroes" },
+  { href: "/map", icon: Map, zh: "地图", en: "Map" },
+  { href: "/monsters", icon: Skull, zh: "怪物", en: "Monsters" },
   { href: "/market", icon: BarChart3, zh: "市场", en: "Market" },
   { href: "/chests", icon: Boxes, zh: "宝箱", en: "Chests" },
   { href: "/runes", icon: Shield, zh: "符文", en: "Runes" },
-  { href: "/pets", icon: BookOpen, zh: "宠物", en: "Pets" },
+  { href: "/cube", icon: Boxes, zh: "Cube", en: "Cube" },
+  { href: "/buffs", icon: Bug, zh: "Buff", en: "Buffs" },
   { href: "/effects", icon: Search, zh: "效果", en: "Effects" },
-  { href: "/map", icon: Map, zh: "地图", en: "Map" },
-  { href: "/guides", icon: BookOpen, zh: "攻略", en: "Guides" },
+  { href: "/pets", icon: BookOpen, zh: "宠物", en: "Pets" },
   { href: "/builds", icon: Swords, zh: "Build", en: "Builds" },
-  { href: "/tools/profit-calculator", icon: Shield, zh: "工具", en: "Tools" },
+  { href: "/guides/farming", icon: Calculator, zh: "刷图", en: "Farming" },
+  { href: "/tools/farming-calculator", icon: Wrench, zh: "计算器", en: "Calculator" },
 ];
 
 export function SiteHeader() {
@@ -38,7 +41,7 @@ export function SiteHeader() {
 
         {/* Desktop nav */}
         <nav className="hidden h-full items-center lg:flex">
-          {NAV_ITEMS.slice(0, 8).map((item) => {
+          {NAV_ITEMS.map((item) => {
             const Icon = item.icon;
             const href = lpath(item.href);
             const active = pathname.startsWith(href);

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowRight, Coins, Route, ShieldCheck, Sparkles, UnlockKeyhole } from "lucide-react";
+import { Coins, Route, Sparkles, UnlockKeyhole } from "lucide-react";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { RuneTreePlanner, type RuneNode } from "@/components/tbh/rune-tree-planner";
 import { type Locale } from "@/lib/game-data/data";
@@ -31,7 +30,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function RunesPage({ params }: Props) {
   const { locale } = await params;
   const runes = extRunes() as RuneNode[];
-  const categories = Array.from(new Set(runes.map((rune) => rune.category || "Other")));
   const unlocks = runes.filter((rune) => rune.isUnlock);
   const totalCost = runes.reduce((sum, rune) => sum + rune.totalCost, 0);
   const edges = runes.reduce((sum, rune) => sum + rune.next.length, 0);
@@ -55,51 +53,6 @@ export default async function RunesPage({ params }: Props) {
           <Metric icon={<Route className="h-4 w-4" />} label={copy(locale, "连接", "Links", "接続")} value={edges} />
           <Metric icon={<UnlockKeyhole className="h-4 w-4" />} label={copy(locale, "关键解锁", "Unlocks", "重要解放")} value={unlocks.length} />
           <Metric icon={<Coins className="h-4 w-4" />} label={copy(locale, "全满总成本", "Full cost", "全取得コスト")} value={formatNumber(totalCost)} />
-        </div>
-      </section>
-
-      <section className="mb-6 grid gap-3 lg:grid-cols-[1fr_360px]">
-        <div className="border border-[#2d281e] bg-[#0d0b08] p-4">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#c87925]">{copy(locale, "调研结论", "Research verdict", "調査結論")}</p>
-          <h2 className="mt-2 text-xl font-semibold text-[#fff7df]">
-            {copy(locale, "数据库足够做符文树，但不能只做列表", "The database can support a real tree, not just a list", "データは一覧ではなくツリー表示に十分")}
-          </h2>
-          <p className="mt-3 text-sm leading-7 text-[#d8c7a6]">
-            {copy(
-              locale,
-              "Google Trends 里 rune、runes、rune tree 都在上涨，说明用户想要的是加点顺序。现有数据包含坐标、后续节点、前置等级、每级消耗和总消耗，已经能支撑类似 DNF 技能树的展示。",
-              "Google Trends shows rising demand for rune, runes, and rune tree. Users want priority order, not a spreadsheet. The data already contains coordinates, outgoing links, required levels, per-level costs, and total costs, enough for a DNF-like skill tree.",
-              "Google Trends では rune、runes、rune tree が上昇しています。ユーザーが欲しいのは表ではなく優先順です。既存データには座標、接続、前提レベル、各レベルコスト、総コストがあり、DNF風ツリー表示に十分です。",
-            )}
-          </p>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {categories.map((category) => (
-              <span key={category} className="border border-[#342a1a] bg-[#11100d] px-2.5 py-1 text-xs text-[#d8c7a6]">
-                {category}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="border border-[#3a2a16] bg-[#171006] p-4">
-          <div className="flex items-start gap-3">
-            <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#f0c040]" />
-            <div>
-              <p className="font-semibold text-[#fff7df]">{copy(locale, "加点口径", "Planning rule", "優先ルール")}</p>
-              <p className="mt-2 text-sm leading-6 text-[#d8c7a6]">
-                {copy(
-                  locale,
-                  "卡关时优先英雄/防御节点，稳定清图后补收益、宝箱和自动化。",
-                  "If stuck, prioritize hero/defense nodes first. After stable clears, add income, chests, and automation.",
-                  "詰まる時は英雄/防御ノードを優先。安定後に報酬、宝箱、自動化を追加。",
-                )}
-              </p>
-              <Link href={`/${locale}/guides/beginner/getting-started`} className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#f0c040] hover:text-[#ffd76a]">
-                {copy(locale, "查看新手路线", "Open beginner route", "初心者ルートを見る")}
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
 
