@@ -34,7 +34,10 @@ type RouteKey = "early" | "heroSlots" | "farming" | "automation";
 
 const WIDTH = 2376;
 const HEIGHT = 1080;
-const NODE = 22;
+const NODE = 32; // DNF-style hexagonal node
+
+/** Flat-top hexagon clip-path used by DNF skill-tree nodes */
+const HEX_CLIP = "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)";
 
 const tones: Record<string, { bg: string; border: string; glow: string; text: string; line: string; label: Record<Locale, string> }> = {
   Hero: { bg: "#451615", border: "#ff6b4a", glow: "rgba(255,107,74,0.28)", text: "#ffd8b9", line: "#9c3e2c", label: { zh: "英雄", en: "Hero", ja: "英雄" } },
@@ -247,6 +250,32 @@ export function RuneTreePlanner({ runes, locale }: { runes: RuneNode[]; locale: 
             }}
           >
             <svg className="absolute inset-0 h-full w-full" aria-hidden="true">
+              <defs>
+                <filter id="dnf-glow">
+                  <feGaussianBlur stdDeviation="2.5" result="blur" />
+                  <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                </filter>
+              </defs>
+              {/* glow layer */}
+              {edges.map((edge) => {
+                const tone = tones[edge.from.category] ?? tones.Hero;
+                if (!edge.route) return null;
+                return (
+                  <line
+                    key={`glow-${edge.from.key}-${edge.to.key}`}
+                    x1={edge.from.x}
+                    y1={edge.from.y}
+                    x2={edge.to.x}
+                    y2={edge.to.y}
+                    stroke="#f0c040"
+                    strokeWidth={5}
+                    strokeOpacity={0.55}
+                    strokeLinecap="round"
+                    filter="url(#dnf-glow)"
+                  />
+                );
+              })}
+              {/* main lines */}
               {edges.map((edge) => {
                 const tone = tones[edge.from.category] ?? tones.Hero;
                 return (
@@ -256,9 +285,9 @@ export function RuneTreePlanner({ runes, locale }: { runes: RuneNode[]; locale: 
                     y1={edge.from.y}
                     x2={edge.to.x}
                     y2={edge.to.y}
-                    stroke={edge.route ? "#f0c040" : tone.line}
-                    strokeWidth={edge.route ? 5 : 2}
-                    strokeOpacity={edge.route ? 0.95 : 0.46}
+                    stroke={edge.route ? "#ffe180" : tone.line}
+                    strokeWidth={edge.route ? 2.5 : 1.5}
+                    strokeOpacity={edge.route ? 0.9 : 0.35}
                     strokeLinecap="round"
                   />
                 );
@@ -271,46 +300,78 @@ export function RuneTreePlanner({ runes, locale }: { runes: RuneNode[]; locale: 
               const inRoute = routeSet.has(rune.key);
               const matched = !matches || matches.has(rune.key);
               const step = routeIndex.get(rune.key);
+              const iconSrc = rune.icon ? runeIconSrc(rune.icon) : null;
               return (
                 <button
                   key={rune.key}
                   onClick={() => setSelectedKey(rune.key)}
                   onPointerDown={(event) => event.stopPropagation()}
                   title={`${rune.name}: ${rune.effect}`}
-                  className={`absolute rounded-[4px] border transition hover:z-20 hover:scale-125 ${
-                    active ? "z-30 scale-125 ring-4 ring-[#f0c040]/45" : inRoute ? "z-20" : "z-10"
+                  className={`absolute transition-all duration-150 hover:z-20 ${
+                    active ? "z-30 scale-125" : inRoute ? "z-20" : "z-10"
                   } ${matched ? "opacity-100" : "opacity-20"}`}
                   style={{
                     left: rune.x - NODE / 2,
                     top: rune.y - NODE / 2,
                     width: NODE,
                     height: NODE,
-                    backgroundColor: tone.bg,
-                    borderColor: inRoute ? "#f0c040" : tone.border,
-                    boxShadow: active || inRoute ? `0 0 20px ${tone.glow}` : "0 2px 8px rgba(0,0,0,0.45)",
                   }}
                 >
-                  {rune.icon ? (
-                    <Image
-                      src={runeIconSrc(rune.icon)!}
-                      alt={rune.name}
-                      width={22}
-                      height={22}
-                      className="absolute inset-0 h-full w-full rounded-[3px] object-cover"
-                      unoptimized
+                  {/* Hex outer glow */}
+                  <span
+                    className="absolute -inset-[3px] transition-opacity duration-150"
+                    style={{
+                      clipPath: HEX_CLIP,
+                      opacity: active || inRoute ? 1 : 0,
+                      boxShadow: active || inRoute ? `0 0 18px ${tone.glow}, 0 0 36px ${tone.glow}` : "none",
+                    }}
+                  />
+                  {/* Hex body */}
+                  <span
+                    className="absolute inset-0 flex items-center justify-center transition-colors duration-150"
+                    style={{
+                      clipPath: HEX_CLIP,
+                      backgroundColor: tone.bg,
+                      border: `2px solid ${inRoute ? "#f0c040" : tone.border}`,
+                      boxShadow: active ? `inset 0 0 12px ${tone.glow}` : inRoute ? `inset 0 0 6px ${tone.glow}` : "inset 0 1px 3px rgba(0,0,0,0.5)",
+                    }}
+                  >
+                    {/* Hex highlight (top-left sheen) */}
+                    <span
+                      className="absolute inset-0 opacity-25"
+                      style={{
+                        clipPath: HEX_CLIP,
+                        background: `linear-gradient(135deg, ${tone.border}44 0%, transparent 50%)`,
+                      }}
                     />
-                  ) : (
-                    <>
-                      <span className="absolute inset-[4px] rounded-[2px] border border-white/15" style={{ backgroundColor: tone.border }} />
-                      <span className="absolute inset-[8px] rounded-full bg-[#fff7df]/85" />
-                    </>
-                  )}
-                  <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 border border-[#2e2619] bg-[#060504] px-1 text-[9px] font-semibold leading-3 text-[#f5db9a]">
-                    {rune.maxLevel}
+                    {/* Icon */}
+                    {iconSrc ? (
+                      <Image
+                        src={iconSrc}
+                        alt={rune.name}
+                        width={32}
+                        height={32}
+                        className="relative z-10 h-5 w-5 object-contain"
+                        style={{ imageRendering: "pixelated" }}
+                        unoptimized
+                      />
+                    ) : (
+                      <span className="relative z-10 h-2 w-2 rounded-full bg-[#fff7df]/85" />
+                    )}
                   </span>
-                  {rune.isUnlock ? <UnlockKeyhole className="absolute -right-2 -top-2 h-4 w-4 text-[#f0c040]" /> : null}
+                  {/* maxLevel badge */}
+                  <span className="absolute -bottom-3.5 left-1/2 -translate-x-1/2 border border-[#3b2b17] bg-[#0a0806] px-1.5 text-[10px] font-bold leading-3 text-[#f0c040] shadow-[0_0_6px_rgba(240,192,64,0.3)]">
+                    {rune.maxLevel > 1 ? `Lv${rune.maxLevel}` : ""}
+                  </span>
+                  {/* Unlock icon */}
+                  {rune.isUnlock ? (
+                    <span className="absolute -right-1 -top-1 z-20 flex h-5 w-5 items-center justify-center rounded-full border border-[#f0c040] bg-[#120d06] shadow-[0_0_8px_rgba(240,192,64,0.4)]">
+                      <UnlockKeyhole className="h-3 w-3 text-[#f0c040]" />
+                    </span>
+                  ) : null}
+                  {/* Route step number */}
                   {step ? (
-                    <span className="absolute -left-2 -top-2 flex h-4 min-w-4 items-center justify-center border border-[#f0c040] bg-[#f0c040] px-1 text-[9px] font-black leading-4 text-[#120d06]">
+                    <span className="absolute -left-1 -top-1 z-20 flex h-5 min-w-5 items-center justify-center rounded-full border-2 border-[#120d06] bg-[#f0c040] px-1 text-[9px] font-black leading-4 text-[#120d06] shadow-[0_0_8px_rgba(240,192,64,0.5)]">
                       {step}
                     </span>
                   ) : null}
@@ -335,14 +396,34 @@ function RuneDetail({ rune, locale, route, routeStep }: { rune: RuneNode; locale
   return (
     <aside className="border border-[#3b2b17] bg-[#100c08] p-4 xl:sticky xl:top-20 xl:self-start">
       <div className="flex items-start gap-3">
-        <div className="relative h-12 w-12 rounded-[6px] border" style={{ backgroundColor: tone.bg, borderColor: tone.border }}>
+        <div
+          className="relative flex h-14 w-14 items-center justify-center"
+          style={{
+            clipPath: HEX_CLIP,
+            backgroundColor: tone.bg,
+            border: `2.5px solid ${tone.border}`,
+            boxShadow: `0 0 16px ${tone.glow}, inset 0 0 10px ${tone.glow}`,
+          }}
+        >
+          <span
+            className="absolute inset-0 opacity-20"
+            style={{
+              clipPath: HEX_CLIP,
+              background: `linear-gradient(135deg, ${tone.border}66 0%, transparent 55%)`,
+            }}
+          />
           {rune.icon ? (
-            <Image src={runeIconSrc(rune.icon)!} alt={rune.name} width={48} height={48} className="h-full w-full rounded-[5px] object-cover" unoptimized />
+            <Image
+              src={runeIconSrc(rune.icon)!}
+              alt={rune.name}
+              width={48}
+              height={48}
+              className="relative z-10 h-7 w-7 object-contain"
+              style={{ imageRendering: "pixelated" }}
+              unoptimized
+            />
           ) : (
-            <>
-              <span className="absolute inset-[9px] rounded-[3px]" style={{ backgroundColor: tone.border }} />
-              <span className="absolute inset-[18px] rounded-full bg-[#fff7df]" />
-            </>
+            <span className="relative z-10 h-3 w-3 rounded-full bg-[#fff7df]/90" />
           )}
         </div>
         <div className="min-w-0">
