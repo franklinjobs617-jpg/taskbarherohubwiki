@@ -40,7 +40,7 @@ export function SiteHeader() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden h-full items-center lg:flex">
+        <nav className="hidden h-full items-center lg:flex overflow-x-auto scrollbar-none">
           {NAV_ITEMS.map((item) => {
             const Icon = item.icon;
             const href = lpath(item.href);

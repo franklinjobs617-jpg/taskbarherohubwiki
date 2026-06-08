@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { PageHeader, PageShell } from "@/components/tbh/page";
-import { type Locale } from "@/lib/game-data/data";
+import { assetPath, type Locale } from "@/lib/game-data/data";
 import { pageAlternates } from "@/lib/seo";
 import itemsJson from "@/../tbh_data/items.json";
 
@@ -92,18 +93,28 @@ export default async function CubePage({ params }: Props) {
               </p>
 
               <div className="grid gap-1 sm:grid-cols-2 lg:grid-cols-3">
-                {matItems.slice(0, 12).map((item) => (
+                {matItems.slice(0, 12).map((item) => {
+                  const iconSrc = item.icon ? (item.icon.startsWith("/game/") ? item.icon : `/game/game/items/materials/${item.icon}.png`) : null;
+                  return (
                   <Link
                     key={item.slug}
                     href={`/${locale}/items/${item.slug}`}
                     className="flex items-center gap-2 rounded-sm border border-[#27272a] bg-[#0d0d0d] px-3 py-1.5 text-xs transition-colors hover:border-amber-600/30 group"
                   >
+                    <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-sm border border-[#27272a] bg-[#0a0a0a]">
+                      {iconSrc ? (
+                        <Image src={iconSrc} alt="" width={20} height={20} className="object-contain" unoptimized />
+                      ) : (
+                        <span className="text-[8px] text-[#555]">-</span>
+                      )}
+                    </div>
                     <span className="truncate text-[#9d9d9d] group-hover:text-white transition-colors">
                       {item.name?.[locale === "zh" ? "zh-Hans" : locale === "ja" ? "ja-JP" : "en-US"] ?? item.slug}
                     </span>
                     <span className="ml-auto shrink-0 text-[10px] text-[#555]">{item.grade}</span>
                   </Link>
-                ))}
+                  );
+                })}
                 {matItems.length > 12 && (
                   <div className="flex items-center justify-center rounded-sm border border-dashed border-[#27272a] px-3 py-1.5 text-[10px] text-[#555]">
                     +{matItems.length - 12} {isZh ? "更多" : "more"}
