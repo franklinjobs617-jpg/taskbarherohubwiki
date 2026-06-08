@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ItemCard } from "@/components/tbh/cards";
 import { PageHeader, PageShell } from "@/components/tbh/page";
+import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
 import { allItems, gradeNames, itemName, marketForItem, slotNames, type Locale } from "@/lib/game-data/data";
 import { extItems } from "@/lib/game-data/external";
 
@@ -15,11 +16,11 @@ const HERO_CLASSES = ["Knight", "Ranger", "Sorcerer", "Priest", "Hunter", "Slaye
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: locale === "zh" ? "TaskBar Hero 物品数据库｜装备、材料、掉落与市场价格" : "TaskBar Hero Item Database",
+    title: locale === "zh" ? "物品数据库 — 装备、材料、掉落与市场价格" : locale === "ja" ? "アイテムデータベース — 装備、材料、ドロップ" : "Item Database — Gear, Materials, Drops & Market Prices",
     description: locale === "zh"
       ? "按名称、稀有度、部位、职业和类型筛选全部装备、材料和宝箱。支持中英文搜索和市场价格筛选。"
       : "Filter all gear, materials, and chests by name, rarity, slot, class, and type. Supports bilingual search and market status.",
-    alternates: { canonical: `/${locale}/items`, languages: { zh: "/zh/items", en: "/en/items", "x-default": "/zh/items" } },
+    alternates: { canonical: locale === "en" ? "/items" : `/${locale}/items`, languages: { zh: "/zh/items", en: "/items", ja: "/ja/items", ko: "/ko/items", "x-default": "/items" } },
   };
 }
 
@@ -67,6 +68,20 @@ export default async function ItemsPage({ params, searchParams }: Props) {
 
   return (
     <PageShell>
+      <SeoJsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: isZh ? "物品数据库" : "Item Database",
+        description: isZh
+          ? "按名称、稀有度、部位、职业和类型筛选全部装备、材料和宝箱。"
+          : "Filter all gear, materials, and chests by name, rarity, slot, class, and type.",
+        numberOfItems: rows.length,
+        itemListElement: rows.slice(0, 50).map((item, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: `https://taskbarhero.nanobananas.me${locale === "en" ? "" : "/" + locale}/items/${item.slug}`,
+        })),
+      }} />
       <PageHeader
         kicker="Items"
         title={isZh ? "物品数据库" : "Item Database"}

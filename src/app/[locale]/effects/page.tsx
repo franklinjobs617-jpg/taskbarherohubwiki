@@ -11,7 +11,7 @@ type Props = { params: Promise<{ locale: Locale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: locale === "zh" ? "TaskBar Hero 材料效果表｜装饰、雕刻、铭刻属性" : locale === "ja" ? "TaskBar Hero 素材効果表" : "TaskBar Hero Material Effects",
+    title: locale === "zh" ? "材料效果表 — 装饰、雕刻、铭刻属性" : locale === "ja" ? "素材効果表 — 装飾、刻印、銘刻" : "Material Effects — Decoration, Engraving & Inscription",
     alternates: pageAlternates(locale, "/effects"),
   };
 }

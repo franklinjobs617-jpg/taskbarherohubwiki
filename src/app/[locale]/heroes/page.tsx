@@ -4,6 +4,7 @@ import { ArrowRight, BookOpen, Shield, Swords, Timer } from "lucide-react";
 import { HeroCard, Section } from "@/components/tbh/cards";
 import { HeroCompareMatrix, HeroRadar } from "@/components/tbh/hero-compare";
 import { PageHeader, PageShell } from "@/components/tbh/page";
+import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
 import { allHeroes, heroName, heroSlug, type Locale } from "@/lib/game-data/data";
 import { heroProfile, heroWeaponLabel } from "@/lib/hero-content";
 import { pageAlternates } from "@/lib/seo";
@@ -48,6 +49,17 @@ export default async function HeroesPage({ params }: Props) {
 
   return (
     <PageShell>
+      <SeoJsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: isZh ? "英雄资料" : "Heroes",
+        numberOfItems: heroes.length,
+        itemListElement: heroes.map((hero, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: `https://taskbarhero.nanobananas.me${locale === "en" ? "" : "/" + locale}/heroes/${heroSlug(hero)}`,
+        })),
+      }} />
       <PageHeader
         kicker="Heroes"
         title={isZh ? "英雄资料与职业选择" : "Heroes and Class Decisions"}

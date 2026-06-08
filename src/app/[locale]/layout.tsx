@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -18,36 +19,40 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: {
       default: isZh
-        ? "TaskBar Hero 中文 Wiki｜物品、掉率、Steam 市场价格"
-        : "TaskBar Hero Wiki｜Items, Drop Rates & Steam Market Prices",
-      template: "%s｜TaskBar Hero Wiki",
+        ? "TBH: Task Bar Hero Wiki — 物品数据库、英雄配装、掉落查询与 Steam 市场"
+        : "TBH: Task Bar Hero Wiki — Items, Builds, Drop Finder & Steam Market",
+      template: "%s | TBH: Task Bar Hero Wiki",
     },
     description: isZh
-      ? "中文优先的 TaskBar Hero 数据库，覆盖物品、宝箱、关卡、效果、英雄、攻略和 Steam 市场价格。"
-      : "A TaskBar Hero database for items, chests, stages, effects, heroes, guides, and Steam Market references.",
+      ? "最完整的 TBH: Task Bar Hero Wiki。搜索 5,944 件物品、对比 6 位英雄、查找掉落位置、查看 Steam 市场价格、规划刷图路线。数据来自游戏文件解包。"
+      : "The complete TBH: Task Bar Hero wiki. Search 5,944 items, compare 6 hero classes, find drop locations, check Steam Market prices, and plan your farming route. Data mined from game files.",
     metadataBase: new URL(SITE_URL),
     robots: { index: true, follow: true },
+    alternates: {
+      canonical: locale === "en" ? "/" : `/${locale}`,
+      languages: { en: "/", zh: "/zh", ja: "/ja", ko: "/ko", "x-default": "/" },
+    },
     openGraph: {
       type: "website",
-      siteName: "TaskBar Hero Wiki",
+      siteName: "TBH: Task Bar Hero Wiki",
       locale: isZh ? "zh_CN" : "en_US",
       images: [
         {
           url: "/og-image.jpg",
           width: 1200,
           height: 630,
-          alt: "TaskBar Hero Wiki",
+          alt: "TBH: Task Bar Hero Wiki",
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
       title: isZh
-        ? "TaskBar Hero 中文 Wiki｜物品、掉率、Steam 市场价格"
-        : "TaskBar Hero Wiki｜Items, Drop Rates & Steam Market Prices",
+        ? "TBH: Task Bar Hero Wiki — 物品数据库、英雄配装、掉落查询与 Steam 市场"
+        : "TBH: Task Bar Hero Wiki — Items, Builds, Drop Finder & Steam Market",
       description: isZh
-        ? "中文优先的 TaskBar Hero 数据库，覆盖物品、宝箱、关卡、效果、英雄、攻略和 Steam 市场价格。"
-        : "A TaskBar Hero database for items, chests, stages, effects, heroes, guides, and Steam Market references.",
+        ? "最完整的 TBH: Task Bar Hero Wiki。搜索 5,944 件物品、对比 6 位英雄、查找掉落位置、查看 Steam 市场价格、规划刷图路线。数据来自游戏文件解包。"
+        : "The complete TBH: Task Bar Hero wiki. Search 5,944 items, compare 6 hero classes, find drop locations, check Steam Market prices, and plan your farming route. Data mined from game files.",
       images: ["/og-image.jpg"],
     },
   };
@@ -61,9 +66,8 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale} className="h-full">
       <head>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3383070348689557" crossOrigin="anonymous" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-87KVJGHX8D" />
-        <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-87KVJGHX8D');` }} />
+        <link rel="llms" href="/llms.txt" />
+        <meta name="llms:generated" content="2026-06-08" />
       </head>
       <body className="min-h-full bg-[#090909] text-[#d8d1c2] antialiased">
         <NextIntlClientProvider messages={messages}>
@@ -72,6 +76,9 @@ export default async function LocaleLayout({ children, params }: Props) {
             <SiteFooter />
           </div>
         </NextIntlClientProvider>
+        <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3383070348689557" crossOrigin="anonymous" strategy="afterInteractive" />
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-87KVJGHX8D" strategy="afterInteractive" />
+        <Script id="gtag-init" strategy="afterInteractive">{`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-87KVJGHX8D');`}</Script>
       </body>
     </html>
   );

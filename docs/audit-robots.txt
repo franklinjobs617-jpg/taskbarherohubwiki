@@ -1,0 +1,5 @@
+﻿User-Agent: *
+Allow: /
+
+Sitemap: https://taskbarhero.nanobananas.me/sitemap.xml
+

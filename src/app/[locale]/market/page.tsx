@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ConfidenceBadge, RarityBadge } from "@/components/tbh/badges";
 import { DataNotice, PageHeader, PageShell } from "@/components/tbh/page";
+import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
 import { itemName, marketRows, slotNames, type Locale } from "@/lib/game-data/data";
 
 type Props = {
@@ -12,9 +13,9 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: locale === "zh" ? "TaskBar Hero Steam 市场｜可交易物品与匹配状态" : "TaskBar Hero Steam Market｜Tradable Items and Match Status",
+    title: locale === "zh" ? "Steam 市场 — 可交易物品与匹配状态" : locale === "ja" ? "Steam マーケット — 取引可能アイテム" : "Steam Market — Tradable Items & Match Status",
     description: locale === "zh" ? "查看 TaskBar Hero 可交易物品、Steam 名称匹配状态、数据更新时间和市场风险。" : "Check tradable items, Steam name matching status, data freshness, and market risk.",
-    alternates: { canonical: `/${locale}/market`, languages: { zh: "/zh/market", en: "/en/market", "x-default": "/zh/market" } },
+    alternates: { canonical: locale === "en" ? "/market" : `/${locale}/market`, languages: { zh: "/zh/market", en: "/market", ja: "/ja/market", ko: "/ko/market", "x-default": "/market" } },
   };
 }
 
@@ -30,6 +31,17 @@ export default async function MarketPage({ params, searchParams }: Props) {
 
   return (
     <PageShell>
+      <SeoJsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: isZh ? "Steam 市场 — 可交易物品" : "Steam Market — Tradable Items",
+        numberOfItems: rows.length,
+        itemListElement: rows.slice(0, 50).map(({ item }, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: `https://taskbarhero.nanobananas.me${locale === "en" ? "" : "/" + locale}/market/${item.slug}`,
+        })),
+      }} />
       <PageHeader
         kicker="Market"
         title={isZh ? "Steam 市场状态" : "Steam Market Status"}

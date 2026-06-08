@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: guide.title[locale] as string,
     description: guide.description[locale] as string,
-    alternates: { canonical: `/${locale}/guides/${category}/${slug}`, languages: { zh: `/zh/guides/${category}/${slug}`, en: `/en/guides/${category}/${slug}`, "x-default": `/zh/guides/${category}/${slug}` } },
+    alternates: { canonical: locale === "en" ? `/guides/${category}/${slug}` : `/${locale}/guides/${category}/${slug}`, languages: { zh: `/zh/guides/${category}/${slug}`, en: `/guides/${category}/${slug}`, ja: `/ja/guides/${category}/${slug}`, ko: `/ko/guides/${category}/${slug}`, "x-default": `/guides/${category}/${slug}` } },
   };
 }
 
