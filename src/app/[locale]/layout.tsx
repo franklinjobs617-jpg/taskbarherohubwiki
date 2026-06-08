@@ -61,6 +61,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale} className="h-full">
       <head>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3383070348689557" crossOrigin="anonymous" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-87KVJGHX8D" />
         <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-87KVJGHX8D');` }} />
       </head>
