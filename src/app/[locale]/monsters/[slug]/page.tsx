@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ArrowRight, PawPrint, Swords } from "lucide-react";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { allMonsters, allStages, text, type Locale } from "@/lib/game-data/data";
+import { extPets } from "@/lib/game-data/external";
 import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale; slug: string }> };
@@ -113,6 +115,44 @@ export default async function MonsterDetailPage({ params }: Props) {
           )}
         </div>
       </div>
+
+      {/* Bottom nav: pet unlock + farming */}
+      {(() => {
+        const relatedPets = extPets().filter((p) => p.unlock.type === "KillMonster" && p.unlock.monsterKey === monster.MonsterKey);
+        return (
+          <div className="mt-8 grid gap-3 border-t border-[#27272a] pt-6 sm:grid-cols-2">
+            <div className="space-y-2">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[#6c6c6c]">
+                {isZh ? "← 相关系统" : "← Related"}
+              </p>
+              <Link href={`/${locale}/monsters`} className="flex items-center gap-2 rounded-sm border border-[#27272a] bg-[#0d0d0d] p-3 text-xs transition-colors hover:border-amber-600/30 group">
+                <Swords className="h-4 w-4 shrink-0 text-[#6c6c6c] group-hover:text-amber-400" />
+                <span className="text-[#9d9d9d] group-hover:text-white">{isZh ? "全部怪物图鉴" : "All Monsters"}</span>
+              </Link>
+            </div>
+            <div className="space-y-2">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[#6c6c6c]">
+                {isZh ? "下一步 →" : "Next Steps →"}
+              </p>
+              {relatedPets.length > 0 && relatedPets.map((pet) => (
+                <Link key={pet.key} href={`/${locale}/pets`} className="flex items-center gap-2 rounded-sm border border-amber-600/20 bg-amber-600/5 p-3 text-xs transition-colors hover:border-amber-400 group">
+                  <PawPrint className="h-4 w-4 shrink-0 text-amber-400" />
+                  <span className="flex-1 text-[#9d9d9d] group-hover:text-white">
+                    {isZh ? `击杀 ${pet.unlock.count ?? "?"} 只可解锁宠物: ${pet.name}` : `Kill ${pet.unlock.count ?? "?"} to unlock pet: ${pet.name}`}
+                  </span>
+                  <ArrowRight className="h-3 w-3 shrink-0 text-[#555] group-hover:text-amber-400" />
+                </Link>
+              ))}
+              {monsterStages.length > 0 && (
+                <Link href={`/${locale}/tools/farming-calculator`} className="flex items-center gap-2 rounded-sm border border-[#27272a] bg-[#0d0d0d] p-3 text-xs transition-colors hover:border-amber-600/30 group">
+                  <ArrowRight className="h-4 w-4 shrink-0 text-[#6c6c6c] group-hover:text-amber-400" />
+                  <span className="text-[#9d9d9d] group-hover:text-white">{isZh ? "Farming 计算器 — 找出最佳刷怪关卡" : "Farming Calculator — find best stage"}</span>
+                </Link>
+              )}
+            </div>
+          </div>
+        );
+      })()}
     </PageShell>
   );
 }
