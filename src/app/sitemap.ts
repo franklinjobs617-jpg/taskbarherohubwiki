@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
-import { allHeroes, allItems, allStages, builds, chestItems, guides, SITE_URL, stageSlug, UPDATED_AT } from "@/lib/game-data/data";
+import { allHeroes, allItems, allMonsters, allStages, builds, chestItems, guides, SITE_URL, stageSlug, UPDATED_AT } from "@/lib/game-data/data";
 
-const locales = ["en", "zh", "ja"] as const;
+const locales = ["en", "zh", "ja", "ko"] as const;
 
 const toUrl = (locale: string, path: string) =>
   locale === "en" ? `${SITE_URL}${path}` : `${SITE_URL}/${locale}${path}`;
@@ -11,7 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPaths = [
     "", "/items", "/market", "/chests", "/effects", "/map", "/stages",
     "/heroes", "/runes", "/skills", "/pets", "/monsters", "/guides", "/builds",
-    "/tools/profit-calculator", "/tools/farming-compare",
+    "/buffs", "/cube", "/guides/farming",
+    "/tools/profit-calculator", "/tools/farming-compare", "/tools/farming-calculator",
     "/updates", "/faq", "/about", "/privacy", "/terms", "/contact",
   ];
 
@@ -33,6 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const heroUrls = allHeroes().flatMap((hero) => locales.map((locale) => ({ url: toUrl(locale, `/heroes/${hero.slug ?? hero.ClassType?.toLowerCase() ?? hero.HeroKey}`), lastModified: updated, changeFrequency: "monthly" as const, priority: 0.6 })));
   const guideUrls = guides.flatMap((guide) => locales.map((locale) => ({ url: toUrl(locale, `/guides/${guide.category}/${guide.slug}`), lastModified: updated, changeFrequency: "weekly" as const, priority: 0.75 })));
   const buildUrls = builds.flatMap((build) => locales.map((locale) => ({ url: toUrl(locale, `/builds/${build.slug}`), lastModified: updated, changeFrequency: "weekly" as const, priority: 0.6 })));
+  const monsterUrls = allMonsters().flatMap((m) => locales.map((locale) => ({ url: toUrl(locale, `/monsters/${m.slug ?? m.MonsterKey}`), lastModified: updated, changeFrequency: "monthly" as const, priority: 0.6 })));
 
-  return [...staticUrls, ...itemUrls, ...marketUrls, ...chestUrls, ...stageUrls, ...heroUrls, ...guideUrls, ...buildUrls];
+  return [...staticUrls, ...itemUrls, ...marketUrls, ...chestUrls, ...stageUrls, ...heroUrls, ...guideUrls, ...buildUrls, ...monsterUrls];
 }

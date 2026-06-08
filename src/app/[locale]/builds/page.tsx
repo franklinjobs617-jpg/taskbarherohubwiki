@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ConfidenceBadge } from "@/components/tbh/badges";
 import { PageHeader, PageShell } from "@/components/tbh/page";
-import { builds, heroBySlug, heroName, type Locale } from "@/lib/game-data/data";
+import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
+import { builds, heroBySlug, heroName, SITE_URL, type Locale } from "@/lib/game-data/data";
 import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale }> };
@@ -39,6 +40,16 @@ export default async function BuildsPage({ params }: Props) {
 
   return (
     <PageShell>
+      <SeoJsonLd data={[{
+        "@context": "https://schema.org", "@type": "ItemList",
+        name: isZh ? "TBH Build 路线" : "TBH Build Routes",
+        numberOfItems: builds.length,
+        itemListElement: builds.map((b, i) => ({
+          "@type": "ListItem", position: i + 1,
+          name: b.title[locale] ?? b.title.en ?? "",
+          url: `${SITE_URL}/${locale}/builds/${b.slug}`,
+        })),
+      }]} />
       <PageHeader
         kicker="Builds"
         title={isZh ? "Build 路线推荐" : "Build Routes"}

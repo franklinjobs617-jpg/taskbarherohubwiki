@@ -66,11 +66,6 @@ export default async function HomePage({ params }: Props) {
       <SeoJsonLd data={[
         { "@context": "https://schema.org", "@type": "WebSite", name: "TBH: Task Bar Hero Wiki", url: SITE_URL, potentialAction: { "@type": "SearchAction", target: `${SITE_URL}/items?q={search_term_string}`, "query-input": "required name=search_term_string" } },
         { "@context": "https://schema.org", "@type": "VideoGame", name: "TBH: Task Bar Hero", genre: "Idle RPG", playMode: "SinglePlayer", applicationCategory: "Game", operatingSystem: "Windows" },
-        { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
-          { "@type": "Question", name: isZh ? "哪个职业适合新手？" : "Which class is best for beginners?", acceptedAnswer: { "@type": "Answer", text: isZh ? "骑士。高生命、高护甲和盾牌让它成为最宽容的职业。" : "Knight. High HP, armor, and shield make it the most forgiving class." } },
-          { "@type": "Question", name: isZh ? "物品值多少钱？" : "How much are items worth?", acceptedAnswer: { "@type": "Answer", text: isZh ? "可交易物品在 Steam 市场有真实价格时才会显示，不编造价格。" : "Prices shown only when real Steam Market data exists. No invented numbers." } },
-          { "@type": "Question", name: isZh ? "哪里刷材料最效率？" : "Where to farm materials efficiently?", acceptedAnswer: { "@type": "Answer", text: isZh ? "查看物品详情页的掉落热力图，颜色最深的关卡掉落密度最高。" : "Check the drop heatmap on each item page — darker stages have higher drop density." } },
-        ] },
       ]} />
 
       {/* ══════ Hero ══════ */}

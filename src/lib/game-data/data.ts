@@ -187,7 +187,7 @@ for (const [slug, sources] of Object.entries(dropsRaw)) {
 
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://taskbarhero.nanobananas.me";
 export const DATA_VERSION = process.env.NEXT_PUBLIC_GAME_VERSION ?? "game-v1";
-export const UPDATED_AT = "2026-06-03";
+export const UPDATED_AT = "2026-06-08";
 export const MARKET_UPDATED_AT = marketLatest.updatedAt ?? UPDATED_AT;
 
 export const gradeNames: Record<string, Partial<Record<Locale, string>>> = {

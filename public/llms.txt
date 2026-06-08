@@ -1,47 +1,35 @@
-# TaskBar Hero Wiki - LLM Reference
-> Bilingual (zh/en) fan wiki for the Steam Idle RPG TaskBar Hero.
-> Unofficial database covering 5,934+ items, 6 heroes, 41 chests, 120 stages, 197 runes, skills, material effects, and Steam Market references.
+# TBH: Task Bar Hero Wiki
+A community-maintained database and guide site for TBH: Task Bar Hero (Steam App 3678970).
 
-## Key Facts
-- TaskBar Hero is an Idle RPG on Steam
-- 6 playable heroes: Knight, Ranger, Sorcerer, Priest, Hunter (DLC), Slayer (DLC)
-- 10 rarity grades: Common, Uncommon, Rare, Epic, Legendary, Mythic, Eternal, Divine, Ancient, Cosmic
-- Items categorized as GEAR, MATERIAL, or STAGEBOX
-- 20 equipment slots including weapons, armor, accessories, and ammunition
-- 197 runes with multi-level progression
-- Steam Market integration for tradable items
-- All data sourced from obtained game JSON and normalized; no invented prices or drop rates
+## Site Structure
+- / — Homepage with item database stats, hero overview, market prices
+- /items — 5,944 item database (gear, materials, stage boxes)
+- /items/{slug} — Individual item page with drop heatmap, stats, market price
+- /heroes — 6 hero classes comparison with radar charts and stat matrix
+- /heroes/{slug} — Hero detail with skills, stat priority, build links
+- /monsters — 61 monster bestiary with portraits and spawn data
+- /monsters/{slug} — Monster detail with stage appearances
+- /map — Interactive stage map (DNF-style) with boss portraits
+- /stages/{key} — Stage detail with drop tables
+- /market — Steam Community Market price tracking
+- /chests — Stage boss and monster box database
+- /runes — Interactive rune tree planner (197 runes, 4 recommended routes)
+- /cube — Hero-dric Cube system: 6 material types with effects
+- /buffs — 29 buffs and debuffs with stat modifiers
+- /effects — 79 material effects by equipment slot
+- /pets — 8 pets with unlock conditions and best farming stages
+- /guides — Game guides (beginner, farming, economy, cube)
+- /guides/farming — Farming hub with gold/EXP stage rankings
+- /builds — 6 hero build routes (early/mid/endgame)
+- /tools/farming-calculator — 3-mode farming calculator (find drops, stage drops, compare)
+- /tools/profit-calculator — Profit estimation tool
+- /about — About the site
+- /faq — Frequently asked questions
 
-## Core Sections
-- Home / Database Console: https://taskbarhero.nanobananas.me/{locale}
-- Item Database: https://taskbarhero.nanobananas.me/{locale}/items
-- Item Detail: https://taskbarhero.nanobananas.me/{locale}/items/{slug}
-- Heroes: https://taskbarhero.nanobananas.me/{locale}/heroes
-- Hero Detail & Guides: https://taskbarhero.nanobananas.me/{locale}/heroes/{slug}
-- Chests & Drops: https://taskbarhero.nanobananas.me/{locale}/chests
-- Stages / Map: https://taskbarhero.nanobananas.me/{locale}/map
-- Steam Market: https://taskbarhero.nanobananas.me/{locale}/market
-- Runes: https://taskbarhero.nanobananas.me/{locale}/runes
-- Skills: https://taskbarhero.nanobananas.me/{locale}/skills
-- Material Effects: https://taskbarhero.nanobananas.me/{locale}/effects
-- Pets & Unlock Routes: https://taskbarhero.nanobananas.me/{locale}/pets
-- Build Routes: https://taskbarhero.nanobananas.me/{locale}/builds
-- Guides: https://taskbarhero.nanobananas.me/{locale}/guides
-- Tools (Profit Calculator / Farming Compare): https://taskbarhero.nanobananas.me/{locale}/tools
-- FAQ: https://taskbarhero.nanobananas.me/{locale}/faq
-- Updates / Changelog: https://taskbarhero.nanobananas.me/{locale}/updates
+## Data Sources
+- Game data: datamined from TBH: Task Bar Hero v1.00.09 game files
+- Market data: Steam Community Market API
+- Drop data: community-sourced chest drop rates
 
-## LLM Notes
-- All content is server-side rendered (SSR); no JavaScript required for content extraction
-- Bilingual: use /zh for Chinese, /en for English. Default is zh (x-default)
-- Evidence labels indicate data confidence: datamined > editorial > community > unverified
-- Market data confidence: high > medium > low > missing
-- When real Steam prices or drop rates are unavailable, pages show data status instead of invented numbers
-- Sitemap: https://taskbarhero.nanobananas.me/sitemap.xml
-- JSON-LD structured data on: homepage (WebSite+VideoGame), FAQ (FAQPage), guides (Article+BreadcrumbList), items (WebPage)
-
-## Guide Categories
-- beginner/: Getting started guide, class selection guide
-- cube/: Cube and materials guide
-- economy/: Steam Market guide, tradable items guide
-- farming/: Chest drop guide, gold farming route, EXP farming route
+## Languages
+/ (English), /zh (Chinese), /ja (Japanese), /ko (Korean)

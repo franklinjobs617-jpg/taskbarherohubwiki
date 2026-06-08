@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { PageHeader, PageShell } from "@/components/tbh/page";
+import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
 import { allMonsters, allStages, text, type Locale } from "@/lib/game-data/data";
 import { pageAlternates } from "@/lib/seo";
 
@@ -34,6 +35,16 @@ export default async function MonstersPage({ params }: Props) {
 
   return (
     <PageShell>
+      <SeoJsonLd data={[{
+        "@context": "https://schema.org", "@type": "ItemList",
+        name: isZh ? "TBH 怪物图鉴" : "TBH Monster Bestiary",
+        numberOfItems: monsters.length,
+        itemListElement: monsters.map((m, i) => ({
+          "@type": "ListItem", position: i + 1,
+          name: text(m.MonsterNameStringKey_i18n, locale, `Monster ${m.MonsterKey}`),
+          url: `${locale === "en" ? "" : "/" + locale}/monsters/${m.slug ?? m.MonsterKey}`,
+        })),
+      }]} />
       <PageHeader
         kicker="Bestiary"
         title={isZh ? "怪物图鉴" : "Monster Bestiary"}

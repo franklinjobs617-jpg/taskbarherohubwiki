@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { PageHeader, PageShell } from "@/components/tbh/page";
+import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
 import { assetPath, type Locale } from "@/lib/game-data/data";
 import { pageAlternates } from "@/lib/seo";
 import itemsJson from "@/../tbh_data/items.json";
@@ -63,6 +64,11 @@ export default async function CubePage({ params }: Props) {
 
   return (
     <PageShell>
+      <SeoJsonLd data={[{
+        "@context": "https://schema.org", "@type": "WebPage",
+        name: isZh ? "Hero-dric Cube 系统" : "Hero-dric Cube System",
+        description: isZh ? "TBH 装备强化系统：6种材料类型、合成配方、材料效果速查" : "TBH gear enhancement system: 6 material types, synthesis, effects",
+      }]} />
       <PageHeader
         kicker="Cube System"
         title={isZh ? "Hero-dric Cube 系统" : "Hero-dric Cube System"}
