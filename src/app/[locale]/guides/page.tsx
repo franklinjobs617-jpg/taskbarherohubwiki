@@ -72,9 +72,9 @@ export default async function GuidesPage({ params }: Props) {
         title={copy(locale, "攻略中心", "Guide Center", "攻略センター")}
         description={copy(
           locale,
-          "攻略不是随便写经验贴。每篇都要给出适用版本、证据等级、常见错误、FAQ、相关物品、相关市场入口和工具入口。",
-          "Guides are decision documents. Each one includes version, evidence level, common mistakes, FAQ, related items, market links, and tools.",
-          "各ガイドは判断用の記事です。適用バージョン、根拠レベル、よくあるミス、FAQ、関連アイテム、工具入口を含みます。",
+          "新手、职业、市场、刷图、Cube 等分类攻略，每篇含版本标注、常见错误、FAQ 和相关物品。",
+          "Guides for beginners, classes, market, farming, Cube etc. Each includes version, common mistakes, FAQ, and related items.",
+          "初心者、職業、市場、周回、Cube などのカテゴリ別ガイド。バージョン、よくあるミス、FAQ、関連アイテム付き。",
         )}
       />
 

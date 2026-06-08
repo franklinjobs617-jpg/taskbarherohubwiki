@@ -148,11 +148,18 @@ export default async function ItemDetailPage({ params }: Props) {
             <DropSourceDetails itemSlug={slug} selectedStage={null} locale={locale} />
           </Section>
 
-          <Section title={isZh ? "如何使用" : "How to Use This Data"}>
+          <Section title={isZh ? "刷取建议" : "Farming Tips"}>
             <div className="border border-[#27272a] bg-[#0d0d0d] p-4 text-sm leading-7 text-[#9d9d9d]">
               {isZh
-                ? "热力图中颜色越深的关卡掉落密度越高。点击关卡格子可以查看具体的宝箱和概率。结合 Steam 市场价格判断是否值得刷取。"
-                : "Darker stages on the heatmap have higher drop density. Click a stage to see specific chests and rates. Cross-reference with Steam Market price to decide if it's worth farming."}
+                ? "点击热力图格子跳转到关卡详情页，悬停查看宝箱和概率。"
+                : "Click heatmap cells to open stage details, hover for chest names and rates."}
+              {market?.lowest ? (
+                isZh
+                  ? ` 当前 Steam 市场价 $${market.lowest.toFixed(2)}，共 ${market.listings ?? "?"} 个挂单。`
+                  : ` Current Steam Market price: $${market.lowest.toFixed(2)}, ${market.listings ?? "?"} listings.`
+              ) : (
+                isZh ? " 该物品暂无可用的市场价格。" : " No market price available for this item."
+              )}
             </div>
           </Section>
           <Section title={isZh ? "相关物品" : "Related Items"}>

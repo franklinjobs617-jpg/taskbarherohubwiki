@@ -101,7 +101,7 @@ export default async function HeroDetailPage({ params }: Props) {
           </div>
 
           <div className="border border-[#27272a] bg-[#0d0d0d] p-4">
-            <p className="text-sm font-medium text-[#ffffff]">{isZh ? "怎么用这个英雄做决策" : "How to use this hero for decisions"}</p>
+            <p className="text-sm font-medium text-[#ffffff]">{isZh ? "使用建议" : "Usage Tips"}</p>
             <p className="mt-2 text-sm leading-7 text-[#9d9d9d]">{profile.decision}</p>
             <p className="mt-2 text-sm leading-7 text-[#9d9d9d]">{profile.risk}</p>
           </div>

@@ -43,9 +43,9 @@ export default async function RunesPage({ params }: Props) {
         title={copy(locale, "符文树加点", "Rune Tree Planner", "ルーンツリー")}
         description={copy(
           locale,
-          "这页不是普通资料表。它按游戏内坐标还原符文树，用推荐路线告诉你先点 Growth、Command、离线收益、自动开箱还是金币/经验。",
-          "This is not a plain table. It rebuilds the rune tree from in-game coordinates and shows whether to prioritize Growth, Command, offline gains, auto-open, gold, or EXP.",
-          "単なる表ではありません。ゲーム内座標からツリーを再現し、Growth、Command、放置報酬、自動開封、金策、経験値の優先度を示します。",
+          "按游戏内坐标还原的符文树，含推荐加点路线：Growth、Command、离线收益、自动开箱、金币、经验。",
+          "Rune tree rebuilt from in-game coordinates, with recommended routes for Growth, Command, offline gains, auto-open, gold, and EXP.",
+          "ゲーム内座標から再現したルーンツリー。Growth、Command、放置報酬、自動開封、金策、経験値の推奨ルート付き。",
         )}
       />
 
@@ -89,9 +89,9 @@ export default async function RunesPage({ params }: Props) {
               <p className="mt-2 text-sm leading-6 text-[#d8c7a6]">
                 {copy(
                   locale,
-                  "推荐路线是数据决策，不写绝对最强。卡关先补英雄/防御，稳定后再补收益、宝箱和自动化。",
-                  "Routes are decision aids, not absolute best claims. If stuck, add hero/defense nodes first; after stable clears, add income, chests, and automation.",
-                  "推奨ルートは判断材料であり最強断定ではありません。詰まる時は英雄/防御を先に、安定後に報酬、宝箱、自動化を伸ばします。",
+                  "卡关时优先英雄/防御节点，稳定清图后补收益、宝箱和自动化。",
+                  "If stuck, prioritize hero/defense nodes first. After stable clears, add income, chests, and automation.",
+                  "詰まる時は英雄/防御ノードを優先。安定後に報酬、宝箱、自動化を追加。",
                 )}
               </p>
               <Link href={`/${locale}/guides/beginner/getting-started`} className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#f0c040] hover:text-[#ffd76a]">

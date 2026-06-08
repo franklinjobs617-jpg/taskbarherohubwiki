@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: locale === "zh" ? "TBH 英雄数据对比｜6 职业属性雷达图、Build 与武器推荐" : "TBH Hero Comparison — Radar Charts, Builds & Weapon Guide",
     description:
       locale === "zh"
-        ? "基于游戏文件数据的 TBH 英雄对比：6 维度属性雷达图、生存力/爆发/持续输出评分矩阵、武器路径、技能树方向和 Build 推荐。非主观 Tier List，纯数据驱动。"
-        : "Data-driven TBH hero comparison: 6-dimension radar charts, survivability/burst/DPS scoring matrix, weapon paths, skill trees, and build recommendations. Not subjective tier list — pure data comparison.",
+        ? "TBH 6 职业完整对比：属性雷达图、生存力/爆发/持续输出评分矩阵、武器路径、技能树方向和 Build 推荐。"
+        : "Complete TBH hero comparison: radar charts, survivability/burst/DPS matrix, weapon paths, skill trees, and build recommendations.",
     alternates: pageAlternates(locale, "/heroes"),
   };
 }
@@ -53,8 +53,8 @@ export default async function HeroesPage({ params }: Props) {
         title={isZh ? "英雄资料与职业选择" : "Heroes and Class Decisions"}
         description={
           isZh
-            ? "这里不是只列英雄名。每个英雄都要回答：适合什么阶段、用什么武器、优先什么属性、风险在哪里、下一步该看哪个 Build 或攻略。"
-            : "This page is not just a roster. Each hero answers phase fit, weapon direction, stat priority, risk, and the next build or guide to read."
+            ? "6 位英雄的定位、武器、基础属性、技能树方向、推荐阶段和职业选择建议。"
+            : "All 6 heroes with role, weapons, base stats, skill trees, recommended phase, and class selection notes."
         }
       />
 
@@ -108,7 +108,7 @@ export default async function HeroesPage({ params }: Props) {
         {heroes.map((hero) => <HeroCard key={hero.HeroKey} hero={hero} locale={locale} />)}
       </div>
 
-      <Section title={isZh ? "数据驱动角色对比" : "Data-Driven Class Comparison"} eyebrow={isZh ? "基于真实基础属性，非主观 Tier" : "Based on real base stats, not subjective tier"}>
+      <Section title={isZh ? "角色属性评分对比" : "Class Stat Comparison"}>
         <HeroCompareMatrix locale={locale} />
       </Section>
 
@@ -180,8 +180,8 @@ export default async function HeroesPage({ params }: Props) {
           </Link>
           <Link href={`/${locale}/builds`} className="border border-[#27272a] bg-[#0d0d0d] p-4 hover:border-[#d4a017]">
             <Swords className="mb-3 h-4 w-4 text-[#d4a017]" />
-            <p className="font-medium text-[#ffffff]">{isZh ? "看证据等级 Build" : "Read evidence-labeled builds"}</p>
-            <p className="mt-2 text-sm leading-6 text-[#9d9d9d]">{isZh ? "只写推荐路线和社区参考，不写没有证据的最强结论。" : "Use recommended routes and community references, not unsupported best claims."}</p>
+            <p className="font-medium text-[#ffffff]">{isZh ? "查看推荐 Build" : "View recommended builds"}</p>
+            <p className="mt-2 text-sm leading-6 text-[#9d9d9d]">{isZh ? "每个职业的前期、中期和后期配装路线。" : "Early, mid, and endgame gear routes for each class."}</p>
           </Link>
         </div>
       </Section>

@@ -70,7 +70,8 @@ export function DropHeatmap({
     for (let act = 1; act <= 3; act++) {
       for (let no = 1; no <= 10; no++) {
         // Generate stage key: 1act00no + type(0=normal field) + diff
-        const key = act * 1000 + no * 10 + DIFFICULTIES.indexOf(difficulty);
+        const diffCode = DIFFICULTIES.indexOf(difficulty) + 1;
+        const key = diffCode * 1000 + act * 100 + no;
         const density = getDropDensity(key, dropSources);
         grid.push({ act, no, key, density });
       }
@@ -147,17 +148,20 @@ export function DropHeatmap({
                   const stageBest = bestStages.find((s) => s.stageKey === stage.key);
 
                   return (
-                    <div
+                    <Link
                       key={stage.key}
-                      className={`relative flex items-center justify-between rounded-sm border px-2 py-1.5 text-[11px] transition-all cursor-pointer
+                      href={stage.density > 0 ? `/${locale}/stages/${stage.key}` : "#"}
+                      className={`relative flex items-center justify-between rounded-sm border px-2 py-1.5 text-[11px] transition-all cursor-pointer no-underline
                         ${densityColor(stage.density)}
                         ${isBest ? "ring-1 ring-amber-400/50" : "border-transparent"}
                         ${isSelected ? "ring-2 ring-amber-400" : ""}
                       `}
                       onMouseEnter={() => setHoveredStage(stage.key)}
                       onMouseLeave={() => setHoveredStage(null)}
-                      onClick={() => {
+                      onClick={(e) => {
+                        if (stage.density === 0) e.preventDefault();
                         if (onStageSelect && stageBest) {
+                          e.preventDefault();
                           onStageSelect(stageBest);
                         }
                       }}
@@ -173,7 +177,7 @@ export function DropHeatmap({
 
                       {/* Tooltip on hover */}
                       {isHovered && stage.density > 0 && stageBest && (
-                        <div className="absolute bottom-full left-1/2 z-10 mb-1 -translate-x-1/2 whitespace-nowrap rounded border border-[#3b3b3b] bg-[#18181b] px-2 py-1 text-[10px] text-[#9d9d9d] shadow-lg">
+                        <div className="absolute bottom-full left-1/2 z-10 mb-1 -translate-x-1/2 whitespace-nowrap rounded border border-[#3b3b3b] bg-[#18181b] px-2 py-1 text-[10px] text-[#9d9d9d] shadow-lg pointer-events-none">
                           {stageBest.boxes.map((box, i) => (
                             <div key={i}>
                               {box.name}: {(box.rate * 100).toFixed(2)}%
@@ -185,7 +189,7 @@ export function DropHeatmap({
                           </div>
                         </div>
                       )}
-                    </div>
+                    </Link>
                   );
                 })}
             </div>

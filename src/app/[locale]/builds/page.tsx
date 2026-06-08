@@ -41,11 +41,11 @@ export default async function BuildsPage({ params }: Props) {
     <PageShell>
       <PageHeader
         kicker="Builds"
-        title={isZh ? "数据驱动 Build 路线" : "Data-Driven Build Routes"}
+        title={isZh ? "Build 路线推荐" : "Build Routes"}
         description={
           isZh
-            ? `基于游戏文件 v1.00.09 的真实英雄属性数据。${builds.length} 条路线覆盖全部 6 个英雄，每条标注证据等级和适用阶段。不是主观 Tier List，是属性推导的配装方向。`
-            : `${builds.length} routes covering all 6 heroes, built from game file v1.00.09 real hero stats. Each route labeled with evidence level and phase. Not subjective tier ranking — stat-derived gear direction.`
+            ? `${builds.length} 条配装路线，覆盖全部 6 个英雄的前期、中期和后期阶段。`
+            : `${builds.length} build routes covering all 6 heroes across early, mid, and endgame phases.`
         }
       />
 
@@ -66,7 +66,7 @@ export default async function BuildsPage({ params }: Props) {
         <div className="border border-amber-600/30 bg-amber-600/5 p-4">
           <p className="text-xs font-semibold text-amber-400">{isZh ? "3. 验证路线" : "3. Verify Route"}</p>
           <p className="mt-1 text-xs text-[#9d9d9d]">
-            {isZh ? "用物品掉落数据和市场价验证装备获取难度和成本。数据不完整时用保守路线。" : "Verify gear availability with drop data and market prices. Use conservative routes when data is incomplete."}
+            {isZh ? "用物品掉落热力图和市场价查看装备获取难度和成本。" : "Check gear availability and cost with drop heatmaps and market prices."}
           </p>
         </div>
       </div>
