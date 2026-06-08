@@ -14,7 +14,7 @@ const guideVisuals: Record<string, { image: string; zh: string; en: string; ja: 
   "getting-started": { image: "/game/guide-images/getting-started.jpg", zh: "先把路线跑稳，再谈稀有度和市场。", en: "Stabilize the route before chasing rarity or market value.", ja: "レア度や市場価値の前に、まず安定ルートを作る。" },
   "class-guide": { image: "/game/guide-images/class-guide.jpg", zh: "职业选择本质是武器路径、容错和清图目标的组合。", en: "Class choice is a mix of weapon path, safety margin, and farming goal.", ja: "職業選択は武器ルート、安全性、周回目的の組み合わせ。" },
   "cube-materials": { image: "/game/guide-images/cube-materials.jpg", zh: "材料不是杂物，它们决定装备后期方向。", en: "Materials are not clutter; they define late gear direction.", ja: "素材はゴミではなく、終盤装備の方向性を決める。" },
-  "steam-market-guide": { image: "/game/guide-images/steam-market-guide.jpg", zh: "市场数据只做风险判断，不做收益承诺。", en: "Market data is a risk signal, not a profit promise.", ja: "市場データはリスク判断であり、利益保証ではない。" },
+  "steam-market-guide": { image: "/game/guide-images/steam-market-guide.jpg", zh: "用市场价格和挂单数判断物品的流通性和大致价值。", en: "Use market prices and listing counts to gauge item liquidity and rough value.", ja: "市場価格と出品数でアイテムの流通性とおおよその価値を判断する。" },
   "tradable-items": { image: "/game/guide-images/tradable-items.jpg", zh: "可交易是状态，不是立刻出售的命令。", en: "Tradable is a state, not an instruction to sell immediately.", ja: "取引可能は状態であり、すぐ売る命令ではない。" },
   "chest-drop-guide": { image: "/game/guide-images/chest-drop-guide.jpg", zh: "宝箱要同时看来源、等级范围和真实掉率。", en: "Chests need source, level range, and real drop-rate context.", ja: "宝箱は来源、レベル範囲、実ドロップ率を合わせて見る。" },
   "gold-farming-route": { image: "/game/guide-images/gold-farming-route.jpg", zh: "金币效率来自稳定清图，不来自想象中的高价掉落。", en: "Gold efficiency comes from stable clears, not imagined rare drops.", ja: "ゴールド効率は安定周回から生まれ、想像上の高額ドロップからは生まれない。" },

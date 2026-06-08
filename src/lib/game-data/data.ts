@@ -491,7 +491,7 @@ export const guides: Guide[] = [
     slug: "gold-farming-route",
     category: "farming",
     title: { zh: "刷金币路线", en: "Gold Farming Route", ja: "ゴールド稼ぎルート" },
-    description: { ja: "ゴールド、クリア時間、安定性を比較し、架空の市場利益は使わない。", zh: "优先比较金币、清图时间和稳定性，不伪造市场收益。", en: "Compare gold, clear time, and reliability without invented market profit." },
+    description: { ja: "ゴールド効率、クリア時間、安定性を比較して最適な周回先を選ぶ。", zh: "比较金币效率、清图时间和稳定性，选择最优刷图关卡。", en: "Compare gold efficiency, clear time, and stability to pick the best farming stage." },
     evidence: "editorial",
     updatedAt: UPDATED_AT,
   },

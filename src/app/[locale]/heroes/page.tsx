@@ -42,7 +42,7 @@ export default async function HeroesPage({ params }: Props) {
     {
       icon: Swords,
       title: isZh ? "DLC 单独看" : "Treat DLC separately",
-      body: isZh ? "Hunter、Slayer 这类 DLC 职业必须明确标注，不该被写成默认新手路线。" : "DLC classes such as Hunter and Slayer need explicit labels and should not be default beginner routes.",
+      body: isZh ? "Hunter 和 Slayer 需要购买 DLC 才能使用。建议先用免费职业积累装备基础。" : "Hunter and Slayer require DLC purchase. Build gear on free classes first before buying.",
     },
   ];
 
