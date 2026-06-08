@@ -3,11 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ConfidenceBadge, RarityBadge } from "@/components/tbh/badges";
-import { DropRateTable, ItemCard, MarketPrice, Section } from "@/components/tbh/cards";
+import { ItemCard, MarketPrice, Section } from "@/components/tbh/cards";
+import { DropHeatmap } from "@/components/tbh/drop-heatmap";
+import { DropSourceDetails, ItemQuickAnswer } from "@/components/tbh/item-drop-details";
 import { PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
-import { allItems, assetPath, itemBySlug, itemDetail, itemName, marketForItem, slotNames, text, type Locale } from "@/lib/game-data/data";
-import { extIconPath, extItems, extStages, formatDropRate } from "@/lib/game-data/external";
+import { allItems, assetPath, bestFarmingStages, bestStageForItem, dropsForItem, hasDropData, itemBySlug, itemDetail, itemName, marketForItem, slotNames, text, type Locale } from "@/lib/game-data/data";
 
 type Props = { params: Promise<{ locale: Locale; slug: string }> };
 
@@ -16,10 +17,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const item = itemBySlug(slug);
   if (!item) return { title: "Not found" };
   const name = itemName(item, locale);
+  const market = marketForItem(item);
+  const hasDrops = hasDropData(slug);
+
+  const titleByLocale: Record<string, string> = {
+    zh: `${name}｜掉落位置、属性与市场状态 — TBH Wiki`,
+    en: `${name} — Drop Locations, Stats & Market Price | TBH Wiki`,
+    ja: `${name}｜ドロップ場所、ステータスと市場価格 — TBH Wiki`,
+  };
+
+  const descByLocale: Record<string, string> = {
+    zh: hasDrops
+      ? `${name} 的完整信息：掉落位置（${dropsForItem(slug).length} 个宝箱来源）、属性、合成类型和 Steam 市场状态。数据来源：游戏文件解包。`
+      : `${name} 的稀有度、类型、属性和 Steam 市场状态。掉落数据正在收集和验证中。`,
+    en: hasDrops
+      ? `${name}: drop locations (${dropsForItem(slug).length} chest sources), stats, synthesis type, and Steam Market status. Data mined from game files.`
+      : `${name} rarity, type, stats, and Steam Market status. Drop data being collected.`,
+    ja: hasDrops
+      ? `${name} の詳細：ドロップ場所（${dropsForItem(slug).length} 個の宝箱ソース）、ステータス、合成タイプ、Steam マーケット状態。ゲームファイルからデータ抽出。`
+      : `${name} のレア度、タイプ、ステータス、Steam マーケット状態。ドロップデータ収集中。`,
+  };
+
   return {
-    title: locale === "zh" ? `${name}｜TaskBar Hero 属性、来源与市场状态` : `${name}｜Stats, Sources & Market Status`,
-    description: locale === "zh" ? `${name} 的稀有度、类型、等级、属性、来源线索和可交易状态。` : `${name} rarity, type, level, stats, source hints, and tradability.`,
-    alternates: { canonical: `/${locale}/items/${slug}`, languages: { zh: `/zh/items/${slug}`, en: `/en/items/${slug}`, "x-default": `/zh/items/${slug}` } },
+    title: titleByLocale[locale] ?? titleByLocale.en,
+    description: descByLocale[locale] ?? descByLocale.en,
+    alternates: { canonical: `/${locale}/items/${slug}`, languages: { zh: `/zh/items/${slug}`, en: `/en/items/${slug}`, ja: `/ja/items/${slug}`, "x-default": `/en/items/${slug}` } },
   };
 }
 
@@ -34,19 +56,7 @@ export default async function ItemDetailPage({ params }: Props) {
   const isZh = locale === "zh";
   const icon = assetPath(item.icon);
   const description = text(detail?.desc, locale, isZh ? "该物品已有基础数据；详细来源取决于掉率数据是否完整。" : "Base data is available; detailed source depends on drop data completeness.");
-  const related = allItems().filter((entry) => entry.id !== item.id && (entry.gear === item.gear || entry.grade === item.grade) && entry.type === item.type).slice(0, 8);
-
-  // Get drop sources from external data
-  const extItem = extItems().find((ei) => ei.key === item.id);
-  const dropSources = extItem
-    ? extStages()
-        .filter((s) => s.drops.some((d) => d.itemKey === item.id))
-        .map((s) => ({ stage: s, drop: s.drops.find((d) => d.itemKey === item.id)! }))
-        .slice(0, 12)
-    : [];
-
-  // Get which heroes can use this item
-  const usableBy = extItem?.classes ?? [];
+  const related = allItems().filter((entry) => entry.id !== item.id && (entry.grade === item.grade || entry.gear === item.gear) && entry.type === item.type).slice(0, 8);
 
   return (
     <PageShell>
@@ -77,7 +87,11 @@ export default async function ItemDetailPage({ params }: Props) {
         <Link href={`/${locale}/items`} className="hover:text-[#f0c040]">{isZh ? "物品" : "Items"}</Link><span>/</span>
         <span className="text-[#9d9d9d]">{name}</span>
       </nav>
-      <section className="grid gap-6 lg:grid-cols-[340px_1fr]">
+
+      {/* Quick Answer Bar */}
+      <ItemQuickAnswer itemSlug={slug} marketPrice={market?.lowest} locale={locale} />
+
+      <section className="mt-6 grid gap-6 lg:grid-cols-[340px_1fr]">
         <aside className="h-fit border border-[#27272a] bg-[#0d0d0d] p-5 lg:sticky lg:top-16">
           <div className="flex items-center gap-4">
             <div className="flex h-24 w-24 shrink-0 items-center justify-center border border-[#3b3b3b] bg-[#0a0a0a]">
@@ -105,6 +119,11 @@ export default async function ItemDetailPage({ params }: Props) {
           </div>
         </aside>
         <div className="space-y-8">
+          {/* Drop Heatmap — the main visualization */}
+          <Section title={isZh ? "掉落热力图" : "Drop Heatmap"} eyebrow={isZh ? "点击关卡查看详情" : "Click a stage for details"}>
+            <DropHeatmap itemSlug={slug} locale={locale} />
+          </Section>
+
           <Section title={isZh ? "基础说明" : "Overview"}>
             <p className="border border-[#27272a] bg-[#0d0d0d] p-4 text-sm leading-7 text-[#9d9d9d]">{description}</p>
           </Section>
@@ -123,64 +142,17 @@ export default async function ItemDetailPage({ params }: Props) {
               </div>
             </div>
           </Section>
-          {/* ── Drop Sources ── */}
-          {dropSources.length > 0 && (
-            <Section title={isZh ? "掉落来源" : "Drop Sources"} eyebrow={isZh ? `${dropSources.length} 个关卡掉落` : `Drops from ${dropSources.length} stages`}>
-              <div className="overflow-x-auto border border-[#27272a]">
-                <table className="w-full min-w-[500px] text-left text-sm">
-                  <thead className="bg-[#18181b] text-xs text-[#6c6c6c]">
-                    <tr>
-                      <th className="px-3 py-2.5">{isZh ? "关卡" : "Stage"}</th>
-                      <th className="px-3 py-2.5">{isZh ? "难度" : "Diff"}</th>
-                      <th className="px-3 py-2.5">{isZh ? "来源" : "Source"}</th>
-                      <th className="px-3 py-2.5">{isZh ? "掉率" : "Rate"}</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {dropSources.map(({ stage: s, drop }) => (
-                      <tr key={s.key} className="border-t border-[#27272a] hover:bg-[#0d0d0d]">
-                        <td className="px-3 py-3">
-                          <Link href={`/${locale}/stages/${s.label.toLowerCase().replace(".", "-")}`} className="font-medium text-[#f0c040] hover:underline">
-                            {s.label} {s.name}
-                          </Link>
-                        </td>
-                        <td className="px-3 py-3 text-[#9d9d9d]">{s.difficulty}</td>
-                        <td className="px-3 py-3">
-                          <span className={`rounded-full px-2 py-0.5 text-[11px] ${drop.source === "boss" ? "bg-[#2a1515] text-[#ff6b6b]" : "bg-[#152a15] text-[#6bff6b]"}`}>
-                            {drop.source === "boss" ? "Boss" : (isZh ? "怪物" : "Monster")}
-                          </span>
-                        </td>
-                        <td className="px-3 py-3 font-semibold text-[#f0c040]">{formatDropRate(drop.rate)}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </Section>
-          )}
 
-          {/* ── Hero compatibility ── */}
-          {usableBy.length > 0 && (
-            <Section title={isZh ? "适用职业" : "Usable By"} eyebrow={isZh ? "职业匹配" : "Class match"}>
-              <div className="flex flex-wrap gap-2">
-                {usableBy.map((cls) => (
-                  <Link
-                    key={cls}
-                    href={`/${locale}/heroes/${cls.toLowerCase()}`}
-                    className="border border-[#3b3b3b] bg-[#0d0d0d] px-3 py-2 text-sm text-[#ffffff] hover:border-[#d4a017] hover:text-[#f0c040]"
-                  >
-                    {cls}
-                  </Link>
-                ))}
-              </div>
-            </Section>
-          )}
+          {/* Drop Source Details */}
+          <Section title={isZh ? "掉落来源详情" : "Drop Source Details"} eyebrow={isZh ? "按宝箱类型分组" : "Grouped by chest type"}>
+            <DropSourceDetails itemSlug={slug} selectedStage={null} locale={locale} />
+          </Section>
 
-          <Section title={isZh ? "决策建议" : "Decision Guide"}>
+          <Section title={isZh ? "如何使用" : "How to Use This Data"}>
             <div className="border border-[#27272a] bg-[#0d0d0d] p-4 text-sm leading-7 text-[#9d9d9d]">
               {isZh
-                ? "使用顺序：先确认是否当前职业可用 → 再看是否可交易 → 最后看真实市场数据。有掉率时优先刷高掉率关卡，有市场价时结合掉率计算期望收益。"
-                : "Priority: check if your class can use it → check tradability → check real market data. Farm high-rate stages first, combine with market price for profit estimates when both exist."}
+                ? "热力图中颜色越深的关卡掉落密度越高。点击关卡格子可以查看具体的宝箱和概率。结合 Steam 市场价格判断是否值得刷取。"
+                : "Darker stages on the heatmap have higher drop density. Click a stage to see specific chests and rates. Cross-reference with Steam Market price to decide if it's worth farming."}
             </div>
           </Section>
           <Section title={isZh ? "相关物品" : "Related Items"}>

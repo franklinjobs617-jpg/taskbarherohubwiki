@@ -6,6 +6,7 @@ import runesJson from "@/../tbh_data/runes.json";
 import skillsJson from "@/../tbh_data/skills.json";
 import monstersJson from "@/../tbh_data/monsters.json";
 import marketLatestJson from "@/../data/generated/market/v1/latest.json";
+import dropsJson from "@/../data/generated/drops.json";
 
 export type Locale = "zh" | "en" | "ja";
 export type Localized = Record<string, string>;
@@ -118,6 +119,34 @@ export type MarketRecord = {
   updatedAt: string;
 };
 
+export type DropStage = {
+  key: number;
+  act: number;
+  no: number;
+  diff: string;
+  slug: string;
+  rate: number;
+};
+
+export type DropSource = {
+  box_name: string;
+  box_type: "boss" | "monster";
+  box_grade: string;
+  box_slug: string;
+  drop_chance: number;
+  stages: DropStage[];
+};
+
+export type FarmingStage = {
+  stageKey: number;
+  act: number;
+  no: number;
+  diff: string;
+  stageSlug: string;
+  totalDropChance: number;
+  boxes: Array<{ name: string; rate: number }>;
+};
+
 export type Guide = {
   slug: string;
   category: string;
@@ -147,6 +176,14 @@ const skills = skillsJson as Skill[];
 const monsters = monstersJson as Monster[];
 const marketLatest = marketLatestJson as { updatedAt?: string; items?: MarketRecord[] };
 const marketByItemSlug = new Map((marketLatest.items ?? []).map((row) => [row.slug, row]));
+const dropsRaw = dropsJson as Record<string, unknown>;
+const dropsByItemSlug: Record<string, DropSource[]> = {};
+// Filter out invalid entries
+for (const [slug, sources] of Object.entries(dropsRaw)) {
+  if (Array.isArray(sources) && sources.length > 0 && typeof sources[0] === "object" && sources[0] !== null) {
+    dropsByItemSlug[slug] = sources as DropSource[];
+  }
+}
 
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://taskbarhero.nanobananas.me";
 export const DATA_VERSION = process.env.NEXT_PUBLIC_GAME_VERSION ?? "game-v1";
@@ -332,6 +369,75 @@ export function marketBySlug(slug: string) {
   return { item, market };
 }
 
+export function dropsForItem(slug: string): DropSource[] {
+  return dropsByItemSlug[slug] ?? [];
+}
+
+export function hasDropData(slug: string): boolean {
+  const drops = dropsByItemSlug[slug];
+  return Array.isArray(drops) && drops.length > 0;
+}
+
+export function bestFarmingStages(slug: string, limit = 5): FarmingStage[] {
+  const dropSources = dropsForItem(slug);
+  if (!dropSources.length) return [];
+
+  // Aggregate all stage drops, combining multiple boxes in the same stage
+  const stageMap = new Map<number, {
+    stageKey: number;
+    act: number;
+    no: number;
+    diff: string;
+    stageSlug: string;
+    boxes: Array<{ name: string; rate: number }>;
+    totalDropChance: number;
+  }>();
+
+  for (const source of dropSources) {
+    for (const stage of source.stages) {
+      const existing = stageMap.get(stage.key);
+      // rate is the drop chance per run (need to combine with box drop chance)
+      const effectiveRate = (source.drop_chance / 100) * (stage.rate / 1000);
+
+      if (existing) {
+        existing.boxes.push({ name: source.box_name, rate: effectiveRate });
+        existing.totalDropChance += effectiveRate;
+      } else {
+        stageMap.set(stage.key, {
+          stageKey: stage.key,
+          act: stage.act,
+          no: stage.no,
+          diff: stage.diff,
+          stageSlug: stage.slug,
+          boxes: [{ name: source.box_name, rate: effectiveRate }],
+          totalDropChance: effectiveRate,
+        });
+      }
+    }
+  }
+
+  // Sort by total drop chance descending
+  return Array.from(stageMap.values())
+    .sort((a, b) => b.totalDropChance - a.totalDropChance)
+    .slice(0, limit);
+}
+
+export function bestStageForItem(slug: string): FarmingStage | null {
+  const stages = bestFarmingStages(slug, 1);
+  return stages[0] ?? null;
+}
+
+export function allItemsWithDrops(): Array<{ slug: string; sourceCount: number; stageCount: number }> {
+  return Object.entries(dropsByItemSlug)
+    .filter(([, sources]) => Array.isArray(sources) && sources.length > 0)
+    .map(([slug, sources]) => ({
+      slug,
+      sourceCount: sources.length,
+      stageCount: sources.reduce((sum, s) => sum + s.stages.length, 0),
+    }))
+    .sort((a, b) => b.sourceCount - a.sourceCount);
+}
+
 export const guides: Guide[] = [
   {
     slug: "getting-started",
@@ -406,7 +512,7 @@ export const builds: Build[] = [
     phase: "early",
     goal: "survival",
     title: { zh: "骑士前期盾牌路线", en: "Knight Early Shield Route", ja: "ナイト盾ルート" },
-    description: { ja: "ゲームデータに基づくガイド。", zh: "优先生命、防御和格挡，适合稳定推进。", en: "Prioritize HP, armor, and block for stable progression." },
+    description: { zh: "基于 Knight 的 130 基础 HP + 45 护甲（全职业最高生存属性），优先生命、防御和格挡属性，适合稳定推进前期关卡。", en: "Knight has 130 base HP + 45 armor (highest survivability). Prioritize HP, armor, and block for stable early progression. Ideal for learning stage mechanics.", ja: "Knight の基礎 HP 130 + 装甲 45（全職業最高の生存力）に基づき、HP、防御、ブロックを優先。安定した序盤進行に最適。" },
     evidence: "editorial",
     updatedAt: UPDATED_AT,
   },
@@ -416,7 +522,7 @@ export const builds: Build[] = [
     phase: "mid",
     goal: "farming",
     title: { zh: "游侠中期刷图路线", en: "Ranger Mid Farming Route", ja: "レンジャー中盤ルート" },
-    description: { ja: "ゲームデータに基づくガイド。", zh: "优先攻速、物理伤害和清图效率。", en: "Prioritize attack speed, physical damage, and clear speed." },
+    description: { zh: "Ranger 拥有全职业最高基础攻速 100，配合理想暴击率 40%。优先攻速、物理伤害和暴击属性，适合中期快速清图刷材料。", en: "Ranger has the highest base attack speed (100) and 40% crit chance. Prioritize ASPD, physical damage, and critical for fast mid-game clear speed and material farming.", ja: "Ranger は全職業最高の基礎攻撃速度 100 とクリ率 40% を持つ。攻撃速度、物理ダメージ、クリティカルを優先し、中盤の高速周回と素材収集に最適。" },
     evidence: "editorial",
     updatedAt: UPDATED_AT,
   },
@@ -426,8 +532,38 @@ export const builds: Build[] = [
     phase: "endgame",
     goal: "materials",
     title: { zh: "法师后期材料路线", en: "Sorcerer Endgame Material Route", ja: "ソーサラー後期ルート" },
-    description: { ja: "ゲームデータに基づくガイド。", zh: "围绕高阶材料和法系属性建立保守路线。", en: "Use high-tier materials and caster stats as the route anchor." },
-    evidence: "unverified",
+    description: { zh: "Sorcerer 拥有全职业最高暴击伤害 1650% 和暴击率 50%。围绕法系伤害、冷却缩减和材料效果筛选装备，适合后期高价值材料刷取。注意生存能力最低（50 HP, 5 护甲）。", en: "Sorcerer has the highest crit damage (1650%) and crit chance (50%). Build around caster damage, cooldown, and material effects. Best for late-game high-value material farming. Note: lowest survivability (50 HP, 5 armor).", ja: "Sorcerer は全職業最高のクリダメ 1650% とクリ率 50% を持つ。魔法ダメージ、クールダウン短縮、素材効果を中心に構築。後期の高価値素材収集に最適。注意：最低の生存力（HP 50, 装甲 5）。" },
+    evidence: "editorial",
+    updatedAt: UPDATED_AT,
+  },
+  {
+    slug: "priest-sustain-support",
+    hero: "Priest",
+    phase: "early",
+    goal: "survival",
+    title: { zh: "牧师续航辅助路线", en: "Priest Sustain Support Route", ja: "プリースト持続サポートルート" },
+    description: { zh: "Priest 拥有均衡的生存属性（95 HP, 30 护甲）。优先生命恢复、冷却缩减和防御属性，适合长时间挂机 farming 和团队辅助。是 Knight 之外最稳定的前期选择。", en: "Priest has balanced survivability (95 HP, 30 armor). Prioritize HP recovery, cooldown, and defense. Ideal for long-session idle farming and team support. Most stable early pick after Knight.", ja: "Priest はバランスの良い生存力（HP 95, 装甲 30）を持つ。HP 回復、クールダウン、防御を優先。長時間の放置周回とチームサポートに最適。Knight に次ぐ安定した序盤の選択肢。" },
+    evidence: "editorial",
+    updatedAt: UPDATED_AT,
+  },
+  {
+    slug: "hunter-crit-burst",
+    hero: "Hunter",
+    phase: "mid",
+    goal: "farming",
+    title: { zh: "猎人暴击爆发路线（DLC）", en: "Hunter Crit Burst Route (DLC)", ja: "ハンタークリティカルバーストルート（DLC）" },
+    description: { zh: "Hunter 是 DLC 英雄，拥有高暴击率 45% + 暴击伤害 1550%。优先暴击、攻速和物理伤害。适合已有装备基础后追求远程爆发效率。⚠ 需要购买 DLC。", en: "Hunter is a DLC hero with high crit (45%) and crit damage (1550%). Prioritize crit, ASPD, and physical damage. Best after having gear foundation for ranged burst efficiency. ⚠ Requires DLC purchase.", ja: "Hunter は DLC 英雄で、高クリ率 45% + クリダメ 1550% を持つ。クリティカル、攻撃速度、物理ダメージを優先。装備基盤がある場合の遠距離バースト効率に最適。⚠ DLC 購入が必要。" },
+    evidence: "editorial",
+    updatedAt: UPDATED_AT,
+  },
+  {
+    slug: "slayer-high-risk-dps",
+    hero: "Slayer",
+    phase: "endgame",
+    goal: "farming",
+    title: { zh: "杀戮者高风险输出路线（DLC）", en: "Slayer High-Risk DPS Route (DLC)", ja: "スレイヤーハイリスク DPS ルート（DLC）" },
+    description: { zh: "Slayer 是 DLC 英雄，拥有全职业最高暴击伤害 1800%。优先暴击伤害、攻击力和攻速。技能消耗 HP，需要特定装备和属性支撑才能稳定发挥。⚠ 高风险高回报，不适合新手。需要购买 DLC。", en: "Slayer is a DLC hero with the highest crit damage (1800%). Prioritize crit damage, ATK, and ASPD. Skills cost HP — requires specific gear and stat support for consistency. ⚠ High risk, high reward — not for beginners. Requires DLC.", ja: "Slayer は DLC 英雄で、全職業最高のクリダメ 1800% を持つ。クリダメ、攻撃力、攻撃速度を優先。スキルは HP を消費するため、安定運用には特定の装備とステータスが必要。⚠ ハイリスクハイリターン、初心者非推奨。DLC 購入が必要。" },
+    evidence: "editorial",
     updatedAt: UPDATED_AT,
   },
 ];

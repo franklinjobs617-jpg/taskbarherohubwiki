@@ -15,11 +15,19 @@ type Props = { params: Promise<{ locale: Locale }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const titles: Record<string, string> = {
+    zh: "TBH: Task Bar Hero Wiki — 物品数据库、英雄配装、掉落查询与 Steam 市场",
+    en: "TBH: Task Bar Hero Wiki — Items, Builds, Drop Finder & Steam Market",
+    ja: "TBH: Task Bar Hero Wiki — アイテム、ビルド、ドロップ検索と Steam マーケット",
+  };
+  const descriptions: Record<string, string> = {
+    zh: "最完整的 TBH: Task Bar Hero Wiki。搜索 5,944 件物品、对比 6 位英雄属性、查找掉落位置、查看 Steam 市场价格、规划刷图路线。数据来自游戏文件解包。",
+    en: "The complete TBH: Task Bar Hero wiki. Search 5,944 items, compare 6 hero classes, find drop locations, check Steam Market prices, and plan your farming route. Data mined from game files.",
+    ja: "TBH: Task Bar Hero の完全な Wiki。5,944 アイテムの検索、6 職業の比較、ドロップ場所の確認、Steam マーケット価格のチェック、周回ルートの計画ができます。ゲームファイルからデータ抽出。",
+  };
   return {
-    title: locale === "zh" ? "TaskBar Hero 中文 Wiki｜物品、英雄、掉率、Steam 市场" : "TaskBar Hero Wiki｜Items, Heroes, Drops & Steam Market",
-    description: locale === "zh"
-      ? "中文优先的 TaskBar Hero 数据库，覆盖物品、英雄、技能、符文、宝箱、关卡、材料效果、攻略和 Steam 市场状态。"
-      : "A bilingual TaskBar Hero database for items, heroes, skills, runes, chests, stages, material effects, guides, and Steam Market status.",
+    title: titles[locale] ?? titles.en,
+    description: descriptions[locale] ?? descriptions.en,
     alternates: { canonical: `/${locale}`, languages: { en: "/en", zh: "/zh", ja: "/ja", "x-default": "/en" } },
   };
 }
@@ -56,8 +64,13 @@ export default async function HomePage({ params }: Props) {
   return (
     <PageShell>
       <SeoJsonLd data={[
-        { "@context": "https://schema.org", "@type": "WebSite", name: "TaskBar Hero Wiki", url: SITE_URL, potentialAction: { "@type": "SearchAction", target: `${SITE_URL}/items?q={search_term_string}`, "query-input": "required name=search_term_string" } },
-        { "@context": "https://schema.org", "@type": "VideoGame", name: "TaskBar Hero", genre: "Idle RPG" },
+        { "@context": "https://schema.org", "@type": "WebSite", name: "TBH: Task Bar Hero Wiki", url: SITE_URL, potentialAction: { "@type": "SearchAction", target: `${SITE_URL}/items?q={search_term_string}`, "query-input": "required name=search_term_string" } },
+        { "@context": "https://schema.org", "@type": "VideoGame", name: "TBH: Task Bar Hero", genre: "Idle RPG", playMode: "SinglePlayer", applicationCategory: "Game", operatingSystem: "Windows" },
+        { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+          { "@type": "Question", name: isZh ? "哪个职业适合新手？" : "Which class is best for beginners?", acceptedAnswer: { "@type": "Answer", text: isZh ? "骑士。高生命、高护甲和盾牌让它成为最宽容的职业。" : "Knight. High HP, armor, and shield make it the most forgiving class." } },
+          { "@type": "Question", name: isZh ? "物品值多少钱？" : "How much are items worth?", acceptedAnswer: { "@type": "Answer", text: isZh ? "可交易物品在 Steam 市场有真实价格时才会显示，不编造价格。" : "Prices shown only when real Steam Market data exists. No invented numbers." } },
+          { "@type": "Question", name: isZh ? "哪里刷材料最效率？" : "Where to farm materials efficiently?", acceptedAnswer: { "@type": "Answer", text: isZh ? "查看物品详情页的掉落热力图，颜色最深的关卡掉落密度最高。" : "Check the drop heatmap on each item page — darker stages have higher drop density." } },
+        ] },
       ]} />
 
       {/* ══════ Hero ══════ */}
@@ -75,19 +88,19 @@ export default async function HomePage({ params }: Props) {
               data-pixel
             />
           </div>
-          <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-[#d4a017]">Database Console</p>
+          <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-[#d4a017]">Community Wiki &amp; Database</p>
           <h1 className="mt-3 text-[32px] font-semibold leading-tight text-[#ffffff]">
-            {isZh ? "TaskBar Hero 中文 Wiki" : "TaskBar Hero Wiki"}
+            {isZh ? "TBH: Task Bar Hero Wiki" : "TBH: Task Bar Hero Wiki"}
           </h1>
           <p className="mt-3 text-[15px] leading-7 text-[#9d9d9d]">
             {isZh
-              ? "物品 · 英雄 · 宝箱 · 关卡 · 符文 · 技能 · Steam 市场"
-              : "Items · Heroes · Chests · Stages · Runes · Skills · Steam Market"}
+              ? "5,944 物品 · 6 英雄 · 120 关卡 · 197 符文 · 掉落查询 · Steam 市场 · 刷图规划"
+              : "5,944 Items · 6 Heroes · 120 Stages · 197 Runes · Drop Finder · Steam Market · Farming Planner"}
           </p>
           <form action={lp("/items")} className="mx-auto mt-6 flex max-w-lg border border-[#3b3b3b] bg-[#0d0d0d]">
             <Search className="ml-3 h-4 w-4 shrink-0 self-center text-[#6c6c6c]" />
             <input name="q" className="min-w-0 flex-1 bg-transparent px-3 py-3 text-[14px] outline-none placeholder:text-[#6c6c6c]"
-              placeholder={isZh ? "搜索物品、材料、宝箱..." : "Search items, materials, chests..."} />
+              placeholder={isZh ? "搜索物品、材料、宝箱、关卡..." : "Search items, materials, chests, stages..."} />
             <button className="bg-[#d4a017] px-6 text-[14px] font-medium text-black hover:bg-[#f0c040] transition-colors">
               {isZh ? "搜索" : "Search"}
             </button>

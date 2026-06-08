@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, BookOpen, Shield, Swords, Timer } from "lucide-react";
 import { HeroCard, Section } from "@/components/tbh/cards";
+import { HeroCompareMatrix, HeroRadar } from "@/components/tbh/hero-compare";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { allHeroes, heroName, heroSlug, type Locale } from "@/lib/game-data/data";
 import { heroProfile, heroWeaponLabel } from "@/lib/hero-content";
@@ -12,11 +13,11 @@ type Props = { params: Promise<{ locale: Locale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: locale === "zh" ? "TaskBar Hero 英雄资料｜职业、技能与被动树" : "TaskBar Hero Heroes, Skills and Passive Trees",
+    title: locale === "zh" ? "TBH 英雄数据对比｜6 职业属性雷达图、Build 与武器推荐" : "TBH Hero Comparison — Radar Charts, Builds & Weapon Guide",
     description:
       locale === "zh"
-        ? "查看 TaskBar Hero 6 个英雄的定位、武器、基础属性、技能树方向、推荐阶段和职业选择建议。"
-        : "Compare all TaskBar Hero heroes by role, weapons, base stats, skill-tree direction, recommended phase, and class-selection notes.",
+        ? "基于游戏文件数据的 TBH 英雄对比：6 维度属性雷达图、生存力/爆发/持续输出评分矩阵、武器路径、技能树方向和 Build 推荐。非主观 Tier List，纯数据驱动。"
+        : "Data-driven TBH hero comparison: 6-dimension radar charts, survivability/burst/DPS scoring matrix, weapon paths, skill trees, and build recommendations. Not subjective tier list — pure data comparison.",
     alternates: pageAlternates(locale, "/heroes"),
   };
 }
@@ -107,7 +108,28 @@ export default async function HeroesPage({ params }: Props) {
         {heroes.map((hero) => <HeroCard key={hero.HeroKey} hero={hero} locale={locale} />)}
       </div>
 
-      <Section title={isZh ? "各个职业怎么比较？" : "How do the classes compare?"} eyebrow={isZh ? "决策表" : "Decision table"}>
+      <Section title={isZh ? "数据驱动角色对比" : "Data-Driven Class Comparison"} eyebrow={isZh ? "基于真实基础属性，非主观 Tier" : "Based on real base stats, not subjective tier"}>
+        <HeroCompareMatrix locale={locale} />
+      </Section>
+
+      <Section title={isZh ? "英雄雷达图" : "Hero Radar Charts"} eyebrow={isZh ? "6 维度属性可视化" : "6-dimension stat visualization"}>
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+          {heroes.map((hero) => (
+            <div key={hero.HeroKey} className="flex flex-col items-center gap-2 border border-[#27272a] bg-[#0d0d0d] p-3">
+              <p className="text-xs font-medium text-[#9d9d9d]">{heroName(hero, locale)}</p>
+              <HeroRadar hero={hero} locale={locale} size={140} />
+              <Link
+                href={`/${locale}/heroes/${heroSlug(hero)}`}
+                className="text-[10px] text-amber-400 hover:underline"
+              >
+                {isZh ? "详情 →" : "Details →"}
+              </Link>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section title={isZh ? "角色定位速查" : "Quick Role Reference"} eyebrow={isZh ? "定位、武器、阶段一目了然" : "Role, weapons, phase at a glance"}>
         <div className="overflow-x-auto border border-[#27272a]">
           <table className="w-full min-w-[760px] text-left text-sm">
             <thead className="bg-[#18181b] text-xs text-[#6c6c6c]">
