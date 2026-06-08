@@ -26,7 +26,7 @@ const NAV_ITEMS = [
 export function SiteHeader() {
   const pathname = usePathname();
   const seg = pathname.split("/")[1];
-  const locale = ["en", "zh", "ja"].includes(seg) ? seg : "en";
+  const locale = ["en", "zh", "ja", "ko"].includes(seg) ? seg : "en";
   const { menuOpen, toggleMenu, closeMenu } = useNav();
 
   const lpath = (path: string) => `/${locale}${path === "/" ? "" : path}`;

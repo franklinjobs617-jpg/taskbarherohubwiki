@@ -1,0 +1,174 @@
+{
+  "site": {
+    "title": "TBH 가이드",
+    "subtitle": "Task Bar Hero 가이드 & 아이템 데이터베이스",
+    "description": "TBH: Task Bar Hero의 가장 포괄적인 가이드 사이트. 아이템 데이터베이스, Steam 마켓 가격, 수익 계산기, 클래스 가이드."
+  },
+  "nav": {
+    "home": "홈",
+    "items": "아이템",
+    "heroes": "영웅",
+    "stages": "스테이지",
+    "market": "마켓",
+    "guides": "가이드",
+    "tools": "도구",
+    "builds": "빌드",
+    "monsters": "몬스터",
+    "runes": "룬",
+    "skills": "스킬",
+    "pets": "펫",
+    "search": "아이템, 영웅, 가이드 검색...",
+    "language": "언어"
+  },
+  "home": {
+    "hero_title": "TBH: Task Bar Hero",
+    "hero_subtitle": "완벽한 가이드 허브 & 아이템 데이터베이스",
+    "cta_explore": "데이터베이스 탐색",
+    "cta_market": "마켓 가격",
+    "hot_items": "인기 아이템",
+    "market_live": "실시간 마켓 가격",
+    "latest_guides": "최신 가이드",
+    "item_database": "아이템 데이터베이스",
+    "item_count": "{count}개 아이템 수록",
+    "quick_links": "빠른 링크",
+    "search_placeholder": "아이템, 영웅, 가이드 검색..."
+  },
+  "items": {
+    "title": "아이템 데이터베이스",
+    "subtitle": "{count}개 장비 · 125개 재료 · 59개 스테이지 상자",
+    "filter_rarity": "등급",
+    "filter_slot": "슬롯",
+    "filter_level": "레벨",
+    "filter_type": "유형",
+    "all": "전체",
+    "search": "아이템 검색...",
+    "no_results": "아이템을 찾을 수 없습니다",
+    "market_price": "마켓 가격",
+    "drop_sources": "드롭 출처",
+    "synthesis": "합성",
+    "related_guides": "관련 가이드",
+    "suitable_heroes": "적합한 영웅"
+  },
+  "market": {
+    "title": "Steam 마켓",
+    "subtitle": "실시간 가격 추적 · 15분마다 업데이트",
+    "price": "가격",
+    "change_24h": "24시간 변동",
+    "supply": "공급량",
+    "demand_rank": "수요",
+    "top_movers": "급변동",
+    "best_profit": "최고 수익",
+    "price_history": "가격 변동 (7일)",
+    "data_stale": "데이터가 지연될 수 있습니다. 참고용입니다.",
+    "source": "출처: Steam 커뮤니티 마켓"
+  },
+  "guides": {
+    "title": "가이드",
+    "subtitle": "초보자부터 전문가까지 — 포괄적인 TBH 가이드",
+    "categories": {
+      "beginner": "초보자",
+      "farming": "파밍",
+      "economy": "경제",
+      "builds": "빌드",
+      "mechanics": "메커니즘"
+    },
+    "evidence_level": "증거 수준",
+    "evidence": {
+      "datamined": "데이터마이닝",
+      "community": "커뮤니티 검증",
+      "editorial": "편집",
+      "unverified": "미검증"
+    }
+  },
+  "tools": {
+    "title": "도구",
+    "profit_calculator": "수익 계산기",
+    "profit_desc": "스테이지별 예상 수익 계산",
+    "farming_compare": "파밍 비교",
+    "farming_compare_desc": "스테이지 간 파밍 효율 비교",
+    "select_stage": "스테이지 선택",
+    "select_difficulty": "난이도 선택",
+    "estimated_profit": "예상 수익",
+    "per_run": "회당",
+    "per_hour": "시간당",
+    "per_day": "24시간 AFK",
+    "insufficient_data": "계산하기에 데이터가 부족합니다"
+  },
+  "builds": {
+    "title": "추천 빌드",
+    "subtitle": "증거 수준이 표시된 빌드",
+    "hero": "영웅",
+    "gear_slots": "추천 장비",
+    "skills": "스킬 할당",
+    "runes": "룬 우선순위",
+    "source": "출처"
+  },
+  "common": {
+    "level": "레벨",
+    "rarity": "등급",
+    "grade": "등급",
+    "slot": "슬롯",
+    "class": "클래스",
+    "source_url": "출처",
+    "view_all": "전체 보기",
+    "loading": "로딩 중...",
+    "error": "로딩 실패",
+    "retry": "재시도"
+  },
+  "rarity": {
+    "COMMON": "커먼",
+    "UNCOMMON": "언커먼",
+    "RARE": "레어",
+    "LEGENDARY": "레전더리",
+    "IMMORTAL": "이모탈",
+    "ARCANA": "아르카나",
+    "BEYOND": "비욘드",
+    "CELESTIAL": "셀레스티얼",
+    "DIVINE": "디바인",
+    "COSMIC": "코즈믹"
+  },
+  "slots": {
+    "SWORD": "검",
+    "BOW": "활",
+    "STAFF": "스태프",
+    "SCEPTER": "셉터",
+    "TOME": "서적",
+    "CROSSBOW": "석궁",
+    "HATCHET": "손도끼",
+    "ORB": "오브",
+    "ARROW": "화살",
+    "BOLT": "볼트",
+    "ARMOR": "갑옷",
+    "HELMET": "투구",
+    "GLOVES": "장갑",
+    "BOOTS": "장화",
+    "SHIELD": "방패",
+    "AMULET": "부적",
+    "RING": "반지",
+    "BRACER": "팔찌",
+    "EARING": "귀걸이",
+    "AXE": "도끼"
+  },
+  "heroes": {
+    "Knight": "기사",
+    "Ranger": "레인저",
+    "Sorcerer": "소서러",
+    "Priest": "프리스트",
+    "Hunter": "헌터",
+    "Slayer": "슬레이어"
+  },
+  "difficulty": {
+    "NORMAL": "일반",
+    "HARD": "어려움",
+    "BRUTAL": "잔혹",
+    "NIGHTMARE": "나이트메어",
+    "HELL": "지옥",
+    "TORMENT": "고통"
+  },
+  "footer": {
+    "disclaimer": "팬 제작 사이트이며 TBH: Task Bar Hero 개발사와 관련이 없습니다.",
+    "market_disclaimer": "마켓 가격은 추정치이며 실제 거래 가격이 아닙니다.",
+    "copyright": "© 2026 TBH 가이드 · 팬 제작",
+    "privacy": "개인정보 처리방침"
+  }
+}

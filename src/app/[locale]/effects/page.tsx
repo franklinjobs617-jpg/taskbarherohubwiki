@@ -115,7 +115,7 @@ function SummaryCard({ label, value }: { label: string; value: string | number }
 }
 
 function partLabel(part: string, locale: Locale) {
-  const labels: Record<string, Record<Locale, string>> = {
+  const labels: Record<string, Partial<Record<Locale, string>>> = {
     WEAPON: { zh: "武器", en: "Weapon", ja: "武器" },
     ARMOR: { zh: "护甲", en: "Armor", ja: "防具" },
     ACCESSORY: { zh: "饰品", en: "Accessory", ja: "アクセサリ" },

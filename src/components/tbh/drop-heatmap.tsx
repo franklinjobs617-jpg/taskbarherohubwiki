@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
@@ -7,7 +7,7 @@ import { bestFarmingStages, dropsForItem, type DropSource, type FarmingStage, ty
 const DIFFICULTIES = ["NORMAL", "NIGHTMARE", "HELL", "TORMENT"] as const;
 type Difficulty = (typeof DIFFICULTIES)[number];
 
-const DIFF_LABELS: Record<Locale, Record<Difficulty, string>> = {
+const DIFF_LABELS: Partial<Record<Locale, Record<Difficulty, string>>> = {
   en: { NORMAL: "Normal", NIGHTMARE: "Nightmare", HELL: "Hell", TORMENT: "Torment" },
   zh: { NORMAL: "普通", NIGHTMARE: "噩梦", HELL: "地狱", TORMENT: "折磨" },
   ja: { NORMAL: "通常", NIGHTMARE: "悪夢", HELL: "地獄", TORMENT: "苦痛" },
@@ -108,7 +108,7 @@ export function DropHeatmap({
                   : "border-[#27272a] text-[#6c6c6c] hover:border-[#3b3b3b] hover:text-[#9d9d9d]"
               }`}
             >
-              {DIFF_LABELS[locale][diff]}
+              {(DIFF_LABELS[locale] ?? DIFF_LABELS.en!)[diff]}
             </button>
           ))}
         </div>

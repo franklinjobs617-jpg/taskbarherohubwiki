@@ -34,8 +34,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const guide = await getGuideContent(locale, category, slug);
   if (!guide) return { title: "Guide" };
   return {
-    title: guide.title[locale],
-    description: guide.description[locale],
+    title: guide.title[locale] as string,
+    description: guide.description[locale] as string,
     alternates: { canonical: `/${locale}/guides/${category}/${slug}`, languages: { zh: `/zh/guides/${category}/${slug}`, en: `/en/guides/${category}/${slug}`, "x-default": `/zh/guides/${category}/${slug}` } },
   };
 }
@@ -52,8 +52,8 @@ export default async function GuideDetailPage({ params }: Props) {
   return (
     <div className="min-h-screen bg-[#070706]" style={{ backgroundImage: "radial-gradient(circle at 18% 0%, rgba(200,121,37,0.06), transparent 34rem)" }}>
       <SeoJsonLd data={[
-        { "@context": "https://schema.org", "@type": "Article", headline: guide.title[locale], description: guide.description[locale], dateModified: guide.updatedAt, inLanguage: locale },
-        { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Guides", item: `/${locale}/guides` }, { "@type": "ListItem", position: 2, name: guide.title[locale] }] },
+        { "@context": "https://schema.org", "@type": "Article", headline: guide.title[locale] as string, description: guide.description[locale] as string, dateModified: guide.updatedAt, inLanguage: locale },
+        { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Guides", item: `/${locale}/guides` }, { "@type": "ListItem", position: 2, name: guide.title[locale] as string }] },
       ]} />
 
       <div className="mx-auto max-w-[1080px] px-5 py-8 sm:py-12">
@@ -75,17 +75,17 @@ export default async function GuideDetailPage({ params }: Props) {
             </div>
 
             {/* Title */}
-            <h1 className="max-w-2xl text-[32px] font-bold leading-[1.1] text-[#f6e8c8] sm:text-[40px]">{guide.title[locale]}</h1>
-            <p className="mt-3 max-w-xl text-[15px] leading-7 text-[#b8a98a] sm:text-[16px]">{guide.description[locale]}</p>
+            <h1 className="max-w-2xl text-[32px] font-bold leading-[1.1] text-[#f6e8c8] sm:text-[40px]">{guide.title[locale] as string}</h1>
+            <p className="mt-3 max-w-xl text-[15px] leading-7 text-[#b8a98a] sm:text-[16px]">{guide.description[locale] as string}</p>
 
             {/* Key insight */}
             <div className="mt-5 border-l-[3px] border-[#c87925] bg-gradient-to-r from-[rgba(200,121,37,0.1)] to-transparent px-4 py-3 sm:px-5 sm:py-3.5">
-              <p className="text-[14px] font-semibold leading-6 text-[#f0c040] sm:text-[15px]">{visual[locale]}</p>
+              <p className="text-[14px] font-semibold leading-6 text-[#f0c040] sm:text-[15px]">{visual[locale as "zh" | "en" | "ja"]}</p>
             </div>
 
             {/* Hero image */}
             <figure className="mt-7 overflow-hidden border border-[#2f2b22] bg-[#0a0a08] sm:mt-8">
-              <Image src={visual.image} alt={guide.title[locale]} width={1200} height={600} className="w-full object-cover" priority unoptimized />
+              <Image src={visual.image} alt={guide.title[locale] as string} width={1200} height={600} className="w-full object-cover" priority unoptimized />
             </figure>
 
             {/* TL;DR Quick Take */}

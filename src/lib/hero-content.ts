@@ -1,4 +1,4 @@
-import { type Hero, type Locale, slotNames } from "@/lib/game-data/data";
+﻿import { type Hero, type Locale, slotNames } from "@/lib/game-data/data";
 
 type HeroProfile = {
   role: string;

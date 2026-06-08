@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useNav } from "./nav-provider";
 
-const KNOWN_LOCALES = ["en", "zh", "ja"];
+const KNOWN_LOCALES = ["en", "zh", "ja", "ko"];
 
 function useLocale() {
   const pathname = usePathname();

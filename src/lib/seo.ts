@@ -13,6 +13,7 @@ export function pageAlternates(locale: Locale, path: string): Metadata["alternat
       en: enPath,
       zh: zhPath,
       ja: jaPath,
+      ko: `/ko${normalizedPath}`,
       "x-default": enPath,
     },
   };

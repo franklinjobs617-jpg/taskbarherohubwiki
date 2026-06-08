@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
@@ -39,7 +39,7 @@ const NODE = 32; // DNF-style hexagonal node
 /** Flat-top hexagon clip-path used by DNF skill-tree nodes */
 const HEX_CLIP = "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)";
 
-const tones: Record<string, { bg: string; border: string; glow: string; text: string; line: string; label: Record<Locale, string> }> = {
+const tones: Record<string, { bg: string; border: string; glow: string; text: string; line: string; label: Partial<Record<Locale, string>> }> = {
   Hero: { bg: "#451615", border: "#ff6b4a", glow: "rgba(255,107,74,0.28)", text: "#ffd8b9", line: "#9c3e2c", label: { zh: "英雄", en: "Hero", ja: "英雄" } },
   Gold: { bg: "#463209", border: "#f0c040", glow: "rgba(240,192,64,0.3)", text: "#ffe995", line: "#a57d18", label: { zh: "金币", en: "Gold", ja: "金策" } },
   EXP: { bg: "#12334f", border: "#4bb3ff", glow: "rgba(75,179,255,0.24)", text: "#caeaff", line: "#2d78b5", label: { zh: "经验", en: "EXP", ja: "経験" } },
@@ -500,7 +500,7 @@ function RelationRow({ label, value }: { label: string; value: string }) {
 }
 
 function routeLabel(route: RouteKey, locale: Locale) {
-  const labels: Record<RouteKey, Record<Locale, string>> = {
+  const labels: Record<RouteKey, Partial<Record<Locale, string>>> = {
     early: { zh: "新手开局", en: "Beginner route", ja: "初心者ルート" },
     heroSlots: { zh: "三英雄槽", en: "Hero slots", ja: "英雄枠" },
     farming: { zh: "金币/经验刷取", en: "Gold and EXP", ja: "金策/経験値" },
@@ -510,7 +510,7 @@ function routeLabel(route: RouteKey, locale: Locale) {
 }
 
 function routeDescription(route: RouteKey, locale: Locale) {
-  const text: Record<RouteKey, Record<Locale, string>> = {
+  const text: Record<RouteKey, Partial<Record<Locale, string>>> = {
     early: {
       zh: "先拿 Growth、Command、离线收益和基础金币经验。",
       en: "Start with Growth, Command, offline gains, and basic gold/EXP.",
@@ -536,7 +536,7 @@ function routeDescription(route: RouteKey, locale: Locale) {
 }
 
 function routeTip(route: RouteKey, locale: Locale) {
-  const tips: Record<RouteKey, Record<Locale, string>> = {
+  const tips: Record<RouteKey, Partial<Record<Locale, string>>> = {
     early: {
       zh: "开局不要先冲高价深层节点，先拿低成本功能节点。",
       en: "Do not rush expensive deep nodes early; take low-cost utility first.",

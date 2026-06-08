@@ -7,9 +7,10 @@ const LOCALES = [
   { code: "en", label: "EN", short: "EN" },
   { code: "zh", label: "中文", short: "中" },
   { code: "ja", label: "日本語", short: "日" },
+  { code: "ko", label: "한국어", short: "한" },
 ] as const;
 
-const KNOWN = ["en", "zh", "ja"];
+const KNOWN = ["en", "zh", "ja", "ko"];
 
 function getLocale(pathname: string) {
   const seg = pathname.split("/")[1];

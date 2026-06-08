@@ -18,7 +18,7 @@ type RawBuff = {
 
 const buffs = buffsJson as RawBuff[];
 
-const STAT_LABELS: Record<string, Record<Locale, string>> = {
+const STAT_LABELS: Record<string, Partial<Record<Locale, string>>> = {
   AttackSpeed: { zh: "攻击速度", en: "Attack Speed", ja: "攻撃速度" },
   MovementSpeed: { zh: "移动速度", en: "Movement Speed", ja: "移動速度" },
   FireDamageAddition: { zh: "火伤附加", en: "Fire Damage", ja: "火炎ダメージ" },

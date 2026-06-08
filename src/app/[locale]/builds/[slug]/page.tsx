@@ -22,7 +22,7 @@ export default async function BuildDetailPage({ params }: Props) {
   const isZh = locale === "zh";
   return (
     <PageShell>
-      <PageHeader kicker="Build detail" title={build.title[locale]} description={build.description[locale]} />
+      <PageHeader kicker="Build detail" title={build.title[locale] ?? build.title.en ?? ""} description={build.description[locale] ?? build.description.en ?? ""} />
       <ConfidenceBadge value={build.evidence === "editorial" ? "medium" : "low"} />
       <Section title={isZh ? "路线结构" : "Route Structure"}>
         <div className="grid gap-3 md:grid-cols-3">

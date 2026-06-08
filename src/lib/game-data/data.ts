@@ -1,4 +1,4 @@
-import itemsJson from "@/../tbh_data/items.json";
+﻿import itemsJson from "@/../tbh_data/items.json";
 import itemDetailsJson from "@/../tbh_data/items_detail.json";
 import heroesJson from "@/../tbh_data/heroes.json";
 import stagesJson from "@/../tbh_data/stages.json";
@@ -8,7 +8,7 @@ import monstersJson from "@/../tbh_data/monsters.json";
 import marketLatestJson from "@/../data/generated/market/v1/latest.json";
 import dropsJson from "@/../data/generated/drops.json";
 
-export type Locale = "zh" | "en" | "ja";
+export type Locale = "zh" | "en" | "ja" | "ko";
 export type Localized = Record<string, string>;
 
 export type RawItem = {
@@ -150,8 +150,8 @@ export type FarmingStage = {
 export type Guide = {
   slug: string;
   category: string;
-  title: Record<Locale, string>;
-  description: Record<Locale, string>;
+  title: Partial<Record<Locale, string>>;
+  description: Partial<Record<Locale, string>>;
   evidence: "editorial" | "datamined" | "community" | "unverified";
   updatedAt: string;
 };
@@ -161,8 +161,8 @@ export type Build = {
   hero: string;
   phase: "early" | "mid" | "endgame";
   goal: string;
-  title: Record<Locale, string>;
-  description: Record<Locale, string>;
+  title: Partial<Record<Locale, string>>;
+  description: Partial<Record<Locale, string>>;
   evidence: "editorial" | "community" | "unverified";
   updatedAt: string;
 };
@@ -190,7 +190,7 @@ export const DATA_VERSION = process.env.NEXT_PUBLIC_GAME_VERSION ?? "game-v1";
 export const UPDATED_AT = "2026-06-03";
 export const MARKET_UPDATED_AT = marketLatest.updatedAt ?? UPDATED_AT;
 
-export const gradeNames: Record<string, Record<Locale, string>> = {
+export const gradeNames: Record<string, Partial<Record<Locale, string>>> = {
   COMMON: { zh: "普通", en: "Common", ja: "コモン" },
   UNCOMMON: { zh: "优秀", en: "Uncommon", ja: "アンコモン" },
   RARE: { zh: "稀有", en: "Rare", ja: "レア" },
@@ -203,7 +203,7 @@ export const gradeNames: Record<string, Record<Locale, string>> = {
   COSMIC: { zh: "宇宙", en: "Cosmic", ja: "コズミック" },
 };
 
-export const slotNames: Record<string, Record<Locale, string>> = {
+export const slotNames: Record<string, Partial<Record<Locale, string>>> = {
   SWORD: { zh: "剑", en: "Sword", ja: "剣" },
   BOW: { zh: "弓", en: "Bow", ja: "弓" },
   STAFF: { zh: "法杖", en: "Staff", ja: "杖" },
@@ -227,13 +227,13 @@ export const slotNames: Record<string, Record<Locale, string>> = {
 };
 
 export function isLocale(value: string): value is Locale {
-  return value === "zh" || value === "en" || value === "ja";
+  return value === "zh" || value === "en" || value === "ja" || value === "ko";
 }
 
 export function text(value: Localized | string | null | undefined, locale: Locale, fallback = "") {
   if (!value) return fallback;
   if (typeof value === "string") return value;
-  const key = locale === "zh" ? "zh-Hans" : locale === "ja" ? "ja-JP" : "en-US";
+  const key = locale === "zh" ? "zh-Hans" : locale === "ja" ? "ja-JP" : locale === "ko" ? "ko-KR" : "en-US";
   return value[key] ?? value["en-US"] ?? value["zh-Hans"] ?? Object.values(value)[0] ?? fallback;
 }
 

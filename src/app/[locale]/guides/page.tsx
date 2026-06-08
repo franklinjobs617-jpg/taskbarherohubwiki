@@ -106,8 +106,8 @@ export default async function GuidesPage({ params }: Props) {
                 <GuideCard
                   key={guide.slug}
                   href={`/${locale}/guides/${guide.category}/${guide.slug}`}
-                  title={guide.title[locale]}
-                  description={guide.description[locale]}
+                  title={guide.title[locale] ?? guide.title.en ?? ""}
+                  description={guide.description[locale] ?? guide.description.en ?? ""}
                   evidence={guide.evidence}
                 />
               ))}

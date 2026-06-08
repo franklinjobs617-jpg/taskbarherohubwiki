@@ -22,7 +22,7 @@ export const SLOT = [
 export type SlotType = (typeof SLOT)[number];
 
 // Locale
-export type Locale = "zh" | "en";
+export type Locale = "zh" | "en" | "ja" | "ko";
 
 // Item schema
 export const itemSchema = z.object({
