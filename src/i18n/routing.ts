@@ -7,4 +7,5 @@ export const routing = defineRouting({
   localePrefix: "as-needed",
   // The URL is the source of truth: unprefixed routes are always English.
   localeDetection: false,
+  localeCookie: false,
 });
