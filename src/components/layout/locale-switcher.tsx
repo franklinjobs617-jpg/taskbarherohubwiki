@@ -1,30 +1,23 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { currentLocaleFromPath, localizedPath, withoutLocalePrefix } from "@/lib/locale-path";
 
 const LOCALES = [
   { code: "en", label: "English", short: "EN" },
-  { code: "zh", label: "中文", short: "中" },
+  { code: "zh", label: "\u4e2d\u6587", short: "\u4e2d" },
+  { code: "ja", label: "\u65e5\u672c\u8a9e", short: "\u65e5" },
+  { code: "ko", label: "\ud55c\uad6d\uc5b4", short: "\ud55c" },
 ] as const;
 
 export function LocaleSwitcher() {
   const pathname = usePathname();
-  const router = useRouter();
   const currentLocale = currentLocaleFromPath(pathname);
   const [open, setOpen] = useState(false);
   const current = LOCALES.find((locale) => locale.code === currentLocale) ?? LOCALES[0];
-
-  const switchTo = (code: string) => {
-    if (code === currentLocale) {
-      setOpen(false);
-      return;
-    }
-
-    router.push(localizedPath(code, withoutLocalePrefix(pathname)));
-    setOpen(false);
-  };
+  const basePath = withoutLocalePrefix(pathname);
 
   return (
     <div className="relative shrink-0">
@@ -45,28 +38,29 @@ export function LocaleSwitcher() {
       {open ? (
         <>
           <button className="fixed inset-0 z-[60] cursor-default" aria-label="Close language menu" onClick={() => setOpen(false)} />
-          <div className="fixed right-3 top-12 z-[70] w-40 overflow-hidden rounded-md border border-[#3b3b3b] bg-[#0d0d0d] shadow-2xl shadow-black/40">
-            {LOCALES.map((locale) => (
-              <button
-                key={locale.code}
-                type="button"
-                onClick={() => switchTo(locale.code)}
-                className={`flex w-full items-center gap-2.5 px-3 py-2.5 text-left text-[13px] transition-colors ${
-                  currentLocale === locale.code
-                    ? "bg-[#18181b] text-[#f0c040]"
-                    : "text-[#b8ad98] hover:bg-[#18181b] hover:text-white"
-                }`}
-              >
-                <span
-                  className={`flex h-5 w-7 items-center justify-center rounded-sm text-[10px] font-semibold ${
-                    currentLocale === locale.code ? "bg-[#d4a017] text-black" : "bg-[#18181b] text-[#9d9d9d]"
+          <div className="absolute right-0 top-[calc(100%+8px)] z-[70] w-44 overflow-hidden rounded-md border border-[#3b3b3b] bg-[#0d0d0d] shadow-2xl shadow-black/40">
+            {LOCALES.map((locale) => {
+              const active = currentLocale === locale.code;
+              return (
+                <Link
+                  key={locale.code}
+                  href={localizedPath(locale.code, basePath)}
+                  onClick={() => setOpen(false)}
+                  className={`flex w-full items-center gap-2.5 px-3 py-2.5 text-left text-[13px] transition-colors ${
+                    active ? "bg-[#18181b] text-[#f0c040]" : "text-[#b8ad98] hover:bg-[#18181b] hover:text-white"
                   }`}
                 >
-                  {locale.short}
-                </span>
-                <span className="min-w-0 flex-1 truncate">{locale.label}</span>
-              </button>
-            ))}
+                  <span
+                    className={`flex h-5 w-7 items-center justify-center rounded-sm text-[10px] font-semibold ${
+                      active ? "bg-[#d4a017] text-black" : "bg-[#18181b] text-[#9d9d9d]"
+                    }`}
+                  >
+                    {locale.short}
+                  </span>
+                  <span className="min-w-0 flex-1 truncate">{locale.label}</span>
+                </Link>
+              );
+            })}
           </div>
         </>
       ) : null}

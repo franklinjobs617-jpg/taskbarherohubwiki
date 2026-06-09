@@ -1,5 +1,5 @@
-export const PUBLIC_LOCALES = ["en", "zh"] as const;
-export const KNOWN_LOCALES = ["en", "zh"] as const;
+export const PUBLIC_LOCALES = ["en", "zh", "ja", "ko"] as const;
+export const KNOWN_LOCALES = ["en", "zh", "ja", "ko"] as const;
 
 export function currentLocaleFromPath(pathname: string): string {
   const firstSegment = pathname.split("/").filter(Boolean)[0];

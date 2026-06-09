@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { allHeroes, allItems, allMonsters, allStages, builds, chestItems, guides, SITE_URL, stageSlug, UPDATED_AT } from "@/lib/game-data/data";
 
-const locales = ["en", "zh"] as const;
+const locales = ["en", "zh", "ja", "ko"] as const;
 
 const toUrl = (locale: string, path: string) =>
   locale === "en" ? `${SITE_URL}${path}` : `${SITE_URL}/${locale}${path}`;
@@ -10,6 +10,8 @@ function hreflang(path: string): Record<string, string> {
   return {
     en: toUrl("en", path),
     zh: toUrl("zh", path),
+    ja: toUrl("ja", path),
+    ko: toUrl("ko", path),
     "x-default": toUrl("en", path),
   };
 }
