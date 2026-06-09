@@ -35,10 +35,6 @@ function parsePrice(result) {
   return match ? Number(match[1]) : null;
 }
 
-function safeFileName(value) {
-  return encodeURIComponent(value).replace(/%/g, "_");
-}
-
 async function fetchPage(start) {
   const url = new URL("https://steamcommunity.com/market/search/render/");
   url.searchParams.set("query", "");
@@ -131,18 +127,10 @@ function matchRows(steamRows) {
   return { matched, unmatched, updatedAt: now };
 }
 
-function writeOutputs({ matched, unmatched, updatedAt }, steamRows) {
+function writeOutputs({ matched, updatedAt }) {
   fs.mkdirSync(outDir, { recursive: true });
-  fs.mkdirSync(path.join(outDir, "items"), { recursive: true });
 
   fs.writeFileSync(path.join(outDir, "latest.json"), JSON.stringify({ updatedAt, appId, currency, items: matched }, null, 2));
-  fs.writeFileSync(path.join(outDir, "unmatched.json"), JSON.stringify(unmatched, null, 2));
-  fs.writeFileSync(path.join(outDir, "top-movers.json"), JSON.stringify([], null, 2));
-  fs.writeFileSync(path.join(outDir, "steam-search-raw.json"), JSON.stringify({ updatedAt, appId, total: steamRows.length, results: steamRows }, null, 2));
-
-  for (const record of matched) {
-    fs.writeFileSync(path.join(outDir, "items", `${safeFileName(record.marketHash)}.json`), JSON.stringify(record, null, 2));
-  }
 }
 
 try {
@@ -151,11 +139,6 @@ try {
   writeOutputs(result, steamRows);
   console.log(`Matched ${result.matched.length} items. Unmatched ${result.unmatched.length} items.`);
 } catch (error) {
-  fs.mkdirSync(outDir, { recursive: true });
-  fs.writeFileSync(
-    path.join(outDir, "fetch-error.json"),
-    JSON.stringify({ updatedAt: new Date().toISOString(), message: error instanceof Error ? error.message : String(error) }, null, 2),
-  );
   console.error(error);
   process.exit(1);
 }

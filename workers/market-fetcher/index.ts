@@ -55,7 +55,4 @@ async function writeMissingMarketStatus(env: Env) {
   await env.R2_BUCKET.put("market/v1/latest.json", JSON.stringify({ updatedAt: now, items: latest }, null, 2), {
     httpMetadata: { contentType: "application/json; charset=utf-8" },
   });
-  await env.R2_BUCKET.put("market/v1/unmatched.json", JSON.stringify([], null, 2), {
-    httpMetadata: { contentType: "application/json; charset=utf-8" },
-  });
 }

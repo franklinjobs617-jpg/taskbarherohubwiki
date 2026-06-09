@@ -3,17 +3,14 @@ import type { Locale } from "@/lib/game-data/data";
 
 export function pageAlternates(locale: Locale, path: string): Metadata["alternates"] {
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
-  const enPath = normalizedPath;                       // English: /...  (no /en prefix — en is the default locale at root)
-  const zhPath = `/zh${normalizedPath}`;               // Chinese: /zh/...
-  const jaPath = `/ja${normalizedPath}`;               // Japanese: /ja/...
-  const canonical = locale === "en" ? normalizedPath : `/${locale}${normalizedPath}`;
+  const enPath = normalizedPath;
+  const zhPath = `/zh${normalizedPath}`;
+
   return {
-    canonical,
+    canonical: locale === "en" ? enPath : `/${locale}${normalizedPath}`,
     languages: {
       en: enPath,
       zh: zhPath,
-      ja: jaPath,
-      ko: `/ko${normalizedPath}`,
       "x-default": enPath,
     },
   };

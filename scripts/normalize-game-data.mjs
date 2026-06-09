@@ -81,7 +81,5 @@ write("game/v1/manifest.json", {
   },
 });
 write("market/v1/latest.json", items.filter((item) => item.marketable).map((item) => ({ slug: item.slug, marketHash: name(item.name, "en"), confidence: "missing", updatedAt: now })));
-write("market/v1/top-movers.json", []);
-write("market/v1/unmatched.json", []);
 
 console.log(`Generated data in ${out}`);

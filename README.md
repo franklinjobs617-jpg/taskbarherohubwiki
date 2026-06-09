@@ -146,7 +146,6 @@ R2_BUCKET=taskbarhero
 当前市场同步只写入缺失状态，不抓取也不伪造价格：
 
 - `market/v1/latest.json`
-- `market/v1/unmatched.json`
 
 只有真实抓到并匹配到 Steam 市场名称的数据，才能写入最低价、中位价、挂单数和趋势。
 

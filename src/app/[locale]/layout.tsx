@@ -19,18 +19,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: {
       default: isZh
-        ? "TBH: Task Bar Hero Wiki — 物品数据库、英雄配装、掉落查询与 Steam 市场"
-        : "TBH: Task Bar Hero Wiki — Items, Builds, Drop Finder & Steam Market",
+        ? "TBH: Task Bar Hero Wiki - 物品数据库、英雄配装、掉落查询与 Steam 市场"
+        : "TBH: Task Bar Hero Wiki - Items, Builds, Drop Finder & Steam Market",
       template: "%s | TBH: Task Bar Hero Wiki",
     },
     description: isZh
-      ? "最完整的 TBH: Task Bar Hero Wiki。搜索 5,944 件物品、对比 6 位英雄、查找掉落位置、查看 Steam 市场价格、规划刷图路线。数据来自游戏文件解包。"
-      : "The complete TBH: Task Bar Hero wiki. Search 5,944 items, compare 6 hero classes, find drop locations, check Steam Market prices, and plan your farming route. Data mined from game files.",
+      ? "完整的 TBH: Task Bar Hero Wiki。搜索物品、对比英雄、查询掉落位置、查看 Steam 市场价格，并规划刷图路线。"
+      : "The complete TBH: Task Bar Hero wiki. Search items, compare hero classes, find drop locations, check Steam Market prices, and plan your farming route.",
     metadataBase: new URL(SITE_URL),
     robots: { index: true, follow: true },
     alternates: {
       canonical: locale === "en" ? "/" : `/${locale}`,
-      languages: { en: "/", zh: "/zh", ja: "/ja", ko: "/ko", "x-default": "/" },
+      languages: { en: "/", zh: "/zh", "x-default": "/" },
     },
     openGraph: {
       type: "website",
@@ -48,11 +48,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       title: isZh
-        ? "TBH: Task Bar Hero Wiki — 物品数据库、英雄配装、掉落查询与 Steam 市场"
-        : "TBH: Task Bar Hero Wiki — Items, Builds, Drop Finder & Steam Market",
+        ? "TBH: Task Bar Hero Wiki - 物品数据库、英雄配装、掉落查询与 Steam 市场"
+        : "TBH: Task Bar Hero Wiki - Items, Builds, Drop Finder & Steam Market",
       description: isZh
-        ? "最完整的 TBH: Task Bar Hero Wiki。搜索 5,944 件物品、对比 6 位英雄、查找掉落位置、查看 Steam 市场价格、规划刷图路线。数据来自游戏文件解包。"
-        : "The complete TBH: Task Bar Hero wiki. Search 5,944 items, compare 6 hero classes, find drop locations, check Steam Market prices, and plan your farming route. Data mined from game files.",
+        ? "搜索物品、对比英雄、查询掉落位置、查看 Steam 市场价格，并规划刷图路线。"
+        : "Search items, compare heroes, find drops, check Steam Market prices, and plan farming routes.",
       images: ["/og-image.jpg"],
     },
   };

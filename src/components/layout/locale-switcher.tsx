@@ -2,71 +2,74 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
+import { currentLocaleFromPath, localizedPath, withoutLocalePrefix } from "@/lib/locale-path";
 
 const LOCALES = [
-  { code: "en", label: "EN", short: "EN" },
+  { code: "en", label: "English", short: "EN" },
   { code: "zh", label: "中文", short: "中" },
-  { code: "ja", label: "日本語", short: "日" },
-  { code: "ko", label: "한국어", short: "한" },
 ] as const;
-
-const KNOWN = ["en", "zh", "ja", "ko"];
-
-function getLocale(pathname: string) {
-  const seg = pathname.split("/")[1];
-  return KNOWN.includes(seg) ? seg : "en";
-}
 
 export function LocaleSwitcher() {
   const pathname = usePathname();
   const router = useRouter();
-  const currentLocale = getLocale(pathname);
+  const currentLocale = currentLocaleFromPath(pathname);
   const [open, setOpen] = useState(false);
-
-  const current = LOCALES.find((l) => l.code === currentLocale) ?? LOCALES[0];
+  const current = LOCALES.find((locale) => locale.code === currentLocale) ?? LOCALES[0];
 
   const switchTo = (code: string) => {
-    if (code === currentLocale) { setOpen(false); return; }
-    const parts = pathname.split("/").filter(Boolean);
-    const base = KNOWN.includes(parts[0]) ? `/${parts.slice(1).join("/")}` : pathname;
-    const normalizedBase = base === "/" ? "" : base;
-    const next = `/${code}${normalizedBase}`;
-    router.push(next);
+    if (code === currentLocale) {
+      setOpen(false);
+      return;
+    }
+
+    router.push(localizedPath(code, withoutLocalePrefix(pathname)));
     setOpen(false);
   };
 
   return (
-    <div className="relative">
-      <button onClick={() => setOpen(!open)}
-        className="flex items-center gap-1.5 rounded-md border border-[#3b3b3b] bg-[#0d0d0d] px-2.5 py-1.5 text-[12px] text-[#ffffff] transition-colors hover:border-[#d4a017]/60 font-mono"
-        aria-label="Switch language">
-        <span className="text-[#d4a017]">{current.short}</span>
-        <span className="hidden sm:inline text-[#9d9d9d]">{current.label}</span>
-        <svg className="h-3 w-3 text-[#6c6c6c]" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" strokeWidth="1.5" d="M1 1l4 4 4-4" /></svg>
+    <div className="relative shrink-0">
+      <button
+        type="button"
+        onClick={() => setOpen((value) => !value)}
+        className="flex h-8 items-center gap-1.5 rounded-md border border-[#3b3b3b] bg-[#0d0d0d] px-2.5 text-[12px] font-medium text-white transition-colors hover:border-[#d4a017]/70"
+        aria-label="Switch language"
+        aria-expanded={open}
+      >
+        <span className="font-mono text-[#f0c040]">{current.short}</span>
+        <span className="hidden text-[#9d9d9d] sm:inline">{current.label}</span>
+        <svg className="h-3 w-3 text-[#6c6c6c]" fill="none" viewBox="0 0 10 6" aria-hidden="true">
+          <path stroke="currentColor" strokeWidth="1.5" d="M1 1l4 4 4-4" />
+        </svg>
       </button>
-      {open && (
+
+      {open ? (
         <>
-          <div className="fixed inset-0 z-40" onClick={() => setOpen(false)} />
-          <div className="absolute right-0 top-full z-50 mt-1 w-32 overflow-hidden rounded-lg border border-[#27272a] bg-[#0d0d0d] shadow-lg">
+          <button className="fixed inset-0 z-[60] cursor-default" aria-label="Close language menu" onClick={() => setOpen(false)} />
+          <div className="fixed right-3 top-12 z-[70] w-40 overflow-hidden rounded-md border border-[#3b3b3b] bg-[#0d0d0d] shadow-2xl shadow-black/40">
             {LOCALES.map((locale) => (
-              <button key={locale.code} onClick={() => switchTo(locale.code)}
-                className={`flex w-full items-center gap-2.5 px-3 py-2.5 text-[13px] transition-colors font-mono ${
+              <button
+                key={locale.code}
+                type="button"
+                onClick={() => switchTo(locale.code)}
+                className={`flex w-full items-center gap-2.5 px-3 py-2.5 text-left text-[13px] transition-colors ${
                   currentLocale === locale.code
                     ? "bg-[#18181b] text-[#f0c040]"
-                    : "text-[#9d9d9d] hover:bg-[#18181b] hover:text-[#ffffff]"
-                }`}>
-                <span className={`flex h-5 w-5 items-center justify-center rounded text-[10px] font-medium ${
-                  currentLocale === locale.code ? "bg-[#d4a017] text-black" : "bg-[#18181b] text-[#6c6c6c]"
-                }`}>{locale.short}</span>
-                {locale.label}
-                {currentLocale === locale.code && (
-                  <svg className="ml-auto h-3.5 w-3.5 text-[#d4a017]" fill="none" viewBox="0 0 12 12"><path stroke="currentColor" strokeWidth="2" d="M2 6l3 3 5-6" /></svg>
-                )}
+                    : "text-[#b8ad98] hover:bg-[#18181b] hover:text-white"
+                }`}
+              >
+                <span
+                  className={`flex h-5 w-7 items-center justify-center rounded-sm text-[10px] font-semibold ${
+                    currentLocale === locale.code ? "bg-[#d4a017] text-black" : "bg-[#18181b] text-[#9d9d9d]"
+                  }`}
+                >
+                  {locale.short}
+                </span>
+                <span className="min-w-0 flex-1 truncate">{locale.label}</span>
               </button>
             ))}
           </div>
         </>
-      )}
+      ) : null}
     </div>
   );
 }
