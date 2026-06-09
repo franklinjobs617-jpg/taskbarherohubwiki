@@ -68,6 +68,11 @@ export default async function LocaleLayout({ children, params }: Props) {
       <head>
         <link rel="llms" href="/llms.txt" />
         <meta name="llms:generated" content="2026-06-08" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3383070348689557"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className="min-h-full bg-[#090909] text-[#d8d1c2] antialiased">
         <NextIntlClientProvider messages={messages}>
@@ -76,7 +81,6 @@ export default async function LocaleLayout({ children, params }: Props) {
             <SiteFooter />
           </div>
         </NextIntlClientProvider>
-        <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3383070348689557" crossOrigin="anonymous" strategy="afterInteractive" />
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-87KVJGHX8D" strategy="afterInteractive" />
         <Script id="gtag-init" strategy="afterInteractive">{`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-87KVJGHX8D');`}</Script>
       </body>
