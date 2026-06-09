@@ -2,22 +2,21 @@ import type { MetadataRoute } from "next";
 import { allHeroes, allItems, allMonsters, allStages, builds, chestItems, guides, SITE_URL, stageSlug, UPDATED_AT } from "@/lib/game-data/data";
 
 const locales = ["en", "zh", "ja", "ko"] as const;
+const guideLocales = ["en", "zh", "ja"] as const;
+type SitemapLocale = (typeof locales)[number];
 
 const toUrl = (locale: string, path: string) =>
   locale === "en" ? `${SITE_URL}${path}` : `${SITE_URL}/${locale}${path}`;
 
-function hreflang(path: string): Record<string, string> {
-  return {
-    en: toUrl("en", path),
-    zh: toUrl("zh", path),
-    ja: toUrl("ja", path),
-    ko: toUrl("ko", path),
-    "x-default": toUrl("en", path),
-  };
+function hreflang(path: string, availableLocales: readonly SitemapLocale[] = locales): Record<string, string> {
+  return Object.fromEntries([
+    ...availableLocales.map((locale) => [locale, toUrl(locale, path)]),
+    ["x-default", toUrl("en", path)],
+  ]);
 }
 
-function withAlternates(locale: string, path: string) {
-  return { languages: hreflang(path) };
+function withAlternates(path: string, availableLocales: readonly SitemapLocale[] = locales) {
+  return { languages: hreflang(path, availableLocales) };
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -26,7 +25,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "", "/items", "/market", "/chests", "/effects", "/map", "/stages",
     "/heroes", "/runes", "/skills", "/pets", "/monsters", "/guides", "/builds",
     "/buffs", "/cube", "/guides/farming",
-    "/tools/profit-calculator", "/tools/farming-compare", "/tools/farming-calculator",
+    "/tools/drop-finder", "/tools/farming-optimizer", "/tools/profit-calculator",
+    "/tools/farming-compare", "/tools/farming-calculator",
     "/updates", "/faq", "/about", "/privacy", "/terms", "/contact",
   ];
 
@@ -36,20 +36,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: updated,
       changeFrequency: "weekly" as const,
       priority: path === "" ? 1 : 0.7,
-      alternates: withAlternates(locale, path),
+      alternates: withAlternates(path),
     })),
   );
 
-  const itemUrls = allItems().filter((item) => item.type !== "STAGEBOX").slice(0, 1200)
-    .flatMap((item) => locales.map((locale) => ({ url: toUrl(locale, `/items/${item.slug}`), lastModified: updated, changeFrequency: "monthly" as const, priority: 0.65, alternates: withAlternates(locale, `/items/${item.slug}`) })));
-  const marketUrls = allItems().filter((item) => item.marketable).slice(0, 400)
-    .flatMap((item) => locales.map((locale) => ({ url: toUrl(locale, `/market/${item.slug}`), lastModified: updated, changeFrequency: "daily" as const, priority: 0.7, alternates: withAlternates(locale, `/market/${item.slug}`) })));
-  const chestUrls = chestItems().flatMap((item) => locales.map((locale) => ({ url: toUrl(locale, `/chests/${item.slug}`), lastModified: updated, changeFrequency: "monthly" as const, priority: 0.6, alternates: withAlternates(locale, `/chests/${item.slug}`) })));
-  const stageUrls = allStages().flatMap((stage) => locales.map((locale) => ({ url: toUrl(locale, `/stages/${stageSlug(stage)}`), lastModified: updated, changeFrequency: "monthly" as const, priority: 0.6, alternates: withAlternates(locale, `/stages/${stageSlug(stage)}`) })));
-  const heroUrls = allHeroes().flatMap((hero) => locales.map((locale) => ({ url: toUrl(locale, `/heroes/${hero.slug ?? hero.ClassType?.toLowerCase() ?? hero.HeroKey}`), lastModified: updated, changeFrequency: "monthly" as const, priority: 0.6, alternates: withAlternates(locale, `/heroes/${hero.slug ?? hero.ClassType?.toLowerCase() ?? hero.HeroKey}`) })));
-  const guideUrls = guides.flatMap((guide) => locales.map((locale) => ({ url: toUrl(locale, `/guides/${guide.category}/${guide.slug}`), lastModified: updated, changeFrequency: "weekly" as const, priority: 0.75, alternates: withAlternates(locale, `/guides/${guide.category}/${guide.slug}`) })));
-  const buildUrls = builds.flatMap((build) => locales.map((locale) => ({ url: toUrl(locale, `/builds/${build.slug}`), lastModified: updated, changeFrequency: "weekly" as const, priority: 0.6, alternates: withAlternates(locale, `/builds/${build.slug}`) })));
-  const monsterUrls = allMonsters().flatMap((m) => locales.map((locale) => ({ url: toUrl(locale, `/monsters/${m.slug ?? m.MonsterKey}`), lastModified: updated, changeFrequency: "monthly" as const, priority: 0.6, alternates: withAlternates(locale, `/monsters/${m.slug ?? m.MonsterKey}`) })));
+  const itemUrls = allItems()
+    .filter((item) => item.type !== "STAGEBOX")
+    .flatMap((item) => locales.map((locale) => ({ url: toUrl(locale, `/items/${item.slug}`), lastModified: updated, changeFrequency: "monthly" as const, priority: 0.65, alternates: withAlternates(`/items/${item.slug}`) })));
+  const marketUrls = allItems()
+    .filter((item) => item.marketable)
+    .flatMap((item) => locales.map((locale) => ({ url: toUrl(locale, `/market/${item.slug}`), lastModified: updated, changeFrequency: "daily" as const, priority: 0.7, alternates: withAlternates(`/market/${item.slug}`) })));
+  const chestUrls = chestItems().flatMap((item) => locales.map((locale) => ({ url: toUrl(locale, `/chests/${item.slug}`), lastModified: updated, changeFrequency: "monthly" as const, priority: 0.6, alternates: withAlternates(`/chests/${item.slug}`) })));
+  const stageUrls = allStages().flatMap((stage) => {
+    const path = `/stages/${stageSlug(stage)}`;
+    return locales.map((locale) => ({ url: toUrl(locale, path), lastModified: updated, changeFrequency: "monthly" as const, priority: 0.6, alternates: withAlternates(path) }));
+  });
+  const heroUrls = allHeroes().flatMap((hero) => {
+    const path = `/heroes/${hero.slug ?? hero.ClassType?.toLowerCase() ?? hero.HeroKey}`;
+    return locales.map((locale) => ({ url: toUrl(locale, path), lastModified: updated, changeFrequency: "monthly" as const, priority: 0.6, alternates: withAlternates(path) }));
+  });
+  const guideUrls = guides.flatMap((guide) => {
+    const path = `/guides/${guide.category}/${guide.slug}`;
+    return guideLocales.map((locale) => ({ url: toUrl(locale, path), lastModified: updated, changeFrequency: "weekly" as const, priority: 0.75, alternates: withAlternates(path, guideLocales) }));
+  });
+  const buildUrls = builds.flatMap((build) => locales.map((locale) => ({ url: toUrl(locale, `/builds/${build.slug}`), lastModified: updated, changeFrequency: "weekly" as const, priority: 0.6, alternates: withAlternates(`/builds/${build.slug}`) })));
+  const monsterUrls = allMonsters().flatMap((m) => {
+    const path = `/monsters/${m.slug ?? m.MonsterKey}`;
+    return locales.map((locale) => ({ url: toUrl(locale, path), lastModified: updated, changeFrequency: "monthly" as const, priority: 0.6, alternates: withAlternates(path) }));
+  });
 
   return [...staticUrls, ...itemUrls, ...marketUrls, ...chestUrls, ...stageUrls, ...heroUrls, ...guideUrls, ...buildUrls, ...monsterUrls];
 }
