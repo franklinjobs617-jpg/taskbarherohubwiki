@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocale } from "next-intl";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { localizedPath, withoutLocalePrefix } from "@/lib/locale-path";
 
@@ -13,6 +14,7 @@ const LOCALES = [
 
 export function LocaleSwitcher() {
   const currentLocale = useLocale();
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const current = LOCALES.find((locale) => locale.code === currentLocale) ?? LOCALES[0];
 
@@ -24,7 +26,8 @@ export function LocaleSwitcher() {
       setOpen(false);
       return;
     }
-    window.location.assign(`${next}${window.location.search}${window.location.hash}`);
+    setOpen(false);
+    router.push(`${next}${window.location.search}${window.location.hash}`);
   };
 
   return (
