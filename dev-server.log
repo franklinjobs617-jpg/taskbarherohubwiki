@@ -10,3 +10,4 @@
   · cpus: 1
   · staticGenerationMaxConcurrency: 1
 
+ GET /zh/map 200 in 3.2s (next.js: 2.1s, proxy.ts: 214ms, application-code: 857ms)
