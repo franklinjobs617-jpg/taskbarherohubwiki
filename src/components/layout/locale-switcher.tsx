@@ -1,7 +1,8 @@
 "use client";
 
 import { useLocale } from "next-intl";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { localizedPath, withoutLocalePrefix } from "@/lib/locale-path";
 
@@ -14,20 +15,16 @@ const LOCALES = [
 
 export function LocaleSwitcher() {
   const currentLocale = useLocale();
-  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const [open, setOpen] = useState(false);
   const current = LOCALES.find((locale) => locale.code === currentLocale) ?? LOCALES[0];
+  const basePath = withoutLocalePrefix(pathname);
+  const query = searchParams.toString();
 
-  const switchTo = (code: string) => {
-    const currentPath = window.location.pathname;
-    const basePath = withoutLocalePrefix(currentPath);
+  const hrefFor = (code: string) => {
     const next = localizedPath(code, basePath);
-    if (next === currentPath) {
-      setOpen(false);
-      return;
-    }
-    setOpen(false);
-    router.push(`${next}${window.location.search}${window.location.hash}`);
+    return query ? `${next}?${query}` : next;
   };
 
   return (
@@ -53,10 +50,10 @@ export function LocaleSwitcher() {
             {LOCALES.map((locale) => {
               const active = currentLocale === locale.code;
               return (
-                <button
+                <Link
                   key={locale.code}
-                  type="button"
-                  onClick={() => switchTo(locale.code)}
+                  href={hrefFor(locale.code)}
+                  onClick={() => setOpen(false)}
                   className={`flex w-full items-center gap-2.5 px-3 py-2.5 text-left text-[13px] transition-colors ${
                     active ? "bg-[#18181b] text-[#f0c040]" : "text-[#b8ad98] hover:bg-[#18181b] hover:text-white"
                   }`}
@@ -69,7 +66,7 @@ export function LocaleSwitcher() {
                     {locale.short}
                   </span>
                   <span className="min-w-0 flex-1 truncate">{locale.label}</span>
-                </button>
+                </Link>
               );
             })}
           </div>
