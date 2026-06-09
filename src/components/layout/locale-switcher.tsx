@@ -1,7 +1,6 @@
 "use client";
 
 import { useLocale } from "next-intl";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { localizedPath, withoutLocalePrefix } from "@/lib/locale-path";
 
@@ -13,19 +12,19 @@ const LOCALES = [
 ] as const;
 
 export function LocaleSwitcher() {
-  const pathname = usePathname();
   const currentLocale = useLocale();
   const [open, setOpen] = useState(false);
   const current = LOCALES.find((locale) => locale.code === currentLocale) ?? LOCALES[0];
-  const basePath = withoutLocalePrefix(pathname);
 
   const switchTo = (code: string) => {
+    const currentPath = window.location.pathname;
+    const basePath = withoutLocalePrefix(currentPath);
     const next = localizedPath(code, basePath);
-    if (next === pathname) {
+    if (next === currentPath) {
       setOpen(false);
       return;
     }
-    window.location.assign(next);
+    window.location.assign(`${next}${window.location.search}${window.location.hash}`);
   };
 
   return (
