@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { allHeroes, allItems, allMonsters, allStages, builds, chestItems, guides, SITE_URL, stageSlug, UPDATED_AT } from "@/lib/game-data/data";
+import { allHeroes, allItems, allMonsters, allStages, builds, chestItems, guides, hasIndexableMarketData, marketForItem, SITE_URL, stageSlug, UPDATED_AT } from "@/lib/game-data/data";
 
 const locales = ["en", "zh", "ja", "ko"] as const;
 const guideLocales = ["en", "zh", "ja"] as const;
@@ -44,7 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter((item) => item.type !== "STAGEBOX")
     .flatMap((item) => locales.map((locale) => ({ url: toUrl(locale, `/items/${item.slug}`), lastModified: updated, changeFrequency: "monthly" as const, priority: 0.65, alternates: withAlternates(`/items/${item.slug}`) })));
   const marketUrls = allItems()
-    .filter((item) => item.marketable)
+    .filter((item) => hasIndexableMarketData(marketForItem(item)))
     .flatMap((item) => locales.map((locale) => ({ url: toUrl(locale, `/market/${item.slug}`), lastModified: updated, changeFrequency: "daily" as const, priority: 0.7, alternates: withAlternates(`/market/${item.slug}`) })));
   const chestUrls = chestItems().flatMap((item) => locales.map((locale) => ({ url: toUrl(locale, `/chests/${item.slug}`), lastModified: updated, changeFrequency: "monthly" as const, priority: 0.6, alternates: withAlternates(`/chests/${item.slug}`) })));
   const stageUrls = allStages().flatMap((stage) => {

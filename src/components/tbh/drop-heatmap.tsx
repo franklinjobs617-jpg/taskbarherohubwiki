@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { bestFarmingStages, dropsForItem, type DropSource, type FarmingStage, type Locale } from "@/lib/game-data/data";
+import { localizedPath } from "@/lib/locale-path";
 
 const DIFFICULTIES = ["NORMAL", "NIGHTMARE", "HELL", "TORMENT"] as const;
 type Difficulty = (typeof DIFFICULTIES)[number];
@@ -63,6 +64,7 @@ export function DropHeatmap({
   const isZh = locale === "zh";
   const dropSources = useMemo(() => dropsForItem(itemSlug), [itemSlug]);
   const bestStages = useMemo(() => bestFarmingStages(itemSlug, 10), [itemSlug]);
+  const lpath = (path: string) => localizedPath(locale, path);
 
   // Build stage grid: 3 acts × 10 stages
   const stageGrid = useMemo(() => {
@@ -150,7 +152,7 @@ export function DropHeatmap({
                   return (
                     <Link
                       key={stage.key}
-                      href={stage.density > 0 ? `/${locale}/stages/${stage.key}` : "#"}
+                      href={stage.density > 0 ? lpath(`/stages/${stage.key}`) : "#"}
                       className={`relative flex items-center justify-between rounded-sm border px-2 py-1.5 text-[11px] transition-all cursor-pointer no-underline
                         ${densityColor(stage.density)}
                         ${isBest ? "ring-1 ring-amber-400/50" : "border-transparent"}
@@ -205,7 +207,7 @@ export function DropHeatmap({
             {isZh ? "最佳刷取关卡:" : "Best farming stage:"}{" "}
           </span>
           <Link
-            href={`/${locale}/stages/${bestStage.stageSlug}`}
+            href={lpath(`/stages/${bestStage.stageSlug}`)}
             className="font-semibold text-amber-400 hover:underline"
           >
             {bestStage.diff} ACT {bestStage.act}-{bestStage.no}

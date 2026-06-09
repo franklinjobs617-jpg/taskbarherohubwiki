@@ -4,7 +4,8 @@ import { notFound } from "next/navigation";
 import { ConfidenceBadge } from "@/components/tbh/badges";
 import { Section } from "@/components/tbh/cards";
 import { DataNotice, PageShell } from "@/components/tbh/page";
-import { itemDetail, itemName, marketBySlug, slotNames, type Locale } from "@/lib/game-data/data";
+import { hasIndexableMarketData, itemDetail, itemName, marketBySlug, slotNames, type Locale } from "@/lib/game-data/data";
+import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale; hash: string }> };
@@ -14,10 +15,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const row = marketBySlug(hash);
   if (!row) return { title: "Not found" };
   const name = itemName(row.item, locale);
+  const indexable = hasIndexableMarketData(row.market);
   return {
     title: locale === "zh" ? `${name} Steam 市场状态｜TaskBar Hero` : `${name} Steam Market Status`,
     description: locale === "zh" ? `${name} 的可交易状态、Steam 市场名称、数据状态和卖出风险。` : `${name} tradability, Steam market name, data status, and sale risk.`,
     alternates: pageAlternates(locale, `/market/${hash}`),
+    robots: { index: indexable, follow: true },
   };
 }
 
@@ -29,11 +32,12 @@ export default async function MarketDetailPage({ params }: Props) {
   const isZh = locale === "zh";
   const detail = itemDetail(item.id);
   const name = itemName(item, locale);
+  const lpath = (path: string) => localizedPath(locale, path);
 
   return (
     <PageShell>
       <nav className="mb-5 flex gap-2 text-xs text-[#6c6c6c]">
-        <Link href={`/${locale}/market`} className="hover:text-[#f0c040]">{isZh ? "市场" : "Market"}</Link>
+        <Link href={lpath("/market")} className="hover:text-[#f0c040]">{isZh ? "市场" : "Market"}</Link>
         <span>/</span>
         <span className="text-[#9d9d9d]">{name}</span>
       </nav>
@@ -43,7 +47,7 @@ export default async function MarketDetailPage({ params }: Props) {
           <h1 className="mt-2 text-3xl font-semibold text-[#f1e8d5]">{name}</h1>
           <p className="mt-2 text-sm text-[#9d9d9d]">{itemName(item, "en")} / {item.gear ? slotNames[item.gear]?.[locale] ?? item.gear : item.type}</p>
         </div>
-        <Link href={`/${locale}/items/${item.slug}`} className="border border-[#3b3b3b] px-4 py-2 text-sm text-[#ffffff] hover:border-[#d4a017]">{isZh ? "返回物品详情" : "Open item detail"}</Link>
+        <Link href={lpath(`/items/${item.slug}`)} className="border border-[#3b3b3b] px-4 py-2 text-sm text-[#ffffff] hover:border-[#d4a017]">{isZh ? "返回物品详情" : "Open item detail"}</Link>
       </div>
       <DataNotice>
         {market.lowest

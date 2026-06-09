@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { bestFarmingStages, dropsForItem, type DropSource, type FarmingStage, type Locale } from "@/lib/game-data/data";
+import { localizedPath } from "@/lib/locale-path";
 
 export function ItemQuickAnswer({
   itemSlug,
@@ -17,6 +18,7 @@ export function ItemQuickAnswer({
   const bestStages = bestFarmingStages(itemSlug, 1);
   const best = bestStages[0];
   const drops = dropsForItem(itemSlug);
+  const lpath = (path: string) => localizedPath(locale, path);
 
   if (!drops.length) return null;
 
@@ -33,7 +35,7 @@ export function ItemQuickAnswer({
                 {isZh ? "最佳掉落:" : "Best drop:"}{" "}
               </span>
               <Link
-                href={`/${locale}/stages/${best.stageSlug}`}
+                href={lpath(`/stages/${best.stageSlug}`)}
                 className="font-semibold text-white hover:text-amber-400 transition-colors"
               >
                 {best.diff} ACT {best.act}-{best.no}
@@ -168,6 +170,7 @@ function BoxGroup({
   onToggle: (slug: string) => void;
 }) {
   const isZh = locale === "zh";
+  const lpath = (path: string) => localizedPath(locale, path);
   if (!boxes.length) return null;
 
   return (
@@ -207,7 +210,7 @@ function BoxGroup({
                         .map((stage) => (
                           <div key={stage.key} className="flex items-center justify-between text-[11px]">
                             <Link
-                              href={`/${locale}/stages/${stage.slug}`}
+                              href={lpath(`/stages/${stage.slug}`)}
                               className="text-[#9d9d9d] hover:text-amber-400 transition-colors"
                             >
                               {stage.diff} A{stage.act}-{stage.no}

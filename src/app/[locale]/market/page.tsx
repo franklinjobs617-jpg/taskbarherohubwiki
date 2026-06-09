@@ -4,6 +4,7 @@ import { ConfidenceBadge, RarityBadge } from "@/components/tbh/badges";
 import { DataNotice, PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
 import { itemName, marketRows, slotNames, type Locale } from "@/lib/game-data/data";
+import { localizedPath } from "@/lib/locale-path";
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -23,6 +24,7 @@ export default async function MarketPage({ params, searchParams }: Props) {
   const { locale } = await params;
   const sp = await searchParams;
   const isZh = locale === "zh";
+  const lpath = (path: string) => localizedPath(locale, path);
   const q = sp.q?.toLowerCase().trim();
   let rows = marketRows();
   if (q) rows = rows.filter(({ item }) => itemName(item, locale).toLowerCase().includes(q) || itemName(item, "en").toLowerCase().includes(q));
@@ -77,8 +79,8 @@ export default async function MarketPage({ params, searchParams }: Props) {
             {rows.map(({ item, market }) => (
               <tr key={item.id} className="border-t border-[#27272a] hover:bg-[#0d0d0d]">
                 <td className="px-3 py-2">
-                  <Link href={`/${locale}/market/${item.slug}`} className="font-medium text-[#ffffff] hover:text-[#f0c040]">{itemName(item, locale)}</Link>
-                  <Link href={`/${locale}/items/${item.slug}`} className="ml-2 text-xs text-[#6c6c6c] hover:text-[#f0c040]">item</Link>
+                  <Link href={lpath(`/market/${item.slug}`)} className="font-medium text-[#ffffff] hover:text-[#f0c040]">{itemName(item, locale)}</Link>
+                  <Link href={lpath(`/items/${item.slug}`)} className="ml-2 text-xs text-[#6c6c6c] hover:text-[#f0c040]">item</Link>
                 </td>
                 <td className="px-3 py-2"><RarityBadge grade={item.grade} locale={locale} /></td>
                 <td className="px-3 py-2 text-[#9d9d9d]">{item.gear ? slotNames[item.gear]?.[locale] ?? item.gear : item.type}</td>

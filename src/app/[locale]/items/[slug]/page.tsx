@@ -10,6 +10,7 @@ import { DropSourceDetails, ItemQuickAnswer } from "@/components/tbh/item-drop-d
 import { PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
 import { allItems, assetPath, dropsForItem, hasDropData, itemBySlug, itemDetail, itemName, marketForItem, slotNames, text, type Locale } from "@/lib/game-data/data";
+import { localizedPath } from "@/lib/locale-path";
 
 type Props = { params: Promise<{ locale: Locale; slug: string }> };
 
@@ -112,6 +113,7 @@ export default async function ItemDetailPage({ params }: Props) {
   const context = itemContext(slug, item.type, locale);
   const hasDrops = hasDropData(slug);
   const drops = dropsForItem(slug);
+  const lpath = (path: string) => localizedPath(locale, path);
 
   return (
     <PageShell>
@@ -138,8 +140,8 @@ export default async function ItemDetailPage({ params }: Props) {
         }] : []),
       ]} />
       <nav className="mb-5 flex flex-wrap gap-2 text-xs text-[#6c6c6c]">
-        <Link href={`/${locale}`} className="hover:text-[#f0c040]">TBH</Link><span>/</span>
-        <Link href={`/${locale}/items`} className="hover:text-[#f0c040]">{isZh ? "物品" : "Items"}</Link><span>/</span>
+        <Link href={lpath("/")} className="hover:text-[#f0c040]">TBH</Link><span>/</span>
+        <Link href={lpath("/items")} className="hover:text-[#f0c040]">{isZh ? "物品" : "Items"}</Link><span>/</span>
         <span className="text-[#9d9d9d]">{name}</span>
       </nav>
 
@@ -169,7 +171,7 @@ export default async function ItemDetailPage({ params }: Props) {
               <MarketPrice item={item} />
               <ConfidenceBadge value={market?.confidence ?? "missing"} />
             </div>
-            {market ? <Link href={`/${locale}/market/${item.slug}`} className="mt-2 inline-block text-xs text-[#f0c040] hover:underline">{isZh ? "查看市场状态" : "Open market status"}</Link> : null}
+            {market ? <Link href={lpath(`/market/${item.slug}`)} className="mt-2 inline-block text-xs text-[#f0c040] hover:underline">{isZh ? "查看市场状态" : "Open market status"}</Link> : null}
           </div>
         </aside>
         <div className="space-y-8">
@@ -190,10 +192,10 @@ export default async function ItemDetailPage({ params }: Props) {
                   : "This material may be synthesis-only, event-exclusive, or not yet implemented. You can:"}
               </p>
               <ul className="mt-2 space-y-1">
-                <li>• <Link href={`/${locale}/cube`} className="text-amber-400 hover:underline">{isZh ? "查看 Cube 系统" : "Check Cube system"}</Link> — {isZh ? "了解材料分类和用途" : "learn material types and uses"}</li>
-                <li>• <Link href={`/${locale}/tools/farming-calculator`} className="text-amber-400 hover:underline">{isZh ? "使用 Farming 计算器" : "Use Farming Calculator"}</Link> — {isZh ? "搜索其他可刷取材料" : "find other farmable materials"}</li>
+                <li>• <Link href={lpath("/cube")} className="text-amber-400 hover:underline">{isZh ? "查看 Cube 系统" : "Check Cube system"}</Link> — {isZh ? "了解材料分类和用途" : "learn material types and uses"}</li>
+                <li>• <Link href={lpath("/tools/farming-calculator")} className="text-amber-400 hover:underline">{isZh ? "使用 Farming 计算器" : "Use Farming Calculator"}</Link> — {isZh ? "搜索其他可刷取材料" : "find other farmable materials"}</li>
                 {market?.lowest ? (
-                  <li>• <Link href={`/${locale}/market/${item.slug}`} className="text-amber-400 hover:underline">{isZh ? "查看 Steam 市场" : "View Steam Market"}</Link> — {isZh ? `当前有 ${market.listings ?? "?"} 个挂单，可直接购买` : `${market.listings ?? "?"} listings available for direct purchase`}</li>
+                  <li>• <Link href={lpath(`/market/${item.slug}`)} className="text-amber-400 hover:underline">{isZh ? "查看 Steam 市场" : "View Steam Market"}</Link> — {isZh ? `当前有 ${market.listings ?? "?"} 个挂单，可直接购买` : `${market.listings ?? "?"} listings available for direct purchase`}</li>
                 ) : null}
               </ul>
             </div>
@@ -239,12 +241,12 @@ export default async function ItemDetailPage({ params }: Props) {
                 {isZh ? "← 相关系统" : "← Related Systems"}
               </p>
               {item.type === "MATERIAL" && (
-                <Link href={`/${locale}/cube`} className="flex items-center gap-2 rounded-sm border border-[#27272a] bg-[#0d0d0d] p-3 text-xs transition-colors hover:border-amber-600/30 group">
+                <Link href={lpath("/cube")} className="flex items-center gap-2 rounded-sm border border-[#27272a] bg-[#0d0d0d] p-3 text-xs transition-colors hover:border-amber-600/30 group">
                   <Cpu className="h-4 w-4 shrink-0 text-[#6c6c6c] group-hover:text-amber-400" />
                   <span className="text-[#9d9d9d] group-hover:text-white">{isZh ? "Hero-dric Cube 系统" : "Hero-dric Cube System"}</span>
                 </Link>
               )}
-              <Link href={`/${locale}/chests`} className="flex items-center gap-2 rounded-sm border border-[#27272a] bg-[#0d0d0d] p-3 text-xs transition-colors hover:border-amber-600/30 group">
+              <Link href={lpath("/chests")} className="flex items-center gap-2 rounded-sm border border-[#27272a] bg-[#0d0d0d] p-3 text-xs transition-colors hover:border-amber-600/30 group">
                 <Boxes className="h-4 w-4 shrink-0 text-[#6c6c6c] group-hover:text-amber-400" />
                 <span className="text-[#9d9d9d] group-hover:text-white">{isZh ? "宝箱数据库" : "Chest Database"}</span>
               </Link>
@@ -254,13 +256,13 @@ export default async function ItemDetailPage({ params }: Props) {
                 {isZh ? "下一步 →" : "Next Steps →"}
               </p>
               {hasDrops && (
-                <Link href={`/${locale}/tools/farming-calculator`} className="flex items-center gap-2 rounded-sm border border-[#27272a] bg-[#0d0d0d] p-3 text-xs transition-colors hover:border-amber-600/30 group">
+                <Link href={lpath("/tools/farming-calculator")} className="flex items-center gap-2 rounded-sm border border-[#27272a] bg-[#0d0d0d] p-3 text-xs transition-colors hover:border-amber-600/30 group">
                   <Calculator className="h-4 w-4 shrink-0 text-[#6c6c6c] group-hover:text-amber-400" />
                   <span className="text-[#9d9d9d] group-hover:text-white">{isZh ? "Farming 计算器 — 算期望收益" : "Farming Calculator — estimate profit"}</span>
                   <ArrowRight className="ml-auto h-3 w-3 shrink-0 text-[#555] group-hover:text-amber-400" />
                 </Link>
               )}
-              <Link href={`/${locale}/effects`} className="flex items-center gap-2 rounded-sm border border-[#27272a] bg-[#0d0d0d] p-3 text-xs transition-colors hover:border-amber-600/30 group">
+              <Link href={lpath("/effects")} className="flex items-center gap-2 rounded-sm border border-[#27272a] bg-[#0d0d0d] p-3 text-xs transition-colors hover:border-amber-600/30 group">
                 <Wrench className="h-4 w-4 shrink-0 text-[#6c6c6c] group-hover:text-amber-400" />
                 <span className="text-[#9d9d9d] group-hover:text-white">{isZh ? "材料效果表 — 找最佳属性" : "Material Effects — find best stats"}</span>
                 <ArrowRight className="ml-auto h-3 w-3 shrink-0 text-[#555] group-hover:text-amber-400" />

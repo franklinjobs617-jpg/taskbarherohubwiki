@@ -16,6 +16,7 @@ import {
   type Stage,
 } from "@/lib/game-data/data";
 import { heroProfile, heroWeaponLabel } from "@/lib/hero-content";
+import { localizedPath } from "@/lib/locale-path";
 import { ConfidenceBadge, RarityBadge } from "./badges";
 import { HeroPortrait } from "./hero-portrait";
 
@@ -64,7 +65,7 @@ export function ItemCard({ item, locale }: { item: RawItem; locale: Locale }) {
   const icon = assetPath(item.icon);
   return (
     <Link
-      href={`/${locale}/items/${item.slug}`}
+      href={localizedPath(locale, `/items/${item.slug}`)}
       className="group grid min-h-28 grid-rows-[auto_1fr_auto] border border-[#27272a] bg-[#0d0d0d] p-3 transition hover:border-[#d4a017]"
     >
       <div className="flex items-start gap-3">
@@ -122,7 +123,7 @@ export function PriceChart({ values }: { values: number[] }) {
 
 export function ChestCard({ chest, locale }: { chest: RawItem; locale: Locale }) {
   return (
-    <EntityCard href={`/${locale}/chests/${chest.slug}`} title={itemName(chest, locale)} meta={`${chest.grade} / ${chest.id}`}>
+    <EntityCard href={localizedPath(locale, `/chests/${chest.slug}`)} title={itemName(chest, locale)} meta={`${chest.grade} / ${chest.id}`}>
       <div className="flex items-center justify-between">
         <RarityBadge grade={chest.grade} locale={locale} />
         <span className="text-xs text-[#6c6c6c]">{locale === "zh" ? "掉落表" : locale === "ja" ? "ドロップ表" : "Drop table"}</span>
@@ -134,7 +135,7 @@ export function ChestCard({ chest, locale }: { chest: RawItem; locale: Locale })
 export function StageCard({ stage, locale }: { stage: Stage; locale: Locale }) {
   return (
     <EntityCard
-      href={`/${locale}/stages/${stageSlug(stage)}`}
+      href={localizedPath(locale, `/stages/${stageSlug(stage)}`)}
       title={stageName(stage, locale)}
       meta={`${stage.difficulty} / Act ${stage.act}-${stage.no} / Lv.${stage.level}`}
     >
@@ -156,7 +157,7 @@ export function HeroCard({ hero, locale }: { hero: Hero; locale: Locale }) {
 
   return (
     <Link
-      href={`/${locale}/heroes/${slug}`}
+      href={localizedPath(locale, `/heroes/${slug}`)}
       className="group block overflow-hidden border border-[#2a2a2a] bg-[#0d0d0d] transition hover:-translate-y-0.5 hover:border-[#d4a017] hover:bg-[#13110b]"
     >
       <HeroPortrait heroKey={hero.HeroKey} fallbackText={name} size="card" />

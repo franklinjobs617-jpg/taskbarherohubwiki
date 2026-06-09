@@ -353,6 +353,14 @@ export function marketForItem(item: RawItem): MarketRecord | null {
   };
 }
 
+export function hasIndexableMarketData(market: MarketRecord | null | undefined): boolean {
+  return Boolean(
+    market &&
+      market.confidence !== "missing" &&
+      (market.lowest !== null || market.median !== null || market.listings !== null || market.trend7d !== null),
+  );
+}
+
 export function marketRows() {
   return items
     .map((item) => ({ item, market: marketForItem(item) }))
