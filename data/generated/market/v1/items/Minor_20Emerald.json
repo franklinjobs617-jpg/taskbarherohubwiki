@@ -2,11 +2,11 @@
   "slug": "minor-emerald",
   "id": 110004,
   "marketHash": "Minor Emerald",
-  "lowest": 0.1,
+  "lowest": 0.06,
   "median": null,
-  "listings": 8960,
+  "listings": 119920,
   "trend7d": null,
   "confidence": "low",
-  "updatedAt": "2026-06-03T12:41:31.757Z",
+  "updatedAt": "2026-06-09T04:21:59.026Z",
   "source": "steamcommunity_market_search"
 }

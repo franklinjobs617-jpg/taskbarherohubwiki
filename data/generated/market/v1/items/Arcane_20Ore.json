@@ -2,11 +2,11 @@
   "slug": "arcane-ore",
   "id": 145002,
   "marketHash": "Arcane Ore",
-  "lowest": 0.18,
+  "lowest": 2.92,
   "median": null,
-  "listings": 2146,
+  "listings": 54,
   "trend7d": null,
   "confidence": "low",
-  "updatedAt": "2026-06-03T12:41:31.757Z",
+  "updatedAt": "2026-06-09T04:21:59.026Z",
   "source": "steamcommunity_market_search"
 }

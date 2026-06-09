@@ -2,11 +2,11 @@
   "slug": "void-iron",
   "id": 143002,
   "marketHash": "Void Iron",
-  "lowest": 0.16,
+  "lowest": 0.74,
   "median": null,
-  "listings": 2160,
+  "listings": 160,
   "trend7d": null,
   "confidence": "low",
-  "updatedAt": "2026-06-03T12:41:31.757Z",
+  "updatedAt": "2026-06-09T04:21:59.026Z",
   "source": "steamcommunity_market_search"
 }

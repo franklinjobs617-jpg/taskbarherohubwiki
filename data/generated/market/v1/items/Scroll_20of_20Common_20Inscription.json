@@ -2,11 +2,11 @@
   "slug": "scroll-of-common-inscription",
   "id": 130001,
   "marketHash": "Scroll of Common Inscription",
-  "lowest": 0.1,
+  "lowest": 1.46,
   "median": null,
-  "listings": 512,
+  "listings": 10,
   "trend7d": null,
   "confidence": "low",
-  "updatedAt": "2026-06-03T12:41:31.757Z",
+  "updatedAt": "2026-06-09T04:21:59.026Z",
   "source": "steamcommunity_market_search"
 }

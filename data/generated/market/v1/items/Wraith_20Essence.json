@@ -2,11 +2,11 @@
   "slug": "wraith-essence",
   "id": 126001,
   "marketHash": "Wraith Essence",
-  "lowest": 1.61,
+  "lowest": 3.03,
   "median": null,
-  "listings": 102,
+  "listings": 66,
   "trend7d": null,
   "confidence": "low",
-  "updatedAt": "2026-06-03T12:41:31.757Z",
+  "updatedAt": "2026-06-09T04:21:59.026Z",
   "source": "steamcommunity_market_search"
 }

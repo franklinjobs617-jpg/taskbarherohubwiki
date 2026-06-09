@@ -2,11 +2,11 @@
   "slug": "mandrake-root",
   "id": 123003,
   "marketHash": "Mandrake Root",
-  "lowest": 0.13,
+  "lowest": 0.14,
   "median": null,
-  "listings": 593,
+  "listings": 870,
   "trend7d": null,
   "confidence": "low",
-  "updatedAt": "2026-06-03T12:41:31.757Z",
+  "updatedAt": "2026-06-09T04:21:59.026Z",
   "source": "steamcommunity_market_search"
 }

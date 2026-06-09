@@ -2,11 +2,11 @@
   "slug": "minor-amethyst",
   "id": 110005,
   "marketHash": "Minor Amethyst",
-  "lowest": 0.04,
+  "lowest": 0.03,
   "median": null,
-  "listings": 11287,
+  "listings": 239959,
   "trend7d": null,
   "confidence": "low",
-  "updatedAt": "2026-06-03T12:41:31.757Z",
+  "updatedAt": "2026-06-09T04:21:59.026Z",
   "source": "steamcommunity_market_search"
 }

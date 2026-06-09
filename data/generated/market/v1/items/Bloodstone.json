@@ -2,11 +2,11 @@
   "slug": "bloodstone",
   "id": 144001,
   "marketHash": "Bloodstone",
-  "lowest": 0.12,
+  "lowest": 0.61,
   "median": null,
-  "listings": 1423,
+  "listings": 371,
   "trend7d": null,
   "confidence": "low",
-  "updatedAt": "2026-06-03T12:41:31.757Z",
+  "updatedAt": "2026-06-09T04:21:59.026Z",
   "source": "steamcommunity_market_search"
 }

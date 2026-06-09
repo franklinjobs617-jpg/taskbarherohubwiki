@@ -2,11 +2,11 @@
   "slug": "orichalcum-ore",
   "id": 146002,
   "marketHash": "Orichalcum Ore",
-  "lowest": 0.52,
+  "lowest": 1.79,
   "median": null,
-  "listings": 365,
+  "listings": 66,
   "trend7d": null,
   "confidence": "low",
-  "updatedAt": "2026-06-03T12:41:31.757Z",
+  "updatedAt": "2026-06-09T04:21:59.026Z",
   "source": "steamcommunity_market_search"
 }

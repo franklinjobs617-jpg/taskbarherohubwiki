@@ -2,11 +2,11 @@
   "slug": "soulstone-normal",
   "id": 190001,
   "marketHash": "Soulstone - Normal",
-  "lowest": 0.08,
+  "lowest": 0.05,
   "median": null,
-  "listings": 20618,
+  "listings": 167689,
   "trend7d": null,
   "confidence": "low",
-  "updatedAt": "2026-06-03T12:41:31.757Z",
+  "updatedAt": "2026-06-09T04:21:59.026Z",
   "source": "steamcommunity_market_search"
 }

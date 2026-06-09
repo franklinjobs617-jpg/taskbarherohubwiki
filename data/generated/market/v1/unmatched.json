@@ -1,8 +1,14 @@
 [
   {
-    "slug": "dragonite-crystal",
-    "id": 117002,
-    "name": "Dragonite Crystal",
+    "slug": "astral-diamond",
+    "id": 116002,
+    "name": "Astral Diamond",
+    "reason": "No exact Steam market_hash_name match"
+  },
+  {
+    "slug": "phantom-emerald",
+    "id": 116003,
+    "name": "Phantom Emerald",
     "reason": "No exact Steam market_hash_name match"
   },
   {
@@ -30,15 +36,15 @@
     "reason": "No exact Steam market_hash_name match"
   },
   {
-    "slug": "abyssal-mucus",
-    "id": 127001,
-    "name": "Abyssal Mucus",
+    "slug": "dice",
+    "id": 124003,
+    "name": "Dice",
     "reason": "No exact Steam market_hash_name match"
   },
   {
-    "slug": "chaos-spore",
-    "id": 127002,
-    "name": "Chaos Spore",
+    "slug": "minotaur-horn",
+    "id": 125001,
+    "name": "Minotaur Horn",
     "reason": "No exact Steam market_hash_name match"
   },
   {
@@ -66,12 +72,6 @@
     "reason": "No exact Steam market_hash_name match"
   },
   {
-    "slug": "scroll-of-beyond-inscription",
-    "id": 136001,
-    "name": "Scroll of Beyond Inscription",
-    "reason": "No exact Steam market_hash_name match"
-  },
-  {
     "slug": "scroll-of-celestial-inscription",
     "id": 137001,
     "name": "Scroll of Celestial Inscription",
@@ -87,6 +87,12 @@
     "slug": "scroll-of-cosmic-inscription",
     "id": 139001,
     "name": "Scroll of Cosmic Inscription",
+    "reason": "No exact Steam market_hash_name match"
+  },
+  {
+    "slug": "sunstone",
+    "id": 147002,
+    "name": "Sunstone",
     "reason": "No exact Steam market_hash_name match"
   },
   {

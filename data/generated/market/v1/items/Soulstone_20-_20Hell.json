@@ -2,11 +2,11 @@
   "slug": "soulstone-hell",
   "id": 190003,
   "marketHash": "Soulstone - Hell",
-  "lowest": 0.16,
+  "lowest": 0.1,
   "median": null,
-  "listings": 14920,
+  "listings": 86789,
   "trend7d": null,
   "confidence": "low",
-  "updatedAt": "2026-06-03T12:41:31.757Z",
+  "updatedAt": "2026-06-09T04:21:59.026Z",
   "source": "steamcommunity_market_search"
 }

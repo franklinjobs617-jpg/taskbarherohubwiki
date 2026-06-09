@@ -2,11 +2,11 @@
   "slug": "kraken-ink",
   "id": 126002,
   "marketHash": "Kraken Ink",
-  "lowest": 1.27,
+  "lowest": 5.63,
   "median": null,
-  "listings": 122,
+  "listings": 7,
   "trend7d": null,
   "confidence": "low",
-  "updatedAt": "2026-06-03T12:41:31.757Z",
+  "updatedAt": "2026-06-09T04:21:59.026Z",
   "source": "steamcommunity_market_search"
 }

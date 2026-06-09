@@ -2,11 +2,11 @@
   "slug": "bronze-ingot",
   "id": 141001,
   "marketHash": "Bronze Ingot",
-  "lowest": 0.1,
+  "lowest": 0.06,
   "median": null,
-  "listings": 8487,
+  "listings": 199195,
   "trend7d": null,
   "confidence": "low",
-  "updatedAt": "2026-06-03T12:41:31.757Z",
+  "updatedAt": "2026-06-09T04:21:59.026Z",
   "source": "steamcommunity_market_search"
 }

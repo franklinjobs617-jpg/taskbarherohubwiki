@@ -2,11 +2,11 @@
   "slug": "opal",
   "id": 114002,
   "marketHash": "Opal",
-  "lowest": 0.48,
+  "lowest": 1.24,
   "median": null,
-  "listings": 1460,
+  "listings": 154,
   "trend7d": null,
   "confidence": "low",
-  "updatedAt": "2026-06-03T12:41:31.757Z",
+  "updatedAt": "2026-06-09T04:21:59.026Z",
   "source": "steamcommunity_market_search"
 }

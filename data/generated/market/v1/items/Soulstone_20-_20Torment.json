@@ -2,11 +2,11 @@
   "slug": "soulstone-torment",
   "id": 190004,
   "marketHash": "Soulstone - Torment",
-  "lowest": 0.2,
+  "lowest": 0.19,
   "median": null,
-  "listings": 11352,
+  "listings": 39748,
   "trend7d": null,
   "confidence": "low",
-  "updatedAt": "2026-06-03T12:41:31.757Z",
+  "updatedAt": "2026-06-09T04:21:59.026Z",
   "source": "steamcommunity_market_search"
 }

@@ -2,11 +2,11 @@
   "slug": "scroll-of-uncommon-inscription",
   "id": 131001,
   "marketHash": "Scroll of Uncommon Inscription",
-  "lowest": 0.3,
+  "lowest": 2,
   "median": null,
-  "listings": 355,
+  "listings": 7,
   "trend7d": null,
   "confidence": "low",
-  "updatedAt": "2026-06-03T12:41:31.757Z",
+  "updatedAt": "2026-06-09T04:21:59.026Z",
   "source": "steamcommunity_market_search"
 }
