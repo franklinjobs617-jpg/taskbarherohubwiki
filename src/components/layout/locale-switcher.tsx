@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
+import { useLocale } from "next-intl";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { currentLocaleFromPath, localizedPath, withoutLocalePrefix } from "@/lib/locale-path";
+import { localizedPath, withoutLocalePrefix } from "@/lib/locale-path";
 
 const LOCALES = [
   { code: "en", label: "English", short: "EN" },
@@ -14,10 +14,19 @@ const LOCALES = [
 
 export function LocaleSwitcher() {
   const pathname = usePathname();
-  const currentLocale = currentLocaleFromPath(pathname);
+  const currentLocale = useLocale();
   const [open, setOpen] = useState(false);
   const current = LOCALES.find((locale) => locale.code === currentLocale) ?? LOCALES[0];
   const basePath = withoutLocalePrefix(pathname);
+
+  const switchTo = (code: string) => {
+    const next = localizedPath(code, basePath);
+    if (next === pathname) {
+      setOpen(false);
+      return;
+    }
+    window.location.assign(next);
+  };
 
   return (
     <div className="relative shrink-0">
@@ -42,10 +51,10 @@ export function LocaleSwitcher() {
             {LOCALES.map((locale) => {
               const active = currentLocale === locale.code;
               return (
-                <Link
+                <button
                   key={locale.code}
-                  href={localizedPath(locale.code, basePath)}
-                  onClick={() => setOpen(false)}
+                  type="button"
+                  onClick={() => switchTo(locale.code)}
                   className={`flex w-full items-center gap-2.5 px-3 py-2.5 text-left text-[13px] transition-colors ${
                     active ? "bg-[#18181b] text-[#f0c040]" : "text-[#b8ad98] hover:bg-[#18181b] hover:text-white"
                   }`}
@@ -58,7 +67,7 @@ export function LocaleSwitcher() {
                     {locale.short}
                   </span>
                   <span className="min-w-0 flex-1 truncate">{locale.label}</span>
-                </Link>
+                </button>
               );
             })}
           </div>

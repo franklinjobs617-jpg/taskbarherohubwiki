@@ -1,9 +1,9 @@
 "use client";
 
+import { useLocale } from "next-intl";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { DATA_VERSION, UPDATED_AT } from "@/lib/game-data/data";
-import { currentLocaleFromPath, localizedPath } from "@/lib/locale-path";
+import { localizedPath } from "@/lib/locale-path";
 
 const T = {
   zh: {
@@ -29,8 +29,7 @@ const T = {
 } as const;
 
 export function SiteFooter() {
-  const pathname = usePathname();
-  const locale = currentLocaleFromPath(pathname);
+  const locale = useLocale();
   const t = T[locale as keyof typeof T] ?? T.en;
   const lpath = (path: string) => localizedPath(locale, path);
   const isZh = locale === "zh";

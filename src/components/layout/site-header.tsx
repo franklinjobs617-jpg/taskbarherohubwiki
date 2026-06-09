@@ -1,9 +1,10 @@
 "use client";
 
 import { BarChart3, BookOpen, Boxes, Bug, Calculator, Database, Map, Menu, Search, Shield, Skull, Swords, Wrench, X } from "lucide-react";
+import { useLocale } from "next-intl";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { currentLocaleFromPath, localizedPath } from "@/lib/locale-path";
+import { localizedPath } from "@/lib/locale-path";
 import { LocaleSwitcher } from "./locale-switcher";
 import { useNav } from "./nav-provider";
 
@@ -26,7 +27,7 @@ const NAV_ITEMS = [
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const locale = currentLocaleFromPath(pathname);
+  const locale = useLocale();
   const { menuOpen, toggleMenu, closeMenu } = useNav();
   const lpath = (path: string) => localizedPath(locale, path);
 

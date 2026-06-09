@@ -1,9 +1,10 @@
 "use client";
 
 import { Database, Home, Menu, Swords } from "lucide-react";
+import { useLocale } from "next-intl";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { currentLocaleFromPath, localizedPath } from "@/lib/locale-path";
+import { localizedPath } from "@/lib/locale-path";
 import { useNav } from "./nav-provider";
 
 function label(locale: string, key: "home" | "items" | "heroes" | "guides" | "more") {
@@ -16,7 +17,7 @@ function label(locale: string, key: "home" | "items" | "heroes" | "guides" | "mo
 
 export function MobileNav() {
   const pathname = usePathname();
-  const locale = currentLocaleFromPath(pathname);
+  const locale = useLocale();
   const { openMenu } = useNav();
   const homeHref = localizedPath(locale, "/");
 
