@@ -8,6 +8,8 @@
     "start": "next start",
     "normalize": "node scripts/normalize-game-data.mjs",
     "market:fetch": "node scripts/fetch-steam-market.mjs",
+    "audit:competitor": "node scripts/audit-competitor-coverage.mjs",
+    "enrich:data": "node scripts/build-enriched-data.mjs",
     "upload:r2": "node scripts/upload-r2.mjs",
     "deploy:worker": "cd workers/market-fetcher && npx wrangler deploy",
     "verify:pages": "node scripts/verify-pages.mjs",

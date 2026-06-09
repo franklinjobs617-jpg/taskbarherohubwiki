@@ -1,0 +1,295 @@
+{
+  "generatedAt": "2026-06-09T02:42:56.410Z",
+  "competitor": {
+    "name": "TBH Helper",
+    "baseUrl": "https://tbherohelper.com",
+    "sitemapUrl": "https://tbherohelper.com/sitemap.xml",
+    "usage": "Coverage audit only. Content is not copied into user-facing game data."
+  },
+  "totals": {
+    "sitemapCount": 16,
+    "urlCount": 106352
+  },
+  "locales": {
+    "en": 6647,
+    "de-de": 6647,
+    "es-es": 6647,
+    "fr-fr": 6647,
+    "id-id": 6647,
+    "ja-jp": 6647,
+    "ko-kr": 6647,
+    "pl-pl": 6647,
+    "pt-br": 6647,
+    "ru-ru": 6647,
+    "th-th": 6647,
+    "tr-tr": 6647,
+    "uk-ua": 6647,
+    "vi-vn": 6647,
+    "zh-hans": 6647,
+    "zh-hant": 6647
+  },
+  "groups": {
+    "home": {
+      "count": 1,
+      "samples": [
+        "/"
+      ]
+    },
+    "database": {
+      "count": 192,
+      "samples": [
+        "/database",
+        "/database/monsters",
+        "/database/heroes",
+        "/database/items",
+        "/database/runes",
+        "/database/stages",
+        "/database/pets",
+        "/database/grades",
+        "/database/currencies",
+        "/database/buffs",
+        "/database/status-effects",
+        "/database/effects"
+      ]
+    },
+    "other": {
+      "count": 3247,
+      "samples": [
+        "/stage-boxes",
+        "/privacy",
+        "/heroes/101-knight",
+        "/heroes/201-ranger",
+        "/heroes/301-sorcerer",
+        "/heroes/401-priest",
+        "/heroes/501-hunter",
+        "/heroes/601-slayer",
+        "/materials/110001-minor-ruby",
+        "/materials/110002-minor-sapphire",
+        "/materials/110003-minor-topaz",
+        "/materials/110004-minor-emerald"
+      ]
+    },
+    "cube": {
+      "count": 48,
+      "samples": [
+        "/cube",
+        "/cube/synthesis",
+        "/cube/crafting",
+        "/de-de/cube",
+        "/de-de/cube/synthesis",
+        "/de-de/cube/crafting",
+        "/es-es/cube",
+        "/es-es/cube/synthesis",
+        "/es-es/cube/crafting",
+        "/fr-fr/cube",
+        "/fr-fr/cube/synthesis",
+        "/fr-fr/cube/crafting"
+      ]
+    },
+    "tools": {
+      "count": 48,
+      "samples": [
+        "/tools",
+        "/tools/drops",
+        "/tools/planner",
+        "/de-de/tools",
+        "/de-de/tools/drops",
+        "/de-de/tools/planner",
+        "/es-es/tools",
+        "/es-es/tools/drops",
+        "/es-es/tools/planner",
+        "/fr-fr/tools",
+        "/fr-fr/tools/drops",
+        "/fr-fr/tools/planner"
+      ]
+    },
+    "guides": {
+      "count": 48,
+      "samples": [
+        "/guides",
+        "/guides/how-to-level-up-alts",
+        "/guides/fix-black-screen",
+        "/de-de/guides",
+        "/de-de/guides/how-to-level-up-alts",
+        "/de-de/guides/fix-black-screen",
+        "/es-es/guides",
+        "/es-es/guides/how-to-level-up-alts",
+        "/es-es/guides/fix-black-screen",
+        "/fr-fr/guides",
+        "/fr-fr/guides/how-to-level-up-alts",
+        "/fr-fr/guides/fix-black-screen"
+      ]
+    },
+    "builds": {
+      "count": 16,
+      "samples": [
+        "/builds",
+        "/de-de/builds",
+        "/es-es/builds",
+        "/fr-fr/builds",
+        "/id-id/builds",
+        "/ja-jp/builds",
+        "/ko-kr/builds",
+        "/pl-pl/builds",
+        "/pt-br/builds",
+        "/ru-ru/builds",
+        "/th-th/builds",
+        "/tr-tr/builds"
+      ]
+    },
+    "leaderboards": {
+      "count": 16,
+      "samples": [
+        "/leaderboards",
+        "/de-de/leaderboards",
+        "/es-es/leaderboards",
+        "/fr-fr/leaderboards",
+        "/id-id/leaderboards",
+        "/ja-jp/leaderboards",
+        "/ko-kr/leaderboards",
+        "/pl-pl/leaderboards",
+        "/pt-br/leaderboards",
+        "/ru-ru/leaderboards",
+        "/th-th/leaderboards",
+        "/tr-tr/leaderboards"
+      ]
+    },
+    "meter": {
+      "count": 32,
+      "samples": [
+        "/meter",
+        "/meter/tracker",
+        "/de-de/meter",
+        "/de-de/meter/tracker",
+        "/es-es/meter",
+        "/es-es/meter/tracker",
+        "/fr-fr/meter",
+        "/fr-fr/meter/tracker",
+        "/id-id/meter",
+        "/id-id/meter/tracker",
+        "/ja-jp/meter",
+        "/ja-jp/meter/tracker"
+      ]
+    },
+    "patchNotes": {
+      "count": 16,
+      "samples": [
+        "/patch-notes",
+        "/de-de/patch-notes",
+        "/es-es/patch-notes",
+        "/fr-fr/patch-notes",
+        "/id-id/patch-notes",
+        "/ja-jp/patch-notes",
+        "/ko-kr/patch-notes",
+        "/pl-pl/patch-notes",
+        "/pt-br/patch-notes",
+        "/ru-ru/patch-notes",
+        "/th-th/patch-notes",
+        "/tr-tr/patch-notes"
+      ]
+    },
+    "monsters": {
+      "count": 976,
+      "samples": [
+        "/monsters/10011-slime",
+        "/monsters/10021-goblin",
+        "/monsters/10022-goblin-thief",
+        "/monsters/10023-goblin-shaman",
+        "/monsters/10031-bat",
+        "/monsters/10041-orc",
+        "/monsters/10042-orc-warrior",
+        "/monsters/10043-elite-orc",
+        "/monsters/10051-skeleton",
+        "/monsters/10052-skeleton-archer",
+        "/monsters/10053-skeleton-warrior",
+        "/monsters/10901-skeleton-king"
+      ]
+    },
+    "skills": {
+      "count": 1696,
+      "samples": [
+        "/skills/10001",
+        "/skills/10101-piercing-thrust",
+        "/skills/10201-shield-charge",
+        "/skills/10301-retribution-strike",
+        "/skills/10401-aegis-field",
+        "/skills/10501-sacred-blade",
+        "/skills/10601-unyielding-will",
+        "/skills/20001",
+        "/skills/20101-rapid-fire",
+        "/skills/20201-scatter-shot",
+        "/skills/20301-arrow-rain",
+        "/skills/20401-swift-surge"
+      ]
+    },
+    "items": {
+      "count": 94944,
+      "samples": [
+        "/items/910011-normal-monster-box-1",
+        "/items/910051-normal-monster-box-2",
+        "/items/910101-normal-monster-box-3",
+        "/items/910151-normal-monster-box-lv15",
+        "/items/910201-normal-monster-box-lv20",
+        "/items/910251-normal-monster-box-lv25",
+        "/items/910301-normal-monster-box-lv30",
+        "/items/910351-normal-monster-box-lv35",
+        "/items/910401-normal-monster-box-lv40",
+        "/items/910451-normal-monster-box-lv45",
+        "/items/910501-normal-monster-box-lv50",
+        "/items/910551-normal-monster-box-lv55"
+      ]
+    },
+    "runes": {
+      "count": 3152,
+      "samples": [
+        "/runes/1-rune-of-war",
+        "/runes/10-rune-of-wealth",
+        "/runes/20-rune-of-growth",
+        "/runes/11-rune-of-expansion",
+        "/runes/12-rune-of-expansion",
+        "/runes/13-rune-of-expansion",
+        "/runes/14-rune-of-expansion",
+        "/runes/15-rune-of-expansion",
+        "/runes/16-rune-of-expansion",
+        "/runes/1801-rune-of-expansion",
+        "/runes/1802-rune-of-expansion",
+        "/runes/1803-rune-of-expansion"
+      ]
+    },
+    "stages": {
+      "count": 1920,
+      "samples": [
+        "/stages/1101-pasture",
+        "/stages/1102-shadow-meadow",
+        "/stages/1103-wasteland",
+        "/stages/1104-eerie-canyon",
+        "/stages/1105-burning-village-entrance",
+        "/stages/1106-rumstreet-square",
+        "/stages/1107-city-outskirts",
+        "/stages/1108-cemetery",
+        "/stages/1109-cursed-land",
+        "/stages/1110-throne-of-darkness",
+        "/stages/1201-oasis-road",
+        "/stages/1202-sandstorm-valley"
+      ]
+    }
+  },
+  "internalCoverageTargets": [
+    {
+      "route": "/tools/drop-finder",
+      "reason": "Competitors expose drop search as a first-class task."
+    },
+    {
+      "route": "/tools/farming-optimizer",
+      "reason": "Competitors optimize by player state, not only browse data."
+    },
+    {
+      "route": "/items",
+      "reason": "Decision table needs drop, market, class, and action columns."
+    },
+    {
+      "route": "/",
+      "reason": "Homepage should route users by task intent."
+    }
+  ]
+}

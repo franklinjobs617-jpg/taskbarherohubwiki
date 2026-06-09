@@ -9,15 +9,14 @@ import {
   dropsForItem,
   itemName,
   marketForItem,
-  type FarmingStage,
   type Locale,
-  type RawItem,
 } from "@/lib/game-data/data";
 
-type Mode = "find-item" | "stage-drops" | "compare";
+type Mode = "optimizer" | "find-item" | "stage-drops" | "compare";
+const DIFFICULTY_RANK: Record<string, number> = { NORMAL: 1, NIGHTMARE: 2, HELL: 3, TORMENT: 4 };
 
 export function FarmingCalculator({ locale }: { locale: Locale }) {
-  const [mode, setMode] = useState<Mode>("find-item");
+  const [mode, setMode] = useState<Mode>("optimizer");
   const isZh = locale === "zh";
 
   return (
@@ -25,6 +24,7 @@ export function FarmingCalculator({ locale }: { locale: Locale }) {
       {/* Mode Selector */}
       <div className="flex gap-1 border-b border-[#27272a]">
         {([
+          ["optimizer", isZh ? "刷图优化" : "Optimizer"],
           ["find-item", isZh ? "找物品掉落" : "Find Item Drops"],
           ["stage-drops", isZh ? "查看关卡掉落" : "Stage Drops"],
           ["compare", isZh ? "关卡对比" : "Compare Stages"],
@@ -43,9 +43,146 @@ export function FarmingCalculator({ locale }: { locale: Locale }) {
         ))}
       </div>
 
+      {mode === "optimizer" && <OptimizerMode locale={locale} />}
       {mode === "find-item" && <FindItemMode locale={locale} />}
       {mode === "stage-drops" && <StageDropsMode locale={locale} />}
       {mode === "compare" && <CompareMode locale={locale} />}
+    </div>
+  );
+}
+
+/** Mode 0: Given player state, rank what to farm now */
+function OptimizerMode({ locale }: { locale: Locale }) {
+  const isZh = locale === "zh";
+  const [heroLevel, setHeroLevel] = useState(31);
+  const [expBonus, setExpBonus] = useState(0);
+  const [clearSeconds, setClearSeconds] = useState(120);
+  const [target, setTarget] = useState<"exp" | "gold">("exp");
+  const [maxDifficulty, setMaxDifficulty] = useState("HELL");
+  const maxRank = DIFFICULTY_RANK[maxDifficulty] ?? 3;
+
+  const rows = useMemo(() => {
+    const seconds = Math.max(15, clearSeconds || 15);
+    return allStages()
+      .filter((stage) => (DIFFICULTY_RANK[stage.difficulty] ?? 0) <= maxRank)
+      .filter((stage) => stage.level <= heroLevel + 20)
+      .map((stage) => {
+        const expPerClear = Number(stage.expPerClear ?? 0) * (1 + expBonus / 100);
+        const goldPerClear = Number(stage.goldPerClear ?? 0);
+        const clearsPerHour = 3600 / seconds;
+        const expPerHour = expPerClear * clearsPerHour;
+        const goldPerHour = goldPerClear * clearsPerHour;
+        const levelGap = stage.level - heroLevel;
+        const stabilityPenalty = levelGap > 10 ? 0.82 : levelGap > 5 ? 0.92 : 1;
+        const score = (target === "exp" ? expPerHour : goldPerHour) * stabilityPenalty;
+        return { stage, expPerHour, goldPerHour, score, levelGap, stabilityPenalty };
+      })
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 12);
+  }, [clearSeconds, expBonus, heroLevel, maxRank, target]);
+
+  return (
+    <div className="grid gap-5 lg:grid-cols-[360px_1fr]">
+      <aside className="space-y-4 border border-[#27272a] bg-[#0d0d0d] p-4">
+        <div>
+          <label className="mb-1 block text-[10px] font-semibold uppercase tracking-[0.14em] text-[#6c6c6c]">
+            {isZh ? "英雄等级" : "Hero level"}
+          </label>
+          <input type="number" min={1} max={100} value={heroLevel} onChange={(event) => setHeroLevel(Number(event.target.value))}
+            className="w-full border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm text-white" />
+        </div>
+        <div>
+          <label className="mb-1 block text-[10px] font-semibold uppercase tracking-[0.14em] text-[#6c6c6c]">
+            {isZh ? "经验加成 %" : "EXP bonus %"}
+          </label>
+          <input type="number" min={0} max={1000} value={expBonus} onChange={(event) => setExpBonus(Number(event.target.value))}
+            className="w-full border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm text-white" />
+        </div>
+        <div>
+          <label className="mb-1 block text-[10px] font-semibold uppercase tracking-[0.14em] text-[#6c6c6c]">
+            {isZh ? "平均通关秒数" : "Average clear seconds"}
+          </label>
+          <input type="number" min={15} value={clearSeconds} onChange={(event) => setClearSeconds(Number(event.target.value))}
+            className="w-full border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm text-white" />
+        </div>
+        <div className="grid grid-cols-2 gap-2">
+          {(["exp", "gold"] as const).map((value) => (
+            <button key={value} onClick={() => setTarget(value)}
+              className={`border px-3 py-2 text-sm ${target === value ? "border-[#d4a017] bg-[#1a1508] text-[#f0c040]" : "border-[#27272a] text-[#9d9d9d]"}`}>
+              {value.toUpperCase()}
+            </button>
+          ))}
+        </div>
+        <div>
+          <label className="mb-1 block text-[10px] font-semibold uppercase tracking-[0.14em] text-[#6c6c6c]">
+            {isZh ? "最高可刷难度" : "Highest unlocked difficulty"}
+          </label>
+          <select value={maxDifficulty} onChange={(event) => setMaxDifficulty(event.target.value)}
+            className="w-full border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm text-white">
+            {["NORMAL", "NIGHTMARE", "HELL", "TORMENT"].map((diff) => <option key={diff} value={diff}>{diff}</option>)}
+          </select>
+        </div>
+        <p className="border-t border-[#27272a] pt-3 text-xs leading-5 text-[#6c6c6c]">
+          {isZh
+            ? "市场价格过期时不会用于收益推荐。当前排序只使用关卡金币、经验和你的通关时间。"
+            : "Stale market prices are excluded. Ranking uses stage gold, EXP, and your clear time."}
+        </p>
+      </aside>
+
+      <section className="space-y-3">
+        <div className="grid gap-2 sm:grid-cols-3">
+          <div className="border border-[#27272a] bg-[#0d0d0d] p-3">
+            <p className="text-[10px] uppercase tracking-[0.14em] text-[#6c6c6c]">{isZh ? "推荐目标" : "Target"}</p>
+            <p className="mt-1 text-lg font-semibold text-white">{target.toUpperCase()}</p>
+          </div>
+          <div className="border border-[#27272a] bg-[#0d0d0d] p-3">
+            <p className="text-[10px] uppercase tracking-[0.14em] text-[#6c6c6c]">{isZh ? "每小时通关" : "Clears/hour"}</p>
+            <p className="mt-1 font-mono text-lg font-semibold text-[#f0c040]">{(3600 / Math.max(15, clearSeconds || 15)).toFixed(1)}</p>
+          </div>
+          <div className="border border-[#27272a] bg-[#0d0d0d] p-3">
+            <p className="text-[10px] uppercase tracking-[0.14em] text-[#6c6c6c]">{isZh ? "可信度" : "Confidence"}</p>
+            <p className="mt-1 text-lg font-semibold text-emerald-400">{isZh ? "高" : "High"}</p>
+          </div>
+        </div>
+
+        <div className="overflow-x-auto border border-[#27272a]">
+          <table className="w-full min-w-[760px] text-left text-sm">
+            <thead className="bg-[#18181b] text-xs text-[#6c6c6c]">
+              <tr>
+                <th className="px-3 py-2">#</th>
+                <th className="px-3 py-2">{isZh ? "关卡" : "Stage"}</th>
+                <th className="px-3 py-2">Lv</th>
+                <th className="px-3 py-2">EXP/h</th>
+                <th className="px-3 py-2">Gold/h</th>
+                <th className="px-3 py-2">{isZh ? "风险" : "Risk"}</th>
+                <th className="px-3 py-2">{isZh ? "动作" : "Action"}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map(({ stage, expPerHour, goldPerHour, levelGap, stabilityPenalty }, index) => (
+                <tr key={stage.key} className="border-t border-[#27272a] hover:bg-[#0d0d0d]">
+                  <td className="px-3 py-2 font-mono text-[#f0c040]">#{index + 1}</td>
+                  <td className="px-3 py-2">
+                    <p className="font-semibold text-white">{stage.difficulty} Act {stage.act}-{stage.no}</p>
+                    <p className="text-xs text-[#6c6c6c]">{stage.name?.["en-US"] ?? `Stage ${stage.key}`}</p>
+                  </td>
+                  <td className="px-3 py-2 font-mono text-[#9d9d9d]">{stage.level}</td>
+                  <td className="px-3 py-2 font-mono text-emerald-400">{Math.round(expPerHour).toLocaleString()}</td>
+                  <td className="px-3 py-2 font-mono text-[#f0c040]">{Math.round(goldPerHour).toLocaleString()}</td>
+                  <td className="px-3 py-2 text-xs text-[#9d9d9d]">
+                    {stabilityPenalty < 1 ? (isZh ? `偏高 (+${levelGap})` : `High (+${levelGap})`) : (isZh ? "稳定" : "Stable")}
+                  </td>
+                  <td className="px-3 py-2">
+                    <Link href={`/${locale}/stages/${stage.key}`} className="text-[#f0c040] hover:underline">
+                      {isZh ? "查看" : "Open"}
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
   );
 }
@@ -175,9 +312,7 @@ function FindItemMode({ locale }: { locale: Locale }) {
                     className="flex items-center gap-3 rounded-sm border border-[#27272a] bg-[#0d0d0d] px-3 py-2.5 transition-colors hover:border-amber-600/30 group"
                   >
                     {/* Rank */}
-                    <span className="w-6 text-center font-mono text-xs text-[#555]">
-                      {i < 3 ? ["🥇", "🥈", "🥉"][i] : `#${i + 1}`}
-                    </span>
+                    <span className="w-6 text-center font-mono text-xs text-[#555]">#{i + 1}</span>
 
                     {/* Stage info */}
                     <div className="min-w-0 flex-1">
@@ -492,11 +627,17 @@ function StagePicker({
   onRemove?: () => void;
 }) {
   const isZh = locale === "zh";
-  const [diff, setDiff] = useState("NORMAL");
-  const [act, setAct] = useState(1);
-  const [no, setNo] = useState(index + 1);
+  const initialDiffIndex = selectedKey ? Math.max(0, Math.floor(selectedKey / 1000) - 1) : 0;
+  const initialAct = selectedKey ? Math.floor((selectedKey % 1000) / 100) : 1;
+  const initialNo = selectedKey ? selectedKey % 100 : index + 1;
+  const difficulties = ["NORMAL", "NIGHTMARE", "HELL", "TORMENT"];
+  const [diff, setDiff] = useState(difficulties[initialDiffIndex] ?? "NORMAL");
+  const [act, setAct] = useState(initialAct);
+  const [no, setNo] = useState(initialNo);
 
-  const key = (["NORMAL", "NIGHTMARE", "HELL", "TORMENT"].indexOf(diff) + 1) * 1000 + act * 100 + no;
+  const stageKey = (nextDiff = diff, nextAct = act, nextNo = no) =>
+    (difficulties.indexOf(nextDiff) + 1) * 1000 + nextAct * 100 + nextNo;
+  const key = stageKey();
   const stage = allStages().find((s) => s.key === key);
 
   return (
@@ -510,18 +651,30 @@ function StagePicker({
         )}
       </div>
       <div className="space-y-1.5">
-        <select value={diff} onChange={(e) => { setDiff(e.target.value); onSelect(key); }}
+        <select value={diff} onChange={(e) => {
+          const nextDiff = e.target.value;
+          setDiff(nextDiff);
+          onSelect(stageKey(nextDiff, act, no));
+        }}
           className="w-full border border-[#27272a] bg-[#0a0a0a] px-2 py-1 text-[11px] text-white">
-          {["NORMAL", "NIGHTMARE", "HELL", "TORMENT"].map((d) => (
+          {difficulties.map((d) => (
             <option key={d} value={d}>{d}</option>
           ))}
         </select>
         <div className="flex gap-1">
-          <select value={act} onChange={(e) => { setAct(Number(e.target.value)); onSelect(key); }}
+          <select value={act} onChange={(e) => {
+            const nextAct = Number(e.target.value);
+            setAct(nextAct);
+            onSelect(stageKey(diff, nextAct, no));
+          }}
             className="flex-1 border border-[#27272a] bg-[#0a0a0a] px-2 py-1 text-[11px] text-white">
             {[1, 2, 3].map((a) => (<option key={a} value={a}>Act {a}</option>))}
           </select>
-          <select value={no} onChange={(e) => { setNo(Number(e.target.value)); onSelect(key); }}
+          <select value={no} onChange={(e) => {
+            const nextNo = Number(e.target.value);
+            setNo(nextNo);
+            onSelect(stageKey(diff, act, nextNo));
+          }}
             className="flex-1 border border-[#27272a] bg-[#0a0a0a] px-2 py-1 text-[11px] text-white">
             {Array.from({ length: 10 }, (_, i) => i + 1).map((n) => (<option key={n} value={n}>#{n}</option>))}
           </select>

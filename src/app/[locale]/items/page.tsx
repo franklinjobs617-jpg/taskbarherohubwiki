@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ItemCard } from "@/components/tbh/cards";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
-import { allItems, gradeNames, itemName, marketForItem, slotNames, type Locale } from "@/lib/game-data/data";
+import { allItems, assetPath, bestStageForItem, gradeNames, itemName, marketForItem, slotNames, type Locale } from "@/lib/game-data/data";
 import { extItems } from "@/lib/game-data/external";
 
 type Props = {
@@ -62,6 +63,7 @@ export default async function ItemsPage({ params, searchParams }: Props) {
 
   // Count items per class for badge display
   const extData = extItems();
+  const extById = new Map(extData.map((item) => [item.key, item]));
   const classCounts = Object.fromEntries(
     HERO_CLASSES.map((cls) => [cls, extData.filter((ei) => ei.classes.includes(cls) && ei.type !== "STAGEBOX").length])
   );
@@ -156,7 +158,78 @@ export default async function ItemsPage({ params, searchParams }: Props) {
         {sp.class ? (isZh ? ` · 职业: ${sp.class}` : ` · Class: ${sp.class}`) : ""}
       </p>
 
-      <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="hidden overflow-x-auto border border-[#27272a] lg:block">
+        <table className="w-full min-w-[980px] text-left text-sm">
+          <thead className="bg-[#18181b] text-xs text-[#6c6c6c]">
+            <tr>
+              <th className="px-3 py-2">{isZh ? "物品" : "Item"}</th>
+              <th className="px-3 py-2">{isZh ? "等级" : "Level"}</th>
+              <th className="px-3 py-2">{isZh ? "类型" : "Type"}</th>
+              <th className="px-3 py-2">{isZh ? "职业适配" : "Class fit"}</th>
+              <th className="px-3 py-2">{isZh ? "掉落/获取" : "Drop / source"}</th>
+              <th className="px-3 py-2">{isZh ? "市场" : "Market"}</th>
+              <th className="px-3 py-2">{isZh ? "动作" : "Action"}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((item) => {
+              const icon = assetPath(item.icon);
+              const ext = extById.get(item.id);
+              const market = marketForItem(item);
+              const bestStage = bestStageForItem(item.slug);
+              const classFit = ext?.classes?.slice(0, 3) ?? [];
+              return (
+                <tr key={item.id} className="border-t border-[#27272a] hover:bg-[#0d0d0d]">
+                  <td className="px-3 py-2">
+                    <Link href={`/${locale}/items/${item.slug}`} className="flex min-w-0 items-center gap-3">
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-[#27272a] bg-[#0a0a0a]">
+                        {icon ? <Image src={icon} alt={itemName(item, locale)} width={32} height={32} className="object-contain" data-pixel unoptimized /> : null}
+                      </span>
+                      <span className="min-w-0">
+                        <span className="block truncate font-semibold text-white hover:text-[#f0c040]">{itemName(item, locale)}</span>
+                        <span className="block text-[11px] text-[#6c6c6c]">{item.grade}</span>
+                      </span>
+                    </Link>
+                  </td>
+                  <td className="px-3 py-2 font-mono text-[#9d9d9d]">{item.level ?? "-"}</td>
+                  <td className="px-3 py-2 text-[#9d9d9d]">{item.gear ? slotNames[item.gear]?.[locale] ?? item.gear : item.type}</td>
+                  <td className="px-3 py-2">
+                    {classFit.length ? (
+                      <div className="flex flex-wrap gap-1">
+                        {classFit.map((cls) => <span key={cls} className="border border-[#27272a] px-2 py-0.5 text-[11px] text-[#d7d7d7]">{cls}</span>)}
+                      </div>
+                    ) : <span className="text-[#6c6c6c]">-</span>}
+                  </td>
+                  <td className="px-3 py-2">
+                    {bestStage ? (
+                      <Link href={`/${locale}/tools/drop-finder`} className="text-[#f0c040] hover:underline">
+                        {bestStage.diff} {bestStage.act}-{bestStage.no} / {(bestStage.totalDropChance * 100).toFixed(2)}%
+                      </Link>
+                    ) : (
+                      <span className="text-[#6c6c6c]">{ext?.obtainable ? (isZh ? "可获取" : "Obtainable") : (isZh ? "暂无掉落" : "No drop")}</span>
+                    )}
+                  </td>
+                  <td className="px-3 py-2">
+                    {market?.lowest ? (
+                      <div>
+                        <p className="font-mono font-semibold text-[#f0c040]">${market.lowest.toFixed(2)}</p>
+                        <p className="text-[11px] text-[#6c6c6c]">{market.listings?.toLocaleString() ?? "-"} listings</p>
+                      </div>
+                    ) : (
+                      <span className="text-[#6c6c6c]">{item.marketable ? (isZh ? "待更新" : "Missing") : (isZh ? "不可交易" : "Not tradable")}</span>
+                    )}
+                  </td>
+                  <td className="px-3 py-2">
+                    <Link href={`/${locale}/items/${item.slug}`} className="text-[#f0c040] hover:underline">{isZh ? "决策页" : "Decision"}</Link>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="grid gap-2 sm:grid-cols-2 lg:hidden">
         {rows.map((item) => <ItemCard key={item.id} item={item} locale={locale} />)}
       </div>
     </PageShell>
