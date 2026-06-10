@@ -513,7 +513,7 @@ function routeDescription(route: RouteKey, locale: Locale) {
   const text: Record<RouteKey, Partial<Record<Locale, string>>> = {
     early: {
       zh: "先拿 Growth、Command、离线收益和基础金币经验。",
-      en: "Start with Growth, Command, offline gains, and basic gold/EXP.",
+      en: "Growth, Command, offline gains, and basic gold/EXP first.",
       ja: "Growth、Command、放置報酬、基本金策/経験値を先に取る。",
     },
     heroSlots: {

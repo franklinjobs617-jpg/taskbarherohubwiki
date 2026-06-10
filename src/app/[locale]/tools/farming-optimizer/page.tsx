@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
     title: locale === "zh" ? "TBH 最佳刷图关卡 | EXP、金币、宝箱与宠物击杀" : "TBH Best Farming Stage | EXP, Gold, Chests & Pet Kills",
-    description: locale === "zh" ? "输入等级、最高稳定关卡、通关时间和目标，直接得到现在该刷哪关、原因、收益和备选关卡。" : "Enter level, reliable stage, clear time, and goal to get the best stage now with reasons, hourly yields, and alternatives.",
+    description: locale === "zh" ? "按等级、最高稳定关卡、通关时间和目标排序最佳刷图关卡、收益和备选路线。" : "Rank farming stages, yields, and alternatives by level, reliable stage, clear time, and goal.",
     alternates: pageAlternates(locale, "/tools/farming-optimizer"),
   };
 }

@@ -45,10 +45,10 @@ export default async function PetsPage({ params }: Props) {
         kicker="Pets"
         title={txt(locale, { zh: "宠物解锁路线", en: "Pet Unlock Routes", ja: "ペット解放ルート", ko: "펫 해금 루트" })}
         description={txt(locale, {
-          zh: "先看该优先刷谁，再看目标怪、击杀数、最佳关卡和占比。",
-          en: "Start with priority picks, then check target, kill count, best stage, and spawn share.",
-          ja: "優先ペットを見てから、対象、討伐数、最適ステージ、出現比率を確認。",
-          ko: "우선순위를 먼저 보고 대상, 처치 수, 추천 스테이지, 출현 비율을 확인합니다.",
+          zh: "推荐优先级、目标怪、击杀数、最佳关卡和占比。",
+          en: "Priority picks, target, kill count, best stage, and spawn share.",
+          ja: "優先度、対象、討伐数、最適ステージ、出現比率。",
+          ko: "우선순위, 대상, 처치 수, 추천 스테이지, 출현 비율.",
         })}
       />
 

@@ -78,7 +78,7 @@ export default async function HeroesPage({ params }: Props) {
           </h2>
           <p className="mt-3 max-w-3xl text-sm leading-7 text-[#9d9d9d]">
             {isZh
-              ? "每个英雄都标注了定位、武器路径、属性优先级、适合阶段和上手难度。选职业前先看这里，再配合 Build 页面和职业选择指南做最终决定。"
+              ? "每个英雄都标注定位、武器路径、属性优先级、适合阶段和上手难度。"
               : "Each hero is labeled with role, weapon path, stat priority, best phase, and difficulty. Start here before checking build pages and the class guide."}
           </p>
           {firstHero ? (

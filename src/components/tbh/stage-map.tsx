@@ -259,7 +259,7 @@ export function StageMap({ locale, stages }: { locale: Locale; stages: StageExpl
               </div>
 
               <div>
-                <PanelTitle icon={<Swords className="h-4 w-4" />} title={t(locale, "箱子内容", "Chest Contents")} meta={t(locale, "直接看这一关能追什么", "what this stage can lead to")} />
+                <PanelTitle icon={<Swords className="h-4 w-4" />} title={t(locale, "箱子内容", "Chest Contents")} meta={t(locale, "本关可追踪目标", "stage targets")} />
                 <div className="mt-3 grid gap-2 md:grid-cols-2 xl:grid-cols-3">
                   {selected.drops.flatMap((drop) => drop.contents.slice(0, 6).map((content) => ({ ...content, chest: drop.name }))).slice(0, 12).map((content) => (
                     <Link

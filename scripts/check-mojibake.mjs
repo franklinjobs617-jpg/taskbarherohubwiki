@@ -18,6 +18,7 @@ function listFiles(root) {
 const hits = [];
 for (const root of roots) {
   for (const file of listFiles(root)) {
+    if (file === "scripts/check-mojibake.mjs") continue;
     if (!textExtensions.has(file.slice(file.lastIndexOf(".")))) continue;
     const text = readFileSync(join(process.cwd(), file), "utf8");
     const lines = text.split(/\r?\n/);

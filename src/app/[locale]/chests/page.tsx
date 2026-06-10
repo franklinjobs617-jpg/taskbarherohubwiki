@@ -57,8 +57,8 @@ export default async function ChestsPage({ params, searchParams }: Props) {
         kicker="Chests"
         title={txt(locale, { zh: "按装备等级反查宝箱", en: "Find chests by gear level", ja: "装備レベルから宝箱を探す", ko: "장비 레벨로 상자 찾기" })}
         description={txt(locale, {
-          zh: "输入装备等级或来源关卡，直接看应该查哪个宝箱、哪里掉、内容多少、用途是什么。",
-          en: "Enter a gear level or source stage to see which chest matters, where it drops, content count, and best use.",
+          zh: "按装备等级、来源关卡、内容数量和用途筛选宝箱。",
+          en: "Filter chests by gear level, source stage, content count, and best use.",
           ja: "装備レベルや入手ステージから、見るべき宝箱、入手元、内容数、用途を確認。",
           ko: "장비 레벨이나 출처 스테이지로 필요한 상자, 드롭 장소, 내용 수, 용도를 확인합니다.",
         })}

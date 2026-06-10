@@ -75,10 +75,10 @@ export default async function StageDetailPage({ params }: Props) {
         kicker={`${stage.difficulty} / Act ${stage.act}-${stage.stageNo}`}
         title={displayName}
         description={txt(locale, {
-          zh: `Lv.${stage.level}。先看这关适合刷什么、会掉什么、预计刷多少次，再决定下一步。`,
-          en: `Lv.${stage.level}. Check what this stage is best for, what drops here, and expected runs before deciding.`,
-          ja: `Lv.${stage.level}。用途、ドロップ、必要周回数を見てから判断。`,
-          ko: `Lv.${stage.level}. 용도, 드롭, 예상 횟수를 보고 다음 행동을 정합니다.`,
+          zh: `Lv.${stage.level}。刷图用途、宝箱掉落、掉率和 50%/90% 预计次数。`,
+          en: `Lv.${stage.level}. Farming use, chest drops, rates, and 50%/90% expected runs.`,
+          ja: `Lv.${stage.level}。周回用途、宝箱、確率、50%/90%必要回数。`,
+          ko: `Lv.${stage.level}. 파밍 용도, 상자 드롭, 확률, 50%/90% 예상 횟수.`,
         })}
       />
 
