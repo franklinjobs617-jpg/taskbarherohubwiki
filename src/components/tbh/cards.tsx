@@ -20,6 +20,10 @@ import { localizedPath } from "@/lib/locale-path";
 import { ConfidenceBadge, RarityBadge } from "./badges";
 import { HeroPortrait } from "./hero-portrait";
 
+function l(locale: string | undefined, values: Record<string, string>) {
+  return values[locale ?? "en"] ?? values.en;
+}
+
 export function Section({
   title,
   eyebrow,
@@ -93,12 +97,14 @@ export function ItemCard({ item, locale }: { item: RawItem; locale: Locale }) {
   );
 }
 
-const ML: Record<string, { no: string; na: string }> = { zh: { no: "不可交易", na: "暂无市场数据" }, en: { no: "Not tradable", na: "No market data" }, ja: { no: "取引不可", na: "データなし" } };
 export function MarketPrice({ item, locale, compact = false }: { item: RawItem; locale?: string; compact?: boolean }) {
-  const ml = ML[locale ?? "en"] ?? ML.en;
   const market = marketForItem(item);
-  if (!item.marketable) return <span className="text-[11px] text-[#6c6c6c]">{ml.no}</span>;
-  if (!market?.lowest) return <span className="text-[11px] text-[#6c6c6c]">{ml.na}</span>;
+  if (!item.marketable) {
+    return <span className="text-[11px] text-[#6c6c6c]">{l(locale, { zh: "不可交易", en: "Not tradable", ja: "取引不可", ko: "거래 불가" })}</span>;
+  }
+  if (!market?.lowest) {
+    return <span className="text-[11px] text-[#6c6c6c]">{l(locale, { zh: "暂无市场数据", en: "No market data", ja: "市場データなし", ko: "시장 데이터 없음" })}</span>;
+  }
   return (
     <span className={compact ? "text-[12px] font-semibold text-[#f0c040]" : "text-lg font-semibold text-[#f0c040]"}>
       ${market.lowest.toFixed(2)}
@@ -126,7 +132,7 @@ export function ChestCard({ chest, locale }: { chest: RawItem; locale: Locale })
     <EntityCard href={localizedPath(locale, `/chests/${chest.slug}`)} title={itemName(chest, locale)} meta={`${chest.grade} / ${chest.id}`}>
       <div className="flex items-center justify-between">
         <RarityBadge grade={chest.grade} locale={locale} />
-        <span className="text-xs text-[#6c6c6c]">{locale === "zh" ? "掉落表" : locale === "ja" ? "ドロップ表" : "Drop table"}</span>
+        <span className="text-xs text-[#6c6c6c]">{l(locale, { zh: "掉落表", en: "Drop table", ja: "ドロップ表", ko: "드롭표" })}</span>
       </div>
     </EntityCard>
   );
@@ -140,9 +146,9 @@ export function StageCard({ stage, locale }: { stage: Stage; locale: Locale }) {
       meta={`${stage.difficulty} / Act ${stage.act}-${stage.no} / Lv.${stage.level}`}
     >
       <div className="grid grid-cols-3 gap-2 text-center text-xs">
-        <span className="border border-[#27272a] p-1 text-[#9d9d9d]">{stage.goldPerClear ?? "-"} {locale === "zh" ? "金币" : locale === "ja" ? "ゴールド" : "Gold"}</span>
-        <span className="border border-[#27272a] p-1 text-[#9d9d9d]">{stage.expPerClear ?? "-"} {locale === "zh" ? "EXP" : locale === "ja" ? "経験値" : "EXP"}</span>
-        <span className="border border-[#27272a] p-1 text-[#9d9d9d]">{stage.kills ?? "-"} {locale === "zh" ? "击杀" : locale === "ja" ? "討伐" : "Kills"}</span>
+        <span className="border border-[#27272a] p-1 text-[#9d9d9d]">{stage.goldPerClear ?? "-"} {l(locale, { zh: "金币", en: "Gold", ja: "ゴールド", ko: "골드" })}</span>
+        <span className="border border-[#27272a] p-1 text-[#9d9d9d]">{stage.expPerClear ?? "-"} EXP</span>
+        <span className="border border-[#27272a] p-1 text-[#9d9d9d]">{stage.kills ?? "-"} {l(locale, { zh: "击杀", en: "Kills", ja: "討伐", ko: "처치" })}</span>
       </div>
     </EntityCard>
   );
@@ -188,12 +194,12 @@ export function HeroCard({ hero, locale }: { hero: Hero; locale: Locale }) {
         <div className="mt-4 grid grid-cols-3 gap-2 text-center text-xs">
           <span className="border border-[#27272a] bg-[#0d0d0d] px-2 py-1.5 text-[#ffffff]">HP {hero.MaxHp ?? "-"}</span>
           <span className="border border-[#27272a] bg-[#0d0d0d] px-2 py-1.5 text-[#ffffff]">ATK {hero.AttackDamage ?? "-"}</span>
-          <span className="border border-[#27272a] bg-[#0d0d0d] px-2 py-1.5 text-[#ffffff]">{locale === "zh" ? "难度" : locale === "ja" ? "難易度" : "Diff"} {profile.difficulty}</span>
+          <span className="border border-[#27272a] bg-[#0d0d0d] px-2 py-1.5 text-[#ffffff]">{l(locale, { zh: "难度", en: "Diff", ja: "難度", ko: "난이도" })} {profile.difficulty}</span>
         </div>
 
         <div className="mt-3 flex items-center justify-between gap-3 border-t border-[#27272a] pt-3">
           <p className="truncate text-xs text-[#9d9d9d]">{profile.phase}</p>
-          <span className="shrink-0 text-xs font-medium text-[#f0c040]">{locale === "zh" ? "查看详情" : locale === "ja" ? "詳細" : "Open"}</span>
+          <span className="shrink-0 text-xs font-medium text-[#f0c040]">{l(locale, { zh: "查看详情", en: "Open", ja: "詳細", ko: "열기" })}</span>
         </div>
       </div>
     </Link>
@@ -224,9 +230,9 @@ export function DropRateTable({ rows, locale }: { rows: Array<{ name: string; ra
       <table className="w-full min-w-[520px] text-left text-sm">
         <thead className="bg-[#18181b] text-xs text-[#6c6c6c]">
           <tr>
-            <th className="px-3 py-2">{locale === "zh" ? "掉落物" : locale === "ja" ? "アイテム" : "Drop"}</th>
-            <th className="px-3 py-2">{locale === "zh" ? "掉率" : locale === "ja" ? "確率" : "Rate"}</th>
-            <th className="px-3 py-2">{locale === "zh" ? "来源" : locale === "ja" ? "ソース" : "Source"}</th>
+            <th className="px-3 py-2">{l(locale, { zh: "掉落物", en: "Drop", ja: "アイテム", ko: "아이템" })}</th>
+            <th className="px-3 py-2">{l(locale, { zh: "掉率", en: "Rate", ja: "確率", ko: "확률" })}</th>
+            <th className="px-3 py-2">{l(locale, { zh: "来源", en: "Source", ja: "入手元", ko: "출처" })}</th>
           </tr>
         </thead>
         <tbody>

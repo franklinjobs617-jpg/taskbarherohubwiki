@@ -42,7 +42,7 @@ export default async function FaqPage({ params }: Props) {
         ["Is profit calculation accurate?", "Gold and XP can use stage base data. Market profit needs both real drop rates and real prices; numbers are not shown when either is missing."],
         ["Which class is best for beginners?", "Knight. High HP, armor, and shield make it forgiving. Use it to learn stage pressure, gear levels, and material systems before trying other classes."],
         ["Are DLC classes worth buying?", "Hunter and Slayer are DLC classes. Learn the game with base classes first, then decide. DLC classes are clearly labeled on all pages."],
-        ["Why are chest drop rates not shown?", "Drop rates are only shown when chest → item → dropRate mapping has real data. When incomplete, only source and level range are displayed — no fake rate tables."],
+        ["Why are chest drop rates not shown?", "Drop rates are shown when chest → item → dropRate mapping is available. Otherwise the page shows source and level range."],
         ["How do pets unlock?", "Pets unlock by killing specific monsters. Each pet has a target monster, required kill count, and recommended stage. See the Pets page for details."],
         ["How do runes work?", "Runes provide passive stat bonuses with multi-level upgrade paths. The Runes page groups them by category with effect descriptions and upgrade costs."],
         ["How do I decide keep or sell?", "Check in this order: useful for current class → tradable with real market price → usable for Cube crafting → replacement cost is low."],

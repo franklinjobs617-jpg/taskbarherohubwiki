@@ -1,693 +1,169 @@
 "use client";
 
-import { useMemo, useState } from "react";
 import Link from "next/link";
-import {
-  allItems,
-  allStages,
-  bestFarmingStages,
-  dropsForItem,
-  itemName,
-  marketForItem,
-  type Locale,
-} from "@/lib/game-data/data";
+import { useMemo, useState } from "react";
+import { ArrowRight, Coins, PackageOpen, ShieldCheck, Zap } from "lucide-react";
+import { allStages, stageName, stageSlug, type Locale } from "@/lib/game-data/data";
+import { localizedPath } from "@/lib/locale-path";
 
-type Mode = "optimizer" | "find-item" | "stage-drops" | "compare";
-const DIFFICULTY_RANK: Record<string, number> = { NORMAL: 1, NIGHTMARE: 2, HELL: 3, TORMENT: 4 };
+type Goal = "exp" | "gold" | "chest" | "pet";
+const difficultyRank: Record<string, number> = { NORMAL: 1, NIGHTMARE: 2, HELL: 3, TORMENT: 4 };
 
-export function FarmingCalculator({ locale }: { locale: Locale }) {
-  const [mode, setMode] = useState<Mode>("optimizer");
-  const isZh = locale === "zh";
-
-  return (
-    <div className="space-y-6">
-      {/* Mode Selector */}
-      <div className="flex gap-1 border-b border-[#27272a]">
-        {([
-          ["optimizer", isZh ? "刷图优化" : "Optimizer"],
-          ["find-item", isZh ? "找物品掉落" : "Find Item Drops"],
-          ["stage-drops", isZh ? "查看关卡掉落" : "Stage Drops"],
-          ["compare", isZh ? "关卡对比" : "Compare Stages"],
-        ] as const).map(([key, label]) => (
-          <button
-            key={key}
-            onClick={() => setMode(key)}
-            className={`px-4 py-2.5 text-sm font-medium transition-colors border-b-2 -mb-px ${
-              mode === key
-                ? "border-amber-400 text-amber-400"
-                : "border-transparent text-[#6c6c6c] hover:text-[#9d9d9d]"
-            }`}
-          >
-            {label}
-          </button>
-        ))}
-      </div>
-
-      {mode === "optimizer" && <OptimizerMode locale={locale} />}
-      {mode === "find-item" && <FindItemMode locale={locale} />}
-      {mode === "stage-drops" && <StageDropsMode locale={locale} />}
-      {mode === "compare" && <CompareMode locale={locale} />}
-    </div>
-  );
+function t(locale: Locale, values: Record<Locale | "en", string>) {
+  return values[locale] ?? values.en;
 }
 
-/** Mode 0: Given player state, rank what to farm now */
-function OptimizerMode({ locale }: { locale: Locale }) {
-  const isZh = locale === "zh";
-  const [heroLevel, setHeroLevel] = useState(31);
-  const [expBonus, setExpBonus] = useState(0);
-  const [clearSeconds, setClearSeconds] = useState(120);
-  const [target, setTarget] = useState<"exp" | "gold">("exp");
-  const [maxDifficulty, setMaxDifficulty] = useState("HELL");
-  const maxRank = DIFFICULTY_RANK[maxDifficulty] ?? 3;
+function formatNumber(value: number) {
+  return Math.round(value).toLocaleString();
+}
+
+export function FarmingCalculator({ locale }: { locale: Locale }) {
+  const [heroLevel, setHeroLevel] = useState(30);
+  const [highestStageKey, setHighestStageKey] = useState(() => allStages().find((stage) => stage.difficulty === "NORMAL" && stage.act === 3 && stage.no === 1)?.key ?? allStages()[0]?.key ?? 0);
+  const [clearSeconds, setClearSeconds] = useState(90);
+  const [goal, setGoal] = useState<Goal>("exp");
+
+  const highestStage = allStages().find((stage) => stage.key === highestStageKey) ?? allStages()[0];
+  const maxRank = difficultyRank[highestStage?.difficulty ?? "NORMAL"] ?? 1;
+  const maxProgress = `${highestStage?.act ?? 1}-${highestStage?.no ?? 1}`;
 
   const rows = useMemo(() => {
-    const seconds = Math.max(15, clearSeconds || 15);
+    const seconds = Math.max(20, clearSeconds || 20);
     return allStages()
-      .filter((stage) => (DIFFICULTY_RANK[stage.difficulty] ?? 0) <= maxRank)
+      .filter((stage) => (difficultyRank[stage.difficulty] ?? 0) <= maxRank)
+      .filter((stage) => stage.difficulty !== highestStage?.difficulty || stage.act < highestStage.act || (stage.act === highestStage.act && stage.no <= highestStage.no))
       .filter((stage) => stage.level <= heroLevel + 20)
       .map((stage) => {
-        const expPerClear = Number(stage.expPerClear ?? 0) * (1 + expBonus / 100);
-        const goldPerClear = Number(stage.goldPerClear ?? 0);
         const clearsPerHour = 3600 / seconds;
-        const expPerHour = expPerClear * clearsPerHour;
-        const goldPerHour = goldPerClear * clearsPerHour;
+        const expPerHour = Number(stage.expPerClear ?? 0) * clearsPerHour;
+        const goldPerHour = Number(stage.goldPerClear ?? 0) * clearsPerHour;
         const levelGap = stage.level - heroLevel;
-        const stabilityPenalty = levelGap > 10 ? 0.82 : levelGap > 5 ? 0.92 : 1;
-        const score = (target === "exp" ? expPerHour : goldPerHour) * stabilityPenalty;
-        return { stage, expPerHour, goldPerHour, score, levelGap, stabilityPenalty };
+        const stability = levelGap > 12 ? 0.72 : levelGap > 8 ? 0.84 : levelGap > 4 ? 0.94 : 1;
+        const chestScore = Number(stage.kills ?? stage.monsterCount ?? 0) + (stage.boss ? 30 : 0);
+        const petScore = Number(stage.kills ?? stage.monsterCount ?? 0);
+        const baseScore =
+          goal === "exp"
+            ? expPerHour
+            : goal === "gold"
+              ? goldPerHour
+              : goal === "chest"
+                ? chestScore * clearsPerHour
+                : petScore * clearsPerHour;
+        return {
+          stage,
+          expPerHour,
+          goldPerHour,
+          clearStability: stability,
+          levelGap,
+          score: baseScore * stability,
+        };
       })
       .sort((a, b) => b.score - a.score)
-      .slice(0, 12);
-  }, [clearSeconds, expBonus, heroLevel, maxRank, target]);
+      .slice(0, 6);
+  }, [clearSeconds, goal, heroLevel, highestStage, maxRank]);
+
+  const best = rows[0] ?? null;
 
   return (
     <div className="grid gap-5 lg:grid-cols-[360px_1fr]">
       <aside className="space-y-4 border border-[#27272a] bg-[#0d0d0d] p-4">
-        <div>
-          <label className="mb-1 block text-[10px] font-semibold uppercase tracking-[0.14em] text-[#6c6c6c]">
-            {isZh ? "英雄等级" : "Hero level"}
-          </label>
-          <input type="number" min={1} max={100} value={heroLevel} onChange={(event) => setHeroLevel(Number(event.target.value))}
-            className="w-full border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm text-white" />
-        </div>
-        <div>
-          <label className="mb-1 block text-[10px] font-semibold uppercase tracking-[0.14em] text-[#6c6c6c]">
-            {isZh ? "经验加成 %" : "EXP bonus %"}
-          </label>
-          <input type="number" min={0} max={1000} value={expBonus} onChange={(event) => setExpBonus(Number(event.target.value))}
-            className="w-full border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm text-white" />
-        </div>
-        <div>
-          <label className="mb-1 block text-[10px] font-semibold uppercase tracking-[0.14em] text-[#6c6c6c]">
-            {isZh ? "平均通关秒数" : "Average clear seconds"}
-          </label>
-          <input type="number" min={15} value={clearSeconds} onChange={(event) => setClearSeconds(Number(event.target.value))}
-            className="w-full border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm text-white" />
-        </div>
-        <div className="grid grid-cols-2 gap-2">
-          {(["exp", "gold"] as const).map((value) => (
-            <button key={value} onClick={() => setTarget(value)}
-              className={`border px-3 py-2 text-sm ${target === value ? "border-[#d4a017] bg-[#1a1508] text-[#f0c040]" : "border-[#27272a] text-[#9d9d9d]"}`}>
-              {value.toUpperCase()}
-            </button>
-          ))}
-        </div>
-        <div>
-          <label className="mb-1 block text-[10px] font-semibold uppercase tracking-[0.14em] text-[#6c6c6c]">
-            {isZh ? "最高可刷难度" : "Highest unlocked difficulty"}
-          </label>
-          <select value={maxDifficulty} onChange={(event) => setMaxDifficulty(event.target.value)}
-            className="w-full border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm text-white">
-            {["NORMAL", "NIGHTMARE", "HELL", "TORMENT"].map((diff) => <option key={diff} value={diff}>{diff}</option>)}
+        <Field label={t(locale, { zh: "英雄等级", en: "Hero level", ja: "ヒーローレベル", ko: "영웅 레벨" })}>
+          <input type="number" min={1} max={200} value={heroLevel} onChange={(event) => setHeroLevel(Number(event.target.value))} className="w-full border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm text-white outline-none" />
+        </Field>
+        <Field label={t(locale, { zh: "最高稳定关卡", en: "Highest reliable stage", ja: "安定クリア上限", ko: "안정 클리어 최고 스테이지" })}>
+          <select value={highestStageKey} onChange={(event) => setHighestStageKey(Number(event.target.value))} className="w-full border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm text-white">
+            {allStages().map((stage) => (
+              <option key={stage.key} value={stage.key}>
+                {stage.difficulty} {stage.act}-{stage.no} / Lv.{stage.level}
+              </option>
+            ))}
           </select>
-        </div>
+        </Field>
+        <Field label={t(locale, { zh: "该关通关秒数", en: "Clear seconds", ja: "クリア秒数", ko: "클리어 초" })}>
+          <input type="number" min={20} value={clearSeconds} onChange={(event) => setClearSeconds(Number(event.target.value))} className="w-full border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm text-white outline-none" />
+        </Field>
+        <Field label={t(locale, { zh: "目标", en: "Goal", ja: "目的", ko: "목표" })}>
+          <div className="grid grid-cols-2 gap-2">
+            {(["exp", "gold", "chest", "pet"] as const).map((value) => (
+              <button key={value} onClick={() => setGoal(value)} className={`border px-3 py-2 text-sm ${goal === value ? "border-[#d4a017] bg-[#1a1508] text-[#f0c040]" : "border-[#27272a] text-[#9d9d9d] hover:border-[#3b3b3b]"}`}>
+                {value === "pet" ? "Pet kills" : value.toUpperCase()}
+              </button>
+            ))}
+          </div>
+        </Field>
         <p className="border-t border-[#27272a] pt-3 text-xs leading-5 text-[#6c6c6c]">
-          {isZh
-            ? "市场价格过期时不会用于收益推荐。当前排序只使用关卡金币、经验和你的通关时间。"
-            : "Stale market prices are excluded. Ranking uses stage gold, EXP, and your clear time."}
+          {t(locale, {
+            zh: `当前进度上限：${maxProgress}`,
+            en: `Current progress cap: ${maxProgress}`,
+            ja: `現在の進行上限: ${maxProgress}`,
+            ko: `현재 진행 한도: ${maxProgress}`,
+          })}
         </p>
       </aside>
 
-      <section className="space-y-3">
-        <div className="grid gap-2 sm:grid-cols-3">
-          <div className="border border-[#27272a] bg-[#0d0d0d] p-3">
-            <p className="text-[10px] uppercase tracking-[0.14em] text-[#6c6c6c]">{isZh ? "推荐目标" : "Target"}</p>
-            <p className="mt-1 text-lg font-semibold text-white">{target.toUpperCase()}</p>
+      <section className="space-y-4">
+        {best ? (
+          <div className="border border-[#3f2f10] bg-[#100d06] p-4">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#d4a017]">
+              {t(locale, { zh: "现在该刷", en: "Farm now", ja: "今周回する場所", ko: "지금 돌 곳" })}
+            </p>
+            <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <h2 className="text-2xl font-semibold text-white">{best.stage.difficulty} Act {best.stage.act}-{best.stage.no}</h2>
+                <p className="mt-1 text-sm text-[#d8d1c2]">{stageName(best.stage, locale)}</p>
+              </div>
+              <Link href={localizedPath(locale, `/stages/${stageSlug(best.stage)}`)} className="inline-flex items-center gap-2 bg-[#d4a017] px-4 py-2 text-sm font-semibold text-black hover:bg-[#f0c040]">
+                {t(locale, { zh: "打开关卡详情", en: "Open stage", ja: "ステージ詳細", ko: "스테이지 열기" })}
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+            <div className="mt-4 grid gap-2 sm:grid-cols-4">
+              <Metric icon={<Zap className="h-4 w-4" />} label="EXP/hour" value={formatNumber(best.expPerHour)} accent="text-emerald-300" />
+              <Metric icon={<Coins className="h-4 w-4" />} label="Gold/hour" value={formatNumber(best.goldPerHour)} accent="text-[#f0c040]" />
+              <Metric icon={<ShieldCheck className="h-4 w-4" />} label={t(locale, { zh: "稳定性", en: "Stability", ja: "安定性", ko: "안정성" })} value={`${Math.round(best.clearStability * 100)}%`} accent="text-cyan-300" />
+              <Metric icon={<PackageOpen className="h-4 w-4" />} label={t(locale, { zh: "原因", en: "Why", ja: "理由", ko: "이유" })} value={goal === "exp" ? "EXP" : goal === "gold" ? "Gold" : goal === "chest" ? "Chests" : "Kills"} />
+            </div>
           </div>
-          <div className="border border-[#27272a] bg-[#0d0d0d] p-3">
-            <p className="text-[10px] uppercase tracking-[0.14em] text-[#6c6c6c]">{isZh ? "每小时通关" : "Clears/hour"}</p>
-            <p className="mt-1 font-mono text-lg font-semibold text-[#f0c040]">{(3600 / Math.max(15, clearSeconds || 15)).toFixed(1)}</p>
-          </div>
-          <div className="border border-[#27272a] bg-[#0d0d0d] p-3">
-            <p className="text-[10px] uppercase tracking-[0.14em] text-[#6c6c6c]">{isZh ? "可信度" : "Confidence"}</p>
-            <p className="mt-1 text-lg font-semibold text-emerald-400">{isZh ? "高" : "High"}</p>
-          </div>
-        </div>
+        ) : null}
 
-        <div className="overflow-x-auto border border-[#27272a]">
-          <table className="w-full min-w-[760px] text-left text-sm">
-            <thead className="bg-[#18181b] text-xs text-[#6c6c6c]">
-              <tr>
-                <th className="px-3 py-2">#</th>
-                <th className="px-3 py-2">{isZh ? "关卡" : "Stage"}</th>
-                <th className="px-3 py-2">Lv</th>
-                <th className="px-3 py-2">EXP/h</th>
-                <th className="px-3 py-2">Gold/h</th>
-                <th className="px-3 py-2">{isZh ? "风险" : "Risk"}</th>
-                <th className="px-3 py-2">{isZh ? "动作" : "Action"}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map(({ stage, expPerHour, goldPerHour, levelGap, stabilityPenalty }, index) => (
-                <tr key={stage.key} className="border-t border-[#27272a] hover:bg-[#0d0d0d]">
-                  <td className="px-3 py-2 font-mono text-[#f0c040]">#{index + 1}</td>
-                  <td className="px-3 py-2">
-                    <p className="font-semibold text-white">{stage.difficulty} Act {stage.act}-{stage.no}</p>
-                    <p className="text-xs text-[#6c6c6c]">{stage.name?.["en-US"] ?? `Stage ${stage.key}`}</p>
-                  </td>
-                  <td className="px-3 py-2 font-mono text-[#9d9d9d]">{stage.level}</td>
-                  <td className="px-3 py-2 font-mono text-emerald-400">{Math.round(expPerHour).toLocaleString()}</td>
-                  <td className="px-3 py-2 font-mono text-[#f0c040]">{Math.round(goldPerHour).toLocaleString()}</td>
-                  <td className="px-3 py-2 text-xs text-[#9d9d9d]">
-                    {stabilityPenalty < 1 ? (isZh ? `偏高 (+${levelGap})` : `High (+${levelGap})`) : (isZh ? "稳定" : "Stable")}
-                  </td>
-                  <td className="px-3 py-2">
-                    <Link href={`/${locale}/stages/${stage.key}`} className="text-[#f0c040] hover:underline">
-                      {isZh ? "查看" : "Open"}
-                    </Link>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="border border-[#27272a] bg-[#0d0d0d]">
+          <div className="border-b border-[#27272a] px-4 py-3">
+            <p className="text-sm font-semibold text-white">{t(locale, { zh: "后 5 个备选", en: "Next 5 alternatives", ja: "次の候補 5 件", ko: "다음 대안 5개" })}</p>
+          </div>
+          <div className="divide-y divide-[#27272a]">
+            {rows.map(({ stage, expPerHour, goldPerHour, clearStability }, index) => (
+              <Link key={stage.key} href={localizedPath(locale, `/stages/${stageSlug(stage)}`)} className="grid gap-2 p-3 hover:bg-[#111] sm:grid-cols-[60px_1fr_120px_120px_90px]">
+                <span className="font-mono text-sm text-[#f0c040]">#{index + 1}</span>
+                <span className="text-sm text-white">{stage.difficulty} Act {stage.act}-{stage.no}</span>
+                <span className="font-mono text-sm text-emerald-300">{formatNumber(expPerHour)} EXP/h</span>
+                <span className="font-mono text-sm text-[#f0c040]">{formatNumber(goldPerHour)} Gold/h</span>
+                <span className="text-sm text-[#9d9d9d]">{Math.round(clearStability * 100)}%</span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </div>
   );
 }
 
-/** Mode 1: Find where an item drops */
-function FindItemMode({ locale }: { locale: Locale }) {
-  const isZh = locale === "zh";
-  const [search, setSearch] = useState("");
-  const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
-  const [runs, setRuns] = useState(10);
-
-  const allMatItems = useMemo(
-    () => allItems().filter((i) => i.type === "MATERIAL" || i.type === "STAGEBOX"),
-    [],
-  );
-
-  const filtered = useMemo(() => {
-    if (!search.trim()) return allMatItems.slice(0, 20);
-    const q = search.toLowerCase();
-    return allMatItems
-      .filter((i) => {
-        const name = itemName(i, "en").toLowerCase();
-        const zhName = (i.name as Record<string, string>)?.["zh-Hans"]?.toLowerCase() ?? "";
-        const jaName = (i.name as Record<string, string>)?.["ja-JP"]?.toLowerCase() ?? "";
-        return name.includes(q) || zhName.includes(q) || jaName.includes(q) || i.slug.includes(q);
-      })
-      .slice(0, 20);
-  }, [search, allMatItems]);
-
-  const selectedItem = useMemo(
-    () => allMatItems.find((i) => i.slug === selectedSlug) ?? null,
-    [selectedSlug, allMatItems],
-  );
-
-  const farmingStages = useMemo(
-    () => (selectedSlug ? bestFarmingStages(selectedSlug, 10) : []),
-    [selectedSlug],
-  );
-
-  const market = selectedItem ? marketForItem(selectedItem) : null;
-
+function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="space-y-4">
-      {/* Search */}
-      <div>
-        <label className="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#6c6c6c]">
-          {isZh ? "搜索物品" : "Search Item"}
-        </label>
-        <input
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder={isZh ? "输入物品名（中/英/日）..." : "Type item name (CN/EN/JP)..."}
-          className="w-full border border-[#3b3b3b] bg-[#0d0d0d] px-3 py-2.5 text-sm text-white outline-none placeholder:text-[#6c6c6c] focus:border-amber-600/60"
-        />
-        {search && filtered.length > 0 && !selectedSlug && (
-          <div className="mt-1 max-h-64 overflow-y-auto border border-[#27272a] bg-[#0d0d0d]">
-            {filtered.map((item) => (
-              <button
-                key={item.slug}
-                onClick={() => {
-                  setSelectedSlug(item.slug);
-                  setSearch(itemName(item, locale));
-                }}
-                className="flex w-full items-center gap-2 px-3 py-2 text-left text-sm hover:bg-[#18181b] transition-colors"
-              >
-                <span className="text-[#9d9d9d]">{item.type}</span>
-                <span className="text-white">{itemName(item, locale)}</span>
-                <span className="ml-auto text-[10px] text-[#555]">{item.grade}</span>
-              </button>
-            ))}
-          </div>
-        )}
-      </div>
-
-      {/* Results */}
-      {selectedItem && (
-        <>
-          {/* Item info + market */}
-          <div className="flex items-center gap-3 rounded-sm border border-amber-600/30 bg-amber-600/5 px-4 py-3">
-            <span className="text-sm font-semibold text-amber-400">
-              {itemName(selectedItem, locale)}
-            </span>
-            <span className="text-xs text-[#6c6c6c]">{selectedItem.grade}</span>
-            {market?.lowest != null && (
-              <span className="ml-auto text-xs text-[#9d9d9d]">
-                {isZh ? "市价" : "Market"}:{" "}
-                <span className="font-semibold text-amber-400">${market.lowest.toFixed(2)}</span>
-              </span>
-            )}
-          </div>
-
-          {/* Best stages */}
-          {farmingStages.length > 0 ? (
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[#6c6c6c]">
-                  {isZh ? `最佳刷取关卡 (${farmingStages.length})` : `Best Farming Stages (${farmingStages.length})`}
-                </p>
-                <div className="flex items-center gap-2 text-[10px] text-[#6c6c6c]">
-                  {isZh ? "模拟次数:" : "Simulate runs:"}
-                  {[1, 5, 10, 25, 50, 100].map((n) => (
-                    <button
-                      key={n}
-                      onClick={() => setRuns(n)}
-                      className={`rounded px-1.5 py-0.5 font-mono ${
-                        runs === n
-                          ? "bg-amber-600/30 text-amber-400"
-                          : "text-[#6c6c6c] hover:text-[#9d9d9d]"
-                      }`}
-                    >
-                      {n}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {farmingStages.map((fs, i) => {
-                const probAtLeast1 = 1 - Math.pow(1 - fs.totalDropChance, runs);
-                const expected = fs.totalDropChance * runs;
-                const profit = market?.lowest ? expected * market.lowest : 0;
-                const stageData = allStages().find((s) => s.key === fs.stageKey);
-
-                return (
-                  <Link
-                    key={fs.stageKey}
-                    href={`/${locale}/stages/${fs.stageKey}`}
-                    className="flex items-center gap-3 rounded-sm border border-[#27272a] bg-[#0d0d0d] px-3 py-2.5 transition-colors hover:border-amber-600/30 group"
-                  >
-                    {/* Rank */}
-                    <span className="w-6 text-center font-mono text-xs text-[#555]">#{i + 1}</span>
-
-                    {/* Stage info */}
-                    <div className="min-w-0 flex-1">
-                      <p className="truncate text-sm font-medium text-white group-hover:text-amber-400 transition-colors">
-                        {fs.diff} A{fs.act}-{fs.no}
-                        {stageData?.name?.["en-US"] ? ` — ${stageData.name["en-US"]}` : ""}
-                      </p>
-                      <p className="mt-0.5 text-[10px] text-[#6c6c6c]">
-                        {fs.boxes.map((b) => b.name).join(" · ")}
-                      </p>
-                    </div>
-
-                    {/* Stats */}
-                    <div className="flex shrink-0 items-center gap-4 text-right">
-                      <div className="text-[10px]">
-                        <p className="text-[#555]">{isZh ? "每轮" : "Per run"}</p>
-                        <p className="font-mono font-semibold text-amber-400">
-                          {(fs.totalDropChance * 100).toFixed(2)}%
-                        </p>
-                      </div>
-                      <div className="text-[10px]">
-                        <p className="text-[#555]">{runs}{isZh ? "次 ≥1" : "runs ≥1"}</p>
-                        <p className="font-mono font-semibold text-white">
-                          {(probAtLeast1 * 100).toFixed(0)}%
-                        </p>
-                      </div>
-                      <div className="text-[10px]">
-                        <p className="text-[#555]">{isZh ? "期望" : "Expected"}</p>
-                        <p className="font-mono font-semibold text-emerald-400">
-                          {expected.toFixed(1)}×
-                        </p>
-                      </div>
-                      {market?.lowest != null && (
-                        <div className="text-[10px]">
-                          <p className="text-[#555]">{isZh ? "收益" : "Profit"}</p>
-                          <p className="font-mono font-semibold text-amber-400">
-                            ${profit.toFixed(3)}
-                          </p>
-                        </div>
-                      )}
-                      <span className="text-[10px] text-[#555] group-hover:text-amber-400">→</span>
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
-          ) : selectedSlug ? (
-            <div className="border border-[#27272a] bg-[#0d0d0d] p-6 text-center text-sm text-[#6c6c6c]">
-              {isZh
-                ? "该物品暂无掉落数据。可能是合成专用、活动限定或尚未实装。"
-                : "No drop data for this item. It may be synthesis-only, event-exclusive, or not yet implemented."}
-            </div>
-          ) : null}
-        </>
-      )}
+    <div>
+      <label className="mb-1 block text-[10px] font-semibold uppercase tracking-[0.14em] text-[#6c6c6c]">{label}</label>
+      {children}
     </div>
   );
 }
 
-/** Mode 2: See what drops from a stage */
-function StageDropsMode({ locale }: { locale: Locale }) {
-  const isZh = locale === "zh";
-  const [difficulty, setDifficulty] = useState("NORMAL");
-  const [selectedAct, setSelectedAct] = useState(1);
-  const [selectedNo, setSelectedNo] = useState(1);
-
-  const stage = useMemo(() => {
-    const key = (["NORMAL", "NIGHTMARE", "HELL", "TORMENT"].indexOf(difficulty) + 1) * 1000 + selectedAct * 100 + selectedNo;
-    return allStages().find((s) => s.key === key) ?? null;
-  }, [difficulty, selectedAct, selectedNo]);
-
-  // Find items that drop in this stage
-  const stageDrops = useMemo(() => {
-    if (!stage) return [];
-    const items = allItems().filter((i) => i.type === "MATERIAL" || i.type === "STAGEBOX");
-    return items
-      .map((item) => {
-        const drops = dropsForItem(item.slug);
-        const stageSources = drops.filter((d) => d.stages.some((s) => s.key === stage.key));
-        if (!stageSources.length) return null;
-        const totalChance = stageSources.reduce((sum, d) => {
-          const stageEntry = d.stages.find((s) => s.key === stage.key);
-          return sum + (d.drop_chance / 100) * ((stageEntry?.rate ?? 0) / 1000);
-        }, 0);
-        return { item, totalChance, sources: stageSources };
-      })
-      .filter((x): x is NonNullable<typeof x> => x !== null)
-      .sort((a, b) => b.totalChance - a.totalChance);
-  }, [stage]);
-
-  const diffs = ["NORMAL", "NIGHTMARE", "HELL", "TORMENT"];
-
+function Metric({ icon, label, value, accent = "text-white" }: { icon: React.ReactNode; label: string; value: string; accent?: string }) {
   return (
-    <div className="space-y-4">
-      {/* Stage selector */}
-      <div className="grid gap-3 sm:grid-cols-3">
-        <div>
-          <label className="mb-1 block text-[10px] font-semibold uppercase tracking-[0.1em] text-[#6c6c6c]">
-            {isZh ? "难度" : "Difficulty"}
-          </label>
-          <div className="flex gap-1">
-            {diffs.map((d) => (
-              <button
-                key={d}
-                onClick={() => setDifficulty(d)}
-                className={`px-2 py-1.5 text-[11px] font-medium transition-colors border ${
-                  difficulty === d
-                    ? "border-amber-600/60 bg-amber-600/20 text-amber-400"
-                    : "border-[#27272a] text-[#6c6c6c] hover:border-[#3b3b3b]"
-                }`}
-              >
-                {d[0]}
-              </button>
-            ))}
-          </div>
-        </div>
-        <div>
-          <label className="mb-1 block text-[10px] font-semibold uppercase tracking-[0.1em] text-[#6c6c6c]">Act</label>
-          <div className="flex gap-1">
-            {[1, 2, 3].map((a) => (
-              <button
-                key={a}
-                onClick={() => setSelectedAct(a)}
-                className={`px-3 py-1.5 text-[11px] font-medium border ${
-                  selectedAct === a
-                    ? "border-amber-600/60 bg-amber-600/20 text-amber-400"
-                    : "border-[#27272a] text-[#6c6c6c] hover:border-[#3b3b3b]"
-                }`}
-              >
-                {a}
-              </button>
-            ))}
-          </div>
-        </div>
-        <div>
-          <label className="mb-1 block text-[10px] font-semibold uppercase tracking-[0.1em] text-[#6c6c6c]">
-            {isZh ? "关卡" : "Stage"}
-          </label>
-          <div className="flex flex-wrap gap-1">
-            {Array.from({ length: 10 }, (_, i) => i + 1).map((n) => (
-              <button
-                key={n}
-                onClick={() => setSelectedNo(n)}
-                className={`px-2 py-1.5 text-[11px] font-medium border ${
-                  selectedNo === n
-                    ? "border-amber-600/60 bg-amber-600/20 text-amber-400"
-                    : "border-[#27272a] text-[#6c6c6c] hover:border-[#3b3b3b]"
-                }`}
-              >
-                {n}
-              </button>
-            ))}
-          </div>
-        </div>
+    <div className="border border-[#3f2f10] bg-[#0a0a0a] p-3">
+      <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.12em] text-[#9d7b33]">
+        {icon}
+        <span>{label}</span>
       </div>
-
-      {/* Stage info */}
-      {stage && (
-        <div className="rounded-sm border border-amber-600/20 bg-[#0d0d0d] px-4 py-3">
-          <div className="flex items-center gap-4">
-            <p className="text-sm font-semibold text-white">
-              {difficulty} A{selectedAct}-{selectedNo}: {stage.name?.["en-US"] ?? `Stage ${stage.key}`}
-            </p>
-            <span className="text-xs text-[#6c6c6c]">
-              Lv.{stage.level} · {isZh ? "金币" : "Gold"}: {stage.goldPerClear?.toLocaleString()} · EXP: {stage.expPerClear?.toLocaleString()}
-            </span>
-            {stage.boss && (
-              <span className="text-xs text-red-400/70">
-                Boss: {stage.boss.name?.["en-US"] ?? "?"}
-              </span>
-            )}
-          </div>
-        </div>
-      )}
-
-      {/* Item drops */}
-      {stageDrops.length > 0 ? (
-        <div>
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.1em] text-[#6c6c6c]">
-            {isZh ? `掉落物品 (${stageDrops.length})` : `Drops (${stageDrops.length})`}
-          </p>
-          <div className="space-y-1">
-            {stageDrops.map(({ item, totalChance, sources }) => (
-              <Link
-                key={item.slug}
-                href={`/${locale}/items/${item.slug}`}
-                className="flex items-center gap-3 rounded-sm border border-[#27272a] bg-[#0d0d0d] px-3 py-2 text-xs transition-colors hover:border-amber-600/30"
-              >
-                <span className="w-20 truncate font-medium text-white">
-                  {itemName(item, locale)}
-                </span>
-                <span className="text-[10px] text-[#555]">{item.grade}</span>
-                <span className="flex-1 text-[10px] text-[#6c6c6c] truncate">
-                  {sources.map((s) => s.box_name).join(" · ")}
-                </span>
-                <span className="font-mono font-semibold text-amber-400">
-                  {(totalChance * 100).toFixed(2)}%
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      ) : (
-        <div className="border border-[#27272a] bg-[#0d0d0d] p-6 text-center text-xs text-[#6c6c6c]">
-          {isZh ? "所选关卡暂无掉落数据" : "No drop data for selected stage"}
-        </div>
-      )}
-    </div>
-  );
-}
-
-/** Mode 3: Compare stages */
-function CompareMode({ locale }: { locale: Locale }) {
-  const isZh = locale === "zh";
-  const [slots, setSlots] = useState<Array<number | null>>([null, null]);
-
-  const addSlot = () => {
-    if (slots.length < 4) setSlots([...slots, null]);
-  };
-
-  const updateSlot = (index: number, key: number | null) => {
-    const next = [...slots];
-    next[index] = key;
-    setSlots(next);
-  };
-
-  const selectedStages = slots
-    .map((key) => (key ? allStages().find((s) => s.key === key) ?? null : null))
-    .filter(Boolean);
-
-  return (
-    <div className="space-y-4">
-      <p className="text-xs text-[#6c6c6c]">
-        {isZh
-          ? "选择 2-4 个关卡并排比较金币、经验和掉落密度。"
-          : "Select 2-4 stages to compare gold, EXP, and drop density side by side."}
-      </p>
-
-      <div className="grid gap-3" style={{ gridTemplateColumns: `repeat(${slots.length}, 1fr)` }}>
-        {slots.map((stageKey, i) => (
-          <StagePicker
-            key={i}
-            index={i}
-            selectedKey={stageKey}
-            locale={locale}
-            onSelect={(key) => updateSlot(i, key)}
-            onRemove={slots.length > 2 ? () => {
-              const next = slots.filter((_, j) => j !== i);
-              setSlots(next);
-            } : undefined}
-          />
-        ))}
-      </div>
-
-      {slots.length < 4 && (
-        <button
-          onClick={addSlot}
-          className="border border-dashed border-[#3b3b3b] px-4 py-2 text-xs text-[#6c6c6c] hover:border-amber-600/40 hover:text-amber-400 transition-colors"
-        >
-          + {isZh ? "添加关卡" : "Add Stage"}
-        </button>
-      )}
-
-      {/* Comparison table */}
-      {selectedStages.length >= 2 && (
-        <div className="overflow-x-auto border border-[#27272a]">
-          <table className="w-full min-w-[400px] text-left text-xs">
-            <thead className="bg-[#18181b] text-[#6c6c6c]">
-              <tr>
-                <th className="px-3 py-2">{isZh ? "关卡" : "Stage"}</th>
-                <th className="px-3 py-2">Lv</th>
-                <th className="px-3 py-2">{isZh ? "金币" : "Gold"}</th>
-                <th className="px-3 py-2">EXP</th>
-                <th className="px-3 py-2">{isZh ? "击杀" : "Kills"}</th>
-                <th className="px-3 py-2">Boss</th>
-              </tr>
-            </thead>
-            <tbody>
-              {selectedStages.map((stage) => (
-                <tr key={stage!.key} className="border-t border-[#27272a] hover:bg-[#0d0d0d]">
-                  <td className="px-3 py-2 font-medium text-white">
-                    <Link href={`/${locale}/stages/${stage!.key}`} className="hover:text-amber-400">
-                      {stage!.difficulty} A{stage!.act}-{stage!.no}
-                    </Link>
-                  </td>
-                  <td className="px-3 py-2 font-mono text-[#9d9d9d]">{stage!.level}</td>
-                  <td className="px-3 py-2 font-mono text-amber-400">{stage!.goldPerClear?.toLocaleString()}</td>
-                  <td className="px-3 py-2 font-mono text-emerald-400">{stage!.expPerClear?.toLocaleString()}</td>
-                  <td className="px-3 py-2 font-mono text-[#9d9d9d]">{stage!.kills}</td>
-                  <td className="px-3 py-2 text-[#9d9d9d]">{stage!.boss?.name?.["en-US"] ?? "-"}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
-    </div>
-  );
-}
-
-function StagePicker({
-  index,
-  selectedKey,
-  locale,
-  onSelect,
-  onRemove,
-}: {
-  index: number;
-  selectedKey: number | null;
-  locale: Locale;
-  onSelect: (key: number) => void;
-  onRemove?: () => void;
-}) {
-  const isZh = locale === "zh";
-  const initialDiffIndex = selectedKey ? Math.max(0, Math.floor(selectedKey / 1000) - 1) : 0;
-  const initialAct = selectedKey ? Math.floor((selectedKey % 1000) / 100) : 1;
-  const initialNo = selectedKey ? selectedKey % 100 : index + 1;
-  const difficulties = ["NORMAL", "NIGHTMARE", "HELL", "TORMENT"];
-  const [diff, setDiff] = useState(difficulties[initialDiffIndex] ?? "NORMAL");
-  const [act, setAct] = useState(initialAct);
-  const [no, setNo] = useState(initialNo);
-
-  const stageKey = (nextDiff = diff, nextAct = act, nextNo = no) =>
-    (difficulties.indexOf(nextDiff) + 1) * 1000 + nextAct * 100 + nextNo;
-  const key = stageKey();
-  const stage = allStages().find((s) => s.key === key);
-
-  return (
-    <div className="rounded-sm border border-[#27272a] bg-[#0d0d0d] p-3">
-      <div className="mb-2 flex items-center justify-between">
-        <span className="text-[10px] font-semibold text-[#6c6c6c]">#{index + 1}</span>
-        {onRemove && (
-          <button onClick={onRemove} className="text-[10px] text-[#555] hover:text-red-400">
-            ×
-          </button>
-        )}
-      </div>
-      <div className="space-y-1.5">
-        <select value={diff} onChange={(e) => {
-          const nextDiff = e.target.value;
-          setDiff(nextDiff);
-          onSelect(stageKey(nextDiff, act, no));
-        }}
-          className="w-full border border-[#27272a] bg-[#0a0a0a] px-2 py-1 text-[11px] text-white">
-          {difficulties.map((d) => (
-            <option key={d} value={d}>{d}</option>
-          ))}
-        </select>
-        <div className="flex gap-1">
-          <select value={act} onChange={(e) => {
-            const nextAct = Number(e.target.value);
-            setAct(nextAct);
-            onSelect(stageKey(diff, nextAct, no));
-          }}
-            className="flex-1 border border-[#27272a] bg-[#0a0a0a] px-2 py-1 text-[11px] text-white">
-            {[1, 2, 3].map((a) => (<option key={a} value={a}>Act {a}</option>))}
-          </select>
-          <select value={no} onChange={(e) => {
-            const nextNo = Number(e.target.value);
-            setNo(nextNo);
-            onSelect(stageKey(diff, act, nextNo));
-          }}
-            className="flex-1 border border-[#27272a] bg-[#0a0a0a] px-2 py-1 text-[11px] text-white">
-            {Array.from({ length: 10 }, (_, i) => i + 1).map((n) => (<option key={n} value={n}>#{n}</option>))}
-          </select>
-        </div>
-      </div>
-      {stage && (
-        <div className="mt-2 border-t border-[#27272a] pt-2 text-[10px] text-[#6c6c6c]">
-          <p>{stage.name?.["en-US"]}</p>
-          <p className="mt-0.5">
-            {isZh ? "金币" : "Gold"}: {stage.goldPerClear?.toLocaleString()} · EXP: {stage.expPerClear?.toLocaleString()}
-          </p>
-        </div>
-      )}
+      <p className={`mt-2 text-lg font-semibold ${accent}`}>{value}</p>
     </div>
   );
 }

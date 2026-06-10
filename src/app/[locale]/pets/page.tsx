@@ -1,138 +1,105 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Skull, Star, Swords } from "lucide-react";
+import { MapPin, PawPrint, Star, Target } from "lucide-react";
 import { PageHeader, PageShell } from "@/components/tbh/page";
-import { type Locale } from "@/lib/game-data/data";
-import { extPets, type ExtPet } from "@/lib/game-data/external";
+import { allStages, stageSlug, type Locale } from "@/lib/game-data/data";
+import { getPetUnlockPlan } from "@/lib/game-data/decisions";
+import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale }> };
 
+function txt(locale: Locale, values: Record<Locale | "en", string>) {
+  return values[locale] ?? values.en;
+}
+
+function stageHref(locale: Locale, farm: { act: number; stageNo: number } | null | undefined) {
+  if (!farm) return localizedPath(locale, "/map");
+  const stage = allStages().find((row) => row.difficulty === "NORMAL" && row.act === farm.act && row.no === farm.stageNo);
+  return localizedPath(locale, `/stages/${stage ? stageSlug(stage) : `normal-${farm.act}-${farm.stageNo}`}`);
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: locale === "zh" ? "TaskBar Hero 宠物解锁｜条件、属性与最佳刷取关卡" : "TaskBar Hero Pets — Unlock Conditions, Stats & Best Stages",
-    description: locale === "zh"
-      ? "全部宠物的解锁条件、属性加成、推荐刷取关卡和击杀需求。包含免费宠物和 DLC 宠物。"
-      : "All pets with unlock conditions, stat bonuses, recommended farming stages, and kill requirements. Free and DLC pets included.",
+    title: locale === "zh" ? "TBH 宠物解锁 | 最佳关卡、目标与击杀数" : "TBH Pets Unlock | Best Stages, Targets & Kill Counts",
+    description: locale === "zh" ? "查看每个宠物的 bonus、解锁目标、击杀数、最佳刷取关卡、怪物占比和前期/金币/宝箱/DLC 优先级。" : "See each pet bonus, unlock target, kill count, best farming stage, spawn share, and early/gold/chest/DLC priority.",
     alternates: pageAlternates(locale, "/pets"),
   };
 }
 
 export default async function PetsPage({ params }: Props) {
   const { locale } = await params;
-  const isZh = locale === "zh";
-  const pets = extPets();
-  const freePets = pets.filter((p) => !p.dlc);
-  const dlcPets = pets.filter((p) => p.dlc);
+  const plan = getPetUnlockPlan(locale);
+  const picks = [
+    { label: "First pet", row: plan.firstPet },
+    { label: "Best gold pet", row: plan.bestGoldPet },
+    { label: "Best chest pet", row: plan.bestChestPet },
+    { label: "Best DLC pet", row: plan.bestDlcPet },
+  ].filter((entry) => entry.row);
 
   return (
     <PageShell>
       <PageHeader
         kicker="Pets"
-        title={isZh ? "宠物解锁路线" : "Pet Unlock Routes"}
-        description={isZh
-          ? "每种宠物的解锁条件、属性加成和最佳刷取关卡。被动属性可叠加。"
-          : "Unlock conditions, stat bonuses, and best farming stages for every pet. Passive stats stack."}
+        title={txt(locale, { zh: "宠物解锁路线", en: "Pet Unlock Routes", ja: "ペット解放ルート", ko: "펫 해금 루트" })}
+        description={txt(locale, {
+          zh: "先看该优先刷谁，再看目标怪、击杀数、最佳关卡和占比。",
+          en: "Start with priority picks, then check target, kill count, best stage, and spawn share.",
+          ja: "優先ペットを見てから、対象、討伐数、最適ステージ、出現比率を確認。",
+          ko: "우선순위를 먼저 보고 대상, 처치 수, 추천 스테이지, 출현 비율을 확인합니다.",
+        })}
       />
 
-      {/* ── Free Pets ── */}
-      <section className="mb-10">
-        <h2 className="mb-4 text-lg font-semibold text-[#f6e8c8]">
-          {isZh ? `免费宠物 (${freePets.length})` : `Free Pets (${freePets.length})`}
-        </h2>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {freePets.map((pet) => <PetCard key={pet.key} pet={pet} locale={locale} isZh={isZh} />)}
-        </div>
+      <section className="mb-6 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+        {picks.map(({ label, row }) => row ? (
+          <Link key={label} href={stageHref(locale, row.bestFarmStage)} className="border border-[#3f2f10] bg-[#100d06] p-4 hover:border-[#d4a017]">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#9d7b33]">{label}</p>
+            <p className="mt-2 text-lg font-semibold text-white">{row.name}</p>
+            <p className="mt-1 text-xs text-[#d8d1c2]">{row.bestFarmStage ? `${row.bestFarmStage.label} ${row.bestFarmStage.stageName}` : row.priority}</p>
+          </Link>
+        ) : null)}
       </section>
 
-      {/* ── DLC Pets ── */}
-      {dlcPets.length > 0 && (
-        <section>
-          <h2 className="mb-4 text-lg font-semibold text-[#f6e8c8]">
-            {isZh ? `DLC 宠物 (${dlcPets.length})` : `DLC Pets (${dlcPets.length})`}
-          </h2>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {dlcPets.map((pet) => <PetCard key={pet.key} pet={pet} locale={locale} isZh={isZh} />)}
+      <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        {plan.pets.map((row) => (
+          <div key={row.pet.key} className={`border bg-[#0d0d0d] p-5 ${row.pet.dlc ? "border-[#5a3a1a]" : "border-[#27272a]"}`}>
+            <div className="flex items-start gap-4">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center border border-[#27272a] bg-[#0a0a0a]">
+                <Image src={`/game/pets/${row.pet.icon}.png`} alt={row.name} width={40} height={40} className="object-contain" data-pixel unoptimized />
+              </div>
+              <div className="min-w-0">
+                <div className="flex flex-wrap items-center gap-2">
+                  <h2 className="text-lg font-semibold text-[#f1e8d5]">{row.name}</h2>
+                  <span className="border border-[#3b3b3b] px-2 py-0.5 text-[10px] font-semibold uppercase text-[#f0c040]">{row.priority}</span>
+                </div>
+                <p className="mt-1 text-xs leading-5 text-[#9d9d9d]">{row.bonus}</p>
+              </div>
+            </div>
+
+            <div className="mt-4 grid gap-2 text-sm">
+              <Line icon={<Target className="h-4 w-4" />} label={txt(locale, { zh: "目标", en: "Target", ja: "対象", ko: "대상" })} value={row.targetMonster ?? row.unlockType} />
+              <Line icon={<PawPrint className="h-4 w-4" />} label={txt(locale, { zh: "击杀数", en: "Kill count", ja: "討伐数", ko: "처치 수" })} value={row.killCount?.toLocaleString() ?? "-"} />
+              <Line icon={<MapPin className="h-4 w-4" />} label={txt(locale, { zh: "最佳关卡", en: "Best stage", ja: "最適ステージ", ko: "추천 스테이지" })} value={row.bestFarmStage ? `${row.bestFarmStage.label} ${row.bestFarmStage.stageName}` : "DLC"} href={stageHref(locale, row.bestFarmStage)} />
+              <Line icon={<Star className="h-4 w-4" />} label={txt(locale, { zh: "占比", en: "Spawn share", ja: "出現比率", ko: "출현 비율" })} value={row.bestFarmStage ? `${row.bestFarmStage.share}%` : "-"} />
+            </div>
           </div>
-        </section>
-      )}
+        ))}
+      </section>
     </PageShell>
   );
 }
 
-function PetCard({ pet, locale, isZh }: { pet: ExtPet; locale: Locale; isZh: boolean }) {
-  return (
-    <div className={`border bg-[#0d0d0d] p-5 ${pet.dlc ? "border-[#5a3a1a]" : "border-[#27272a]"}`}>
-      {/* Header */}
-      <div className="flex items-start gap-4">
-        <div className="flex h-14 w-14 shrink-0 items-center justify-center border border-[#27272a] bg-[#0a0a0a]">
-          <Image src={`/game/pets/${pet.icon}.png`} alt={pet.name} width={40} height={40} className="object-contain" data-pixel unoptimized />
-        </div>
-        <div>
-          <div className="flex items-center gap-2">
-            <h3 className="text-lg font-semibold text-[#f1e8d5]">{pet.name}</h3>
-            {pet.dlc && (
-              <span className="rounded-full border border-[#5a3a1a] bg-[#1b1206] px-2 py-0.5 text-[10px] font-semibold text-[#f0c040]">DLC</span>
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* Stats */}
-      <div className="mt-3 space-y-1.5">
-        {pet.stats.map((s) => (
-          <div key={s.stat} className="flex items-center justify-between text-sm">
-            <span className="text-[#9d9d9d]">{s.label}</span>
-            <span className="font-semibold text-[#62d394]">{s.disp}</span>
-          </div>
-        ))}
-      </div>
-
-      {/* Unlock info */}
-      <div className="mt-4 border-t border-[#27272a] pt-4">
-        {pet.unlock.type === "KillMonster" ? (
-          <div className="space-y-2">
-            <div className="flex items-center gap-2 text-sm">
-              <Skull className="h-4 w-4 text-[#d4a017]" />
-              <span className="text-[#9d9d9d]">
-                {isZh ? `击杀 ${pet.unlock.monsterName ?? "?"}` : `Kill ${pet.unlock.monsterName ?? "?"}`}
-              </span>
-              <span className="font-semibold text-[#f0c040]">×{(pet.unlock.count ?? 0).toLocaleString()}</span>
-            </div>
-            {pet.unlock.farm && (
-              <>
-                <div className="flex items-center gap-2 text-sm">
-                  <MapPin className="h-4 w-4 text-[#ff6b6b]" />
-                  <span className="text-[#9d9d9d]">{isZh ? "推荐关卡" : "Best stage"}:</span>
-                  <Link
-                    href={`/${locale}/stages/${pet.unlock.farm.label.toLowerCase().replace(".", "-")}`}
-                    className="font-semibold text-[#f0c040] hover:underline"
-                  >
-                    {pet.unlock.farm.label} {pet.unlock.farm.stageName}
-                  </Link>
-                </div>
-                <div className="flex items-center gap-2 text-xs text-[#6c6c6c]">
-                  <Swords className="h-3 w-3" />
-                  <span>
-                    {isZh
-                      ? `${pet.unlock.farm.share}% 占比 · 权重 ${pet.unlock.farm.weight} · 另有 ${pet.unlock.farm.alsoIn} 个关卡`
-                      : `${pet.unlock.farm.share}% share · weight ${pet.unlock.farm.weight} · ${pet.unlock.farm.alsoIn} other stages`}
-                  </span>
-                </div>
-              </>
-            )}
-          </div>
-        ) : (
-          <div className="flex items-center gap-2 text-sm">
-            <Star className="h-4 w-4 text-[#f0c040]" />
-            <span className="text-[#9d9d9d]">
-              {isZh ? `解锁方式：${pet.unlock.note ?? "DLC"}` : `Unlock: ${pet.unlock.note ?? "DLC"}`}
-            </span>
-          </div>
-        )}
-      </div>
-    </div>
+function Line({ icon, label, value, href }: { icon: React.ReactNode; label: string; value: string; href?: string }) {
+  const content = (
+    <>
+      <span className="flex items-center gap-2 text-[#9d9d9d]">{icon}{label}</span>
+      <span className="min-w-0 truncate font-semibold text-[#f0c040]">{value}</span>
+    </>
   );
+  if (href) {
+    return <Link href={href} className="flex items-center justify-between gap-3 border border-[#27272a] bg-[#0a0a0a] px-3 py-2 hover:border-[#d4a017]">{content}</Link>;
+  }
+  return <div className="flex items-center justify-between gap-3 border border-[#27272a] bg-[#0a0a0a] px-3 py-2">{content}</div>;
 }

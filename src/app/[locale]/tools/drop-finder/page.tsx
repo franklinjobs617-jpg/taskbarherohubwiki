@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { DropFinder } from "@/components/tbh/drop-finder";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { type Locale } from "@/lib/game-data/data";
@@ -9,8 +10,8 @@ type Props = { params: Promise<{ locale: Locale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "TBH Drop Finder | Item Drops, Stage Loot & Chest Tables",
-    description: "Find where TBH items drop, compare stage loot tables, and inspect chest sources without browsing every item page.",
+    title: locale === "zh" ? "TBH 掉落查询 | 最佳关卡、宝箱来源与预计次数" : "TBH Drop Finder | Best Stages, Chest Sources & Expected Runs",
+    description: locale === "zh" ? "输入物品或宝箱名，直接查看最佳关卡、单次概率、50%/90%预计次数和市场入口。" : "Search an item or chest and get the best stage, per-run chance, 50%/90% expected runs, and market link.",
     alternates: pageAlternates(locale, "/tools/drop-finder"),
   };
 }
@@ -23,14 +24,16 @@ export default async function DropFinderPage({ params }: Props) {
     <PageShell>
       <PageHeader
         kicker="Tool"
-        title={isZh ? "Drop Finder" : "Drop Finder"}
+        title="Drop Finder"
         description={
           isZh
-            ? "按物品、关卡或宝箱查掉落。结果直接给推荐关卡、概率和替代路线。"
-            : "Search by item, stage, or chest. Results show recommended stages, rates, and fallback routes."
+            ? "查看最佳关卡、单次概率、50%/90%预计次数、宝箱来源和相关入口。"
+            : "View best stage, per-run chance, 50%/90% expected runs, chest source, and related links."
         }
       />
-      <DropFinder locale={locale} />
+      <Suspense>
+        <DropFinder locale={locale} />
+      </Suspense>
     </PageShell>
   );
 }

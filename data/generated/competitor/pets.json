@@ -1,0 +1,120 @@
+{
+  "generatedAt": "2026-06-10T02:02:38.835Z",
+  "rows": [
+    {
+      "key": 1001,
+      "name": "Bat",
+      "bonus": "Normal Chest Drop Chance +10%; EXP Gain +15%",
+      "unlockType": "KillMonster",
+      "unlockMonster": "Bat",
+      "killCount": 5000,
+      "bestStage": {
+        "label": "1-7",
+        "act": 1,
+        "stageNo": 7,
+        "name": "City Outskirts",
+        "spawnShare": 37,
+        "mapTarget": "/stages/1-7"
+      },
+      "dlc": false
+    },
+    {
+      "key": 1002,
+      "name": "Watcher",
+      "bonus": "Gold Gain +15%",
+      "unlockType": "KillMonster",
+      "unlockMonster": "Giant Fly",
+      "killCount": 5000,
+      "bestStage": {
+        "label": "2-5",
+        "act": 2,
+        "stageNo": 5,
+        "name": "Scorching Dunes",
+        "spawnShare": 40,
+        "mapTarget": "/stages/2-5"
+      },
+      "dlc": false
+    },
+    {
+      "key": 1003,
+      "name": "Burning Skeleton",
+      "bonus": "Boss Chest Drop Chance +10%",
+      "unlockType": "KillMonster",
+      "unlockMonster": "Fire Elemental",
+      "killCount": 5000,
+      "bestStage": {
+        "label": "2-9",
+        "act": 2,
+        "stageNo": 9,
+        "name": "Pharaoh's Crypt",
+        "spawnShare": 8.2,
+        "mapTarget": "/stages/2-9"
+      },
+      "dlc": false
+    },
+    {
+      "key": 1004,
+      "name": "Blue Golem",
+      "bonus": "Normal Chest Drop Chance +15%",
+      "unlockType": "KillMonster",
+      "unlockMonster": "Hell Golem",
+      "killCount": 5000,
+      "bestStage": {
+        "label": "3-6",
+        "act": 3,
+        "stageNo": 6,
+        "name": "Burning Ravine",
+        "spawnShare": 33.3,
+        "mapTarget": "/stages/3-6"
+      },
+      "dlc": false
+    },
+    {
+      "key": 1005,
+      "name": "Dark Spirit",
+      "bonus": "Boss Chest Drop Chance +15%",
+      "unlockType": "KillMonster",
+      "unlockMonster": "Ghost",
+      "killCount": 5000,
+      "bestStage": {
+        "label": "3-4",
+        "act": 3,
+        "stageNo": 4,
+        "name": "Frozen Glacier Cavern",
+        "spawnShare": 24.4,
+        "mapTarget": "/stages/3-4"
+      },
+      "dlc": false
+    },
+    {
+      "key": 6001,
+      "name": "Sword",
+      "bonus": "EXP Gain +15%",
+      "unlockType": "DLC",
+      "unlockMonster": null,
+      "killCount": null,
+      "bestStage": null,
+      "dlc": true
+    },
+    {
+      "key": 6002,
+      "name": "Butterfly",
+      "bonus": "Gold Gain +10%",
+      "unlockType": "DLC",
+      "unlockMonster": null,
+      "killCount": null,
+      "bestStage": null,
+      "dlc": true
+    },
+    {
+      "key": 6003,
+      "name": "Dragon",
+      "bonus": "Normal Chest Drop Chance +20%; Gold Gain +15%; EXP Gain +20%",
+      "unlockType": "DLC",
+      "unlockMonster": null,
+      "killCount": null,
+      "bestStage": null,
+      "dlc": true
+    }
+  ]
+}

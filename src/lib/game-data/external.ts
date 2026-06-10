@@ -1,56 +1,115 @@
 /**
- * External data bridge — lazy-loads taskbarherowiki.com data at runtime.
- * Uses server-only dynamic require to avoid webpack bundling the 3.8MB JSON.
+ * External data bridge. Lazy-loads normalized reference data at runtime.
+ * Uses server-only dynamic require to avoid webpack bundling large JSON files.
  */
 import "server-only";
 
-// ── Types ──
-
 export type ExtItem = {
-  key: number; name: string; type: "GEAR" | "MATERIAL" | "STAGEBOX";
-  grade: string; gradeRank: number; parts: string | null; gearType: string | null;
-  gearGroup: string | null; classes: string[]; level: number | null; icon: string;
-  dropKey: number | null; obtainable: boolean; tradable: boolean; gold: number | null;
-  slots: string[] | null; variant: string | null; stats: Record<string, number> | null;
+  key: number;
+  name: string;
+  type: "GEAR" | "MATERIAL" | "STAGEBOX";
+  grade: string;
+  gradeRank: number;
+  parts: string | null;
+  gearType: string | null;
+  gearGroup: string | null;
+  classes: string[];
+  level: number | null;
+  icon: string;
+  dropKey: number | null;
+  obtainable: boolean;
+  tradable: boolean;
+  gold: number | null;
+  slots: string[] | null;
+  variant: string | null;
+  stats: Record<string, number> | null;
   uniqueMod: string | null;
 };
 
 export type ExtStage = {
-  key: number; difficulty: string; act: number; stageNo: number; label: string;
-  type: string; level: number; name: string;
+  key: number;
+  difficulty: string;
+  act: number;
+  stageNo: number;
+  label: string;
+  type: string;
+  level: number;
+  name: string;
   monsters: Array<{ key: number; name: string; count: number }>;
   boss: { key: number; name: string } | null;
   drops: Array<{
-    itemKey: number; name: string; icon: string; grade: string;
-    source: "monster" | "boss"; rate: number; dropKey: number;
+    itemKey: number;
+    name: string;
+    icon: string;
+    grade: string;
+    source: "monster" | "boss";
+    rate: number;
+    dropKey: number;
   }>;
 };
 
 export type ExtRune = {
-  key: number; name: string; icon: string; x: number; y: number; maxLevel: number;
-  next: number[]; preview: number[]; prevReq: number[] | null; stat: string;
-  effect: string; category: string; isUnlock: boolean;
-  levels: Array<{ level: number; value: string; cost: number }>; totalCost: number;
+  key: number;
+  name: string;
+  icon: string;
+  x: number;
+  y: number;
+  maxLevel: number;
+  next: number[];
+  preview: number[];
+  prevReq: number[] | null;
+  stat: string;
+  effect: string;
+  category: string;
+  isUnlock: boolean;
+  levels: Array<{ level: number; value: string; cost: number }>;
+  totalCost: number;
 };
 
 export type ExtPet = {
-  key: number; name: string; icon: string; dlc: boolean;
+  key: number;
+  name: string;
+  icon: string;
+  dlc: boolean;
   stats: Array<{ stat: string; disp: string; label: string }>;
   unlock: {
-    type: string; monsterKey?: number; monsterName?: string; count?: number;
-    note?: string; farm?: { label: string; act: number; stageNo: number;
-    stageName: string; share: number; weight: number; alsoIn: number; };
+    type: string;
+    monsterKey?: number;
+    monsterName?: string;
+    count?: number;
+    note?: string;
+    farm?: {
+      label: string;
+      act: number;
+      stageNo: number;
+      stageName: string;
+      share: number;
+      weight: number;
+      alsoIn: number;
+    };
   };
 };
 
 export type ExtEffect = {
-  key: number; name: string; grade: string; gradeRank: number; icon: string;
+  key: number;
+  name: string;
+  grade: string;
+  gradeRank: number;
+  icon: string;
   category: string;
-  groups: Array<{ slot: string; stat: string; mod: string; min: number; max: number;
-    minTier: number; maxTier: number; disp: string; slotOptions: number; chance: number; }>;
+  groups: Array<{
+    slot: string;
+    stat: string;
+    mod: string;
+    min: number;
+    max: number;
+    minTier: number;
+    maxTier: number;
+    disp: string;
+    slotOptions: number;
+    chance: number;
+  }>;
 };
-
-// ── Lazy runtime loaders (avoids webpack bundling) ──
 
 function loadJson<T>(filename: string): T {
   // eslint-disable-next-line @typescript-eslint/no-require-imports
@@ -67,24 +126,26 @@ export function extItems(): ExtItem[] {
   if (!_items) _items = loadJson<ExtItem[]>("items.json");
   return _items;
 }
+
 export function extStages(): ExtStage[] {
   if (!_stages) _stages = loadJson<ExtStage[]>("stages.json");
   return _stages;
 }
+
 export function extRunes(): ExtRune[] {
-  if (!_runes) _runes = (loadJson<{ runes: ExtRune[] }>("runes.json")).runes;
+  if (!_runes) _runes = loadJson<{ runes: ExtRune[] }>("runes.json").runes;
   return _runes;
 }
+
 export function extPets(): ExtPet[] {
   if (!_pets) _pets = loadJson<ExtPet[]>("pets.json");
   return _pets;
 }
+
 export function extEffects(): ExtEffect[] {
   if (!_effects) _effects = loadJson<ExtEffect[]>("effects.json");
   return _effects;
 }
-
-// ── Image path converter ──
 
 export function extIconPath(extIcon: string, type?: string): string {
   if (!extIcon) return "";
@@ -101,16 +162,14 @@ export function extIconPath(extIcon: string, type?: string): string {
   return `/game/game/items/materials/${extIcon}.png`;
 }
 
-// ── Cross-link helpers ──
-
 export function getStageDrops(stageKey: number) {
-  return extStages().find((s) => s.key === stageKey)?.drops ?? [];
+  return extStages().find((stage) => stage.key === stageKey)?.drops ?? [];
 }
 
 export function getItemDropSources(itemKey: number) {
   return extStages()
-    .filter((s) => s.drops.some((d) => d.itemKey === itemKey))
-    .map((s) => ({ stage: s, drop: s.drops.find((d) => d.itemKey === itemKey)! }));
+    .filter((stage) => stage.drops.some((drop) => drop.itemKey === itemKey))
+    .map((stage) => ({ stage, drop: stage.drops.find((drop) => drop.itemKey === itemKey)! }));
 }
 
 export function getItemsByClass(className: string): ExtItem[] {

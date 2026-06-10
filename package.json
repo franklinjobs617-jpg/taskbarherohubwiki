@@ -11,11 +11,14 @@
     "audit:competitor": "node scripts/audit-competitor-coverage.mjs",
     "audit:data-gaps": "node scripts/audit-data-gaps.mjs",
     "competitor:fetch": "node scripts/fetch-competitor-public-data.mjs",
+    "competitor:normalize": "node scripts/build-competitor-normalized.mjs",
     "enrich:data": "node scripts/build-enriched-data.mjs",
     "graph:build": "node scripts/build-graph-index.mjs",
     "upload:r2": "node scripts/upload-r2.mjs",
     "deploy:worker": "cd workers/market-fetcher && npx wrangler deploy",
     "verify:pages": "node scripts/verify-pages.mjs",
+    "check:mojibake": "node scripts/check-mojibake.mjs",
+    "prebuild": "npm run check:mojibake",
     "lint": "eslint"
   },
   "dependencies": {

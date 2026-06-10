@@ -1,42 +1,23 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Boxes, Coins, Shield, Skull, Swords, Zap } from "lucide-react";
+import { ArrowRight, Boxes, Coins, Map, PackageOpen, PawPrint, Search, Shield, Swords, Zap } from "lucide-react";
 import { RarityBadge } from "@/components/tbh/badges";
 import { PageHeader, PageShell } from "@/components/tbh/page";
-import { allItems, allMonsters, stageBySlug, stageName, type Locale } from "@/lib/game-data/data";
-import { graphChestByKey, graphMonsterByKey, graphStageByKey, type GraphChest, type GraphDrop, type GraphStage } from "@/lib/game-data/graph";
+import { allItems, stageBySlug, stageName, type Locale } from "@/lib/game-data/data";
+import { formatChance, getStageDecision } from "@/lib/game-data/decisions";
+import { graphChestByKey, graphStageByKey } from "@/lib/game-data/graph";
+import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale; slug: string }> };
 
-function label(locale: Locale, zh: string, en: string, ja = en) {
-  if (locale === "zh") return zh;
-  if (locale === "ja") return ja;
-  return en;
-}
-
-function rateLabel(rate: number | null | undefined) {
-  if (rate == null) return "-";
-  if (rate >= 100) return "100%";
-  if (rate >= 10) return `${rate.toFixed(0)}%`;
-  return `${rate.toFixed(2)}%`;
-}
-
-function monsterPortrait(monsterKey: number): string | null {
-  const monster = allMonsters().find((row) => row.MonsterKey === monsterKey);
-  if (!monster?.portrait) return null;
-  const parts = monster.portrait.split("/");
-  return `/game/monsters/${parts[parts.length - 2]}/${parts[parts.length - 1]}`;
+function txt(locale: Locale, values: Record<Locale | "en", string>) {
+  return values[locale] ?? values.en;
 }
 
 function localItemSlug(itemKey: number, fallback: string) {
   return allItems().find((item) => item.id === itemKey)?.slug ?? fallback;
-}
-
-function chestForDrop(drop: GraphDrop): GraphChest | null {
-  return graphChestByKey(drop.itemKey);
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -44,181 +25,126 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const localStage = stageBySlug(slug);
   const graphStage = localStage ? graphStageByKey(localStage.key) : graphStageByKey(Number(slug));
   const name = localStage ? stageName(localStage, locale) : graphStage?.name ?? "Stage";
-
   return {
-    title: label(locale, `${name} - 怪物、Boss、掉落与刷图决策`, `${name} - Monsters, Bosses, Drops & Farming`, `${name} - ドロップと周回`),
-    description: label(
-      locale,
-      `查看 ${name} 会出现什么怪物、Boss 掉什么箱子、箱子能开出什么，以及是否值得刷。`,
-      `See which monsters appear in ${name}, what chests drop, what those chests contain, and whether it is worth farming.`,
-      `${name} の敵、ボス、ドロップ、周回価値を確認できます。`,
-    ),
+    title: txt(locale, {
+      zh: `${name} 掉落、宝箱、经验与金币 | TBH Wiki`,
+      en: `${name} Drops, Chests, EXP & Gold | TBH Wiki`,
+      ja: `${name} ドロップ、宝箱、EXP、ゴールド | TBH Wiki`,
+      ko: `${name} 드롭, 상자, EXP, 골드 | TBH Wiki`,
+    }),
+    description: txt(locale, {
+      zh: `查看 ${name} 最适合刷什么、掉哪些宝箱、掉率、50%/90%预计次数和相关入口。`,
+      en: `See what ${name} is best for, chest drops, rates, 50%/90% expected runs, and related actions.`,
+      ja: `${name} の用途、宝箱、確率、50%/90%必要周回数、関連操作を確認。`,
+      ko: `${name} 의 용도, 상자, 확률, 50%/90% 예상 횟수와 관련 작업을 확인합니다.`,
+    }),
     alternates: pageAlternates(locale, `/stages/${slug}`),
   };
 }
 
 export default async function StageDetailPage({ params }: Props) {
   const { locale, slug } = await params;
-  const localStage = stageBySlug(slug);
-  const graphStage = localStage ? graphStageByKey(localStage.key) : graphStageByKey(Number(slug));
-  if (!localStage && !graphStage) notFound();
+  const decision = getStageDecision(slug, locale);
+  if (!decision?.graphStage) notFound();
 
-  const stage = graphStage as GraphStage;
-  const displayName = localStage ? stageName(localStage, locale) : stage.name;
-  const monsterDrops = stage.drops.filter((drop) => drop.sourceType === "monster");
-  const bossDrops = stage.drops.filter((drop) => drop.sourceType === "boss");
-  const dropChests = stage.drops.map((drop) => ({ drop, chest: chestForDrop(drop) }));
-  const topContents = dropChests.flatMap(({ drop, chest }) =>
-    (chest?.contents ?? []).slice(0, 8).map((content) => ({
-      ...content,
-      chestName: chest?.name ?? drop.name,
-      chestRate: drop.ratePercent,
-    })),
-  ).sort((a, b) => (b.chancePercent ?? 0) - (a.chancePercent ?? 0)).slice(0, 16);
+  const stage = decision.graphStage;
+  const displayName = decision.title;
+  const dropRows = decision.drops;
+  const contentPreview = dropRows
+    .flatMap(({ drop }) => {
+      const chest = graphChestByKey(drop.itemKey);
+      return (chest?.contents ?? []).slice(0, 4).map((content) => ({
+        ...content,
+        chestName: drop.name,
+        chestRate: drop.ratePercent,
+      }));
+    })
+    .slice(0, 12);
+
+  const actions = [
+    { href: "/tools/drop-finder", icon: Search, label: "Open Drop Finder" },
+    { href: "/tools/farming-optimizer", icon: Map, label: "Compare Stage" },
+    { href: dropRows[0] ? `/chests/${localItemSlug(dropRows[0].drop.itemKey, dropRows[0].drop.itemSlug)}` : "/chests", icon: Boxes, label: "View Chest" },
+    { href: stage.boss ? `/monsters/${stage.boss.monsterKey}` : "/map", icon: Swords, label: "View Monster" },
+    { href: "/market", icon: PackageOpen, label: "View Market Items" },
+  ];
 
   return (
     <PageShell>
       <PageHeader
-        kicker={label(locale, "Dungeon Panel", "Dungeon Panel")}
+        kicker={`${stage.difficulty} / Act ${stage.act}-${stage.stageNo}`}
         title={displayName}
-        description={label(
-          locale,
-          `${stage.difficulty} / Act ${stage.act}-${stage.stageNo} / Lv.${stage.level}。先看怪物和掉落，再决定是否刷这关。`,
-          `${stage.difficulty} / Act ${stage.act}-${stage.stageNo} / Lv.${stage.level}. Read monsters and drops first, then decide whether to farm it.`,
-        )}
+        description={txt(locale, {
+          zh: `Lv.${stage.level}。先看这关适合刷什么、会掉什么、预计刷多少次，再决定下一步。`,
+          en: `Lv.${stage.level}. Check what this stage is best for, what drops here, and expected runs before deciding.`,
+          ja: `Lv.${stage.level}。用途、ドロップ、必要周回数を見てから判断。`,
+          ko: `Lv.${stage.level}. 용도, 드롭, 예상 횟수를 보고 다음 행동을 정합니다.`,
+        })}
       />
 
-      <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
-        <Metric icon={<Shield className="h-4 w-4" />} label={label(locale, "等级", "Level")} value={`Lv.${stage.level}`} />
-        <Metric icon={<Coins className="h-4 w-4" />} label={label(locale, "金币", "Gold")} value={stage.rewards.goldPerClear ?? "-"} accent="gold" />
-        <Metric icon={<Zap className="h-4 w-4" />} label="EXP" value={stage.rewards.expPerClear ?? "-"} accent="exp" />
-        <Metric icon={<Swords className="h-4 w-4" />} label={label(locale, "怪物", "Monsters")} value={stage.monsters.length} />
-        <Metric icon={<Boxes className="h-4 w-4" />} label={label(locale, "掉落入口", "Drop Entries")} value={stage.drops.length} accent="drop" />
-      </div>
-
-      <section className="mt-6 grid gap-5 xl:grid-cols-[minmax(0,1.1fr)_minmax(360px,0.9fr)]">
-        <div className="border border-[#27272a] bg-[#0d0d0d]">
-          <div className="flex items-center justify-between border-b border-[#27272a] px-4 py-3">
-            <div>
-              <p className="text-[10px] uppercase tracking-[0.18em] text-[#6c6c6c]">{label(locale, "怪物组成", "Monster Composition")}</p>
-              <h2 className="text-lg font-semibold text-[#ffffff]">{label(locale, "这一关会出现什么", "What Spawns Here")}</h2>
-            </div>
-            <span className="text-xs text-[#9d9d9d]">{stage.waveAmount ?? "?"} waves</span>
+      <section className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_360px]">
+        <div className="border border-[#3f2f10] bg-[#100d06] p-4">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#d4a017]">Best for</p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {decision.bestFor.map((label) => (
+              <span key={label} className="border border-[#5a4315] bg-[#0a0a0a] px-3 py-1.5 text-sm font-semibold text-[#f0c040]">{label}</span>
+            ))}
           </div>
-
-          <div className="grid gap-2 p-3 sm:grid-cols-2">
-            {stage.monsters.map((monster) => {
-              const graphMonster = graphMonsterByKey(monster.monsterKey);
-              const portrait = monsterPortrait(monster.monsterKey);
+          <div className="mt-4 grid gap-2 sm:grid-cols-4">
+            <Metric icon={<Shield className="h-4 w-4" />} label="Level" value={`Lv.${stage.level}`} />
+            <Metric icon={<Zap className="h-4 w-4" />} label="EXP" value={decision.expPerClear?.toLocaleString() ?? "-"} accent="text-emerald-300" />
+            <Metric icon={<Coins className="h-4 w-4" />} label="Gold" value={decision.goldPerClear?.toLocaleString() ?? "-"} accent="text-[#f0c040]" />
+            <Metric icon={<PawPrint className="h-4 w-4" />} label="Targets" value={`${stage.monsters.length + (stage.boss ? 1 : 0)}`} />
+          </div>
+        </div>
+        <div className="border border-[#27272a] bg-[#0d0d0d] p-4">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#6c6c6c]">Related actions</p>
+          <div className="mt-3 grid gap-2">
+            {actions.map((action) => {
+              const Icon = action.icon;
               return (
-                <Link
-                  key={monster.monsterKey}
-                  href={`/${locale}/monsters/${monster.monsterKey}`}
-                  className="group flex items-center gap-3 border border-[#27272a] bg-[#0a0a0a] p-3 transition hover:border-[#d4a017]/70"
-                >
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center border border-[#27272a] bg-[#050505]">
-                    {portrait ? <Image src={portrait} alt={monster.name ?? ""} width={52} height={52} className="object-contain" unoptimized /> : <Skull className="h-6 w-6 text-[#6c6c6c]" />}
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <p className="truncate text-sm font-semibold text-[#f1e8d5] group-hover:text-[#f0c040]">{monster.name ?? `Monster ${monster.monsterKey}`}</p>
-                    <p className="mt-1 text-xs text-[#6c6c6c]">
-                      HP {graphMonster?.stats.maxLife ?? "-"} / ATK {graphMonster?.stats.attackDamage ?? "-"}
-                    </p>
-                    <p className="mt-1 text-[11px] text-[#9d9d9d]">
-                      {label(locale, "掉落表", "Drop table")}: {graphMonster?.drops.length ?? 0}
-                    </p>
-                  </div>
+                <Link key={action.label} href={localizedPath(locale, action.href)} className="flex items-center justify-between border border-[#27272a] bg-[#0a0a0a] px-3 py-2 text-sm text-white hover:border-[#d4a017]">
+                  <span className="inline-flex items-center gap-2"><Icon className="h-4 w-4 text-[#d4a017]" /> {action.label}</span>
+                  <ArrowRight className="h-4 w-4 text-[#6c6c6c]" />
                 </Link>
               );
             })}
-          </div>
-
-          {stage.boss ? (
-            <div className="border-t border-[#27272a] bg-[#160c0c] p-3">
-              <Link href={`/${locale}/monsters/${stage.boss.monsterKey}`} className="group flex items-center gap-3">
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center border border-red-900/50 bg-[#090404]">
-                  {monsterPortrait(stage.boss.monsterKey) ? (
-                    <Image src={monsterPortrait(stage.boss.monsterKey)!} alt={stage.boss.name} width={62} height={62} className="object-contain" unoptimized />
-                  ) : (
-                    <Skull className="h-7 w-7 text-red-400" />
-                  )}
-                </div>
-                <div className="min-w-0 flex-1">
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-red-300">{label(locale, "Boss", "Boss")}</p>
-                  <p className="truncate text-base font-semibold text-[#ffffff] group-hover:text-red-300">{stage.boss.name}</p>
-                  <p className="mt-1 text-xs text-[#a1a1aa]">
-                    DMG x{((stage.boss.multipliers?.damage ?? 1000) / 1000).toFixed(1)} / HP x{((stage.boss.multipliers?.hp ?? 1000) / 1000).toFixed(1)}
-                  </p>
-                </div>
-              </Link>
-            </div>
-          ) : null}
-        </div>
-
-        <div className="border border-[#3f2f10] bg-[#100d06]">
-          <div className="border-b border-[#3f2f10] px-4 py-3">
-            <p className="text-[10px] uppercase tracking-[0.18em] text-[#9d7b33]">{label(locale, "刷图判断", "Farming Decision")}</p>
-            <h2 className="text-lg font-semibold text-[#f6d98a]">{label(locale, "先刷什么", "What To Farm")}</h2>
-          </div>
-          <div className="space-y-3 p-4 text-sm leading-6 text-[#d8d1c2]">
-            <DecisionLine
-              label={label(locale, "目标", "Target")}
-              value={stage.decision.bestDrop ? `${stage.decision.bestDrop.name} (${rateLabel(stage.decision.bestDrop.ratePercent)})` : label(locale, "没有可靠掉落", "No reliable drop")}
-            />
-            <DecisionLine
-              label={label(locale, "适合", "Best For")}
-              value={bossDrops.length ? label(locale, "Boss 箱与推进", "Boss chest and progression") : label(locale, "普通怪箱与材料", "Monster boxes and materials")}
-            />
-            <DecisionLine
-              label={label(locale, "风险", "Risk")}
-              value={stage.level > 70 ? label(locale, "高等级关卡，先保证稳定清图", "High-level stage; clear stability first") : label(locale, "低到中等风险，可用于补材料", "Low to medium risk; useful for materials")}
-            />
           </div>
         </div>
       </section>
 
       <section className="mt-6 border border-[#27272a] bg-[#0d0d0d]">
-        <div className="flex flex-col gap-2 border-b border-[#27272a] px-4 py-3 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="text-[10px] uppercase tracking-[0.18em] text-[#6c6c6c]">{label(locale, "掉落表", "Drop Table")}</p>
-            <h2 className="text-lg font-semibold text-[#ffffff]">{label(locale, "这一关掉什么箱子", "Which Chests Drop Here")}</h2>
-          </div>
-          <p className="text-xs text-[#9d9d9d]">
-            {label(locale, "普通怪", "Monster")} {monsterDrops.length} / Boss {bossDrops.length}
-          </p>
+        <div className="border-b border-[#27272a] px-4 py-3">
+          <p className="text-[10px] uppercase tracking-[0.18em] text-[#6c6c6c]">Drops here</p>
+          <h2 className="text-lg font-semibold text-white">{txt(locale, { zh: "宝箱、掉率、预计次数", en: "Chests, rates, expected runs", ja: "宝箱、確率、必要回数", ko: "상자, 확률, 예상 횟수" })}</h2>
         </div>
-
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[720px] text-left text-sm">
+          <table className="w-full min-w-[760px] text-left text-sm">
             <thead className="bg-[#18181b] text-xs uppercase tracking-[0.12em] text-[#6c6c6c]">
               <tr>
-                <th className="px-4 py-3">{label(locale, "箱子", "Chest")}</th>
-                <th className="px-4 py-3">{label(locale, "来源", "Source")}</th>
-                <th className="px-4 py-3">{label(locale, "掉率", "Rate")}</th>
-                <th className="px-4 py-3">{label(locale, "内容数", "Contents")}</th>
-                <th className="px-4 py-3">{label(locale, "操作", "Action")}</th>
+                <th className="px-4 py-3">Chest</th>
+                <th className="px-4 py-3">Source</th>
+                <th className="px-4 py-3">Rate</th>
+                <th className="px-4 py-3">50%</th>
+                <th className="px-4 py-3">90%</th>
+                <th className="px-4 py-3">Action</th>
               </tr>
             </thead>
             <tbody>
-              {dropChests.map(({ drop, chest }) => (
+              {dropRows.map(({ drop, expectedRuns }) => (
                 <tr key={`${drop.itemKey}-${drop.sourceType}`} className="border-t border-[#27272a]">
                   <td className="px-4 py-3">
                     <div className="flex items-center gap-3">
                       <RarityBadge grade={drop.grade} locale={locale} />
-                      <span className="font-medium text-[#ffffff]">{drop.name}</span>
+                      <span className="font-medium text-white">{drop.name}</span>
                     </div>
                   </td>
+                  <td className="px-4 py-3 text-[#9d9d9d]">{drop.sourceType}</td>
+                  <td className="px-4 py-3 font-mono text-[#f0c040]">{formatChance(drop.ratePercent / 100)}</td>
+                  <td className="px-4 py-3 font-mono text-white">{expectedRuns.p50 ?? "-"}</td>
+                  <td className="px-4 py-3 font-mono text-white">{expectedRuns.p90 ?? "-"}</td>
                   <td className="px-4 py-3">
-                    <span className={drop.sourceType === "boss" ? "text-red-300" : "text-emerald-300"}>
-                      {drop.sourceType === "boss" ? "Boss" : label(locale, "怪物", "Monster")}
-                    </span>
-                  </td>
-                  <td className="px-4 py-3 font-mono font-semibold text-[#f0c040]">{rateLabel(drop.ratePercent)}</td>
-                  <td className="px-4 py-3 text-[#9d9d9d]">{chest?.contents.length ?? 0}</td>
-                  <td className="px-4 py-3">
-                    <Link href={`/${locale}/chests/${localItemSlug(drop.itemKey, drop.itemSlug)}`} className="text-xs font-semibold text-[#f0c040] hover:underline">
-                      {label(locale, "看箱子", "Open chest")} →
-                    </Link>
+                    <Link href={localizedPath(locale, `/chests/${localItemSlug(drop.itemKey, drop.itemSlug)}`)} className="text-xs font-semibold text-[#f0c040] hover:underline">View Chest</Link>
                   </td>
                 </tr>
               ))}
@@ -227,55 +153,59 @@ export default async function StageDetailPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="mt-6 border border-[#27272a] bg-[#0d0d0d]">
-        <div className="border-b border-[#27272a] px-4 py-3">
-          <p className="text-[10px] uppercase tracking-[0.18em] text-[#6c6c6c]">{label(locale, "箱子内容预览", "Chest Content Preview")}</p>
-          <h2 className="text-lg font-semibold text-[#ffffff]">{label(locale, "开箱可能得到什么", "What You Can Open")}</h2>
+      <section className="mt-6 grid gap-5 lg:grid-cols-2">
+        <div className="border border-[#27272a] bg-[#0d0d0d]">
+          <div className="border-b border-[#27272a] px-4 py-3">
+            <h2 className="text-lg font-semibold text-white">{txt(locale, { zh: "本关目标", en: "Targets here", ja: "出現対象", ko: "등장 대상" })}</h2>
+          </div>
+          <div className="grid gap-2 p-3 sm:grid-cols-2">
+            {stage.monsters.map((monster) => (
+              <Link key={monster.monsterKey} href={localizedPath(locale, `/monsters/${monster.monsterKey}`)} className="border border-[#27272a] bg-[#0a0a0a] p-3 text-sm text-white hover:border-[#d4a017]">
+                <p className="font-semibold">{monster.name ?? `Monster ${monster.monsterKey}`}</p>
+                <p className="mt-1 text-xs text-[#6c6c6c]">Weight {monster.weight}</p>
+              </Link>
+            ))}
+            {stage.boss ? (
+              <Link href={localizedPath(locale, `/monsters/${stage.boss.monsterKey}`)} className="border border-red-900/50 bg-[#160c0c] p-3 text-sm text-white hover:border-red-400">
+                <p className="font-semibold">Boss: {stage.boss.name}</p>
+                <p className="mt-1 text-xs text-[#c8a0a0]">HP x{((stage.boss.multipliers?.hp ?? 1000) / 1000).toFixed(1)}</p>
+              </Link>
+            ) : null}
+          </div>
         </div>
-        <div className="grid gap-2 p-3 md:grid-cols-2 xl:grid-cols-4">
-          {topContents.map((content) => (
-            <Link
-              key={`${content.chestName}-${content.itemKey}-${content.condition ?? "base"}`}
-              href={`/${locale}/items/${localItemSlug(content.itemKey, content.itemSlug)}`}
-              className="group border border-[#27272a] bg-[#0a0a0a] p-3 transition hover:border-[#d4a017]/70"
-            >
-              <div className="flex items-start justify-between gap-3">
-                <div className="min-w-0">
-                  <p className="truncate text-sm font-semibold text-[#f1e8d5] group-hover:text-[#f0c040]">{content.name}</p>
-                  <p className="mt-1 truncate text-xs text-[#6c6c6c]">{content.chestName}</p>
+
+        <div className="border border-[#27272a] bg-[#0d0d0d]">
+          <div className="border-b border-[#27272a] px-4 py-3">
+            <h2 className="text-lg font-semibold text-white">{txt(locale, { zh: "箱子内容预览", en: "Chest content preview", ja: "宝箱内容", ko: "상자 내용 미리보기" })}</h2>
+          </div>
+          <div className="grid gap-2 p-3 sm:grid-cols-2">
+            {contentPreview.map((content) => (
+              <Link key={`${content.chestName}-${content.itemKey}-${content.condition ?? "base"}`} href={localizedPath(locale, `/items/${localItemSlug(content.itemKey, content.itemSlug)}`)} className="border border-[#27272a] bg-[#0a0a0a] p-3 hover:border-[#d4a017]">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0">
+                    <p className="truncate text-sm font-semibold text-white">{content.name}</p>
+                    <p className="mt-1 truncate text-xs text-[#6c6c6c]">{content.chestName}</p>
+                  </div>
+                  <RarityBadge grade={content.grade} locale={locale} />
                 </div>
-                <RarityBadge grade={content.grade} locale={locale} />
-              </div>
-              <div className="mt-3 flex items-center justify-between text-xs">
-                <span className="text-[#9d9d9d]">{content.type}</span>
-                <span className="font-mono font-semibold text-[#f0c040]">{rateLabel(content.chancePercent)}</span>
-              </div>
-            </Link>
-          ))}
+                <p className="mt-2 font-mono text-xs text-[#f0c040]">{content.chancePercent == null ? "-" : `${content.chancePercent.toFixed(2)}%`}</p>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </PageShell>
   );
 }
 
-function Metric({ icon, label, value, accent }: { icon: React.ReactNode; label: string; value: React.ReactNode; accent?: "gold" | "exp" | "drop" }) {
-  const color = accent === "gold" ? "text-[#f0c040]" : accent === "exp" ? "text-emerald-300" : accent === "drop" ? "text-cyan-300" : "text-[#ffffff]";
+function Metric({ icon, label, value, accent = "text-white" }: { icon: React.ReactNode; label: string; value: string; accent?: string }) {
   return (
-    <div className="border border-[#27272a] bg-[#0d0d0d] p-4">
-      <div className="flex items-center gap-2 text-xs text-[#6c6c6c]">
+    <div className="border border-[#3f2f10] bg-[#0a0a0a] p-3">
+      <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.12em] text-[#9d7b33]">
         {icon}
         <span>{label}</span>
       </div>
-      <p className={`mt-2 text-xl font-semibold ${color}`}>{value}</p>
-    </div>
-  );
-}
-
-function DecisionLine({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="grid grid-cols-[86px_1fr] gap-3 border-b border-[#3f2f10] pb-3 last:border-0 last:pb-0">
-      <span className="text-xs uppercase tracking-[0.14em] text-[#9d7b33]">{label}</span>
-      <span className="text-[#f1e8d5]">{value}</span>
+      <p className={`mt-2 text-lg font-semibold ${accent}`}>{value}</p>
     </div>
   );
 }

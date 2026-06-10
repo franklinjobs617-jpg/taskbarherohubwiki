@@ -538,7 +538,7 @@ function routeDescription(route: RouteKey, locale: Locale) {
 function routeTip(route: RouteKey, locale: Locale) {
   const tips: Record<RouteKey, Partial<Record<Locale, string>>> = {
     early: {
-      zh: "开局不要先冲高价深层节点，先拿低成本功能节点。",
+      zh: "开局优先低成本功能节点，再推进高价深层节点。",
       en: "Do not rush expensive deep nodes early; take low-cost utility first.",
       ja: "序盤は高額深層ノードを急がず、低コスト機能を先に取ります。",
     },
@@ -553,7 +553,7 @@ function routeTip(route: RouteKey, locale: Locale) {
       ja: "安定クリア後にドロップと報酬を伸ばし、詰まるなら英雄/防御へ戻ります。",
     },
     automation: {
-      zh: "自动开箱是便利节点，不等于收益保证；缺掉率和真实价格时不要估算市场收益。",
+      zh: "自动开箱提供便利，收益评估需要结合掉率和真实价格。",
       en: "Auto-open is convenience, not guaranteed profit; avoid market estimates without rates and real prices.",
       ja: "自動開封は便利機能であり利益保証ではありません。率と実価格がない時は市場収益を見積もりません。",
     },
