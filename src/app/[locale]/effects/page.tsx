@@ -35,8 +35,8 @@ export default async function EffectsPage({ params }: Props) {
         title={copy(locale, "材料效果表", "Material Effects", "素材効果表")}
         description={copy(
           locale,
-          "按材料横向查看适用部位、属性和值，用于判断材料是否值得保留或用于 Cube。",
-          "Review each material horizontally by part, stat, and value to decide whether it is worth keeping or using in Cube.",
+          "按 79 种材料横向查看适用部位、属性和值，用于判断材料是否值得保留或用于 Cube。",
+          "Review all 79 materials by part, stat, and value to decide whether it is worth keeping or using in Cube.",
           "素材ごとに部位、効果、数値を横並びで確認し、残すか Cube に使うか判断します。",
         )}
       />

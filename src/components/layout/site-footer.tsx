@@ -15,6 +15,10 @@ const T = {
     systems: "系统",
     content: "内容",
     market: "市场",
+    more: "更多",
+    sitemap: "站点地图",
+    discord: "Discord 社区",
+    methodology: "数据来源说明",
   },
   en: {
     disclaimer: "Unofficial fan site. Game content belongs to the developer. Steam Market prices are references only, not sale prices or profit guarantees.",
@@ -25,6 +29,10 @@ const T = {
     systems: "Systems",
     content: "Content",
     market: "Market",
+    more: "More",
+    sitemap: "Sitemap",
+    discord: "Discord",
+    methodology: "Data methodology",
   },
 } as const;
 
@@ -37,7 +45,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-[#27272a] bg-[#0a0a0a]">
       <div className="mx-auto max-w-[1440px] px-3 py-6">
-        <div className="grid gap-6 text-xs sm:grid-cols-4">
+        <div className="grid gap-6 text-xs sm:grid-cols-5">
           <div>
             <p className="mb-2 font-semibold text-[#9d9d9d]">{t.database}</p>
             <div className="space-y-1.5">
@@ -71,6 +79,14 @@ export function SiteFooter() {
               <Link href={lpath("/market")} className="block text-[#6c6c6c] hover:text-[#f0c040]">{isZh ? "Steam 市场" : "Steam Market"}</Link>
               <Link href={lpath("/chests")} className="block text-[#6c6c6c] hover:text-[#f0c040]">{isZh ? "宝箱" : "Chests"}</Link>
               <Link href={lpath("/pets")} className="block text-[#6c6c6c] hover:text-[#f0c040]">{isZh ? "宠物" : "Pets"}</Link>
+            </div>
+          </div>
+          <div>
+            <p className="mb-2 font-semibold text-[#9d9d9d]">{t.more}</p>
+            <div className="space-y-1.5">
+              <Link href="/sitemap.xml" className="block text-[#6c6c6c] hover:text-[#f0c040]">{t.sitemap}</Link>
+              <a href="https://discord.gg/kSRUY8N8GA" target="_blank" rel="noopener noreferrer" className="block text-[#6c6c6c] hover:text-[#f0c040]">{t.discord} ↗</a>
+              <Link href={lpath("/about")} className="block text-[#6c6c6c] hover:text-[#f0c040]">{t.methodology}</Link>
             </div>
           </div>
         </div>

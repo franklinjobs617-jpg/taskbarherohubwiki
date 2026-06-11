@@ -33,11 +33,17 @@ export default function NotFound() {
 
       <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#6c6c6c]">{t.popular}</p>
       <div className="flex flex-wrap justify-center gap-2">
-        <Link href={lpath("/items")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Items</Link>
-        <Link href={lpath("/heroes")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Heroes</Link>
-        <Link href={lpath("/map")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Map</Link>
-        <Link href={lpath("/guides/farming")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Farming</Link>
+        <Link href={lpath("/items")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Items <span className="text-[#6c6c6c]">5,944</span></Link>
+        <Link href={lpath("/heroes")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Heroes <span className="text-[#6c6c6c]">6</span></Link>
+        <Link href={lpath("/map")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Map <span className="text-[#6c6c6c]">120</span></Link>
+        <Link href={lpath("/monsters")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Monsters <span className="text-[#6c6c6c]">61</span></Link>
+        <Link href={lpath("/runes")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Runes <span className="text-[#6c6c6c]">197</span></Link>
+        <Link href={lpath("/chests")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Chests <span className="text-[#6c6c6c]">59</span></Link>
+        <Link href={lpath("/market")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Market</Link>
+        <Link href={lpath("/tools/drop-finder")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Drop Finder</Link>
+        <Link href={lpath("/guides/farming")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Farming Guide</Link>
         <Link href={lpath("/tools/farming-calculator")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Calculator</Link>
+        <Link href={lpath("/guides/beginner/getting-started")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Beginner Guide</Link>
       </div>
 
       <Link href={homeHref} className="mt-8 rounded-md bg-[#d4a017] px-5 py-2.5 text-sm font-medium text-black hover:bg-[#f0c040] transition-colors">

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { type Locale } from "@/lib/game-data/data";
 import { pageAlternates } from "@/lib/seo";
 import buffsJson from "@/../tbh_data/buffs.json";
 
-type Props = { params: Promise<{ locale: Locale }> };
+type Props = { params: Promise<{ locale: Locale }>; searchParams: Promise<{ stat?: string; type?: string }> };
 
 type RawBuff = {
   BuffKey: number;
@@ -53,12 +54,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function BuffsPage({ params }: Props) {
+export default async function BuffsPage({ params, searchParams }: Props) {
   const { locale } = await params;
+  const sp = await searchParams;
   const isZh = locale === "zh";
 
-  const debuffs = buffs.filter((b) => b.BuffType === "Debuff");
-  const positiveBuffs = buffs.filter((b) => b.BuffType === "Buff");
+  let visibleBuffs = buffs;
+  if (sp.type === "buff") visibleBuffs = visibleBuffs.filter((b) => b.BuffType === "Buff");
+  else if (sp.type === "debuff") visibleBuffs = visibleBuffs.filter((b) => b.BuffType === "Debuff");
+  if (sp.stat) visibleBuffs = visibleBuffs.filter((b) => b.STATTYPE === sp.stat);
+  const debuffs = visibleBuffs.filter((b) => b.BuffType === "Debuff");
+  const positiveBuffs = visibleBuffs.filter((b) => b.BuffType === "Buff");
 
   return (
     <PageShell>
@@ -67,10 +73,32 @@ export default async function BuffsPage({ params }: Props) {
         title={isZh ? "Buff 与 Debuff 效果" : "Buffs & Debuffs"}
         description={
           isZh
-            ? `${buffs.length} 个效果：${debuffs.length} 个 Debuff + ${positiveBuffs.length} 个 Buff。包含属性类型、加成方式和数值。`
-            : `${buffs.length} effects: ${debuffs.length} debuffs + ${positiveBuffs.length} buffs. Showing stat type, modifier, and value.`
+            ? `${visibleBuffs.length} 个效果：${debuffs.length} 个 Debuff + ${positiveBuffs.length} 个 Buff。包含属性类型、加成方式和数值。`
+            : `${visibleBuffs.length} effects: ${debuffs.length} debuffs + ${positiveBuffs.length} buffs. Showing stat type, modifier, and value.`
         }
       />
+
+      <div className="mb-4 flex flex-wrap gap-1.5">
+        <span className="self-center text-xs text-[#6c6c6c] mr-1">{isZh ? "属性：" : "Stat:"}</span>
+        <Link href={`/${locale}/buffs`} className={`border px-2.5 py-1 text-xs ${!sp.stat && !sp.type ? "border-[#d4a017] bg-[#1a1508] text-[#f0c040]" : "border-[#3b3b3b] text-[#9d9d9d] hover:border-[#d4a017]"}`}>
+          {isZh ? "全部" : "All"}
+        </Link>
+        <Link href={`/${locale}/buffs?type=buff`} className={`border px-2.5 py-1 text-xs ${sp.type === "buff" ? "border-[#d4a017] bg-[#1a1508] text-[#f0c040]" : "border-[#3b3b3b] text-[#9d9d9d] hover:border-[#d4a017]"}`}>
+          {isZh ? "Buff" : "Buff"}
+        </Link>
+        <Link href={`/${locale}/buffs?type=debuff`} className={`border px-2.5 py-1 text-xs ${sp.type === "debuff" ? "border-[#d4a017] bg-[#1a1508] text-[#f0c040]" : "border-[#3b3b3b] text-[#9d9d9d] hover:border-[#d4a017]"}`}>
+          {isZh ? "Debuff" : "Debuff"}
+        </Link>
+        {Object.keys(STAT_LABELS).slice(0, 8).map((stat) => (
+          <Link
+            key={stat}
+            href={`/${locale}/buffs?stat=${stat}`}
+            className={`border px-2.5 py-1 text-xs ${sp.stat === stat ? "border-[#d4a017] bg-[#1a1508] text-[#f0c040]" : "border-[#3b3b3b] text-[#9d9d9d] hover:border-[#d4a017]"}`}
+          >
+            {statLabel(stat, locale)}
+          </Link>
+        ))}
+      </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
         <BuffGroup

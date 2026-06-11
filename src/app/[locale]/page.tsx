@@ -90,12 +90,37 @@ export default async function HomePage({ params }: Props) {
           </h1>
           <p className="mt-3 max-w-2xl text-[14px] leading-6 text-[#9d9d9d] sm:text-[15px]">
             {copy(locale, {
-              zh: "搜索目标，查看刷图关卡、掉率、预计次数、宠物路线和市场状态。",
-              en: "Search a target for farming stages, drop chance, expected runs, pet routes, and market status.",
-              ja: "検索して周回先、確率、必要回数、ペットルート、市場状態を確認。",
-              ko: "검색으로 파밍 장소, 확률, 예상 횟수, 펫 루트, 시장 상태를 확인합니다.",
+              zh: "5,944 装备与材料、6 职业、197 符文、120 关卡、61 怪物，4 语种。全部数据直接来自游戏文件挖掘，可查可验证。",
+              en: "5,944 items, 6 classes, 197 runes, 120 stages, 61 monsters in 4 languages. Every number is datamined and verifiable.",
+              ja: "5,944 アイテム、6 職業、197 ルーン、120 ステージ、61 モンスター、4 言語。ゲームファイルから直接抽出。",
+              ko: "5,944 아이템, 6 직업, 197 룬, 120 스테이지, 61 몬스터, 4 개 언어. 전부 게임 파일에서 직접 추출.",
             })}
           </p>
+
+          <div className="mt-4 grid max-w-2xl grid-cols-2 gap-2 border border-[#27272a] bg-[#0d0d0d] sm:grid-cols-4">
+            {[
+              { v: "5,944", l: copy(locale, { zh: "装备/材料/宝箱", en: "items", ja: "アイテム", ko: "아이템" }), href: "/items" },
+              { v: "6", l: copy(locale, { zh: "可玩职业", en: "hero classes", ja: "ヒーロー", ko: "직업" }), href: "/heroes" },
+              { v: "120", l: copy(locale, { zh: "关卡", en: "stages", ja: "ステージ", ko: "스테이지" }), href: "/map" },
+              { v: "197", l: copy(locale, { zh: "符文节点", en: "runes", ja: "ルーン", ko: "룬" }), href: "/runes" },
+            ].map((s) => (
+              <Link key={s.l} href={localizedPath(locale, s.href)} className="px-3 py-3 text-center hover:bg-[#18181b]">
+                <p className="font-mono text-2xl font-semibold text-[#f0c040]">{s.v}</p>
+                <p className="mt-1 text-[10px] uppercase tracking-[0.12em] text-[#9d9d9d]">{s.l}</p>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-4 flex flex-wrap gap-2">
+            <Link href={localizedPath(locale, "/items")} className="inline-flex items-center gap-2 bg-[#d4a017] px-4 py-2 text-sm font-semibold text-black hover:bg-[#f0c040]">
+              <Boxes className="h-4 w-4" />
+              {copy(locale, { zh: "Browse gear", en: "Browse gear", ja: "装備を見る", ko: "장비 보기" })}
+            </Link>
+            <Link href={localizedPath(locale, "/map")} className="inline-flex items-center gap-2 border border-[#d4a017] bg-transparent px-4 py-2 text-sm font-semibold text-[#d4a017] hover:bg-[#18181b]">
+              <Map className="h-4 w-4" />
+              {copy(locale, { zh: "Open portal", en: "Open portal", ja: "ポータルを開く", ko: "포털 열기" })}
+            </Link>
+          </div>
           <form action={localizedPath(locale, "/tools/drop-finder")} className="mt-5 flex max-w-2xl border border-[#3f2f10] bg-[#0d0d0d]">
             <Search className="ml-3 h-4 w-4 shrink-0 self-center text-[#d4a017]" />
             <input

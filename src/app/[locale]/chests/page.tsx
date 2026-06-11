@@ -7,6 +7,8 @@ import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
 import { chestItems, type Locale } from "@/lib/game-data/data";
 import { getChestDecision } from "@/lib/game-data/decisions";
 import { localizedPath } from "@/lib/locale-path";
+import { RelatedPages } from "@/components/tbh/related-pages";
+import { HowToUse } from "@/components/tbh/how-to-use";
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -74,13 +76,14 @@ export default async function ChestsPage({ params, searchParams }: Props) {
         kicker="Chests"
         title={text(locale, { zh: "按装备等级反查宝箱", en: "Find chests by gear level", ja: "装備レベルから宝箱を探す", ko: "장비 레벨로 상자 찾기" })}
         description={text(locale, {
-          zh: "按装备等级、来源关卡、内容数量和用途筛选宝箱。",
-          en: "Filter chests by gear level, source stage, content count, and best use.",
+          zh: "120 个宝箱，覆盖装备等级 1-150。按等级、来源关卡、内容数量和用途筛选，看 Top source 和 Best use。",
+          en: "120 chests covering gear levels 1-150. Filter by level, source stage, content count, and best use. See top source and recommended action.",
           ja: "装備レベル、入手ステージ、内容数、用途で宝箱を絞り込みます。",
           ko: "장비 레벨, 출처 스테이지, 내용 수, 용도로 상자를 필터링합니다.",
         })}
       />
 
+      <HowToUse pageKey="/chests" locale={locale} />
       <form className="mb-5 grid gap-2 lg:grid-cols-[1fr_140px_150px_160px_auto]">
         <input name="q" defaultValue={sp.q} placeholder={text(locale, { zh: "搜索宝箱", en: "Search chest", ja: "宝箱検索", ko: "상자 검색" })} className="border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm text-white outline-none" />
         <input name="level" defaultValue={sp.level} placeholder="Lv 1 / 20 / 50" className="border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm text-white outline-none" />
@@ -125,6 +128,16 @@ export default async function ChestsPage({ params, searchParams }: Props) {
               <Info label="Sources" value={`${row.sourceStageCount}`} />
               <Info label="Marketable" value={`${row.marketableContentCount}`} />
             </div>
+            {row.contents && row.contents.length > 0 ? (
+              <div className="mt-3 truncate border-t border-[#27272a] pt-3 text-[10px] text-[#9d9d9d]">
+                <span className="text-[#6c6c6c]">{text(locale, { zh: "含:", en: "Contains:", ja: "含有:", ko: "포함:" })} </span>
+                <span className="text-[#d8d1c2]">{row.contents.slice(0, 3).map((c) => c.name).join(", ")}</span>
+                {row.contents.length > 3 ? <span className="text-[#6c6c6c]"> +{row.contents.length - 3}</span> : null}
+                {row.marketableContentCount > 0 ? (
+                  <span className="ml-2 text-[#d4a017]">· {row.marketableContentCount} {text(locale, { zh: "件可卖", en: "tradable", ja: "取引可", ko: "거래가능" })}</span>
+                ) : null}
+              </div>
+            ) : null}
             <div className="mt-3 flex items-center justify-between border-t border-[#27272a] pt-3 text-xs">
               <span className="text-[#6c6c6c]">{rate(row.topSource?.ratePercent)}</span>
               <span className="font-semibold text-[#f0c040]">{text(locale, { zh: "查看", en: "Open", ja: "開く", ko: "열기" })}</span>
@@ -132,6 +145,7 @@ export default async function ChestsPage({ params, searchParams }: Props) {
           </Link>
         ))}
       </div>
+      <RelatedPages pageKey="/chests" locale={locale} />
     </PageShell>
   );
 }

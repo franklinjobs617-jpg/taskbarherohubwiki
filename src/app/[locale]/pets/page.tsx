@@ -7,8 +7,10 @@ import { allStages, stageSlug, type Locale } from "@/lib/game-data/data";
 import { getPetUnlockPlan } from "@/lib/game-data/decisions";
 import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
+import { RelatedPages } from "@/components/tbh/related-pages";
+import { HowToUse } from "@/components/tbh/how-to-use";
 
-type Props = { params: Promise<{ locale: Locale }> };
+type Props = { params: Promise<{ locale: Locale }>; searchParams: Promise<{ priority?: string }> };
 
 function txt(locale: Locale, values: Record<Locale | "en", string>) {
   return values[locale] ?? values.en;
@@ -29,9 +31,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function PetsPage({ params }: Props) {
+export default async function PetsPage({ params, searchParams }: Props) {
   const { locale } = await params;
+  const sp = await searchParams;
   const plan = getPetUnlockPlan(locale);
+  const filterPriority = sp.priority;
   const picks = [
     { label: "First pet", row: plan.firstPet },
     { label: "Best gold pet", row: plan.bestGoldPet },
@@ -52,6 +56,7 @@ export default async function PetsPage({ params }: Props) {
         })}
       />
 
+      <HowToUse pageKey="/pets" locale={locale} />
       <section className="mb-6 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
         {picks.map(({ label, row }) => row ? (
           <Link key={label} href={stageHref(locale, row.bestFarmStage)} className="border border-[#3f2f10] bg-[#100d06] p-4 hover:border-[#d4a017]">
@@ -62,8 +67,28 @@ export default async function PetsPage({ params }: Props) {
         ) : null)}
       </section>
 
+      <div className="mb-4 flex flex-wrap gap-1.5">
+        <span className="text-xs text-[#6c6c6c] self-center mr-1">{txt(locale, { zh: "按优先级：", en: "Priority:", ja: "優先度：", ko: "우선순위：" })}</span>
+        {[
+          { k: "any", zh: "全部", en: "Any", ja: "全て", ko: "전체" },
+          { k: "Early", zh: "新手先开", en: "Early", ja: "初心者優先", ko: "초보 우선" },
+          { k: "Gold", zh: "金币优先", en: "Gold", ja: "金策", ko: "골드" },
+          { k: "Chest", zh: "宝箱优先", en: "Chest", ja: "宝箱", ko: "상자" },
+          { k: "DLC", zh: "DLC", en: "DLC", ja: "DLC", ko: "DLC" },
+        ].map((p) => (
+          <Link key={p.k} href={`/${locale}/pets?priority=${p.k}`} className={`pill text-xs ${filterPriority === p.k ? "active" : ""}`}>
+            {locale === "zh" ? p.zh : locale === "ja" ? p.ja : locale === "ko" ? p.ko : p.en}
+          </Link>
+        ))}
+        {filterPriority && filterPriority !== "any" ? (
+          <Link href={`/${locale}/pets`} className="pill text-xs text-[#9d9d9d] hover:text-[#ffffff]">
+            {txt(locale, { zh: "清除", en: "Clear", ja: "クリア", ko: "초기화" })}
+          </Link>
+        ) : null}
+      </div>
+
       <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-        {plan.pets.map((row) => (
+        {plan.pets.filter((row) => !filterPriority || filterPriority === "any" || row.priority === filterPriority).map((row) => (
           <div key={row.pet.key} className={`border bg-[#0d0d0d] p-5 ${row.pet.dlc ? "border-[#5a3a1a]" : "border-[#27272a]"}`}>
             <div className="flex items-start gap-4">
               <div className="flex h-14 w-14 shrink-0 items-center justify-center border border-[#27272a] bg-[#0a0a0a]">
@@ -84,9 +109,20 @@ export default async function PetsPage({ params }: Props) {
               <Line icon={<MapPin className="h-4 w-4" />} label={txt(locale, { zh: "最佳关卡", en: "Best stage", ja: "最適ステージ", ko: "추천 스테이지" })} value={row.bestFarmStage ? `${row.bestFarmStage.label} ${row.bestFarmStage.stageName}` : "DLC"} href={stageHref(locale, row.bestFarmStage)} />
               <Line icon={<Star className="h-4 w-4" />} label={txt(locale, { zh: "占比", en: "Spawn share", ja: "出現比率", ko: "출현 비율" })} value={row.bestFarmStage ? `${row.bestFarmStage.share}%` : "-"} />
             </div>
+            <div className="mt-3 flex items-center justify-between border-t border-[#27272a] pt-3 text-[11px]">
+              <span className="text-[#6c6c6c]">{txt(locale, { zh: "按优先级", en: "Priority", ja: "優先度", ko: "우선순위" })}: {row.priority}</span>
+              <Link
+                href={`/${locale}/pets?priority=${row.priority}&compare=${row.pet.key}`}
+                className="text-[#d4a017] hover:text-[#f0c040]"
+                title={txt(locale, { zh: "对比同优先级其他宠物", en: "Compare with other pets of same priority", ja: "同優先度のペットと比較", ko: "같은 우선순위 펫과 비교" })}
+              >
+                {txt(locale, { zh: "对比 →", en: "Compare →", ja: "比較 →", ko: "비교 →" })} ↗
+              </Link>
+            </div>
           </div>
         ))}
       </section>
+      <RelatedPages pageKey="/pets" locale={locale} />
     </PageShell>
   );
 }

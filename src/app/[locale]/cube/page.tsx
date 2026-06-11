@@ -74,18 +74,19 @@ export default async function CubePage({ params }: Props) {
         title={isZh ? "Hero-dric Cube 系统" : "Hero-dric Cube System"}
         description={
           isZh
-            ? "Hero-dric Cube 是 TBH 的核心装备强化系统。使用不同类型的材料来装饰、雕刻、铭文和合成装备。以下按材料类型分类说明。"
-            : "The Hero-dric Cube is TBH's core gear enhancement system. Use different material types to decorate, engrave, inscribe, and synthesize gear."
+            ? "Hero-dric Cube 是 TBH 的核心装备强化系统，9 大材料类型，覆盖合成、炼金、制作、装饰、雕刻、铭文、拆解、献祭 8 大功能。以下按类型分类说明。"
+            : "The Hero-dric Cube is TBH's core gear enhancement system: 9 material types across 8 functions (synthesis, alchemy, crafting, decoration, engraving, inscription, extraction, offering)."
         }
       />
 
       <div className="space-y-8">
         {MATERIAL_TYPES.map((mt) => {
+          const sectionId = `cube-${mt.key.toLowerCase()}`;
           const matItems = materialsByType[mt.key] ?? [];
           if (!matItems.length) return null;
 
           return (
-            <section key={mt.key}>
+            <section key={mt.key} id={sectionId}>
               <div className="mb-3 flex items-center gap-3">
                 <h2 className="text-base font-semibold text-white">
                   {mt[locale as keyof typeof mt] ?? mt.en}

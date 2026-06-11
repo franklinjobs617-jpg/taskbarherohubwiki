@@ -26,20 +26,20 @@ import { LocaleSwitcher } from "./locale-switcher";
 import { useNav } from "./nav-provider";
 
 const NAV_ITEMS = [
-  { href: "/items", icon: Database, zh: "\u7269\u54c1", en: "Items" },
-  { href: "/heroes", icon: Swords, zh: "\u82f1\u96c4", en: "Heroes" },
-  { href: "/map", icon: Map, zh: "\u5173\u5361", en: "Stages" },
-  { href: "/monsters", icon: Skull, zh: "\u602a\u7269", en: "Monsters" },
-  { href: "/market", icon: BarChart3, zh: "\u5e02\u573a", en: "Market" },
-  { href: "/chests", icon: Boxes, zh: "\u5b9d\u7bb1", en: "Chests" },
-  { href: "/runes", icon: Shield, zh: "\u7b26\u6587", en: "Runes" },
-  { href: "/guides/farming", icon: Calculator, zh: "\u5237\u56fe", en: "Farming" },
-  { href: "/cube", icon: Boxes, zh: "Cube", en: "Cube" },
-  { href: "/buffs", icon: Bug, zh: "Buff", en: "Buffs" },
-  { href: "/effects", icon: Search, zh: "\u6548\u679c", en: "Effects" },
-  { href: "/pets", icon: BookOpen, zh: "\u5ba0\u7269", en: "Pets" },
-  { href: "/builds", icon: Swords, zh: "Build", en: "Builds" },
-  { href: "/tools/farming-calculator", icon: Wrench, zh: "\u8ba1\u7b97\u5668", en: "Calculator" },
+  { href: "/items", icon: Database, zh: "物品", en: "Items", count: 5944 },
+  { href: "/heroes", icon: Swords, zh: "英雄", en: "Heroes", count: 6 },
+  { href: "/map", icon: Map, zh: "关卡", en: "Stages", count: 120 },
+  { href: "/monsters", icon: Skull, zh: "怪物", en: "Monsters", count: 61 },
+  { href: "/market", icon: BarChart3, zh: "市场", en: "Market", count: 240 },
+  { href: "/chests", icon: Boxes, zh: "宝箱", en: "Chests", count: 59 },
+  { href: "/runes", icon: Shield, zh: "符文", en: "Runes", count: 197 },
+  { href: "/guides/farming", icon: Calculator, zh: "刷图", en: "Farming", count: 8 },
+  { href: "/cube", icon: Boxes, zh: "Cube", en: "Cube", count: 9 },
+  { href: "/buffs", icon: Bug, zh: "Buff", en: "Buffs", count: 29 },
+  { href: "/effects", icon: Search, zh: "效果", en: "Effects", count: 79 },
+  { href: "/pets", icon: BookOpen, zh: "宠物", en: "Pets", count: 8 },
+  { href: "/builds", icon: Swords, zh: "Build", en: "Builds", count: 12 },
+  { href: "/tools/farming-calculator", icon: Wrench, zh: "计算器", en: "Calculator", count: 4 },
 ];
 
 const PRIMARY_NAV_ITEMS = NAV_ITEMS.slice(0, 8);
@@ -71,7 +71,7 @@ export function SiteHeader() {
               <Link
                 key={item.href}
                 href={href}
-                className={`flex h-full shrink-0 items-center gap-1.5 border-b-2 px-2 text-xs transition-colors ${
+                className={`flex h-full shrink-0 items-center gap-1 border-b-2 px-2 text-xs transition-colors ${
                   active
                     ? "border-[#d4a017] bg-[#18181b] text-[#f0c040]"
                     : "border-transparent text-[#8c8577] hover:bg-[#111] hover:text-white"
@@ -79,6 +79,11 @@ export function SiteHeader() {
               >
                 <Icon aria-hidden="true" className="h-3.5 w-3.5" />
                 <span>{label(item)}</span>
+                {item.count ? (
+                  <span className={`text-[9px] tabular-nums ${active ? "text-[#f0c040]/80" : "text-[#6c6c6c]"}`}>
+                    {item.count >= 1000 ? `${(item.count / 1000).toFixed(1)}k` : item.count}
+                  </span>
+                ) : null}
               </Link>
             );
           })}
@@ -118,6 +123,7 @@ export function SiteHeader() {
                       >
                         <Icon aria-hidden="true" className="h-4 w-4 shrink-0" />
                         <span className="truncate">{label(item)}</span>
+                    {item.count ? <span className="ml-auto text-[10px] text-[#6c6c6c]">{item.count >= 1000 ? `${(item.count / 1000).toFixed(1)}k` : item.count}</span> : null}
                       </Link>
                     );
                   })}
@@ -127,7 +133,7 @@ export function SiteHeader() {
           </div>
         </nav>
 
-        <form action={lpath("/items")} className="ml-auto hidden w-44 shrink-0 items-center border border-[#27272a] bg-[#0d0d0d] px-2 xl:flex 2xl:w-56" role="search" aria-label={locale === "zh" ? "\u641c\u7d22\u7269\u54c1" : "Search items"}>
+        <form action={lpath("/items")} className="ml-auto hidden w-40 shrink-0 items-center border border-[#27272a] bg-[#0d0d0d] px-2 md:flex xl:w-44 2xl:w-56" role="search" aria-label={locale === "zh" ? "\u641c\u7d22\u7269\u54c1" : "Search items"}>
           <Search aria-hidden="true" className="h-3.5 w-3.5 shrink-0 text-[#666]" />
           <input
             name="q"

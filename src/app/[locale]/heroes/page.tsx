@@ -65,7 +65,7 @@ export default async function HeroesPage({ params }: Props) {
         title={isZh ? "英雄资料与职业选择" : "Heroes and Class Decisions"}
         description={
           isZh
-            ? "6 位英雄的定位、武器、基础属性、技能树方向、推荐阶段和职业选择建议。"
+            ? "6 位英雄的定位、武器、基础属性、技能树方向、推荐阶段和职业选择建议。3 免费 + 1 免费 DLC + 2 付费 DLC。"
             : "All 6 heroes with role, weapons, base stats, skill trees, recommended phase, and class selection notes."
         }
       />

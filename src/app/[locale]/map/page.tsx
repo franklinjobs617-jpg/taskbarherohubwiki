@@ -38,8 +38,8 @@ export default async function MapPage({ params }: Props) {
         title={t(locale, "关卡工作台", "Stage Console", "ステージコンソール")}
         description={t(
           locale,
-          "左侧点关卡，右侧立刻显示该关的怪物、Boss、掉落箱、箱子内容和收益计算。用户不用再在多个页面之间跳来跳去。",
-          "Click a stage on the left; the right panel updates with monsters, bosses, chest drops, chest contents, and farming math.",
+          "120 个关卡（3 Act × 4 难度），左侧点关卡，右侧立刻显示该关的怪物、Boss、掉落箱、箱子内容和收益计算。不用再在多个页面之间跳来跳去。",
+          "120 stages (3 Acts × 4 difficulties). Click a stage on the left; the right panel updates with monsters, bosses, chest drops, chest contents, and farming math.",
           "左でステージを選択すると、右側に敵、ボス、ドロップ、報酬計算がまとまって表示されます。",
         )}
       />

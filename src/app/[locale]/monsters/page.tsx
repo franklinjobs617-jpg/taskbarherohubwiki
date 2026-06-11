@@ -5,6 +5,8 @@ import { PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
 import { allMonsters, allStages, text, type Locale } from "@/lib/game-data/data";
 import { pageAlternates } from "@/lib/seo";
+import { RelatedPages } from "@/components/tbh/related-pages";
+import { HowToUse } from "@/components/tbh/how-to-use";
 
 type Props = { params: Promise<{ locale: Locale }> };
 
@@ -50,11 +52,12 @@ export default async function MonstersPage({ params }: Props) {
         title={isZh ? "怪物图鉴" : "Monster Bestiary"}
         description={
           isZh
-            ? `${monsters.length} 种怪物：头像、类型、奖励金币/经验、出现关卡。点击查看详情和掉落。`
-            : `${monsters.length} monsters with portraits, type, gold/EXP rewards, and stage locations. Click for details and drops.`
+            ? `${monsters.length} 种怪物，含 Boss。展示头像、类型、奖励、出现关卡和主要掉落物。点击查看完整掉落表。`
+            : `${monsters.length} monsters, including bosses. Shows portrait, type, gold/EXP reward, stage locations, and top drops. Click for the full drop table.`
         }
       />
 
+      <HowToUse pageKey="/monsters" locale={locale} />
       <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {monsters.map((monster) => {
           const img = monsterPortrait(monster);
@@ -90,11 +93,24 @@ export default async function MonstersPage({ params }: Props) {
                   <span>EXP: {monster.RewardExp ?? "-"}</span>
                   <span>{stageCount} {isZh ? "关" : "stages"}</span>
                 </div>
+                {(() => {
+                  const firstStage = monster.stages && monster.stages.length > 0
+                    ? stages.find((s) => s.key === monster.stages![0].key)
+                    : null;
+                  if (!firstStage) return null;
+                  return (
+                    <div className="mt-1 truncate text-[10px] text-[#6c6c6c]" title={isZh ? "主要出现关卡" : "Top stage"}>
+                      {isZh ? "主要关卡" : "Top stage"}: <span className="text-[#d8d1c2]">{firstStage.difficulty} {firstStage.act}-{firstStage.no}</span>
+                      {monster.stages!.length > 1 ? <span className="text-[#6c6c6c]"> · +{monster.stages!.length - 1}</span> : null}
+                    </div>
+                  );
+                })()}
               </div>
             </Link>
           );
         })}
       </div>
+      <RelatedPages pageKey="/monsters" locale={locale} />
     </PageShell>
   );
 }
