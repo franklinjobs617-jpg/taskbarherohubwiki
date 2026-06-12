@@ -25,22 +25,37 @@ import { localizedPath } from "@/lib/locale-path";
 import { LocaleSwitcher } from "./locale-switcher";
 import { useNav } from "./nav-provider";
 
-const NAV_ITEMS = [
-  { href: "/items", icon: Database, zh: "物品", en: "Items", count: 5944 },
-  { href: "/heroes", icon: Swords, zh: "英雄", en: "Heroes", count: 6 },
-  { href: "/map", icon: Map, zh: "关卡", en: "Stages", count: 120 },
-  { href: "/monsters", icon: Skull, zh: "怪物", en: "Monsters", count: 61 },
-  { href: "/market", icon: BarChart3, zh: "市场", en: "Market", count: 240 },
-  { href: "/chests", icon: Boxes, zh: "宝箱", en: "Chests", count: 59 },
-  { href: "/runes", icon: Shield, zh: "符文", en: "Runes", count: 197 },
-  { href: "/guides/farming", icon: Calculator, zh: "刷图", en: "Farming", count: 8 },
-  { href: "/cube", icon: Boxes, zh: "Cube", en: "Cube", count: 9 },
-  { href: "/buffs", icon: Bug, zh: "Buff", en: "Buffs", count: 29 },
-  { href: "/effects", icon: Search, zh: "效果", en: "Effects", count: 79 },
-  { href: "/pets", icon: BookOpen, zh: "宠物", en: "Pets", count: 8 },
-  { href: "/builds", icon: Swords, zh: "Build", en: "Builds", count: 12 },
-  { href: "/tools/farming-calculator", icon: Wrench, zh: "计算器", en: "Calculator", count: 4 },
+type NavItem = { href: string; icon: typeof Database; zh: string; en: string; count?: number; group?: string; new?: boolean };
+
+const NAV_GROUPS: { key: string; zh: string; en: string; items: { href: string; icon: typeof Database; zh: string; en: string; count?: number; new?: boolean }[] }[] = [
+  { key: "database", zh: "数据", en: "Database", items: [
+    { href: "/items", icon: Database, zh: "物品", en: "Items", count: 5944 },
+    { href: "/heroes", icon: Swords, zh: "英雄", en: "Heroes", count: 6 },
+    { href: "/monsters", icon: Skull, zh: "怪物", en: "Monsters", count: 61 },
+    { href: "/chests", icon: Boxes, zh: "宝箱", en: "Chests", count: 59 },
+    { href: "/pets", icon: BookOpen, zh: "宠物", en: "Pets", count: 8 },
+  ]},
+  { key: "combat", zh: "战斗", en: "Combat", items: [
+    { href: "/runes", icon: Shield, zh: "符文", en: "Runes", count: 197 },
+    { href: "/skills", icon: Swords, zh: "技能", en: "Skills", count: 214 },
+    { href: "/buffs", icon: Bug, zh: "Buff", en: "Buffs", count: 29 },
+    { href: "/effects", icon: Search, zh: "效果", en: "Effects", count: 79 },
+  ]},
+  { key: "stages", zh: "关卡", en: "Stages", items: [
+    { href: "/map", icon: Map, zh: "关卡", en: "Stages", count: 120 },
+    { href: "/market", icon: BarChart3, zh: "市场", en: "Market", count: 240 },
+    { href: "/guides/farming", icon: Calculator, zh: "刷图", en: "Farming", count: 8 },
+    { href: "/builds", icon: Swords, zh: "Build", en: "Builds", count: 12 },
+  ]},
+  { key: "tools", zh: "工具", en: "Tools", items: [
+    { href: "/tools/farming-calculator", icon: Wrench, zh: "计算器", en: "Calculator", count: 4 },
+    { href: "/cube", icon: Boxes, zh: "Cube", en: "Cube", count: 9 },
+  ]},
 ];
+
+const NAV_ITEMS: NavItem[] = NAV_GROUPS.flatMap((g) =>
+  g.items.map((item) => ({ ...item, group: g.key }))
+);
 
 const PRIMARY_NAV_ITEMS = NAV_ITEMS.slice(0, 8);
 const SECONDARY_NAV_ITEMS = NAV_ITEMS.slice(8);

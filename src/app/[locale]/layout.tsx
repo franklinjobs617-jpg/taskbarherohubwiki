@@ -81,6 +81,43 @@ export default async function LocaleLayout({ children, params }: Props) {
             <SiteFooter />
           </div>
         </NextIntlClientProvider>
+        <Script id="ld-website" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "@id": `${SITE_URL}/#website`,
+            name: "TBH: Task Bar Hero Wiki",
+            alternateName: ["TBH Wiki", "Task Bar Hero Wiki"],
+            url: SITE_URL,
+            description:
+              "Community-maintained datamined wiki for TBH: Task Bar Hero. 5,944 items, 6 classes, 120 stages, 197 runes. Every number is datamined and independently verifiable.",
+            inLanguage: ["en", "zh", "ja", "ko"],
+            potentialAction: {
+              "@type": "SearchAction",
+              target: {
+                "@type": "EntryPoint",
+                urlTemplate: `${SITE_URL}/{locale}/items?q={search_term_string}`,
+              },
+              "query-input": "required name=search_term_string",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "TBH: Task Bar Hero Wiki",
+              url: SITE_URL,
+            },
+          })}
+        </Script>
+        <Script id="ld-organization" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "@id": `${SITE_URL}/#organization`,
+            name: "TBH: Task Bar Hero Wiki",
+            alternateName: "TBH Wiki",
+            url: SITE_URL,
+            sameAs: ["https://discord.gg/kSRUY8N8GA"],
+          })}
+        </Script>
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-87KVJGHX8D" strategy="afterInteractive" />
         <Script id="gtag-init" strategy="afterInteractive">{`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-87KVJGHX8D');`}</Script>
       </body>

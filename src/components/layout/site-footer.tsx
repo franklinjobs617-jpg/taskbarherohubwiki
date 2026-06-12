@@ -8,6 +8,8 @@ import { localizedPath } from "@/lib/locale-path";
 const T = {
   zh: {
     disclaimer: "非官方粉丝站。游戏内容归开发商所有。Steam 市场价格仅供参考，不代表成交价，不保证收益。",
+    brand: "TBH: Task Bar Hero Wiki",
+    tagline: "由社区维护的游戏数据 Wiki，包含 5,944 件物品、6 个职业、120 个关卡和 197 个符文。所有数据直接来自游戏文件，可独立验证。",
     privacy: "隐私政策",
     terms: "服务条款",
     contact: "联系我们",
@@ -22,6 +24,8 @@ const T = {
   },
   en: {
     disclaimer: "Unofficial fan site. Game content belongs to the developer. Steam Market prices are references only, not sale prices or profit guarantees.",
+    brand: "TBH: Task Bar Hero Wiki",
+    tagline: "Community-maintained datamined wiki: 5,944 items, 6 classes, 120 stages, 197 runes. Every number pulled from the game files and independently verifiable.",
     privacy: "Privacy",
     terms: "Terms",
     contact: "Contact",
@@ -45,6 +49,12 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-[#27272a] bg-[#0a0a0a]">
       <div className="mx-auto max-w-[1440px] px-3 py-6">
+        <div className="mb-5 flex flex-wrap items-baseline gap-3 border-b border-[#27272a] pb-4">
+          <Link href={lpath("/")} className="text-base font-semibold tracking-tight text-white hover:text-[#f0c040]">
+            {t.brand}
+          </Link>
+          <p className="text-[11px] leading-5 text-[#6c6c6c]">{t.tagline}</p>
+        </div>
         <div className="grid gap-6 text-xs sm:grid-cols-5">
           <div>
             <p className="mb-2 font-semibold text-[#9d9d9d]">{t.database}</p>
@@ -87,6 +97,7 @@ export function SiteFooter() {
               <Link href="/sitemap.xml" className="block text-[#6c6c6c] hover:text-[#f0c040]">{t.sitemap}</Link>
               <a href="https://discord.gg/kSRUY8N8GA" target="_blank" rel="noopener noreferrer" className="block text-[#6c6c6c] hover:text-[#f0c040]">{t.discord} ↗</a>
               <Link href={lpath("/about")} className="block text-[#6c6c6c] hover:text-[#f0c040]">{t.methodology}</Link>
+              <a href="https://buymeacoffee.com/flaviomorek" target="_blank" rel="noopener noreferrer" className="block text-[#6c6c6c] hover:text-[#f0c040]">Buy me a coffee ↗</a>
             </div>
           </div>
         </div>
