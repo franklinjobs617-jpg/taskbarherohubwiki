@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
-import { allHeroes, allItems, allMonsters, allStages, builds, chestItems, guides, hasIndexableMarketData, marketForItem, SITE_URL, stageSlug, UPDATED_AT } from "@/lib/game-data/data";
+import { allHeroes, allItems, allMonsters, allStages, builds, chestItems, guides, hasIndexableMarketData, marketForItem, shouldIndexItem, SITE_URL, stageSlug, UPDATED_AT } from "@/lib/game-data/data";
+import { extStages } from "@/lib/game-data/external";
 
 const locales = ["en", "zh", "ja", "ko"] as const;
 const guideLocales = ["en", "zh", "ja"] as const;
@@ -41,12 +42,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
 
   const itemUrls = allItems()
-    .filter((item) => item.type !== "STAGEBOX")
+    .filter((item) => item.type !== "STAGEBOX" && shouldIndexItem(item.slug))
     .flatMap((item) => locales.map((locale) => ({ url: toUrl(locale, `/items/${item.slug}`), lastModified: updated, changeFrequency: "monthly" as const, priority: 0.65, alternates: withAlternates(`/items/${item.slug}`) })));
   const marketUrls = allItems()
     .filter((item) => hasIndexableMarketData(marketForItem(item)))
     .flatMap((item) => locales.map((locale) => ({ url: toUrl(locale, `/market/${item.slug}`), lastModified: updated, changeFrequency: "daily" as const, priority: 0.7, alternates: withAlternates(`/market/${item.slug}`) })));
-  const chestUrls = chestItems().flatMap((item) => locales.map((locale) => ({ url: toUrl(locale, `/chests/${item.slug}`), lastModified: updated, changeFrequency: "monthly" as const, priority: 0.6, alternates: withAlternates(`/chests/${item.slug}`) })));
+  // Pre-compute which chest IDs appear in stage drops (uses extStages, not dropsByItemSlug)
+  const chestIdsInStages = new Set(extStages().flatMap((s) => s.drops.map((d) => d.itemKey)));
+  const chestUrls = chestItems().filter((item) => chestIdsInStages.has(item.id)).flatMap((item) => locales.map((locale) => ({ url: toUrl(locale, `/chests/${item.slug}`), lastModified: updated, changeFrequency: "monthly" as const, priority: 0.6, alternates: withAlternates(`/chests/${item.slug}`) })));
   const stageUrls = allStages().flatMap((stage) => {
     const path = `/stages/${stageSlug(stage)}`;
     return locales.map((locale) => ({ url: toUrl(locale, path), lastModified: updated, changeFrequency: "monthly" as const, priority: 0.6, alternates: withAlternates(path) }));

@@ -386,6 +386,44 @@ export function hasDropData(slug: string): boolean {
   return Array.isArray(drops) && drops.length > 0;
 }
 
+/**
+ * Whether an item detail page should be indexed by search engines.
+ * No-index items that are STAGEBOX or have zero data signals (no drops, no market).
+ * This keeps ~90 rich item pages out of ~5,944 — a 98% reduction that signals quality to Google.
+ */
+export function shouldIndexItem(slug: string): boolean {
+  const item = itemBySlug(slug);
+  if (!item) return false;
+  // STAGEBOX items are internal game objects, not user-searchable
+  if (item.type === "STAGEBOX") return false;
+  const hasDrops = hasDropData(slug);
+  const market = marketForItem(item);
+  const hasRealMarket = hasIndexableMarketData(market);
+  // Index only if it has at least one real data signal
+  return hasDrops || hasRealMarket;
+}
+
+/**
+ * Whether a market detail page should be indexed by search engines.
+ * Market pages need real data (listings, prices, trends) to be useful.
+ */
+export function shouldIndexMarket(slug: string): boolean {
+  const item = itemBySlug(slug);
+  if (!item) return false;
+  const market = marketForItem(item);
+  return hasIndexableMarketData(market);
+}
+
+/**
+ * Whether a chest detail page should be indexed.
+ * Chests that aren't a drop source for any indexed item are noise.
+ */
+export function shouldIndexChest(slug: string): boolean {
+  const item = itemBySlug(slug);
+  if (!item || item.type !== "STAGEBOX") return false;
+  return hasDropData(slug);
+}
+
 export function bestFarmingStages(slug: string, limit = 5): FarmingStage[] {
   const dropSources = dropsForItem(slug);
   if (!dropSources.length) return [];

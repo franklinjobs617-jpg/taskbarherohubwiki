@@ -15,9 +15,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const chest = itemBySlug(slug);
   const name = chest ? itemName(chest, locale) : "Chest";
+  // Only index chests that appear in at least one stage's drop table
+  const allStages = extStages();
+  const hasStageDrops = chest ? allStages.some((s) => s.drops.some((d) => d.itemKey === chest.id)) : false;
   return {
     title: locale === "zh" ? `${name} 掉落来源｜TaskBar Hero` : `${name} Drop Sources`,
     alternates: pageAlternates(locale, `/chests/${slug}`),
+    robots: hasStageDrops ? undefined : { index: false, follow: true },
   };
 }
 
