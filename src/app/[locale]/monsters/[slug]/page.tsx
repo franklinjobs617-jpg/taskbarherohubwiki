@@ -6,6 +6,7 @@ import { ArrowRight, PawPrint, Swords } from "lucide-react";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { allMonsters, allStages, text, type Locale } from "@/lib/game-data/data";
 import { extPets } from "@/lib/game-data/external";
+import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale; slug: string }> };
@@ -50,6 +51,8 @@ export default async function MonsterDetailPage({ params }: Props) {
     .sort((a, b) => (a.stage?.key ?? 0) - (b.stage?.key ?? 0));
 
   const isBoss = monsterStages.some((s) => s.boss);
+  const relatedPets = extPets().filter((p) => p.unlock.type === "KillMonster" && p.unlock.monsterKey === monster.MonsterKey);
+  const lpath = (path: string) => localizedPath(locale, path);
 
   return (
     <PageShell>
@@ -62,6 +65,25 @@ export default async function MonsterDetailPage({ params }: Props) {
             : `Type: ${monster.MONSTERTYPE ?? "?"} · Gold: ${monster.RewardGold ?? "-"} · EXP: ${monster.RewardExp ?? "-"} · Appears in ${monsterStages.length} stages`
         }
       />
+
+      <section className="mb-6 border border-[#3a2d12] bg-[#171105] p-5">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#9d7b2b]">
+          {isZh ? "Quick answer" : "Quick answer"}
+        </p>
+        <h2 className="mt-2 text-lg font-semibold text-white">
+          {isZh ? `${name} 是什么？` : `What is ${name}?`}
+        </h2>
+        <p className="mt-3 text-sm leading-7 text-[#d8d1c2]">
+          {isZh
+            ? `${name} 是 TBH: Task Bar Hero 的 ${monster.MONSTERTYPE ?? "monster"} 实体，当前数据记录显示它出现在 ${monsterStages.length} 个关卡。${relatedPets.length ? `它关联 ${relatedPets.map((p) => p.name).join(", ")} 宠物解锁。` : "当前未发现直接宠物解锁关联。"} 掉落、材料用途和最佳刷取入口需要结合下方关卡列表、宠物页和 farming calculator 判断；当前没有足够证据支持具体掉率结论。`
+            : `${name} is a TBH: Task Bar Hero ${monster.MONSTERTYPE ?? "monster"} entity. Current data shows it appears in ${monsterStages.length} stage entries. ${relatedPets.length ? `It is linked to pet unlocks for ${relatedPets.map((p) => p.name).join(", ")}.` : "No direct pet unlock link is recorded for this monster."} Use the stage list below, the Pets page, and the farming calculator to choose a farming entry. 当前没有足够证据支持具体掉率结论。`}
+        </p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          <Link href={lpath("/pets")} className="border border-[#4a3510] bg-[#0d0d0d] px-3 py-2 text-sm text-[#f0c040] hover:border-[#d4a017]">{isZh ? "宠物解锁" : "Pet unlocks"}</Link>
+          <Link href={lpath("/tools/farming-calculator")} className="border border-[#4a3510] bg-[#0d0d0d] px-3 py-2 text-sm text-[#f0c040] hover:border-[#d4a017]">{isZh ? "刷取入口" : "Farming entry"}</Link>
+          <Link href={lpath("/market")} className="border border-[#4a3510] bg-[#0d0d0d] px-3 py-2 text-sm text-[#f0c040] hover:border-[#d4a017]">{isZh ? "市场参考" : "Market references"}</Link>
+        </div>
+      </section>
 
       <div className="grid gap-6 lg:grid-cols-[280px_1fr]">
         {/* Portrait */}
@@ -118,7 +140,6 @@ export default async function MonsterDetailPage({ params }: Props) {
 
       {/* Bottom nav: pet unlock + farming */}
       {(() => {
-        const relatedPets = extPets().filter((p) => p.unlock.type === "KillMonster" && p.unlock.monsterKey === monster.MonsterKey);
         return (
           <div className="mt-8 grid gap-3 border-t border-[#27272a] pt-6 sm:grid-cols-2">
             <div className="space-y-2">

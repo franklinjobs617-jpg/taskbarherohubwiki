@@ -51,6 +51,16 @@ export default async function HeroDetailPage({ params }: Props) {
   const mainIcon = assetPath(gearPreviewItem(hero.MainWeaponGearType)?.icon);
   const subIcon = assetPath(gearPreviewItem(hero.SubWeaponGearType)?.icon);
   const slugValue = heroSlug(hero);
+  const phase = relatedBuilds[0]?.phase ?? profile.phase;
+  const classSynonym =
+    hero.ClassType === "Ranger"
+      ? " Rangers are the archer-style bow class, so bow speed and physical scaling matter."
+      : hero.ClassType === "Hunter"
+        ? " Hunter is the crossbow DLC class, so evaluate the DLC purchase before planning around it."
+        : "";
+  const quickAnswer = isZh
+    ? `${heroName(hero, locale)} 的推荐路线应先看阶段、核心属性和装备可得性。当前推荐阶段：${phase}。核心属性优先参考 ${profile.statPriority.join(" / ")}，装备方向先从 ${heroWeaponLabel(hero, locale)} 与材料效果筛选开始。风险点：${profile.risk} 证据等级：editorial route based on datamined stats；不是官方 meta 排名，也不是无条件 best build。当前没有足够证据支持无来源的掉率、收益或绝对强度结论。`
+    : `${heroName(hero, locale)} should be planned by phase, core stats, and gear availability, not by an unsupported best-build claim. Recommended phase: ${phase}. Prioritize ${profile.statPriority.join(", ")} and start gear filtering from ${heroWeaponLabel(hero, locale)} plus material effects.${classSynonym} Main risk: ${profile.risk} Evidence level: editorial route based on current datamined stats, with build advice treated as a recommended route rather than an official meta ranking. 当前没有足够证据支持这个结论。 for any exact drop rate, profit, or power ranking without source data.`;
 
   const stats = [
     [isZh ? "最大生命" : "Max HP", hero.MaxHp],
@@ -70,6 +80,16 @@ export default async function HeroDetailPage({ params }: Props) {
         title={heroName(hero, locale)}
         description={text(hero.DescriptionKey_i18n, locale, hero.ClassType ?? "")}
       />
+
+      <section className="mb-6 border border-[#3a2d12] bg-[#171105] p-5">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#9d7b2b]">
+          {isZh ? "Quick answer" : "Quick answer"}
+        </p>
+        <h2 className="mt-2 text-lg font-semibold text-white">
+          {isZh ? `${heroName(hero, locale)} 配装路线怎么选？` : `How should you build ${heroName(hero, locale)}?`}
+        </h2>
+        <p className="mt-3 text-sm leading-7 text-[#d8d1c2]">{quickAnswer}</p>
+      </section>
 
       <section className="grid gap-4 lg:grid-cols-[360px_1fr]">
         <div className="border border-[#2a2a2a] bg-[#0d0d0d] p-4">

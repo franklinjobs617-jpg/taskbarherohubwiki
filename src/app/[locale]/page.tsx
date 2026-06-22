@@ -55,14 +55,19 @@ export default async function HomePage({ params }: Props) {
     { href: "/pets", icon: PawPrint, label: "Pet Unlock Route", desc: copy(locale, { zh: "目标、击杀数、最佳关卡", en: "Target, kills, best stage", ja: "対象、討伐数、最適場所", ko: "대상, 처치 수, 추천 장소" }) },
     { href: "/runes", icon: Sparkles, label: "Rune Priority", desc: copy(locale, { zh: "规划符文优先级", en: "Plan rune priorities", ja: "ルーン優先度", ko: "룬 우선순위" }) },
     { href: "/market", icon: ShieldAlert, label: "Market Risk", desc: copy(locale, { zh: "价格、挂单和风险标签", en: "Price, listings, risk labels", ja: "価格、出品数、リスク", ko: "가격, 매물, 위험 라벨" }) },
+    { href: "/server-status", icon: ShieldAlert, label: "Server Status", desc: copy(locale, { zh: "Maintenance, error 500, error 401", en: "Maintenance, error 500, error 401", ja: "Maintenance, error 500, error 401", ko: "Maintenance, error 500, error 401" }) },
+    { href: "/updates", icon: Sparkles, label: "Updates", desc: copy(locale, { zh: "Official news, data, market status", en: "Official news, data, market status", ja: "Official news, data, market status", ko: "Official news, data, market status" }) },
   ];
   const targets = [
     { label: "Soulstone", href: "/tools/drop-finder?q=Soulstone" },
+    { label: "Anniversary Coin", href: "/tools/drop-finder?q=Anniversary%20Coin" },
     { label: "Bronze Ingot", href: "/tools/drop-finder?q=Bronze%20Ingot" },
     { label: "Kingdom Coin", href: "/tools/drop-finder?q=Kingdom%20Coin" },
+    { label: "Blue Golem", href: "/monsters" },
     { label: "Hell Golem", href: "/pets" },
     { label: "Giant Fly", href: "/pets" },
     { label: "Bat", href: "/pets" },
+    { label: "Stage Boss Box 6", href: "/tools/drop-finder?q=Stage%20Boss%20Box%206" },
     { label: "Normal Monster Box", href: "/chests?q=normal%20monster" },
   ];
 

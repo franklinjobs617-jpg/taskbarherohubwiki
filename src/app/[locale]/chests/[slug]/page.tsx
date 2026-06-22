@@ -7,6 +7,7 @@ import { Section } from "@/components/tbh/cards";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { itemBySlug, itemName, type Locale } from "@/lib/game-data/data";
 import { extStages, formatDropRate } from "@/lib/game-data/external";
+import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale; slug: string }> };
@@ -31,6 +32,8 @@ export default async function ChestDetailPage({ params }: Props) {
   if (!chest || chest.type !== "STAGEBOX") notFound();
   const isZh = locale === "zh";
   const name = itemName(chest, locale);
+  const isStageBossBox6 = name === "Stage Boss Box 6";
+  const lpath = (path: string) => localizedPath(locale, path);
 
   // Find all stages that drop this chest
   const stages = extStages();
@@ -55,6 +58,33 @@ export default async function ChestDetailPage({ params }: Props) {
           ? "宝箱基础信息和掉落来源关卡。"
           : "Chest info and drop source stages."}
       />
+
+      {isStageBossBox6 ? (
+        <section className="mb-6 border border-[#3a2d12] bg-[#171105] p-5">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#9d7b2b]">
+            {isZh ? "Entity answer" : "Entity answer"}
+          </p>
+          <h2 className="mt-2 text-lg font-semibold text-white">
+            {isZh ? "Stage Boss Box 6 是什么？" : "What is Stage Boss Box 6?"}
+          </h2>
+          <p className="mt-3 text-sm leading-7 text-[#d8d1c2]">
+            {isZh
+              ? `Stage Boss Box 6 是关卡 Boss 宝箱实体，当前记录到 ${dropStages.length} 个来源关卡。它的用途是作为物品池入口，用来反查掉落物、来源关卡和刷取路线。具体掉率请以下方数据表为准；当前没有足够证据支持表外掉率结论。`
+              : `Stage Boss Box 6 is a stage boss chest entity. Current data records ${dropStages.length} source stages. Use it as an item-pool entry to reverse-check drops, source stages, and farming routes. Use the table below for known rates; 当前没有足够证据支持表外掉率结论。`}
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            <Link href={lpath("/tools/drop-finder?q=Stage%20Boss%20Box%206")} className="border border-[#4a3510] bg-[#0d0d0d] px-3 py-2 text-sm text-[#f0c040] hover:border-[#d4a017]">
+              {isZh ? "推荐刷取入口" : "Recommended farming entry"}
+            </Link>
+            <Link href={lpath("/tools/farming-calculator")} className="border border-[#4a3510] bg-[#0d0d0d] px-3 py-2 text-sm text-[#f0c040] hover:border-[#d4a017]">
+              Farming calculator
+            </Link>
+            <Link href={lpath("/map")} className="border border-[#4a3510] bg-[#0d0d0d] px-3 py-2 text-sm text-[#f0c040] hover:border-[#d4a017]">
+              {isZh ? "关卡地图" : "Stage map"}
+            </Link>
+          </div>
+        </section>
+      ) : null}
 
       {/* ── Chest info ── */}
       <div className="grid gap-2.5 sm:grid-cols-3">

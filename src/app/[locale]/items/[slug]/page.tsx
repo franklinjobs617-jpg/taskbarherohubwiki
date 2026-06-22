@@ -115,6 +115,7 @@ export default async function ItemDetailPage({ params }: Props) {
   const hasDrops = hasDropData(slug);
   const drops = dropsForItem(slug);
   const lpath = (path: string) => localizedPath(locale, path);
+  const isEntityGapTarget = slug.includes("soulstone") || slug.includes("anniversary-coin") || enName === "Stage Boss Box 6";
 
   return (
     <PageShell>
@@ -147,6 +148,42 @@ export default async function ItemDetailPage({ params }: Props) {
       </nav>
 
       <ItemQuickAnswer itemSlug={slug} marketPrice={market?.lowest} locale={locale} />
+
+      {isEntityGapTarget ? (
+        <section className="mt-6 border border-[#3a2d12] bg-[#171105] p-5">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#9d7b2b]">
+            {isZh ? "Entity answer" : "Entity answer"}
+          </p>
+          <h2 className="mt-2 text-lg font-semibold text-white">
+            {isZh ? `${name} 用来做什么？` : `What is ${name} used for?`}
+          </h2>
+          <p className="mt-3 text-sm leading-7 text-[#d8d1c2]">
+            {context ?? (isZh ? "该实体已有基础数据，但用途说明仍需结合来源、市场和关卡数据判断。" : "This entity has base data, but its use should be checked against source, market, and stage data.")}
+            {" "}
+            {hasDrops
+              ? (isZh ? `当前记录到 ${drops.length} 个掉落来源；请以下方掉落来源和热力图为准。` : `Current data records ${drops.length} drop sources; use the drop source table and heatmap below.`)
+              : "当前没有足够证据支持具体掉率结论。"}
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            <Link href={lpath(`/tools/drop-finder?q=${encodeURIComponent(enName)}`)} className="border border-[#4a3510] bg-[#0d0d0d] px-3 py-2 text-sm text-[#f0c040] hover:border-[#d4a017]">
+              {isZh ? "推荐刷取入口" : "Recommended farming entry"}
+            </Link>
+            <Link href={lpath("/tools/farming-calculator")} className="border border-[#4a3510] bg-[#0d0d0d] px-3 py-2 text-sm text-[#f0c040] hover:border-[#d4a017]">
+              Farming calculator
+            </Link>
+            {market ? (
+              <Link href={lpath(`/market/${item.slug}`)} className="border border-[#4a3510] bg-[#0d0d0d] px-3 py-2 text-sm text-[#f0c040] hover:border-[#d4a017]">
+                {isZh ? "市场链接" : "Market link"}
+              </Link>
+            ) : null}
+            {item.type === "MATERIAL" ? (
+              <Link href={lpath("/cube")} className="border border-[#4a3510] bg-[#0d0d0d] px-3 py-2 text-sm text-[#f0c040] hover:border-[#d4a017]">
+                Hero-dric Cube
+              </Link>
+            ) : null}
+          </div>
+        </section>
+      ) : null}
 
       <section className="mt-6 grid gap-6 lg:grid-cols-[340px_1fr]">
         <aside className="h-fit border border-[#27272a] bg-[#0d0d0d] p-5 lg:sticky lg:top-16">

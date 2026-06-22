@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
 import type { Locale } from "@/lib/game-data/data";
+import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale }> };
+const steamDiscussionsUrl = "https://steamcommunity.com/app/3678970/discussions/0/";
+const discordUrl = "https://discord.gg/kSRUY8N8GA";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -80,6 +84,32 @@ export default async function FaqPage({ params }: Props) {
           </div>
         ))}
       </div>
+
+      <section className="mt-8 border border-[#27272a] bg-[#0d0d0d] p-5">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#6c6c6c]">Community support</p>
+        <h2 className="mt-2 text-lg font-semibold text-white">
+          {isZh ? "Discord、Steam Discussions 与服务器问题" : "Discord, Steam Discussions, and server issues"}
+        </h2>
+        <p className="mt-3 text-sm leading-7 text-[#bbb]">
+          {isZh
+            ? "遇到维护、error 500、error 401、市场关闭或无法启动时，先查看官方 Steam 新闻和 Steam Discussions，再参考本站的非官方排障页。本站不会冒充官方服务器状态页。"
+            : "For maintenance, error 500, error 401, market closed, or not launching reports, check Steam news and Steam Discussions first, then use the unofficial troubleshooting hub. This wiki does not act as an official server status page."}
+        </p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          <Link href={localizedPath(locale, "/server-status")} className="border border-[#5a3a1a] bg-[#171105] px-3 py-2 text-sm font-medium text-[#f0c040] hover:bg-[#211708]">
+            Server status hub
+          </Link>
+          <a href={steamDiscussionsUrl} target="_blank" rel="noopener noreferrer" className="border border-[#27272a] bg-[#111] px-3 py-2 text-sm font-medium text-white hover:border-[#d4a017]">
+            Steam Discussions
+          </a>
+          <a href={discordUrl} target="_blank" rel="noopener noreferrer" className="border border-[#27272a] bg-[#111] px-3 py-2 text-sm font-medium text-white hover:border-[#d4a017]">
+            Discord community
+          </a>
+          <Link href={localizedPath(locale, "/contact")} className="border border-[#27272a] bg-[#111] px-3 py-2 text-sm font-medium text-white hover:border-[#d4a017]">
+            Contact
+          </Link>
+        </div>
+      </section>
     </PageShell>
   );
 }

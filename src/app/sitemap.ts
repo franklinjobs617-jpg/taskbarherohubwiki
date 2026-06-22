@@ -28,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/buffs", "/cube", "/guides/farming",
     "/tools/drop-finder", "/tools/farming-optimizer", "/tools/profit-calculator",
     "/tools/farming-compare", "/tools/farming-calculator",
-    "/updates", "/faq", "/about", "/privacy", "/terms", "/contact",
+    "/server-status", "/updates", "/faq", "/about", "/privacy", "/terms", "/contact",
   ];
 
   const staticUrls = locales.flatMap((locale) =>

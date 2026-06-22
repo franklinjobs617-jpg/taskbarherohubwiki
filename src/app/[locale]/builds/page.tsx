@@ -4,6 +4,7 @@ import { ConfidenceBadge } from "@/components/tbh/badges";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
 import { builds, heroBySlug, heroName, SITE_URL, type Locale } from "@/lib/game-data/data";
+import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale }> };
@@ -59,6 +60,26 @@ export default async function BuildsPage({ params }: Props) {
             : `${builds.length} build routes covering all 6 heroes across early, mid, and endgame phases.`
         }
       />
+
+      <section className="mb-8 border border-[#3a2d12] bg-[#171105] p-5">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#9d7b2b]">
+          {isZh ? "Quick answer" : "Quick answer"}
+        </p>
+        <h2 className="mt-2 text-lg font-semibold text-white">
+          {isZh ? "Build route 是带证据等级的配装路线，不是官方 meta 排名" : "A build route is an evidence-labeled gear path, not an official meta ranking"}
+        </h2>
+        <p className="mt-3 text-sm leading-7 text-[#d8d1c2]">
+          {isZh
+            ? "先按阶段选择：前期优先生存，中期看清图速度，后期看材料目标和市场风险。本站推荐基于当前 datamined stats 与 editorial 分析，不写无证据的 best build 绝对结论。"
+            : "Choose by phase first: early routes favor survival, mid routes favor clear speed, and endgame routes depend on material goals plus market risk. Recommendations are based on current datamined stats and editorial analysis, not unsupported best-build claims."}
+        </p>
+        <div className="mt-4 grid gap-2 text-sm md:grid-cols-4">
+          <Link href={localizedPath(locale, "/heroes")} className="border border-[#4a3510] bg-[#0d0d0d] p-3 text-[#f0c040] hover:border-[#d4a017]">Hero stats</Link>
+          <Link href={localizedPath(locale, "/items")} className="border border-[#4a3510] bg-[#0d0d0d] p-3 text-[#f0c040] hover:border-[#d4a017]">Items</Link>
+          <Link href={localizedPath(locale, "/runes")} className="border border-[#4a3510] bg-[#0d0d0d] p-3 text-[#f0c040] hover:border-[#d4a017]">Runes</Link>
+          <Link href={localizedPath(locale, "/tools/farming-calculator")} className="border border-[#4a3510] bg-[#0d0d0d] p-3 text-[#f0c040] hover:border-[#d4a017]">Farming calculator</Link>
+        </div>
+      </section>
 
       {/* How to use this page */}
       <div className="mb-8 grid gap-3 md:grid-cols-3">
