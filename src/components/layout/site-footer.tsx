@@ -98,6 +98,7 @@ export function SiteFooter() {
               <a href="https://discord.gg/kSRUY8N8GA" target="_blank" rel="noopener noreferrer" className="block text-[#6c6c6c] hover:text-[#f0c040]">{t.discord} ↗</a>
               <Link href={lpath("/about")} className="block text-[#6c6c6c] hover:text-[#f0c040]">{t.methodology}</Link>
               <a href="https://buymeacoffee.com/flaviomorek" target="_blank" rel="noopener noreferrer" className="block text-[#6c6c6c] hover:text-[#f0c040]">Buy me a coffee ↗</a>
+              <a href="https://bombanana.online/" target="_blank" rel="noopener noreferrer" className="block text-[#6c6c6c] hover:text-[#f0c040]">Bombanana ↗</a>
             </div>
           </div>
         </div>
