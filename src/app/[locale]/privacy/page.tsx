@@ -20,7 +20,7 @@ export default async function PrivacyPage({ params }: Props) {
         title="Privacy"
         description={isZh ? "本站不提供账号系统。基础访问日志、性能分析和必要 Cookie 只用于安全、统计和站点改进。" : "This site does not provide an account system. Basic logs, analytics, and necessary cookies are used only for security, measurement, and site improvement."}
       />
-      <div className="space-y-3 border border-[#27272a] bg-[#0d0d0d] p-5 text-sm leading-7 text-[#9d9d9d]">
+      <div className="space-y-3 border border-border-default bg-bg-panel p-5 text-sm leading-7 text-text-secondary">
         <p>{isZh ? "本站不会要求你输入 Steam 密码、交易链接或支付信息。" : "This site never asks for your Steam password, trade link, or payment information."}</p>
         <p>{isZh ? "如果部署 analytics，应只记录匿名访问数据，例如页面访问、设备类型和加载性能。" : "If analytics are deployed, only anonymous page views, device type, and performance data should be collected."}</p>
       </div>

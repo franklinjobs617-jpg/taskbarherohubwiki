@@ -32,13 +32,13 @@ export function LocaleSwitcher() {
       <button
         type="button"
         onClick={() => setOpen((value) => !value)}
-        className="flex h-8 items-center gap-1.5 rounded-md border border-[#3b3b3b] bg-[#0d0d0d] px-2.5 text-[12px] font-medium text-white transition-colors hover:border-[#d4a017]/70"
+        className="flex h-8 items-center gap-1.5 border-2 border-border-strong bg-bg-panel px-2.5 text-caption-lg font-medium text-text-primary transition-colors hover:border-accent-dim"
         aria-label="Switch language"
         aria-expanded={open}
       >
-        <span className="font-mono text-[#f0c040]">{current.short}</span>
-        <span className="hidden text-[#9d9d9d] sm:inline">{current.label}</span>
-        <svg className="h-3 w-3 text-[#6c6c6c]" fill="none" viewBox="0 0 10 6" aria-hidden="true">
+        <span className="font-mono text-accent">{current.short}</span>
+        <span className="hidden text-text-secondary sm:inline">{current.label}</span>
+        <svg className="h-3 w-3 text-text-muted" fill="none" viewBox="0 0 10 6" aria-hidden="true">
           <path stroke="currentColor" strokeWidth="1.5" d="M1 1l4 4 4-4" />
         </svg>
       </button>
@@ -46,7 +46,7 @@ export function LocaleSwitcher() {
       {open ? (
         <>
           <button className="fixed inset-0 z-[60] cursor-default" aria-label="Close language menu" onClick={() => setOpen(false)} />
-          <div className="absolute right-0 top-[calc(100%+8px)] z-[70] w-44 overflow-hidden rounded-md border border-[#3b3b3b] bg-[#0d0d0d] shadow-2xl shadow-black/40">
+          <div className="absolute right-0 top-[calc(100%+8px)] z-[70] w-44 overflow-hidden border-2 border-border-strong bg-bg-panel shadow-lg">
             {LOCALES.map((locale) => {
               const active = currentLocale === locale.code;
               return (
@@ -54,13 +54,13 @@ export function LocaleSwitcher() {
                   key={locale.code}
                   href={hrefFor(locale.code)}
                   onClick={() => setOpen(false)}
-                  className={`flex w-full items-center gap-2.5 px-3 py-2.5 text-left text-[13px] transition-colors ${
-                    active ? "bg-[#18181b] text-[#f0c040]" : "text-[#b8ad98] hover:bg-[#18181b] hover:text-white"
+                  className={`flex w-full items-center gap-2.5 px-3 py-2.5 text-left text-body-sm transition-colors font-pixel ${
+                    active ? "bg-accent-soft text-accent" : "text-text-secondary hover:bg-bg-surface hover:text-text-primary"
                   }`}
                 >
                   <span
-                    className={`flex h-5 w-7 items-center justify-center rounded-sm text-[10px] font-semibold ${
-                      active ? "bg-[#d4a017] text-black" : "bg-[#18181b] text-[#9d9d9d]"
+                    className={`flex h-5 w-7 items-center justify-center text-caption font-semibold ${
+                      active ? "bg-accent text-bg-deep" : "bg-bg-surface text-text-secondary"
                     }`}
                   >
                     {locale.short}

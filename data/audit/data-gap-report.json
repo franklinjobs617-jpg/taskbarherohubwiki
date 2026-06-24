@@ -1,0 +1,402 @@
+{
+  "generatedAt": "2026-06-24T10:31:35.641Z",
+  "sources": {
+    "localDatamined": {
+      "files": [
+        "items.json",
+        "items_detail.json",
+        "stages.json",
+        "monsters.json",
+        "heroes.json",
+        "runes.json",
+        "skills.json",
+        "buffs.json",
+        "grades.json"
+      ],
+      "counts": {
+        "items": 5944,
+        "itemDetails": 5944,
+        "stages": 120,
+        "monsters": 61,
+        "heroes": 6,
+        "runes": 197,
+        "skills": 106,
+        "buffs": 29,
+        "grades": 10
+      },
+      "trust": "highest",
+      "use": "primary facts, names, stats, stages, monsters, heroes"
+    },
+    "externalStructured": {
+      "files": [
+        "items.json",
+        "stages.json",
+        "effects.json",
+        "runes.json",
+        "pets.json",
+        "heroes.json"
+      ],
+      "counts": {
+        "items": 5934,
+        "stages": 120,
+        "effects": 79,
+        "runes": 197,
+        "pets": 8,
+        "heroes": 6
+      },
+      "trust": "medium",
+      "use": "class fit, formatted stats, slots, stage monsters, stage drops, material effects, pet unlocks"
+    },
+    "generatedDrops": {
+      "file": "data/generated/drops.json",
+      "itemsWithDrops": 90,
+      "use": "item->box->stage drop source graph"
+    },
+    "graphIndex": {
+      "file": "data/generated/game/v1/graph",
+      "generatedAt": "2026-06-24T07:10:07.669Z",
+      "counts": {
+        "items": 5934,
+        "chests": 59,
+        "monsters": 61,
+        "stages": 120,
+        "materials": 115,
+        "market": 0
+      },
+      "use": "query-ready entity graph: item->chest->monster/stage, material effects, stage drops, market decisions"
+    },
+    "steamMarket": {
+      "file": "data/generated/market/v1/latest.json",
+      "updatedAt": null,
+      "rows": 0,
+      "use": "market status only; stale prices excluded from recommendations"
+    },
+    "competitorCoverage": {
+      "file": "data/audit/competitor-coverage.json",
+      "urlCount": 106544,
+      "sitemapCount": 16,
+      "use": "coverage comparison and field inspiration only; not copied as user-facing content"
+    }
+  },
+  "coverage": {
+    "items": {
+      "total": 5944,
+      "withLocalizedName": 5934,
+      "withDetailRecord": 5944,
+      "withDescription": 115,
+      "withStructuredStats": 5760,
+      "withExternalClassFit": 5760,
+      "withExternalSlots": 5760,
+      "withExternalFormattedStats": 5760,
+      "withDropData": 90,
+      "withMarketData": 0,
+      "marketable": 945,
+      "externalOnlyItems": 0,
+      "localOnlyItems": 10,
+      "rates": {
+        "total": 100,
+        "withLocalizedName": 99.83,
+        "withDetailRecord": 100,
+        "withDescription": 1.93,
+        "withStructuredStats": 96.9,
+        "withExternalClassFit": 96.9,
+        "withExternalSlots": 96.9,
+        "withExternalFormattedStats": 96.9,
+        "withDropData": 1.51,
+        "withMarketData": 0,
+        "marketable": 15.9,
+        "externalOnlyItems": 0,
+        "localOnlyItems": 0.17
+      }
+    },
+    "stages": {
+      "total": 120,
+      "withRewards": 120,
+      "withBoss": 120,
+      "withExternalMonsterComposition": 108,
+      "withExternalDropTable": 120,
+      "externalOnlyStages": 0,
+      "localOnlyStages": 0,
+      "rates": {
+        "total": 100,
+        "withRewards": 100,
+        "withBoss": 100,
+        "withExternalMonsterComposition": 90,
+        "withExternalDropTable": 100,
+        "externalOnlyStages": 0,
+        "localOnlyStages": 0
+      }
+    },
+    "monsters": {
+      "total": 61,
+      "withStats": 61,
+      "withStageAppearances": 60,
+      "withPortrait": 61,
+      "withReverseDrops": 60,
+      "rates": {
+        "total": 100,
+        "withStats": 100,
+        "withStageAppearances": 98.36,
+        "withPortrait": 100,
+        "withReverseDrops": 98.36
+      }
+    },
+    "chests": {
+      "total": 59,
+      "withDropSources": 31,
+      "withContents": 31,
+      "rates": {
+        "total": 100,
+        "withDropSources": 52.54,
+        "withContents": 52.54
+      }
+    },
+    "materials": {
+      "total": 125,
+      "withDescription": 115,
+      "withEffectMatrix": 79,
+      "withDropData": 90,
+      "withMarketData": 0,
+      "rates": {
+        "total": 100,
+        "withDescription": 92,
+        "withEffectMatrix": 63.2,
+        "withDropData": 72,
+        "withMarketData": 0
+      }
+    },
+    "graph": {
+      "available": true,
+      "items": 5934,
+      "itemsWithSourceChain": 1171,
+      "chests": 59,
+      "chestsWithContents": 49,
+      "chestsWithDropSources": 31,
+      "monsters": 61,
+      "monstersWithDrops": 60,
+      "stages": 120,
+      "stagesWithDrops": 120,
+      "materials": 115,
+      "materialsWithEffects": 79,
+      "rates": {
+        "itemsWithSourceChain": 19.73,
+        "chestsWithContents": 83.05,
+        "chestsWithDropSources": 52.54,
+        "monstersWithDrops": 98.36,
+        "stagesWithDrops": 100,
+        "materialsWithEffects": 68.7
+      }
+    }
+  },
+  "vocabularies": {
+    "itemTypes": [
+      "STAGEBOX",
+      "MATERIAL",
+      "GEAR"
+    ],
+    "grades": [
+      "COMMON",
+      "RARE",
+      "LEGENDARY",
+      "UNCOMMON",
+      "IMMORTAL",
+      "ARCANA",
+      "BEYOND",
+      "CELESTIAL",
+      "DIVINE",
+      "COSMIC"
+    ],
+    "gearTypes": [
+      "SWORD",
+      "BOW",
+      "STAFF",
+      "SCEPTER",
+      "CROSSBOW",
+      "AXE",
+      "SHIELD",
+      "ARROW",
+      "ORB",
+      "TOME",
+      "BOLT",
+      "HATCHET",
+      "HELMET",
+      "ARMOR",
+      "GLOVES",
+      "BOOTS",
+      "AMULET",
+      "EARING",
+      "RING",
+      "BRACER"
+    ],
+    "externalClasses": [
+      "Knight",
+      "Ranger",
+      "Sorcerer",
+      "Priest",
+      "Hunter",
+      "Slayer",
+      "All"
+    ],
+    "externalStatNames": [
+      "AttackDamage",
+      "AttackSpeed",
+      "AddHpPerHit",
+      "CriticalDamage",
+      "CooldownReduction",
+      "CriticalChance",
+      "CastSpeed",
+      "BlockChance",
+      "MaxHp",
+      "Armor",
+      "AreaOfEffect",
+      "DamageReduction",
+      "HpRegenPerSec",
+      "AllElementalResistance",
+      "HpLeech",
+      "IncreaseProjectileDamage",
+      "SkillHealIncrease",
+      "DamageAbsorption",
+      "SkillDurationIncrease",
+      "SkillRangeExpansion",
+      "AddHpPerKill",
+      "MovementSpeed",
+      "AddAllSkillLevel",
+      "BaseAttackCountReduction",
+      "ProjectileCount",
+      "Multistrike",
+      "IncreaseExpAmount",
+      "DodgeChance"
+    ],
+    "materialEffectStats": [
+      "FireDamagePercent",
+      "FireResistance",
+      "AttackDamage",
+      "ColdDamagePercent",
+      "Armor",
+      "CriticalChance",
+      "LightningDamagePercent",
+      "CastSpeed",
+      "AttackSpeed",
+      "DamageAbsorption",
+      "MovementSpeed",
+      "PhysicalDamagePercent",
+      "MaxHp",
+      "CooldownReduction",
+      "BlockChance",
+      "AddHpPerHit",
+      "HpRegenPerSec",
+      "HpLeech",
+      "DodgeChance",
+      "CriticalDamage",
+      "AreaOfEffect",
+      "ColdResistance",
+      "LightningResistance",
+      "ChaosResistance",
+      "DamageReduction",
+      "AllElementalResistance",
+      "Multistrike",
+      "BaseAttackCountReduction",
+      "ProjectileCount",
+      "AddHpPerKill",
+      "IncreaseAreaOfEffectDamage",
+      "IncreaseMeleeDamage",
+      "IncreaseProjectileDamage",
+      "IncreaseSummonDamage",
+      "SkillDurationIncrease",
+      "SkillHealIncrease"
+    ]
+  },
+  "fieldGaps": [
+    {
+      "area": "Item Detail",
+      "missingOrUnderused": [
+        "formattedStatRows",
+        "classFitDecision",
+        "slotMatrix",
+        "sourceChain:item->chest->monster/stage",
+        "bestFarmRoutes",
+        "buyVsFarmDecision"
+      ],
+      "availableFrom": [
+        "tbh_data/items_detail.json",
+        "tbh_external/items.json",
+        "data/generated/drops.json",
+        "data/generated/market/v1/latest.json"
+      ],
+      "status": "data mostly exists; page rendering and graph index missing"
+    },
+    {
+      "area": "Chest Detail",
+      "missingOrUnderused": [
+        "contentsTable",
+        "contentDropChance",
+        "droppedByMonsters",
+        "droppedInStages",
+        "bestStageForChest"
+      ],
+      "availableFrom": [
+        "data/generated/drops.json",
+        "tbh_external/stages.json",
+        "tbh_data/monsters.json"
+      ],
+      "status": "relationship index missing"
+    },
+    {
+      "area": "Monster Detail",
+      "missingOrUnderused": [
+        "monsterDropTable",
+        "bestStageToFarmMonster",
+        "stageDropContext",
+        "petUnlockContext"
+      ],
+      "availableFrom": [
+        "tbh_data/monsters.json",
+        "tbh_external/stages.json",
+        "tbh_external/pets.json"
+      ],
+      "status": "drops need reverse index from stage/drop boxes"
+    },
+    {
+      "area": "Stage Detail",
+      "missingOrUnderused": [
+        "monsterComposition",
+        "bossMultiplier",
+        "dropValueSummary",
+        "targetLevelFit",
+        "hourlyExpGoldEstimator"
+      ],
+      "availableFrom": [
+        "tbh_data/stages.json",
+        "tbh_external/stages.json",
+        "data/generated/market/v1/latest.json"
+      ],
+      "status": "data exists; UI underuses it"
+    },
+    {
+      "area": "Database Index",
+      "missingOrUnderused": [
+        "statFilter",
+        "slotFilter",
+        "classFilterWithCounts",
+        "obtainableTradableDeletedFilter",
+        "cardsTableToggle",
+        "sortByLevelGradeMarketDropConfidence"
+      ],
+      "availableFrom": [
+        "tbh_external/items.json",
+        "tbh_data/items.json",
+        "data/generated/drops.json",
+        "data/generated/market/v1/latest.json"
+      ],
+      "status": "data exists; search UI missing"
+    }
+  ],
+  "prioritizedDataWork": [
+    "Build graph index: item->chest contents->stage->monster and reverse indexes.",
+    "Normalize item stats into formatted rows from tbh_external/items.json first, fallback to tbh_data/items_detail.json.",
+    "Generate chest contents tables from data/generated/drops.json.",
+    "Generate monster reverse drop tables from tbh_external/stages.json + drop boxes.",
+    "Generate stage decision summaries using rewards, monster composition, drops, and market freshness.",
+    "Expose database filters from existing vocabularies: class, stat, slot, level, obtainable, tradable, grade, gear type."
+  ]
+}

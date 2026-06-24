@@ -17,26 +17,158 @@
     "runes": "ルーン",
     "skills": "スキル",
     "pets": "ペット",
-    "search": "アイテム、ヒーロー、ガイドを検索..."
+    "search": "アイテム、ヒーロー、ガイドを検索...",
+    "language": "言語"
   },
   "home": {
-    "heroTitle": "ヒーロー職業",
-    "marketTitle": "マーケット",
-    "guidesTitle": "ガイド",
-    "toolsTitle": "ツール",
-    "patchNotes": "更新情報",
-    "faq": "よくある質問",
-    "viewAll": "すべて見る",
-    "search": "検索"
+    "hero_title": "TBH: Task Bar Hero",
+    "hero_subtitle": "完全ガイドハブ & アイテムデータベース",
+    "cta_explore": "データベースを探索",
+    "cta_market": "マーケット価格",
+    "hot_items": "人気アイテム",
+    "market_live": "リアルタイム市場価格",
+    "latest_guides": "最新ガイド",
+    "item_database": "アイテムデータベース",
+    "item_count": "{count} アイテム収録",
+    "quick_links": "クイックリンク",
+    "search_placeholder": "アイテム、ヒーロー、ガイドを検索..."
+  },
+  "items": {
+    "title": "アイテムデータベース",
+    "subtitle": "{count} 装備 · 125 素材 · 59 ステージボックス",
+    "filter_rarity": "レアリティ",
+    "filter_slot": "スロット",
+    "filter_level": "レベル",
+    "filter_type": "タイプ",
+    "all": "すべて",
+    "search": "アイテムを検索...",
+    "no_results": "アイテムが見つかりません",
+    "market_price": "市場価格",
+    "drop_sources": "ドロップソース",
+    "synthesis": "合成",
+    "related_guides": "関連ガイド",
+    "suitable_heroes": "適正ヒーロー"
+  },
+  "market": {
+    "title": "Steam マーケット",
+    "subtitle": "リアルタイム価格追跡 · 15分ごとに更新",
+    "price": "価格",
+    "change_24h": "24時間変動",
+    "supply": "供給",
+    "demand_rank": "需要",
+    "top_movers": "値動き上位",
+    "best_profit": "最高利益",
+    "price_history": "価格履歴 (7日間)",
+    "data_stale": "データに遅延がある可能性があります。参考値です。",
+    "source": "ソース: Steam Community Market"
+  },
+  "guides": {
+    "title": "ガイド",
+    "subtitle": "初心者から上級者まで — 包括的なTBHガイド",
+    "categories": {
+      "beginner": "初心者向け",
+      "farming": "周回",
+      "economy": "経済",
+      "builds": "ビルド",
+      "mechanics": "メカニクス"
+    },
+    "evidence_level": "証拠レベル",
+    "evidence": {
+      "datamined": "データ抽出",
+      "community": "コミュニティ検証済み",
+      "editorial": "編集部",
+      "unverified": "未検証"
+    }
+  },
+  "tools": {
+    "title": "ツール",
+    "profit_calculator": "利益計算機",
+    "profit_desc": "ステージごとの期待利益を計算",
+    "farming_compare": "周回比較",
+    "farming_compare_desc": "ステージ間の周回効率を比較",
+    "select_stage": "ステージを選択",
+    "select_difficulty": "難易度を選択",
+    "estimated_profit": "推定利益",
+    "per_run": "1周あたり",
+    "per_hour": "1時間あたり",
+    "per_day": "24時間放置",
+    "insufficient_data": "データ不足のため計算できません"
+  },
+  "builds": {
+    "title": "おすすめビルド",
+    "subtitle": "証拠レベル付きの厳選ビルド",
+    "hero": "ヒーロー",
+    "gear_slots": "推奨装備",
+    "skills": "スキル振り",
+    "runes": "ルーン優先度",
+    "source": "ソース"
   },
   "common": {
-    "view": "見る",
-    "back": "戻る",
-    "all": "すべて",
-    "filter": "フィルター",
-    "clear": "クリア",
+    "level": "レベル",
+    "rarity": "レアリティ",
+    "grade": "グレード",
+    "slot": "スロット",
+    "class": "クラス",
+    "source_url": "ソース",
+    "view_all": "すべて見る",
     "loading": "読み込み中...",
-    "noData": "データなし",
-    "updated": "更新日"
+    "error": "読み込みに失敗しました",
+    "retry": "再試行"
+  },
+  "rarity": {
+    "COMMON": "コモン",
+    "UNCOMMON": "アンコモン",
+    "RARE": "レア",
+    "LEGENDARY": "レジェンダリー",
+    "IMMORTAL": "イモータル",
+    "ARCANA": "アルカナ",
+    "BEYOND": "ビヨンド",
+    "CELESTIAL": "セレスティアル",
+    "DIVINE": "ディバイン",
+    "COSMIC": "コズミック"
+  },
+  "slots": {
+    "SWORD": "剣",
+    "BOW": "弓",
+    "STAFF": "杖",
+    "SCEPTER": "セプター",
+    "TOME": "トーム",
+    "CROSSBOW": "クロスボウ",
+    "HATCHET": "ハチェット",
+    "ORB": "オーブ",
+    "ARROW": "矢",
+    "BOLT": "ボルト",
+    "ARMOR": "鎧",
+    "HELMET": "ヘルメット",
+    "GLOVES": "グローブ",
+    "BOOTS": "ブーツ",
+    "SHIELD": "盾",
+    "AMULET": "アミュレット",
+    "RING": "指輪",
+    "BRACER": "ブレイサー",
+    "EARING": "イヤリング",
+    "AXE": "斧"
+  },
+  "heroes": {
+    "Knight": "ナイト",
+    "Ranger": "レンジャー",
+    "Sorcerer": "ソーサラー",
+    "Priest": "プリースト",
+    "Hunter": "ハンター",
+    "Slayer": "スレイヤー"
+  },
+  "difficulty": {
+    "NORMAL": "ノーマル",
+    "HARD": "ハード",
+    "BRUTAL": "ブルータル",
+    "NIGHTMARE": "ナイトメア",
+    "HELL": "ヘル",
+    "TORMENT": "トーメント"
+  },
+  "footer": {
+    "disclaimer": "このサイトはファンメイドであり、TBH: Task Bar Heroの開発元とは関係ありません。",
+    "market_disclaimer": "市場価格は参考値であり、約定価格を保証するものではありません。",
+    "copyright": "© 2026 TBH ガイド · ファンメイド",
+    "privacy": "プライバシーポリシー"
   }
 }

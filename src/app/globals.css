@@ -1,171 +1,574 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Press+Start+2P&family=VT323&family=JetBrains+Mono:wght@400;500&display=swap');
+/* === Pixel Fonts === */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
-/* === Design System: Rarible-inspired dark terminal + TBH game aesthetic === */
+/* ═══════════════════════════════════════════
+   TBH Wiki — Dark Fantasy Pixel UI
+   Inspired by taskbarhero.wiki + tbh.city
+   Game Adventure Manual Aesthetic:
+   stone slabs · torchlight · ember glow · dungeon depths
+   ═══════════════════════════════════════════ */
 
 @theme inline {
-  /* ── Surfaces (terminal canvas) ── */
-  --color-canvas: #0a0a0a;
-  --color-surface: #0d0d0d;
-  --color-surface-raised: #18181b;
-  --color-surface-hover: #1a1a1e;
+  /* ── Font families ── */
+  --font-pixel: 'Pixelify Sans', 'Press Start 2P', monospace;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-body: 'Inter', 'Noto Sans SC', sans-serif;
 
-  /* ── Borders (hairline-first, no shadow dependency) ── */
-  --color-hairline: #27272a;
-  --color-border-soft: #2a2a2e;
-  --color-border-input: #3b3b3b;
+  /* ── Surfaces: dungeon depth layers ── */
+  --color-bg-deep: #080a0f;
+  --color-bg-canvas: #0f1118;
+  --color-bg-panel: #161920;
+  --color-bg-surface: #1c1f2a;
+  --color-bg-elevated: #232837;
 
-  /* ── Single accent (gold — one voice, like Rarible's lime) ── */
-  --color-accent: #d4a017;
-  --color-accent-bright: #f0c040;
-  --color-accent-dim: #996e10;
+  /* ── Accent: warm forge-fire gold ── */
+  --color-accent: #f0a830;
+  --color-accent-bright: #f7c84c;
+  --color-accent-dim: #8b5e14;
+  --color-accent-soft: rgba(240, 168, 48, 0.1);
+  --color-accent-glow: rgba(240, 168, 48, 0.18);
+
+  /* ── Ember / fire tones ── */
+  --color-ember: #e8772e;
+  --color-ember-dim: #6b2f10;
+  --color-ember-glow: rgba(232, 119, 46, 0.15);
+  --color-flame: #f04a2a;
+  --color-ash: #3a322a;
+
+  /* ── Stone / slate tones ── */
+  --color-stone: #2a2824;
+  --color-stone-light: #3d3a34;
+  --color-stone-dark: #1a1816;
+  --color-stone-border: #332f2a;
 
   /* ── Text hierarchy ── */
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #9d9d9d;
-  --color-text-tertiary: #6c6c6c;
-  --color-text-link: #d4a017;
+  --color-text-primary: #e8dcc8;
+  --color-text-secondary: #968d7e;
+  --color-text-muted: #625c52;
+  --color-text-link: #f0a830;
 
-  /* ── Rarity colors (desaturated for pixel aesthetic) ── */
-  --color-c: #888888;
-  --color-u: #33aa33;
-  --color-r: #3355cc;
-  --color-l: #8833cc;
-  --color-i: #cc6622;
-  --color-a: #cc9933;
-  --color-b: #cc2244;
-  --color-ce: #33aacc;
-  --color-d: #ccaa22;
-  --color-co: #cc33cc;
+  /* ── Borders: chiseled stone ── */
+  --color-border-default: #2a2722;
+  --color-border-strong: #3d3830;
+  --color-border-accent: #f0a830;
 
-  /* ── Typography ── */
-  --font-mono: 'JetBrains Mono', 'VT323', ui-monospace, monospace;
-  --font-display: 'Inter', 'Noto Sans SC', sans-serif;
-  --font-body: 'Inter', 'Noto Sans SC', sans-serif;
-  --font-pixel: 'Press Start 2P', monospace;
+  /* ── Semantic ── */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-info: #3b82f6;
 
-  /* ── Type scale ── */
+  /* ── Damage types ── */
+  --color-dmg-physical: #d4d4d8;
+  --color-dmg-fire: #fb923c;
+  --color-dmg-cold: #22d3ee;
+  --color-dmg-lightning: #facc15;
+  --color-dmg-chaos: #c084fc;
+
+  /* ── Rarity colors (10-tier, forge-fire variants) ── */
+  --color-rarity-common: #7a7a7a;
+  --color-rarity-uncommon: #3d8b3d;
+  --color-rarity-rare: #3d5ec4;
+  --color-rarity-legendary: #8e3dc4;
+  --color-rarity-immortal: #c46022;
+  --color-rarity-arcana: #c49022;
+  --color-rarity-beyond: #c4223d;
+  --color-rarity-celestial: #228ec4;
+  --color-rarity-divine: #c4b022;
+  --color-rarity-cosmic: #c422c4;
+
+  /* Rarity text colors (brighter for readability) */
+  --color-rarity-common-text: #b8b8b8;
+  --color-rarity-uncommon-text: #5cb85c;
+  --color-rarity-rare-text: #5c7ee0;
+  --color-rarity-legendary-text: #a85ce0;
+  --color-rarity-immortal-text: #e07830;
+  --color-rarity-arcana-text: #e0a830;
+  --color-rarity-beyond-text: #e03050;
+  --color-rarity-celestial-text: #30a8e0;
+  --color-rarity-divine-text: #e0c830;
+  --color-rarity-cosmic-text: #e030e0;
+
+  /* ── Legacy aliases ── */
+  --color-c: var(--color-rarity-common);
+  --color-u: var(--color-rarity-uncommon);
+  --color-r: var(--color-rarity-rare);
+  --color-l: var(--color-rarity-legendary);
+  --color-i: var(--color-rarity-immortal);
+  --color-a: var(--color-rarity-arcana);
+  --color-b: var(--color-rarity-beyond);
+  --color-ce: var(--color-rarity-celestial);
+  --color-d: var(--color-rarity-divine);
+  --color-co: var(--color-rarity-cosmic);
+  --color-canvas: var(--color-bg-canvas);
+  --color-surface: var(--color-bg-panel);
+  --color-surface-raised: var(--color-bg-surface);
+  --color-surface-hover: var(--color-bg-elevated);
+  --color-hairline: var(--color-border-default);
+  --color-border-soft: var(--color-border-default);
+  --color-border-input: var(--color-border-strong);
+  --color-text-primary-legacy: var(--color-text-primary);
+  --color-text-secondary-legacy: var(--color-text-secondary);
+  --color-text-tertiary: var(--color-text-muted);
+  --color-gold: var(--color-accent);
+  --color-gold-bright: var(--color-accent-bright);
+
+  /* ── Typography scale ── */
   --text-caption: 10px;
+  --text-caption-lg: 11px;
   --text-body-sm: 13px;
   --text-body: 14px;
   --text-body-lg: 16px;
+  --text-ui: 13px;
+  --text-ui-lg: 15px;
   --text-subheading: 18px;
   --text-heading: 24px;
-  --text-heading-lg: 28px;
+  --text-heading-lg: 32px;
+  --text-heading-xl: 42px;
 
-  /* ── Spacing (8px base) ── */
+  /* ── Spacing & Radius ── */
   --spacing-unit: 8px;
-
-  /* ── Border radius ── */
-  --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 12px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
   --radius-full: 9999px;
 
-  /* Legacy compat aliases */
-  --color-bg-primary: var(--color-canvas);
-  --color-bg-secondary: var(--color-surface);
-  --color-bg-tertiary: var(--color-surface-raised);
-  --color-bg-hover: var(--color-surface-hover);
-  --color-border: var(--color-hairline);
-  --color-border-light: var(--color-border-soft);
-  --color-text: var(--color-text-secondary);
-  --color-text-dim: var(--color-text-tertiary);
-  --color-text-muted: var(--color-text-tertiary);
-  --color-gold: var(--color-accent);
-  --color-gold-bright: var(--color-accent-bright);
+  /* ── Shadows ── */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.5);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.6);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.7);
+  --shadow-glow: 0 0 20px rgba(240,168,48,0.12), 0 0 40px rgba(240,168,48,0.04);
+  --shadow-fire: 0 0 20px rgba(232,119,46,0.15), 0 0 50px rgba(232,119,46,0.05);
+  --shadow-inner-stone: inset 0 1px 0 rgba(255,255,255,0.03), inset 0 -2px 4px rgba(0,0,0,0.4);
+
+  /* ── Blur ── */
+  --blur-sm: 8px;
+  --blur-md: 12px;
+  --blur-lg: 16px;
+
+  /* ── Transitions ── */
+  --duration-fast: 0.12s;
+  --duration: 0.18s;
+  --duration-slow: 0.28s;
+  --ease-out: cubic-bezier(0.2, 0.6, 0.2, 1);
 }
 
-/* ── Base ── */
+/* ═══════════════════════════════════════════
+   Base — Dungeon Floor
+   ═══════════════════════════════════════════ */
+
 body {
-  background: var(--color-canvas);
+  background: #080a0f;
+  background-image:
+    /* Stone slab grid lines */
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.008) 0px, rgba(255,255,255,0.008) 1px, transparent 1px, transparent 64px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.008) 0px, rgba(255,255,255,0.008) 1px, transparent 1px, transparent 64px),
+    /* Central forge glow */
+    radial-gradient(ellipse 900px 600px at 50% -10%, rgba(240, 168, 48, 0.06) 0%, transparent 60%),
+    /* Ember scatter — bottom right */
+    radial-gradient(ellipse 500px 400px at 90% 90%, rgba(232, 119, 46, 0.04) 0%, transparent 55%),
+    /* Cold dungeon corner — top left */
+    radial-gradient(ellipse 400px 350px at 10% 20%, rgba(30, 100, 160, 0.02) 0%, transparent 55%),
+    /* Stone grain texture */
+    radial-gradient(ellipse 300px 200px at 60% 70%, rgba(255,255,255,0.01) 0%, transparent 70%);
+  background-attachment: fixed;
   color: var(--color-text-secondary);
   font-family: var(--font-body);
   font-size: var(--text-body);
-  line-height: 1.5;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
 /* ── Pixel art rendering ── */
-img[data-pixel] {
+img[data-pixel],
+.pixel-img,
+img.pixel {
   image-rendering: pixelated;
   image-rendering: crisp-edges;
 }
 
-/* ── Scrollbar ── */
-::-webkit-scrollbar { width: 4px; height: 4px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--color-hairline); border-radius: 0; }
-::-webkit-scrollbar-thumb:hover { background: var(--color-border-input); }
+/* ── Stone-textured scrollbar ── */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #0f1118; border-left: 1px solid #1a1816; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #2a2722 0%, #3d3830 50%, #2a2722 100%);
+  border: 1px solid #1a1816;
+}
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #3d3830 0%, #5a4f3e 50%, #3d3830 100%); }
 
-/* ── Universal card: flat surface, hairline border, no shadow ── */
+/* ═══════════════════════════════════════════
+   Stone Panel System — chiseled slabs
+   ═══════════════════════════════════════════ */
+
+.panel {
+  background:
+    /* Stone grain */
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.004) 2px, rgba(255,255,255,0.004) 3px),
+    var(--color-bg-panel);
+  border: 2px solid;
+  border-color: #2a2722 #1a1816 #1a1816 #2a2722;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.02),
+    inset 0 -2px 4px rgba(0,0,0,0.3),
+    0 2px 4px rgba(0,0,0,0.3);
+}
+.panel-raised {
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.005) 2px, rgba(255,255,255,0.005) 3px),
+    var(--color-bg-surface);
+  border: 2px solid;
+  border-color: #3d3830 #1a1816 #1a1816 #3d3830;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.03),
+    inset 0 -2px 4px rgba(0,0,0,0.35),
+    0 3px 8px rgba(0,0,0,0.4);
+}
+.panel-elevated {
+  background: var(--color-bg-elevated);
+  border: 2px solid;
+  border-color: #4a4238 #1a1816 #1a1816 #4a4238;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.04),
+    inset 0 -2px 6px rgba(0,0,0,0.4),
+    0 4px 12px rgba(0,0,0,0.5);
+}
+.panel-gold {
+  background: var(--color-bg-panel);
+  border: 2px solid var(--color-accent-dim);
+  box-shadow:
+    inset 0 0 12px rgba(240,168,48,0.06),
+    0 0 12px rgba(240,168,48,0.08);
+}
+
+/* ── Stone slab with top rune groove ── */
+.panel-rune {
+  position: relative;
+  border-top: 3px solid #3d3830;
+}
+.panel-rune::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 20px; right: 20px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(240,168,48,0.2) 20%, rgba(240,168,48,0.3) 50%, rgba(240,168,48,0.2) 80%, transparent);
+}
+
+/* ═══════════════════════════════════════════
+   Card System — inventory slots
+   ═══════════════════════════════════════════ */
+
 .card {
-  background: var(--color-canvas);
-  border: 1px solid var(--color-hairline);
-  border-radius: var(--radius-lg);
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.003) 2px, rgba(255,255,255,0.003) 3px),
+    var(--color-bg-panel);
+  border: 2px solid;
+  border-color: #2a2722 #1a1816 #1a1816 #2a2722;
   padding: 16px;
-  transition: border-color 0.15s ease;
+  transition: border-color var(--duration) var(--ease-out),
+              background var(--duration) var(--ease-out),
+              transform var(--duration) var(--ease-out),
+              box-shadow var(--duration) var(--ease-out);
 }
 .card:hover {
+  border-color: #5a4f3e #2a2722 #2a2722 #5a4f3e;
+  background: var(--color-bg-surface);
+  box-shadow:
+    inset 0 0 20px rgba(240,168,48,0.03),
+    0 0 20px rgba(240,168,48,0.06);
+}
+.card-interactive {
+  cursor: pointer;
+}
+.card-interactive:hover {
   border-color: var(--color-accent-dim);
+  background: var(--color-bg-elevated);
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 0 20px rgba(240,168,48,0.04),
+    0 4px 16px rgba(0,0,0,0.5),
+    0 0 24px rgba(240,168,48,0.08);
+}
+.card-interactive:active {
+  transform: translateY(0);
+  box-shadow:
+    inset 0 2px 4px rgba(0,0,0,0.4),
+    0 1px 2px rgba(0,0,0,0.3);
 }
 
-/* ── Data table: compact, terminal-style ── */
+/* ── Rarity card glow (forge-fire variants) ── */
+.card-rarity-c { border-color: #555 #333 #333 #555; }
+.card-rarity-u { border-color: var(--color-rarity-uncommon); box-shadow: inset 0 0 14px rgba(61,139,61,0.1); }
+.card-rarity-r { border-color: var(--color-rarity-rare); box-shadow: inset 0 0 14px rgba(61,94,196,0.1); }
+.card-rarity-l { border-color: var(--color-rarity-legendary); box-shadow: inset 0 0 16px rgba(142,61,196,0.12); }
+.card-rarity-i { border-color: var(--color-rarity-immortal); box-shadow: inset 0 0 16px rgba(196,96,34,0.12); }
+.card-rarity-a { border-color: var(--color-rarity-arcana); box-shadow: inset 0 0 18px rgba(196,144,34,0.15); }
+.card-rarity-b { border-color: var(--color-rarity-beyond); box-shadow: inset 0 0 18px rgba(196,34,61,0.15); }
+.card-rarity-ce { border-color: var(--color-rarity-celestial); box-shadow: inset 0 0 20px rgba(34,142,196,0.18); }
+.card-rarity-d { border-color: var(--color-rarity-divine); box-shadow: inset 0 0 20px rgba(196,176,34,0.2); }
+.card-rarity-co { border-color: var(--color-rarity-cosmic); box-shadow: inset 0 0 22px rgba(196,34,196,0.2); }
+
+/* ═══════════════════════════════════════════
+   Typography Utilities
+   ═══════════════════════════════════════════ */
+
+.text-pixel {
+  font-family: var(--font-pixel);
+  letter-spacing: 0.02em;
+}
+.text-mono {
+  font-family: var(--font-mono);
+}
+.text-body {
+  font-family: var(--font-body);
+}
+
+/* Section header — carved stone inscription */
+.section-title {
+  font-family: var(--font-pixel);
+  font-size: var(--text-heading);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5), 0 0 20px rgba(240,168,48,0.08);
+}
+.section-eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption-lg);
+  font-weight: 500;
+  color: var(--color-ember);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  text-shadow: 0 0 8px rgba(232,119,46,0.3);
+}
+
+/* ═══════════════════════════════════════════
+   Buttons — forged metal
+   ═══════════════════════════════════════════ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 2px solid;
+  border-color: #2a2722 #1a1816 #1a1816 #2a2722;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.02) 0%, transparent 50%),
+    var(--color-bg-panel);
+  color: var(--color-text-secondary);
+  font-size: var(--text-body-sm);
+  font-family: var(--font-pixel);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+  white-space: nowrap;
+  user-select: none;
+}
+.btn:hover {
+  border-color: #5a4f3e #2a2722 #2a2722 #5a4f3e;
+  color: var(--color-text-primary);
+  background: var(--color-bg-surface);
+  box-shadow: 0 0 12px rgba(240,168,48,0.08);
+}
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, rgba(240,168,48,0.3) 0%, rgba(139,94,20,0.3) 100%), var(--color-bg-panel);
+  border-color: var(--color-accent-dim);
+  color: var(--color-accent-bright);
+  font-weight: 600;
+  box-shadow: 0 0 14px rgba(240,168,48,0.1);
+}
+.btn-primary:hover {
+  background: linear-gradient(180deg, rgba(240,168,48,0.4) 0%, rgba(139,94,20,0.4) 100%), var(--color-bg-surface);
+  border-color: var(--color-accent);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(240,168,48,0.2);
+}
+
+.btn-ghost {
+  border-color: transparent;
+  background: transparent;
+}
+.btn-ghost:hover {
+  border-color: #2a2722;
+}
+
+.btn-sm {
+  padding: 4px 10px;
+  font-size: var(--text-caption-lg);
+}
+
+/* ═══════════════════════════════════════════
+   Form Elements — carved stone
+   ═══════════════════════════════════════════ */
+
+.input {
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.002) 2px, rgba(255,255,255,0.002) 3px),
+    var(--color-bg-panel);
+  border: 2px solid;
+  border-color: #1a1816 #2a2722 #2a2722 #1a1816;
+  height: 40px;
+  color: var(--color-text-primary);
+  font-size: var(--text-body);
+  font-family: var(--font-body);
+  transition: border-color var(--duration-fast) var(--ease-out),
+              background var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) var(--ease-out);
+  outline: none;
+  width: 100%;
+  padding: 0 12px;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+}
+.input:focus {
+  border-color: var(--color-accent-dim);
+  background: var(--color-bg-surface);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.3), 0 0 0 3px var(--color-accent-soft), 0 0 16px rgba(240,168,48,0.06);
+}
+.input::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* ═══════════════════════════════════════════
+   Glass Search — scrying pool
+   ═══════════════════════════════════════════ */
+
+.search-glass {
+  background: rgba(22, 25, 32, 0.8);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+  border: 2px solid;
+  border-color: #1a1816 #2a2722 #2a2722 #1a1816;
+  transition: all var(--duration) var(--ease-out);
+}
+.search-glass:focus-within {
+  border-color: var(--color-accent-dim);
+  box-shadow: 0 0 0 3px var(--color-accent-soft), 0 0 20px rgba(240,168,48,0.1);
+  background: rgba(28, 31, 42, 0.9);
+}
+
+.search-glass-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--color-text-primary);
+  font-size: var(--text-body-lg);
+  font-family: var(--font-body);
+  width: 100%;
+  padding: 14px 20px;
+}
+.search-glass-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 639px) {
+  .search-glass {
+    flex-wrap: wrap;
+  }
+
+  .search-glass > .btn-primary {
+    min-height: 44px;
+    min-width: 88px;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   Data Table — strategist's ledger
+   ═══════════════════════════════════════════ */
+
 .data-table {
   width: 100%;
   border-collapse: collapse;
   font-size: var(--text-body-sm);
   font-family: var(--font-mono);
 }
-.data-table th {
-  padding: 8px 12px;
-  border-bottom: 1px solid var(--color-hairline);
-  color: var(--color-text-tertiary);
-  font-size: var(--text-caption);
+.data-table thead th {
+  padding: 10px 14px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.02) 0%, transparent 100%),
+    var(--color-bg-surface);
+  border-bottom: 2px solid #3d3830;
+  border-top: 1px solid #1a1816;
+  color: var(--color-accent);
+  font-family: var(--font-pixel);
+  font-size: var(--text-caption-lg);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   text-align: left;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  text-shadow: 0 0 8px rgba(240,168,48,0.15);
 }
-.data-table td {
-  padding: 10px 12px;
-  border-bottom: 1px solid var(--color-hairline);
+.data-table tbody td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #1a1816;
   color: var(--color-text-secondary);
 }
-.data-table tr:hover td {
-  background: var(--color-surface);
+.data-table tbody tr:hover td {
+  background: rgba(240,168,48,0.03);
+  color: var(--color-text-primary);
 }
 .data-table .numeric {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-/* ── Pill badge ── */
+/* ═══════════════════════════════════════════
+   Badges & Pills — engraved tokens
+   ═══════════════════════════════════════════ */
+
 .pill {
   display: inline-flex;
   align-items: center;
   gap: 4px;
   padding: 3px 10px;
-  border: 1px solid var(--color-hairline);
-  border-radius: var(--radius-full);
+  border: 2px solid;
+  border-color: #2a2722 #1a1816 #1a1816 #2a2722;
   font-size: var(--text-caption);
   font-family: var(--font-mono);
   color: var(--color-text-secondary);
-  background: transparent;
-  transition: all 0.15s ease;
+  background: var(--color-bg-panel);
+  transition: all var(--duration-fast) var(--ease-out);
 }
 .pill.active {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
-  color: #000;
-  font-weight: 500;
+  background: linear-gradient(180deg, rgba(240,168,48,0.25) 0%, rgba(139,94,20,0.25) 100%), var(--color-bg-panel);
+  border-color: var(--color-accent-dim);
+  color: var(--color-accent-bright);
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(240,168,48,0.08);
 }
 .pill:hover:not(.active) {
-  border-color: var(--color-accent-dim);
+  border-color: #5a4f3e;
   color: var(--color-text-primary);
 }
 
-/* ── Filter bar ── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px;
+  border: 2px solid;
+  border-color: #2a2722 #1a1816 #1a1816 #2a2722;
+  font-family: var(--font-mono);
+  font-size: var(--text-caption-lg);
+  color: var(--color-text-secondary);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  background: var(--color-bg-panel);
+}
+
+/* ═══════════════════════════════════════════
+   Filter Bar — rune-stone toggles
+   ═══════════════════════════════════════════ */
+
 .filter-bar {
   display: flex;
   flex-wrap: wrap;
@@ -173,76 +576,337 @@ img[data-pixel] {
   align-items: center;
   padding: 8px 0;
 }
-
-/* ── Section divider ── */
-.section-divider {
-  border: 0;
-  border-top: 1px solid var(--color-hairline);
-  margin: 32px 0;
-}
-
-/* ── Ghost button ── */
-.btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
-  border: 1px solid var(--color-hairline);
-  border-radius: var(--radius-md);
-  background: transparent;
-  color: var(--color-text-secondary);
-  font-size: var(--text-body-sm);
+.filter-item {
   font-family: var(--font-mono);
+  font-size: var(--text-caption-lg);
+  letter-spacing: 0.04em;
+  background: var(--color-bg-panel);
+  border: 2px solid;
+  border-color: #2a2722 #1a1816 #1a1816 #2a2722;
+  color: var(--color-text-secondary);
   cursor: pointer;
-  transition: all 0.15s ease;
+  white-space: nowrap;
+  padding: 5px 10px;
+  transition: all var(--duration-fast) var(--ease-out);
 }
-.btn-ghost:hover {
-  border-color: var(--color-accent-dim);
+.filter-item:hover {
+  border-color: #5a4f3e;
   color: var(--color-text-primary);
 }
+.filter-item.active {
+  background: linear-gradient(180deg, rgba(240,168,48,0.12) 0%, transparent 100%), var(--color-bg-panel);
+  border-color: var(--color-accent-dim);
+  color: var(--color-accent-bright);
+  box-shadow: 0 0 10px rgba(240,168,48,0.06);
+}
 
-/* ── Primary button (single accent voice) ── */
-.btn-primary {
+/* ═══════════════════════════════════════════
+   Dividers — chiseled stone seams
+   ═══════════════════════════════════════════ */
+
+.section-divider {
+  border: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #2a2722 20%, #3d3830 50%, #2a2722 80%, transparent);
+  margin: 32px 0;
+}
+.section-divider-gold {
+  background: linear-gradient(90deg, transparent, rgba(240,168,48,0.15) 15%, rgba(240,168,48,0.3) 50%, rgba(240,168,48,0.15) 85%, transparent);
+}
+
+/* ── Ornamental rune divider ── */
+.divider-rune {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 28px 0;
+  color: var(--color-accent-dim);
+  font-size: 10px;
+}
+.divider-rune::before,
+.divider-rune::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #2a2722 30%, #3d3830 70%, transparent);
+}
+.divider-rune::after {
+  background: linear-gradient(90deg, transparent, #2a2722 30%, #3d3830 70%, transparent);
+}
+
+/* ═══════════════════════════════════════════
+   Slot Cards — equipment sockets
+   ═══════════════════════════════════════════ */
+
+.slot-card {
+  background: var(--color-bg-elevated);
+  border: 2px solid;
+  border-color: #2a2722 #1a1816 #1a1816 #2a2722;
+  transition: border-color var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) var(--ease-out);
+}
+.slot-card:hover {
+  border-color: var(--color-accent-dim);
+  box-shadow: 0 0 12px rgba(240,168,48,0.08);
+}
+
+/* Slot rarity borders */
+.slot-c { border-color: #555; }
+.slot-u { border-color: var(--color-rarity-uncommon); box-shadow: inset 0 0 10px rgba(61,139,61,0.12); }
+.slot-r { border-color: var(--color-rarity-rare); box-shadow: inset 0 0 10px rgba(61,94,196,0.12); }
+.slot-l { border-color: var(--color-rarity-legendary); box-shadow: inset 0 0 12px rgba(142,61,196,0.15); }
+.slot-i { border-color: var(--color-rarity-immortal); box-shadow: inset 0 0 12px rgba(196,96,34,0.15); }
+.slot-a { border-color: var(--color-rarity-arcana); box-shadow: inset 0 0 14px rgba(196,144,34,0.18); }
+.slot-b { border-color: var(--color-rarity-beyond); box-shadow: inset 0 0 14px rgba(196,34,61,0.18); }
+.slot-ce { border-color: var(--color-rarity-celestial); box-shadow: inset 0 0 16px rgba(34,142,196,0.2); }
+.slot-d { border-color: var(--color-rarity-divine); box-shadow: inset 0 0 16px rgba(196,176,34,0.25); }
+.slot-co { border-color: var(--color-rarity-cosmic); box-shadow: inset 0 0 18px rgba(196,34,196,0.25); }
+
+/* ═══════════════════════════════════════════
+   Stat Tiles — carved stone tablets
+   ═══════════════════════════════════════════ */
+
+.stat-tile {
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.002) 2px, rgba(255,255,255,0.002) 3px),
+    var(--color-bg-panel);
+  border: 2px solid;
+  border-color: #2a2722 #1a1816 #1a1816 #2a2722;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 14px;
+  box-shadow: inset 0 -2px 4px rgba(0,0,0,0.3);
+}
+.stat-tile .stat-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+.stat-tile .stat-value {
+  font-family: var(--font-pixel);
+  font-size: var(--text-heading);
+  font-weight: 600;
+  color: var(--color-accent-bright);
+  text-shadow: 0 0 10px rgba(240,168,48,0.15);
+}
+
+/* ═══════════════════════════════════════════
+   Glass Header — fortress gate
+   ═══════════════════════════════════════════ */
+
+.header-glass {
+  background: rgba(8, 10, 15, 0.92);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+  border-bottom: 3px solid;
+  border-image: linear-gradient(90deg, transparent 0%, #2a2722 15%, #3d3830 50%, #2a2722 85%, transparent 100%) 1;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.5);
+}
+
+/* ═══════════════════════════════════════════
+   Navigation — stone tablet tabs
+   ═══════════════════════════════════════════ */
+
+.nav-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 7px 16px;
-  border: 0;
-  border-radius: var(--radius-md);
-  background: var(--color-accent);
-  color: #000;
-  font-size: var(--text-body-sm);
+  padding: 6px 10px;
+  font-family: var(--font-pixel);
+  font-size: var(--text-ui);
+  color: var(--color-text-secondary);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: all var(--duration-fast) var(--ease-out);
+  border-bottom: 3px solid transparent;
+}
+.nav-link:hover {
+  color: var(--color-text-primary);
+  border-bottom-color: #3d3830;
+}
+.nav-link-active {
+  color: var(--color-accent-bright);
+  border-bottom-color: var(--color-accent);
+  text-shadow: 0 0 10px rgba(240,168,48,0.2);
+}
+
+/* ═══════════════════════════════════════════
+   Torchlight Animations
+   ═══════════════════════════════════════════ */
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes torch-flicker {
+  0%, 100% { opacity: 0.6; }
+  25% { opacity: 0.75; }
+  50% { opacity: 0.55; }
+  75% { opacity: 0.8; }
+}
+@keyframes ember-float {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  20% { opacity: 0.6; }
+  80% { opacity: 0.3; }
+  100% { transform: translateY(-24px) translateX(8px); opacity: 0; }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 4px rgba(240, 168, 48, 0.15); }
+  50% { box-shadow: 0 0 18px rgba(240, 168, 48, 0.35); }
+}
+@keyframes pulse-fire {
+  0%, 100% { box-shadow: 0 0 6px rgba(232, 119, 46, 0.2), 0 0 12px rgba(240, 74, 42, 0.08); }
+  50% { box-shadow: 0 0 14px rgba(232, 119, 46, 0.35), 0 0 28px rgba(240, 74, 42, 0.15); }
+}
+@keyframes skeleton {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+@keyframes stone-glow {
+  0%, 100% { border-color: #2a2722; }
+  50% { border-color: #3d3830; }
+}
+
+.animate-fade-in-up { animation: fade-in-up 0.35s var(--ease-out) both; }
+.animate-fade-in { animation: fade-in 0.25s var(--ease-out) both; }
+.animate-scale-in { animation: scale-in 0.2s var(--ease-out) both; }
+.animate-slide-in-right { animation: slide-in-right 0.25s var(--ease-out) both; }
+
+/* Torch-flicker glow on hover */
+.hover-torch {
+  transition: box-shadow var(--duration) var(--ease-out), border-color var(--duration) var(--ease-out);
+}
+.hover-torch:hover {
+  border-color: var(--color-accent-dim);
+  box-shadow: 0 0 16px rgba(240,168,48,0.12), 0 0 32px rgba(232,119,46,0.06);
+  animation: torch-flicker 2s ease-in-out infinite;
+}
+
+/* Fire pulse for call-to-action elements */
+.fire-pulse {
+  animation: pulse-fire 3s ease-in-out infinite;
+}
+
+/* Stagger children */
+.stagger-children > * {
+  opacity: 0;
+  animation: fade-in-up 0.35s var(--ease-out) forwards;
+}
+.stagger-children > *:nth-child(1) { animation-delay: 0.03s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.06s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.09s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.12s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.15s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.18s; }
+.stagger-children > *:nth-child(7) { animation-delay: 0.21s; }
+.stagger-children > *:nth-child(8) { animation-delay: 0.24s; }
+
+/* ═══════════════════════════════════════════
+   Skeleton Loading
+   ═══════════════════════════════════════════ */
+
+.skeleton {
+  background: linear-gradient(90deg,
+    var(--color-bg-panel) 0%,
+    #1f2430 40%,
+    var(--color-bg-panel) 80%
+  );
+  background-size: 200% 100%;
+  animation: skeleton 1.6s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════
+   Sprite Animation (hero animations)
+   ═══════════════════════════════════════════ */
+
+.anim-sprite {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  animation: anim-sprite-play var(--duration, 1s) steps(var(--frames, 8)) infinite;
+  will-change: background-position;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+@keyframes anim-sprite-play {
+  from { background-position: 0 0; }
+  to { background-position: var(--total-w, -100%) 0; }
+}
+
+/* ═══════════════════════════════════════════
+   Tooltip / Popover
+   ═══════════════════════════════════════════ */
+
+.tooltip-content {
+  background: var(--color-bg-elevated);
+  border: 2px solid;
+  border-color: #3d3830 #1a1816 #1a1816 #3d3830;
+  padding: 8px 12px;
   font-family: var(--font-mono);
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.15s ease;
-}
-.btn-primary:hover {
-  background: var(--color-accent-bright);
+  font-size: var(--text-caption-lg);
+  color: var(--color-text-secondary);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  z-index: 100;
 }
 
-/* === Game-authentic components === */
+/* ═══════════════════════════════════════════
+   Grade Colors (text only, for inline use)
+   ═══════════════════════════════════════════ */
 
-/* Inventory slot card */
-.slot-card {
-  background: #18181b;
-  border: 1px solid #2a2a2e;
-  border-radius: 2px;
-  transition: border-color 0.15s;
+.text-grade-common { color: var(--color-rarity-common-text); }
+.text-grade-uncommon { color: var(--color-rarity-uncommon-text); }
+.text-grade-rare { color: var(--color-rarity-rare-text); }
+.text-grade-legendary { color: var(--color-rarity-legendary-text); }
+.text-grade-immortal { color: var(--color-rarity-immortal-text); }
+.text-grade-arcana { color: var(--color-rarity-arcana-text); }
+.text-grade-beyond { color: var(--color-rarity-beyond-text); }
+.text-grade-celestial { color: var(--color-rarity-celestial-text); }
+.text-grade-divine { color: var(--color-rarity-divine-text); }
+.text-grade-cosmic { color: var(--color-rarity-cosmic-text); }
+
+/* ═══════════════════════════════════════════
+   Adventure Manual — Page Border Overlay
+   ═══════════════════════════════════════════ */
+
+/* Corner ornaments for main content area */
+.page-frame {
+  position: relative;
 }
-.slot-card:hover {
-  border-color: #555;
+.page-frame::before,
+.page-frame::after {
+  content: '';
+  position: fixed;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.15;
 }
-
-/* Rarity border glow — subtle, not neon */
-.slot-c { border-color: #555; }
-.slot-u { border-color: #2a5a2a; box-shadow: inset 0 0 8px rgba(30,120,30,0.15); }
-.slot-r { border-color: #2a2a5a; box-shadow: inset 0 0 8px rgba(30,30,120,0.15); }
-.slot-l { border-color: #4a2a6a; box-shadow: inset 0 0 10px rgba(80,30,120,0.2); }
-.slot-i { border-color: #5a3a1a; box-shadow: inset 0 0 10px rgba(160,80,30,0.2); }
-.slot-a { border-color: #5a4a1a; box-shadow: inset 0 0 12px rgba(180,140,30,0.2); }
-.slot-b { border-color: #5a1a2a; box-shadow: inset 0 0 12px rgba(180,30,60,0.25); }
-.slot-ce { border-color: #1a3a5a; box-shadow: inset 0 0 14px rgba(30,140,180,0.25); }
-.slot-d { border-color: #5a4a0a; box-shadow: inset 0 0 14px rgba(200,160,20,0.3); }
-.slot-co { border-color: #5a1a5a; box-shadow: inset 0 0 16px rgba(180,30,180,0.3); }
-
+/* Top-left corner stone */
+.page-frame::before {
+  top: 60px; left: 8px;
+  width: 40px; height: 40px;
+  border-top: 2px solid #3d3830;
+  border-left: 2px solid #3d3830;
+}
+/* Top-right corner stone */
+.page-frame::after {
+  top: 60px; right: 8px;
+  width: 40px; height: 40px;
+  border-top: 2px solid #3d3830;
+  border-right: 2px solid #3d3830;
+}

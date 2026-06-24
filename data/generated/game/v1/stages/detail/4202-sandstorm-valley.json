@@ -1,0 +1,53 @@
+{
+  "key": 4202,
+  "act": 2,
+  "no": 2,
+  "level": 86,
+  "type": "NORMAL",
+  "difficulty": "TORMENT",
+  "name": {
+    "zh-Hans": "沙风暴谷",
+    "zh-Hant": "沙風暴谷",
+    "en-US": "Sandstorm Valley",
+    "fr-FR": "Vallée de la Tempête de Sable",
+    "de-DE": "Sandsturmtal",
+    "id-ID": "Lembah Badai Pasir",
+    "ja-JP": "砂嵐の谷",
+    "ko-KR": "모래바람 골짜기",
+    "pl-PL": "Dolina Burzy Piaskowej",
+    "pt-BR": "Vale da Tempestade de Areia",
+    "ru-RU": "Долина песчаной бури",
+    "es-ES": "Valle de la Tormenta de Arena",
+    "th-TH": "หุบเขาพายุทราย",
+    "tr-TR": "Kum Fırtınası Vadisi",
+    "uk-UA": "Долина піщаної бурі",
+    "vi-VN": "Thung lũng Bão Cát"
+  },
+  "waves": 30,
+  "monsterCount": 4,
+  "kills": 570,
+  "goldPerClear": 284730,
+  "expPerClear": 5623910,
+  "boss": {
+    "name": {
+      "zh-Hans": "鼠族战士",
+      "zh-Hant": "鼠族戰士",
+      "en-US": "Ratfolk Warrior",
+      "fr-FR": "Guerrier Ratte",
+      "de-DE": "Rattenvolk-Krieger",
+      "id-ID": "Prajurit Tikus",
+      "ja-JP": "ラット族戦士",
+      "ko-KR": "쥐족 전사",
+      "pl-PL": "Wojownik Szczurów",
+      "pt-BR": "Guerreiro Ratuno",
+      "ru-RU": "Воин крысолюдов",
+      "es-ES": "Guerrero Ratuno",
+      "th-TH": "นักรบเผ่าหนู",
+      "tr-TR": "Sıçan Savaşçısı",
+      "uk-UA": "Воїн щуролюдів",
+      "vi-VN": "Chiến Binh Chuột"
+    },
+    "portrait": "/game/monsters/WarriorRatRace/WarriorRatRace_Idle_character_2.png"
+  },
+  "slug": "4202-sandstorm-valley"
+}

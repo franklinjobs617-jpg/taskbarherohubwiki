@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { SafeImage } from "@/components/ui/safe-image";
 import Link from "next/link";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
@@ -91,11 +91,11 @@ export default async function CubePage({ params }: Props) {
                 <h2 className="text-base font-semibold text-white">
                   {mt[locale as keyof typeof mt] ?? mt.en}
                 </h2>
-                <span className="text-[11px] text-[#6c6c6c]">
+                <span className="text-[11px] text-text-muted">
                   {matItems.length} {isZh ? "种材料" : "materials"}
                 </span>
               </div>
-              <p className="mb-3 text-xs leading-6 text-[#9d9d9d]">
+              <p className="mb-3 text-xs leading-6 text-text-secondary">
                 {mt[`desc_${locale === "zh" ? "zh" : locale === "ja" ? "en" : "en"}` as keyof typeof mt] ?? mt.desc_en}
               </p>
 
@@ -106,24 +106,24 @@ export default async function CubePage({ params }: Props) {
                   <Link
                     key={item.slug}
                     href={`/${locale}/items/${item.slug}`}
-                    className="flex items-center gap-2 rounded-sm border border-[#27272a] bg-[#0d0d0d] px-3 py-1.5 text-xs transition-colors hover:border-amber-600/30 group"
+                    className="flex items-center gap-2 rounded-sm border border-border-default bg-bg-panel px-3 py-1.5 text-xs transition-colors hover:border-accent-dim group"
                   >
-                    <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-sm border border-[#27272a] bg-[#0a0a0a]">
+                    <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-sm border border-border-default bg-bg-canvas">
                       {iconSrc ? (
-                        <Image src={iconSrc} alt="" width={20} height={20} className="object-contain" unoptimized />
+                        <SafeImage src={iconSrc} alt="" width={20} height={20} className="object-contain" unoptimized />
                       ) : (
-                        <span className="text-[8px] text-[#555]">-</span>
+                        <span className="text-[8px] text-text-muted">-</span>
                       )}
                     </div>
-                    <span className="truncate text-[#9d9d9d] group-hover:text-white transition-colors">
+                    <span className="truncate text-text-secondary group-hover:text-text-primary transition-colors">
                       {item.name?.[locale === "zh" ? "zh-Hans" : locale === "ja" ? "ja-JP" : "en-US"] ?? item.slug}
                     </span>
-                    <span className="ml-auto shrink-0 text-[10px] text-[#555]">{item.grade}</span>
+                    <span className="ml-auto shrink-0 text-[10px] text-text-muted">{item.grade}</span>
                   </Link>
                   );
                 })}
                 {matItems.length > 12 && (
-                  <div className="flex items-center justify-center rounded-sm border border-dashed border-[#27272a] px-3 py-1.5 text-[10px] text-[#555]">
+                  <div className="flex items-center justify-center rounded-sm border border-dashed border-border-default px-3 py-1.5 text-[10px] text-text-muted">
                     +{matItems.length - 12} {isZh ? "更多" : "more"}
                   </div>
                 )}
@@ -134,27 +134,27 @@ export default async function CubePage({ params }: Props) {
       </div>
 
       {/* Quick links */}
-      <div className="mt-8 grid gap-2 border-t border-[#27272a] pt-6 sm:grid-cols-3">
+      <div className="mt-8 grid gap-2 border-t border-border-default pt-6 sm:grid-cols-3">
         <Link
           href={`/${locale}/effects`}
-          className="rounded-sm border border-[#27272a] bg-[#0d0d0d] p-3 text-xs transition-colors hover:border-amber-600/30"
+          className="rounded-sm border border-border-default bg-bg-panel p-3 text-xs transition-colors hover:border-accent-dim"
         >
           <p className="font-medium text-white">{isZh ? "材料效果速查" : "Material Effects"}</p>
-          <p className="mt-1 text-[#6c6c6c]">{isZh ? "查看每种材料的具体属性加成" : "Check specific stat bonuses per material"}</p>
+          <p className="mt-1 text-text-muted">{isZh ? "查看每种材料的具体属性加成" : "Check specific stat bonuses per material"}</p>
         </Link>
         <Link
           href={`/${locale}/guides/cube/cube-materials`}
-          className="rounded-sm border border-[#27272a] bg-[#0d0d0d] p-3 text-xs transition-colors hover:border-amber-600/30"
+          className="rounded-sm border border-border-default bg-bg-panel p-3 text-xs transition-colors hover:border-accent-dim"
         >
           <p className="font-medium text-white">{isZh ? "Cube 材料指南" : "Cube Materials Guide"}</p>
-          <p className="mt-1 text-[#6c6c6c]">{isZh ? "深度攻略：如何选择和保留材料" : "In-depth guide on material selection"}</p>
+          <p className="mt-1 text-text-muted">{isZh ? "深度攻略：如何选择和保留材料" : "In-depth guide on material selection"}</p>
         </Link>
         <Link
           href={`/${locale}/tools/farming-calculator`}
-          className="rounded-sm border border-[#27272a] bg-[#0d0d0d] p-3 text-xs transition-colors hover:border-amber-600/30"
+          className="rounded-sm border border-border-default bg-bg-panel p-3 text-xs transition-colors hover:border-accent-dim"
         >
           <p className="font-medium text-white">{isZh ? "Farming 计算器" : "Farming Calculator"}</p>
-          <p className="mt-1 text-[#6c6c6c]">{isZh ? "查找材料的最佳掉落关卡" : "Find best stages to farm materials"}</p>
+          <p className="mt-1 text-text-muted">{isZh ? "查找材料的最佳掉落关卡" : "Find best stages to farm materials"}</p>
         </Link>
       </div>
     </PageShell>

@@ -1,0 +1,598 @@
+{
+  "101": {
+    "hero_id": 101,
+    "class": "Knight",
+    "animations": [
+      {
+        "tag": "Idle",
+        "base": "Knight_Idle",
+        "frames": 6,
+        "size": [
+          31,
+          23
+        ],
+        "sheet": "animations/sheets/Knight_Idle.png"
+      },
+      {
+        "tag": "Walk",
+        "base": "Knight_Walk",
+        "frames": 6,
+        "size": [
+          33,
+          23
+        ],
+        "sheet": "animations/sheets/Knight_Walk.png"
+      },
+      {
+        "tag": "Attack",
+        "base": "Knight_BaseAttack1_merged",
+        "frames": 7,
+        "size": [
+          36,
+          39
+        ],
+        "sheet": "animations/sheets/Knight_BaseAttack1_merged.png"
+      },
+      {
+        "tag": "Attack",
+        "base": "Knight_BaseAttack2_merged",
+        "frames": 6,
+        "size": [
+          44,
+          33
+        ],
+        "sheet": "animations/sheets/Knight_BaseAttack2_merged.png"
+      },
+      {
+        "tag": "Attack",
+        "base": "Knight_BaseAttack3_merged",
+        "frames": 8,
+        "size": [
+          43,
+          28
+        ],
+        "sheet": "animations/sheets/Knight_BaseAttack3_merged.png"
+      },
+      {
+        "tag": "Skill1",
+        "base": "Knight_Skill1_merged",
+        "frames": 6,
+        "size": [
+          96,
+          37
+        ],
+        "sheet": "animations/sheets/Knight_Skill1_merged.png"
+      },
+      {
+        "tag": "Skill2",
+        "base": "Knight_Skill2_merged",
+        "frames": 12,
+        "size": [
+          39,
+          46
+        ],
+        "sheet": "animations/sheets/Knight_Skill2_merged.png"
+      },
+      {
+        "tag": "Skill3",
+        "base": "Knight_Skill3_merged",
+        "frames": 7,
+        "size": [
+          36,
+          39
+        ],
+        "sheet": "animations/sheets/Knight_Skill3_merged.png"
+      },
+      {
+        "tag": "Skill4",
+        "base": "Knight_Skill4_merged",
+        "frames": 17,
+        "size": [
+          92,
+          67
+        ],
+        "sheet": "animations/sheets/Knight_Skill4_merged.png"
+      },
+      {
+        "tag": "Skill5",
+        "base": "Knight_Skill5_merged",
+        "frames": 20,
+        "size": [
+          59,
+          40
+        ],
+        "sheet": "animations/sheets/Knight_Skill5_merged.png"
+      }
+    ],
+    "default": {
+      "tag": "Idle",
+      "base": "Knight_Idle",
+      "frames": 6,
+      "size": [
+        31,
+        23
+      ],
+      "sheet": "animations/sheets/Knight_Idle.png"
+    }
+  },
+  "201": {
+    "hero_id": 201,
+    "class": "Ranger",
+    "animations": [
+      {
+        "tag": "Idle",
+        "base": "Ranger_Idle",
+        "frames": 6,
+        "size": [
+          27,
+          23
+        ],
+        "sheet": "animations/sheets/Ranger_Idle.png"
+      },
+      {
+        "tag": "Walk",
+        "base": "Ranger_Walk",
+        "frames": 6,
+        "size": [
+          27,
+          23
+        ],
+        "sheet": "animations/sheets/Ranger_Walk.png"
+      },
+      {
+        "tag": "Attack",
+        "base": "Ranger_BaseAttack1_merged",
+        "frames": 6,
+        "size": [
+          38,
+          22
+        ],
+        "sheet": "animations/sheets/Ranger_BaseAttack1_merged.png"
+      },
+      {
+        "tag": "Attack",
+        "base": "Ranger_BaseAttack2_merged",
+        "frames": 6,
+        "size": [
+          38,
+          22
+        ],
+        "sheet": "animations/sheets/Ranger_BaseAttack2_merged.png"
+      },
+      {
+        "tag": "Attack",
+        "base": "Ranger_BaseAttack3_merged",
+        "frames": 6,
+        "size": [
+          38,
+          22
+        ],
+        "sheet": "animations/sheets/Ranger_BaseAttack3_merged.png"
+      },
+      {
+        "tag": "Dead",
+        "base": "Ranger_Dead_character",
+        "frames": 14,
+        "size": [
+          25,
+          26
+        ],
+        "sheet": "animations/sheets/Ranger_Dead_character.png"
+      },
+      {
+        "tag": "Skill1",
+        "base": "Ranger_Skill1_merged",
+        "frames": 8,
+        "size": [
+          44,
+          22
+        ],
+        "sheet": "animations/sheets/Ranger_Skill1_merged.png"
+      },
+      {
+        "tag": "Skill2",
+        "base": "Ranger_Skill2_merged",
+        "frames": 11,
+        "size": [
+          48,
+          23
+        ],
+        "sheet": "animations/sheets/Ranger_Skill2_merged.png"
+      },
+      {
+        "tag": "Skill3",
+        "base": "Ranger_Skill3_merged",
+        "frames": 18,
+        "size": [
+          35,
+          43
+        ],
+        "sheet": "animations/sheets/Ranger_Skill3_merged.png"
+      },
+      {
+        "tag": "Skill4",
+        "base": "Ranger_Skill4_merged",
+        "frames": 12,
+        "size": [
+          38,
+          42
+        ],
+        "sheet": "animations/sheets/Ranger_Skill4_merged.png"
+      },
+      {
+        "tag": "Skill5",
+        "base": "Ranger_Skill5_merged",
+        "frames": 17,
+        "size": [
+          96,
+          26
+        ],
+        "sheet": "animations/sheets/Ranger_Skill5_merged.png"
+      }
+    ],
+    "default": {
+      "tag": "Idle",
+      "base": "Ranger_Idle",
+      "frames": 6,
+      "size": [
+        27,
+        23
+      ],
+      "sheet": "animations/sheets/Ranger_Idle.png"
+    }
+  },
+  "301": {
+    "hero_id": 301,
+    "class": "Sorcerer",
+    "animations": [
+      {
+        "tag": "Idle",
+        "base": "Sorcerer_Idle_Full",
+        "frames": 6,
+        "size": [
+          25,
+          23
+        ],
+        "sheet": "animations/sheets/Sorcerer_Idle_Full.png"
+      },
+      {
+        "tag": "Walk",
+        "base": "Sorcerer_Walk_Full",
+        "frames": 6,
+        "size": [
+          25,
+          23
+        ],
+        "sheet": "animations/sheets/Sorcerer_Walk_Full.png"
+      },
+      {
+        "tag": "Attack",
+        "base": "Sorcerer_BaseAttack1_character",
+        "frames": 6,
+        "size": [
+          34,
+          23
+        ],
+        "sheet": "animations/sheets/Sorcerer_BaseAttack1_character.png"
+      },
+      {
+        "tag": "Attack",
+        "base": "Sorcerer_BaseAttack2_character",
+        "frames": 6,
+        "size": [
+          33,
+          27
+        ],
+        "sheet": "animations/sheets/Sorcerer_BaseAttack2_character.png"
+      },
+      {
+        "tag": "Dead",
+        "base": "Sorcerer_Dead_character",
+        "frames": 15,
+        "size": [
+          42,
+          24
+        ],
+        "sheet": "animations/sheets/Sorcerer_Dead_character.png"
+      },
+      {
+        "tag": "Skill1",
+        "base": "Sorcerer_Skill1_merged",
+        "frames": 12,
+        "size": [
+          43,
+          35
+        ],
+        "sheet": "animations/sheets/Sorcerer_Skill1_merged.png"
+      },
+      {
+        "tag": "Skill3",
+        "base": "Sorcerer_Skill3_merged",
+        "frames": 8,
+        "size": [
+          37,
+          23
+        ],
+        "sheet": "animations/sheets/Sorcerer_Skill3_merged.png"
+      },
+      {
+        "tag": "Skill5",
+        "base": "Sorcerer_Skill5_merged",
+        "frames": 10,
+        "size": [
+          53,
+          28
+        ],
+        "sheet": "animations/sheets/Sorcerer_Skill5_merged.png"
+      }
+    ],
+    "default": {
+      "tag": "Idle",
+      "base": "Sorcerer_Idle_Full",
+      "frames": 6,
+      "size": [
+        25,
+        23
+      ],
+      "sheet": "animations/sheets/Sorcerer_Idle_Full.png"
+    }
+  },
+  "401": {
+    "hero_id": 401,
+    "class": "Priest",
+    "animations": [
+      {
+        "tag": "Idle",
+        "base": "Priest_Idle_character",
+        "frames": 6,
+        "size": [
+          24,
+          23
+        ],
+        "sheet": "animations/sheets/Priest_Idle_character.png"
+      },
+      {
+        "tag": "Walk",
+        "base": "Priest_Move_character",
+        "frames": 6,
+        "size": [
+          25,
+          23
+        ],
+        "sheet": "animations/sheets/Priest_Move_character.png"
+      },
+      {
+        "tag": "Run",
+        "base": "Priest_Run_character",
+        "frames": 6,
+        "size": [
+          22,
+          24
+        ],
+        "sheet": "animations/sheets/Priest_Run_character.png"
+      },
+      {
+        "tag": "Attack",
+        "base": "Priest_BaseAttack1_merged",
+        "frames": 6,
+        "size": [
+          37,
+          34
+        ],
+        "sheet": "animations/sheets/Priest_BaseAttack1_merged.png"
+      },
+      {
+        "tag": "Attack",
+        "base": "Priest_BaseAttack2_merged",
+        "frames": 6,
+        "size": [
+          40,
+          25
+        ],
+        "sheet": "animations/sheets/Priest_BaseAttack2_merged.png"
+      },
+      {
+        "tag": "Attack",
+        "base": "Priest_BaseAttack3_merged",
+        "frames": 6,
+        "size": [
+          42,
+          24
+        ],
+        "sheet": "animations/sheets/Priest_BaseAttack3_merged.png"
+      },
+      {
+        "tag": "Dead",
+        "base": "Priest_Dead_character",
+        "frames": 15,
+        "size": [
+          34,
+          23
+        ],
+        "sheet": "animations/sheets/Priest_Dead_character.png"
+      },
+      {
+        "tag": "Skill1",
+        "base": "Priest_Skill1_merged",
+        "frames": 14,
+        "size": [
+          29,
+          29
+        ],
+        "sheet": "animations/sheets/Priest_Skill1_merged.png"
+      },
+      {
+        "tag": "Skill3",
+        "base": "Priest_Skill3_merged",
+        "frames": 8,
+        "size": [
+          56,
+          65
+        ],
+        "sheet": "animations/sheets/Priest_Skill3_merged.png"
+      },
+      {
+        "tag": "Skill4",
+        "base": "Priest_Skill4_merged",
+        "frames": 9,
+        "size": [
+          37,
+          34
+        ],
+        "sheet": "animations/sheets/Priest_Skill4_merged.png"
+      },
+      {
+        "tag": "Skill5",
+        "base": "Priest_Skill5_merged",
+        "frames": 14,
+        "size": [
+          27,
+          26
+        ],
+        "sheet": "animations/sheets/Priest_Skill5_merged.png"
+      }
+    ],
+    "default": {
+      "tag": "Idle",
+      "base": "Priest_Idle_character",
+      "frames": 6,
+      "size": [
+        24,
+        23
+      ],
+      "sheet": "animations/sheets/Priest_Idle_character.png"
+    }
+  },
+  "501": {
+    "hero_id": 501,
+    "class": "Hunter",
+    "animations": [
+      {
+        "tag": "Attack",
+        "base": "Hunter_BaseAttack1_merged",
+        "frames": 6,
+        "size": [
+          43,
+          22
+        ],
+        "sheet": "animations/sheets/Hunter_BaseAttack1_merged.png"
+      },
+      {
+        "tag": "Attack",
+        "base": "Hunter_BaseAttack2_merged",
+        "frames": 6,
+        "size": [
+          43,
+          23
+        ],
+        "sheet": "animations/sheets/Hunter_BaseAttack2_merged.png"
+      },
+      {
+        "tag": "Attack",
+        "base": "Hunter_BaseAttack3_merged",
+        "frames": 11,
+        "size": [
+          45,
+          23
+        ],
+        "sheet": "animations/sheets/Hunter_BaseAttack3_merged.png"
+      },
+      {
+        "tag": "Dead",
+        "base": "Hunter_Dead_character",
+        "frames": 14,
+        "size": [
+          40,
+          24
+        ],
+        "sheet": "animations/sheets/Hunter_Dead_character.png"
+      },
+      {
+        "tag": "Skill2",
+        "base": "Hunter_Skill2_merged",
+        "frames": 7,
+        "size": [
+          29,
+          22
+        ],
+        "sheet": "animations/sheets/Hunter_Skill2_merged.png"
+      },
+      {
+        "tag": "Skill3",
+        "base": "Hunter_Skill3_merged",
+        "frames": 10,
+        "size": [
+          40,
+          33
+        ],
+        "sheet": "animations/sheets/Hunter_Skill3_merged.png"
+      },
+      {
+        "tag": "Skill4",
+        "base": "Hunter_Skill4_merged",
+        "frames": 13,
+        "size": [
+          38,
+          24
+        ],
+        "sheet": "animations/sheets/Hunter_Skill4_merged.png"
+      }
+    ],
+    "default": {
+      "tag": "Attack",
+      "base": "Hunter_BaseAttack1_merged",
+      "frames": 6,
+      "size": [
+        43,
+        22
+      ],
+      "sheet": "animations/sheets/Hunter_BaseAttack1_merged.png"
+    }
+  },
+  "601": {
+    "hero_id": 601,
+    "class": "Slayer",
+    "animations": [
+      {
+        "tag": "Idle",
+        "base": "Slayer_Idle_Full",
+        "frames": 6,
+        "size": [
+          27,
+          23
+        ],
+        "sheet": "animations/sheets/Slayer_Idle_Full.png"
+      },
+      {
+        "tag": "Walk",
+        "base": "Slayer_Walk_Full",
+        "frames": 6,
+        "size": [
+          26,
+          23
+        ],
+        "sheet": "animations/sheets/Slayer_Walk_Full.png"
+      },
+      {
+        "tag": "Run",
+        "base": "Slayer_Run_Full",
+        "frames": 6,
+        "size": [
+          30,
+          22
+        ],
+        "sheet": "animations/sheets/Slayer_Run_Full.png"
+      }
+    ],
+    "default": {
+      "tag": "Idle",
+      "base": "Slayer_Idle_Full",
+      "frames": 6,
+      "size": [
+        27,
+        23
+      ],
+      "sheet": "animations/sheets/Slayer_Idle_Full.png"
+    }
+  }
+}

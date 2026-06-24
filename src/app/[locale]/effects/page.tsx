@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { SafeImage } from "@/components/ui/safe-image";
 import Link from "next/link";
 import { ConfidenceBadge } from "@/components/tbh/badges";
 import { PageHeader, PageShell } from "@/components/tbh/page";
@@ -52,19 +52,19 @@ export default async function EffectsPage({ params }: Props) {
           const icon = assetPath(group.item.icon);
           const market = group.effects.find((effect) => effect.market)?.market;
           return (
-            <article key={group.slug} className="overflow-hidden border border-[#27272a] bg-[#0d0d0d] transition-colors hover:border-[#d4a017]/60">
+            <article key={group.slug} className="overflow-hidden border border-border-default bg-bg-panel transition-colors hover:border-accent/60">
               <div className="grid gap-0 lg:grid-cols-[260px_1fr]">
-                <Link href={`/${locale}/items/${group.item.slug}`} className="flex items-center gap-4 border-b border-[#27272a] bg-[#11100d] p-4 lg:border-b-0 lg:border-r">
-                  <span className="flex h-14 w-14 shrink-0 items-center justify-center border border-[#3b3b3b] bg-[#070707]">
+                <Link href={`/${locale}/items/${group.item.slug}`} className="flex items-center gap-4 border-b border-border-default bg-[#11100d] p-4 lg:border-b-0 lg:border-r">
+                  <span className="flex h-14 w-14 shrink-0 items-center justify-center border border-border-strong bg-[#070707]">
                     {icon ? (
-                      <Image src={icon} alt={group.material} width={40} height={40} className="object-contain" data-pixel unoptimized />
+                      <SafeImage src={icon} alt={group.material} width={40} height={40} className="object-contain" data-pixel unoptimized />
                     ) : (
-                      <span className="text-xs text-[#6c6c6c]">?</span>
+                      <span className="text-xs text-text-muted">?</span>
                     )}
                   </span>
                   <span className="min-w-0">
-                    <span className="block truncate text-[15px] font-semibold text-[#ffffff]">{group.material}</span>
-                    <span className="mt-1 block text-[11px] uppercase tracking-[0.12em] text-[#8c8577]">{group.effects[0].effectType}</span>
+                    <span className="block truncate text-[15px] font-semibold text-text-primary">{group.material}</span>
+                    <span className="mt-1 block text-[11px] uppercase tracking-[0.12em] text-text-secondary">{group.effects[0].effectType}</span>
                     <span className="mt-2 inline-flex">
                       <ConfidenceBadge value={market ? "missing" : "low"} />
                     </span>
@@ -73,16 +73,16 @@ export default async function EffectsPage({ params }: Props) {
 
                 <div className="flex gap-2 overflow-x-auto p-3">
                   {group.effects.map((effect) => (
-                    <div key={effect.id} className="min-w-[210px] flex-1 border border-[#27272a] bg-[#090909] p-3">
+                    <div key={effect.id} className="min-w-[210px] flex-1 border border-border-default bg-bg-deep p-3">
                       <div className="mb-3 flex items-center justify-between gap-2">
-                        <span className="rounded-sm border border-[#3b3b3b] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#c8bda7]">
+                        <span className="rounded-sm border border-border-strong px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#c8bda7]">
                           {partLabel(effect.part, locale)}
                         </span>
-                        <span className="text-[10px] uppercase tracking-[0.12em] text-[#6c6c6c]">{effect.effectType}</span>
+                        <span className="text-[10px] uppercase tracking-[0.12em] text-text-muted">{effect.effectType}</span>
                       </div>
-                      <p className="break-words text-[14px] font-medium text-[#ffffff]">{formatStat(effect.stat)}</p>
-                      <p className="mt-2 font-mono text-[22px] font-semibold text-[#f0c040]">{effect.value}</p>
-                      <p className="mt-2 text-[12px] leading-5 text-[#6c6c6c]">
+                      <p className="break-words text-[14px] font-medium text-text-primary">{formatStat(effect.stat)}</p>
+                      <p className="mt-2 font-mono text-[22px] font-semibold text-accent-bright">{effect.value}</p>
+                      <p className="mt-2 text-[12px] leading-5 text-text-muted">
                         {effect.market
                           ? copy(locale, "可交易，暂无市场数据", "Tradable, no market data", "取引可能、価格データなし")
                           : copy(locale, "未标记市场数据", "No market record", "市場記録なし")}
@@ -107,9 +107,9 @@ function copy(locale: Locale, zh: string, en: string, ja: string) {
 
 function SummaryCard({ label, value }: { label: string; value: string | number }) {
   return (
-    <div className="border border-[#27272a] bg-[#0d0d0d] px-4 py-3">
-      <p className="text-[11px] uppercase tracking-[0.14em] text-[#6c6c6c]">{label}</p>
-      <p className="mt-1 text-[20px] font-semibold text-[#f0c040]">{typeof value === "number" ? value.toLocaleString() : value}</p>
+    <div className="border border-border-default bg-bg-panel px-4 py-3">
+      <p className="text-[11px] uppercase tracking-[0.14em] text-text-muted">{label}</p>
+      <p className="mt-1 text-[20px] font-semibold text-accent-bright">{typeof value === "number" ? value.toLocaleString() : value}</p>
     </div>
   );
 }

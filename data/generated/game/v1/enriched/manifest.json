@@ -1,0 +1,17 @@
+{
+  "version": "game-v1",
+  "generatedAt": "2026-06-24T07:09:42.371Z",
+  "source": "local enrichment pipeline",
+  "entityCounts": {
+    "items": 5944,
+    "stages": 120,
+    "heroes": 6,
+    "runes": 197
+  },
+  "rules": {
+    "userVisibleSource": false,
+    "internalSourceRequired": true,
+    "marketStaleAfterHours": 24,
+    "mergePolicy": "local-datamined > steam-market > external-structured > editorial"
+  }
+}

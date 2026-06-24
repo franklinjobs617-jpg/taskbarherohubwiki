@@ -5,7 +5,7 @@ import { HeroCard, Section } from "@/components/tbh/cards";
 import { HeroCompareMatrix, HeroRadar } from "@/components/tbh/hero-compare";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
-import { allHeroes, heroName, heroSlug, type Locale } from "@/lib/game-data/data";
+import { SITE_URL, allHeroes, heroName, heroSlug, type Locale } from "@/lib/game-data/data";
 import { heroProfile, heroWeaponLabel } from "@/lib/hero-content";
 import { pageAlternates } from "@/lib/seo";
 
@@ -57,7 +57,7 @@ export default async function HeroesPage({ params }: Props) {
         itemListElement: heroes.map((hero, i) => ({
           "@type": "ListItem",
           position: i + 1,
-          url: `https://taskbarhero.nanobananas.me${locale === "en" ? "" : "/" + locale}/heroes/${heroSlug(hero)}`,
+          url: `${SITE_URL}${locale === "en" ? "" : "/" + locale}/heroes/${heroSlug(hero)}`,
         })),
       }} />
       <PageHeader
@@ -70,30 +70,30 @@ export default async function HeroesPage({ params }: Props) {
         }
       />
 
-      <section className="grid gap-4 border border-[#27272a] bg-[#0d0d0d] p-4 lg:grid-cols-[1.1fr_0.9fr]">
+      <section className="grid gap-4 border border-border-default bg-bg-panel p-4 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
-          <p className="text-xs uppercase tracking-[0.18em] text-[#d4a017]">{isZh ? "快速结论" : "Quick verdict"}</p>
-          <h2 className="mt-2 text-2xl font-semibold text-[#f1e8d5]">
+          <p className="text-xs uppercase tracking-[0.18em] text-accent">{isZh ? "快速结论" : "Quick verdict"}</p>
+          <h2 className="mt-2 text-2xl font-semibold text-text-primary">
             {isZh ? "先用英雄决定路线，再用物品和宝箱验证路线" : "Choose a route with heroes, then verify it with items and chests"}
           </h2>
-          <p className="mt-3 max-w-3xl text-sm leading-7 text-[#9d9d9d]">
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-text-secondary">
             {isZh
               ? "每个英雄都标注定位、武器路径、属性优先级、适合阶段和上手难度。"
               : "Each hero is labeled with role, weapon path, stat priority, best phase, and difficulty. Start here before checking build pages and the class guide."}
           </p>
           {firstHero ? (
             <div className="mt-4 grid gap-2 sm:grid-cols-3">
-              <div className="border border-[#2c2c2c] bg-[#0a0a0a] p-3">
-                <p className="text-xs text-[#6c6c6c]">{isZh ? "新手基准" : "Beginner baseline"}</p>
-                <p className="mt-1 text-lg font-semibold text-[#ffffff]">{heroName(firstHero, locale)}</p>
+              <div className="border border-[#2c2c2c] bg-bg-canvas p-3">
+                <p className="text-xs text-text-muted">{isZh ? "新手基准" : "Beginner baseline"}</p>
+                <p className="mt-1 text-lg font-semibold text-text-primary">{heroName(firstHero, locale)}</p>
               </div>
-              <div className="border border-[#2c2c2c] bg-[#0a0a0a] p-3">
-                <p className="text-xs text-[#6c6c6c]">{isZh ? "可分析英雄" : "Playable heroes"}</p>
-                <p className="mt-1 text-lg font-semibold text-[#ffffff]">{heroes.length}</p>
+              <div className="border border-[#2c2c2c] bg-bg-canvas p-3">
+                <p className="text-xs text-text-muted">{isZh ? "可分析英雄" : "Playable heroes"}</p>
+                <p className="mt-1 text-lg font-semibold text-text-primary">{heroes.length}</p>
               </div>
-              <div className="border border-[#2c2c2c] bg-[#0a0a0a] p-3">
-                <p className="text-xs text-[#6c6c6c]">{isZh ? "下一步" : "Next step"}</p>
-                <Link href={`/${locale}/guides/beginner/class-guide`} className="mt-1 inline-flex items-center gap-1 text-sm text-[#f0c040]">
+              <div className="border border-[#2c2c2c] bg-bg-canvas p-3">
+                <p className="text-xs text-text-muted">{isZh ? "下一步" : "Next step"}</p>
+                <Link href={`/${locale}/guides/beginner/class-guide`} className="mt-1 inline-flex items-center gap-1 text-sm text-accent-bright">
                   {isZh ? "职业选择指南" : "Class guide"} <ArrowRight className="h-3 w-3" />
                 </Link>
               </div>
@@ -104,11 +104,11 @@ export default async function HeroesPage({ params }: Props) {
           {decisionCards.map((card) => {
             const Icon = card.icon;
             return (
-              <div key={card.title} className="flex gap-3 border border-[#2c2c2c] bg-[#0a0a0a] p-3">
-                <Icon className="mt-0.5 h-4 w-4 shrink-0 text-[#d4a017]" />
+              <div key={card.title} className="flex gap-3 border border-[#2c2c2c] bg-bg-canvas p-3">
+                <Icon className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
                 <div>
-                  <p className="text-sm font-medium text-[#ffffff]">{card.title}</p>
-                  <p className="mt-1 text-xs leading-5 text-[#9d9d9d]">{card.body}</p>
+                  <p className="text-sm font-medium text-text-primary">{card.title}</p>
+                  <p className="mt-1 text-xs leading-5 text-text-secondary">{card.body}</p>
                 </div>
               </div>
             );
@@ -127,8 +127,8 @@ export default async function HeroesPage({ params }: Props) {
       <Section title={isZh ? "英雄雷达图" : "Hero Radar Charts"} eyebrow={isZh ? "6 维度属性可视化" : "6-dimension stat visualization"}>
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
           {heroes.map((hero) => (
-            <div key={hero.HeroKey} className="flex flex-col items-center gap-2 border border-[#27272a] bg-[#0d0d0d] p-3">
-              <p className="text-xs font-medium text-[#9d9d9d]">{heroName(hero, locale)}</p>
+            <div key={hero.HeroKey} className="flex flex-col items-center gap-2 border border-border-default bg-bg-panel p-3">
+              <p className="text-xs font-medium text-text-secondary">{heroName(hero, locale)}</p>
               <HeroRadar hero={hero} locale={locale} size={140} />
               <Link
                 href={`/${locale}/heroes/${heroSlug(hero)}`}
@@ -142,9 +142,9 @@ export default async function HeroesPage({ params }: Props) {
       </Section>
 
       <Section title={isZh ? "角色定位速查" : "Quick Role Reference"} eyebrow={isZh ? "定位、武器、阶段一目了然" : "Role, weapons, phase at a glance"}>
-        <div className="overflow-x-auto border border-[#27272a]">
+        <div className="overflow-x-auto border border-border-default">
           <table className="w-full min-w-[760px] text-left text-sm">
-            <thead className="bg-[#18181b] text-xs text-[#6c6c6c]">
+            <thead className="bg-bg-surface text-xs text-text-muted">
               <tr>
                 <th className="px-3 py-2">{isZh ? "英雄" : "Hero"}</th>
                 <th className="px-3 py-2">{isZh ? "定位" : "Role"}</th>
@@ -159,14 +159,14 @@ export default async function HeroesPage({ params }: Props) {
                 const profile = heroProfile(hero, locale);
                 const slug = heroSlug(hero);
                 return (
-                  <tr key={hero.HeroKey} className="border-t border-[#27272a]">
-                    <td className="px-3 py-3 font-medium text-[#ffffff]">{heroName(hero, locale)}</td>
-                    <td className="px-3 py-3 text-[#9d9d9d]">{profile.role}</td>
-                    <td className="px-3 py-3 text-[#9d9d9d]">{heroWeaponLabel(hero, locale)}</td>
-                    <td className="px-3 py-3 text-[#9d9d9d]">{profile.phase}</td>
-                    <td className="px-3 py-3 text-[#9d9d9d]">{profile.statPriority.join(" / ")}</td>
+                  <tr key={hero.HeroKey} className="border-t border-border-default">
+                    <td className="px-3 py-3 font-medium text-text-primary">{heroName(hero, locale)}</td>
+                    <td className="px-3 py-3 text-text-secondary">{profile.role}</td>
+                    <td className="px-3 py-3 text-text-secondary">{heroWeaponLabel(hero, locale)}</td>
+                    <td className="px-3 py-3 text-text-secondary">{profile.phase}</td>
+                    <td className="px-3 py-3 text-text-secondary">{profile.statPriority.join(" / ")}</td>
                     <td className="px-3 py-3">
-                      <Link href={`/${locale}/heroes/${slug}`} className="inline-flex items-center gap-1 text-[#f0c040] hover:text-[#ffd76a]">
+                      <Link href={`/${locale}/heroes/${slug}`} className="inline-flex items-center gap-1 text-accent-bright hover:text-[#ffd76a]">
                         {isZh ? "打开" : "Open"} <ArrowRight className="h-3 w-3" />
                       </Link>
                     </td>
@@ -180,20 +180,20 @@ export default async function HeroesPage({ params }: Props) {
 
       <Section title={isZh ? "选好英雄后还要看什么？" : "What should I check after picking a hero?"} eyebrow="Journey">
         <div className="grid gap-2 md:grid-cols-3">
-          <Link href={`/${locale}/skills`} className="border border-[#27272a] bg-[#0d0d0d] p-4 hover:border-[#d4a017]">
-            <BookOpen className="mb-3 h-4 w-4 text-[#d4a017]" />
-            <p className="font-medium text-[#ffffff]">{isZh ? "查主动/被动技能" : "Check active and passive skills"}</p>
-            <p className="mt-2 text-sm leading-6 text-[#9d9d9d]">{isZh ? "确认技能类型、伤害关键词和节点方向。" : "Verify skill type, damage keywords, and node direction."}</p>
+          <Link href={`/${locale}/skills`} className="border border-border-default bg-bg-panel p-4 hover:border-accent">
+            <BookOpen className="mb-3 h-4 w-4 text-accent" />
+            <p className="font-medium text-text-primary">{isZh ? "查主动/被动技能" : "Check active and passive skills"}</p>
+            <p className="mt-2 text-sm leading-6 text-text-secondary">{isZh ? "确认技能类型、伤害关键词和节点方向。" : "Verify skill type, damage keywords, and node direction."}</p>
           </Link>
-          <Link href={`/${locale}/effects`} className="border border-[#27272a] bg-[#0d0d0d] p-4 hover:border-[#d4a017]">
-            <Shield className="mb-3 h-4 w-4 text-[#d4a017]" />
-            <p className="font-medium text-[#ffffff]">{isZh ? "匹配材料效果" : "Match material effects"}</p>
-            <p className="mt-2 text-sm leading-6 text-[#9d9d9d]">{isZh ? "把职业优先属性映射到 Decoration、Engraving、Inscription。" : "Map class stat priority to Decoration, Engraving, and Inscription effects."}</p>
+          <Link href={`/${locale}/effects`} className="border border-border-default bg-bg-panel p-4 hover:border-accent">
+            <Shield className="mb-3 h-4 w-4 text-accent" />
+            <p className="font-medium text-text-primary">{isZh ? "匹配材料效果" : "Match material effects"}</p>
+            <p className="mt-2 text-sm leading-6 text-text-secondary">{isZh ? "把职业优先属性映射到 Decoration、Engraving、Inscription。" : "Map class stat priority to Decoration, Engraving, and Inscription effects."}</p>
           </Link>
-          <Link href={`/${locale}/builds`} className="border border-[#27272a] bg-[#0d0d0d] p-4 hover:border-[#d4a017]">
-            <Swords className="mb-3 h-4 w-4 text-[#d4a017]" />
-            <p className="font-medium text-[#ffffff]">{isZh ? "查看推荐 Build" : "View recommended builds"}</p>
-            <p className="mt-2 text-sm leading-6 text-[#9d9d9d]">{isZh ? "每个职业的前期、中期和后期配装路线。" : "Early, mid, and endgame gear routes for each class."}</p>
+          <Link href={`/${locale}/builds`} className="border border-border-default bg-bg-panel p-4 hover:border-accent">
+            <Swords className="mb-3 h-4 w-4 text-accent" />
+            <p className="font-medium text-text-primary">{isZh ? "查看推荐 Build" : "View recommended builds"}</p>
+            <p className="mt-2 text-sm leading-6 text-text-secondary">{isZh ? "每个职业的前期、中期和后期配装路线。" : "Early, mid, and endgame gear routes for each class."}</p>
           </Link>
         </div>
       </Section>

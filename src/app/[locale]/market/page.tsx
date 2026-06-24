@@ -4,7 +4,8 @@ import { Filter, ShieldAlert } from "lucide-react";
 import { RarityBadge } from "@/components/tbh/badges";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
-import { DATA_VERSION, itemName, marketRows, slotNames, UPDATED_AT, type Locale } from "@/lib/game-data/data";
+import { ItemIcon } from "@/components/ui/item-icon";
+import { DATA_VERSION, SITE_URL, assetPath, hasIndexableMarketData, itemName, marketRows, slotNames, UPDATED_AT, type Locale } from "@/lib/game-data/data";
 import { getMarketDecision } from "@/lib/game-data/decisions";
 import { localizedPath } from "@/lib/locale-path";
 import { RelatedPages } from "@/components/tbh/related-pages";
@@ -43,6 +44,7 @@ export default async function MarketPage({ params, searchParams }: Props) {
   if (sort === "lowest_asc") rows = [...rows].sort((a, b) => (a.market.lowest ?? Infinity) - (b.market.lowest ?? Infinity));
   else if (sort === "lowest_desc") rows = [...rows].sort((a, b) => (b.market.lowest ?? -1) - (a.market.lowest ?? -1));
   else if (sort === "listings_desc") rows = [...rows].sort((a, b) => (b.market.listings ?? 0) - (a.market.listings ?? 0));
+  const hasLiveMarketData = rows.some(({ market }) => hasIndexableMarketData(market));
 
   return (
     <PageShell>
@@ -54,7 +56,7 @@ export default async function MarketPage({ params, searchParams }: Props) {
         itemListElement: rows.slice(0, 50).map(({ item }, i) => ({
           "@type": "ListItem",
           position: i + 1,
-          url: `https://taskbarhero.nanobananas.me${locale === "en" ? "" : "/" + locale}/market/${item.slug}`,
+          url: `${SITE_URL}${locale === "en" ? "" : "/" + locale}/market/${item.slug}`,
         })),
       }} />
       <PageHeader
@@ -69,9 +71,24 @@ export default async function MarketPage({ params, searchParams }: Props) {
       />
 
       <HowToUse pageKey="/market" locale={locale} />
+      {!hasLiveMarketData ? (
+        <div className="my-5 border border-amber-500/35 bg-amber-500/10 p-4 text-sm leading-6 text-amber-100">
+          <p className="font-semibold text-amber-200">
+            {txt(locale, { zh: "市场价格快照暂缺", en: "Market price snapshot unavailable", ja: "市場価格スナップショットは未取得です", ko: "시장 가격 스냅샷 없음" })}
+          </p>
+          <p className="mt-1 text-amber-100/85">
+            {txt(locale, {
+              zh: "当前只显示可交易物品、自用价值和刷取上下文；价格、挂单数和趋势拿到真实 Steam 快照后再展示。",
+              en: "This view currently shows tradable items, self-use value, and farming context. Price, listing count, and trend will appear only after a real Steam snapshot is available.",
+              ja: "現在は取引可能アイテム、自己使用価値、周回文脈のみ表示します。価格、出品数、トレンドは実際のSteamスナップショット取得後に表示します。",
+              ko: "현재는 거래 가능 아이템, 직접 사용 가치, 파밍 맥락만 표시합니다. 가격, 등록 수, 추세는 실제 Steam 스냅샷을 확보한 뒤 표시합니다.",
+            })}
+          </p>
+        </div>
+      ) : null}
       <form className="my-5 grid gap-2 md:grid-cols-[1fr_auto_auto]">
-        <input name="q" defaultValue={sp.q} placeholder={txt(locale, { zh: "搜索可交易物品", en: "Search tradable items", ja: "取引可能アイテム検索", ko: "거래 가능 아이템 검색" })} className="border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm text-white outline-none" />
-        <select name="type" defaultValue={sp.type ?? ""} className="border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm text-white">
+        <input name="q" defaultValue={sp.q} placeholder={txt(locale, { zh: "搜索可交易物品", en: "Search tradable items", ja: "取引可能アイテム検索", ko: "거래 가능 아이템 검색" })} className="border border-border-strong bg-bg-canvas px-3 py-2 text-sm text-white outline-none" />
+        <select name="type" defaultValue={sp.type ?? ""} className="border border-border-strong bg-bg-canvas px-3 py-2 text-sm text-white">
           <option value="">{txt(locale, { zh: "全部类型", en: "All types", ja: "全タイプ", ko: "전체 유형" })}</option>
           <option value="GEAR">{txt(locale, { zh: "装备", en: "Gear", ja: "装備", ko: "장비" })}</option>
           <option value="MATERIAL">{txt(locale, { zh: "材料", en: "Materials", ja: "素材", ko: "재료" })}</option>
@@ -84,7 +101,7 @@ export default async function MarketPage({ params, searchParams }: Props) {
       </form>
 
       <div className="mb-4 flex flex-wrap gap-1.5">
-        <span className="text-xs text-[#6c6c6c] self-center mr-1">{isZh ? "排序：" : "Sort:"}</span>
+        <span className="text-xs text-text-muted self-center mr-1">{isZh ? "排序：" : "Sort:"}</span>
         {[
           { k: "lowest_asc", zh: "价格升序", en: "Price ↑" },
           { k: "lowest_desc", zh: "价格降序", en: "Price ↓" },
@@ -96,11 +113,11 @@ export default async function MarketPage({ params, searchParams }: Props) {
         ))}
       </div>
 
-      <details className="mb-4 border border-[#27272a] bg-[#0d0d0d] p-3">
-        <summary className="cursor-pointer text-xs font-semibold text-[#9d9d9d] hover:text-[#f0c040]">
+      <details className="mb-4 border border-border-default bg-bg-panel p-3">
+        <summary className="cursor-pointer text-xs font-semibold text-text-secondary hover:text-accent-bright">
           {isZh ? "怎么读这张表？" : "How to read this table"}
         </summary>
-        <div className="mt-3 grid gap-2 text-xs leading-5 text-[#9d9d9d] sm:grid-cols-2">
+        <div className="mt-3 grid gap-2 text-xs leading-5 text-text-secondary sm:grid-cols-2">
           <p><span className="font-semibold text-white">Lowest</span>：{isZh ? "市场最低挂单价（美元），不含 Steam 抽成。" : "Lowest active listing price in USD, before Steam's cut."}</p>
           <p><span className="font-semibold text-white">Listings</span>：{isZh ? "当前挂单数量。越少说明越稀有，价格越容易被少数卖家控盘。" : "Active listing count. Fewer listings usually mean thinner supply and easier price manipulation."}</p>
           <p><span className="font-semibold text-white">Freshness</span>：{isZh ? "数据快照时间，引用 DATA_VERSION 与 UPDATED_AT。" : "Snapshot time. Pulled from DATA_VERSION and UPDATED_AT."}</p>
@@ -110,9 +127,9 @@ export default async function MarketPage({ params, searchParams }: Props) {
         </div>
       </details>
 
-      <div className="overflow-x-auto border border-[#27272a] hidden lg:block">
+      <div className="overflow-x-auto border border-border-default hidden lg:block">
         <table className="w-full min-w-[980px] text-left text-sm">
-          <thead className="bg-[#18181b] text-xs text-[#6c6c6c]">
+          <thead className="bg-bg-surface text-xs text-text-muted">
             <tr>
               <th className="px-3 py-2">Item</th>
               <th className="px-3 py-2">Lowest</th>
@@ -125,22 +142,27 @@ export default async function MarketPage({ params, searchParams }: Props) {
           </thead>
           <tbody>
             {rows.map(({ item, market, decision }) => (
-              <tr key={item.id} className="border-t border-[#27272a] hover:bg-[#0d0d0d]">
+              <tr key={item.id} className="border-t border-border-default hover:bg-bg-panel">
                 <td className="px-3 py-2">
-                  <Link href={lpath(`/market/${item.slug}`)} className="font-medium text-white hover:text-[#f0c040]">{itemName(item, locale)}</Link>
-                  <div className="mt-1 flex items-center gap-2">
-                    <RarityBadge grade={item.grade} locale={locale} />
-                    <span className="text-xs text-[#6c6c6c]">{item.gear ? slotNames[item.gear]?.[locale] ?? item.gear : item.type}</span>
+                  <div className="flex items-center gap-3">
+                    <ItemIcon src={assetPath(item.icon)} alt={itemName(item, locale)} size={42} className="shrink-0" />
+                    <div className="min-w-0">
+                      <Link href={lpath(`/market/${item.slug}`)} className="font-medium text-white hover:text-accent-bright">{itemName(item, locale)}</Link>
+                      <div className="mt-1 flex items-center gap-2">
+                        <RarityBadge grade={item.grade} locale={locale} />
+                        <span className="text-xs text-text-muted">{item.gear ? slotNames[item.gear]?.[locale] ?? item.gear : item.type}</span>
+                      </div>
+                    </div>
                   </div>
                 </td>
-                <td className="px-3 py-2 font-mono text-[#f0c040]">{market.lowest ? `$${market.lowest.toFixed(2)}` : "-"}</td>
-                <td className="px-3 py-2 font-mono text-[#9d9d9d]">{market.listings?.toLocaleString() ?? "-"}</td>
-                <td className="px-3 py-2 text-xs text-[#9d9d9d]">{market.updatedAt}</td>
-                <td className="px-3 py-2 text-[#d8d1c2]">{decision?.selfUseValue ?? "-"}</td>
-                <td className="px-3 py-2 text-[#d8d1c2]">{decision?.farmContext ?? "-"}</td>
+                <td className="px-3 py-2 font-mono text-accent-bright">{market.lowest ? `$${market.lowest.toFixed(2)}` : txt(locale, { zh: "暂无价格", en: "No price", ja: "価格なし", ko: "가격 없음" })}</td>
+                <td className="px-3 py-2 font-mono text-text-secondary">{market.listings?.toLocaleString() ?? txt(locale, { zh: "暂无挂单", en: "No listings", ja: "出品なし", ko: "등록 없음" })}</td>
+                <td className="px-3 py-2 text-xs text-text-secondary">{market.updatedAt}</td>
+                <td className="px-3 py-2 text-text-secondary">{decision?.selfUseValue ?? "-"}</td>
+                <td className="px-3 py-2 text-text-secondary">{decision?.farmContext ?? "-"}</td>
                 <td className="px-3 py-2">
                   <span
-                    className="inline-flex items-center gap-1 border border-[#3f2f10] bg-[#100d06] px-2 py-1 text-xs font-semibold text-[#f0c040] cursor-help"
+                    className="inline-flex items-center gap-1 border border-accent-dim bg-accent-soft px-2 py-1 text-xs font-semibold text-accent-bright cursor-help"
                     title={isZh
                       ? `为什么 ${decision?.label ?? "Unknown"}：${decision?.selfUseValue ?? ""} · ${decision?.farmContext ?? ""}`
                       : `Why ${decision?.label ?? "Unknown"}: ${decision?.selfUseValue ?? ""} · ${decision?.farmContext ?? ""}`}
@@ -157,21 +179,24 @@ export default async function MarketPage({ params, searchParams }: Props) {
 
       <div className="grid gap-2 lg:hidden">
         {rows.map(({ item, market, decision }) => (
-          <Link key={`m-${item.id}`} href={lpath(`/market/${item.slug}`)} className="border border-[#27272a] bg-[#0d0d0d] p-3 hover:border-[#d4a017]">
+          <Link key={`m-${item.id}`} href={lpath(`/market/${item.slug}`)} className="border border-border-default bg-bg-panel p-3 hover:border-accent">
             <div className="flex items-start justify-between gap-2">
-              <div className="min-w-0">
-                <p className="truncate text-sm font-semibold text-white">{itemName(item, locale)}</p>
-                <div className="mt-1 flex items-center gap-2">
-                  <RarityBadge grade={item.grade} locale={locale} />
-                  <span className="text-[11px] text-[#6c6c6c]">{item.gear ? slotNames[item.gear]?.[locale] ?? item.gear : item.type}</span>
+              <div className="flex min-w-0 items-start gap-3">
+                <ItemIcon src={assetPath(item.icon)} alt={itemName(item, locale)} size={38} className="shrink-0" />
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-semibold text-white">{itemName(item, locale)}</p>
+                  <div className="mt-1 flex items-center gap-2">
+                    <RarityBadge grade={item.grade} locale={locale} />
+                    <span className="text-[11px] text-text-muted">{item.gear ? slotNames[item.gear]?.[locale] ?? item.gear : item.type}</span>
+                  </div>
                 </div>
               </div>
-              <span className="shrink-0 font-mono text-sm font-semibold text-[#f0c040]">{market.lowest ? `$${market.lowest.toFixed(2)}` : "-"}</span>
+              <span className="shrink-0 font-mono text-sm font-semibold text-accent-bright">{market.lowest ? `$${market.lowest.toFixed(2)}` : txt(locale, { zh: "暂无", en: "N/A", ja: "未取得", ko: "없음" })}</span>
             </div>
-            <div className="mt-3 flex items-center justify-between gap-2 border-t border-[#27272a] pt-2 text-[11px] text-[#9d9d9d]">
-              <span>{market.listings?.toLocaleString() ?? "-"} {isZh ? "挂单" : "listings"}</span>
+            <div className="mt-3 flex items-center justify-between gap-2 border-t border-border-default pt-2 text-[11px] text-text-secondary">
+              <span>{market.listings?.toLocaleString() ?? txt(locale, { zh: "暂无", en: "No", ja: "未取得", ko: "없음" })} {isZh ? "挂单" : "listings"}</span>
               <span
-                className="inline-flex items-center gap-1 border border-[#3f2f10] bg-[#100d06] px-2 py-0.5 text-[11px] font-semibold text-[#f0c040] cursor-help"
+                className="inline-flex items-center gap-1 border border-accent-dim bg-accent-soft px-2 py-0.5 text-[11px] font-semibold text-accent-bright cursor-help"
                 title={isZh
                   ? `为什么 ${decision?.label ?? "Unknown"}：${decision?.selfUseValue ?? ""} · ${decision?.farmContext ?? ""}`
                   : `Why ${decision?.label ?? "Unknown"}: ${decision?.selfUseValue ?? ""} · ${decision?.farmContext ?? ""}`}
@@ -183,10 +208,17 @@ export default async function MarketPage({ params, searchParams }: Props) {
           </Link>
         ))}
       </div>
-      <p className="mt-3 text-[11px] text-[#6c6c6c]">
-        {isZh
-          ? `数据版本 ${DATA_VERSION} · 最近更新 ${UPDATED_AT} · 当前样本 ${rows.length} 条`
-          : `Data v${DATA_VERSION} · Last sync ${UPDATED_AT} · ${rows.length} listings sampled`}
+      <p className="mt-3 text-[11px] text-text-muted">
+        {!hasLiveMarketData
+          ? txt(locale, {
+              zh: `数据版本 ${DATA_VERSION} · 最近更新 ${UPDATED_AT} · 当前显示 ${rows.length} 件可交易物品，未显示真实价格`,
+              en: `Data v${DATA_VERSION} · Last sync ${UPDATED_AT} · ${rows.length} tradable items shown, no real prices available`,
+              ja: `Data v${DATA_VERSION} · Last sync ${UPDATED_AT} · ${rows.length} 件の取引可能アイテムを表示、実価格は未取得`,
+              ko: `Data v${DATA_VERSION} · Last sync ${UPDATED_AT} · 거래 가능 아이템 ${rows.length}개 표시, 실제 가격 없음`,
+            })
+          : isZh
+            ? `数据版本 ${DATA_VERSION} · 最近更新 ${UPDATED_AT} · 当前样本 ${rows.length} 条`
+            : `Data v${DATA_VERSION} · Last sync ${UPDATED_AT} · ${rows.length} listings sampled`}
       </p>
       <RelatedPages pageKey="/market" locale={locale} />
     </PageShell>

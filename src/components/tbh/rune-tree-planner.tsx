@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import Image from "next/image";
+import { SafeImage } from "@/components/ui/safe-image";
 import { Coins, Gem, Maximize2, Minus, Plus, Search, Target, UnlockKeyhole, Zap } from "lucide-react";
 import type { Locale } from "@/lib/game-data/data";
 
@@ -142,8 +142,8 @@ export function RuneTreePlanner({ runes, locale }: { runes: RuneNode[]; locale: 
     <div className="grid gap-4 xl:grid-cols-[260px_minmax(0,1fr)_330px]">
       <aside className="border border-[#3b2b17] bg-[#100c08] p-4">
         <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#c87925]">{copy(locale, "推荐路线", "Priority routes", "推奨ルート")}</p>
-        <h2 className="mt-2 text-xl font-semibold text-[#fff7df]">{copy(locale, "按目标加点", "Pick by goal", "目的別に選ぶ")}</h2>
-        <p className="mt-2 text-sm leading-6 text-[#a89779]">
+        <h2 className="mt-2 text-xl font-semibold text-text-primary">{copy(locale, "按目标加点", "Pick by goal", "目的別に選ぶ")}</h2>
+        <p className="mt-2 text-sm leading-6 text-text-secondary">
           {copy(
             locale,
             "先拿改变玩法的节点，再补数值。拖动画布查看全树，滚轮缩放。",
@@ -161,26 +161,26 @@ export function RuneTreePlanner({ runes, locale }: { runes: RuneNode[]; locale: 
                 setSelectedKey(routeNodes[key][0]);
               }}
               className={`w-full border px-3 py-3 text-left transition ${
-                route === key ? "border-[#d4a017] bg-[#261706] shadow-[inset_3px_0_0_#d4a017]" : "border-[#2e2619] bg-[#0b0906] hover:border-[#8a6736]"
+                route === key ? "border-accent bg-[#261706] shadow-[inset_3px_0_0_#d4a017]" : "border-accent-dim bg-bg-deep hover:border-[#8a6736]"
               }`}
             >
-              <span className="block text-sm font-semibold text-[#fff7df]">{routeLabel(key, locale)}</span>
-              <span className="mt-1 block text-xs leading-5 text-[#a89779]">{routeDescription(key, locale)}</span>
+              <span className="block text-sm font-semibold text-text-primary">{routeLabel(key, locale)}</span>
+              <span className="mt-1 block text-xs leading-5 text-text-secondary">{routeDescription(key, locale)}</span>
             </button>
           ))}
         </div>
 
-        <div className="mt-4 border border-[#2e2619] bg-[#090806] p-3">
-          <div className="flex items-center justify-between text-xs text-[#8f826b]">
+        <div className="mt-4 border border-accent-dim bg-bg-deep p-3">
+          <div className="flex items-center justify-between text-xs text-text-muted">
             <span>{copy(locale, "路线节点", "Route nodes", "ルートノード")}</span>
             <span>{routeNodes[route].length}</span>
           </div>
           <div className="mt-2 flex items-center justify-between">
-            <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#f0c040]">
+            <span className="inline-flex items-center gap-1 text-sm font-semibold text-accent-bright">
               <Coins className="h-4 w-4" />
               {formatNumber(routeTotal)}
             </span>
-            <span className="text-xs text-[#8f826b]">{copy(locale, "总成本", "total cost", "合計")}</span>
+            <span className="text-xs text-text-muted">{copy(locale, "总成本", "total cost", "合計")}</span>
           </div>
         </div>
       </aside>
@@ -189,7 +189,7 @@ export function RuneTreePlanner({ runes, locale }: { runes: RuneNode[]; locale: 
         <div className="flex flex-col gap-3 border-b border-[#3b2b17] bg-[#100c08] p-3 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-wrap items-center gap-2">
             <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#c87925]">Rune board</span>
-            <span className="text-sm text-[#a89779]">{runes.length} / {edges.length}</span>
+            <span className="text-sm text-text-secondary">{runes.length} / {edges.length}</span>
           </div>
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
             <label className="relative block sm:w-[300px]">
@@ -198,7 +198,7 @@ export function RuneTreePlanner({ runes, locale }: { runes: RuneNode[]; locale: 
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
                 placeholder={copy(locale, "搜索符文、属性、效果", "Search rune, stat, effect", "ルーン、属性、効果")}
-                className="w-full border border-[#342a1a] bg-[#090806] py-2 pl-9 pr-3 text-sm text-[#fff7df] outline-none placeholder:text-[#756850] focus:border-[#d4a017]"
+                className="w-full border border-[#342a1a] bg-bg-deep py-2 pl-9 pr-3 text-sm text-text-primary outline-none placeholder:text-[#756850] focus:border-accent"
               />
             </label>
             <div className="flex gap-1">
@@ -209,10 +209,10 @@ export function RuneTreePlanner({ runes, locale }: { runes: RuneNode[]; locale: 
           </div>
         </div>
 
-        <div className="border-b border-[#2e2619] bg-[#0b0906] px-3 py-2">
+        <div className="border-b border-accent-dim bg-bg-deep px-3 py-2">
           <div className="flex flex-wrap gap-1.5">
             {Object.entries(tones).map(([category, tone]) => (
-              <span key={category} className="inline-flex items-center gap-1.5 border border-[#342a1a] bg-[#090806] px-2 py-1 text-[11px] text-[#cdbb9c]">
+              <span key={category} className="inline-flex items-center gap-1.5 border border-[#342a1a] bg-bg-deep px-2 py-1 text-[11px] text-[#cdbb9c]">
                 <span className="h-2.5 w-2.5 rounded-sm" style={{ backgroundColor: tone.border }} />
                 {tone.label[locale]}
               </span>
@@ -346,7 +346,7 @@ export function RuneTreePlanner({ runes, locale }: { runes: RuneNode[]; locale: 
                     />
                     {/* Icon */}
                     {iconSrc ? (
-                      <Image
+                      <SafeImage
                         src={iconSrc}
                         alt={rune.name}
                         width={32}
@@ -360,13 +360,13 @@ export function RuneTreePlanner({ runes, locale }: { runes: RuneNode[]; locale: 
                     )}
                   </span>
                   {/* maxLevel badge */}
-                  <span className="absolute -bottom-3.5 left-1/2 -translate-x-1/2 border border-[#3b2b17] bg-[#0a0806] px-1.5 text-[10px] font-bold leading-3 text-[#f0c040] shadow-[0_0_6px_rgba(240,192,64,0.3)]">
+                  <span className="absolute -bottom-3.5 left-1/2 -translate-x-1/2 border border-[#3b2b17] bg-[#0a0806] px-1.5 text-[10px] font-bold leading-3 text-accent-bright shadow-[0_0_6px_rgba(240,192,64,0.3)]">
                     {rune.maxLevel > 1 ? `Lv${rune.maxLevel}` : ""}
                   </span>
                   {/* Unlock icon */}
                   {rune.isUnlock ? (
-                    <span className="absolute -right-1 -top-1 z-20 flex h-5 w-5 items-center justify-center rounded-full border border-[#f0c040] bg-[#120d06] shadow-[0_0_8px_rgba(240,192,64,0.4)]">
-                      <UnlockKeyhole className="h-3 w-3 text-[#f0c040]" />
+                    <span className="absolute -right-1 -top-1 z-20 flex h-5 w-5 items-center justify-center rounded-full border border-accent-bright bg-[#120d06] shadow-[0_0_8px_rgba(240,192,64,0.4)]">
+                      <UnlockKeyhole className="h-3 w-3 text-accent-bright" />
                     </span>
                   ) : null}
                   {/* Route step number */}
@@ -380,7 +380,7 @@ export function RuneTreePlanner({ runes, locale }: { runes: RuneNode[]; locale: 
             })}
           </div>
 
-          <div className="pointer-events-none absolute bottom-3 left-3 border border-[#342a1a] bg-[#090806]/90 px-2 py-1 text-[11px] text-[#a89779]">
+          <div className="pointer-events-none absolute bottom-3 left-3 border border-[#342a1a] bg-bg-deep/90 px-2 py-1 text-[11px] text-text-secondary">
             {copy(locale, "拖动平移 · 滚轮缩放", "Drag to pan · Wheel to zoom", "ドラッグ移動 · ホイール拡大")}
           </div>
         </div>
@@ -413,7 +413,7 @@ function RuneDetail({ rune, locale, route, routeStep }: { rune: RuneNode; locale
             }}
           />
           {rune.icon ? (
-            <Image
+            <SafeImage
               src={runeIconSrc(rune.icon)!}
               alt={rune.name}
               width={48}
@@ -427,8 +427,8 @@ function RuneDetail({ rune, locale, route, routeStep }: { rune: RuneNode; locale
           )}
         </div>
         <div className="min-w-0">
-          <p className="truncate text-lg font-semibold text-[#fff7df]">{rune.name}</p>
-          <p className="mt-1 text-xs uppercase tracking-[0.14em] text-[#8f826b]">{categoryLabel(rune.category, locale)}</p>
+          <p className="truncate text-lg font-semibold text-text-primary">{rune.name}</p>
+          <p className="mt-1 text-xs uppercase tracking-[0.14em] text-text-muted">{categoryLabel(rune.category, locale)}</p>
         </div>
       </div>
 
@@ -441,8 +441,8 @@ function RuneDetail({ rune, locale, route, routeStep }: { rune: RuneNode; locale
         <InfoTile icon={<Target className="h-4 w-4" />} label={copy(locale, "路线位置", "Route step", "ルート順")} value={routeStep ? `${routeStep} / ${routeNodes[route].length}` : copy(locale, "非推荐节点", "Off route", "推奨外")} wide />
       </div>
 
-      <div className="mt-4 overflow-hidden border border-[#2e2619]">
-        <div className="grid grid-cols-[48px_1fr_90px] border-b border-[#2e2619] bg-[#0b0906] px-3 py-2 text-[11px] uppercase tracking-[0.12em] text-[#8f826b]">
+      <div className="mt-4 overflow-hidden border border-accent-dim">
+        <div className="grid grid-cols-[48px_1fr_90px] border-b border-accent-dim bg-bg-deep px-3 py-2 text-[11px] uppercase tracking-[0.12em] text-text-muted">
           <span>Lv</span>
           <span>{copy(locale, "效果", "Effect", "効果")}</span>
           <span className="text-right">{copy(locale, "消耗", "Cost", "消費")}</span>
@@ -450,8 +450,8 @@ function RuneDetail({ rune, locale, route, routeStep }: { rune: RuneNode; locale
         {rune.levels.map((level) => (
           <div key={level.level} className="grid grid-cols-[48px_1fr_90px] border-b border-[#211b12] px-3 py-2 text-sm last:border-b-0">
             <span className="text-[#9d8f78]">{level.level}</span>
-            <span className="min-w-0 truncate text-[#fff7df]">{level.value ?? copy(locale, "解锁", "Unlock", "解放")}</span>
-            <span className="text-right font-semibold text-[#f0c040]">{formatNumber(level.cost)}</span>
+            <span className="min-w-0 truncate text-text-primary">{level.value ?? copy(locale, "解锁", "Unlock", "解放")}</span>
+            <span className="text-right font-semibold text-accent-bright">{formatNumber(level.cost)}</span>
           </div>
         ))}
       </div>
@@ -463,7 +463,7 @@ function RuneDetail({ rune, locale, route, routeStep }: { rune: RuneNode; locale
       </div>
 
       <div className="mt-4 border border-[#3a2a16] bg-[#171006] p-3 text-xs leading-5 text-[#d8c7a6]">
-        <span className="font-semibold text-[#f0c040]">{routeLabel(route, locale)}: </span>
+        <span className="font-semibold text-accent-bright">{routeLabel(route, locale)}: </span>
         {routeTip(route, locale)}
       </div>
     </aside>
@@ -472,7 +472,7 @@ function RuneDetail({ rune, locale, route, routeStep }: { rune: RuneNode; locale
 
 function ControlButton({ children, label, onClick }: { children: React.ReactNode; label: string; onClick: () => void }) {
   return (
-    <button type="button" aria-label={label} onClick={onClick} className="flex h-9 w-9 items-center justify-center border border-[#342a1a] bg-[#090806] text-[#d8c7a6] hover:border-[#d4a017] hover:text-[#f0c040]">
+    <button type="button" aria-label={label} onClick={onClick} className="flex h-9 w-9 items-center justify-center border border-[#342a1a] bg-bg-deep text-[#d8c7a6] hover:border-accent hover:text-accent-bright">
       {children}
     </button>
   );
@@ -480,21 +480,21 @@ function ControlButton({ children, label, onClick }: { children: React.ReactNode
 
 function InfoTile({ icon, label, value, wide = false }: { icon: React.ReactNode; label: string; value: string; wide?: boolean }) {
   return (
-    <div className={`border border-[#2e2619] bg-[#090806] p-3 ${wide ? "col-span-2" : ""}`}>
-      <div className="flex items-center gap-2 text-xs text-[#8f826b]">
+    <div className={`border border-accent-dim bg-bg-deep p-3 ${wide ? "col-span-2" : ""}`}>
+      <div className="flex items-center gap-2 text-xs text-text-muted">
         <span className="text-[#c87925]">{icon}</span>
         <span>{label}</span>
       </div>
-      <p className="mt-1 truncate text-sm font-semibold text-[#fff7df]">{value}</p>
+      <p className="mt-1 truncate text-sm font-semibold text-text-primary">{value}</p>
     </div>
   );
 }
 
 function RelationRow({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex items-center justify-between gap-3 border border-[#211b12] bg-[#090806] px-3 py-2">
-      <span className="text-[#8f826b]">{label}</span>
-      <span className="truncate text-right text-[#fff7df]">{value}</span>
+    <div className="flex items-center justify-between gap-3 border border-[#211b12] bg-bg-deep px-3 py-2">
+      <span className="text-text-muted">{label}</span>
+      <span className="truncate text-right text-text-primary">{value}</span>
     </div>
   );
 }

@@ -63,7 +63,7 @@
   "DeadIconPath": "UI/Icon/Hero/HeroDead_301",
   "PrefabPath": "Prefab/Hero/Hero_301",
   "AnimatorPath": "Animation/Hero/301/Hero_301",
-  "icon": "/game/heroes/portraits/Hero_301.png",
+  "icon": "/game/heroes/portraits/Hero_301_5222.png",
   "dead_icon": "/game/heroes/portraits/HeroDead_301.png",
   "animations_folder": "/game/heroes/Sorcerer",
   "skill_name_i18n": null,

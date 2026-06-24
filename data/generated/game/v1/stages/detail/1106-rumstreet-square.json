@@ -1,0 +1,53 @@
+{
+  "key": 1106,
+  "act": 1,
+  "no": 6,
+  "level": 7,
+  "type": "NORMAL",
+  "difficulty": "NORMAL",
+  "name": {
+    "zh-Hans": "朗姆街广场",
+    "zh-Hant": "蘭姆街廣場",
+    "en-US": "Rumstreet Square",
+    "fr-FR": "Place de Rumstreet",
+    "de-DE": "Rumstraßenplatz",
+    "id-ID": "Alun-alun Rumstreet",
+    "ja-JP": "ラムストリート広場",
+    "ko-KR": "럼스트리트 광장",
+    "pl-PL": "Plac Rumstreet",
+    "pt-BR": "Praça Rumstreet",
+    "ru-RU": "Площадь Рамстрит",
+    "es-ES": "Plaza Rumstreet",
+    "th-TH": "จัตุรัสรัมสตรีท",
+    "tr-TR": "Rumstreet Meydanı",
+    "uk-UA": "Площа Рамстріт",
+    "vi-VN": "Quảng trường Rumstreet"
+  },
+  "waves": 12,
+  "monsterCount": 4,
+  "kills": 60,
+  "goldPerClear": 453,
+  "expPerClear": 1168,
+  "boss": {
+    "name": {
+      "zh-Hans": "骷髅",
+      "zh-Hant": "骷髏",
+      "en-US": "Skeleton",
+      "fr-FR": "Squelette",
+      "de-DE": "Skelett",
+      "id-ID": "Tengkorak",
+      "ja-JP": "スケルトン",
+      "ko-KR": "해골",
+      "pl-PL": "Szkielet",
+      "pt-BR": "Esqueleto",
+      "ru-RU": "Скелет",
+      "es-ES": "Esqueleto",
+      "th-TH": "โครงกระดูก",
+      "tr-TR": "İskelet",
+      "uk-UA": "Скелет",
+      "vi-VN": "Bộ xương"
+    },
+    "portrait": "/game/monsters/Skeleton/Skeleton_Idle_character_3.png"
+  },
+  "slug": "1106-rumstreet-square"
+}

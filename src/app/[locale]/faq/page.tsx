@@ -78,15 +78,15 @@ export default async function FaqPage({ params }: Props) {
       />
       <div className="space-y-3">
         {rows.map(([q, a]) => (
-          <div key={q} className="border border-[#27272a] bg-[#0d0d0d] p-5">
-            <h2 className="text-base font-semibold text-[#f0c040]">{q}</h2>
+          <div key={q} className="border border-border-default bg-bg-panel p-5">
+            <h2 className="text-base font-semibold text-accent-bright">{q}</h2>
             <p className="mt-2 text-sm leading-7 text-[#bbb]">{a}</p>
           </div>
         ))}
       </div>
 
-      <section className="mt-8 border border-[#27272a] bg-[#0d0d0d] p-5">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#6c6c6c]">Community support</p>
+      <section className="mt-8 border border-border-default bg-bg-panel p-5">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-text-muted">Community support</p>
         <h2 className="mt-2 text-lg font-semibold text-white">
           {isZh ? "Discord、Steam Discussions 与服务器问题" : "Discord, Steam Discussions, and server issues"}
         </h2>
@@ -96,16 +96,16 @@ export default async function FaqPage({ params }: Props) {
             : "For maintenance, error 500, error 401, market closed, or not launching reports, check Steam news and Steam Discussions first, then use the unofficial troubleshooting hub. This wiki does not act as an official server status page."}
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
-          <Link href={localizedPath(locale, "/server-status")} className="border border-[#5a3a1a] bg-[#171105] px-3 py-2 text-sm font-medium text-[#f0c040] hover:bg-[#211708]">
+          <Link href={localizedPath(locale, "/server-status")} className="border border-accent-dim bg-[#171105] px-3 py-2 text-sm font-medium text-accent-bright hover:bg-[#211708]">
             Server status hub
           </Link>
-          <a href={steamDiscussionsUrl} target="_blank" rel="noopener noreferrer" className="border border-[#27272a] bg-[#111] px-3 py-2 text-sm font-medium text-white hover:border-[#d4a017]">
+          <a href={steamDiscussionsUrl} target="_blank" rel="noopener noreferrer" className="border border-border-default bg-bg-surface px-3 py-2 text-sm font-medium text-white hover:border-accent">
             Steam Discussions
           </a>
-          <a href={discordUrl} target="_blank" rel="noopener noreferrer" className="border border-[#27272a] bg-[#111] px-3 py-2 text-sm font-medium text-white hover:border-[#d4a017]">
+          <a href={discordUrl} target="_blank" rel="noopener noreferrer" className="border border-border-default bg-bg-surface px-3 py-2 text-sm font-medium text-white hover:border-accent">
             Discord community
           </a>
-          <Link href={localizedPath(locale, "/contact")} className="border border-[#27272a] bg-[#111] px-3 py-2 text-sm font-medium text-white hover:border-[#d4a017]">
+          <Link href={localizedPath(locale, "/contact")} className="border border-border-default bg-bg-surface px-3 py-2 text-sm font-medium text-white hover:border-accent">
             Contact
           </Link>
         </div>

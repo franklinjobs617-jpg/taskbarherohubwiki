@@ -1,0 +1,53 @@
+{
+  "key": 3101,
+  "act": 1,
+  "no": 1,
+  "level": 53,
+  "type": "NORMAL",
+  "difficulty": "HELL",
+  "name": {
+    "zh-Hans": "牧场",
+    "zh-Hant": "牧場",
+    "en-US": "Pasture",
+    "fr-FR": "Pâturage",
+    "de-DE": "Weide",
+    "id-ID": "Padang Rumput",
+    "ja-JP": "牧草地",
+    "ko-KR": "목초지",
+    "pl-PL": "Pastwisko",
+    "pt-BR": "Pasto",
+    "ru-RU": "Пастбище",
+    "es-ES": "Pasto",
+    "th-TH": "ทุ่งหญ้า",
+    "tr-TR": "Otlak",
+    "uk-UA": "Пасовище",
+    "vi-VN": "Đồng cỏ"
+  },
+  "waves": 24,
+  "monsterCount": 3,
+  "kills": 360,
+  "goldPerClear": 51079,
+  "expPerClear": 988623,
+  "boss": {
+    "name": {
+      "zh-Hans": "鼠族狂战士",
+      "zh-Hant": "鼠族狂戰士",
+      "en-US": "Ratfolk Berserker",
+      "fr-FR": "Berserker Ratte",
+      "de-DE": "Rattenvolk-Berserker",
+      "id-ID": "Berserker Tikus",
+      "ja-JP": "ラット族バーサーカー",
+      "ko-KR": "쥐족 광전사",
+      "pl-PL": "Berserker Szczurów",
+      "pt-BR": "Berserker Ratuno",
+      "ru-RU": "Берсерк крысолюдов",
+      "es-ES": "Berserker Ratuno",
+      "th-TH": "เบอร์เซิร์กเกอร์เผ่าหนู",
+      "tr-TR": "Sıçan Berserker",
+      "uk-UA": "Берсерк щуролюдів",
+      "vi-VN": "Berserker Chuột"
+    },
+    "portrait": "/game/monsters/BerserkerRatRace/BerserkerRatRace_Idle_character_2.png"
+  },
+  "slug": "3101-pasture"
+}

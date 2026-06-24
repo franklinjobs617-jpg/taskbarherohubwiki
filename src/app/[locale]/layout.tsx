@@ -12,6 +12,8 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "G-NCXRNDQ4Q0";
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const isZh = locale === "zh";
@@ -68,13 +70,15 @@ export default async function LocaleLayout({ children, params }: Props) {
       <head>
         <link rel="llms" href="/llms.txt" />
         <meta name="llms:generated" content="2026-06-08" />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3383070348689557"
-          crossOrigin="anonymous"
-        />
+        {process.env.NODE_ENV === "production" ? (
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3383070348689557"
+            crossOrigin="anonymous"
+          />
+        ) : null}
       </head>
-      <body className="min-h-full bg-[#090909] text-[#d8d1c2] antialiased">
+      <body className="min-h-full bg-bg-deep text-text-secondary antialiased">
         <NextIntlClientProvider messages={messages}>
           <div className="flex min-h-screen flex-col">
             <NavProvider>{children}</NavProvider>
@@ -118,8 +122,8 @@ export default async function LocaleLayout({ children, params }: Props) {
             sameAs: ["https://discord.gg/kSRUY8N8GA"],
           })}
         </Script>
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-87KVJGHX8D" strategy="afterInteractive" />
-        <Script id="gtag-init" strategy="afterInteractive">{`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-87KVJGHX8D');`}</Script>
+        <Script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+        <Script id="gtag-init" strategy="afterInteractive">{`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`}</Script>
       </body>
     </html>
   );

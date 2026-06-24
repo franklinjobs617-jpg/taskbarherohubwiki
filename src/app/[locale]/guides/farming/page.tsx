@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { SafeImage } from "@/components/ui/safe-image";
 import Link from "next/link";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { allMonsters, allStages, type Locale } from "@/lib/game-data/data";
@@ -53,8 +53,8 @@ export default async function FarmingHubPage({ params }: Props) {
       />
 
       {/* Hero image */}
-      <div className="mb-8 overflow-hidden border border-[#27272a]">
-        <Image
+      <div className="mb-8 overflow-hidden border border-border-default">
+        <SafeImage
           src="/game/screenshots/screenshot-2.jpg"
           alt="TBH Farming"
           width={1200}
@@ -70,29 +70,29 @@ export default async function FarmingHubPage({ params }: Props) {
         <div className="grid gap-3 sm:grid-cols-3">
           <Link href={`/${locale}/tools/farming-calculator`} className="group rounded-sm border border-amber-600/40 bg-amber-600/5 p-4 transition-colors hover:border-amber-400">
             <p className="text-sm font-semibold text-amber-400">{isZh ? "🧮 Farming 计算器" : "🧮 Farming Calculator"}</p>
-            <p className="mt-1 text-xs text-[#9d9d9d]">{isZh ? "找物品掉落、查关卡收益、并排对比，含概率模拟" : "Find item drops, stage profits, comparison, probability sim"}</p>
+            <p className="mt-1 text-xs text-text-secondary">{isZh ? "找物品掉落、查关卡收益、并排对比，含概率模拟" : "Find item drops, stage profits, comparison, probability sim"}</p>
             <span className="mt-2 inline-block text-[10px] text-amber-400/60 group-hover:text-amber-400 transition-colors">
               {isZh ? "打开工具 →" : "Open tool →"}
             </span>
           </Link>
-          <Link href={`/${locale}/guides/farming/gold-farming-route`} className="group rounded-sm border border-[#27272a] bg-[#0d0d0d] p-4 transition-colors hover:border-amber-600/30">
+          <Link href={`/${locale}/guides/farming/gold-farming-route`} className="group rounded-sm border border-border-default bg-bg-panel p-4 transition-colors hover:border-accent-dim">
             <p className="text-sm font-semibold text-white">{isZh ? "💰 金币路线" : "💰 Gold Route"}</p>
-            <p className="mt-1 text-xs text-[#9d9d9d]">{isZh ? "最赚钱的关卡和策略" : "Most profitable stages and strategy"}</p>
+            <p className="mt-1 text-xs text-text-secondary">{isZh ? "最赚钱的关卡和策略" : "Most profitable stages and strategy"}</p>
           </Link>
-          <Link href={`/${locale}/guides/farming/exp-farming-route`} className="group rounded-sm border border-[#27272a] bg-[#0d0d0d] p-4 transition-colors hover:border-amber-600/30">
+          <Link href={`/${locale}/guides/farming/exp-farming-route`} className="group rounded-sm border border-border-default bg-bg-panel p-4 transition-colors hover:border-accent-dim">
             <p className="text-sm font-semibold text-white">{isZh ? "⭐ 经验路线" : "⭐ EXP Route"}</p>
-            <p className="mt-1 text-xs text-[#9d9d9d]">{isZh ? "快速升级的最佳关卡" : "Best stages for fast leveling"}</p>
+            <p className="mt-1 text-xs text-text-secondary">{isZh ? "快速升级的最佳关卡" : "Best stages for fast leveling"}</p>
           </Link>
         </div>
 
         {/* Gold Ranking */}
         <section>
-          <h2 className="mb-3 text-sm font-semibold uppercase tracking-[0.1em] text-[#6c6c6c]">
+          <h2 className="mb-3 text-sm font-semibold uppercase tracking-[0.1em] text-text-muted">
             {isZh ? "🥇 金币排行榜" : "🥇 Top Gold Stages"}
           </h2>
-          <div className="overflow-x-auto border border-[#27272a]">
+          <div className="overflow-x-auto border border-border-default">
             <table className="w-full min-w-[600px] text-left text-xs">
-              <thead className="bg-[#18181b] text-[#6c6c6c]">
+              <thead className="bg-bg-surface text-text-muted">
                 <tr>
                   <th className="px-3 py-2">#</th>
                   <th className="px-3 py-2">{isZh ? "关卡" : "Stage"}</th>
@@ -109,8 +109,8 @@ export default async function FarmingHubPage({ params }: Props) {
                     ? monsterPortrait(s.boss.portrait)
                     : null;
                   return (
-                    <tr key={s.key} className="border-t border-[#27272a] hover:bg-[#0d0d0d]">
-                      <td className="px-3 py-2 font-mono text-[#555]">
+                    <tr key={s.key} className="border-t border-border-default hover:bg-bg-panel">
+                      <td className="px-3 py-2 font-mono text-text-muted">
                         {i < 3 ? ["🥇","🥈","🥉"][i] : i + 1}
                       </td>
                       <td className="px-3 py-2">
@@ -121,15 +121,15 @@ export default async function FarmingHubPage({ params }: Props) {
                       <td className="px-3 py-2">
                         <div className="flex items-center gap-2">
                           {bossImg ? (
-                            <Image src={bossImg} alt="" width={24} height={24} className="rounded-sm object-contain" unoptimized />
+                            <SafeImage src={bossImg} alt="" width={24} height={24} className="rounded-sm object-contain" unoptimized />
                           ) : null}
-                          <span className="text-[#9d9d9d]">{s.boss?.name?.["en-US"] ?? "-"}</span>
+                          <span className="text-text-secondary">{s.boss?.name?.["en-US"] ?? "-"}</span>
                         </div>
                       </td>
-                      <td className="px-3 py-2 font-mono text-[#9d9d9d]">{s.level}</td>
+                      <td className="px-3 py-2 font-mono text-text-secondary">{s.level}</td>
                       <td className="px-3 py-2 font-mono font-semibold text-amber-400">{s.goldPerClear?.toLocaleString()}</td>
                       <td className="px-3 py-2 font-mono text-emerald-400">{s.expPerClear?.toLocaleString()}</td>
-                      <td className="px-3 py-2 font-mono text-[#9d9d9d]">{s.kills}</td>
+                      <td className="px-3 py-2 font-mono text-text-secondary">{s.kills}</td>
                     </tr>
                   );
                 })}
@@ -140,12 +140,12 @@ export default async function FarmingHubPage({ params }: Props) {
 
         {/* EXP Ranking */}
         <section>
-          <h2 className="mb-3 text-sm font-semibold uppercase tracking-[0.1em] text-[#6c6c6c]">
+          <h2 className="mb-3 text-sm font-semibold uppercase tracking-[0.1em] text-text-muted">
             {isZh ? "⭐ 经验排行榜" : "⭐ Top EXP Stages"}
           </h2>
-          <div className="overflow-x-auto border border-[#27272a]">
+          <div className="overflow-x-auto border border-border-default">
             <table className="w-full min-w-[600px] text-left text-xs">
-              <thead className="bg-[#18181b] text-[#6c6c6c]">
+              <thead className="bg-bg-surface text-text-muted">
                 <tr>
                   <th className="px-3 py-2">#</th>
                   <th className="px-3 py-2">{isZh ? "关卡" : "Stage"}</th>
@@ -162,8 +162,8 @@ export default async function FarmingHubPage({ params }: Props) {
                     ? monsterPortrait(s.boss.portrait)
                     : null;
                   return (
-                    <tr key={s.key} className="border-t border-[#27272a] hover:bg-[#0d0d0d]">
-                      <td className="px-3 py-2 font-mono text-[#555]">
+                    <tr key={s.key} className="border-t border-border-default hover:bg-bg-panel">
+                      <td className="px-3 py-2 font-mono text-text-muted">
                         {i < 3 ? ["🥇","🥈","🥉"][i] : i + 1}
                       </td>
                       <td className="px-3 py-2">
@@ -174,15 +174,15 @@ export default async function FarmingHubPage({ params }: Props) {
                       <td className="px-3 py-2">
                         <div className="flex items-center gap-2">
                           {bossImg ? (
-                            <Image src={bossImg} alt="" width={24} height={24} className="rounded-sm object-contain" unoptimized />
+                            <SafeImage src={bossImg} alt="" width={24} height={24} className="rounded-sm object-contain" unoptimized />
                           ) : null}
-                          <span className="text-[#9d9d9d]">{s.boss?.name?.["en-US"] ?? "-"}</span>
+                          <span className="text-text-secondary">{s.boss?.name?.["en-US"] ?? "-"}</span>
                         </div>
                       </td>
-                      <td className="px-3 py-2 font-mono text-[#9d9d9d]">{s.level}</td>
+                      <td className="px-3 py-2 font-mono text-text-secondary">{s.level}</td>
                       <td className="px-3 py-2 font-mono font-semibold text-emerald-400">{s.expPerClear?.toLocaleString()}</td>
                       <td className="px-3 py-2 font-mono text-amber-400">{s.goldPerClear?.toLocaleString()}</td>
-                      <td className="px-3 py-2 font-mono text-[#9d9d9d]">{s.kills}</td>
+                      <td className="px-3 py-2 font-mono text-text-secondary">{s.kills}</td>
                     </tr>
                   );
                 })}
@@ -192,14 +192,14 @@ export default async function FarmingHubPage({ params }: Props) {
         </section>
 
         {/* Bottom links */}
-        <section className="grid gap-2 border-t border-[#27272a] pt-6 sm:grid-cols-2">
-          <Link href={`/${locale}/guides/farming/chest-drop-guide`} className="group rounded-sm border border-[#27272a] bg-[#0d0d0d] p-3 text-xs transition-colors hover:border-amber-600/30">
+        <section className="grid gap-2 border-t border-border-default pt-6 sm:grid-cols-2">
+          <Link href={`/${locale}/guides/farming/chest-drop-guide`} className="group rounded-sm border border-border-default bg-bg-panel p-3 text-xs transition-colors hover:border-accent-dim">
             <p className="font-medium text-white group-hover:text-amber-400 transition-colors">{isZh ? "宝箱掉落指南" : "Chest Drop Guide"}</p>
-            <p className="mt-1 text-[#6c6c6c]">{isZh ? "宝箱类型、掉落机制和如何判断刷取目标" : "Chest types, drop mechanics, and how to choose farming targets"}</p>
+            <p className="mt-1 text-text-muted">{isZh ? "宝箱类型、掉落机制和如何判断刷取目标" : "Chest types, drop mechanics, and how to choose farming targets"}</p>
           </Link>
-          <Link href={`/${locale}/guides/economy/steam-market-guide`} className="group rounded-sm border border-[#27272a] bg-[#0d0d0d] p-3 text-xs transition-colors hover:border-amber-600/30">
+          <Link href={`/${locale}/guides/economy/steam-market-guide`} className="group rounded-sm border border-border-default bg-bg-panel p-3 text-xs transition-colors hover:border-accent-dim">
             <p className="font-medium text-white group-hover:text-amber-400 transition-colors">{isZh ? "Steam 市场指南" : "Steam Market Guide"}</p>
-            <p className="mt-1 text-[#6c6c6c]">{isZh ? "如何判断物品是否值得卖" : "How to decide if an item is worth selling"}</p>
+            <p className="mt-1 text-text-muted">{isZh ? "如何判断物品是否值得卖" : "How to decide if an item is worth selling"}</p>
           </Link>
         </section>
       </div>

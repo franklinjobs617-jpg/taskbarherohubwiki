@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 function SourceLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#f0c040] hover:underline">
+    <a href={href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-accent-bright hover:underline">
       {children}
       <ExternalLink className="h-3 w-3" />
     </a>
@@ -89,8 +89,8 @@ export default async function ServerStatusPage({ params }: Props) {
 
       <section className="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
         {checks.map((item) => (
-          <div key={item.title} className="border border-[#27272a] bg-[#0d0d0d] p-4">
-            <ShieldAlert className="mb-3 h-5 w-5 text-[#f0c040]" />
+          <div key={item.title} className="border border-border-default bg-bg-panel p-4">
+            <ShieldAlert className="mb-3 h-5 w-5 text-accent-bright" />
             <h2 className="text-base font-semibold text-white">{item.title}</h2>
             <p className="mt-2 text-sm leading-7 text-[#bbb]">{item.text}</p>
           </div>
@@ -99,7 +99,7 @@ export default async function ServerStatusPage({ params }: Props) {
 
       <Section title="Official and community sources" eyebrow="Evidence first">
         <div className="grid gap-3 md:grid-cols-2">
-          <div className="border border-[#27272a] bg-[#0d0d0d] p-4">
+          <div className="border border-border-default bg-bg-panel p-4">
             <h2 className="font-semibold text-white">Check official channels first</h2>
             <ul className="mt-3 space-y-2 text-sm leading-7 text-[#bbb]">
               <li>Steam news/update history: <SourceLink href={steamNewsUrl}>official announcements</SourceLink></li>
@@ -108,7 +108,7 @@ export default async function ServerStatusPage({ params }: Props) {
               <li>Discord/community: <SourceLink href={discordUrl}>community support link</SourceLink></li>
             </ul>
           </div>
-          <div className="border border-[#27272a] bg-[#0d0d0d] p-4">
+          <div className="border border-border-default bg-bg-panel p-4">
             <h2 className="font-semibold text-white">What this page will not claim</h2>
             <ul className="mt-3 space-y-2 text-sm leading-7 text-[#bbb]">
               <li>It will not say the server is online or offline unless an official source says so.</li>
@@ -129,8 +129,8 @@ export default async function ServerStatusPage({ params }: Props) {
             "Do not trade high-value items, price rare drops, or rely on market profit calculators during active maintenance or unstable market state.",
             "Use this wiki for item, build, drop, and market reference after the game state is stable again.",
           ].map((step, index) => (
-            <div key={step} className="flex gap-3 border border-[#27272a] bg-[#0d0d0d] p-4">
-              <span className="flex h-6 w-6 shrink-0 items-center justify-center border border-[#4a3510] bg-[#171105] text-xs font-semibold text-[#f0c040]">{index + 1}</span>
+            <div key={step} className="flex gap-3 border border-border-default bg-bg-panel p-4">
+              <span className="flex h-6 w-6 shrink-0 items-center justify-center border border-[#4a3510] bg-[#171105] text-xs font-semibold text-accent-bright">{index + 1}</span>
               <p className="text-sm leading-7 text-[#bbb]">{step}</p>
             </div>
           ))}
@@ -139,15 +139,15 @@ export default async function ServerStatusPage({ params }: Props) {
 
       <Section title="Multilingual search terms" eyebrow="Search intent">
         <div className="grid gap-3 md:grid-cols-3">
-          <div className="border border-[#27272a] bg-[#0d0d0d] p-4">
+          <div className="border border-border-default bg-bg-panel p-4">
             <p className="text-sm font-semibold text-white">Portuguese</p>
             <p className="mt-2 text-sm leading-7 text-[#bbb]">Users may search for TBH manutenção, manutenção servidor, erro 500, or erro 401. Check Steam sources before local fixes.</p>
           </div>
-          <div className="border border-[#27272a] bg-[#0d0d0d] p-4">
+          <div className="border border-border-default bg-bg-panel p-4">
             <p className="text-sm font-semibold text-white">Russian</p>
             <p className="mt-2 text-sm leading-7 text-[#bbb]">Users may search не запускается, ошибка 500, ошибка 401, сервер, or рынок. Community threads can help identify shared symptoms.</p>
           </div>
-          <div className="border border-[#27272a] bg-[#0d0d0d] p-4">
+          <div className="border border-border-default bg-bg-panel p-4">
             <p className="text-sm font-semibold text-white">Turkish</p>
             <p className="mt-2 text-sm leading-7 text-[#bbb]">Users may ask pazar ne zaman açılacak, sunucu durumu, bakım, hata 500, or hata 401. Do not assume a market reopening time.</p>
           </div>
@@ -162,16 +162,16 @@ export default async function ServerStatusPage({ params }: Props) {
             ["/market", "Steam market references"],
             ["/tools/drop-finder", "Drop finder"],
           ].map(([href, label]) => (
-            <Link key={href} href={localizedPath(locale, href)} className="border border-[#27272a] bg-[#0d0d0d] p-4 text-sm font-medium text-white hover:border-[#d4a017]">
-              <Wrench className="mb-3 h-4 w-4 text-[#d4a017]" />
+            <Link key={href} href={localizedPath(locale, href)} className="border border-border-default bg-bg-panel p-4 text-sm font-medium text-white hover:border-accent">
+              <Wrench className="mb-3 h-4 w-4 text-accent" />
               {label}
             </Link>
           ))}
         </div>
       </Section>
 
-      <div className="mt-8 flex items-start gap-3 border border-[#3a2d12] bg-[#171105] p-4 text-sm leading-7 text-[#d8d1c2]">
-        <AlertTriangle className="mt-1 h-4 w-4 shrink-0 text-[#f0c040]" />
+      <div className="mt-8 flex items-start gap-3 border border-[#3a2d12] bg-[#171105] p-4 text-sm leading-7 text-text-secondary">
+        <AlertTriangle className="mt-1 h-4 w-4 shrink-0 text-accent-bright" />
         <p>
           If an official post contradicts this page, trust the official post. This wiki should only help players find the right source, understand likely error categories, and avoid risky market decisions during unstable service periods.
         </p>

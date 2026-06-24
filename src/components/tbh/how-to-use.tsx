@@ -46,14 +46,14 @@ export function HowToUse({ pageKey, locale }: { pageKey: keyof typeof HINTS; loc
   if (!h) return null;
   const steps = (h as Record<string, Step[]>)[locale] ?? h.en;
   return (
-    <section className="mb-4 border border-[#27272a] bg-[#0d0d0d] p-3">
-      <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#9d9d9d]">
+    <section className="mb-4 border border-border-default bg-bg-panel p-3">
+      <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-text-secondary">
         {locale === "zh" ? "怎么用这页" : locale === "ja" ? "使い方" : locale === "ko" ? "사용법" : "How to use this page"}
       </p>
-      <ol className="mt-2 space-y-1 text-[12px] leading-5 text-[#d8d1c2]">
+      <ol className="mt-2 space-y-1 text-[12px] leading-5 text-text-secondary">
         {steps.map((step, i) => (
           <li key={i} className="flex gap-2">
-            <span className="font-mono text-[10px] text-[#d4a017]">{i + 1}.</span>
+            <span className="font-mono text-[10px] text-accent">{i + 1}.</span>
             <span>{step}</span>
           </li>
         ))}

@@ -161,22 +161,22 @@ export function HeroCompareMatrix({ locale }: { locale: Locale }) {
   return (
     <div className="space-y-6">
       {/* Matrix */}
-      <div className="overflow-x-auto border border-[#27272a]">
+      <div className="overflow-x-auto border border-border-default">
         <table className="w-full min-w-[600px] text-left text-sm">
-          <thead className="bg-[#18181b] text-xs text-[#6c6c6c]">
+          <thead className="bg-bg-surface text-xs text-text-muted">
             <tr>
               <th className="px-3 py-2.5">{isZh ? "英雄" : "Hero"}</th>
               {roles.map((role) => (
                 <th key={role.key} className="px-3 py-2.5">
                   {role.label}
-                  <div className="text-[9px] font-normal text-[#555]">{role.desc}</div>
+                  <div className="text-[9px] font-normal text-text-muted">{role.desc}</div>
                 </th>
               ))}
             </tr>
           </thead>
           <tbody>
             {heroScores.map(({ hero, scores }) => (
-              <tr key={hero.HeroKey} className="border-t border-[#27272a] hover:bg-[#0d0d0d]">
+              <tr key={hero.HeroKey} className="border-t border-border-default hover:bg-bg-panel">
                 <td className="px-3 py-3 font-medium text-white">
                   {heroName(hero, locale)}
                   {hero.DLCAppId ? (
@@ -193,13 +193,13 @@ export function HeroCompareMatrix({ locale }: { locale: Locale }) {
                   return (
                     <td key={role.key} className="px-3 py-3">
                       <div className="flex items-center gap-2">
-                        <div className="h-1.5 flex-1 rounded-full bg-[#18181b]">
+                        <div className="h-1.5 flex-1 rounded-full bg-bg-surface">
                           <div
                             className={`h-full rounded-full ${isBest ? "bg-amber-400" : isGood ? "bg-amber-600" : "bg-zinc-600"}`}
                             style={{ width: `${Math.round(pct)}%` }}
                           />
                         </div>
-                        <span className={`font-mono text-[11px] tabular-nums ${isBest ? "text-amber-400 font-semibold" : "text-[#6c6c6c]"}`}>
+                        <span className={`font-mono text-[11px] tabular-nums ${isBest ? "text-amber-400 font-semibold" : "text-text-muted"}`}>
                           {role.key === "survivability" || role.key === "dps"
                             ? score.toFixed(1)
                             : score.toFixed(2)}
@@ -215,7 +215,7 @@ export function HeroCompareMatrix({ locale }: { locale: Locale }) {
       </div>
 
       {/* Quick verdict */}
-      <div className="rounded-sm border border-amber-600/30 bg-amber-600/5 p-3 text-xs text-[#9d9d9d]">
+      <div className="rounded-sm border border-accent-dim bg-amber-600/5 p-3 text-xs text-text-secondary">
         <span className="font-semibold text-amber-400">
           {isZh ? "📊 数据说明：" : "Data note: "}
         </span>

@@ -1,0 +1,53 @@
+{
+  "key": 3310,
+  "act": 3,
+  "no": 10,
+  "level": 77,
+  "type": "ACTBOSS",
+  "difficulty": "HELL",
+  "name": {
+    "zh-Hans": "地狱指挥室",
+    "zh-Hant": "地獄指揮室",
+    "en-US": "Hell Command Chamber",
+    "fr-FR": "Salle de Commandement Infernale",
+    "de-DE": "Höllen-Kommandokammer",
+    "id-ID": "Ruang Komando Neraka",
+    "ja-JP": "地獄の執務室",
+    "ko-KR": "지옥의 집무실",
+    "pl-PL": "Komnata Dowodzenia Piekła",
+    "pt-BR": "Sala de Comando do Inferno",
+    "ru-RU": "Командный зал ада",
+    "es-ES": "Cámara de Mando del Infierno",
+    "th-TH": "ห้องบัญชาการนรก",
+    "tr-TR": "Cehennem Komuta Odası",
+    "uk-UA": "Командна зала пекла",
+    "vi-VN": "Phòng Chỉ huy Địa ngục"
+  },
+  "waves": null,
+  "monsterCount": 0,
+  "kills": 0,
+  "goldPerClear": 12675,
+  "expPerClear": 496,
+  "boss": {
+    "name": {
+      "zh-Hans": "执政官莫尔卡",
+      "zh-Hant": "執政官莫爾卡",
+      "en-US": "Archon Morkar",
+      "fr-FR": "Archonte Morkar",
+      "de-DE": "Archont Morkar",
+      "id-ID": "Archon Morkar",
+      "ja-JP": "モルカル執政官",
+      "ko-KR": "집정관 모르카르",
+      "pl-PL": "Archon Morkar",
+      "pt-BR": "Arconte Morkar",
+      "ru-RU": "Архонт Моркар",
+      "es-ES": "Arconte Morkar",
+      "th-TH": "อาร์คอน มอร์คาร์",
+      "tr-TR": "Arkhon Morkar",
+      "uk-UA": "Архонт Моркар",
+      "vi-VN": "Archon Morkar"
+    },
+    "portrait": "/game/monsters/voidcaller/voidcaller_Idle_Character_1.png"
+  },
+  "slug": "3310-hell-command-chamber"
+}

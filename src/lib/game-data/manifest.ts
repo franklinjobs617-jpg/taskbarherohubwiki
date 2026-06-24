@@ -35,17 +35,17 @@ export async function getManifest(): Promise<DataManifest | null> {
 
 export function getLocalManifest(): DataManifest {
   return {
-    version: "1.0.0",
-    generatedAt: new Date().toISOString(),
-    source: "taskbarhero.wiki public data",
-    sourceUrl: "https://taskbarhero.wiki",
+    version: "game-v1",
+    generatedAt: "2026-06-24T07:09:17.476Z",
+    source: "tbh_data local JSON",
+    sourceUrl: "https://taskbarherohub.wiki",
     entityCounts: {
       items: 5944,
       heroes: 6,
       monsters: 61,
       stages: 120,
       runes: 197,
-      skills: 214,
+      skills: 106,
     },
     locales: ["zh", "en"],
   };

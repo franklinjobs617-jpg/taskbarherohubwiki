@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { SafeImage } from "@/components/ui/safe-image";
 
 export function HeroPortrait({
   heroKey,
@@ -27,7 +27,7 @@ export function HeroPortrait({
   return (
     <div className={frameClass(size)}>
       {heroArtPath ? (
-        <Image
+        <SafeImage
           src={heroArtPath}
           alt={fallbackText}
           width={imageSize.width}
@@ -35,6 +35,11 @@ export function HeroPortrait({
           className="max-h-full object-contain drop-shadow-[0_14px_20px_rgba(0,0,0,0.55)] transition duration-200 group-hover:scale-[1.04]"
           data-pixel
           unoptimized
+          fallback={
+            <div className="text-center">
+              <p className={letterClass(size)}>{abbreviation}</p>
+            </div>
+          }
         />
       ) : (
         <div className="text-center">
@@ -47,7 +52,7 @@ export function HeroPortrait({
 
 function frameClass(size: string) {
   const base =
-    "flex items-end justify-center overflow-hidden border border-[#3b3b3b] bg-[radial-gradient(circle_at_50%_82%,rgba(212,160,23,0.22),rgba(42,33,16,0.42)_34%,#080808_72%)]";
+    "flex items-end justify-center overflow-hidden border border-border-strong bg-[radial-gradient(circle_at_50%_82%,rgba(212,160,23,0.22),rgba(42,33,16,0.42)_34%,#080808_72%)]";
   const sizes: Record<string, string> = {
     sm: "h-16 w-16 shrink-0 p-1",
     md: "h-32 w-28 shrink-0 px-2 pt-2",
@@ -59,10 +64,10 @@ function frameClass(size: string) {
 
 function letterClass(size: string) {
   const sizes: Record<string, string> = {
-    sm: "text-lg font-semibold text-[#f0c040]",
-    md: "text-2xl font-semibold text-[#f0c040]",
-    card: "text-4xl font-semibold text-[#f0c040]",
-    lg: "text-5xl font-semibold text-[#f0c040]",
+    sm: "text-lg font-semibold text-accent-bright",
+    md: "text-2xl font-semibold text-accent-bright",
+    card: "text-4xl font-semibold text-accent-bright",
+    lg: "text-5xl font-semibold text-accent-bright",
   };
   return sizes[size] ?? sizes.lg;
 }

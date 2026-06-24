@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { SafeImage } from "@/components/ui/safe-image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Boxes, Calculator, Cpu, Wrench } from "lucide-react";
+import { Breadcrumb } from "@/components/tbh/breadcrumb";
+import { FaqBlock } from "@/components/tbh/faq-block";
+import { entityFaqs } from "@/lib/game-data/faqs";
 import { ConfidenceBadge, RarityBadge } from "@/components/tbh/badges";
 import { ItemCard, MarketPrice, Section } from "@/components/tbh/cards";
 import { DropHeatmap } from "@/components/tbh/drop-heatmap";
@@ -108,6 +111,7 @@ export default async function ItemDetailPage({ params }: Props) {
   const name = itemName(item, locale);
   const enName = itemName(item, "en");
   const isZh = locale === "zh";
+  const isJa = locale === "ja";
   const icon = assetPath(item.icon);
   const description = text(detail?.desc, locale, "");
   const related = allItems().filter((entry) => entry.id !== item.id && (entry.grade === item.grade || entry.gear === item.gear) && entry.type === item.type).slice(0, 8);
@@ -119,6 +123,7 @@ export default async function ItemDetailPage({ params }: Props) {
 
   return (
     <PageShell>
+      <Breadcrumb locale={locale} items={[{ label: "Home", href: "/" }, { label: isZh ? "物品" : isJa ? "アイテム" : "Items", href: "/items" }, { label: name }]} />
       <SeoJsonLd data={[
         { "@context": "https://schema.org", "@type": "WebPage", name, inLanguage: locale, dateModified: "2026-06-08" },
         ...(item.marketable ? [{
@@ -141,10 +146,10 @@ export default async function ItemDetailPage({ params }: Props) {
           },
         }] : []),
       ]} />
-      <nav className="mb-5 flex flex-wrap gap-2 text-xs text-[#6c6c6c]">
-        <Link href={lpath("/")} className="hover:text-[#f0c040]">TBH</Link><span>/</span>
-        <Link href={lpath("/items")} className="hover:text-[#f0c040]">{isZh ? "物品" : "Items"}</Link><span>/</span>
-        <span className="text-[#9d9d9d]">{name}</span>
+      <nav className="mb-5 flex flex-wrap gap-2 text-xs text-text-muted">
+        <Link href={lpath("/")} className="hover:text-accent-bright">TBH</Link><span>/</span>
+        <Link href={lpath("/items")} className="hover:text-accent-bright">{isZh ? "物品" : "Items"}</Link><span>/</span>
+        <span className="text-text-secondary">{name}</span>
       </nav>
 
       <ItemQuickAnswer itemSlug={slug} marketPrice={market?.lowest} locale={locale} />
@@ -157,7 +162,7 @@ export default async function ItemDetailPage({ params }: Props) {
           <h2 className="mt-2 text-lg font-semibold text-white">
             {isZh ? `${name} 用来做什么？` : `What is ${name} used for?`}
           </h2>
-          <p className="mt-3 text-sm leading-7 text-[#d8d1c2]">
+          <p className="mt-3 text-sm leading-7 text-text-secondary">
             {context ?? (isZh ? "该实体已有基础数据，但用途说明仍需结合来源、市场和关卡数据判断。" : "This entity has base data, but its use should be checked against source, market, and stage data.")}
             {" "}
             {hasDrops
@@ -165,19 +170,19 @@ export default async function ItemDetailPage({ params }: Props) {
               : "当前没有足够证据支持具体掉率结论。"}
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
-            <Link href={lpath(`/tools/drop-finder?q=${encodeURIComponent(enName)}`)} className="border border-[#4a3510] bg-[#0d0d0d] px-3 py-2 text-sm text-[#f0c040] hover:border-[#d4a017]">
+            <Link href={lpath(`/tools/drop-finder?q=${encodeURIComponent(enName)}`)} className="border border-[#4a3510] bg-bg-panel px-3 py-2 text-sm text-accent-bright hover:border-accent">
               {isZh ? "推荐刷取入口" : "Recommended farming entry"}
             </Link>
-            <Link href={lpath("/tools/farming-calculator")} className="border border-[#4a3510] bg-[#0d0d0d] px-3 py-2 text-sm text-[#f0c040] hover:border-[#d4a017]">
+            <Link href={lpath("/tools/farming-calculator")} className="border border-[#4a3510] bg-bg-panel px-3 py-2 text-sm text-accent-bright hover:border-accent">
               Farming calculator
             </Link>
             {market ? (
-              <Link href={lpath(`/market/${item.slug}`)} className="border border-[#4a3510] bg-[#0d0d0d] px-3 py-2 text-sm text-[#f0c040] hover:border-[#d4a017]">
+              <Link href={lpath(`/market/${item.slug}`)} className="border border-[#4a3510] bg-bg-panel px-3 py-2 text-sm text-accent-bright hover:border-accent">
                 {isZh ? "市场链接" : "Market link"}
               </Link>
             ) : null}
             {item.type === "MATERIAL" ? (
-              <Link href={lpath("/cube")} className="border border-[#4a3510] bg-[#0d0d0d] px-3 py-2 text-sm text-[#f0c040] hover:border-[#d4a017]">
+              <Link href={lpath("/cube")} className="border border-[#4a3510] bg-bg-panel px-3 py-2 text-sm text-accent-bright hover:border-accent">
                 Hero-dric Cube
               </Link>
             ) : null}
@@ -186,43 +191,43 @@ export default async function ItemDetailPage({ params }: Props) {
       ) : null}
 
       <section className="mt-6 grid gap-6 lg:grid-cols-[340px_1fr]">
-        <aside className="h-fit border border-[#27272a] bg-[#0d0d0d] p-5 lg:sticky lg:top-16">
+        <aside className="h-fit border border-border-default bg-bg-panel p-5 lg:sticky lg:top-16">
           <div className="flex items-center gap-4">
-            <div className="flex h-24 w-24 shrink-0 items-center justify-center border border-[#3b3b3b] bg-[#0a0a0a]">
-              {icon ? <Image src={icon} alt={`${name} item icon`} width={80} height={80} className="object-contain" data-pixel unoptimized /> : <span className="text-xs text-[#6c6c6c]">No image</span>}
+            <div className="flex h-24 w-24 shrink-0 items-center justify-center border border-border-strong bg-bg-canvas">
+              {icon ? <SafeImage src={icon} alt={`${name} item icon`} width={80} height={80} className="object-contain" data-pixel unoptimized /> : <span className="text-xs text-text-muted">No image</span>}
             </div>
             <div className="min-w-0">
-              <h1 className="text-xl font-semibold text-[#f1e8d5]">{name}</h1>
-              {enName !== name ? <p className="mt-1 text-sm text-[#6c6c6c]">{enName}</p> : null}
-              <p className="mt-2 text-xs text-[#6c6c6c]">ID {item.id}</p>
+              <h1 className="text-xl font-semibold text-text-primary">{name}</h1>
+              {enName !== name ? <p className="mt-1 text-sm text-text-muted">{enName}</p> : null}
+              <p className="mt-2 text-xs text-text-muted">ID {item.id}</p>
             </div>
           </div>
           <div className="mt-5 flex flex-wrap gap-2">
             <RarityBadge grade={item.grade} locale={locale} />
-            <span className="border border-[#3b3b3b] px-2 py-0.5 text-[11px] text-[#9d9d9d]">{item.type}</span>
-            {item.gear ? <span className="border border-[#3b3b3b] px-2 py-0.5 text-[11px] text-[#9d9d9d]">{slotNames[item.gear]?.[locale] ?? item.gear}</span> : null}
-            {item.level ? <span className="border border-[#3b3b3b] px-2 py-0.5 text-[11px] text-[#9d9d9d]">Lv.{item.level}</span> : null}
+            <span className="border border-border-strong px-2 py-0.5 text-[11px] text-text-secondary">{item.type}</span>
+            {item.gear ? <span className="border border-border-strong px-2 py-0.5 text-[11px] text-text-secondary">{slotNames[item.gear]?.[locale] ?? item.gear}</span> : null}
+            {item.level ? <span className="border border-border-strong px-2 py-0.5 text-[11px] text-text-secondary">Lv.{item.level}</span> : null}
           </div>
-          <div className="mt-5 border-t border-[#27272a] pt-4">
-            <p className="text-xs text-[#6c6c6c]">{isZh ? "市场状态" : "Market status"}</p>
+          <div className="mt-5 border-t border-border-default pt-4">
+            <p className="text-xs text-text-muted">{isZh ? "市场状态" : "Market status"}</p>
             <div className="mt-2 flex items-center justify-between gap-3">
               <MarketPrice item={item} />
               <ConfidenceBadge value={market?.confidence ?? "missing"} />
             </div>
-            {market ? <Link href={lpath(`/market/${item.slug}`)} className="mt-2 inline-block text-xs text-[#f0c040] hover:underline">{isZh ? "查看市场状态" : "Open market status"}</Link> : null}
+            {market ? <Link href={lpath(`/market/${item.slug}`)} className="mt-2 inline-block text-xs text-accent-bright hover:underline">{isZh ? "查看市场状态" : "Open market status"}</Link> : null}
           </div>
         </aside>
         <div className="space-y-8">
           {/* Why this matters */}
           {context && (
-            <div className="rounded-sm border-l-[3px] border-amber-500 bg-amber-500/5 px-4 py-3 text-sm leading-6 text-[#9d9d9d]">
+            <div className="rounded-sm border-l-[3px] border-amber-500 bg-amber-500/5 px-4 py-3 text-sm leading-6 text-text-secondary">
               <strong className="text-amber-400">{isZh ? "📌 " : "📌 "}{isZh ? "用途" : "Purpose"}:</strong>{" "}{context}
             </div>
           )}
 
           {/* Empty state for no drops */}
           {!hasDrops && item.type === "MATERIAL" && (
-            <div className="rounded-sm border border-amber-600/30 bg-amber-600/5 p-4 text-sm leading-6 text-[#9d9d9d]">
+            <div className="rounded-sm border border-accent-dim bg-amber-600/5 p-4 text-sm leading-6 text-text-secondary">
               <p className="font-semibold text-amber-400">{isZh ? "⚠️ 该物品暂无常规掉落数据" : "⚠️ No regular drop data available"}</p>
               <p className="mt-1">
                 {isZh
@@ -247,21 +252,21 @@ export default async function ItemDetailPage({ params }: Props) {
           )}
 
           <Section title={isZh ? "基础信息" : "Overview"}>
-            <p className="border border-[#27272a] bg-[#0d0d0d] p-4 text-sm leading-7 text-[#9d9d9d]">{description || (isZh ? "该物品的基础数据已收录。" : "Base data is available for this item.")}</p>
+            <p className="border border-border-default bg-bg-panel p-4 text-sm leading-7 text-text-secondary">{description || (isZh ? "该物品的基础数据已收录。" : "Base data is available for this item.")}</p>
           </Section>
 
           <Section title={isZh ? "属性与合成" : "Stats & Synthesis"}>
             <div className="grid gap-3 md:grid-cols-2">
-              <div className="border border-[#27272a] bg-[#0d0d0d] p-4">
-                <p className="mb-3 text-sm font-medium text-[#ffffff]">{isZh ? "属性" : "Stats"}</p>
+              <div className="border border-border-default bg-bg-panel p-4">
+                <p className="mb-3 text-sm font-medium text-text-primary">{isZh ? "属性" : "Stats"}</p>
                 {detail?.stats && Object.keys(detail.stats).length ? (
-                  <dl className="grid grid-cols-2 gap-2 text-sm">{Object.entries(detail.stats).map(([key, value]) => <div key={key} className="border border-[#27272a] p-2"><dt className="text-xs text-[#6c6c6c]">{key}</dt><dd className="text-[#ffffff]">{String(value)}</dd></div>)}</dl>
-                ) : <p className="text-sm text-[#6c6c6c]">{isZh ? "无结构化属性。" : "No structured stats."}</p>}
+                  <dl className="grid grid-cols-2 gap-2 text-sm">{Object.entries(detail.stats).map(([key, value]) => <div key={key} className="border border-border-default p-2"><dt className="text-xs text-text-muted">{key}</dt><dd className="text-text-primary">{String(value)}</dd></div>)}</dl>
+                ) : <p className="text-sm text-text-muted">{isZh ? "无结构化属性。" : "No structured stats."}</p>}
               </div>
-              <div className="border border-[#27272a] bg-[#0d0d0d] p-4 text-sm text-[#9d9d9d]">
-                <p><span className="text-[#6c6c6c]">{isZh ? "合成类型" : "Synthesis"}:</span> {detail?.synthType ?? "-"}</p>
-                <p className="mt-2"><span className="text-[#6c6c6c]">{isZh ? "来源数据" : "Drop data"}:</span> {drops.length > 0 ? `${drops.length} ${isZh ? "个宝箱来源" : "chest sources"}` : (isZh ? "暂无掉落数据" : "No drop data")}</p>
-                <p className="mt-2"><span className="text-[#6c6c6c]">ID:</span> {item.id} · <span className="text-[#6c6c6c]">{isZh ? "可交易" : "Tradable"}:</span> {item.marketable ? (isZh ? "是" : "Yes") : (isZh ? "否" : "No")}</p>
+              <div className="border border-border-default bg-bg-panel p-4 text-sm text-text-secondary">
+                <p><span className="text-text-muted">{isZh ? "合成类型" : "Synthesis"}:</span> {detail?.synthType ?? "-"}</p>
+                <p className="mt-2"><span className="text-text-muted">{isZh ? "来源数据" : "Drop data"}:</span> {drops.length > 0 ? `${drops.length} ${isZh ? "个宝箱来源" : "chest sources"}` : (isZh ? "暂无掉落数据" : "No drop data")}</p>
+                <p className="mt-2"><span className="text-text-muted">ID:</span> {item.id} · <span className="text-text-muted">{isZh ? "可交易" : "Tradable"}:</span> {item.marketable ? (isZh ? "是" : "Yes") : (isZh ? "否" : "No")}</p>
               </div>
             </div>
           </Section>
@@ -273,37 +278,37 @@ export default async function ItemDetailPage({ params }: Props) {
           )}
 
           {/* Bottom nav: prerequisite + next steps */}
-          <div className="grid gap-3 border-t border-[#27272a] pt-6 sm:grid-cols-2">
+          <div className="grid gap-3 border-t border-border-default pt-6 sm:grid-cols-2">
             <div className="space-y-2">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[#6c6c6c]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-text-muted">
                 {isZh ? "← 相关系统" : "← Related Systems"}
               </p>
               {item.type === "MATERIAL" && (
-                <Link href={lpath("/cube")} className="flex items-center gap-2 rounded-sm border border-[#27272a] bg-[#0d0d0d] p-3 text-xs transition-colors hover:border-amber-600/30 group">
-                  <Cpu className="h-4 w-4 shrink-0 text-[#6c6c6c] group-hover:text-amber-400" />
-                  <span className="text-[#9d9d9d] group-hover:text-white">{isZh ? "Hero-dric Cube 系统" : "Hero-dric Cube System"}</span>
+                <Link href={lpath("/cube")} className="flex items-center gap-2 rounded-sm border border-border-default bg-bg-panel p-3 text-xs transition-colors hover:border-accent-dim group">
+                  <Cpu className="h-4 w-4 shrink-0 text-text-muted group-hover:text-amber-400" />
+                  <span className="text-text-secondary group-hover:text-text-primary">{isZh ? "Hero-dric Cube 系统" : "Hero-dric Cube System"}</span>
                 </Link>
               )}
-              <Link href={lpath("/chests")} className="flex items-center gap-2 rounded-sm border border-[#27272a] bg-[#0d0d0d] p-3 text-xs transition-colors hover:border-amber-600/30 group">
-                <Boxes className="h-4 w-4 shrink-0 text-[#6c6c6c] group-hover:text-amber-400" />
-                <span className="text-[#9d9d9d] group-hover:text-white">{isZh ? "宝箱数据库" : "Chest Database"}</span>
+              <Link href={lpath("/chests")} className="flex items-center gap-2 rounded-sm border border-border-default bg-bg-panel p-3 text-xs transition-colors hover:border-accent-dim group">
+                <Boxes className="h-4 w-4 shrink-0 text-text-muted group-hover:text-amber-400" />
+                <span className="text-text-secondary group-hover:text-text-primary">{isZh ? "宝箱数据库" : "Chest Database"}</span>
               </Link>
             </div>
             <div className="space-y-2">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[#6c6c6c]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-text-muted">
                 {isZh ? "下一步 →" : "Next Steps →"}
               </p>
               {hasDrops && (
-                <Link href={lpath("/tools/farming-calculator")} className="flex items-center gap-2 rounded-sm border border-[#27272a] bg-[#0d0d0d] p-3 text-xs transition-colors hover:border-amber-600/30 group">
-                  <Calculator className="h-4 w-4 shrink-0 text-[#6c6c6c] group-hover:text-amber-400" />
-                  <span className="text-[#9d9d9d] group-hover:text-white">{isZh ? "Farming 计算器 — 算期望收益" : "Farming Calculator — estimate profit"}</span>
-                  <ArrowRight className="ml-auto h-3 w-3 shrink-0 text-[#555] group-hover:text-amber-400" />
+                <Link href={lpath("/tools/farming-calculator")} className="flex items-center gap-2 rounded-sm border border-border-default bg-bg-panel p-3 text-xs transition-colors hover:border-accent-dim group">
+                  <Calculator className="h-4 w-4 shrink-0 text-text-muted group-hover:text-amber-400" />
+                  <span className="text-text-secondary group-hover:text-text-primary">{isZh ? "Farming 计算器 — 算期望收益" : "Farming Calculator — estimate profit"}</span>
+                  <ArrowRight className="ml-auto h-3 w-3 shrink-0 text-text-muted group-hover:text-amber-400" />
                 </Link>
               )}
-              <Link href={lpath("/effects")} className="flex items-center gap-2 rounded-sm border border-[#27272a] bg-[#0d0d0d] p-3 text-xs transition-colors hover:border-amber-600/30 group">
-                <Wrench className="h-4 w-4 shrink-0 text-[#6c6c6c] group-hover:text-amber-400" />
-                <span className="text-[#9d9d9d] group-hover:text-white">{isZh ? "材料效果表 — 找最佳属性" : "Material Effects — find best stats"}</span>
-                <ArrowRight className="ml-auto h-3 w-3 shrink-0 text-[#555] group-hover:text-amber-400" />
+              <Link href={lpath("/effects")} className="flex items-center gap-2 rounded-sm border border-border-default bg-bg-panel p-3 text-xs transition-colors hover:border-accent-dim group">
+                <Wrench className="h-4 w-4 shrink-0 text-text-muted group-hover:text-amber-400" />
+                <span className="text-text-secondary group-hover:text-text-primary">{isZh ? "材料效果表 — 找最佳属性" : "Material Effects — find best stats"}</span>
+                <ArrowRight className="ml-auto h-3 w-3 shrink-0 text-text-muted group-hover:text-amber-400" />
               </Link>
             </div>
           </div>
@@ -313,6 +318,7 @@ export default async function ItemDetailPage({ params }: Props) {
           </Section>
         </div>
       </section>
+      <FaqBlock faqs={(entityFaqs.items?.[locale] ?? entityFaqs.items?.en ?? []).map(f => ({question: f.q, answer: f.a}))} title={isZh ? "常见问题" : isJa ? "よくある質問" : "FAQ"} />
     </PageShell>
   );
 }

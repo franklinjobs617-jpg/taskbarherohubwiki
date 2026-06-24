@@ -21,32 +21,32 @@ export default function NotFound() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[60vh] px-4">
-      <h1 className="text-4xl font-semibold text-[#d4a017] mb-4">404</h1>
-      <p className="text-[#9d9d9d] text-lg mb-2">{t.title}</p>
-      <p className="text-[#6c6c6c] text-sm mb-8">{t.desc}</p>
+      <h1 className="text-4xl font-semibold text-accent mb-4">404</h1>
+      <p className="text-text-secondary text-lg mb-2">{t.title}</p>
+      <p className="text-text-muted text-sm mb-8">{t.desc}</p>
 
-      <form action={lpath("/items")} className="mb-8 flex w-full max-w-md border border-[#3b3b3b] bg-[#0d0d0d]">
-        <Search className="ml-3 h-4 w-4 shrink-0 self-center text-[#6c6c6c]" />
-        <input name="q" placeholder={t.search} className="flex-1 bg-transparent px-3 py-2.5 text-sm text-white outline-none placeholder:text-[#6c6c6c]" />
-        <button className="bg-[#d4a017] px-4 text-sm font-medium text-black hover:bg-[#f0c040] transition-colors">Search</button>
+      <form action={lpath("/items")} className="mb-8 flex w-full max-w-md border border-border-strong bg-bg-panel">
+        <Search className="ml-3 h-4 w-4 shrink-0 self-center text-text-muted" />
+        <input name="q" placeholder={t.search} className="flex-1 bg-transparent px-3 py-2.5 text-sm text-white outline-none placeholder:text-text-muted" />
+        <button className="bg-[#d4a017] px-4 text-sm font-medium text-black hover:bg-accent-bright transition-colors">Search</button>
       </form>
 
-      <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#6c6c6c]">{t.popular}</p>
+      <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-text-muted">{t.popular}</p>
       <div className="flex flex-wrap justify-center gap-2">
-        <Link href={lpath("/items")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Items <span className="text-[#6c6c6c]">5,944</span></Link>
-        <Link href={lpath("/heroes")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Heroes <span className="text-[#6c6c6c]">6</span></Link>
-        <Link href={lpath("/map")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Map <span className="text-[#6c6c6c]">120</span></Link>
-        <Link href={lpath("/monsters")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Monsters <span className="text-[#6c6c6c]">61</span></Link>
-        <Link href={lpath("/runes")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Runes <span className="text-[#6c6c6c]">197</span></Link>
-        <Link href={lpath("/chests")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Chests <span className="text-[#6c6c6c]">59</span></Link>
-        <Link href={lpath("/market")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Market</Link>
-        <Link href={lpath("/tools/drop-finder")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Drop Finder</Link>
-        <Link href={lpath("/guides/farming")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Farming Guide</Link>
-        <Link href={lpath("/tools/farming-calculator")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Calculator</Link>
-        <Link href={lpath("/guides/beginner/getting-started")} className="rounded-sm border border-[#27272a] px-3 py-1.5 text-xs text-[#9d9d9d] hover:border-[#d4a017] hover:text-white">Beginner Guide</Link>
+        <Link href={lpath("/items")} className="rounded-sm border border-border-default px-3 py-1.5 text-xs text-text-secondary hover:border-accent hover:text-text-primary">Items <span className="text-text-muted">5,944</span></Link>
+        <Link href={lpath("/heroes")} className="rounded-sm border border-border-default px-3 py-1.5 text-xs text-text-secondary hover:border-accent hover:text-text-primary">Heroes <span className="text-text-muted">6</span></Link>
+        <Link href={lpath("/map")} className="rounded-sm border border-border-default px-3 py-1.5 text-xs text-text-secondary hover:border-accent hover:text-text-primary">Map <span className="text-text-muted">120</span></Link>
+        <Link href={lpath("/monsters")} className="rounded-sm border border-border-default px-3 py-1.5 text-xs text-text-secondary hover:border-accent hover:text-text-primary">Monsters <span className="text-text-muted">61</span></Link>
+        <Link href={lpath("/runes")} className="rounded-sm border border-border-default px-3 py-1.5 text-xs text-text-secondary hover:border-accent hover:text-text-primary">Runes <span className="text-text-muted">197</span></Link>
+        <Link href={lpath("/chests")} className="rounded-sm border border-border-default px-3 py-1.5 text-xs text-text-secondary hover:border-accent hover:text-text-primary">Chests <span className="text-text-muted">59</span></Link>
+        <Link href={lpath("/market")} className="rounded-sm border border-border-default px-3 py-1.5 text-xs text-text-secondary hover:border-accent hover:text-text-primary">Market</Link>
+        <Link href={lpath("/tools/drop-finder")} className="rounded-sm border border-border-default px-3 py-1.5 text-xs text-text-secondary hover:border-accent hover:text-text-primary">Drop Finder</Link>
+        <Link href={lpath("/guides/farming")} className="rounded-sm border border-border-default px-3 py-1.5 text-xs text-text-secondary hover:border-accent hover:text-text-primary">Farming Guide</Link>
+        <Link href={lpath("/tools/farming-calculator")} className="rounded-sm border border-border-default px-3 py-1.5 text-xs text-text-secondary hover:border-accent hover:text-text-primary">Calculator</Link>
+        <Link href={lpath("/guides/beginner/getting-started")} className="rounded-sm border border-border-default px-3 py-1.5 text-xs text-text-secondary hover:border-accent hover:text-text-primary">Beginner Guide</Link>
       </div>
 
-      <Link href={homeHref} className="mt-8 rounded-md bg-[#d4a017] px-5 py-2.5 text-sm font-medium text-black hover:bg-[#f0c040] transition-colors">
+      <Link href={homeHref} className="mt-8 rounded-md bg-[#d4a017] px-5 py-2.5 text-sm font-medium text-black hover:bg-accent-bright transition-colors">
         {t.home}
       </Link>
     </div>

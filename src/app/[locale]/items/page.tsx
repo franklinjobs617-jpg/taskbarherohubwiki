@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { SafeImage } from "@/components/ui/safe-image";
 import Link from "next/link";
 import { ItemCard } from "@/components/tbh/cards";
 import { RarityBadge } from "@/components/tbh/badges";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
-import { allItems, assetPath, bestStageForItem, gradeNames, itemName, marketForItem, slotNames, type Locale } from "@/lib/game-data/data";
+import { SITE_URL, allItems, assetPath, bestStageForItem, gradeNames, itemName, marketForItem, slotNames, type Locale } from "@/lib/game-data/data";
 import { extItems } from "@/lib/game-data/external";
 import { RelatedPages } from "@/components/tbh/related-pages";
 import { HowToUse } from "@/components/tbh/how-to-use";
@@ -97,7 +97,7 @@ export default async function ItemsPage({ params, searchParams }: Props) {
         itemListElement: rows.slice(0, 50).map((item, i) => ({
           "@type": "ListItem",
           position: i + 1,
-          url: `https://taskbarhero.nanobananas.me${locale === "en" ? "" : "/" + locale}/items/${item.slug}`,
+          url: `${SITE_URL}${locale === "en" ? "" : "/" + locale}/items/${item.slug}`,
         })),
       }} />
       <PageHeader
@@ -109,26 +109,26 @@ export default async function ItemsPage({ params, searchParams }: Props) {
       />
 
       {/* ── Filter form ── */}
-      <form className="mb-5 border border-[#27272a] bg-[#0d0d0d] p-3">
+      <form className="mb-5 border border-border-default bg-bg-panel p-3">
         <details className="sm:hidden">
-          <summary className="cursor-pointer text-xs text-[#9d9d9d] hover:text-[#f0c040]">{isZh ? `筛选（${sp.class || sp.type || sp.grade || sp.slot || sp.market ? "已选" : "展开"}）` : `Filters (${sp.class || sp.type || sp.grade || sp.slot || sp.market ? "active" : "show"})`}</summary>
+          <summary className="cursor-pointer text-xs text-text-secondary hover:text-accent-bright">{isZh ? `筛选（${sp.class || sp.type || sp.grade || sp.slot || sp.market ? "已选" : "展开"}）` : `Filters (${sp.class || sp.type || sp.grade || sp.slot || sp.market ? "active" : "show"})`}</summary>
           <div className="mt-3 grid gap-2">
-            <input name="q" defaultValue={sp.q} placeholder={isZh ? "名称、英文名" : "Name"} className="border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm outline-none" />
-        <select name="type" defaultValue={sp.type ?? ""} className="border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm">
+            <input name="q" defaultValue={sp.q} placeholder={isZh ? "名称、英文名" : "Name"} className="border border-border-strong bg-bg-canvas px-3 py-2 text-sm outline-none" />
+        <select name="type" defaultValue={sp.type ?? ""} className="border border-border-strong bg-bg-canvas px-3 py-2 text-sm">
           <option value="">{isZh ? "全部类型" : "All types"}</option>
           <option value="GEAR">{isZh ? "装备" : "Gear"}</option>
           <option value="MATERIAL">{isZh ? "材料" : "Material"}</option>
           <option value="STAGEBOX">{isZh ? "宝箱" : "Chest"}</option>
         </select>
-        <select name="grade" defaultValue={sp.grade ?? ""} className="border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm">
+        <select name="grade" defaultValue={sp.grade ?? ""} className="border border-border-strong bg-bg-canvas px-3 py-2 text-sm">
           <option value="">{isZh ? "全部稀有度" : "All grades"}</option>
           {grades.map((grade) => <option key={grade} value={grade}>{gradeNames[grade][locale]}</option>)}
         </select>
-        <select name="slot" defaultValue={sp.slot ?? ""} className="border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm">
+        <select name="slot" defaultValue={sp.slot ?? ""} className="border border-border-strong bg-bg-canvas px-3 py-2 text-sm">
           <option value="">{isZh ? "全部部位" : "All slots"}</option>
           {slots.map((slot) => <option key={slot} value={slot}>{slotNames[slot][locale]}</option>)}
         </select>
-        <select name="class" defaultValue={sp.class ?? ""} className="border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm">
+        <select name="class" defaultValue={sp.class ?? ""} className="border border-border-strong bg-bg-canvas px-3 py-2 text-sm">
           <option value="">{isZh ? "全部职业" : "All classes"}</option>
           {HERO_CLASSES.map((cls) => <option key={cls} value={cls}>{cls}</option>)}
         </select>
@@ -136,22 +136,22 @@ export default async function ItemsPage({ params, searchParams }: Props) {
           </div>
         </details>
         <div className="hidden gap-2 sm:grid sm:grid-cols-[1fr_auto_auto_auto_auto_auto]">
-          <input name="q" defaultValue={sp.q} placeholder={isZh ? "名称、英文名" : "Name"} className="border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm outline-none" />
-          <select name="type" defaultValue={sp.type ?? ""} className="border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm">
+          <input name="q" defaultValue={sp.q} placeholder={isZh ? "名称、英文名" : "Name"} className="border border-border-strong bg-bg-canvas px-3 py-2 text-sm outline-none" />
+          <select name="type" defaultValue={sp.type ?? ""} className="border border-border-strong bg-bg-canvas px-3 py-2 text-sm">
             <option value="">{isZh ? "全部类型" : "All types"}</option>
             <option value="GEAR">{isZh ? "装备" : "Gear"}</option>
             <option value="MATERIAL">{isZh ? "材料" : "Material"}</option>
             <option value="STAGEBOX">{isZh ? "宝箱" : "Chest"}</option>
           </select>
-          <select name="grade" defaultValue={sp.grade ?? ""} className="border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm">
+          <select name="grade" defaultValue={sp.grade ?? ""} className="border border-border-strong bg-bg-canvas px-3 py-2 text-sm">
             <option value="">{isZh ? "全部稀有度" : "All grades"}</option>
             {grades.map((grade) => <option key={grade} value={grade}>{gradeNames[grade][locale]}</option>)}
           </select>
-          <select name="slot" defaultValue={sp.slot ?? ""} className="border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm">
+          <select name="slot" defaultValue={sp.slot ?? ""} className="border border-border-strong bg-bg-canvas px-3 py-2 text-sm">
             <option value="">{isZh ? "全部部位" : "All slots"}</option>
             {slots.map((slot) => <option key={slot} value={slot}>{slotNames[slot][locale]}</option>)}
           </select>
-          <select name="class" defaultValue={sp.class ?? ""} className="border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm">
+          <select name="class" defaultValue={sp.class ?? ""} className="border border-border-strong bg-bg-canvas px-3 py-2 text-sm">
             <option value="">{isZh ? "全部职业" : "All classes"}</option>
             {HERO_CLASSES.map((cls) => <option key={cls} value={cls}>{cls}</option>)}
           </select>
@@ -163,14 +163,14 @@ export default async function ItemsPage({ params, searchParams }: Props) {
       <div className="mb-4 space-y-2">
         {/* Class quick links */}
         <div className="flex flex-wrap gap-1.5">
-          <span className="text-xs text-[#6c6c6c] self-center mr-1">{isZh ? "职业：" : "Class:"}</span>
+          <span className="text-xs text-text-muted self-center mr-1">{isZh ? "职业：" : "Class:"}</span>
           {HERO_CLASSES.map((cls) => (
             <Link
               key={cls}
               href={`/${locale}/items?class=${cls}`}
               className={`pill text-xs ${sp.class === cls ? "active" : ""}`}
             >
-              {cls} <span className="text-[#6c6c6c]">{classCounts[cls] ?? 0}</span>
+              {cls} <span className="text-text-muted">{classCounts[cls] ?? 0}</span>
             </Link>
           ))}
         </div>
@@ -189,14 +189,14 @@ export default async function ItemsPage({ params, searchParams }: Props) {
             {isZh ? "宝箱" : "Chests"}
           </Link>
           {(sp.class || sp.type || sp.grade || sp.slot || sp.market || sp.price || sp.obtainable) ? (
-            <Link href={`/${locale}/items`} className="pill text-xs text-[#9d9d9d] hover:text-[#ffffff]">
+            <Link href={`/${locale}/items`} className="pill text-xs text-text-secondary hover:text-text-primary">
               {isZh ? "清除" : "Clear"}
             </Link>
           ) : null}
         </div>
         {/* Price range chips (2.8) */}
         <div className="flex flex-wrap gap-1.5">
-          <span className="text-xs text-[#6c6c6c] self-center mr-1">{isZh ? "价格：" : "Price:"}</span>
+          <span className="text-xs text-text-muted self-center mr-1">{isZh ? "价格：" : "Price:"}</span>
           {[
             { k: "any", zh: "全部", en: "Any" },
             { k: "lt1", zh: "<$1", en: "<$1" },
@@ -214,14 +214,14 @@ export default async function ItemsPage({ params, searchParams }: Props) {
         </div>
       </div>
 
-      <p className="mb-3 text-sm text-[#6c6c6c]">
+      <p className="mb-3 text-sm text-text-muted">
         {isZh ? `显示 ${rows.length} 条结果` : `Showing ${rows.length} results`}
         {sp.class ? (isZh ? ` · 职业: ${sp.class}` : ` · Class: ${sp.class}`) : ""}
       </p>
 
-      <div className="hidden overflow-x-auto border border-[#27272a] lg:block">
+      <div className="hidden overflow-x-auto border border-border-default lg:block">
         <table className="w-full min-w-[980px] text-left text-sm">
-          <thead className="bg-[#18181b] text-xs text-[#6c6c6c]">
+          <thead className="bg-bg-surface text-xs text-text-muted">
             <tr>
               <th className="px-3 py-2">{isZh ? "物品" : "Item"}</th>
               <th className="px-3 py-2">{isZh ? "等级" : "Level"}</th>
@@ -240,58 +240,58 @@ export default async function ItemsPage({ params, searchParams }: Props) {
               const bestStage = bestStageForItem(item.slug);
               const classFit = ext?.classes?.slice(0, 3) ?? [];
               return (
-                <tr key={item.id} className="border-t border-[#27272a] hover:bg-[#0d0d0d]">
+                <tr key={item.id} className="border-t border-border-default hover:bg-bg-panel">
                   <td className="px-3 py-2">
                     <Link href={`/${locale}/items/${item.slug}`} className="flex min-w-0 items-center gap-3">
-                      <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-[#27272a] bg-[#0a0a0a]">
-                        {icon ? <Image src={icon} alt={itemName(item, locale)} width={32} height={32} className="object-contain" data-pixel unoptimized /> : null}
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-border-default bg-bg-canvas">
+                        {icon ? <SafeImage src={icon} alt={itemName(item, locale)} width={32} height={32} className="object-contain" data-pixel unoptimized /> : null}
                       </span>
                       <span className="min-w-0">
-                        <span className="block truncate font-semibold text-white hover:text-[#f0c040]">{itemName(item, locale)}</span>
+                        <span className="block truncate font-semibold text-white hover:text-accent-bright">{itemName(item, locale)}</span>
                         <span className="mt-0.5 block"><RarityBadge grade={item.grade} locale={locale} /></span>
                       </span>
                     </Link>
                   </td>
-                  <td className="px-3 py-2 font-mono text-[#9d9d9d]">
+                  <td className="px-3 py-2 font-mono text-text-secondary">
                     {item.level ?? "-"}
                     {item.level != null ? (
-                      <span className="ml-1 inline-block border border-[#27272a] px-1 text-[9px] text-[#6c6c6c]">
+                      <span className="ml-1 inline-block border border-border-default px-1 text-[9px] text-text-muted">
                         {item.level < 30 ? (isZh ? "新手" : "Early") : item.level < 70 ? (isZh ? "中期" : "Mid") : (isZh ? "后期" : "End")}
                       </span>
                     ) : null}
                   </td>
-                  <td className="px-3 py-2 text-[#9d9d9d]">{item.gear ? slotNames[item.gear]?.[locale] ?? item.gear : item.type}</td>
+                  <td className="px-3 py-2 text-text-secondary">{item.gear ? slotNames[item.gear]?.[locale] ?? item.gear : item.type}</td>
                   <td className="px-3 py-2">
                     {classFit.length ? (
                       <div className="flex flex-wrap gap-1">
-                        {classFit.map((cls) => <span key={cls} className="border border-[#27272a] px-2 py-0.5 text-[11px] text-[#d7d7d7]">{cls}</span>)}
+                        {classFit.map((cls) => <span key={cls} className="border border-border-default px-2 py-0.5 text-[11px] text-[#d7d7d7]">{cls}</span>)}
                       </div>
-                    ) : <span className="text-[#6c6c6c]">-</span>}
+                    ) : <span className="text-text-muted">-</span>}
                   </td>
                   <td className="px-3 py-2">
                     {bestStage ? (
-                      <Link href={`/${locale}/tools/drop-finder`} className="text-[#f0c040] hover:underline">
+                      <Link href={`/${locale}/tools/drop-finder`} className="text-accent-bright hover:underline">
                         {bestStage.diff} {bestStage.act}-{bestStage.no} / {(bestStage.totalDropChance * 100).toFixed(2)}%
                       </Link>
                     ) : (
-                      <span className="text-[#6c6c6c]">{ext?.obtainable ? (isZh ? "可获取" : "Obtainable") : (isZh ? "暂无掉落" : "No drop")}</span>
+                      <span className="text-text-muted">{ext?.obtainable ? (isZh ? "可获取" : "Obtainable") : (isZh ? "暂无掉落" : "No drop")}</span>
                     )}
                   </td>
                   <td className="px-3 py-2">
                     {market?.lowest ? (
                       <div>
-                        <p className="font-mono font-semibold text-[#f0c040]">${market.lowest.toFixed(2)}</p>
-                        <p className="text-[11px] text-[#6c6c6c]">{market.listings?.toLocaleString() ?? "-"} listings</p>
+                        <p className="font-mono font-semibold text-accent-bright">${market.lowest.toFixed(2)}</p>
+                        <p className="text-[11px] text-text-muted">{market.listings?.toLocaleString() ?? "-"} listings</p>
                       </div>
                     ) : (
-                      <span className="text-[#6c6c6c]">{item.marketable ? (isZh ? "待更新" : "Missing") : (isZh ? "不可交易" : "Not tradable")}</span>
+                      <span className="text-text-muted">{item.marketable ? (isZh ? "待更新" : "Missing") : (isZh ? "不可交易" : "Not tradable")}</span>
                     )}
                   </td>
                   <td className="px-3 py-2">
                     <div className="flex flex-col gap-1">
-                      <Link href={`/${locale}/items/${item.slug}`} className="text-[#f0c040] hover:underline">{isZh ? "决策页" : "Decision"}</Link>
+                      <Link href={`/${locale}/items/${item.slug}`} className="text-accent-bright hover:underline">{isZh ? "决策页" : "Decision"}</Link>
                       {item.gear ? (
-                        <Link href={`/${locale}/items?slot=${item.gear}&grade=${item.grade}`} className="text-[10px] text-[#6c6c6c] hover:text-[#d8d1c2]">
+                        <Link href={`/${locale}/items?slot=${item.gear}&grade=${item.grade}`} className="text-[10px] text-text-muted hover:text-text-secondary">
                           {isZh ? "对比同档 →" : "Compare →"}
                         </Link>
                       ) : null}

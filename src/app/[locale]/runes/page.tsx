@@ -50,9 +50,9 @@ export default async function RunesPage({ params }: Props) {
       />
 
       <HowToUse pageKey="/runes" locale={locale} />
-      <section className="mb-6 border-l-2 border-[#d4a017] bg-[#100d06] px-4 py-3">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#d4a017]">Quick answer</p>
-        <p className="mt-1 text-sm leading-6 text-[#f1e8d5]">
+      <section className="mb-6 border-l-2 border-accent bg-accent-soft px-4 py-3">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-accent">Quick answer</p>
+        <p className="mt-1 text-sm leading-6 text-text-primary">
           {copy(
             locale,
             "先点你卡在哪一关的瓶颈。Rune of Command 解锁英雄槽（首要），离线收益次之，最后金币/经验。新手别散点。",
@@ -73,8 +73,8 @@ export default async function RunesPage({ params }: Props) {
 
       <RuneTreePlanner runes={runes} locale={locale} />
 
-      <section className="mt-8 border-t border-[#27272a] pt-6">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#6c6c6c]">FAQ</p>
+      <section className="mt-8 border-t border-border-default pt-6">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-text-muted">FAQ</p>
         <h2 className="mt-1 text-[18px] font-semibold leading-tight text-white">
           {copy(locale, "符文树常见问题", "Rune Tree FAQ", "ルーンツリー FAQ")}
         </h2>
@@ -85,9 +85,9 @@ export default async function RunesPage({ params }: Props) {
             { q: copy(locale, "什么时候改方向？", "When should I change rune direction?", "いつ方向転換すべき？"), a: copy(locale, "当前阶段卡关 30 分钟以上、或已经解锁了所有想要的英雄槽之后，再考虑换线。", "When you've been stuck on a stage for 30+ minutes, or after unlocking all the hero slots you wanted.", "30 分以上同じステージで詰まったら、または欲しい英雄枠を全部解放したら方向転換を考える。") },
             { q: copy(locale, "符文树影响 Build 选择吗？", "Does the Rune Tree affect build choice?", "ルーンツリーはビルド選択に影響する？"), a: copy(locale, "影响。Rune of Command 决定你能上几个英雄，自动化符文决定你能离线刷几关。Build 路线要看符文解锁进度。", "Yes. Rune of Command decides how many heroes you can field; automation runes decide how far you can idle. Build routes depend on rune unlock progress.", "影響あり。Command は出撃可能人数、自動符文は放置周回可能距離を決める。ビルドはルーン解放状況に依存。") },
           ].map((item, i) => (
-            <details key={i} className="border border-[#27272a] bg-[#0d0d0d] p-3" open={i === 0}>
-              <summary className="cursor-pointer text-sm font-semibold text-white hover:text-[#f0c040]">{item.q}</summary>
-              <p className="mt-2 text-xs leading-5 text-[#9d9d9d]">{item.a}</p>
+            <details key={i} className="border border-border-default bg-bg-panel p-3" open={i === 0}>
+              <summary className="cursor-pointer text-sm font-semibold text-white hover:text-accent-bright">{item.q}</summary>
+              <p className="mt-2 text-xs leading-5 text-text-secondary">{item.a}</p>
             </details>
           ))}
         </div>
@@ -100,11 +100,11 @@ export default async function RunesPage({ params }: Props) {
 function Metric({ icon, label, value }: { icon: React.ReactNode; label: string; value: string | number }) {
   return (
     <div className="bg-[#0d0b08] p-4">
-      <div className="flex items-center gap-2 text-xs text-[#8f826b]">
+      <div className="flex items-center gap-2 text-xs text-text-muted">
         <span className="text-[#c87925]">{icon}</span>
         <span>{label}</span>
       </div>
-      <p className="mt-2 text-2xl font-semibold text-[#fff7df]">{value}</p>
+      <p className="mt-2 text-2xl font-semibold text-text-primary">{value}</p>
     </div>
   );
 }

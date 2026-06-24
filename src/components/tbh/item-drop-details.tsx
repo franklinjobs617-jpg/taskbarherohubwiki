@@ -31,7 +31,7 @@ export function ItemQuickAnswer({
           </span>
           {best ? (
             <>
-              <span className="text-[#9d9d9d]">
+              <span className="text-text-secondary">
                 {isZh ? "最佳掉落:" : "Best drop:"}{" "}
               </span>
               <Link
@@ -40,15 +40,15 @@ export function ItemQuickAnswer({
               >
                 {best.diff} ACT {best.act}-{best.no}
               </Link>
-              <span className="text-[#6c6c6c]">
+              <span className="text-text-muted">
                 ({(best.totalDropChance * 100).toFixed(2)}%/{isZh ? "轮" : "run"})
               </span>
             </>
           ) : (
-            <span className="text-[#6c6c6c]">{isZh ? "掉落数据收集中" : "Drop data being collected"}</span>
+            <span className="text-text-muted">{isZh ? "掉落数据收集中" : "Drop data being collected"}</span>
           )}
         </div>
-        <div className="flex items-center gap-3 text-xs text-[#6c6c6c]">
+        <div className="flex items-center gap-3 text-xs text-text-muted">
           {marketPrice != null && (
             <span>
               {isZh ? "市场价: " : "Market: "}
@@ -78,7 +78,7 @@ export function DropSourceDetails({
 
   if (!drops.length) {
     return (
-      <div className="border border-[#27272a] bg-[#0d0d0d] p-4 text-center text-sm text-[#6c6c6c]">
+      <div className="border border-border-default bg-bg-panel p-4 text-center text-sm text-text-muted">
         {isZh ? "暂无掉落数据。数据正在从社区收集和验证中。" : "No drop data yet. Data is being collected and verified from the community."}
       </div>
     );
@@ -104,15 +104,15 @@ function SelectedStageView({ stage, locale }: { stage: FarmingStage; locale: Loc
         <h3 className="text-sm font-semibold text-white">
           {stage.diff} ACT {stage.act}-{stage.no}
         </h3>
-        <span className="text-xs text-[#6c6c6c]">
+        <span className="text-xs text-text-muted">
           {isZh ? "合计概率: " : "Total chance: "}
           <span className="font-semibold text-amber-400">{(stage.totalDropChance * 100).toFixed(2)}%</span>
         </span>
       </div>
       <div className="space-y-1.5">
         {stage.boxes.map((box, i) => (
-          <div key={i} className="flex items-center justify-between rounded-sm border border-[#27272a] bg-[#0d0d0d] px-3 py-2 text-xs">
-            <span className="text-[#9d9d9d]">{box.name}</span>
+          <div key={i} className="flex items-center justify-between rounded-sm border border-border-default bg-bg-panel px-3 py-2 text-xs">
+            <span className="text-text-secondary">{box.name}</span>
             <span className="font-mono font-semibold text-amber-400">{(box.rate * 100).toFixed(2)}%</span>
           </div>
         ))}
@@ -175,7 +175,7 @@ function BoxGroup({
 
   return (
     <div>
-      <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#6c6c6c]">
+      <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-text-muted">
         {title} ({boxes.length})
       </p>
       <div className="space-y-1.5">
@@ -184,25 +184,25 @@ function BoxGroup({
           .map((box) => {
             const isExpanded = expandedBoxes.has(box.box_slug);
             return (
-              <div key={box.box_slug} className="rounded-sm border border-[#27272a] bg-[#0d0d0d]">
+              <div key={box.box_slug} className="rounded-sm border border-border-default bg-bg-panel">
                 <button
                   onClick={() => onToggle(box.box_slug)}
-                  className="flex w-full items-center justify-between px-3 py-2 text-left text-xs hover:bg-[#18181b] transition-colors"
+                  className="flex w-full items-center justify-between px-3 py-2 text-left text-xs hover:bg-bg-surface transition-colors"
                 >
                   <div className="flex items-center gap-2 min-w-0">
-                    <span className="text-[10px] text-[#6c6c6c]">{isExpanded ? "▼" : "▶"}</span>
-                    <span className="truncate text-[#9d9d9d]">{box.box_name}</span>
+                    <span className="text-[10px] text-text-muted">{isExpanded ? "▼" : "▶"}</span>
+                    <span className="truncate text-text-secondary">{box.box_name}</span>
                     <span className={`rounded-full px-1.5 py-0.5 text-[9px] font-medium ${box.box_grade === "RARE" ? "bg-blue-900/30 text-blue-400" : box.box_grade === "COMMON" ? "bg-zinc-800 text-zinc-400" : "bg-purple-900/30 text-purple-400"}`}>
                       {box.box_grade}
                     </span>
                   </div>
                   <div className="flex items-center gap-3 shrink-0">
                     <span className="font-mono text-amber-400">{box.drop_chance.toFixed(2)}%</span>
-                    <span className="text-[10px] text-[#6c6c6c]">{box.stages.length} {isZh ? "关卡" : "stages"}</span>
+                    <span className="text-[10px] text-text-muted">{box.stages.length} {isZh ? "关卡" : "stages"}</span>
                   </div>
                 </button>
                 {isExpanded && (
-                  <div className="border-t border-[#27272a] px-3 py-2">
+                  <div className="border-t border-border-default px-3 py-2">
                     <div className="grid gap-1">
                       {box.stages
                         .sort((a, b) => b.rate - a.rate)
@@ -211,15 +211,15 @@ function BoxGroup({
                           <div key={stage.key} className="flex items-center justify-between text-[11px]">
                             <Link
                               href={lpath(`/stages/${stage.slug}`)}
-                              className="text-[#9d9d9d] hover:text-amber-400 transition-colors"
+                              className="text-text-secondary hover:text-amber-400 transition-colors"
                             >
                               {stage.diff} A{stage.act}-{stage.no}
                             </Link>
-                            <span className="font-mono text-[#6c6c6c]">{stage.rate}</span>
+                            <span className="font-mono text-text-muted">{stage.rate}</span>
                           </div>
                         ))}
                       {box.stages.length > 8 && (
-                        <p className="text-[10px] text-[#6c6c6c] mt-1">
+                        <p className="text-[10px] text-text-muted mt-1">
                           {isZh ? `...还有 ${box.stages.length - 8} 个关卡` : `...${box.stages.length - 8} more stages`}
                         </p>
                       )}

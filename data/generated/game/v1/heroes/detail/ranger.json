@@ -63,7 +63,7 @@
   "DeadIconPath": "UI/Icon/Hero/HeroDead_201",
   "PrefabPath": "Prefab/Hero/Hero_201",
   "AnimatorPath": "Animation/Hero/201/Hero_201",
-  "icon": "/game/heroes/portraits/Hero_201.png",
+  "icon": "/game/heroes/portraits/Hero_201_6775.png",
   "dead_icon": "/game/heroes/portraits/HeroDead_201.png",
   "animations_folder": "/game/heroes/Ranger",
   "skill_name_i18n": null,

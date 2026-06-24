@@ -68,36 +68,36 @@ export default async function BuildsPage({ params }: Props) {
         <h2 className="mt-2 text-lg font-semibold text-white">
           {isZh ? "Build route 是带证据等级的配装路线，不是官方 meta 排名" : "A build route is an evidence-labeled gear path, not an official meta ranking"}
         </h2>
-        <p className="mt-3 text-sm leading-7 text-[#d8d1c2]">
+        <p className="mt-3 text-sm leading-7 text-text-secondary">
           {isZh
             ? "先按阶段选择：前期优先生存，中期看清图速度，后期看材料目标和市场风险。本站推荐基于当前 datamined stats 与 editorial 分析，不写无证据的 best build 绝对结论。"
             : "Choose by phase first: early routes favor survival, mid routes favor clear speed, and endgame routes depend on material goals plus market risk. Recommendations are based on current datamined stats and editorial analysis, not unsupported best-build claims."}
         </p>
         <div className="mt-4 grid gap-2 text-sm md:grid-cols-4">
-          <Link href={localizedPath(locale, "/heroes")} className="border border-[#4a3510] bg-[#0d0d0d] p-3 text-[#f0c040] hover:border-[#d4a017]">Hero stats</Link>
-          <Link href={localizedPath(locale, "/items")} className="border border-[#4a3510] bg-[#0d0d0d] p-3 text-[#f0c040] hover:border-[#d4a017]">Items</Link>
-          <Link href={localizedPath(locale, "/runes")} className="border border-[#4a3510] bg-[#0d0d0d] p-3 text-[#f0c040] hover:border-[#d4a017]">Runes</Link>
-          <Link href={localizedPath(locale, "/tools/farming-calculator")} className="border border-[#4a3510] bg-[#0d0d0d] p-3 text-[#f0c040] hover:border-[#d4a017]">Farming calculator</Link>
+          <Link href={localizedPath(locale, "/heroes")} className="border border-[#4a3510] bg-bg-panel p-3 text-accent-bright hover:border-accent">Hero stats</Link>
+          <Link href={localizedPath(locale, "/items")} className="border border-[#4a3510] bg-bg-panel p-3 text-accent-bright hover:border-accent">Items</Link>
+          <Link href={localizedPath(locale, "/runes")} className="border border-[#4a3510] bg-bg-panel p-3 text-accent-bright hover:border-accent">Runes</Link>
+          <Link href={localizedPath(locale, "/tools/farming-calculator")} className="border border-[#4a3510] bg-bg-panel p-3 text-accent-bright hover:border-accent">Farming calculator</Link>
         </div>
       </section>
 
       {/* How to use this page */}
       <div className="mb-8 grid gap-3 md:grid-cols-3">
-        <div className="border border-amber-600/30 bg-amber-600/5 p-4">
+        <div className="border border-accent-dim bg-amber-600/5 p-4">
           <p className="text-xs font-semibold text-amber-400">{isZh ? "1. 选阶段" : "1. Pick Phase"}</p>
-          <p className="mt-1 text-xs text-[#9d9d9d]">
+          <p className="mt-1 text-xs text-text-secondary">
             {isZh ? "前期 Build 优先生存和稳定推进，中期侧重清图效率，后期围绕高价值材料。" : "Early builds prioritize survival, mid builds focus on clear speed, endgame builds target high-value materials."}
           </p>
         </div>
-        <div className="border border-amber-600/30 bg-amber-600/5 p-4">
+        <div className="border border-accent-dim bg-amber-600/5 p-4">
           <p className="text-xs font-semibold text-amber-400">{isZh ? "2. 看属性" : "2. Check Stats"}</p>
-          <p className="mt-1 text-xs text-[#9d9d9d]">
+          <p className="mt-1 text-xs text-text-secondary">
             {isZh ? "每个 Build 都基于真实英雄属性推导。去英雄页看雷达图，理解为什么推荐这些属性。" : "Each build is derived from real hero stats. Visit hero pages for radar charts to understand stat priorities."}
           </p>
         </div>
-        <div className="border border-amber-600/30 bg-amber-600/5 p-4">
+        <div className="border border-accent-dim bg-amber-600/5 p-4">
           <p className="text-xs font-semibold text-amber-400">{isZh ? "3. 验证路线" : "3. Verify Route"}</p>
-          <p className="mt-1 text-xs text-[#9d9d9d]">
+          <p className="mt-1 text-xs text-text-secondary">
             {isZh ? "用物品掉落热力图和市场价查看装备获取难度和成本。" : "Check gear availability and cost with drop heatmaps and market prices."}
           </p>
         </div>
@@ -119,19 +119,19 @@ export default async function BuildsPage({ params }: Props) {
                   <Link
                     key={build.slug}
                     href={`/${locale}/builds/${build.slug}`}
-                    className="group border border-[#27272a] bg-[#0d0d0d] p-4 transition-colors hover:border-amber-600/50"
+                    className="group border border-border-default bg-bg-panel p-4 transition-colors hover:border-amber-600/50"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="rounded bg-[#18181b] px-2 py-0.5 text-[10px] text-[#6c6c6c]">
+                      <span className="rounded bg-bg-surface px-2 py-0.5 text-[10px] text-text-muted">
                         {heroData ? heroName(heroData, locale) : build.hero}
                         {heroData?.DLCAppId ? " DLC" : ""}
                       </span>
-                      <span className="text-[10px] text-[#6c6c6c]">{goalLabels[build.goal] ?? build.goal}</span>
+                      <span className="text-[10px] text-text-muted">{goalLabels[build.goal] ?? build.goal}</span>
                     </div>
                     <p className="mt-2 font-medium text-white group-hover:text-amber-400 transition-colors">
                       {build.title[locale]}
                     </p>
-                    <p className="mt-2 text-xs leading-6 text-[#9d9d9d]">
+                    <p className="mt-2 text-xs leading-6 text-text-secondary">
                       {build.description[locale]}
                     </p>
                     <div className="mt-3 flex items-center gap-2">
@@ -146,8 +146,8 @@ export default async function BuildsPage({ params }: Props) {
       })}
 
       {/* Evidence explanation */}
-      <div className="rounded-sm border border-[#27272a] bg-[#0d0d0d] p-4 text-xs text-[#6c6c6c]">
-        <p className="font-semibold text-[#9d9d9d]">{isZh ? "证据等级说明" : "Evidence Levels"}</p>
+      <div className="rounded-sm border border-border-default bg-bg-panel p-4 text-xs text-text-muted">
+        <p className="font-semibold text-text-secondary">{isZh ? "证据等级说明" : "Evidence Levels"}</p>
         <ul className="mt-2 space-y-1">
           <li>• <span className="text-green-400">datamined</span> — {isZh ? "数据直接来自游戏文件" : "Data directly from game files"}</li>
           <li>• <span className="text-amber-400">editorial</span> — {isZh ? "基于游戏数据的编辑分析和推荐" : "Editorial analysis based on game data"}</li>

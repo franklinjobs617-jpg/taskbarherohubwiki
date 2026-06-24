@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { SafeImage } from "@/components/ui/safe-image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { ArrowRight, Boxes, Map, Search } from "lucide-react";
@@ -61,12 +61,12 @@ function ItemThumb({ item, locale }: { item: RawItem; locale: Locale }) {
   const name = itemName(item, locale);
   return (
     <div className="flex min-w-0 items-center gap-3">
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center border border-[#27272a] bg-[#0a0a0a]">
-        {icon ? <Image src={icon} alt={name} width={34} height={34} className="object-contain" data-pixel unoptimized /> : null}
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center border border-border-default bg-bg-canvas">
+        {icon ? <SafeImage src={icon} alt={name} width={34} height={34} className="object-contain" data-pixel unoptimized /> : null}
       </div>
       <div className="min-w-0">
         <p className="truncate text-sm font-semibold text-white">{name}</p>
-        <p className="text-[11px] text-[#6c6c6c]">{item.grade} / {item.type}</p>
+        <p className="text-[11px] text-text-muted">{item.grade} / {item.type}</p>
       </div>
     </div>
   );
@@ -99,8 +99,8 @@ export function DropFinder({ locale }: { locale: Locale }) {
 
   return (
     <div className="space-y-5">
-      <section className="border border-[#3f2f10] bg-[#100d06] p-4">
-        <div className="flex items-center gap-2 text-[#f0c040]">
+      <section className="border border-accent-dim bg-accent-soft p-4">
+        <div className="flex items-center gap-2 text-accent-bright">
           <Search className="h-4 w-4" />
           <span className="text-[10px] font-semibold uppercase tracking-[0.18em]">
             {t(locale, { zh: "掉落查询", en: "Drop Finder", ja: "ドロップ検索", ko: "드롭 검색" })}
@@ -118,7 +118,7 @@ export function DropFinder({ locale }: { locale: Locale }) {
             ja: "Soulstone、Bronze Ingot、Kingdom Coin、宝箱名...",
             ko: "Soulstone, Bronze Ingot, Kingdom Coin, 상자 이름...",
           })}
-          className="mt-3 w-full border border-[#5a4315] bg-[#0a0a0a] px-4 py-3 text-base text-white outline-none placeholder:text-[#6c6c6c]"
+          className="mt-3 w-full border border-accent-dim bg-bg-canvas px-4 py-3 text-base text-white outline-none placeholder:text-text-muted"
         />
         <div className="mt-3 flex flex-wrap gap-2">
           {hotTargets.map((target) => {
@@ -131,7 +131,7 @@ export function DropFinder({ locale }: { locale: Locale }) {
                   setSelectedSlug(item.slug);
                   setQuery(itemName(item, locale));
                 }}
-                className="border border-[#3b3b3b] bg-[#0d0d0d] px-3 py-1.5 text-xs text-[#d8d1c2] hover:border-[#d4a017]"
+                className="border border-border-strong bg-bg-panel px-3 py-1.5 text-xs text-text-secondary hover:border-accent"
               >
                 {itemName(item, locale)}
               </button>
@@ -149,7 +149,7 @@ export function DropFinder({ locale }: { locale: Locale }) {
                 setSelectedSlug(item.slug);
                 setQuery(itemName(item, locale));
               }}
-              className="border border-[#27272a] bg-[#0d0d0d] p-3 text-left transition hover:border-[#d4a017]"
+              className="border border-border-default bg-bg-panel p-3 text-left transition hover:border-accent"
             >
               <ItemThumb item={item} locale={locale} />
             </button>
@@ -159,15 +159,15 @@ export function DropFinder({ locale }: { locale: Locale }) {
 
       {selected ? (
         <section className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_360px]">
-          <div className="border border-[#27272a] bg-[#0d0d0d] p-4">
+          <div className="border border-border-default bg-bg-panel p-4">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <ItemThumb item={selected} locale={locale} />
               <div className="flex flex-wrap gap-2">
-                <Link href={localizedPath(locale, `/items/${selected.slug}`)} className="inline-flex items-center gap-2 border border-[#3b3b3b] px-3 py-2 text-sm text-[#f0c040] hover:border-[#d4a017]">
+                <Link href={localizedPath(locale, `/items/${selected.slug}`)} className="inline-flex items-center gap-2 border border-border-strong px-3 py-2 text-sm text-accent-bright hover:border-accent">
                   Item <ArrowRight className="h-4 w-4" />
                 </Link>
                 {market ? (
-                  <Link href={localizedPath(locale, `/market/${selected.slug}`)} className="inline-flex items-center gap-2 border border-[#3b3b3b] px-3 py-2 text-sm text-[#f0c040] hover:border-[#d4a017]">
+                  <Link href={localizedPath(locale, `/market/${selected.slug}`)} className="inline-flex items-center gap-2 border border-border-strong px-3 py-2 text-sm text-accent-bright hover:border-accent">
                     Market <ArrowRight className="h-4 w-4" />
                   </Link>
                 ) : null}
@@ -182,32 +182,32 @@ export function DropFinder({ locale }: { locale: Locale }) {
             </div>
 
             {best ? (
-              <Link href={localizedPath(locale, `/stages/${best.stageSlug}`)} className="mt-4 inline-flex items-center gap-2 bg-[#d4a017] px-4 py-2 text-sm font-semibold text-black hover:bg-[#f0c040]">
+              <Link href={localizedPath(locale, `/stages/${best.stageSlug}`)} className="mt-4 inline-flex items-center gap-2 bg-[#d4a017] px-4 py-2 text-sm font-semibold text-black hover:bg-accent-bright">
                 {t(locale, { zh: "打开最佳关卡", en: "Open best stage", ja: "最適ステージを開く", ko: "추천 스테이지 열기" })}
                 <ArrowRight className="h-4 w-4" />
               </Link>
             ) : (
-              <p className="mt-4 border border-[#27272a] bg-[#0a0a0a] p-3 text-sm text-[#9d9d9d]">
+              <p className="mt-4 border border-border-default bg-bg-canvas p-3 text-sm text-text-secondary">
                 {t(locale, { zh: "暂无掉落路线", en: "No drop route found", ja: "ドロップルートなし", ko: "드롭 경로 없음" })}
               </p>
             )}
           </div>
 
-          <aside className="border border-[#27272a] bg-[#0d0d0d] p-4">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#6c6c6c]">
+          <aside className="border border-border-default bg-bg-panel p-4">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-text-muted">
               {t(locale, { zh: "箱子来源", en: "Chest source", ja: "宝箱元", ko: "상자 출처" })}
             </p>
             <div className="mt-3 space-y-2">
               {sources.length ? sources.slice(0, 5).map((source) => (
-                <Link key={`${source.box_slug}-${source.box_type}`} href={localizedPath(locale, `/chests/${source.box_slug}`)} className="block border border-[#27272a] bg-[#0a0a0a] p-3 hover:border-[#d4a017]">
+                <Link key={`${source.box_slug}-${source.box_type}`} href={localizedPath(locale, `/chests/${source.box_slug}`)} className="block border border-border-default bg-bg-canvas p-3 hover:border-accent">
                   <div className="flex items-center justify-between gap-3">
                     <span className="truncate text-sm text-white">{source.box_name}</span>
-                    <span className="font-mono text-xs text-[#f0c040]">{Number(source.drop_chance).toFixed(2)}%</span>
+                    <span className="font-mono text-xs text-accent-bright">{Number(source.drop_chance).toFixed(2)}%</span>
                   </div>
-                  <p className="mt-1 text-xs text-[#6c6c6c]">{source.box_type} / {source.stages.length} stages</p>
+                  <p className="mt-1 text-xs text-text-muted">{source.box_type} / {source.stages.length} stages</p>
                 </Link>
               )) : (
-                <p className="text-sm text-[#6c6c6c]">{t(locale, { zh: "暂无箱子来源", en: "No chest source", ja: "宝箱元なし", ko: "상자 출처 없음" })}</p>
+                <p className="text-sm text-text-muted">{t(locale, { zh: "暂无箱子来源", en: "No chest source", ja: "宝箱元なし", ko: "상자 출처 없음" })}</p>
               )}
             </div>
           </aside>
@@ -215,29 +215,29 @@ export function DropFinder({ locale }: { locale: Locale }) {
       ) : null}
 
       {bestStages.length > 1 ? (
-        <section className="border border-[#27272a] bg-[#0d0d0d]">
-          <div className="border-b border-[#27272a] px-4 py-3">
+        <section className="border border-border-default bg-bg-panel">
+          <div className="border-b border-border-default px-4 py-3">
             <p className="text-sm font-semibold text-white">{t(locale, { zh: "备选关卡", en: "Next alternatives", ja: "代替ステージ", ko: "대체 스테이지" })}</p>
           </div>
           <div className="divide-y divide-[#27272a]">
             {bestStages.slice(1).map((stage, index) => (
-              <Link key={stage.stageKey} href={localizedPath(locale, `/stages/${stage.stageSlug}`)} className="grid gap-2 p-3 hover:bg-[#111] sm:grid-cols-[60px_1fr_120px]">
-                <span className="font-mono text-sm text-[#f0c040]">#{index + 2}</span>
+              <Link key={stage.stageKey} href={localizedPath(locale, `/stages/${stage.stageSlug}`)} className="grid gap-2 p-3 hover:bg-bg-surface sm:grid-cols-[60px_1fr_120px]">
+                <span className="font-mono text-sm text-accent-bright">#{index + 2}</span>
                 <span className="text-sm text-white">{stage.diff} Act {stage.act}-{stage.no}</span>
-                <span className="font-mono text-sm text-[#f0c040]">{pct(stage.totalDropChance)}</span>
+                <span className="font-mono text-sm text-accent-bright">{pct(stage.totalDropChance)}</span>
               </Link>
             ))}
           </div>
         </section>
       ) : null}
 
-      <section className="border-t border-[#27272a] pt-5">
+      <section className="border-t border-border-default pt-5">
         <div className="mb-3 flex flex-wrap gap-2">
           {([
             ["stage", Map, t(locale, { zh: "按关卡查看", en: "By stage", ja: "ステージ別", ko: "스테이지별" })],
             ["chest", Boxes, t(locale, { zh: "按箱子查看", en: "By chest", ja: "宝箱別", ko: "상자별" })],
           ] as const).map(([key, Icon, label]) => (
-            <button key={key} onClick={() => setMode(key)} className={`inline-flex items-center gap-2 border px-3 py-2 text-sm ${mode === key ? "border-[#d4a017] bg-[#1a1508] text-[#f0c040]" : "border-[#27272a] text-[#9d9d9d]"}`}>
+            <button key={key} onClick={() => setMode(key)} className={`inline-flex items-center gap-2 border px-3 py-2 text-sm ${mode === key ? "border-accent bg-accent-soft text-accent-bright" : "border-border-default text-text-secondary"}`}>
               <Icon className="h-4 w-4" />
               {label}
             </button>
@@ -251,9 +251,9 @@ export function DropFinder({ locale }: { locale: Locale }) {
 
 function AnswerStat({ label, value, accent }: { label: string; value: string; accent?: boolean }) {
   return (
-    <div className="border border-[#27272a] bg-[#0a0a0a] p-3">
-      <p className="text-[10px] uppercase tracking-[0.14em] text-[#6c6c6c]">{label}</p>
-      <p className={`mt-1 text-lg font-semibold ${accent ? "text-[#f0c040]" : "text-white"}`}>{value}</p>
+    <div className="border border-border-default bg-bg-canvas p-3">
+      <p className="text-[10px] uppercase tracking-[0.14em] text-text-muted">{label}</p>
+      <p className={`mt-1 text-lg font-semibold ${accent ? "text-accent-bright" : "text-white"}`}>{value}</p>
     </div>
   );
 }
@@ -281,7 +281,7 @@ function StageDropMode({ locale }: { locale: Locale }) {
 
   return (
     <div className="space-y-3">
-      <select value={stageKey} onChange={(event) => setStageKey(Number(event.target.value))} className="w-full border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm text-white">
+      <select value={stageKey} onChange={(event) => setStageKey(Number(event.target.value))} className="w-full border border-border-strong bg-bg-canvas px-3 py-2 text-sm text-white">
         {allStages().map((stage) => (
           <option key={stage.key} value={stage.key}>
             {stage.difficulty} Act {stage.act}-{stage.no} / Lv.{stage.level} / {stageName(stage, locale)}
@@ -290,11 +290,11 @@ function StageDropMode({ locale }: { locale: Locale }) {
       </select>
       <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-3">
         {rows.map(({ item, sources, chance }) => (
-          <Link key={item.slug} href={localizedPath(locale, `/items/${item.slug}`)} className="border border-[#27272a] bg-[#0d0d0d] p-3 hover:border-[#d4a017]">
+          <Link key={item.slug} href={localizedPath(locale, `/items/${item.slug}`)} className="border border-border-default bg-bg-panel p-3 hover:border-accent">
             <ItemThumb item={item} locale={locale} />
             <div className="mt-3 flex items-center justify-between text-xs">
-              <span className="text-[#6c6c6c]">{sources.map((source) => source.box_name).join(" / ")}</span>
-              <span className="font-mono text-[#f0c040]">{pct(chance)}</span>
+              <span className="text-text-muted">{sources.map((source) => source.box_name).join(" / ")}</span>
+              <span className="font-mono text-accent-bright">{pct(chance)}</span>
             </div>
           </Link>
         ))}
@@ -320,18 +320,18 @@ function ChestDropMode({ locale }: { locale: Locale }) {
 
   return (
     <div className="space-y-3">
-      <select value={chestSlug} onChange={(event) => setChestSlug(event.target.value)} className="w-full border border-[#3b3b3b] bg-[#0a0a0a] px-3 py-2 text-sm text-white">
+      <select value={chestSlug} onChange={(event) => setChestSlug(event.target.value)} className="w-full border border-border-strong bg-bg-canvas px-3 py-2 text-sm text-white">
         {chestItems().map((chest) => (
           <option key={chest.slug} value={chest.slug}>{itemName(chest, locale)} / {chest.grade}</option>
         ))}
       </select>
       <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-3">
         {rows.map(({ item, source }) => (
-          <Link key={item.slug} href={localizedPath(locale, `/items/${item.slug}`)} className="border border-[#27272a] bg-[#0d0d0d] p-3 hover:border-[#d4a017]">
+          <Link key={item.slug} href={localizedPath(locale, `/items/${item.slug}`)} className="border border-border-default bg-bg-panel p-3 hover:border-accent">
             <ItemThumb item={item} locale={locale} />
             <div className="mt-3 flex items-center justify-between text-xs">
-              <span className="text-[#6c6c6c]">{source.box_type}</span>
-              <span className="font-mono text-[#f0c040]">{Number(source.drop_chance).toFixed(2)}%</span>
+              <span className="text-text-muted">{source.box_type}</span>
+              <span className="font-mono text-accent-bright">{Number(source.drop_chance).toFixed(2)}%</span>
             </div>
           </Link>
         ))}

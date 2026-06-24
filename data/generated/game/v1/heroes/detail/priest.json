@@ -63,7 +63,7 @@
   "DeadIconPath": "UI/Icon/Hero/HeroDead_401",
   "PrefabPath": "Prefab/Hero/Hero_401",
   "AnimatorPath": "Animation/Hero/401/Hero_401",
-  "icon": "/game/heroes/portraits/Hero_401.png",
+  "icon": "/game/heroes/portraits/Hero_401_5508.png",
   "dead_icon": "/game/heroes/portraits/HeroDead_401.png",
   "animations_folder": "/game/heroes/Priest",
   "skill_name_i18n": null,

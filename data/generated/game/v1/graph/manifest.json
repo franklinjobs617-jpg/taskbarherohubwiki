@@ -1,6 +1,6 @@
 {
   "version": "game-v1-graph",
-  "generatedAt": "2026-06-09T04:42:05.555Z",
+  "generatedAt": "2026-06-24T07:10:07.669Z",
   "inputs": {
     "competitorPublic": "data/generated/game/v1/competitor-public/tbh-helper.json",
     "localItems": "tbh_data/items.json",
@@ -14,16 +14,16 @@
     "monsters": 61,
     "stages": 120,
     "materials": 115,
-    "market": 91
+    "market": 0
   },
   "coverage": {
-    "itemsWithSourceChain": 1147,
+    "itemsWithSourceChain": 1171,
     "chestsWithContents": 49,
     "chestsWithDropSources": 31,
     "monstersWithDrops": 60,
     "stagesWithDrops": 120,
     "materialsWithEffects": 79,
-    "freshMarketRows": 91
+    "freshMarketRows": 0
   },
   "rules": {
     "userVisibleSource": false,
@@ -33,8 +33,8 @@
   },
   "_meta": {
     "source": "merged-internal-graph",
-    "sourceUrl": "https://tbherohelper.com/assets/data-DOntf3Ne.js",
-    "updatedAt": "2026-06-09T04:42:05.555Z",
+    "sourceUrl": "https://tbherohelper.com/assets/data-qXTGgl34.js",
+    "updatedAt": "2026-06-24T07:10:07.669Z",
     "confidence": "high",
     "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
   }

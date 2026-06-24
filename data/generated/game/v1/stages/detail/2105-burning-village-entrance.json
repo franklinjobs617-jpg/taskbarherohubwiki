@@ -1,0 +1,53 @@
+{
+  "key": 2105,
+  "act": 1,
+  "no": 5,
+  "level": 36,
+  "type": "NORMAL",
+  "difficulty": "NIGHTMARE",
+  "name": {
+    "zh-Hans": "燃烧村庄入口",
+    "zh-Hant": "燃燒村莊入口",
+    "en-US": "Burning Village Entrance",
+    "fr-FR": "Entrée du Village en Flammes",
+    "de-DE": "Brennender Dorfeingang",
+    "id-ID": "Pintu Desa Terbakar",
+    "ja-JP": "燃える村の入口",
+    "ko-KR": "불타는 마을 입구",
+    "pl-PL": "Wejście do Płonącej Wioski",
+    "pt-BR": "Entrada da Vila em Chamas",
+    "ru-RU": "Вход в горящую деревню",
+    "es-ES": "Entrada del Pueblo Ardiente",
+    "th-TH": "ทางเข้าหมู่บ้านเพลิง",
+    "tr-TR": "Yanan Köy Girişi",
+    "uk-UA": "Вхід до палаючого села",
+    "vi-VN": "Lối vào Làng Cháy"
+  },
+  "waves": 21,
+  "monsterCount": 5,
+  "kills": 252,
+  "goldPerClear": 20248,
+  "expPerClear": 363822,
+  "boss": {
+    "name": {
+      "zh-Hans": "人造人",
+      "zh-Hant": "人造人",
+      "en-US": "Homunculus",
+      "fr-FR": "Homonculus",
+      "de-DE": "Homunculus",
+      "id-ID": "Homunculus",
+      "ja-JP": "ホムンクルス",
+      "ko-KR": "호문클루스",
+      "pl-PL": "Homunkulus",
+      "pt-BR": "Homúnculo",
+      "ru-RU": "Гомункул",
+      "es-ES": "Homúnculo",
+      "th-TH": "โฮมุนคูลุส",
+      "tr-TR": "Homunkulus",
+      "uk-UA": "Гомункул",
+      "vi-VN": "Homunculus"
+    },
+    "portrait": "/game/monsters/Homunculus/Homunculus_Idle_character_4.png"
+  },
+  "slug": "2105-burning-village-entrance"
+}

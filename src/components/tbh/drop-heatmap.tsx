@@ -86,7 +86,7 @@ export function DropHeatmap({
 
   if (!dropSources.length) {
     return (
-      <div className="border border-[#27272a] bg-[#0d0d0d] p-4 text-center text-sm text-[#6c6c6c]">
+      <div className="border border-border-default bg-bg-panel p-4 text-center text-sm text-text-muted">
         {isZh ? "暂无掉落数据" : "No drop data available yet"}
       </div>
     );
@@ -96,7 +96,7 @@ export function DropHeatmap({
     <div className="space-y-4">
       {/* Difficulty tabs */}
       <div className="flex items-center justify-between">
-        <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#6c6c6c]">
+        <p className="text-xs font-semibold uppercase tracking-[0.15em] text-text-muted">
           {isZh ? "掉落热力图" : "Drop Heatmap"}
         </p>
         <div className="flex gap-1">
@@ -107,7 +107,7 @@ export function DropHeatmap({
               className={`px-2.5 py-1 text-[11px] font-medium transition-colors border ${
                 difficulty === diff
                   ? "border-amber-600/60 bg-amber-600/20 text-amber-400"
-                  : "border-[#27272a] text-[#6c6c6c] hover:border-[#3b3b3b] hover:text-[#9d9d9d]"
+                  : "border-border-default text-text-muted hover:border-border-strong hover:text-text-secondary"
               }`}
             >
               {(DIFF_LABELS[locale] ?? DIFF_LABELS.en!)[diff]}
@@ -117,7 +117,7 @@ export function DropHeatmap({
       </div>
 
       {/* Legend */}
-      <div className="flex items-center gap-4 text-[10px] text-[#6c6c6c]">
+      <div className="flex items-center gap-4 text-[10px] text-text-muted">
         <span className="flex items-center gap-1">
           <span className="inline-block h-3 w-3 bg-amber-600" /> {densityLabel(3, locale)}
         </span>
@@ -128,7 +128,7 @@ export function DropHeatmap({
           <span className="inline-block h-3 w-3 bg-amber-900/50" /> {densityLabel(1, locale)}
         </span>
         <span className="flex items-center gap-1">
-          <span className="inline-block h-3 w-3 bg-zinc-900/30 border border-[#27272a]" /> {isZh ? "无" : "None"}
+          <span className="inline-block h-3 w-3 bg-zinc-900/30 border border-border-default" /> {isZh ? "无" : "None"}
         </span>
       </div>
 
@@ -136,7 +136,7 @@ export function DropHeatmap({
       <div className="grid grid-cols-3 gap-3">
         {[1, 2, 3].map((act) => (
           <div key={act} className="space-y-1.5">
-            <p className="text-center text-[10px] font-semibold uppercase tracking-[0.15em] text-[#6c6c6c]">
+            <p className="text-center text-[10px] font-semibold uppercase tracking-[0.15em] text-text-muted">
               {isZh ? `第 ${act} 章` : `Act ${act}`}
             </p>
             <div className="grid grid-cols-1 gap-1">
@@ -168,7 +168,7 @@ export function DropHeatmap({
                         }
                       }}
                     >
-                      <span className={`font-mono tabular-nums ${stage.density > 0 ? "text-white" : "text-[#6c6c6c]"}`}>
+                      <span className={`font-mono tabular-nums ${stage.density > 0 ? "text-white" : "text-text-muted"}`}>
                         {act}-{stage.no}
                       </span>
                       {stage.density > 0 && (
@@ -179,7 +179,7 @@ export function DropHeatmap({
 
                       {/* Tooltip on hover */}
                       {isHovered && stage.density > 0 && stageBest && (
-                        <div className="absolute bottom-full left-1/2 z-10 mb-1 -translate-x-1/2 whitespace-nowrap rounded border border-[#3b3b3b] bg-[#18181b] px-2 py-1 text-[10px] text-[#9d9d9d] shadow-lg pointer-events-none">
+                        <div className="absolute bottom-full left-1/2 z-10 mb-1 -translate-x-1/2 whitespace-nowrap rounded border border-border-strong bg-bg-surface px-2 py-1 text-[10px] text-text-secondary shadow-lg pointer-events-none">
                           {stageBest.boxes.map((box, i) => (
                             <div key={i}>
                               {box.name}: {(box.rate * 100).toFixed(2)}%
@@ -201,9 +201,9 @@ export function DropHeatmap({
 
       {/* Best stage highlight */}
       {bestStage && (
-        <div className="flex items-center gap-2 border border-amber-600/30 bg-amber-600/10 px-3 py-2 text-xs">
+        <div className="flex items-center gap-2 border border-accent-dim bg-amber-600/10 px-3 py-2 text-xs">
           <span className="text-amber-400">★</span>
-          <span className="text-[#9d9d9d]">
+          <span className="text-text-secondary">
             {isZh ? "最佳刷取关卡:" : "Best farming stage:"}{" "}
           </span>
           <Link
@@ -212,7 +212,7 @@ export function DropHeatmap({
           >
             {bestStage.diff} ACT {bestStage.act}-{bestStage.no}
           </Link>
-          <span className="text-[#6c6c6c]">
+          <span className="text-text-muted">
             ({(bestStage.totalDropChance * 100).toFixed(2)}%/{isZh ? "轮" : "run"})
           </span>
         </div>

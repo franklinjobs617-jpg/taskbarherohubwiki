@@ -54,8 +54,8 @@ export function RelatedPages({ pageKey, locale }: { pageKey: keyof typeof HUB_LI
   const items = HUB_LINKS_BY_PAGE[pageKey]?.(locale) ?? [];
   if (items.length === 0) return null;
   return (
-    <section className="mt-10 border-t border-[#27272a] pt-6">
-      <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#6c6c6c]">
+    <section className="mt-10 border-t border-border-default pt-6">
+      <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-text-muted">
         {locale === "zh" ? "看完这页再看" : "Related pages"}
       </p>
       <h2 className="mt-1 text-[18px] font-semibold leading-tight text-white">
@@ -66,13 +66,13 @@ export function RelatedPages({ pageKey, locale }: { pageKey: keyof typeof HUB_LI
           <Link
             key={item.href}
             href={localizedPath(locale, item.href)}
-            className="group flex items-start justify-between gap-3 border border-[#27272a] bg-[#0d0d0d] p-3 transition hover:border-[#d4a017]"
+            className="group flex items-start justify-between gap-3 border border-border-default bg-bg-panel p-3 transition hover:border-accent"
           >
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-white group-hover:text-[#f0c040]">{item.title}</p>
-              <p className="mt-1 text-xs leading-5 text-[#9d9d9d]">{item.desc}</p>
+              <p className="text-sm font-semibold text-white group-hover:text-accent-bright">{item.title}</p>
+              <p className="mt-1 text-xs leading-5 text-text-secondary">{item.desc}</p>
             </div>
-            <ArrowRight className="mt-1 h-3.5 w-3.5 shrink-0 text-[#6c6c6c] group-hover:text-[#f0c040]" aria-hidden="true" />
+            <ArrowRight className="mt-1 h-3.5 w-3.5 shrink-0 text-text-muted group-hover:text-accent-bright" aria-hidden="true" />
           </Link>
         ))}
       </div>

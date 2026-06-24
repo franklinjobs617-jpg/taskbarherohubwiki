@@ -439,7 +439,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/10011-slime",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -947,7 +947,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/10021-goblin",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -1395,7 +1395,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/10022-goblin-thief",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -1843,7 +1843,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/10023-goblin-shaman",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -2357,7 +2357,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/10031-bat",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -2743,7 +2743,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/10041-orc",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -3149,7 +3149,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/10042-orc-warrior",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -3509,7 +3509,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/10043-elite-orc",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -3915,7 +3915,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/10051-skeleton",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -4397,7 +4397,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/10052-skeleton-archer",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -4716,7 +4716,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/10053-skeleton-warrior",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -4817,7 +4817,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/10901-skeleton-king",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -4918,7 +4918,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/10902-skeleton-king",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -5019,7 +5019,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/10903-skeleton-king",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -5120,7 +5120,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/10904-skeleton-king",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -5677,7 +5677,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/20011-scorpion",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -6283,7 +6283,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/20021-ratfolk-warrior",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -6672,7 +6672,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/20022-ratfolk-archer",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -7268,7 +7268,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/20023-plague-rat",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -7818,7 +7818,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/20024-ratfolk-berserker",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -8414,7 +8414,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/20031-cobra",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -8982,7 +8982,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/20041-venom-insect",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -9187,7 +9187,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/20042-venom-lord",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -9482,7 +9482,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/20051-giant-fly",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -10068,7 +10068,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/20061-kobold-guard",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -10353,7 +10353,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/20062-kobold-slinger",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -10949,7 +10949,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/20071-homunculus",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -11489,7 +11489,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/20081-ghoul",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -11774,7 +11774,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/20091-fire-elemental",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -12238,7 +12238,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/20111-mummy",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -12289,7 +12289,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/20121-tick",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "medium",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -12390,7 +12390,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/20901-desert-overlord",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -12491,7 +12491,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/20902-desert-overlord",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -12592,7 +12592,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/20903-desert-overlord",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -12693,7 +12693,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/20904-desert-overlord",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -13079,7 +13079,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30011-gremlin",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -13444,7 +13444,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30012-geonid",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -13820,7 +13820,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30013-fallen-angel-s-helm",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -14196,7 +14196,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30021-yeti",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -14460,7 +14460,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30031-dragon-hatchling",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -14836,7 +14836,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30041-snow-mountain-warrior",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -15121,7 +15121,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30042-snow-mountain-archer",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -15416,7 +15416,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30043-snow-mountain-guard",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -15722,7 +15722,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30044-snow-mountain-mage",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -16167,7 +16167,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30051-ghost",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -16361,7 +16361,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30061-lava-being",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -16493,7 +16493,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30071-blood-priest",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -16809,7 +16809,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30081-demon-soldier",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -17094,7 +17094,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30082-demon-legion-commander",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -17403,7 +17403,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30083-demon-shocktrooper",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -17709,7 +17709,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30084-burning-piglet",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -17903,7 +17903,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30091-hell-golem",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -18188,7 +18188,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30101-burning-hell-priest",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -18442,7 +18442,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30102-frozen-hell-priest",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -18668,7 +18668,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30103-electric-hell-priest",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -18842,7 +18842,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30104-chaos-hell-priest",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -19127,7 +19127,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30111-finger-of-death",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -19228,7 +19228,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30901-archon-morkar",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -19330,7 +19330,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30902-archon-morkar",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -19432,7 +19432,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30903-archon-morkar",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }
@@ -19534,7 +19534,7 @@
     "_meta": {
       "source": "merged-internal-graph",
       "sourceUrl": "https://tbherohelper.com/monsters/30904-archon-morkar",
-      "updatedAt": "2026-06-09T04:42:05.555Z",
+      "updatedAt": "2026-06-24T07:10:07.669Z",
       "confidence": "high",
       "mergePolicy": "competitor-public-structured > local-datamined > steam-market"
     }

@@ -1,1099 +1,5672 @@
-{
-  "updatedAt": "2026-06-09T04:21:59.026Z",
-  "appId": "3678970",
-  "currency": "1",
-  "items": [
-    {
-      "slug": "minor-ruby",
-      "id": 110001,
-      "marketHash": "Minor Ruby",
-      "lowest": 0.04,
-      "median": null,
-      "listings": 147847,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "minor-sapphire",
-      "id": 110002,
-      "marketHash": "Minor Sapphire",
-      "lowest": 0.03,
-      "median": null,
-      "listings": 270572,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "minor-topaz",
-      "id": 110003,
-      "marketHash": "Minor Topaz",
-      "lowest": 0.04,
-      "median": null,
-      "listings": 132053,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "minor-emerald",
-      "id": 110004,
-      "marketHash": "Minor Emerald",
-      "lowest": 0.06,
-      "median": null,
-      "listings": 119920,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "minor-amethyst",
-      "id": 110005,
-      "marketHash": "Minor Amethyst",
-      "lowest": 0.03,
-      "median": null,
-      "listings": 239959,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "obsidian-shard",
-      "id": 111001,
-      "marketHash": "Obsidian Shard",
-      "lowest": 0.04,
-      "median": null,
-      "listings": 93260,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "coral-piece",
-      "id": 111002,
-      "marketHash": "Coral Piece",
-      "lowest": 0.06,
-      "median": null,
-      "listings": 90874,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "jade-stone",
-      "id": 111003,
-      "marketHash": "Jade Stone",
-      "lowest": 0.03,
-      "median": null,
-      "listings": 173348,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "amber-gem",
-      "id": 111004,
-      "marketHash": "Amber Gem",
-      "lowest": 0.03,
-      "median": null,
-      "listings": 131679,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "ruby",
-      "id": 112001,
-      "marketHash": "Ruby",
-      "lowest": 0.2,
-      "median": null,
-      "listings": 10741,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "sapphire",
-      "id": 112002,
-      "marketHash": "Sapphire",
-      "lowest": 0.04,
-      "median": null,
-      "listings": 43927,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "topaz",
-      "id": 112003,
-      "marketHash": "Topaz",
-      "lowest": 0.03,
-      "median": null,
-      "listings": 69724,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "emerald",
-      "id": 112004,
-      "marketHash": "Emerald",
-      "lowest": 0.38,
-      "median": null,
-      "listings": 5375,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "amethyst",
-      "id": 112005,
-      "marketHash": "Amethyst",
-      "lowest": 0.26,
-      "median": null,
-      "listings": 6424,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "crystal-quartz",
-      "id": 113001,
-      "marketHash": "Crystal Quartz",
-      "lowest": 0.09,
-      "median": null,
-      "listings": 7721,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "pearl",
-      "id": 113002,
-      "marketHash": "Pearl",
-      "lowest": 0.17,
-      "median": null,
-      "listings": 3776,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "turquoise",
-      "id": 113003,
-      "marketHash": "Turquoise",
-      "lowest": 0.1,
-      "median": null,
-      "listings": 7280,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "garnet",
-      "id": 113004,
-      "marketHash": "Garnet",
-      "lowest": 0.08,
-      "median": null,
-      "listings": 9141,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "diamond",
-      "id": 114001,
-      "marketHash": "Diamond",
-      "lowest": 0.77,
-      "median": null,
-      "listings": 1921,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "opal",
-      "id": 114002,
-      "marketHash": "Opal",
-      "lowest": 1.24,
-      "median": null,
-      "listings": 154,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "lapis-lazuli",
-      "id": 114003,
-      "marketHash": "Lapis Lazuli",
-      "lowest": 1.19,
-      "median": null,
-      "listings": 460,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "black-pearl",
-      "id": 114004,
-      "marketHash": "Black Pearl",
-      "lowest": 0.12,
-      "median": null,
-      "listings": 1632,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "arcane-crystal",
-      "id": 115001,
-      "marketHash": "Arcane Crystal",
-      "lowest": 0.57,
-      "median": null,
-      "listings": 622,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "mystic-topaz",
-      "id": 115002,
-      "marketHash": "Mystic Topaz",
-      "lowest": 0.31,
-      "median": null,
-      "listings": 1283,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "enchanted-ruby",
-      "id": 115003,
-      "marketHash": "Enchanted Ruby",
-      "lowest": 1.17,
-      "median": null,
-      "listings": 1226,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "starlight-sapphire",
-      "id": 115004,
-      "marketHash": "Starlight Sapphire",
-      "lowest": 0.39,
-      "median": null,
-      "listings": 1437,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "void-opal",
-      "id": 116001,
-      "marketHash": "Void Opal",
-      "lowest": 5.09,
-      "median": null,
-      "listings": 138,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "twilight-amethyst",
-      "id": 116004,
-      "marketHash": "Twilight Amethyst",
-      "lowest": 33.7,
-      "median": null,
-      "listings": 2,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "celestial-pearl",
-      "id": 117001,
-      "marketHash": "Celestial Pearl",
-      "lowest": 43.47,
-      "median": null,
-      "listings": 18,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "dragonite-crystal",
-      "id": 117002,
-      "marketHash": "Dragonite Crystal",
-      "lowest": 22.05,
-      "median": null,
-      "listings": 12,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "goblin-hide",
-      "id": 120001,
-      "marketHash": "Goblin Hide",
-      "lowest": 0.03,
-      "median": null,
-      "listings": 100891,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "skeleton-bone",
-      "id": 120002,
-      "marketHash": "Skeleton Bone",
-      "lowest": 0.03,
-      "median": null,
-      "listings": 110652,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "slime-jelly",
-      "id": 120003,
-      "marketHash": "Slime Jelly",
-      "lowest": 0.03,
-      "median": null,
-      "listings": 107521,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "wolf-fang",
-      "id": 121001,
-      "marketHash": "Wolf Fang",
-      "lowest": 0.03,
-      "median": null,
-      "listings": 63275,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "spider-silk",
-      "id": 121002,
-      "marketHash": "Spider Silk",
-      "lowest": 0.04,
-      "median": null,
-      "listings": 21844,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "poisonous-herb",
-      "id": 121003,
-      "marketHash": "Poisonous Herb",
-      "lowest": 0.03,
-      "median": null,
-      "listings": 34038,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "healing-herb",
-      "id": 121004,
-      "marketHash": "Healing Herb",
-      "lowest": 0.03,
-      "median": null,
-      "listings": 52653,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "bat-wing-membrane",
-      "id": 122001,
-      "marketHash": "Bat Wing Membrane",
-      "lowest": 0.03,
-      "median": null,
-      "listings": 17371,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "ogre-blood",
-      "id": 122002,
-      "marketHash": "Ogre Blood",
-      "lowest": 0.03,
-      "median": null,
-      "listings": 21086,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "mushroom-spore",
-      "id": 122003,
-      "marketHash": "Mushroom Spore",
-      "lowest": 0.03,
-      "median": null,
-      "listings": 19191,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "ancient-tree-sap",
-      "id": 122004,
-      "marketHash": "Ancient Tree Sap",
-      "lowest": 0.03,
-      "median": null,
-      "listings": 21797,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "skull",
-      "id": 123001,
-      "marketHash": "Skull",
-      "lowest": 3.71,
-      "median": null,
-      "listings": 13,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "harpy-feather",
-      "id": 123002,
-      "marketHash": "Harpy Feather",
-      "lowest": 0.18,
-      "median": null,
-      "listings": 898,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "mandrake-root",
-      "id": 123003,
-      "marketHash": "Mandrake Root",
-      "lowest": 0.14,
-      "median": null,
-      "listings": 870,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "nightshade-extract",
-      "id": 123004,
-      "marketHash": "Nightshade Extract",
-      "lowest": 0.11,
-      "median": null,
-      "listings": 1764,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "basilisk-scale",
-      "id": 124001,
-      "marketHash": "Basilisk Scale",
-      "lowest": 1.22,
-      "median": null,
-      "listings": 195,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "wyvern-claw",
-      "id": 124002,
-      "marketHash": "Wyvern Claw",
-      "lowest": 0.24,
-      "median": null,
-      "listings": 865,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "demon-blood",
-      "id": 124004,
-      "marketHash": "Demon Blood",
-      "lowest": 0.37,
-      "median": null,
-      "listings": 796,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "griffin-beak",
-      "id": 125002,
-      "marketHash": "Griffin Beak",
-      "lowest": 0.98,
-      "median": null,
-      "listings": 337,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "phoenix-ash",
-      "id": 125003,
-      "marketHash": "Phoenix Ash",
-      "lowest": 9.24,
-      "median": null,
-      "listings": 3,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "dragon-bile",
-      "id": 125004,
-      "marketHash": "Dragon Bile",
-      "lowest": 0.53,
-      "median": null,
-      "listings": 497,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "wraith-essence",
-      "id": 126001,
-      "marketHash": "Wraith Essence",
-      "lowest": 3.03,
-      "median": null,
-      "listings": 66,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "kraken-ink",
-      "id": 126002,
-      "marketHash": "Kraken Ink",
-      "lowest": 5.63,
-      "median": null,
-      "listings": 7,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "titan-marrow",
-      "id": 126003,
-      "marketHash": "Titan Marrow",
-      "lowest": 10.14,
-      "median": null,
-      "listings": 28,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "void-ichor",
-      "id": 126004,
-      "marketHash": "Void Ichor",
-      "lowest": 6.92,
-      "median": null,
-      "listings": 19,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "abyssal-mucus",
-      "id": 127001,
-      "marketHash": "Abyssal Mucus",
-      "lowest": 42.73,
-      "median": null,
-      "listings": 5,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "chaos-spore",
-      "id": 127002,
-      "marketHash": "Chaos Spore",
-      "lowest": 69.03,
-      "median": null,
-      "listings": 3,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "scroll-of-common-inscription",
-      "id": 130001,
-      "marketHash": "Scroll of Common Inscription",
-      "lowest": 1.46,
-      "median": null,
-      "listings": 10,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "scroll-of-uncommon-inscription",
-      "id": 131001,
-      "marketHash": "Scroll of Uncommon Inscription",
-      "lowest": 2,
-      "median": null,
-      "listings": 7,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "scroll-of-rare-inscription",
-      "id": 132001,
-      "marketHash": "Scroll of Rare Inscription",
-      "lowest": 1.53,
-      "median": null,
-      "listings": 29,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "scroll-of-legendary-inscription",
-      "id": 133001,
-      "marketHash": "Scroll of Legendary Inscription",
-      "lowest": 2.15,
-      "median": null,
-      "listings": 215,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "scroll-of-immortal-inscription",
-      "id": 134001,
-      "marketHash": "Scroll of Immortal Inscription",
-      "lowest": 4.32,
-      "median": null,
-      "listings": 143,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "scroll-of-arcana-inscription",
-      "id": 135001,
-      "marketHash": "Scroll of Arcana Inscription",
-      "lowest": 18.75,
-      "median": null,
-      "listings": 5,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "scroll-of-beyond-inscription",
-      "id": 136001,
-      "marketHash": "Scroll of Beyond Inscription",
-      "lowest": 3.5,
-      "median": null,
-      "listings": 18,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "wood",
-      "id": 140001,
-      "marketHash": "Wood",
-      "lowest": 0.03,
-      "median": null,
-      "listings": 598724,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "stone",
-      "id": 140002,
-      "marketHash": "Stone",
-      "lowest": 0.07,
-      "median": null,
-      "listings": 162689,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "leather",
-      "id": 140003,
-      "marketHash": "Leather",
-      "lowest": 0.03,
-      "median": null,
-      "listings": 409246,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "copper-nugget",
-      "id": 140004,
-      "marketHash": "Copper Nugget",
-      "lowest": 0.04,
-      "median": null,
-      "listings": 333343,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "bronze-ingot",
-      "id": 141001,
-      "marketHash": "Bronze Ingot",
-      "lowest": 0.06,
-      "median": null,
-      "listings": 199195,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "iron-ingot",
-      "id": 141002,
-      "marketHash": "Iron Ingot",
-      "lowest": 0.06,
-      "median": null,
-      "listings": 197926,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "silver-ingot",
-      "id": 142001,
-      "marketHash": "Silver Ingot",
-      "lowest": 0.06,
-      "median": null,
-      "listings": 83740,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "gold-ingot",
-      "id": 142002,
-      "marketHash": "Gold Ingot",
-      "lowest": 0.06,
-      "median": null,
-      "listings": 64139,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "stardust-ingot",
-      "id": 143001,
-      "marketHash": "Stardust Ingot",
-      "lowest": 0.21,
-      "median": null,
-      "listings": 4653,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "void-iron",
-      "id": 143002,
-      "marketHash": "Void Iron",
-      "lowest": 0.74,
-      "median": null,
-      "listings": 160,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "bloodstone",
-      "id": 144001,
-      "marketHash": "Bloodstone",
-      "lowest": 0.61,
-      "median": null,
-      "listings": 371,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "thunderstone",
-      "id": 144002,
-      "marketHash": "Thunderstone",
-      "lowest": 2.73,
-      "median": null,
-      "listings": 46,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "chaos-shard",
-      "id": 145001,
-      "marketHash": "Chaos Shard",
-      "lowest": 0.18,
-      "median": null,
-      "listings": 976,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "arcane-ore",
-      "id": 145002,
-      "marketHash": "Arcane Ore",
-      "lowest": 2.92,
-      "median": null,
-      "listings": 54,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "darksteel-ingot",
-      "id": 146001,
-      "marketHash": "Darksteel Ingot",
-      "lowest": 0.87,
-      "median": null,
-      "listings": 311,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "orichalcum-ore",
-      "id": 146002,
-      "marketHash": "Orichalcum Ore",
-      "lowest": 1.79,
-      "median": null,
-      "listings": 66,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "moonstone",
-      "id": 147001,
-      "marketHash": "Moonstone",
-      "lowest": 5.24,
-      "median": null,
-      "listings": 21,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "kingdom-1st-anniversary-coin",
-      "id": 160001,
-      "marketHash": "Kingdom 1st Anniversary Coin",
-      "lowest": 0.19,
-      "median": null,
-      "listings": 585,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "empire-1st-anniversary-coin",
-      "id": 160002,
-      "marketHash": "Empire 1st Anniversary Coin",
-      "lowest": 3.47,
-      "median": null,
-      "listings": 2,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "kingdom-10th-anniversary-coin",
-      "id": 160003,
-      "marketHash": "Kingdom 10th Anniversary Coin",
-      "lowest": 1.86,
-      "median": null,
-      "listings": 180,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "empire-10th-anniversary-coin",
-      "id": 160004,
-      "marketHash": "Empire 10th Anniversary Coin",
-      "lowest": 4.04,
-      "median": null,
-      "listings": 60,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "kingdom-50th-anniversary-coin",
-      "id": 160005,
-      "marketHash": "Kingdom 50th Anniversary Coin",
-      "lowest": 31.23,
-      "median": null,
-      "listings": 1,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "empire-50th-anniversary-coin",
-      "id": 160006,
-      "marketHash": "Empire 50th Anniversary Coin",
-      "lowest": 34.34,
-      "median": null,
-      "listings": 27,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "soulstone-normal",
-      "id": 190001,
-      "marketHash": "Soulstone - Normal",
-      "lowest": 0.05,
-      "median": null,
-      "listings": 167689,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "soulstone-nightmare",
-      "id": 190002,
-      "marketHash": "Soulstone - Nightmare",
-      "lowest": 0.06,
-      "median": null,
-      "listings": 196542,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "soulstone-hell",
-      "id": 190003,
-      "marketHash": "Soulstone - Hell",
-      "lowest": 0.1,
-      "median": null,
-      "listings": 86789,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    },
-    {
-      "slug": "soulstone-torment",
-      "id": 190004,
-      "marketHash": "Soulstone - Torment",
-      "lowest": 0.19,
-      "median": null,
-      "listings": 39748,
-      "trend7d": null,
-      "confidence": "low",
-      "updatedAt": "2026-06-09T04:21:59.026Z",
-      "source": "steamcommunity_market_search"
-    }
-  ]
-}
+[
+  {
+    "slug": "minor-ruby",
+    "marketHash": "Minor Ruby",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "minor-sapphire",
+    "marketHash": "Minor Sapphire",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "minor-topaz",
+    "marketHash": "Minor Topaz",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "minor-emerald",
+    "marketHash": "Minor Emerald",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "minor-amethyst",
+    "marketHash": "Minor Amethyst",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "obsidian-shard",
+    "marketHash": "Obsidian Shard",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "coral-piece",
+    "marketHash": "Coral Piece",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "jade-stone",
+    "marketHash": "Jade Stone",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "amber-gem",
+    "marketHash": "Amber Gem",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "ruby",
+    "marketHash": "Ruby",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "sapphire",
+    "marketHash": "Sapphire",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "topaz",
+    "marketHash": "Topaz",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "emerald",
+    "marketHash": "Emerald",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "amethyst",
+    "marketHash": "Amethyst",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "crystal-quartz",
+    "marketHash": "Crystal Quartz",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "pearl",
+    "marketHash": "Pearl",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "turquoise",
+    "marketHash": "Turquoise",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "garnet",
+    "marketHash": "Garnet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "diamond",
+    "marketHash": "Diamond",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "opal",
+    "marketHash": "Opal",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "lapis-lazuli",
+    "marketHash": "Lapis Lazuli",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "black-pearl",
+    "marketHash": "Black Pearl",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "arcane-crystal",
+    "marketHash": "Arcane Crystal",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "mystic-topaz",
+    "marketHash": "Mystic Topaz",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "enchanted-ruby",
+    "marketHash": "Enchanted Ruby",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "starlight-sapphire",
+    "marketHash": "Starlight Sapphire",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "void-opal",
+    "marketHash": "Void Opal",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "astral-diamond",
+    "marketHash": "Astral Diamond",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "phantom-emerald",
+    "marketHash": "Phantom Emerald",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "twilight-amethyst",
+    "marketHash": "Twilight Amethyst",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "celestial-pearl",
+    "marketHash": "Celestial Pearl",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "dragonite-crystal",
+    "marketHash": "Dragonite Crystal",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "void-crystal",
+    "marketHash": "Void Crystal",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "abyssal-pearl",
+    "marketHash": "Abyssal Pearl",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "ethereal-gem",
+    "marketHash": "Ethereal Gem",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "chaos-diamond",
+    "marketHash": "Chaos Diamond",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "goblin-hide",
+    "marketHash": "Goblin Hide",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "skeleton-bone",
+    "marketHash": "Skeleton Bone",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "slime-jelly",
+    "marketHash": "Slime Jelly",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "wolf-fang",
+    "marketHash": "Wolf Fang",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "spider-silk",
+    "marketHash": "Spider Silk",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "poisonous-herb",
+    "marketHash": "Poisonous Herb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "healing-herb",
+    "marketHash": "Healing Herb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "bat-wing-membrane",
+    "marketHash": "Bat Wing Membrane",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "ogre-blood",
+    "marketHash": "Ogre Blood",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "mushroom-spore",
+    "marketHash": "Mushroom Spore",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "ancient-tree-sap",
+    "marketHash": "Ancient Tree Sap",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "skull",
+    "marketHash": "Skull",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "harpy-feather",
+    "marketHash": "Harpy Feather",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "mandrake-root",
+    "marketHash": "Mandrake Root",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "nightshade-extract",
+    "marketHash": "Nightshade Extract",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "basilisk-scale",
+    "marketHash": "Basilisk Scale",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "wyvern-claw",
+    "marketHash": "Wyvern Claw",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "dice",
+    "marketHash": "Dice",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "demon-blood",
+    "marketHash": "Demon Blood",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "minotaur-horn",
+    "marketHash": "Minotaur Horn",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "griffin-beak",
+    "marketHash": "Griffin Beak",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "phoenix-ash",
+    "marketHash": "Phoenix Ash",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "dragon-bile",
+    "marketHash": "Dragon Bile",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "wraith-essence",
+    "marketHash": "Wraith Essence",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "kraken-ink",
+    "marketHash": "Kraken Ink",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "titan-marrow",
+    "marketHash": "Titan Marrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "void-ichor",
+    "marketHash": "Void Ichor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "abyssal-mucus",
+    "marketHash": "Abyssal Mucus",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "chaos-spore",
+    "marketHash": "Chaos Spore",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "primordial-sap",
+    "marketHash": "Primordial Sap",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "eldritch-venom",
+    "marketHash": "Eldritch Venom",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "chaso-dice",
+    "marketHash": "Chaso Dice",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "void-tendril",
+    "marketHash": "Void Tendril",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "scroll-of-common-inscription",
+    "marketHash": "Scroll of Common Inscription",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "scroll-of-uncommon-inscription",
+    "marketHash": "Scroll of Uncommon Inscription",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "scroll-of-rare-inscription",
+    "marketHash": "Scroll of Rare Inscription",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "scroll-of-legendary-inscription",
+    "marketHash": "Scroll of Legendary Inscription",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "scroll-of-immortal-inscription",
+    "marketHash": "Scroll of Immortal Inscription",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "scroll-of-arcana-inscription",
+    "marketHash": "Scroll of Arcana Inscription",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "scroll-of-beyond-inscription",
+    "marketHash": "Scroll of Beyond Inscription",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "scroll-of-celestial-inscription",
+    "marketHash": "Scroll of Celestial Inscription",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "scroll-of-divine-inscription",
+    "marketHash": "Scroll of Divine Inscription",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "scroll-of-cosmic-inscription",
+    "marketHash": "Scroll of Cosmic Inscription",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "wood",
+    "marketHash": "Wood",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "stone",
+    "marketHash": "Stone",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "leather",
+    "marketHash": "Leather",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "copper-nugget",
+    "marketHash": "Copper Nugget",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "bronze-ingot",
+    "marketHash": "Bronze Ingot",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "iron-ingot",
+    "marketHash": "Iron Ingot",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "silver-ingot",
+    "marketHash": "Silver Ingot",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "gold-ingot",
+    "marketHash": "Gold Ingot",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "stardust-ingot",
+    "marketHash": "Stardust Ingot",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "void-iron",
+    "marketHash": "Void Iron",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "bloodstone",
+    "marketHash": "Bloodstone",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "thunderstone",
+    "marketHash": "Thunderstone",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "chaos-shard",
+    "marketHash": "Chaos Shard",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "arcane-ore",
+    "marketHash": "Arcane Ore",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "darksteel-ingot",
+    "marketHash": "Darksteel Ingot",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "orichalcum-ore",
+    "marketHash": "Orichalcum Ore",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "moonstone",
+    "marketHash": "Moonstone",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "sunstone",
+    "marketHash": "Sunstone",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "mithril-ore",
+    "marketHash": "Mithril Ore",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "ethereal-ingot",
+    "marketHash": "Ethereal Ingot",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "adamantium-ore",
+    "marketHash": "Adamantium Ore",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "aeon-ingot",
+    "marketHash": "Aeon Ingot",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "id-150001",
+    "marketHash": "",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "id-150002",
+    "marketHash": "",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "id-150003",
+    "marketHash": "",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "id-150004",
+    "marketHash": "",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "id-150005",
+    "marketHash": "",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "id-150006",
+    "marketHash": "",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "id-150007",
+    "marketHash": "",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "id-150008",
+    "marketHash": "",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "id-150009",
+    "marketHash": "",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "id-150010",
+    "marketHash": "",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "kingdom-1st-anniversary-coin",
+    "marketHash": "Kingdom 1st Anniversary Coin",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "empire-1st-anniversary-coin",
+    "marketHash": "Empire 1st Anniversary Coin",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "kingdom-10th-anniversary-coin",
+    "marketHash": "Kingdom 10th Anniversary Coin",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "empire-10th-anniversary-coin",
+    "marketHash": "Empire 10th Anniversary Coin",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "kingdom-50th-anniversary-coin",
+    "marketHash": "Kingdom 50th Anniversary Coin",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "empire-50th-anniversary-coin",
+    "marketHash": "Empire 50th Anniversary Coin",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "kingdom-100th-anniversary-coin",
+    "marketHash": "Kingdom 100th Anniversary Coin",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "empire-100th-anniversary-coin",
+    "marketHash": "Empire 100th Anniversary Coin",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "sacred-kingdom-1000th-anniversary-coin",
+    "marketHash": "Sacred Kingdom 1000th Anniversary Coin",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "eternal-empire-1000th-anniversary-coin",
+    "marketHash": "Eternal Empire 1000th Anniversary Coin",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "soulstone-normal",
+    "marketHash": "Soulstone - Normal",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "soulstone-nightmare",
+    "marketHash": "Soulstone - Nightmare",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "soulstone-hell",
+    "marketHash": "Soulstone - Hell",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "soulstone-torment",
+    "marketHash": "Soulstone - Torment",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "303011-long-sword",
+    "marketHash": "Long Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "303021-cutlas",
+    "marketHash": "Cutlas",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "303031-rapier",
+    "marketHash": "Rapier",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "303041-bastard-sword",
+    "marketHash": "Bastard Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "303051-great-sword",
+    "marketHash": "Great Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "303071-knight-sword",
+    "marketHash": "Knight Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "303091-rune-sword",
+    "marketHash": "Rune Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "303111-fate-sword",
+    "marketHash": "Fate Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "303141-vengeance-sword",
+    "marketHash": "Vengeance Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "303171-dimensional-sword",
+    "marketHash": "Dimensional Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "304011-long-sword",
+    "marketHash": "Long Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "304021-cutlas",
+    "marketHash": "Cutlas",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "304031-rapier",
+    "marketHash": "Rapier",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "304041-bastard-sword",
+    "marketHash": "Bastard Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "304051-great-sword",
+    "marketHash": "Great Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "304071-knight-sword",
+    "marketHash": "Knight Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "304091-rune-sword",
+    "marketHash": "Rune Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "304111-fate-sword",
+    "marketHash": "Fate Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "304141-vengeance-sword",
+    "marketHash": "Vengeance Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "304171-dimensional-sword",
+    "marketHash": "Dimensional Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "305041-bastard-sword",
+    "marketHash": "Bastard Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "305051-great-sword",
+    "marketHash": "Great Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "305071-knight-sword",
+    "marketHash": "Knight Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "305091-rune-sword",
+    "marketHash": "Rune Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "305111-fate-sword",
+    "marketHash": "Fate Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "305141-vengeance-sword",
+    "marketHash": "Vengeance Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "305171-dimensional-sword",
+    "marketHash": "Dimensional Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "306071-knight-sword",
+    "marketHash": "Knight Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "306091-rune-sword",
+    "marketHash": "Rune Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "306111-fate-sword",
+    "marketHash": "Fate Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "306141-vengeance-sword",
+    "marketHash": "Vengeance Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "306171-dimensional-sword",
+    "marketHash": "Dimensional Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "307141-vengeance-sword",
+    "marketHash": "Vengeance Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "307171-dimensional-sword",
+    "marketHash": "Dimensional Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "308141-vengeance-sword",
+    "marketHash": "Vengeance Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "308171-dimensional-sword",
+    "marketHash": "Dimensional Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "309141-vengeance-sword",
+    "marketHash": "Vengeance Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "309171-dimensional-sword",
+    "marketHash": "Dimensional Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "313011-short-bow",
+    "marketHash": "Short Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "313021-hunting-bow",
+    "marketHash": "Hunting Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "313031-long-bow",
+    "marketHash": "Long Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "313041-composite-bow",
+    "marketHash": "Composite Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "313051-war-bow",
+    "marketHash": "War Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "313071-dusk-bow",
+    "marketHash": "Dusk Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "313091-elite-bow",
+    "marketHash": "Elite Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "313111-mystic-bow",
+    "marketHash": "Mystic Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "313141-limitless-bow",
+    "marketHash": "Limitless Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "313171-shadow-bow",
+    "marketHash": "Shadow Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "314011-short-bow",
+    "marketHash": "Short Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "314021-hunting-bow",
+    "marketHash": "Hunting Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "314031-long-bow",
+    "marketHash": "Long Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "314041-composite-bow",
+    "marketHash": "Composite Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "314051-war-bow",
+    "marketHash": "War Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "314071-dusk-bow",
+    "marketHash": "Dusk Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "314091-elite-bow",
+    "marketHash": "Elite Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "314111-mystic-bow",
+    "marketHash": "Mystic Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "314141-limitless-bow",
+    "marketHash": "Limitless Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "314171-shadow-bow",
+    "marketHash": "Shadow Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "315041-composite-bow",
+    "marketHash": "Composite Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "315051-war-bow",
+    "marketHash": "War Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "315071-dusk-bow",
+    "marketHash": "Dusk Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "315091-elite-bow",
+    "marketHash": "Elite Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "315111-mystic-bow",
+    "marketHash": "Mystic Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "315141-limitless-bow",
+    "marketHash": "Limitless Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "315171-shadow-bow",
+    "marketHash": "Shadow Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "316071-dusk-bow",
+    "marketHash": "Dusk Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "316091-elite-bow",
+    "marketHash": "Elite Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "316111-mystic-bow",
+    "marketHash": "Mystic Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "316141-limitless-bow",
+    "marketHash": "Limitless Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "316171-shadow-bow",
+    "marketHash": "Shadow Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "317141-limitless-bow",
+    "marketHash": "Limitless Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "317171-shadow-bow",
+    "marketHash": "Shadow Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "318141-limitless-bow",
+    "marketHash": "Limitless Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "318171-shadow-bow",
+    "marketHash": "Shadow Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "319141-limitless-bow",
+    "marketHash": "Limitless Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "319171-shadow-bow",
+    "marketHash": "Shadow Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "323011-wooden-staff",
+    "marketHash": "Wooden Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "323021-herald-staff",
+    "marketHash": "Herald Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "323031-long-staff",
+    "marketHash": "Long Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "323041-witch-staff",
+    "marketHash": "Witch Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "323051-azure-staff",
+    "marketHash": "Azure Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "323071-sage-staff",
+    "marketHash": "Sage Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "323091-comet-staff",
+    "marketHash": "Comet Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "323111-void-staff",
+    "marketHash": "Void Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "323141-sacred-staff",
+    "marketHash": "Sacred Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "323171-tempest-staff",
+    "marketHash": "Tempest Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "324011-wooden-staff",
+    "marketHash": "Wooden Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "324021-herald-staff",
+    "marketHash": "Herald Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "324031-long-staff",
+    "marketHash": "Long Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "324041-witch-staff",
+    "marketHash": "Witch Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "324051-azure-staff",
+    "marketHash": "Azure Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "324071-sage-staff",
+    "marketHash": "Sage Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "324091-comet-staff",
+    "marketHash": "Comet Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "324111-void-staff",
+    "marketHash": "Void Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "324141-sacred-staff",
+    "marketHash": "Sacred Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "324171-tempest-staff",
+    "marketHash": "Tempest Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "325041-witch-staff",
+    "marketHash": "Witch Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "325051-azure-staff",
+    "marketHash": "Azure Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "325071-sage-staff",
+    "marketHash": "Sage Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "325091-comet-staff",
+    "marketHash": "Comet Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "325111-void-staff",
+    "marketHash": "Void Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "325141-sacred-staff",
+    "marketHash": "Sacred Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "325171-tempest-staff",
+    "marketHash": "Tempest Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "326071-sage-staff",
+    "marketHash": "Sage Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "326091-comet-staff",
+    "marketHash": "Comet Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "326111-void-staff",
+    "marketHash": "Void Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "326141-sacred-staff",
+    "marketHash": "Sacred Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "326171-tempest-staff",
+    "marketHash": "Tempest Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "327141-sacred-staff",
+    "marketHash": "Sacred Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "327171-tempest-staff",
+    "marketHash": "Tempest Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "328141-sacred-staff",
+    "marketHash": "Sacred Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "328171-tempest-staff",
+    "marketHash": "Tempest Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "329141-sacred-staff",
+    "marketHash": "Sacred Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "329171-tempest-staff",
+    "marketHash": "Tempest Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "333011-novice-scepter",
+    "marketHash": "Novice Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "333021-iron-scepter",
+    "marketHash": "Iron Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "333031-blessed-scepter",
+    "marketHash": "Blessed Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "333041-steel-scepter",
+    "marketHash": "Steel Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "333051-sacred-scepter",
+    "marketHash": "Sacred Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "333071-devout-scepter",
+    "marketHash": "Devout Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "333091-rune-scepter",
+    "marketHash": "Rune Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "333111-fate-scepter",
+    "marketHash": "Fate Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "333141-limitless-scepter",
+    "marketHash": "Limitless Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "333171-dimensional-scepter",
+    "marketHash": "Dimensional Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "334011-novice-scepter",
+    "marketHash": "Novice Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "334021-iron-scepter",
+    "marketHash": "Iron Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "334031-blessed-scepter",
+    "marketHash": "Blessed Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "334041-steel-scepter",
+    "marketHash": "Steel Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "334051-sacred-scepter",
+    "marketHash": "Sacred Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "334071-devout-scepter",
+    "marketHash": "Devout Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "334091-rune-scepter",
+    "marketHash": "Rune Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "334111-fate-scepter",
+    "marketHash": "Fate Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "334141-limitless-scepter",
+    "marketHash": "Limitless Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "334171-dimensional-scepter",
+    "marketHash": "Dimensional Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "335041-steel-scepter",
+    "marketHash": "Steel Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "335051-sacred-scepter",
+    "marketHash": "Sacred Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "335071-devout-scepter",
+    "marketHash": "Devout Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "335091-rune-scepter",
+    "marketHash": "Rune Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "335111-fate-scepter",
+    "marketHash": "Fate Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "335141-limitless-scepter",
+    "marketHash": "Limitless Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "335171-dimensional-scepter",
+    "marketHash": "Dimensional Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "336071-devout-scepter",
+    "marketHash": "Devout Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "336091-rune-scepter",
+    "marketHash": "Rune Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "336111-fate-scepter",
+    "marketHash": "Fate Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "336141-limitless-scepter",
+    "marketHash": "Limitless Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "336171-dimensional-scepter",
+    "marketHash": "Dimensional Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "337141-limitless-scepter",
+    "marketHash": "Limitless Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "337171-dimensional-scepter",
+    "marketHash": "Dimensional Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "338141-limitless-scepter",
+    "marketHash": "Limitless Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "338171-dimensional-scepter",
+    "marketHash": "Dimensional Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "339141-limitless-scepter",
+    "marketHash": "Limitless Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "339171-dimensional-scepter",
+    "marketHash": "Dimensional Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "343011-short-crossbow",
+    "marketHash": "Short Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "343021-leather-crossbow",
+    "marketHash": "Leather Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "343031-long-crossbow",
+    "marketHash": "Long Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "343041-complete-crossbow",
+    "marketHash": "Complete Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "343051-exceptional-crossbow",
+    "marketHash": "Exceptional Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "343071-iron-crossbow",
+    "marketHash": "Iron Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "343091-elite-crossbow",
+    "marketHash": "Elite Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "343111-mystic-crossbow",
+    "marketHash": "Mystic Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "343141-limitless-crossbow",
+    "marketHash": "Limitless Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "343171-dimensional-crossbow",
+    "marketHash": "Dimensional Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "344011-short-crossbow",
+    "marketHash": "Short Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "344021-leather-crossbow",
+    "marketHash": "Leather Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "344031-long-crossbow",
+    "marketHash": "Long Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "344041-complete-crossbow",
+    "marketHash": "Complete Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "344051-exceptional-crossbow",
+    "marketHash": "Exceptional Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "344071-iron-crossbow",
+    "marketHash": "Iron Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "344091-elite-crossbow",
+    "marketHash": "Elite Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "344111-mystic-crossbow",
+    "marketHash": "Mystic Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "344141-limitless-crossbow",
+    "marketHash": "Limitless Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "344171-dimensional-crossbow",
+    "marketHash": "Dimensional Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "345041-complete-crossbow",
+    "marketHash": "Complete Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "345051-exceptional-crossbow",
+    "marketHash": "Exceptional Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "345071-iron-crossbow",
+    "marketHash": "Iron Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "345091-elite-crossbow",
+    "marketHash": "Elite Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "345111-mystic-crossbow",
+    "marketHash": "Mystic Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "345141-limitless-crossbow",
+    "marketHash": "Limitless Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "345171-dimensional-crossbow",
+    "marketHash": "Dimensional Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "346071-iron-crossbow",
+    "marketHash": "Iron Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "346091-elite-crossbow",
+    "marketHash": "Elite Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "346111-mystic-crossbow",
+    "marketHash": "Mystic Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "346141-limitless-crossbow",
+    "marketHash": "Limitless Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "346171-dimensional-crossbow",
+    "marketHash": "Dimensional Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "347141-limitless-crossbow",
+    "marketHash": "Limitless Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "347171-dimensional-crossbow",
+    "marketHash": "Dimensional Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "348141-limitless-crossbow",
+    "marketHash": "Limitless Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "348171-dimensional-crossbow",
+    "marketHash": "Dimensional Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "349141-limitless-crossbow",
+    "marketHash": "Limitless Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "349171-dimensional-crossbow",
+    "marketHash": "Dimensional Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "353011-wooden-axe",
+    "marketHash": "Wooden Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "353021-iron-axe",
+    "marketHash": "Iron Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "353031-battle-axe",
+    "marketHash": "Battle Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "353041-steel-axe",
+    "marketHash": "Steel Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "353051-war-axe",
+    "marketHash": "War Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "353071-great-axe",
+    "marketHash": "Great Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "353091-rune-axe",
+    "marketHash": "Rune Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "353111-fate-axe",
+    "marketHash": "Fate Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "353141-limitless-axe",
+    "marketHash": "Limitless Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "353171-dimensional-axe",
+    "marketHash": "Dimensional Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "354011-wooden-axe",
+    "marketHash": "Wooden Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "354021-iron-axe",
+    "marketHash": "Iron Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "354031-battle-axe",
+    "marketHash": "Battle Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "354041-steel-axe",
+    "marketHash": "Steel Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "354051-war-axe",
+    "marketHash": "War Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "354071-great-axe",
+    "marketHash": "Great Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "354091-rune-axe",
+    "marketHash": "Rune Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "354111-fate-axe",
+    "marketHash": "Fate Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "354141-limitless-axe",
+    "marketHash": "Limitless Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "354171-dimensional-axe",
+    "marketHash": "Dimensional Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "355041-steel-axe",
+    "marketHash": "Steel Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "355051-war-axe",
+    "marketHash": "War Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "355071-great-axe",
+    "marketHash": "Great Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "355091-rune-axe",
+    "marketHash": "Rune Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "355111-fate-axe",
+    "marketHash": "Fate Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "355141-limitless-axe",
+    "marketHash": "Limitless Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "355171-dimensional-axe",
+    "marketHash": "Dimensional Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "356071-great-axe",
+    "marketHash": "Great Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "356091-rune-axe",
+    "marketHash": "Rune Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "356111-fate-axe",
+    "marketHash": "Fate Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "356141-limitless-axe",
+    "marketHash": "Limitless Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "356171-dimensional-axe",
+    "marketHash": "Dimensional Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "357141-limitless-axe",
+    "marketHash": "Limitless Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "357171-dimensional-axe",
+    "marketHash": "Dimensional Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "358141-limitless-axe",
+    "marketHash": "Limitless Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "358171-dimensional-axe",
+    "marketHash": "Dimensional Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "359141-limitless-axe",
+    "marketHash": "Limitless Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "359171-dimensional-axe",
+    "marketHash": "Dimensional Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "403011-buckler",
+    "marketHash": "Buckler",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "403021-wooden-shield",
+    "marketHash": "Wooden Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "403031-iron-shield",
+    "marketHash": "Iron Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "403041-heater-shield",
+    "marketHash": "Heater Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "403051-heavy-shield",
+    "marketHash": "Heavy Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "403071-war-shield",
+    "marketHash": "War Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "403091-elite-shield",
+    "marketHash": "Elite Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "403111-mystic-shield",
+    "marketHash": "Mystic Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "403141-radiant-shield",
+    "marketHash": "Radiant Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "403171-dimensional-shield",
+    "marketHash": "Dimensional Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "404011-buckler",
+    "marketHash": "Buckler",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "404021-wooden-shield",
+    "marketHash": "Wooden Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "404031-iron-shield",
+    "marketHash": "Iron Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "404041-heater-shield",
+    "marketHash": "Heater Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "404051-heavy-shield",
+    "marketHash": "Heavy Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "404071-war-shield",
+    "marketHash": "War Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "404091-elite-shield",
+    "marketHash": "Elite Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "404111-mystic-shield",
+    "marketHash": "Mystic Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "404141-radiant-shield",
+    "marketHash": "Radiant Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "404171-dimensional-shield",
+    "marketHash": "Dimensional Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "405041-heater-shield",
+    "marketHash": "Heater Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "405051-heavy-shield",
+    "marketHash": "Heavy Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "405071-war-shield",
+    "marketHash": "War Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "405091-elite-shield",
+    "marketHash": "Elite Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "405111-mystic-shield",
+    "marketHash": "Mystic Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "405141-radiant-shield",
+    "marketHash": "Radiant Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "405171-dimensional-shield",
+    "marketHash": "Dimensional Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "406071-war-shield",
+    "marketHash": "War Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "406091-elite-shield",
+    "marketHash": "Elite Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "406111-mystic-shield",
+    "marketHash": "Mystic Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "406141-radiant-shield",
+    "marketHash": "Radiant Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "406171-dimensional-shield",
+    "marketHash": "Dimensional Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "407141-radiant-shield",
+    "marketHash": "Radiant Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "407171-dimensional-shield",
+    "marketHash": "Dimensional Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "408141-radiant-shield",
+    "marketHash": "Radiant Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "408171-dimensional-shield",
+    "marketHash": "Dimensional Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "409141-radiant-shield",
+    "marketHash": "Radiant Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "409171-dimensional-shield",
+    "marketHash": "Dimensional Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "413011-wooden-arrow",
+    "marketHash": "Wooden Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "413021-iron-arrow",
+    "marketHash": "Iron Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "413031-hunter-s-arrow",
+    "marketHash": "Hunter's Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "413041-barbed-arrow",
+    "marketHash": "Barbed Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "413051-azure-arrow",
+    "marketHash": "Azure Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "413071-gale-arrow",
+    "marketHash": "Gale Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "413091-rune-arrow",
+    "marketHash": "Rune Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "413111-fate-arrow",
+    "marketHash": "Fate Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "413141-haste-arrow",
+    "marketHash": "Haste Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "413171-dimensional-arrow",
+    "marketHash": "Dimensional Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "414011-wooden-arrow",
+    "marketHash": "Wooden Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "414021-iron-arrow",
+    "marketHash": "Iron Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "414031-hunter-s-arrow",
+    "marketHash": "Hunter's Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "414041-barbed-arrow",
+    "marketHash": "Barbed Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "414051-azure-arrow",
+    "marketHash": "Azure Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "414071-gale-arrow",
+    "marketHash": "Gale Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "414091-rune-arrow",
+    "marketHash": "Rune Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "414111-fate-arrow",
+    "marketHash": "Fate Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "414141-haste-arrow",
+    "marketHash": "Haste Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "414171-dimensional-arrow",
+    "marketHash": "Dimensional Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "415041-barbed-arrow",
+    "marketHash": "Barbed Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "415051-azure-arrow",
+    "marketHash": "Azure Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "415071-gale-arrow",
+    "marketHash": "Gale Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "415091-rune-arrow",
+    "marketHash": "Rune Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "415111-fate-arrow",
+    "marketHash": "Fate Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "415141-haste-arrow",
+    "marketHash": "Haste Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "415171-dimensional-arrow",
+    "marketHash": "Dimensional Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "416071-gale-arrow",
+    "marketHash": "Gale Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "416091-rune-arrow",
+    "marketHash": "Rune Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "416111-fate-arrow",
+    "marketHash": "Fate Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "416141-haste-arrow",
+    "marketHash": "Haste Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "416171-dimensional-arrow",
+    "marketHash": "Dimensional Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "417141-haste-arrow",
+    "marketHash": "Haste Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "417171-dimensional-arrow",
+    "marketHash": "Dimensional Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "418141-haste-arrow",
+    "marketHash": "Haste Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "418171-dimensional-arrow",
+    "marketHash": "Dimensional Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "419141-haste-arrow",
+    "marketHash": "Haste Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "419171-dimensional-arrow",
+    "marketHash": "Dimensional Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "423011-magic-orb",
+    "marketHash": "Magic Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "423021-elder-orb",
+    "marketHash": "Elder Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "423031-brilliant-orb",
+    "marketHash": "Brilliant Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "423041-frozen-orb",
+    "marketHash": "Frozen Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "423051-prophecy-orb",
+    "marketHash": "Prophecy Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "423071-rune-orb",
+    "marketHash": "Rune Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "423091-arcane-orb",
+    "marketHash": "Arcane Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "423111-mystic-orb",
+    "marketHash": "Mystic Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "423141-ancient-orb",
+    "marketHash": "Ancient Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "423171-dimensional-orb",
+    "marketHash": "Dimensional Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "424011-magic-orb",
+    "marketHash": "Magic Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "424021-elder-orb",
+    "marketHash": "Elder Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "424031-brilliant-orb",
+    "marketHash": "Brilliant Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "424041-frozen-orb",
+    "marketHash": "Frozen Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "424051-prophecy-orb",
+    "marketHash": "Prophecy Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "424071-rune-orb",
+    "marketHash": "Rune Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "424091-arcane-orb",
+    "marketHash": "Arcane Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "424111-mystic-orb",
+    "marketHash": "Mystic Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "424141-ancient-orb",
+    "marketHash": "Ancient Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "424171-dimensional-orb",
+    "marketHash": "Dimensional Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "425041-frozen-orb",
+    "marketHash": "Frozen Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "425051-prophecy-orb",
+    "marketHash": "Prophecy Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "425071-rune-orb",
+    "marketHash": "Rune Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "425091-arcane-orb",
+    "marketHash": "Arcane Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "425111-mystic-orb",
+    "marketHash": "Mystic Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "425141-ancient-orb",
+    "marketHash": "Ancient Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "425171-dimensional-orb",
+    "marketHash": "Dimensional Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "426071-rune-orb",
+    "marketHash": "Rune Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "426091-arcane-orb",
+    "marketHash": "Arcane Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "426111-mystic-orb",
+    "marketHash": "Mystic Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "426141-ancient-orb",
+    "marketHash": "Ancient Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "426171-dimensional-orb",
+    "marketHash": "Dimensional Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "427141-ancient-orb",
+    "marketHash": "Ancient Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "427171-dimensional-orb",
+    "marketHash": "Dimensional Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "428141-ancient-orb",
+    "marketHash": "Ancient Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "428171-dimensional-orb",
+    "marketHash": "Dimensional Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "429141-ancient-orb",
+    "marketHash": "Ancient Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "429171-dimensional-orb",
+    "marketHash": "Dimensional Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "433011-prayer-tome",
+    "marketHash": "Prayer Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "433021-empire-tome",
+    "marketHash": "Empire Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "433031-iron-tome",
+    "marketHash": "Iron Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "433041-knight-s-tome",
+    "marketHash": "Knight's Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "433051-blessed-tome",
+    "marketHash": "Blessed Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "433071-war-tome",
+    "marketHash": "War Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "433091-rune-tome",
+    "marketHash": "Rune Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "433111-fate-tome",
+    "marketHash": "Fate Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "433141-warrior-s-tome",
+    "marketHash": "Warrior's Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "433171-dimensional-tome",
+    "marketHash": "Dimensional Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "434011-prayer-tome",
+    "marketHash": "Prayer Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "434021-empire-tome",
+    "marketHash": "Empire Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "434031-iron-tome",
+    "marketHash": "Iron Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "434041-knight-s-tome",
+    "marketHash": "Knight's Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "434051-blessed-tome",
+    "marketHash": "Blessed Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "434071-war-tome",
+    "marketHash": "War Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "434091-rune-tome",
+    "marketHash": "Rune Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "434111-fate-tome",
+    "marketHash": "Fate Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "434141-warrior-s-tome",
+    "marketHash": "Warrior's Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "434171-dimensional-tome",
+    "marketHash": "Dimensional Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "435041-knight-s-tome",
+    "marketHash": "Knight's Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "435051-blessed-tome",
+    "marketHash": "Blessed Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "435071-war-tome",
+    "marketHash": "War Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "435091-rune-tome",
+    "marketHash": "Rune Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "435111-fate-tome",
+    "marketHash": "Fate Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "435141-warrior-s-tome",
+    "marketHash": "Warrior's Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "435171-dimensional-tome",
+    "marketHash": "Dimensional Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "436071-war-tome",
+    "marketHash": "War Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "436091-rune-tome",
+    "marketHash": "Rune Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "436111-fate-tome",
+    "marketHash": "Fate Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "436141-warrior-s-tome",
+    "marketHash": "Warrior's Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "436171-dimensional-tome",
+    "marketHash": "Dimensional Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "437141-warrior-s-tome",
+    "marketHash": "Warrior's Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "437171-dimensional-tome",
+    "marketHash": "Dimensional Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "438141-warrior-s-tome",
+    "marketHash": "Warrior's Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "438171-dimensional-tome",
+    "marketHash": "Dimensional Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "439141-warrior-s-tome",
+    "marketHash": "Warrior's Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "439171-dimensional-tome",
+    "marketHash": "Dimensional Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "443011-short-bolt",
+    "marketHash": "Short Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "443021-fear-bolt",
+    "marketHash": "Fear Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "443031-hunter-s-bolt",
+    "marketHash": "Hunter's Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "443041-barbed-bolt",
+    "marketHash": "Barbed Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "443051-beast-bolt",
+    "marketHash": "Beast Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "443071-iron-bolt",
+    "marketHash": "Iron Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "443091-rune-bolt",
+    "marketHash": "Rune Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "443111-fate-bolt",
+    "marketHash": "Fate Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "443141-haste-bolt",
+    "marketHash": "Haste Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "443171-dimensional-bolt",
+    "marketHash": "Dimensional Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "444011-short-bolt",
+    "marketHash": "Short Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "444021-fear-bolt",
+    "marketHash": "Fear Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "444031-hunter-s-bolt",
+    "marketHash": "Hunter's Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "444041-barbed-bolt",
+    "marketHash": "Barbed Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "444051-beast-bolt",
+    "marketHash": "Beast Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "444071-iron-bolt",
+    "marketHash": "Iron Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "444091-rune-bolt",
+    "marketHash": "Rune Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "444111-fate-bolt",
+    "marketHash": "Fate Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "444141-haste-bolt",
+    "marketHash": "Haste Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "444171-dimensional-bolt",
+    "marketHash": "Dimensional Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "445041-barbed-bolt",
+    "marketHash": "Barbed Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "445051-beast-bolt",
+    "marketHash": "Beast Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "445071-iron-bolt",
+    "marketHash": "Iron Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "445091-rune-bolt",
+    "marketHash": "Rune Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "445111-fate-bolt",
+    "marketHash": "Fate Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "445141-haste-bolt",
+    "marketHash": "Haste Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "445171-dimensional-bolt",
+    "marketHash": "Dimensional Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "446071-iron-bolt",
+    "marketHash": "Iron Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "446091-rune-bolt",
+    "marketHash": "Rune Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "446111-fate-bolt",
+    "marketHash": "Fate Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "446141-haste-bolt",
+    "marketHash": "Haste Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "446171-dimensional-bolt",
+    "marketHash": "Dimensional Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "447141-haste-bolt",
+    "marketHash": "Haste Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "447171-dimensional-bolt",
+    "marketHash": "Dimensional Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "448141-haste-bolt",
+    "marketHash": "Haste Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "448171-dimensional-bolt",
+    "marketHash": "Dimensional Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "449141-haste-bolt",
+    "marketHash": "Haste Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "449171-dimensional-bolt",
+    "marketHash": "Dimensional Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "453011-short-hatchet",
+    "marketHash": "Short Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "453021-leather-hatchet",
+    "marketHash": "Leather Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "453031-long-hatchet",
+    "marketHash": "Long Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "453041-steel-hatchet",
+    "marketHash": "Steel Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "453051-war-hatchet",
+    "marketHash": "War Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "453071-battle-hatchet",
+    "marketHash": "Battle Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "453091-elite-hatchet",
+    "marketHash": "Elite Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "453111-mystic-hatchet",
+    "marketHash": "Mystic Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "453141-limitless-hatchet",
+    "marketHash": "Limitless Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "453171-dimensional-hatchet",
+    "marketHash": "Dimensional Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "454011-short-hatchet",
+    "marketHash": "Short Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "454021-leather-hatchet",
+    "marketHash": "Leather Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "454031-long-hatchet",
+    "marketHash": "Long Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "454041-steel-hatchet",
+    "marketHash": "Steel Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "454051-war-hatchet",
+    "marketHash": "War Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "454071-battle-hatchet",
+    "marketHash": "Battle Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "454091-elite-hatchet",
+    "marketHash": "Elite Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "454111-mystic-hatchet",
+    "marketHash": "Mystic Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "454141-limitless-hatchet",
+    "marketHash": "Limitless Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "454171-dimensional-hatchet",
+    "marketHash": "Dimensional Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "455041-steel-hatchet",
+    "marketHash": "Steel Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "455051-war-hatchet",
+    "marketHash": "War Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "455071-battle-hatchet",
+    "marketHash": "Battle Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "455091-elite-hatchet",
+    "marketHash": "Elite Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "455111-mystic-hatchet",
+    "marketHash": "Mystic Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "455141-limitless-hatchet",
+    "marketHash": "Limitless Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "455171-dimensional-hatchet",
+    "marketHash": "Dimensional Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "456071-battle-hatchet",
+    "marketHash": "Battle Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "456091-elite-hatchet",
+    "marketHash": "Elite Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "456111-mystic-hatchet",
+    "marketHash": "Mystic Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "456141-limitless-hatchet",
+    "marketHash": "Limitless Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "456171-dimensional-hatchet",
+    "marketHash": "Dimensional Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "457141-limitless-hatchet",
+    "marketHash": "Limitless Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "457171-dimensional-hatchet",
+    "marketHash": "Dimensional Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "458141-limitless-hatchet",
+    "marketHash": "Limitless Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "458171-dimensional-hatchet",
+    "marketHash": "Dimensional Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "459141-limitless-hatchet",
+    "marketHash": "Limitless Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "459171-dimensional-hatchet",
+    "marketHash": "Dimensional Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "503011-wooden-helmet",
+    "marketHash": "Wooden Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "503021-empire-helmet",
+    "marketHash": "Empire Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "503031-iron-helmet",
+    "marketHash": "Iron Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "503041-knight-helmet",
+    "marketHash": "Knight Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "503051-chain-helmet",
+    "marketHash": "Chain Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "503071-war-helmet",
+    "marketHash": "War Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "503091-rune-helmet",
+    "marketHash": "Rune Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "503111-fate-helmet",
+    "marketHash": "Fate Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "503141-fighter-s-helmet",
+    "marketHash": "Fighter's Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "503171-dimensional-helmet",
+    "marketHash": "Dimensional Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "504011-wooden-helmet",
+    "marketHash": "Wooden Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "504021-empire-helmet",
+    "marketHash": "Empire Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "504031-iron-helmet",
+    "marketHash": "Iron Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "504041-knight-helmet",
+    "marketHash": "Knight Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "504051-chain-helmet",
+    "marketHash": "Chain Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "504071-war-helmet",
+    "marketHash": "War Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "504091-rune-helmet",
+    "marketHash": "Rune Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "504111-fate-helmet",
+    "marketHash": "Fate Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "504141-fighter-s-helmet",
+    "marketHash": "Fighter's Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "504171-dimensional-helmet",
+    "marketHash": "Dimensional Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "505041-knight-helmet",
+    "marketHash": "Knight Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "505051-chain-helmet",
+    "marketHash": "Chain Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "505071-war-helmet",
+    "marketHash": "War Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "505091-rune-helmet",
+    "marketHash": "Rune Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "505111-fate-helmet",
+    "marketHash": "Fate Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "505141-fighter-s-helmet",
+    "marketHash": "Fighter's Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "505171-dimensional-helmet",
+    "marketHash": "Dimensional Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "506071-war-helmet",
+    "marketHash": "War Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "506091-rune-helmet",
+    "marketHash": "Rune Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "506111-fate-helmet",
+    "marketHash": "Fate Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "506141-fighter-s-helmet",
+    "marketHash": "Fighter's Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "506171-dimensional-helmet",
+    "marketHash": "Dimensional Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "507141-fighter-s-helmet",
+    "marketHash": "Fighter's Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "507171-dimensional-helmet",
+    "marketHash": "Dimensional Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "508141-fighter-s-helmet",
+    "marketHash": "Fighter's Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "508171-dimensional-helmet",
+    "marketHash": "Dimensional Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "509141-fighter-s-helmet",
+    "marketHash": "Fighter's Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "509171-dimensional-helmet",
+    "marketHash": "Dimensional Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "513011-wooden-armor",
+    "marketHash": "Wooden Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "513021-empire-armor",
+    "marketHash": "Empire Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "513031-iron-plate",
+    "marketHash": "Iron Plate",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "513041-chain-mail",
+    "marketHash": "Chain Mail",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "513051-knight-s-armor",
+    "marketHash": "Knight's Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "513071-war-armor",
+    "marketHash": "War Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "513091-rune-plate",
+    "marketHash": "Rune Plate",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "513111-mystic-armor",
+    "marketHash": "Mystic Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "513141-shine-armor",
+    "marketHash": "Shine Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "513171-dimensional-armor",
+    "marketHash": "Dimensional Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "514011-wooden-armor",
+    "marketHash": "Wooden Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "514021-empire-armor",
+    "marketHash": "Empire Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "514031-iron-plate",
+    "marketHash": "Iron Plate",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "514041-chain-mail",
+    "marketHash": "Chain Mail",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "514051-knight-s-armor",
+    "marketHash": "Knight's Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "514071-war-armor",
+    "marketHash": "War Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "514091-rune-plate",
+    "marketHash": "Rune Plate",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "514111-mystic-armor",
+    "marketHash": "Mystic Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "514141-shine-armor",
+    "marketHash": "Shine Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "514171-dimensional-armor",
+    "marketHash": "Dimensional Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "515041-chain-mail",
+    "marketHash": "Chain Mail",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "515051-knight-s-armor",
+    "marketHash": "Knight's Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "515071-war-armor",
+    "marketHash": "War Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "515091-rune-plate",
+    "marketHash": "Rune Plate",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "515111-mystic-armor",
+    "marketHash": "Mystic Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "515141-shine-armor",
+    "marketHash": "Shine Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "515171-dimensional-armor",
+    "marketHash": "Dimensional Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "516071-war-armor",
+    "marketHash": "War Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "516091-rune-plate",
+    "marketHash": "Rune Plate",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "516111-mystic-armor",
+    "marketHash": "Mystic Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "516141-shine-armor",
+    "marketHash": "Shine Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "516171-dimensional-armor",
+    "marketHash": "Dimensional Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "517141-shine-armor",
+    "marketHash": "Shine Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "517171-dimensional-armor",
+    "marketHash": "Dimensional Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "518141-shine-armor",
+    "marketHash": "Shine Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "518171-dimensional-armor",
+    "marketHash": "Dimensional Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "519141-shine-armor",
+    "marketHash": "Shine Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "519171-dimensional-armor",
+    "marketHash": "Dimensional Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "523011-leather-gloves",
+    "marketHash": "Leather Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "523021-empire-gloves",
+    "marketHash": "Empire Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "523031-iron-gloves",
+    "marketHash": "Iron Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "523041-knight-gloves",
+    "marketHash": "Knight Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "523051-chain-gloves",
+    "marketHash": "Chain Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "523071-war-gloves",
+    "marketHash": "War Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "523091-rune-gloves",
+    "marketHash": "Rune Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "523111-mystic-gloves",
+    "marketHash": "Mystic Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "523141-shine-gloves",
+    "marketHash": "Shine Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "523171-dimensional-gloves",
+    "marketHash": "Dimensional Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "524011-leather-gloves",
+    "marketHash": "Leather Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "524021-empire-gloves",
+    "marketHash": "Empire Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "524031-iron-gloves",
+    "marketHash": "Iron Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "524041-knight-gloves",
+    "marketHash": "Knight Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "524051-chain-gloves",
+    "marketHash": "Chain Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "524071-war-gloves",
+    "marketHash": "War Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "524091-rune-gloves",
+    "marketHash": "Rune Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "524111-mystic-gloves",
+    "marketHash": "Mystic Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "524141-shine-gloves",
+    "marketHash": "Shine Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "524171-dimensional-gloves",
+    "marketHash": "Dimensional Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "525041-knight-gloves",
+    "marketHash": "Knight Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "525051-chain-gloves",
+    "marketHash": "Chain Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "525071-war-gloves",
+    "marketHash": "War Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "525091-rune-gloves",
+    "marketHash": "Rune Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "525111-mystic-gloves",
+    "marketHash": "Mystic Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "525141-shine-gloves",
+    "marketHash": "Shine Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "525171-dimensional-gloves",
+    "marketHash": "Dimensional Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "526071-war-gloves",
+    "marketHash": "War Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "526091-rune-gloves",
+    "marketHash": "Rune Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "526111-mystic-gloves",
+    "marketHash": "Mystic Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "526141-shine-gloves",
+    "marketHash": "Shine Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "526171-dimensional-gloves",
+    "marketHash": "Dimensional Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "527141-shine-gloves",
+    "marketHash": "Shine Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "527171-dimensional-gloves",
+    "marketHash": "Dimensional Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "528141-shine-gloves",
+    "marketHash": "Shine Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "528171-dimensional-gloves",
+    "marketHash": "Dimensional Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "529141-shine-gloves",
+    "marketHash": "Shine Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "529171-dimensional-gloves",
+    "marketHash": "Dimensional Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "533011-wooden-boots",
+    "marketHash": "Wooden Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "533021-empire-boots",
+    "marketHash": "Empire Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "533031-iron-boots",
+    "marketHash": "Iron Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "533041-knight-boots",
+    "marketHash": "Knight Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "533051-chain-boots",
+    "marketHash": "Chain Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "533071-war-boots",
+    "marketHash": "War Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "533091-rune-boots",
+    "marketHash": "Rune Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "533111-mystic-boots",
+    "marketHash": "Mystic Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "533141-shine-boots",
+    "marketHash": "Shine Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "533171-dimensional-boots",
+    "marketHash": "Dimensional Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "534011-wooden-boots",
+    "marketHash": "Wooden Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "534021-empire-boots",
+    "marketHash": "Empire Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "534031-iron-boots",
+    "marketHash": "Iron Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "534041-knight-boots",
+    "marketHash": "Knight Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "534051-chain-boots",
+    "marketHash": "Chain Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "534071-war-boots",
+    "marketHash": "War Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "534091-rune-boots",
+    "marketHash": "Rune Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "534111-mystic-boots",
+    "marketHash": "Mystic Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "534141-shine-boots",
+    "marketHash": "Shine Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "534171-dimensional-boots",
+    "marketHash": "Dimensional Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "535041-knight-boots",
+    "marketHash": "Knight Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "535051-chain-boots",
+    "marketHash": "Chain Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "535071-war-boots",
+    "marketHash": "War Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "535091-rune-boots",
+    "marketHash": "Rune Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "535111-mystic-boots",
+    "marketHash": "Mystic Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "535141-shine-boots",
+    "marketHash": "Shine Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "535171-dimensional-boots",
+    "marketHash": "Dimensional Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "536071-war-boots",
+    "marketHash": "War Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "536091-rune-boots",
+    "marketHash": "Rune Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "536111-mystic-boots",
+    "marketHash": "Mystic Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "536141-shine-boots",
+    "marketHash": "Shine Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "536171-dimensional-boots",
+    "marketHash": "Dimensional Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "537141-shine-boots",
+    "marketHash": "Shine Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "537171-dimensional-boots",
+    "marketHash": "Dimensional Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "538141-shine-boots",
+    "marketHash": "Shine Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "538171-dimensional-boots",
+    "marketHash": "Dimensional Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "539141-shine-boots",
+    "marketHash": "Shine Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "539171-dimensional-boots",
+    "marketHash": "Dimensional Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "603011-copper-amulet",
+    "marketHash": "Copper Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "603021-bronze-amulet",
+    "marketHash": "Bronze Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "603031-silver-amulet",
+    "marketHash": "Silver Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "603041-gold-amulet",
+    "marketHash": "Gold Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "603051-platinum-amulet",
+    "marketHash": "Platinum Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "603071-moonstone-pendant",
+    "marketHash": "Moonstone Pendant",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "603091-ruby-pendant",
+    "marketHash": "Ruby Pendant",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "603111-emerald-amulet",
+    "marketHash": "Emerald Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "603141-eclipse-amulet",
+    "marketHash": "Eclipse Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "603171-ethereal-amulet",
+    "marketHash": "Ethereal Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "604011-copper-amulet",
+    "marketHash": "Copper Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "604021-bronze-amulet",
+    "marketHash": "Bronze Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "604031-silver-amulet",
+    "marketHash": "Silver Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "604041-gold-amulet",
+    "marketHash": "Gold Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "604051-platinum-amulet",
+    "marketHash": "Platinum Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "604071-moonstone-pendant",
+    "marketHash": "Moonstone Pendant",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "604091-ruby-pendant",
+    "marketHash": "Ruby Pendant",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "604111-emerald-amulet",
+    "marketHash": "Emerald Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "604141-eclipse-amulet",
+    "marketHash": "Eclipse Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "604171-ethereal-amulet",
+    "marketHash": "Ethereal Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "605041-gold-amulet",
+    "marketHash": "Gold Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "605051-platinum-amulet",
+    "marketHash": "Platinum Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "605071-moonstone-pendant",
+    "marketHash": "Moonstone Pendant",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "605091-ruby-pendant",
+    "marketHash": "Ruby Pendant",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "605111-emerald-amulet",
+    "marketHash": "Emerald Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "605141-eclipse-amulet",
+    "marketHash": "Eclipse Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "605171-ethereal-amulet",
+    "marketHash": "Ethereal Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "606071-moonstone-pendant",
+    "marketHash": "Moonstone Pendant",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "606091-ruby-pendant",
+    "marketHash": "Ruby Pendant",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "606111-emerald-amulet",
+    "marketHash": "Emerald Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "606141-eclipse-amulet",
+    "marketHash": "Eclipse Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "606171-ethereal-amulet",
+    "marketHash": "Ethereal Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "607141-eclipse-amulet",
+    "marketHash": "Eclipse Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "607171-ethereal-amulet",
+    "marketHash": "Ethereal Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "608141-eclipse-amulet",
+    "marketHash": "Eclipse Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "608171-ethereal-amulet",
+    "marketHash": "Ethereal Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "609141-eclipse-amulet",
+    "marketHash": "Eclipse Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "609171-ethereal-amulet",
+    "marketHash": "Ethereal Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "613011-copper-earring",
+    "marketHash": "Copper Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "613021-bronze-earring",
+    "marketHash": "Bronze Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "613031-silver-earring",
+    "marketHash": "Silver Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "613041-gold-earring",
+    "marketHash": "Gold Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "613051-platinum-earring",
+    "marketHash": "Platinum Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "613071-emerald-earring",
+    "marketHash": "Emerald Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "613091-tiger-eye-earring",
+    "marketHash": "Tiger Eye Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "613111-sapphire-earring",
+    "marketHash": "Sapphire Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "613141-celestial-earring",
+    "marketHash": "Celestial Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "613171-ethereal-earring",
+    "marketHash": "Ethereal Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "614011-copper-earring",
+    "marketHash": "Copper Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "614021-bronze-earring",
+    "marketHash": "Bronze Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "614031-silver-earring",
+    "marketHash": "Silver Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "614041-gold-earring",
+    "marketHash": "Gold Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "614051-platinum-earring",
+    "marketHash": "Platinum Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "614071-emerald-earring",
+    "marketHash": "Emerald Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "614091-tiger-eye-earring",
+    "marketHash": "Tiger Eye Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "614111-sapphire-earring",
+    "marketHash": "Sapphire Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "614141-celestial-earring",
+    "marketHash": "Celestial Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "614171-ethereal-earring",
+    "marketHash": "Ethereal Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "615041-gold-earring",
+    "marketHash": "Gold Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "615051-platinum-earring",
+    "marketHash": "Platinum Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "615071-emerald-earring",
+    "marketHash": "Emerald Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "615091-tiger-eye-earring",
+    "marketHash": "Tiger Eye Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "615111-sapphire-earring",
+    "marketHash": "Sapphire Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "615141-celestial-earring",
+    "marketHash": "Celestial Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "615171-ethereal-earring",
+    "marketHash": "Ethereal Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "616071-emerald-earring",
+    "marketHash": "Emerald Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "616091-tiger-eye-earring",
+    "marketHash": "Tiger Eye Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "616111-sapphire-earring",
+    "marketHash": "Sapphire Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "616141-celestial-earring",
+    "marketHash": "Celestial Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "616171-ethereal-earring",
+    "marketHash": "Ethereal Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "617141-celestial-earring",
+    "marketHash": "Celestial Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "617171-ethereal-earring",
+    "marketHash": "Ethereal Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "618141-celestial-earring",
+    "marketHash": "Celestial Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "618171-ethereal-earring",
+    "marketHash": "Ethereal Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "619141-celestial-earring",
+    "marketHash": "Celestial Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "619171-ethereal-earring",
+    "marketHash": "Ethereal Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "623011-copper-ring",
+    "marketHash": "Copper Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "623021-bronze-ring",
+    "marketHash": "Bronze Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "623031-silver-ring",
+    "marketHash": "Silver Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "623041-gold-ring",
+    "marketHash": "Gold Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "623051-platinum-ring",
+    "marketHash": "Platinum Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "623071-amber-ring",
+    "marketHash": "Amber Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "623091-amethyst-ring",
+    "marketHash": "Amethyst Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "623111-emerald-ring",
+    "marketHash": "Emerald Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "623141-eclipse-ring",
+    "marketHash": "Eclipse Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "623171-ethereal-ring",
+    "marketHash": "Ethereal Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "624011-copper-ring",
+    "marketHash": "Copper Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "624021-bronze-ring",
+    "marketHash": "Bronze Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "624031-silver-ring",
+    "marketHash": "Silver Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "624041-gold-ring",
+    "marketHash": "Gold Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "624051-platinum-ring",
+    "marketHash": "Platinum Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "624071-amber-ring",
+    "marketHash": "Amber Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "624091-amethyst-ring",
+    "marketHash": "Amethyst Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "624111-emerald-ring",
+    "marketHash": "Emerald Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "624141-eclipse-ring",
+    "marketHash": "Eclipse Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "624171-ethereal-ring",
+    "marketHash": "Ethereal Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "625041-gold-ring",
+    "marketHash": "Gold Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "625051-platinum-ring",
+    "marketHash": "Platinum Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "625071-amber-ring",
+    "marketHash": "Amber Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "625091-amethyst-ring",
+    "marketHash": "Amethyst Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "625111-emerald-ring",
+    "marketHash": "Emerald Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "625141-eclipse-ring",
+    "marketHash": "Eclipse Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "625171-ethereal-ring",
+    "marketHash": "Ethereal Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "626071-amber-ring",
+    "marketHash": "Amber Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "626091-amethyst-ring",
+    "marketHash": "Amethyst Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "626111-emerald-ring",
+    "marketHash": "Emerald Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "626141-eclipse-ring",
+    "marketHash": "Eclipse Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "626171-ethereal-ring",
+    "marketHash": "Ethereal Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "627141-eclipse-ring",
+    "marketHash": "Eclipse Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "627171-ethereal-ring",
+    "marketHash": "Ethereal Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "628141-eclipse-ring",
+    "marketHash": "Eclipse Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "628171-ethereal-ring",
+    "marketHash": "Ethereal Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "629141-eclipse-ring",
+    "marketHash": "Eclipse Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "629171-ethereal-ring",
+    "marketHash": "Ethereal Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "633011-copper-bracer",
+    "marketHash": "Copper Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "633021-bronze-bracer",
+    "marketHash": "Bronze Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "633031-silver-bracer",
+    "marketHash": "Silver Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "633041-gold-bracer",
+    "marketHash": "Gold Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "633051-platinum-bracer",
+    "marketHash": "Platinum Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "633071-obsidian-bracer",
+    "marketHash": "Obsidian Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "633091-crimson-bracer",
+    "marketHash": "Crimson Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "633111-emerald-bracer",
+    "marketHash": "Emerald Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "633141-eclipse-bracer",
+    "marketHash": "Eclipse Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "633171-ethereal-bracer",
+    "marketHash": "Ethereal Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "634011-copper-bracer",
+    "marketHash": "Copper Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "634021-bronze-bracer",
+    "marketHash": "Bronze Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "634031-silver-bracer",
+    "marketHash": "Silver Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "634041-gold-bracer",
+    "marketHash": "Gold Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "634051-platinum-bracer",
+    "marketHash": "Platinum Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "634071-obsidian-bracer",
+    "marketHash": "Obsidian Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "634091-crimson-bracer",
+    "marketHash": "Crimson Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "634111-emerald-bracer",
+    "marketHash": "Emerald Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "634141-eclipse-bracer",
+    "marketHash": "Eclipse Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "634171-ethereal-bracer",
+    "marketHash": "Ethereal Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "635041-gold-bracer",
+    "marketHash": "Gold Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "635051-platinum-bracer",
+    "marketHash": "Platinum Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "635071-obsidian-bracer",
+    "marketHash": "Obsidian Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "635091-crimson-bracer",
+    "marketHash": "Crimson Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "635111-emerald-bracer",
+    "marketHash": "Emerald Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "635141-eclipse-bracer",
+    "marketHash": "Eclipse Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "635171-ethereal-bracer",
+    "marketHash": "Ethereal Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "636071-obsidian-bracer",
+    "marketHash": "Obsidian Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "636091-crimson-bracer",
+    "marketHash": "Crimson Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "636111-emerald-bracer",
+    "marketHash": "Emerald Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "636141-eclipse-bracer",
+    "marketHash": "Eclipse Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "636171-ethereal-bracer",
+    "marketHash": "Ethereal Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "637141-eclipse-bracer",
+    "marketHash": "Eclipse Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "637171-ethereal-bracer",
+    "marketHash": "Ethereal Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "638141-eclipse-bracer",
+    "marketHash": "Eclipse Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "638171-ethereal-bracer",
+    "marketHash": "Ethereal Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "639141-eclipse-bracer",
+    "marketHash": "Eclipse Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "639171-ethereal-bracer",
+    "marketHash": "Ethereal Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "307091-rune-sword",
+    "marketHash": "Rune Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "317091-elite-bow",
+    "marketHash": "Elite Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "327091-comet-staff",
+    "marketHash": "Comet Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "337091-rune-scepter",
+    "marketHash": "Rune Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "347091-elite-crossbow",
+    "marketHash": "Elite Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "357091-rune-axe",
+    "marketHash": "Rune Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "407091-elite-shield",
+    "marketHash": "Elite Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "417091-rune-arrow",
+    "marketHash": "Rune Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "427091-arcane-orb",
+    "marketHash": "Arcane Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "437091-rune-tome",
+    "marketHash": "Rune Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "447091-rune-bolt",
+    "marketHash": "Rune Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "457091-elite-hatchet",
+    "marketHash": "Elite Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "507091-rune-helmet",
+    "marketHash": "Rune Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "517091-rune-plate",
+    "marketHash": "Rune Plate",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "527091-rune-gloves",
+    "marketHash": "Rune Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "537091-rune-boots",
+    "marketHash": "Rune Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "607091-ruby-pendant",
+    "marketHash": "Ruby Pendant",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "617091-tiger-eye-earring",
+    "marketHash": "Tiger Eye Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "627091-amethyst-ring",
+    "marketHash": "Amethyst Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "637091-crimson-bracer",
+    "marketHash": "Crimson Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "307111-fate-sword",
+    "marketHash": "Fate Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "317111-mystic-bow",
+    "marketHash": "Mystic Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "327111-void-staff",
+    "marketHash": "Void Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "337111-fate-scepter",
+    "marketHash": "Fate Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "347111-mystic-crossbow",
+    "marketHash": "Mystic Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "357111-fate-axe",
+    "marketHash": "Fate Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "407111-mystic-shield",
+    "marketHash": "Mystic Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "417111-fate-arrow",
+    "marketHash": "Fate Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "427111-mystic-orb",
+    "marketHash": "Mystic Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "437111-fate-tome",
+    "marketHash": "Fate Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "447111-fate-bolt",
+    "marketHash": "Fate Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "457111-mystic-hatchet",
+    "marketHash": "Mystic Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "507111-fate-helmet",
+    "marketHash": "Fate Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "517111-mystic-armor",
+    "marketHash": "Mystic Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "527111-mystic-gloves",
+    "marketHash": "Mystic Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "537111-mystic-boots",
+    "marketHash": "Mystic Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "607111-emerald-amulet",
+    "marketHash": "Emerald Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "617111-sapphire-earring",
+    "marketHash": "Sapphire Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "627111-emerald-ring",
+    "marketHash": "Emerald Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "637111-emerald-bracer",
+    "marketHash": "Emerald Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "308111-fate-sword",
+    "marketHash": "Fate Sword",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "318111-mystic-bow",
+    "marketHash": "Mystic Bow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "328111-void-staff",
+    "marketHash": "Void Staff",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "338111-fate-scepter",
+    "marketHash": "Fate Scepter",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "348111-mystic-crossbow",
+    "marketHash": "Mystic Crossbow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "358111-fate-axe",
+    "marketHash": "Fate Axe",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "408111-mystic-shield",
+    "marketHash": "Mystic Shield",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "418111-fate-arrow",
+    "marketHash": "Fate Arrow",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "428111-mystic-orb",
+    "marketHash": "Mystic Orb",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "438111-fate-tome",
+    "marketHash": "Fate Tome",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "448111-fate-bolt",
+    "marketHash": "Fate Bolt",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "458111-mystic-hatchet",
+    "marketHash": "Mystic Hatchet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "508111-fate-helmet",
+    "marketHash": "Fate Helmet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "518111-mystic-armor",
+    "marketHash": "Mystic Armor",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "528111-mystic-gloves",
+    "marketHash": "Mystic Gloves",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "538111-mystic-boots",
+    "marketHash": "Mystic Boots",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "608111-emerald-amulet",
+    "marketHash": "Emerald Amulet",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "618111-sapphire-earring",
+    "marketHash": "Sapphire Earring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "628111-emerald-ring",
+    "marketHash": "Emerald Ring",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  },
+  {
+    "slug": "638111-emerald-bracer",
+    "marketHash": "Emerald Bracer",
+    "confidence": "missing",
+    "updatedAt": "2026-06-24T07:09:17.476Z"
+  }
+]

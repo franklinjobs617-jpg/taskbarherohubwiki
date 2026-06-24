@@ -47,71 +47,75 @@ export function SiteFooter() {
   const isZh = locale === "zh";
 
   return (
-    <footer className="border-t border-[#27272a] bg-[#0a0a0a]">
-      <div className="mx-auto max-w-[1440px] px-3 py-6">
-        <div className="mb-5 flex flex-wrap items-baseline gap-3 border-b border-[#27272a] pb-4">
-          <Link href={lpath("/")} className="text-base font-semibold tracking-tight text-white hover:text-[#f0c040]">
+    <footer className="border-t-2 border-border-default bg-bg-canvas">
+      <div className="mx-auto max-w-[1440px] px-3 py-8 sm:px-5 lg:px-6">
+        <div className="mb-6 flex flex-wrap items-baseline gap-3 border-b-2 border-border-default pb-5">
+          <Link href={lpath("/")} className="font-pixel text-subheading font-semibold text-accent hover:text-accent-bright">
             {t.brand}
           </Link>
-          <p className="text-[11px] leading-5 text-[#6c6c6c]">{t.tagline}</p>
+          <p className="text-caption-lg text-text-muted">{t.tagline}</p>
         </div>
-        <div className="grid gap-6 text-xs sm:grid-cols-5">
+        <div className="grid gap-6 text-body-sm sm:grid-cols-5">
           <div>
-            <p className="mb-2 font-semibold text-[#9d9d9d]">{t.database}</p>
+            <p className="mb-2 font-semibold font-pixel text-caption-lg tracking-wider uppercase text-text-secondary">{t.database}</p>
             <div className="space-y-1.5">
-              <Link href={lpath("/items")} className="block text-[#6c6c6c] hover:text-[#f0c040]">{isZh ? "物品" : "Items"}</Link>
-              <Link href={lpath("/heroes")} className="block text-[#6c6c6c] hover:text-[#f0c040]">{isZh ? "英雄" : "Heroes"}</Link>
-              <Link href={lpath("/monsters")} className="block text-[#6c6c6c] hover:text-[#f0c040]">{isZh ? "怪物" : "Monsters"}</Link>
-              <Link href={lpath("/map")} className="block text-[#6c6c6c] hover:text-[#f0c040]">{isZh ? "关卡" : "Stages"}</Link>
+              <Link href={lpath("/items")} className="block text-text-muted hover:text-accent transition-colors">{isZh ? "物品" : "Items"}</Link>
+              <Link href={lpath("/heroes")} className="block text-text-muted hover:text-accent transition-colors">{isZh ? "英雄" : "Heroes"}</Link>
+              <Link href={lpath("/monsters")} className="block text-text-muted hover:text-accent transition-colors">{isZh ? "怪物" : "Monsters"}</Link>
+              <Link href={lpath("/map")} className="block text-text-muted hover:text-accent transition-colors">{isZh ? "关卡" : "Stages"}</Link>
+              <Link href={lpath("/database")} className="block text-text-muted hover:text-accent transition-colors">{isZh ? "数据库" : "Database"}</Link>
             </div>
           </div>
           <div>
-            <p className="mb-2 font-semibold text-[#9d9d9d]">{t.systems}</p>
+            <p className="mb-2 font-semibold font-pixel text-caption-lg tracking-wider uppercase text-text-secondary">{t.systems}</p>
             <div className="space-y-1.5">
-              <Link href={lpath("/runes")} className="block text-[#6c6c6c] hover:text-[#f0c040]">{isZh ? "符文" : "Runes"}</Link>
-              <Link href={lpath("/cube")} className="block text-[#6c6c6c] hover:text-[#f0c040]">Cube</Link>
-              <Link href={lpath("/buffs")} className="block text-[#6c6c6c] hover:text-[#f0c040]">{isZh ? "Buff" : "Buffs"}</Link>
-              <Link href={lpath("/effects")} className="block text-[#6c6c6c] hover:text-[#f0c040]">{isZh ? "效果" : "Effects"}</Link>
+              <Link href={lpath("/runes")} className="block text-text-muted hover:text-accent transition-colors">{isZh ? "符文" : "Runes"}</Link>
+              <Link href={lpath("/skills")} className="block text-text-muted hover:text-accent transition-colors">{isZh ? "技能" : "Skills"}</Link>
+              <Link href={lpath("/cube")} className="block text-text-muted hover:text-accent transition-colors">Cube</Link>
+              <Link href={lpath("/buffs")} className="block text-text-muted hover:text-accent transition-colors">{isZh ? "Buff" : "Buffs"}</Link>
+              <Link href={lpath("/effects")} className="block text-text-muted hover:text-accent transition-colors">{isZh ? "效果" : "Effects"}</Link>
             </div>
           </div>
           <div>
-            <p className="mb-2 font-semibold text-[#9d9d9d]">{t.content}</p>
+            <p className="mb-2 font-semibold font-pixel text-caption-lg tracking-wider uppercase text-text-secondary">{t.content}</p>
             <div className="space-y-1.5">
-              <Link href={lpath("/guides")} className="block text-[#6c6c6c] hover:text-[#f0c040]">{isZh ? "攻略" : "Guides"}</Link>
-              <Link href={lpath("/builds")} className="block text-[#6c6c6c] hover:text-[#f0c040]">Builds</Link>
-              <Link href={lpath("/guides/farming")} className="block text-[#6c6c6c] hover:text-[#f0c040]">{isZh ? "刷图指南" : "Farming Guide"}</Link>
-              <Link href={lpath("/tools/farming-calculator")} className="block text-[#6c6c6c] hover:text-[#f0c040]">{isZh ? "计算器" : "Calculator"}</Link>
+              <Link href={lpath("/wiki")} className="block text-text-muted hover:text-accent transition-colors">{isZh ? "百科" : "Wiki"}</Link>
+              <Link href={lpath("/guides")} className="block text-text-muted hover:text-accent transition-colors">{isZh ? "攻略" : "Guides"}</Link>
+              <Link href={lpath("/builds")} className="block text-text-muted hover:text-accent transition-colors">Builds</Link>
+              <Link href={lpath("/achievements")} className="block text-text-muted hover:text-accent transition-colors">{isZh ? "成就" : "Achievements"}</Link>
+              <Link href={lpath("/guides/farming")} className="block text-text-muted hover:text-accent transition-colors">{isZh ? "刷图指南" : "Farming Guide"}</Link>
             </div>
           </div>
           <div>
-            <p className="mb-2 font-semibold text-[#9d9d9d]">{t.market}</p>
+            <p className="mb-2 font-semibold font-pixel text-caption-lg tracking-wider uppercase text-text-secondary">{t.market}</p>
             <div className="space-y-1.5">
-              <Link href={lpath("/market")} className="block text-[#6c6c6c] hover:text-[#f0c040]">{isZh ? "Steam 市场" : "Steam Market"}</Link>
-              <Link href={lpath("/chests")} className="block text-[#6c6c6c] hover:text-[#f0c040]">{isZh ? "宝箱" : "Chests"}</Link>
-              <Link href={lpath("/pets")} className="block text-[#6c6c6c] hover:text-[#f0c040]">{isZh ? "宠物" : "Pets"}</Link>
+              <Link href={lpath("/market")} className="block text-text-muted hover:text-accent transition-colors">{isZh ? "Steam 市场" : "Steam Market"}</Link>
+              <Link href={lpath("/tools")} className="block text-text-muted hover:text-accent transition-colors">{isZh ? "工具" : "Tools"}</Link>
+              <Link href={lpath("/chests")} className="block text-text-muted hover:text-accent transition-colors">{isZh ? "宝箱" : "Chests"}</Link>
+              <Link href={lpath("/pets")} className="block text-text-muted hover:text-accent transition-colors">{isZh ? "宠物" : "Pets"}</Link>
             </div>
           </div>
           <div>
-            <p className="mb-2 font-semibold text-[#9d9d9d]">{t.more}</p>
+            <p className="mb-2 font-semibold font-pixel text-caption-lg tracking-wider uppercase text-text-secondary">{t.more}</p>
             <div className="space-y-1.5">
-              <Link href="/sitemap.xml" className="block text-[#6c6c6c] hover:text-[#f0c040]">{t.sitemap}</Link>
-              <a href="https://discord.gg/kSRUY8N8GA" target="_blank" rel="noopener noreferrer" className="block text-[#6c6c6c] hover:text-[#f0c040]">{t.discord} ↗</a>
-              <Link href={lpath("/about")} className="block text-[#6c6c6c] hover:text-[#f0c040]">{t.methodology}</Link>
-              <a href="https://buymeacoffee.com/flaviomorek" target="_blank" rel="noopener noreferrer" className="block text-[#6c6c6c] hover:text-[#f0c040]">Buy me a coffee ↗</a>
-              <a href="https://bombanana.online/" target="_blank" rel="noopener noreferrer" className="block text-[#6c6c6c] hover:text-[#f0c040]">Bombanana ↗</a>
+              <Link href="/sitemap.xml" className="block text-text-muted hover:text-accent transition-colors">{t.sitemap}</Link>
+              <a href="https://discord.gg/kSRUY8N8GA" target="_blank" rel="noopener noreferrer" className="block text-text-muted hover:text-accent transition-colors">{t.discord} ↗</a>
+              <Link href={lpath("/about")} className="block text-text-muted hover:text-accent transition-colors">{t.methodology}</Link>
+              <a href="https://buymeacoffee.com/flaviomorek" target="_blank" rel="noopener noreferrer" className="block text-text-muted hover:text-accent transition-colors">Buy me a coffee ↗</a>
+              <a href="https://bombanana.online/" target="_blank" rel="noopener noreferrer" className="block text-text-muted hover:text-accent transition-colors">Bombanana ↗</a>
             </div>
           </div>
         </div>
 
-        <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-[#27272a] pt-4 text-[11px] text-[#555]">
+        <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t-2 border-border-default pt-4 text-caption-lg text-text-muted">
           <p>
             {t.disclaimer}
             <span className="ml-2">{DATA_VERSION} / {UPDATED_AT}</span>
           </p>
           <div className="flex gap-4">
-            <Link href={lpath("/privacy")} className="hover:text-[#f0c040]">{t.privacy}</Link>
-            <Link href={lpath("/terms")} className="hover:text-[#f0c040]">{t.terms}</Link>
-            <Link href={lpath("/contact")} className="hover:text-[#f0c040]">{t.contact}</Link>
+            <Link href={lpath("/privacy")} className="hover:text-accent">{t.privacy}</Link>
+            <Link href={lpath("/terms")} className="hover:text-accent">{t.terms}</Link>
+            <Link href={lpath("/contact")} className="hover:text-accent">{t.contact}</Link>
           </div>
         </div>
       </div>

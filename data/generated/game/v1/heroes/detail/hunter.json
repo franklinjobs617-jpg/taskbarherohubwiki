@@ -63,7 +63,7 @@
   "DeadIconPath": "UI/Icon/Hero/HeroDead_501",
   "PrefabPath": "Prefab/Hero/Hero_501",
   "AnimatorPath": "Animation/Hero/501/Hero_501",
-  "icon": "/game/heroes/portraits/Hero_501.png",
+  "icon": "/game/heroes/portraits/Hero_501_6696.png",
   "dead_icon": "/game/heroes/portraits/HeroDead_501.png",
   "animations_folder": "/game/heroes/Hunter",
   "skill_name_i18n": null,

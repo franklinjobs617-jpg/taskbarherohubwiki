@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { SafeImage } from "@/components/ui/safe-image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { Boxes, Clock3, Coins, Crosshair, Skull, Swords, Zap } from "lucide-react";
@@ -106,11 +106,11 @@ export function StageMap({ locale, stages }: { locale: Locale; stages: StageExpl
     <div className="space-y-5">
       <div className="overflow-x-auto">
         <div className="grid gap-5" style={{ gridTemplateColumns: "420px minmax(720px, 1fr)", minWidth: "1160px" }}>
-          <section className="border border-[#27272a] bg-[#0d0d0d] p-4">
+          <section className="border border-border-default bg-bg-panel p-4">
             <div className="flex items-center justify-between gap-3">
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#6c6c6c]">Stages</p>
-                <h2 className="mt-1 text-lg font-semibold text-[#f1e8d5]">{t(locale, "关卡路线", "Stage Route")}</h2>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-text-muted">Stages</p>
+                <h2 className="mt-1 text-lg font-semibold text-text-primary">{t(locale, "关卡路线", "Stage Route")}</h2>
               </div>
               <div className="flex gap-1">
                 {DIFFICULTIES.map((diff) => (
@@ -121,7 +121,7 @@ export function StageMap({ locale, stages }: { locale: Locale; stages: StageExpl
                     className={`border px-2.5 py-1.5 text-xs font-semibold transition ${
                       difficulty === diff
                         ? "border-[#5c6cff] bg-[#151a38] text-[#cbd2ff]"
-                        : "border-[#27272a] text-[#8a8a91] hover:border-[#4b4b55] hover:text-[#ffffff]"
+                        : "border-border-default text-[#8a8a91] hover:border-[#4b4b55] hover:text-text-primary"
                     }`}
                   >
                     {(DIFF_LABELS[locale] ?? DIFF_LABELS.en!)[diff]}
@@ -137,7 +137,7 @@ export function StageMap({ locale, stages }: { locale: Locale; stages: StageExpl
                   type="button"
                   onClick={() => chooseAct(nextAct)}
                   className={`border py-2 text-xs font-semibold transition ${
-                    act === nextAct ? "border-[#d4a017] bg-[#241806] text-[#ffd761]" : "border-[#27272a] text-[#8a8a91] hover:text-[#ffffff]"
+                    act === nextAct ? "border-accent bg-[#241806] text-[#ffd761]" : "border-border-default text-[#8a8a91] hover:text-text-primary"
                   }`}
                 >
                   Act {nextAct}
@@ -182,33 +182,33 @@ export function StageMap({ locale, stages }: { locale: Locale; stages: StageExpl
                   onClick={() => setSelectedKey(stage.key)}
                   className={`grid w-full items-center gap-3 border px-3 py-2 text-left transition ${
                     stage.key === selected.key
-                      ? "border-[#d4a017] bg-[#1b1206]"
-                      : "border-[#27272a] bg-[#090909] hover:border-[#4b4b55]"
+                      ? "border-accent bg-accent-soft"
+                      : "border-border-default bg-bg-deep hover:border-[#4b4b55]"
                   }`}
                   style={{ gridTemplateColumns: "44px minmax(0,1fr) auto" }}
                 >
-                  <span className="font-mono text-xs text-[#f0c040]">{stage.act}-{stage.no}</span>
+                  <span className="font-mono text-xs text-accent-bright">{stage.act}-{stage.no}</span>
                   <span className="min-w-0">
-                    <span className="block truncate text-sm font-semibold text-[#f1e8d5]">{stage.name}</span>
+                    <span className="block truncate text-sm font-semibold text-text-primary">{stage.name}</span>
                     <span className="block truncate text-[11px] text-[#777]">
                       {stage.monsters.length} {t(locale, "怪", "mobs")} / {stage.drops.length} {t(locale, "掉落", "drops")}
                     </span>
                   </span>
-                  <span className="font-mono text-xs text-[#9d9d9d]">Lv.{stage.level}</span>
+                  <span className="font-mono text-xs text-text-secondary">Lv.{stage.level}</span>
                 </button>
               ))}
             </div>
           </section>
 
-          <section className="border border-[#27272a] bg-[#0d0d0d]">
-            <div className="flex flex-col gap-3 border-b border-[#27272a] px-5 py-4 md:flex-row md:items-start md:justify-between">
+          <section className="border border-border-default bg-bg-panel">
+            <div className="flex flex-col gap-3 border-b border-border-default px-5 py-4 md:flex-row md:items-start md:justify-between">
               <div>
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="font-mono text-lg font-black text-[#ffcf33]">{selected.act}-{selected.no}</span>
-                  <h2 className="text-2xl font-black tracking-tight text-[#ffffff]">{selected.name}</h2>
+                  <h2 className="text-2xl font-black tracking-tight text-text-primary">{selected.name}</h2>
                   <span className="rounded-full border border-[#5c6cff]/50 bg-[#151a38] px-2.5 py-0.5 text-xs font-semibold text-[#cbd2ff]">Lv {selected.level}</span>
                 </div>
-                <p className="mt-2 text-sm text-[#9d9d9d]">
+                <p className="mt-2 text-sm text-text-secondary">
                   {selected.difficulty} / {selected.waves ?? "?"} waves / {selected.monsters.length} {t(locale, "种怪物", "monster types")}
                 </p>
               </div>
@@ -246,10 +246,10 @@ export function StageMap({ locale, stages }: { locale: Locale; stages: StageExpl
                 <PanelTitle icon={<Boxes className="h-4 w-4" />} title={t(locale, "箱子掉落", "Chest Drops")} meta={`${selected.drops.length} entries`} />
                 <div className="mt-3 space-y-2">
                   {selected.drops.map((drop) => (
-                    <div key={`${drop.itemKey}-${drop.sourceType}`} className="grid items-center gap-3 border border-[#27272a] bg-[#11111c] px-3 py-3 md:grid-cols-[92px_1fr_auto]">
+                    <div key={`${drop.itemKey}-${drop.sourceType}`} className="grid items-center gap-3 border border-border-default bg-[#11111c] px-3 py-3 md:grid-cols-[92px_1fr_auto]">
                       <span className="text-xs font-black uppercase tracking-[0.14em] text-[#777]">{drop.sourceType}</span>
                       <Link href={`/${locale}/chests/${drop.itemSlug}`} className="flex min-w-0 items-center gap-3 text-[#7f8cff] hover:text-[#bcc4ff]">
-                        {drop.icon ? <Image src={drop.icon} alt="" width={24} height={24} className="object-contain" unoptimized /> : <Boxes className="h-4 w-4" />}
+                        {drop.icon ? <SafeImage src={drop.icon} alt="" width={24} height={24} className="object-contain" unoptimized /> : <Boxes className="h-4 w-4" />}
                         <span className="truncate font-semibold">{drop.name}</span>
                       </Link>
                       <span className="font-mono text-sm font-black text-[#00f0a8]">{rateLabel(drop.ratePercent)}</span>
@@ -265,21 +265,21 @@ export function StageMap({ locale, stages }: { locale: Locale; stages: StageExpl
                     <Link
                       key={`${content.chest}-${content.itemKey}`}
                       href={`/${locale}/items/${content.itemSlug}`}
-                      className="group border border-[#27272a] bg-[#090909] p-3 transition hover:border-[#d4a017]/70"
+                      className="group border border-border-default bg-bg-deep p-3 transition hover:border-accent/70"
                     >
                       <div className="flex items-start gap-3">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center border border-[#27272a] bg-[#050505]">
-                          {content.icon ? <Image src={content.icon} alt="" width={34} height={34} className="object-contain" unoptimized /> : null}
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center border border-border-default bg-[#050505]">
+                          {content.icon ? <SafeImage src={content.icon} alt="" width={34} height={34} className="object-contain" unoptimized /> : null}
                         </div>
                         <div className="min-w-0 flex-1">
-                          <p className="truncate text-sm font-semibold text-[#f1e8d5] group-hover:text-[#f0c040]">{content.name}</p>
+                          <p className="truncate text-sm font-semibold text-text-primary group-hover:text-accent-bright">{content.name}</p>
                           <p className="mt-1 truncate text-[11px] text-[#777]">{content.chest}</p>
                         </div>
                         <span className={`rounded-full border px-2 py-0.5 text-[10px] ${gradeTone(content.grade)}`}>{content.grade}</span>
                       </div>
                       <div className="mt-3 flex items-center justify-between text-xs">
-                        <span className="text-[#9d9d9d]">{content.type}</span>
-                        <span className="font-mono font-black text-[#f0c040]">{rateLabel(content.chancePercent)}</span>
+                        <span className="text-text-secondary">{content.type}</span>
+                        <span className="font-mono font-black text-accent-bright">{rateLabel(content.chancePercent)}</span>
                       </div>
                     </Link>
                   ))}
@@ -290,7 +290,7 @@ export function StageMap({ locale, stages }: { locale: Locale; stages: StageExpl
         </div>
       </div>
 
-      <section className="grid gap-4 border border-[#27272a] bg-[#0d0d0d] p-4 lg:grid-cols-3">
+      <section className="grid gap-4 border border-border-default bg-bg-panel p-4 lg:grid-cols-3">
         <SliderControl icon={<Clock3 className="h-4 w-4" />} label={t(locale, "通关时间（秒）", "Clear time (sec)")} value={clearTime} min={30} max={900} step={5} onChange={setClearTime} suffix={`${(3600 / clearTime).toFixed(1)} / h`} />
         <SliderControl icon={<Coins className="h-4 w-4" />} label={t(locale, "金币加成（%）", "Gold bonus (%)")} value={goldBonus} min={0} max={300} step={5} onChange={setGoldBonus} suffix={goldBonus ? `+${goldBonus}%` : t(locale, "无加成", "none")} />
         <SliderControl icon={<Zap className="h-4 w-4" />} label={t(locale, "英雄等级", "Hero level")} value={heroLevel} min={1} max={100} step={1} onChange={setHeroLevel} suffix={t(locale, "用于经验衰减判断", "for EXP penalty")} />
@@ -362,8 +362,8 @@ function PanelTitle({ icon, title, meta }: { icon: React.ReactNode; title: strin
   return (
     <div className="flex items-end justify-between gap-3">
       <div className="flex items-center gap-2">
-        <span className="text-[#9d9d9d]">{icon}</span>
-        <h3 className="text-sm font-black uppercase tracking-[0.08em] text-[#f1e8d5]">{title}</h3>
+        <span className="text-text-secondary">{icon}</span>
+        <h3 className="text-sm font-black uppercase tracking-[0.08em] text-text-primary">{title}</h3>
       </div>
       {meta ? <span className="text-xs text-[#777]">{meta}</span> : null}
     </div>
@@ -371,9 +371,9 @@ function PanelTitle({ icon, title, meta }: { icon: React.ReactNode; title: strin
 }
 
 function ValueBox({ label, value, tone }: { label: string; value: React.ReactNode; tone?: "gold" | "cyan" | "red" }) {
-  const color = tone === "gold" ? "text-[#ffcf33]" : tone === "cyan" ? "text-[#28e6ff]" : tone === "red" ? "text-[#ff4c6a]" : "text-[#f1e8d5]";
+  const color = tone === "gold" ? "text-[#ffcf33]" : tone === "cyan" ? "text-[#28e6ff]" : tone === "red" ? "text-[#ff4c6a]" : "text-text-primary";
   return (
-    <div className="border border-[#27272a] bg-[#151525] px-3 py-3">
+    <div className="border border-border-default bg-[#151525] px-3 py-3">
       <p className="text-[11px] text-[#777]">{label}</p>
       <p className={`mt-1 font-mono text-lg font-black ${color}`}>{value}</p>
     </div>
@@ -402,14 +402,14 @@ function MonsterButton({
     <Link
       href={`/${locale}/monsters/${monster.key}`}
       className={`flex min-w-0 items-center gap-3 border px-3 py-2 transition ${
-        active ? "border-[#a15a00] bg-[#2a120d]" : "border-[#27272a] bg-[#11111c] hover:border-[#4b4b55]"
+        active ? "border-[#a15a00] bg-[#2a120d]" : "border-border-default bg-[#11111c] hover:border-[#4b4b55]"
       }`}
     >
-      <div className="flex h-8 w-8 shrink-0 items-center justify-center border border-[#27272a] bg-[#050505]">
-        {monster.portrait ? <Image src={monster.portrait} alt="" width={30} height={30} className="object-contain" unoptimized /> : <Skull className="h-4 w-4 text-[#777]" />}
+      <div className="flex h-8 w-8 shrink-0 items-center justify-center border border-border-default bg-[#050505]">
+        {monster.portrait ? <SafeImage src={monster.portrait} alt="" width={30} height={30} className="object-contain" unoptimized /> : <Skull className="h-4 w-4 text-[#777]" />}
       </div>
       <div className="min-w-0 flex-1">
-        <p className="truncate text-sm font-semibold text-[#f1e8d5]">{monster.name}</p>
+        <p className="truncate text-sm font-semibold text-text-primary">{monster.name}</p>
         <p className="mt-0.5 truncate text-[11px] text-[#777]">
           HP {monster.hp ?? "-"} / ATK {monster.atk ?? "-"} / {monster.dropCount} {t(locale, "掉落", "drops")}
         </p>
@@ -445,7 +445,7 @@ function SliderControl({
 }) {
   return (
     <div>
-      <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-[#d8d1c2]">
+      <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-text-secondary">
         <span className="text-[#777]">{icon}</span>
         <span>{label}</span>
       </div>
@@ -466,7 +466,7 @@ function SliderControl({
           step={step}
           value={value}
           onChange={(event) => onChange(Number(event.target.value))}
-          className="border border-[#27272a] bg-[#11111c] px-2 py-1 text-right font-mono text-sm text-[#ffffff]"
+          className="border border-border-default bg-[#11111c] px-2 py-1 text-right font-mono text-sm text-text-primary"
         />
       </div>
       <p className="mt-2 text-xs text-[#777]">{suffix}</p>

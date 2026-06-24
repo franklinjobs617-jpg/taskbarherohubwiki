@@ -1,0 +1,53 @@
+{
+  "key": 2102,
+  "act": 1,
+  "no": 2,
+  "level": 34,
+  "type": "NORMAL",
+  "difficulty": "NIGHTMARE",
+  "name": {
+    "zh-Hans": "阴影草原",
+    "zh-Hant": "陰影草原",
+    "en-US": "Shadow Meadow",
+    "fr-FR": "Prairie d'Ombre",
+    "de-DE": "Schattenwiese",
+    "id-ID": "Padang Bayangan",
+    "ja-JP": "影の草原",
+    "ko-KR": "그림자 초원",
+    "pl-PL": "Łąka Cieni",
+    "pt-BR": "Prado Sombrio",
+    "ru-RU": "Теневая поляна",
+    "es-ES": "Prado Sombrío",
+    "th-TH": "ทุ่งหญ้าเงา",
+    "tr-TR": "Gölge Çayırı",
+    "uk-UA": "Тінисті луки",
+    "vi-VN": "Đồng cỏ Bóng"
+  },
+  "waves": 20,
+  "monsterCount": 4,
+  "kills": 200,
+  "goldPerClear": 12353,
+  "expPerClear": 219150,
+  "boss": {
+    "name": {
+      "zh-Hans": "鼠族战士",
+      "zh-Hant": "鼠族戰士",
+      "en-US": "Ratfolk Warrior",
+      "fr-FR": "Guerrier Ratte",
+      "de-DE": "Rattenvolk-Krieger",
+      "id-ID": "Prajurit Tikus",
+      "ja-JP": "ラット族戦士",
+      "ko-KR": "쥐족 전사",
+      "pl-PL": "Wojownik Szczurów",
+      "pt-BR": "Guerreiro Ratuno",
+      "ru-RU": "Воин крысолюдов",
+      "es-ES": "Guerrero Ratuno",
+      "th-TH": "นักรบเผ่าหนู",
+      "tr-TR": "Sıçan Savaşçısı",
+      "uk-UA": "Воїн щуролюдів",
+      "vi-VN": "Chiến Binh Chuột"
+    },
+    "portrait": "/game/monsters/WarriorRatRace/WarriorRatRace_Idle_character_2.png"
+  },
+  "slug": "2102-shadow-meadow"
+}

@@ -1,0 +1,53 @@
+{
+  "key": 1302,
+  "act": 3,
+  "no": 2,
+  "level": 24,
+  "type": "NORMAL",
+  "difficulty": "NORMAL",
+  "name": {
+    "zh-Hans": "冰封战场",
+    "zh-Hant": "冰封戰場",
+    "en-US": "Frozen Battlefield",
+    "fr-FR": "Champ de Bataille Gelé",
+    "de-DE": "Gefrorenes Schlachtfeld",
+    "id-ID": "Medan Beku",
+    "ja-JP": "凍結した戦場",
+    "ko-KR": "얼어붙은 전장",
+    "pl-PL": "Zamarznięte Pole Bitwy",
+    "pt-BR": "Campo de Batalha Congelado",
+    "ru-RU": "Замёрзшее поле битвы",
+    "es-ES": "Campo de Batalla Congelado",
+    "th-TH": "สนามรบเยือกแข็ง",
+    "tr-TR": "Donmuş Savaş Alanı",
+    "uk-UA": "Замерзле поле битви",
+    "vi-VN": "Chiến trường Đóng băng"
+  },
+  "waves": 16,
+  "monsterCount": 5,
+  "kills": 128,
+  "goldPerClear": 3084,
+  "expPerClear": 44825,
+  "boss": {
+    "name": {
+      "zh-Hans": "鼠族战士",
+      "zh-Hant": "鼠族戰士",
+      "en-US": "Ratfolk Warrior",
+      "fr-FR": "Guerrier Ratte",
+      "de-DE": "Rattenvolk-Krieger",
+      "id-ID": "Prajurit Tikus",
+      "ja-JP": "ラット族戦士",
+      "ko-KR": "쥐족 전사",
+      "pl-PL": "Wojownik Szczurów",
+      "pt-BR": "Guerreiro Ratuno",
+      "ru-RU": "Воин крысолюдов",
+      "es-ES": "Guerrero Ratuno",
+      "th-TH": "นักรบเผ่าหนู",
+      "tr-TR": "Sıçan Savaşçısı",
+      "uk-UA": "Воїн щуролюдів",
+      "vi-VN": "Chiến Binh Chuột"
+    },
+    "portrait": "/game/monsters/WarriorRatRace/WarriorRatRace_Idle_character_2.png"
+  },
+  "slug": "1302-frozen-battlefield"
+}

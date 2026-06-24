@@ -1,6 +1,19 @@
 import type { ReactNode } from "react";
 import type { Grade } from "@/lib/game-data/types";
 
+const rarityCardClass: Record<string, string> = {
+  COMMON: "card-rarity-c",
+  UNCOMMON: "card-rarity-u",
+  RARE: "card-rarity-r",
+  LEGENDARY: "card-rarity-l",
+  IMMORTAL: "card-rarity-i",
+  ARCANA: "card-rarity-a",
+  BEYOND: "card-rarity-b",
+  CELESTIAL: "card-rarity-ce",
+  DIVINE: "card-rarity-d",
+  COSMIC: "card-rarity-co",
+};
+
 type Props = {
   children: ReactNode;
   grade?: Grade;
@@ -9,13 +22,11 @@ type Props = {
 };
 
 export function PixelCard({ children, grade, className = "", hover = true }: Props) {
-  const borderClass = grade ? `rarity-border-${grade.toLowerCase()}` : "";
-  const hoverClass = hover ? "pixel-card" : "";
+  const rarityClass = grade ? rarityCardClass[grade] ?? "" : "";
+  const hoverClass = hover ? "card-interactive" : "";
 
   return (
-    <div
-      className={`bg-bg-secondary border border-border-default rounded-card ${borderClass} ${hoverClass} ${className}`}
-    >
+    <div className={`card ${rarityClass} ${hoverClass} ${className}`}>
       {children}
     </div>
   );

@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Boxes, Coins, Map, PackageOpen, PawPrint, Search, Shield, Swords, Zap } from "lucide-react";
+import { Breadcrumb } from "@/components/tbh/breadcrumb";
+import { FaqBlock } from "@/components/tbh/faq-block";
+import { entityFaqs } from "@/lib/game-data/faqs";
 import { RarityBadge } from "@/components/tbh/badges";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { allItems, stageBySlug, stageName, type Locale } from "@/lib/game-data/data";
@@ -71,6 +74,7 @@ export default async function StageDetailPage({ params }: Props) {
 
   return (
     <PageShell>
+      <Breadcrumb locale={locale} items={[{ label: "Home", href: "/" }, { label: locale === "zh" ? "关卡" : locale === "ja" ? "ステージ" : "Stages", href: "/stages" }, { label: displayName }]} />
       <PageHeader
         kicker={`${stage.difficulty} / Act ${stage.act}-${stage.stageNo}`}
         title={displayName}
@@ -83,29 +87,29 @@ export default async function StageDetailPage({ params }: Props) {
       />
 
       <section className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_360px]">
-        <div className="border border-[#3f2f10] bg-[#100d06] p-4">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#d4a017]">Best for</p>
+        <div className="border border-accent-dim bg-accent-soft p-4">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-accent">Best for</p>
           <div className="mt-3 flex flex-wrap gap-2">
             {decision.bestFor.map((label) => (
-              <span key={label} className="border border-[#5a4315] bg-[#0a0a0a] px-3 py-1.5 text-sm font-semibold text-[#f0c040]">{label}</span>
+              <span key={label} className="border border-accent-dim bg-bg-canvas px-3 py-1.5 text-sm font-semibold text-accent-bright">{label}</span>
             ))}
           </div>
           <div className="mt-4 grid gap-2 sm:grid-cols-4">
             <Metric icon={<Shield className="h-4 w-4" />} label="Level" value={`Lv.${stage.level}`} />
             <Metric icon={<Zap className="h-4 w-4" />} label="EXP" value={decision.expPerClear?.toLocaleString() ?? "-"} accent="text-emerald-300" />
-            <Metric icon={<Coins className="h-4 w-4" />} label="Gold" value={decision.goldPerClear?.toLocaleString() ?? "-"} accent="text-[#f0c040]" />
+            <Metric icon={<Coins className="h-4 w-4" />} label="Gold" value={decision.goldPerClear?.toLocaleString() ?? "-"} accent="text-accent-bright" />
             <Metric icon={<PawPrint className="h-4 w-4" />} label="Targets" value={`${stage.monsters.length + (stage.boss ? 1 : 0)}`} />
           </div>
         </div>
-        <div className="border border-[#27272a] bg-[#0d0d0d] p-4">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#6c6c6c]">Related actions</p>
+        <div className="border border-border-default bg-bg-panel p-4">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-text-muted">Related actions</p>
           <div className="mt-3 grid gap-2">
             {actions.map((action) => {
               const Icon = action.icon;
               return (
-                <Link key={action.label} href={localizedPath(locale, action.href)} className="flex items-center justify-between border border-[#27272a] bg-[#0a0a0a] px-3 py-2 text-sm text-white hover:border-[#d4a017]">
-                  <span className="inline-flex items-center gap-2"><Icon className="h-4 w-4 text-[#d4a017]" /> {action.label}</span>
-                  <ArrowRight className="h-4 w-4 text-[#6c6c6c]" />
+                <Link key={action.label} href={localizedPath(locale, action.href)} className="flex items-center justify-between border border-border-default bg-bg-canvas px-3 py-2 text-sm text-white hover:border-accent">
+                  <span className="inline-flex items-center gap-2"><Icon className="h-4 w-4 text-accent" /> {action.label}</span>
+                  <ArrowRight className="h-4 w-4 text-text-muted" />
                 </Link>
               );
             })}
@@ -113,14 +117,14 @@ export default async function StageDetailPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="mt-6 border border-[#27272a] bg-[#0d0d0d]">
-        <div className="border-b border-[#27272a] px-4 py-3">
-          <p className="text-[10px] uppercase tracking-[0.18em] text-[#6c6c6c]">Drops here</p>
+      <section className="mt-6 border border-border-default bg-bg-panel">
+        <div className="border-b border-border-default px-4 py-3">
+          <p className="text-[10px] uppercase tracking-[0.18em] text-text-muted">Drops here</p>
           <h2 className="text-lg font-semibold text-white">{txt(locale, { zh: "宝箱、掉率、预计次数", en: "Chests, rates, expected runs", ja: "宝箱、確率、必要回数", ko: "상자, 확률, 예상 횟수" })}</h2>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full min-w-[760px] text-left text-sm">
-            <thead className="bg-[#18181b] text-xs uppercase tracking-[0.12em] text-[#6c6c6c]">
+            <thead className="bg-bg-surface text-xs uppercase tracking-[0.12em] text-text-muted">
               <tr>
                 <th className="px-4 py-3">Chest</th>
                 <th className="px-4 py-3">Source</th>
@@ -132,19 +136,19 @@ export default async function StageDetailPage({ params }: Props) {
             </thead>
             <tbody>
               {dropRows.map(({ drop, expectedRuns }) => (
-                <tr key={`${drop.itemKey}-${drop.sourceType}`} className="border-t border-[#27272a]">
+                <tr key={`${drop.itemKey}-${drop.sourceType}`} className="border-t border-border-default">
                   <td className="px-4 py-3">
                     <div className="flex items-center gap-3">
                       <RarityBadge grade={drop.grade} locale={locale} />
                       <span className="font-medium text-white">{drop.name}</span>
                     </div>
                   </td>
-                  <td className="px-4 py-3 text-[#9d9d9d]">{drop.sourceType}</td>
-                  <td className="px-4 py-3 font-mono text-[#f0c040]">{formatChance(drop.ratePercent / 100)}</td>
+                  <td className="px-4 py-3 text-text-secondary">{drop.sourceType}</td>
+                  <td className="px-4 py-3 font-mono text-accent-bright">{formatChance(drop.ratePercent / 100)}</td>
                   <td className="px-4 py-3 font-mono text-white">{expectedRuns.p50 ?? "-"}</td>
                   <td className="px-4 py-3 font-mono text-white">{expectedRuns.p90 ?? "-"}</td>
                   <td className="px-4 py-3">
-                    <Link href={localizedPath(locale, `/chests/${localItemSlug(drop.itemKey, drop.itemSlug)}`)} className="text-xs font-semibold text-[#f0c040] hover:underline">View Chest</Link>
+                    <Link href={localizedPath(locale, `/chests/${localItemSlug(drop.itemKey, drop.itemSlug)}`)} className="text-xs font-semibold text-accent-bright hover:underline">View Chest</Link>
                   </td>
                 </tr>
               ))}
@@ -154,15 +158,15 @@ export default async function StageDetailPage({ params }: Props) {
       </section>
 
       <section className="mt-6 grid gap-5 lg:grid-cols-2">
-        <div className="border border-[#27272a] bg-[#0d0d0d]">
-          <div className="border-b border-[#27272a] px-4 py-3">
+        <div className="border border-border-default bg-bg-panel">
+          <div className="border-b border-border-default px-4 py-3">
             <h2 className="text-lg font-semibold text-white">{txt(locale, { zh: "本关目标", en: "Targets here", ja: "出現対象", ko: "등장 대상" })}</h2>
           </div>
           <div className="grid gap-2 p-3 sm:grid-cols-2">
             {stage.monsters.map((monster) => (
-              <Link key={monster.monsterKey} href={localizedPath(locale, `/monsters/${monster.monsterKey}`)} className="border border-[#27272a] bg-[#0a0a0a] p-3 text-sm text-white hover:border-[#d4a017]">
+              <Link key={monster.monsterKey} href={localizedPath(locale, `/monsters/${monster.monsterKey}`)} className="border border-border-default bg-bg-canvas p-3 text-sm text-white hover:border-accent">
                 <p className="font-semibold">{monster.name ?? `Monster ${monster.monsterKey}`}</p>
-                <p className="mt-1 text-xs text-[#6c6c6c]">Weight {monster.weight}</p>
+                <p className="mt-1 text-xs text-text-muted">Weight {monster.weight}</p>
               </Link>
             ))}
             {stage.boss ? (
@@ -174,33 +178,34 @@ export default async function StageDetailPage({ params }: Props) {
           </div>
         </div>
 
-        <div className="border border-[#27272a] bg-[#0d0d0d]">
-          <div className="border-b border-[#27272a] px-4 py-3">
+        <div className="border border-border-default bg-bg-panel">
+          <div className="border-b border-border-default px-4 py-3">
             <h2 className="text-lg font-semibold text-white">{txt(locale, { zh: "箱子内容预览", en: "Chest content preview", ja: "宝箱内容", ko: "상자 내용 미리보기" })}</h2>
           </div>
           <div className="grid gap-2 p-3 sm:grid-cols-2">
             {contentPreview.map((content) => (
-              <Link key={`${content.chestName}-${content.itemKey}-${content.condition ?? "base"}`} href={localizedPath(locale, `/items/${localItemSlug(content.itemKey, content.itemSlug)}`)} className="border border-[#27272a] bg-[#0a0a0a] p-3 hover:border-[#d4a017]">
+              <Link key={`${content.chestName}-${content.itemKey}-${content.condition ?? "base"}`} href={localizedPath(locale, `/items/${localItemSlug(content.itemKey, content.itemSlug)}`)} className="border border-border-default bg-bg-canvas p-3 hover:border-accent">
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0">
                     <p className="truncate text-sm font-semibold text-white">{content.name}</p>
-                    <p className="mt-1 truncate text-xs text-[#6c6c6c]">{content.chestName}</p>
+                    <p className="mt-1 truncate text-xs text-text-muted">{content.chestName}</p>
                   </div>
                   <RarityBadge grade={content.grade} locale={locale} />
                 </div>
-                <p className="mt-2 font-mono text-xs text-[#f0c040]">{content.chancePercent == null ? "-" : `${content.chancePercent.toFixed(2)}%`}</p>
+                <p className="mt-2 font-mono text-xs text-accent-bright">{content.chancePercent == null ? "-" : `${content.chancePercent.toFixed(2)}%`}</p>
               </Link>
             ))}
           </div>
         </div>
       </section>
+      <FaqBlock faqs={(entityFaqs.stages?.[locale] ?? entityFaqs.stages?.en ?? []).map(f => ({question: f.q, answer: f.a}))} title={locale === "zh" ? "常见问题" : locale === "ja" ? "よくある質問" : "FAQ"} />
     </PageShell>
   );
 }
 
 function Metric({ icon, label, value, accent = "text-white" }: { icon: React.ReactNode; label: string; value: string; accent?: string }) {
   return (
-    <div className="border border-[#3f2f10] bg-[#0a0a0a] p-3">
+    <div className="border border-accent-dim bg-bg-canvas p-3">
       <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.12em] text-[#9d7b33]">
         {icon}
         <span>{label}</span>

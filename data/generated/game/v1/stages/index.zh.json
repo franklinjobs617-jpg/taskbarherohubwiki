@@ -50,7 +50,7 @@
       },
       "portrait": "/game/monsters/AssassinGoblin/AssassinGoblin_Idle_character_2.png"
     },
-    "slug": "normal-1-1"
+    "slug": "1101-pasture"
   },
   {
     "key": 1102,
@@ -103,7 +103,7 @@
       },
       "portrait": "/game/monsters/ShamanGoblin/ShamanGoblin_Idle_character_2.png"
     },
-    "slug": "normal-1-2"
+    "slug": "1102-shadow-meadow"
   },
   {
     "key": 1103,
@@ -156,7 +156,7 @@
       },
       "portrait": "/game/monsters/BasicOrc/BasicOrc_Idle_character_3.png"
     },
-    "slug": "normal-1-3"
+    "slug": "1103-wasteland"
   },
   {
     "key": 1104,
@@ -209,7 +209,7 @@
       },
       "portrait": "/game/monsters/ArmoredOrc/ArmoredOrc_Idle_character_3.png"
     },
-    "slug": "normal-1-4"
+    "slug": "1104-eerie-canyon"
   },
   {
     "key": 1105,
@@ -262,7 +262,7 @@
       },
       "portrait": "/game/monsters/EliteOrc/EliteOrc_Idle_character_3.png"
     },
-    "slug": "normal-1-5"
+    "slug": "1105-burning-village-entrance"
   },
   {
     "key": 1106,
@@ -315,7 +315,7 @@
       },
       "portrait": "/game/monsters/Skeleton/Skeleton_Idle_character_3.png"
     },
-    "slug": "normal-1-6"
+    "slug": "1106-rumstreet-square"
   },
   {
     "key": 1107,
@@ -368,7 +368,7 @@
       },
       "portrait": "/game/monsters/ArmoredSkeleton/ArmoredSkeleton_Idle_character_3.png"
     },
-    "slug": "normal-1-7"
+    "slug": "1107-city-outskirts"
   },
   {
     "key": 1108,
@@ -421,7 +421,7 @@
       },
       "portrait": "/game/monsters/SkeletonArcher/SkeletonArcher_Idle_character_3.png"
     },
-    "slug": "normal-1-8"
+    "slug": "1108-cemetery"
   },
   {
     "key": 1109,
@@ -474,7 +474,7 @@
       },
       "portrait": "/game/monsters/EliteOrc/EliteOrc_Idle_character_3.png"
     },
-    "slug": "normal-1-9"
+    "slug": "1109-cursed-land"
   },
   {
     "key": 1110,
@@ -527,7 +527,7 @@
       },
       "portrait": "/game/monsters/SkeletonKnight/SkeletonKnight_Idle_character_3.png"
     },
-    "slug": "normal-1-10"
+    "slug": "1110-throne-of-darkness"
   },
   {
     "key": 1201,
@@ -580,7 +580,7 @@
       },
       "portrait": "/game/monsters/BerserkerRatRace/BerserkerRatRace_Idle_character_2.png"
     },
-    "slug": "normal-2-1"
+    "slug": "1201-oasis-road"
   },
   {
     "key": 1202,
@@ -633,7 +633,7 @@
       },
       "portrait": "/game/monsters/WarriorRatRace/WarriorRatRace_Idle_character_2.png"
     },
-    "slug": "normal-2-2"
+    "slug": "1202-sandstorm-valley"
   },
   {
     "key": 1203,
@@ -686,7 +686,7 @@
       },
       "portrait": "/game/monsters/Cobra/Cobra_Idle_character_4.png"
     },
-    "slug": "normal-2-3"
+    "slug": "1203-desert-underground-cave"
   },
   {
     "key": 1204,
@@ -739,7 +739,7 @@
       },
       "portrait": "/game/monsters/PoisonInsect/PoisonInsect_Idle_character_3.png"
     },
-    "slug": "normal-2-4"
+    "slug": "1204-bug-nest"
   },
   {
     "key": 1205,
@@ -792,7 +792,7 @@
       },
       "portrait": "/game/monsters/Homunculus/Homunculus_Idle_character_4.png"
     },
-    "slug": "normal-2-5"
+    "slug": "1205-scorching-dunes"
   },
   {
     "key": 1206,
@@ -845,7 +845,7 @@
       },
       "portrait": "/game/monsters/Ghoul/Ghoul_Idle_character_2.png"
     },
-    "slug": "normal-2-6"
+    "slug": "1206-sunset-ruins"
   },
   {
     "key": 1207,
@@ -898,7 +898,7 @@
       },
       "portrait": "/game/monsters/ZombieRatRace/ZombieRatRace_Idle_character_2.png"
     },
-    "slug": "normal-2-7"
+    "slug": "1207-midnight-sands"
   },
   {
     "key": 1208,
@@ -951,7 +951,7 @@
       },
       "portrait": "/game/monsters/SpearKobolt/SpearKobolt_Idle_character_2.png"
     },
-    "slug": "normal-2-8"
+    "slug": "1208-sacred-tomb"
   },
   {
     "key": 1209,
@@ -1004,7 +1004,7 @@
       },
       "portrait": "/game/monsters/SmallMummy/SmallMummy_Idle_character_1.png"
     },
-    "slug": "normal-2-9"
+    "slug": "1209-pharaoh-s-crypt"
   },
   {
     "key": 1210,
@@ -1057,7 +1057,7 @@
       },
       "portrait": "/game/monsters/Sibuna/Sibuna_Idle_Character_4.png"
     },
-    "slug": "normal-2-10"
+    "slug": "1210-pharaoh-s-underchannel"
   },
   {
     "key": 1301,
@@ -1110,7 +1110,7 @@
       },
       "portrait": "/game/monsters/BerserkerRatRace/BerserkerRatRace_Idle_character_2.png"
     },
-    "slug": "normal-3-1"
+    "slug": "1301-snowbound-outpost"
   },
   {
     "key": 1302,
@@ -1163,7 +1163,7 @@
       },
       "portrait": "/game/monsters/WarriorRatRace/WarriorRatRace_Idle_character_2.png"
     },
-    "slug": "normal-3-2"
+    "slug": "1302-frozen-battlefield"
   },
   {
     "key": 1303,
@@ -1216,7 +1216,7 @@
       },
       "portrait": "/game/monsters/Cobra/Cobra_Idle_character_4.png"
     },
-    "slug": "normal-3-3"
+    "slug": "1303-glacial-cave-entrance"
   },
   {
     "key": 1304,
@@ -1269,7 +1269,7 @@
       },
       "portrait": "/game/monsters/PoisonInsect/PoisonInsect_Idle_character_3.png"
     },
-    "slug": "normal-3-4"
+    "slug": "1304-frozen-glacier-cavern"
   },
   {
     "key": 1305,
@@ -1322,7 +1322,7 @@
       },
       "portrait": "/game/monsters/Homunculus/Homunculus_Idle_character_4.png"
     },
-    "slug": "normal-3-5"
+    "slug": "1305-hell-gate"
   },
   {
     "key": 1306,
@@ -1375,7 +1375,7 @@
       },
       "portrait": "/game/monsters/Ghoul/Ghoul_Idle_character_2.png"
     },
-    "slug": "normal-3-6"
+    "slug": "1306-burning-ravine"
   },
   {
     "key": 1307,
@@ -1428,7 +1428,7 @@
       },
       "portrait": "/game/monsters/ZombieRatRace/ZombieRatRace_Idle_character_2.png"
     },
-    "slug": "normal-3-7"
+    "slug": "1307-plains-of-torment"
   },
   {
     "key": 1308,
@@ -1481,7 +1481,7 @@
       },
       "portrait": "/game/monsters/SpearKobolt/SpearKobolt_Idle_character_2.png"
     },
-    "slug": "normal-3-8"
+    "slug": "1308-citadel-of-ruin"
   },
   {
     "key": 1309,
@@ -1534,7 +1534,7 @@
       },
       "portrait": "/game/monsters/SmallMummy/SmallMummy_Idle_character_1.png"
     },
-    "slug": "normal-3-9"
+    "slug": "1309-core-of-the-abyss"
   },
   {
     "key": 1310,
@@ -1587,7 +1587,7 @@
       },
       "portrait": "/game/monsters/voidcaller/voidcaller_Idle_Character_1.png"
     },
-    "slug": "normal-3-10"
+    "slug": "1310-hell-command-chamber"
   },
   {
     "key": 2101,
@@ -1640,7 +1640,7 @@
       },
       "portrait": "/game/monsters/BerserkerRatRace/BerserkerRatRace_Idle_character_2.png"
     },
-    "slug": "nightmare-1-1"
+    "slug": "2101-pasture"
   },
   {
     "key": 2102,
@@ -1693,7 +1693,7 @@
       },
       "portrait": "/game/monsters/WarriorRatRace/WarriorRatRace_Idle_character_2.png"
     },
-    "slug": "nightmare-1-2"
+    "slug": "2102-shadow-meadow"
   },
   {
     "key": 2103,
@@ -1746,7 +1746,7 @@
       },
       "portrait": "/game/monsters/Cobra/Cobra_Idle_character_4.png"
     },
-    "slug": "nightmare-1-3"
+    "slug": "2103-wasteland"
   },
   {
     "key": 2104,
@@ -1799,7 +1799,7 @@
       },
       "portrait": "/game/monsters/PoisonInsect/PoisonInsect_Idle_character_3.png"
     },
-    "slug": "nightmare-1-4"
+    "slug": "2104-eerie-canyon"
   },
   {
     "key": 2105,
@@ -1852,7 +1852,7 @@
       },
       "portrait": "/game/monsters/Homunculus/Homunculus_Idle_character_4.png"
     },
-    "slug": "nightmare-1-5"
+    "slug": "2105-burning-village-entrance"
   },
   {
     "key": 2106,
@@ -1905,7 +1905,7 @@
       },
       "portrait": "/game/monsters/Ghoul/Ghoul_Idle_character_2.png"
     },
-    "slug": "nightmare-1-6"
+    "slug": "2106-rumstreet-square"
   },
   {
     "key": 2107,
@@ -1958,7 +1958,7 @@
       },
       "portrait": "/game/monsters/ZombieRatRace/ZombieRatRace_Idle_character_2.png"
     },
-    "slug": "nightmare-1-7"
+    "slug": "2107-city-outskirts"
   },
   {
     "key": 2108,
@@ -2011,7 +2011,7 @@
       },
       "portrait": "/game/monsters/SpearKobolt/SpearKobolt_Idle_character_2.png"
     },
-    "slug": "nightmare-1-8"
+    "slug": "2108-cemetery"
   },
   {
     "key": 2109,
@@ -2064,7 +2064,7 @@
       },
       "portrait": "/game/monsters/SmallMummy/SmallMummy_Idle_character_1.png"
     },
-    "slug": "nightmare-1-9"
+    "slug": "2109-cursed-land"
   },
   {
     "key": 2110,
@@ -2117,7 +2117,7 @@
       },
       "portrait": "/game/monsters/SkeletonKnight/SkeletonKnight_Idle_character_3.png"
     },
-    "slug": "nightmare-1-10"
+    "slug": "2110-throne-of-darkness"
   },
   {
     "key": 2201,
@@ -2170,7 +2170,7 @@
       },
       "portrait": "/game/monsters/BerserkerRatRace/BerserkerRatRace_Idle_character_2.png"
     },
-    "slug": "nightmare-2-1"
+    "slug": "2201-oasis-road"
   },
   {
     "key": 2202,
@@ -2223,7 +2223,7 @@
       },
       "portrait": "/game/monsters/WarriorRatRace/WarriorRatRace_Idle_character_2.png"
     },
-    "slug": "nightmare-2-2"
+    "slug": "2202-sandstorm-valley"
   },
   {
     "key": 2203,
@@ -2276,7 +2276,7 @@
       },
       "portrait": "/game/monsters/Cobra/Cobra_Idle_character_4.png"
     },
-    "slug": "nightmare-2-3"
+    "slug": "2203-desert-underground-cave"
   },
   {
     "key": 2204,
@@ -2329,7 +2329,7 @@
       },
       "portrait": "/game/monsters/PoisonInsect/PoisonInsect_Idle_character_3.png"
     },
-    "slug": "nightmare-2-4"
+    "slug": "2204-bug-nest"
   },
   {
     "key": 2205,
@@ -2382,7 +2382,7 @@
       },
       "portrait": "/game/monsters/Homunculus/Homunculus_Idle_character_4.png"
     },
-    "slug": "nightmare-2-5"
+    "slug": "2205-scorching-dunes"
   },
   {
     "key": 2206,
@@ -2435,7 +2435,7 @@
       },
       "portrait": "/game/monsters/Ghoul/Ghoul_Idle_character_2.png"
     },
-    "slug": "nightmare-2-6"
+    "slug": "2206-sunset-ruins"
   },
   {
     "key": 2207,
@@ -2488,7 +2488,7 @@
       },
       "portrait": "/game/monsters/ZombieRatRace/ZombieRatRace_Idle_character_2.png"
     },
-    "slug": "nightmare-2-7"
+    "slug": "2207-midnight-sands"
   },
   {
     "key": 2208,
@@ -2541,7 +2541,7 @@
       },
       "portrait": "/game/monsters/SpearKobolt/SpearKobolt_Idle_character_2.png"
     },
-    "slug": "nightmare-2-8"
+    "slug": "2208-sacred-tomb"
   },
   {
     "key": 2209,
@@ -2594,7 +2594,7 @@
       },
       "portrait": "/game/monsters/SmallMummy/SmallMummy_Idle_character_1.png"
     },
-    "slug": "nightmare-2-9"
+    "slug": "2209-pharaoh-s-crypt"
   },
   {
     "key": 2210,
@@ -2647,7 +2647,7 @@
       },
       "portrait": "/game/monsters/Sibuna/Sibuna_Idle_Character_4.png"
     },
-    "slug": "nightmare-2-10"
+    "slug": "2210-pharaoh-s-underchannel"
   },
   {
     "key": 2301,
@@ -2700,7 +2700,7 @@
       },
       "portrait": "/game/monsters/BerserkerRatRace/BerserkerRatRace_Idle_character_2.png"
     },
-    "slug": "nightmare-3-1"
+    "slug": "2301-snowbound-outpost"
   },
   {
     "key": 2302,
@@ -2753,7 +2753,7 @@
       },
       "portrait": "/game/monsters/WarriorRatRace/WarriorRatRace_Idle_character_2.png"
     },
-    "slug": "nightmare-3-2"
+    "slug": "2302-frozen-battlefield"
   },
   {
     "key": 2303,
@@ -2806,7 +2806,7 @@
       },
       "portrait": "/game/monsters/Cobra/Cobra_Idle_character_4.png"
     },
-    "slug": "nightmare-3-3"
+    "slug": "2303-glacial-cave-entrance"
   },
   {
     "key": 2304,
@@ -2859,7 +2859,7 @@
       },
       "portrait": "/game/monsters/PoisonInsect/PoisonInsect_Idle_character_3.png"
     },
-    "slug": "nightmare-3-4"
+    "slug": "2304-frozen-glacier-cavern"
   },
   {
     "key": 2305,
@@ -2912,7 +2912,7 @@
       },
       "portrait": "/game/monsters/Homunculus/Homunculus_Idle_character_4.png"
     },
-    "slug": "nightmare-3-5"
+    "slug": "2305-hell-gate"
   },
   {
     "key": 2306,
@@ -2965,7 +2965,7 @@
       },
       "portrait": "/game/monsters/Ghoul/Ghoul_Idle_character_2.png"
     },
-    "slug": "nightmare-3-6"
+    "slug": "2306-burning-ravine"
   },
   {
     "key": 2307,
@@ -3018,7 +3018,7 @@
       },
       "portrait": "/game/monsters/ZombieRatRace/ZombieRatRace_Idle_character_2.png"
     },
-    "slug": "nightmare-3-7"
+    "slug": "2307-plains-of-torment"
   },
   {
     "key": 2308,
@@ -3071,7 +3071,7 @@
       },
       "portrait": "/game/monsters/SpearKobolt/SpearKobolt_Idle_character_2.png"
     },
-    "slug": "nightmare-3-8"
+    "slug": "2308-citadel-of-ruin"
   },
   {
     "key": 2309,
@@ -3124,7 +3124,7 @@
       },
       "portrait": "/game/monsters/SmallMummy/SmallMummy_Idle_character_1.png"
     },
-    "slug": "nightmare-3-9"
+    "slug": "2309-core-of-the-abyss"
   },
   {
     "key": 2310,
@@ -3177,7 +3177,7 @@
       },
       "portrait": "/game/monsters/voidcaller/voidcaller_Idle_Character_1.png"
     },
-    "slug": "nightmare-3-10"
+    "slug": "2310-hell-command-chamber"
   },
   {
     "key": 3101,
@@ -3230,7 +3230,7 @@
       },
       "portrait": "/game/monsters/BerserkerRatRace/BerserkerRatRace_Idle_character_2.png"
     },
-    "slug": "hell-1-1"
+    "slug": "3101-pasture"
   },
   {
     "key": 3102,
@@ -3283,7 +3283,7 @@
       },
       "portrait": "/game/monsters/WarriorRatRace/WarriorRatRace_Idle_character_2.png"
     },
-    "slug": "hell-1-2"
+    "slug": "3102-shadow-meadow"
   },
   {
     "key": 3103,
@@ -3336,7 +3336,7 @@
       },
       "portrait": "/game/monsters/Cobra/Cobra_Idle_character_4.png"
     },
-    "slug": "hell-1-3"
+    "slug": "3103-wasteland"
   },
   {
     "key": 3104,
@@ -3389,7 +3389,7 @@
       },
       "portrait": "/game/monsters/PoisonInsect/PoisonInsect_Idle_character_3.png"
     },
-    "slug": "hell-1-4"
+    "slug": "3104-eerie-canyon"
   },
   {
     "key": 3105,
@@ -3442,7 +3442,7 @@
       },
       "portrait": "/game/monsters/Homunculus/Homunculus_Idle_character_4.png"
     },
-    "slug": "hell-1-5"
+    "slug": "3105-burning-village-entrance"
   },
   {
     "key": 3106,
@@ -3495,7 +3495,7 @@
       },
       "portrait": "/game/monsters/Ghoul/Ghoul_Idle_character_2.png"
     },
-    "slug": "hell-1-6"
+    "slug": "3106-rumstreet-square"
   },
   {
     "key": 3107,
@@ -3548,7 +3548,7 @@
       },
       "portrait": "/game/monsters/ZombieRatRace/ZombieRatRace_Idle_character_2.png"
     },
-    "slug": "hell-1-7"
+    "slug": "3107-city-outskirts"
   },
   {
     "key": 3108,
@@ -3601,7 +3601,7 @@
       },
       "portrait": "/game/monsters/SpearKobolt/SpearKobolt_Idle_character_2.png"
     },
-    "slug": "hell-1-8"
+    "slug": "3108-cemetery"
   },
   {
     "key": 3109,
@@ -3654,7 +3654,7 @@
       },
       "portrait": "/game/monsters/SmallMummy/SmallMummy_Idle_character_1.png"
     },
-    "slug": "hell-1-9"
+    "slug": "3109-cursed-land"
   },
   {
     "key": 3110,
@@ -3707,7 +3707,7 @@
       },
       "portrait": "/game/monsters/SkeletonKnight/SkeletonKnight_Idle_character_3.png"
     },
-    "slug": "hell-1-10"
+    "slug": "3110-throne-of-darkness"
   },
   {
     "key": 3201,
@@ -3760,7 +3760,7 @@
       },
       "portrait": "/game/monsters/BerserkerRatRace/BerserkerRatRace_Idle_character_2.png"
     },
-    "slug": "hell-2-1"
+    "slug": "3201-oasis-road"
   },
   {
     "key": 3202,
@@ -3813,7 +3813,7 @@
       },
       "portrait": "/game/monsters/WarriorRatRace/WarriorRatRace_Idle_character_2.png"
     },
-    "slug": "hell-2-2"
+    "slug": "3202-sandstorm-valley"
   },
   {
     "key": 3203,
@@ -3866,7 +3866,7 @@
       },
       "portrait": "/game/monsters/Cobra/Cobra_Idle_character_4.png"
     },
-    "slug": "hell-2-3"
+    "slug": "3203-desert-underground-cave"
   },
   {
     "key": 3204,
@@ -3919,7 +3919,7 @@
       },
       "portrait": "/game/monsters/PoisonInsect/PoisonInsect_Idle_character_3.png"
     },
-    "slug": "hell-2-4"
+    "slug": "3204-bug-nest"
   },
   {
     "key": 3205,
@@ -3972,7 +3972,7 @@
       },
       "portrait": "/game/monsters/Homunculus/Homunculus_Idle_character_4.png"
     },
-    "slug": "hell-2-5"
+    "slug": "3205-scorching-dunes"
   },
   {
     "key": 3206,
@@ -4025,7 +4025,7 @@
       },
       "portrait": "/game/monsters/Ghoul/Ghoul_Idle_character_2.png"
     },
-    "slug": "hell-2-6"
+    "slug": "3206-sunset-ruins"
   },
   {
     "key": 3207,
@@ -4078,7 +4078,7 @@
       },
       "portrait": "/game/monsters/ZombieRatRace/ZombieRatRace_Idle_character_2.png"
     },
-    "slug": "hell-2-7"
+    "slug": "3207-midnight-sands"
   },
   {
     "key": 3208,
@@ -4131,7 +4131,7 @@
       },
       "portrait": "/game/monsters/SpearKobolt/SpearKobolt_Idle_character_2.png"
     },
-    "slug": "hell-2-8"
+    "slug": "3208-sacred-tomb"
   },
   {
     "key": 3209,
@@ -4184,7 +4184,7 @@
       },
       "portrait": "/game/monsters/SmallMummy/SmallMummy_Idle_character_1.png"
     },
-    "slug": "hell-2-9"
+    "slug": "3209-pharaoh-s-crypt"
   },
   {
     "key": 3210,
@@ -4237,7 +4237,7 @@
       },
       "portrait": "/game/monsters/Sibuna/Sibuna_Idle_Character_4.png"
     },
-    "slug": "hell-2-10"
+    "slug": "3210-pharaoh-s-underchannel"
   },
   {
     "key": 3301,
@@ -4290,7 +4290,7 @@
       },
       "portrait": "/game/monsters/BerserkerRatRace/BerserkerRatRace_Idle_character_2.png"
     },
-    "slug": "hell-3-1"
+    "slug": "3301-snowbound-outpost"
   },
   {
     "key": 3302,
@@ -4343,7 +4343,7 @@
       },
       "portrait": "/game/monsters/WarriorRatRace/WarriorRatRace_Idle_character_2.png"
     },
-    "slug": "hell-3-2"
+    "slug": "3302-frozen-battlefield"
   },
   {
     "key": 3303,
@@ -4396,7 +4396,7 @@
       },
       "portrait": "/game/monsters/Cobra/Cobra_Idle_character_4.png"
     },
-    "slug": "hell-3-3"
+    "slug": "3303-glacial-cave-entrance"
   },
   {
     "key": 3304,
@@ -4449,7 +4449,7 @@
       },
       "portrait": "/game/monsters/PoisonInsect/PoisonInsect_Idle_character_3.png"
     },
-    "slug": "hell-3-4"
+    "slug": "3304-frozen-glacier-cavern"
   },
   {
     "key": 3305,
@@ -4502,7 +4502,7 @@
       },
       "portrait": "/game/monsters/Homunculus/Homunculus_Idle_character_4.png"
     },
-    "slug": "hell-3-5"
+    "slug": "3305-hell-gate"
   },
   {
     "key": 3306,
@@ -4555,7 +4555,7 @@
       },
       "portrait": "/game/monsters/Ghoul/Ghoul_Idle_character_2.png"
     },
-    "slug": "hell-3-6"
+    "slug": "3306-burning-ravine"
   },
   {
     "key": 3307,
@@ -4608,7 +4608,7 @@
       },
       "portrait": "/game/monsters/ZombieRatRace/ZombieRatRace_Idle_character_2.png"
     },
-    "slug": "hell-3-7"
+    "slug": "3307-plains-of-torment"
   },
   {
     "key": 3308,
@@ -4661,7 +4661,7 @@
       },
       "portrait": "/game/monsters/SpearKobolt/SpearKobolt_Idle_character_2.png"
     },
-    "slug": "hell-3-8"
+    "slug": "3308-citadel-of-ruin"
   },
   {
     "key": 3309,
@@ -4714,7 +4714,7 @@
       },
       "portrait": "/game/monsters/SmallMummy/SmallMummy_Idle_character_1.png"
     },
-    "slug": "hell-3-9"
+    "slug": "3309-core-of-the-abyss"
   },
   {
     "key": 3310,
@@ -4767,7 +4767,7 @@
       },
       "portrait": "/game/monsters/voidcaller/voidcaller_Idle_Character_1.png"
     },
-    "slug": "hell-3-10"
+    "slug": "3310-hell-command-chamber"
   },
   {
     "key": 4101,
@@ -4820,7 +4820,7 @@
       },
       "portrait": "/game/monsters/BerserkerRatRace/BerserkerRatRace_Idle_character_2.png"
     },
-    "slug": "torment-1-1"
+    "slug": "4101-pasture"
   },
   {
     "key": 4102,
@@ -4873,7 +4873,7 @@
       },
       "portrait": "/game/monsters/WarriorRatRace/WarriorRatRace_Idle_character_2.png"
     },
-    "slug": "torment-1-2"
+    "slug": "4102-shadow-meadow"
   },
   {
     "key": 4103,
@@ -4926,7 +4926,7 @@
       },
       "portrait": "/game/monsters/Cobra/Cobra_Idle_character_4.png"
     },
-    "slug": "torment-1-3"
+    "slug": "4103-wasteland"
   },
   {
     "key": 4104,
@@ -4979,7 +4979,7 @@
       },
       "portrait": "/game/monsters/PoisonInsect/PoisonInsect_Idle_character_3.png"
     },
-    "slug": "torment-1-4"
+    "slug": "4104-eerie-canyon"
   },
   {
     "key": 4105,
@@ -5032,7 +5032,7 @@
       },
       "portrait": "/game/monsters/Homunculus/Homunculus_Idle_character_4.png"
     },
-    "slug": "torment-1-5"
+    "slug": "4105-burning-village-entrance"
   },
   {
     "key": 4106,
@@ -5085,7 +5085,7 @@
       },
       "portrait": "/game/monsters/Ghoul/Ghoul_Idle_character_2.png"
     },
-    "slug": "torment-1-6"
+    "slug": "4106-rumstreet-square"
   },
   {
     "key": 4107,
@@ -5138,7 +5138,7 @@
       },
       "portrait": "/game/monsters/ZombieRatRace/ZombieRatRace_Idle_character_2.png"
     },
-    "slug": "torment-1-7"
+    "slug": "4107-city-outskirts"
   },
   {
     "key": 4108,
@@ -5191,7 +5191,7 @@
       },
       "portrait": "/game/monsters/SpearKobolt/SpearKobolt_Idle_character_2.png"
     },
-    "slug": "torment-1-8"
+    "slug": "4108-cemetery"
   },
   {
     "key": 4109,
@@ -5244,7 +5244,7 @@
       },
       "portrait": "/game/monsters/SmallMummy/SmallMummy_Idle_character_1.png"
     },
-    "slug": "torment-1-9"
+    "slug": "4109-cursed-land"
   },
   {
     "key": 4110,
@@ -5297,7 +5297,7 @@
       },
       "portrait": "/game/monsters/SkeletonKnight/SkeletonKnight_Idle_character_3.png"
     },
-    "slug": "torment-1-10"
+    "slug": "4110-throne-of-darkness"
   },
   {
     "key": 4201,
@@ -5350,7 +5350,7 @@
       },
       "portrait": "/game/monsters/BerserkerRatRace/BerserkerRatRace_Idle_character_2.png"
     },
-    "slug": "torment-2-1"
+    "slug": "4201-oasis-road"
   },
   {
     "key": 4202,
@@ -5403,7 +5403,7 @@
       },
       "portrait": "/game/monsters/WarriorRatRace/WarriorRatRace_Idle_character_2.png"
     },
-    "slug": "torment-2-2"
+    "slug": "4202-sandstorm-valley"
   },
   {
     "key": 4203,
@@ -5456,7 +5456,7 @@
       },
       "portrait": "/game/monsters/Cobra/Cobra_Idle_character_4.png"
     },
-    "slug": "torment-2-3"
+    "slug": "4203-desert-underground-cave"
   },
   {
     "key": 4204,
@@ -5509,7 +5509,7 @@
       },
       "portrait": "/game/monsters/PoisonInsect/PoisonInsect_Idle_character_3.png"
     },
-    "slug": "torment-2-4"
+    "slug": "4204-bug-nest"
   },
   {
     "key": 4205,
@@ -5562,7 +5562,7 @@
       },
       "portrait": "/game/monsters/Homunculus/Homunculus_Idle_character_4.png"
     },
-    "slug": "torment-2-5"
+    "slug": "4205-scorching-dunes"
   },
   {
     "key": 4206,
@@ -5615,7 +5615,7 @@
       },
       "portrait": "/game/monsters/Ghoul/Ghoul_Idle_character_2.png"
     },
-    "slug": "torment-2-6"
+    "slug": "4206-sunset-ruins"
   },
   {
     "key": 4207,
@@ -5668,7 +5668,7 @@
       },
       "portrait": "/game/monsters/ZombieRatRace/ZombieRatRace_Idle_character_2.png"
     },
-    "slug": "torment-2-7"
+    "slug": "4207-midnight-sands"
   },
   {
     "key": 4208,
@@ -5721,7 +5721,7 @@
       },
       "portrait": "/game/monsters/SpearKobolt/SpearKobolt_Idle_character_2.png"
     },
-    "slug": "torment-2-8"
+    "slug": "4208-sacred-tomb"
   },
   {
     "key": 4209,
@@ -5774,7 +5774,7 @@
       },
       "portrait": "/game/monsters/SmallMummy/SmallMummy_Idle_character_1.png"
     },
-    "slug": "torment-2-9"
+    "slug": "4209-pharaoh-s-crypt"
   },
   {
     "key": 4210,
@@ -5827,7 +5827,7 @@
       },
       "portrait": "/game/monsters/Sibuna/Sibuna_Idle_Character_4.png"
     },
-    "slug": "torment-2-10"
+    "slug": "4210-pharaoh-s-underchannel"
   },
   {
     "key": 4301,
@@ -5880,7 +5880,7 @@
       },
       "portrait": "/game/monsters/BerserkerRatRace/BerserkerRatRace_Idle_character_2.png"
     },
-    "slug": "torment-3-1"
+    "slug": "4301-snowbound-outpost"
   },
   {
     "key": 4302,
@@ -5933,7 +5933,7 @@
       },
       "portrait": "/game/monsters/WarriorRatRace/WarriorRatRace_Idle_character_2.png"
     },
-    "slug": "torment-3-2"
+    "slug": "4302-frozen-battlefield"
   },
   {
     "key": 4303,
@@ -5986,7 +5986,7 @@
       },
       "portrait": "/game/monsters/Cobra/Cobra_Idle_character_4.png"
     },
-    "slug": "torment-3-3"
+    "slug": "4303-glacial-cave-entrance"
   },
   {
     "key": 4304,
@@ -6039,7 +6039,7 @@
       },
       "portrait": "/game/monsters/PoisonInsect/PoisonInsect_Idle_character_3.png"
     },
-    "slug": "torment-3-4"
+    "slug": "4304-frozen-glacier-cavern"
   },
   {
     "key": 4305,
@@ -6092,7 +6092,7 @@
       },
       "portrait": "/game/monsters/Homunculus/Homunculus_Idle_character_4.png"
     },
-    "slug": "torment-3-5"
+    "slug": "4305-hell-gate"
   },
   {
     "key": 4306,
@@ -6145,7 +6145,7 @@
       },
       "portrait": "/game/monsters/Ghoul/Ghoul_Idle_character_2.png"
     },
-    "slug": "torment-3-6"
+    "slug": "4306-burning-ravine"
   },
   {
     "key": 4307,
@@ -6198,7 +6198,7 @@
       },
       "portrait": "/game/monsters/ZombieRatRace/ZombieRatRace_Idle_character_2.png"
     },
-    "slug": "torment-3-7"
+    "slug": "4307-plains-of-torment"
   },
   {
     "key": 4308,
@@ -6251,7 +6251,7 @@
       },
       "portrait": "/game/monsters/SpearKobolt/SpearKobolt_Idle_character_2.png"
     },
-    "slug": "torment-3-8"
+    "slug": "4308-citadel-of-ruin"
   },
   {
     "key": 4309,
@@ -6304,7 +6304,7 @@
       },
       "portrait": "/game/monsters/SmallMummy/SmallMummy_Idle_character_1.png"
     },
-    "slug": "torment-3-9"
+    "slug": "4309-core-of-the-abyss"
   },
   {
     "key": 4310,
@@ -6357,6 +6357,6 @@
       },
       "portrait": "/game/monsters/voidcaller/voidcaller_Idle_Character_1.png"
     },
-    "slug": "torment-3-10"
+    "slug": "4310-hell-command-chamber"
   }
 ]

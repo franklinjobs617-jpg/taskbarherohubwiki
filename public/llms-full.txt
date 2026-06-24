@@ -1,6 +1,6 @@
 # TaskBar Hero Wiki - Full LLM Reference (llms-full.txt)
 > Complete guide content and key entity descriptions for AI model extraction.
-> Site: https://taskbarhero.nanobananas.me
+> Site: https://taskbarherohub.wiki
 
 ---
 
@@ -222,4 +222,4 @@ The goal of XP farming is leveling. Tradable materials and gear can be recorded,
 - Evidence labels: datamined > editorial > community > unverified
 - Market data confidence: high > medium > low > missing
 - When data is incomplete, pages show status notices instead of made-up values
-- 5,934 items, 6 heroes, 120 stages, 197 runes, 214 skills, 61 monsters
+- 5,934 items, 6 heroes, 120 stages, 197 runes, 106 skills, 61 monsters

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { allHeroes, allItems, allMonsters, allStages, builds, chestItems, guides, hasIndexableMarketData, marketForItem, shouldIndexItem, SITE_URL, stageSlug, UPDATED_AT } from "@/lib/game-data/data";
+import { achievements, allHeroes, allItems, allMonsters, allStages, builds, chestItems, guides, hasIndexableMarketData, marketForItem, shouldIndexItem, SITE_URL, stageSlug, UPDATED_AT, wikiArticles } from "@/lib/game-data/data";
 import { extStages } from "@/lib/game-data/external";
 
 const locales = ["en", "zh", "ja", "ko"] as const;
@@ -29,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tools/drop-finder", "/tools/farming-optimizer", "/tools/profit-calculator",
     "/tools/farming-compare", "/tools/farming-calculator",
     "/server-status", "/updates", "/faq", "/about", "/privacy", "/terms", "/contact",
+    "/tools", "/wiki", "/database", "/achievements",
   ];
 
   const staticUrls = locales.flatMap((locale) =>
@@ -67,6 +68,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const path = `/monsters/${m.slug ?? m.MonsterKey}`;
     return locales.map((locale) => ({ url: toUrl(locale, path), lastModified: updated, changeFrequency: "monthly" as const, priority: 0.6, alternates: withAlternates(path) }));
   });
+  const wikiUrls = wikiArticles.flatMap((a) => {
+    const path = `/wiki/${a.slug}`;
+    return locales.map((locale) => ({ url: toUrl(locale, path), lastModified: updated, changeFrequency: "weekly" as const, priority: 0.7, alternates: withAlternates(path) }));
+  });
+  const achievementUrls = achievements.flatMap((a) => {
+    const path = `/achievements/${a.slug}`;
+    return locales.map((locale) => ({ url: toUrl(locale, path), lastModified: updated, changeFrequency: "monthly" as const, priority: 0.6, alternates: withAlternates(path) }));
+  });
 
-  return [...staticUrls, ...itemUrls, ...marketUrls, ...chestUrls, ...stageUrls, ...heroUrls, ...guideUrls, ...buildUrls, ...monsterUrls];
+  return [...staticUrls, ...itemUrls, ...marketUrls, ...chestUrls, ...stageUrls, ...heroUrls, ...guideUrls, ...buildUrls, ...monsterUrls, ...wikiUrls, ...achievementUrls];
 }

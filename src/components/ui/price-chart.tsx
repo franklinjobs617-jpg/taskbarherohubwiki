@@ -8,7 +8,7 @@ type Props = { data: PricePoint[]; height?: number };
 
 export function PriceChart({ data, height = 200 }: Props) {
   if (data.length < 2) {
-    return <div className="flex items-center justify-center text-[11px] text-[#6c6c6c]" style={{ height }}>Not enough data for chart</div>;
+    return <div className="flex items-center justify-center text-[11px] text-text-muted" style={{ height }}>Not enough data for chart</div>;
   }
   const chartData = data.map((p) => ({
     ...p,

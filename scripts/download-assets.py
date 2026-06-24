@@ -14,7 +14,9 @@ HEADERS = {
 }
 
 BASE_URL = 'https://taskbarhero.wiki'
-PUBLIC_DIR = 'D:/Vir/tbh-fan-site/public/game/monsters'
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.dirname(SCRIPT_DIR)
+PUBLIC_DIR = os.path.join(ROOT_DIR, 'public', 'game', 'monsters')
 os.makedirs(PUBLIC_DIR, exist_ok=True)
 
 def download(url, dest):
@@ -31,7 +33,7 @@ def download(url, dest):
         return f'error: {e}'
 
 # 1. Load monster data to get portrait paths
-with open('D:/Vir/tbh-fan-site/tbh_data/monsters.json', 'r', encoding='utf-8') as f:
+with open(os.path.join(ROOT_DIR, 'tbh_data', 'monsters.json'), 'r', encoding='utf-8') as f:
     monsters = json.load(f)
 
 print(f'=== DOWNLOADING MONSTER PORTRAITS ({len(monsters)} monsters) ===')
@@ -61,7 +63,7 @@ for m in monsters:
 print(f'\nMonster portraits: {success}/{len(monsters)}')
 
 # 2. Load stage data for boss portraits
-with open('D:/Vir/tbh-fan-site/tbh_data/stages.json', 'r', encoding='utf-8') as f:
+with open(os.path.join(ROOT_DIR, 'tbh_data', 'stages.json'), 'r', encoding='utf-8') as f:
     stages = json.load(f)
 
 print(f'\n=== DOWNLOADING BOSS PORTRAITS ({len(stages)} stages) ===')

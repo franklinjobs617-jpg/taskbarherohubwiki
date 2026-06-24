@@ -1,0 +1,53 @@
+{
+  "key": 3109,
+  "act": 1,
+  "no": 9,
+  "level": 60,
+  "type": "NORMAL",
+  "difficulty": "HELL",
+  "name": {
+    "zh-Hans": "诅咒之地",
+    "zh-Hant": "詛咒之地",
+    "en-US": "Cursed Land",
+    "fr-FR": "Terre maudite",
+    "de-DE": "Verfluchtes Land",
+    "id-ID": "Tanah Terkutuk",
+    "ja-JP": "呪われた大地",
+    "ko-KR": "저주받은 대지",
+    "pl-PL": "Przeklęta kraina",
+    "pt-BR": "Terra amaldiçoada",
+    "ru-RU": "Проклятая земля",
+    "es-ES": "Tierra maldita",
+    "th-TH": "ดินแดนต้องสาป",
+    "tr-TR": "Lanetli toprak",
+    "uk-UA": "Прокляті землі",
+    "vi-VN": "Vùng đất nguyền rủa"
+  },
+  "waves": 25,
+  "monsterCount": 6,
+  "kills": 400,
+  "goldPerClear": 103600,
+  "expPerClear": 1979938,
+  "boss": {
+    "name": {
+      "zh-Hans": "木乃伊",
+      "zh-Hant": "木乃伊",
+      "en-US": "Mummy",
+      "fr-FR": "Momie",
+      "de-DE": "Mumie",
+      "id-ID": "Mumi",
+      "ja-JP": "ミイラ",
+      "ko-KR": "미이라",
+      "pl-PL": "Mumia",
+      "pt-BR": "Múmia",
+      "ru-RU": "Мумия",
+      "es-ES": "Momia",
+      "th-TH": "มัมมี่",
+      "tr-TR": "Mumya",
+      "uk-UA": "Мумія",
+      "vi-VN": "Xác Ướp"
+    },
+    "portrait": "/game/monsters/SmallMummy/SmallMummy_Idle_character_1.png"
+  },
+  "slug": "3109-cursed-land"
+}

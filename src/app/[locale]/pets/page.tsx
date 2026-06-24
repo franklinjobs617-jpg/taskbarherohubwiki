@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { SafeImage } from "@/components/ui/safe-image";
 import Link from "next/link";
 import { MapPin, PawPrint, Star, Target } from "lucide-react";
 import { PageHeader, PageShell } from "@/components/tbh/page";
@@ -59,16 +59,16 @@ export default async function PetsPage({ params, searchParams }: Props) {
       <HowToUse pageKey="/pets" locale={locale} />
       <section className="mb-6 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
         {picks.map(({ label, row }) => row ? (
-          <Link key={label} href={stageHref(locale, row.bestFarmStage)} className="border border-[#3f2f10] bg-[#100d06] p-4 hover:border-[#d4a017]">
+          <Link key={label} href={stageHref(locale, row.bestFarmStage)} className="border border-accent-dim bg-accent-soft p-4 hover:border-accent">
             <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#9d7b33]">{label}</p>
             <p className="mt-2 text-lg font-semibold text-white">{row.name}</p>
-            <p className="mt-1 text-xs text-[#d8d1c2]">{row.bestFarmStage ? `${row.bestFarmStage.label} ${row.bestFarmStage.stageName}` : row.priority}</p>
+            <p className="mt-1 text-xs text-text-secondary">{row.bestFarmStage ? `${row.bestFarmStage.label} ${row.bestFarmStage.stageName}` : row.priority}</p>
           </Link>
         ) : null)}
       </section>
 
       <div className="mb-4 flex flex-wrap gap-1.5">
-        <span className="text-xs text-[#6c6c6c] self-center mr-1">{txt(locale, { zh: "按优先级：", en: "Priority:", ja: "優先度：", ko: "우선순위：" })}</span>
+        <span className="text-xs text-text-muted self-center mr-1">{txt(locale, { zh: "按优先级：", en: "Priority:", ja: "優先度：", ko: "우선순위：" })}</span>
         {[
           { k: "any", zh: "全部", en: "Any", ja: "全て", ko: "전체" },
           { k: "Early", zh: "新手先开", en: "Early", ja: "初心者優先", ko: "초보 우선" },
@@ -81,7 +81,7 @@ export default async function PetsPage({ params, searchParams }: Props) {
           </Link>
         ))}
         {filterPriority && filterPriority !== "any" ? (
-          <Link href={`/${locale}/pets`} className="pill text-xs text-[#9d9d9d] hover:text-[#ffffff]">
+          <Link href={`/${locale}/pets`} className="pill text-xs text-text-secondary hover:text-text-primary">
             {txt(locale, { zh: "清除", en: "Clear", ja: "クリア", ko: "초기화" })}
           </Link>
         ) : null}
@@ -89,17 +89,17 @@ export default async function PetsPage({ params, searchParams }: Props) {
 
       <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {plan.pets.filter((row) => !filterPriority || filterPriority === "any" || row.priority === filterPriority).map((row) => (
-          <div key={row.pet.key} className={`border bg-[#0d0d0d] p-5 ${row.pet.dlc ? "border-[#5a3a1a]" : "border-[#27272a]"}`}>
+          <div key={row.pet.key} className={`border bg-bg-panel p-5 ${row.pet.dlc ? "border-accent-dim" : "border-border-default"}`}>
             <div className="flex items-start gap-4">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center border border-[#27272a] bg-[#0a0a0a]">
-                <Image src={`/game/pets/${row.pet.icon}.png`} alt={row.name} width={40} height={40} className="object-contain" data-pixel unoptimized />
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center border border-border-default bg-bg-canvas">
+                <SafeImage src={`/game/pets/${row.pet.icon}.png`} alt={row.name} width={40} height={40} className="object-contain" data-pixel unoptimized />
               </div>
               <div className="min-w-0">
                 <div className="flex flex-wrap items-center gap-2">
-                  <h2 className="text-lg font-semibold text-[#f1e8d5]">{row.name}</h2>
-                  <span className="border border-[#3b3b3b] px-2 py-0.5 text-[10px] font-semibold uppercase text-[#f0c040]">{row.priority}</span>
+                  <h2 className="text-lg font-semibold text-text-primary">{row.name}</h2>
+                  <span className="border border-border-strong px-2 py-0.5 text-[10px] font-semibold uppercase text-accent-bright">{row.priority}</span>
                 </div>
-                <p className="mt-1 text-xs leading-5 text-[#9d9d9d]">{row.bonus}</p>
+                <p className="mt-1 text-xs leading-5 text-text-secondary">{row.bonus}</p>
               </div>
             </div>
 
@@ -109,11 +109,11 @@ export default async function PetsPage({ params, searchParams }: Props) {
               <Line icon={<MapPin className="h-4 w-4" />} label={txt(locale, { zh: "最佳关卡", en: "Best stage", ja: "最適ステージ", ko: "추천 스테이지" })} value={row.bestFarmStage ? `${row.bestFarmStage.label} ${row.bestFarmStage.stageName}` : "DLC"} href={stageHref(locale, row.bestFarmStage)} />
               <Line icon={<Star className="h-4 w-4" />} label={txt(locale, { zh: "占比", en: "Spawn share", ja: "出現比率", ko: "출현 비율" })} value={row.bestFarmStage ? `${row.bestFarmStage.share}%` : "-"} />
             </div>
-            <div className="mt-3 flex items-center justify-between border-t border-[#27272a] pt-3 text-[11px]">
-              <span className="text-[#6c6c6c]">{txt(locale, { zh: "按优先级", en: "Priority", ja: "優先度", ko: "우선순위" })}: {row.priority}</span>
+            <div className="mt-3 flex items-center justify-between border-t border-border-default pt-3 text-[11px]">
+              <span className="text-text-muted">{txt(locale, { zh: "按优先级", en: "Priority", ja: "優先度", ko: "우선순위" })}: {row.priority}</span>
               <Link
                 href={`/${locale}/pets?priority=${row.priority}&compare=${row.pet.key}`}
-                className="text-[#d4a017] hover:text-[#f0c040]"
+                className="text-accent hover:text-accent-bright"
                 title={txt(locale, { zh: "对比同优先级其他宠物", en: "Compare with other pets of same priority", ja: "同優先度のペットと比較", ko: "같은 우선순위 펫과 비교" })}
               >
                 {txt(locale, { zh: "对比 →", en: "Compare →", ja: "比較 →", ko: "비교 →" })} ↗
@@ -130,12 +130,12 @@ export default async function PetsPage({ params, searchParams }: Props) {
 function Line({ icon, label, value, href }: { icon: React.ReactNode; label: string; value: string; href?: string }) {
   const content = (
     <>
-      <span className="flex items-center gap-2 text-[#9d9d9d]">{icon}{label}</span>
-      <span className="min-w-0 truncate font-semibold text-[#f0c040]">{value}</span>
+      <span className="flex items-center gap-2 text-text-secondary">{icon}{label}</span>
+      <span className="min-w-0 truncate font-semibold text-accent-bright">{value}</span>
     </>
   );
   if (href) {
-    return <Link href={href} className="flex items-center justify-between gap-3 border border-[#27272a] bg-[#0a0a0a] px-3 py-2 hover:border-[#d4a017]">{content}</Link>;
+    return <Link href={href} className="flex items-center justify-between gap-3 border border-border-default bg-bg-canvas px-3 py-2 hover:border-accent">{content}</Link>;
   }
-  return <div className="flex items-center justify-between gap-3 border border-[#27272a] bg-[#0a0a0a] px-3 py-2">{content}</div>;
+  return <div className="flex items-center justify-between gap-3 border border-border-default bg-bg-canvas px-3 py-2">{content}</div>;
 }

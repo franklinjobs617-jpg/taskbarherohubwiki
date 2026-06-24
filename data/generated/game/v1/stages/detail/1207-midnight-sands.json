@@ -1,0 +1,53 @@
+{
+  "key": 1207,
+  "act": 2,
+  "no": 7,
+  "level": 19,
+  "type": "NORMAL",
+  "difficulty": "NORMAL",
+  "name": {
+    "zh-Hans": "午夜沙漠",
+    "zh-Hant": "午夜沙漠",
+    "en-US": "Midnight Sands",
+    "fr-FR": "Sables de Minuit",
+    "de-DE": "Mitternachtswüste",
+    "id-ID": "Pasir Tengah Malam",
+    "ja-JP": "真夜中の砂漠",
+    "ko-KR": "한밤의 사막",
+    "pl-PL": "Piaski Północy",
+    "pt-BR": "Areias da Meia-Noite",
+    "ru-RU": "Полуночные пески",
+    "es-ES": "Arenas de Medianoche",
+    "th-TH": "ทรายเที่ยงคืน",
+    "tr-TR": "Gece Yarısı Kumları",
+    "uk-UA": "Піски півночі",
+    "vi-VN": "Cát Nửa đêm"
+  },
+  "waves": 15,
+  "monsterCount": 5,
+  "kills": 120,
+  "goldPerClear": 2683,
+  "expPerClear": 35557,
+  "boss": {
+    "name": {
+      "zh-Hans": "瘟疫鼠",
+      "zh-Hant": "瘟疫鼠",
+      "en-US": "Plague Rat",
+      "fr-FR": "Rat Pestiféré",
+      "de-DE": "Pestratte",
+      "id-ID": "Tikus Wabah",
+      "ja-JP": "疫病ネズミ",
+      "ko-KR": "역병쥐",
+      "pl-PL": "Szczur Zarazy",
+      "pt-BR": "Rato da Peste",
+      "ru-RU": "Чумная крыса",
+      "es-ES": "Rata Pestilente",
+      "th-TH": "หนูโรคระบาด",
+      "tr-TR": "Veba Sıçanı",
+      "uk-UA": "Чумний щур",
+      "vi-VN": "Chuột Dịch"
+    },
+    "portrait": "/game/monsters/ZombieRatRace/ZombieRatRace_Idle_character_2.png"
+  },
+  "slug": "1207-midnight-sands"
+}

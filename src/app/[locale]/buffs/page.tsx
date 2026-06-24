@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { type Locale } from "@/lib/game-data/data";
@@ -79,21 +78,21 @@ export default async function BuffsPage({ params, searchParams }: Props) {
       />
 
       <div className="mb-4 flex flex-wrap gap-1.5">
-        <span className="self-center text-xs text-[#6c6c6c] mr-1">{isZh ? "属性：" : "Stat:"}</span>
-        <Link href={`/${locale}/buffs`} className={`border px-2.5 py-1 text-xs ${!sp.stat && !sp.type ? "border-[#d4a017] bg-[#1a1508] text-[#f0c040]" : "border-[#3b3b3b] text-[#9d9d9d] hover:border-[#d4a017]"}`}>
+        <span className="self-center text-xs text-text-muted mr-1">{isZh ? "属性：" : "Stat:"}</span>
+        <Link href={`/${locale}/buffs`} className={`border px-2.5 py-1 text-xs ${!sp.stat && !sp.type ? "border-accent bg-accent-soft text-accent-bright" : "border-border-strong text-text-secondary hover:border-accent"}`}>
           {isZh ? "全部" : "All"}
         </Link>
-        <Link href={`/${locale}/buffs?type=buff`} className={`border px-2.5 py-1 text-xs ${sp.type === "buff" ? "border-[#d4a017] bg-[#1a1508] text-[#f0c040]" : "border-[#3b3b3b] text-[#9d9d9d] hover:border-[#d4a017]"}`}>
+        <Link href={`/${locale}/buffs?type=buff`} className={`border px-2.5 py-1 text-xs ${sp.type === "buff" ? "border-accent bg-accent-soft text-accent-bright" : "border-border-strong text-text-secondary hover:border-accent"}`}>
           {isZh ? "Buff" : "Buff"}
         </Link>
-        <Link href={`/${locale}/buffs?type=debuff`} className={`border px-2.5 py-1 text-xs ${sp.type === "debuff" ? "border-[#d4a017] bg-[#1a1508] text-[#f0c040]" : "border-[#3b3b3b] text-[#9d9d9d] hover:border-[#d4a017]"}`}>
+        <Link href={`/${locale}/buffs?type=debuff`} className={`border px-2.5 py-1 text-xs ${sp.type === "debuff" ? "border-accent bg-accent-soft text-accent-bright" : "border-border-strong text-text-secondary hover:border-accent"}`}>
           {isZh ? "Debuff" : "Debuff"}
         </Link>
         {Object.keys(STAT_LABELS).slice(0, 8).map((stat) => (
           <Link
             key={stat}
             href={`/${locale}/buffs?stat=${stat}`}
-            className={`border px-2.5 py-1 text-xs ${sp.stat === stat ? "border-[#d4a017] bg-[#1a1508] text-[#f0c040]" : "border-[#3b3b3b] text-[#9d9d9d] hover:border-[#d4a017]"}`}
+            className={`border px-2.5 py-1 text-xs ${sp.stat === stat ? "border-accent bg-accent-soft text-accent-bright" : "border-border-strong text-text-secondary hover:border-accent"}`}
           >
             {statLabel(stat, locale)}
           </Link>
@@ -137,7 +136,7 @@ function BuffGroup({
 
   return (
     <div>
-      <h2 className="mb-3 text-sm font-semibold uppercase tracking-[0.1em] text-[#6c6c6c]">
+      <h2 className="mb-3 text-sm font-semibold uppercase tracking-[0.1em] text-text-muted">
         {title}
       </h2>
       <div className="space-y-1">
@@ -146,13 +145,13 @@ function BuffGroup({
             key={buff.BuffKey}
             className={`flex items-center gap-3 rounded-sm border px-3 py-2 text-xs ${colorClasses}`}
           >
-            <span className="w-12 shrink-0 font-mono text-[#6c6c6c]">
+            <span className="w-12 shrink-0 font-mono text-text-muted">
               #{buff.BuffKey}
             </span>
-            <span className="flex-1 font-medium text-[#d8d1c2]">
+            <span className="flex-1 font-medium text-text-secondary">
               {statLabel(buff.STATTYPE, locale)}
             </span>
-            <span className="w-28 shrink-0 font-mono text-[#6c6c6c]">
+            <span className="w-28 shrink-0 font-mono text-text-muted">
               {buff.MODTYPE === "MULTIPLICATIVE"
                 ? isZh ? "乘算" : "Multiplicative"
                 : isZh ? "加算" : "Flat"}

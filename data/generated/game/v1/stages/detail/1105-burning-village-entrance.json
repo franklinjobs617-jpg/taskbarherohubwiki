@@ -1,0 +1,53 @@
+{
+  "key": 1105,
+  "act": 1,
+  "no": 5,
+  "level": 6,
+  "type": "NORMAL",
+  "difficulty": "NORMAL",
+  "name": {
+    "zh-Hans": "燃烧村庄入口",
+    "zh-Hant": "燃燒村莊入口",
+    "en-US": "Burning Village Entrance",
+    "fr-FR": "Entrée du Village en Flammes",
+    "de-DE": "Brennender Dorfeingang",
+    "id-ID": "Pintu Desa Terbakar",
+    "ja-JP": "燃える村の入口",
+    "ko-KR": "불타는 마을 입구",
+    "pl-PL": "Wejście do Płonącej Wioski",
+    "pt-BR": "Entrada da Vila em Chamas",
+    "ru-RU": "Вход в горящую деревню",
+    "es-ES": "Entrada del Pueblo Ardiente",
+    "th-TH": "ทางเข้าหมู่บ้านเพลิง",
+    "tr-TR": "Yanan Köy Girişi",
+    "uk-UA": "Вхід до палаючого села",
+    "vi-VN": "Lối vào Làng Cháy"
+  },
+  "waves": 12,
+  "monsterCount": 5,
+  "kills": 48,
+  "goldPerClear": 356,
+  "expPerClear": 748,
+  "boss": {
+    "name": {
+      "zh-Hans": "精英兽人",
+      "zh-Hant": "精英獸人",
+      "en-US": "Elite Orc",
+      "fr-FR": "Orc d'élite",
+      "de-DE": "Elite-Ork",
+      "id-ID": "Orc Elite",
+      "ja-JP": "エリートオーク",
+      "ko-KR": "정예 오크",
+      "pl-PL": "Elitarny ork",
+      "pt-BR": "Orc de elite",
+      "ru-RU": "Элитный орк",
+      "es-ES": "Orco élite",
+      "th-TH": "ออร์คชั้นยอด",
+      "tr-TR": "Seçkin Ork",
+      "uk-UA": "Елітний орк",
+      "vi-VN": "Orc Tinh Nhuệ"
+    },
+    "portrait": "/game/monsters/EliteOrc/EliteOrc_Idle_character_3.png"
+  },
+  "slug": "1105-burning-village-entrance"
+}

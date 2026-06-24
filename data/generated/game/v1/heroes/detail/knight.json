@@ -63,7 +63,7 @@
   "DeadIconPath": "UI/Icon/Hero/HeroDead_101",
   "PrefabPath": "Prefab/Hero/Hero_101",
   "AnimatorPath": "Animation/Hero/101/Hero_101",
-  "icon": "/game/heroes/portraits/Hero_101.png",
+  "icon": "/game/heroes/portraits/Hero_101_5144.png",
   "dead_icon": "/game/heroes/portraits/HeroDead_101.png",
   "animations_folder": "/game/heroes/Knight",
   "skill_name_i18n": null,

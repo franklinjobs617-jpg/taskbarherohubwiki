@@ -59,12 +59,14 @@ def transform_drops(raw_drops):
     return sources
 
 # Load existing drops.json
-DROPS_PATH = 'D:/Vir/tbh-fan-site/data/generated/drops.json'
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.dirname(SCRIPT_DIR)
+DROPS_PATH = os.path.join(ROOT_DIR, 'data', 'generated', 'drops.json')
 with open(DROPS_PATH, 'r', encoding='utf-8-sig') as f:
     existing_drops = json.load(f)
 
 # Load all materials
-with open('D:/Vir/tbh-fan-site/tbh_data/items.json', 'r', encoding='utf-8') as f:
+with open(os.path.join(ROOT_DIR, 'tbh_data', 'items.json'), 'r', encoding='utf-8') as f:
     all_items = json.load(f)
 
 materials = [i for i in all_items if i['type'] == 'MATERIAL']

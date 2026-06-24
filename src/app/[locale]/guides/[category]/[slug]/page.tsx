@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { SafeImage } from "@/components/ui/safe-image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, CheckCircle2, Clock3, Coins, PackageCheck, ShieldAlert } from "lucide-react";
@@ -62,15 +62,15 @@ export default async function GuideDetailPage({ params }: Props) {
           <article className="min-w-0">
             {/* Breadcrumb */}
             <div className="mb-4 flex flex-wrap items-center gap-2 text-[12px] text-[#8b8170]">
-              <Link href={`/${locale}/guides`} className="hover:text-[#f0c040] transition-colors">{copy(locale, "攻略", "Guides", "ガイド")}</Link>
-              <span className="text-[#555]">/</span>
+              <Link href={`/${locale}/guides`} className="hover:text-accent-bright transition-colors">{copy(locale, "攻略", "Guides", "ガイド")}</Link>
+              <span className="text-text-muted">/</span>
               <span className="uppercase tracking-[0.16em] text-[#c87925]">{guide.category}</span>
             </div>
 
             {/* Meta badges */}
             <div className="mb-5 flex flex-wrap items-center gap-2">
               <ConfidenceBadge value={guide.evidence === "datamined" ? "high" : guide.evidence === "editorial" ? "medium" : "low"} locale={locale} />
-              <span className="rounded-sm border border-[#2f2b22] bg-[#0d0d0d] px-2 py-0.5 text-[10px] uppercase tracking-[0.12em] text-[#776f61]">{guide.gameVersion}</span>
+              <span className="rounded-sm border border-[#2f2b22] bg-bg-panel px-2 py-0.5 text-[10px] uppercase tracking-[0.12em] text-[#776f61]">{guide.gameVersion}</span>
               <span className="text-[12px] text-[#776f61]">{guide.updatedAt}</span>
             </div>
 
@@ -80,12 +80,12 @@ export default async function GuideDetailPage({ params }: Props) {
 
             {/* Key insight */}
             <div className="mt-5 border-l-[3px] border-[#c87925] bg-gradient-to-r from-[rgba(200,121,37,0.1)] to-transparent px-4 py-3 sm:px-5 sm:py-3.5">
-              <p className="text-[14px] font-semibold leading-6 text-[#f0c040] sm:text-[15px]">{visual[locale as "zh" | "en" | "ja"]}</p>
+              <p className="text-[14px] font-semibold leading-6 text-accent-bright sm:text-[15px]">{visual[locale as "zh" | "en" | "ja"]}</p>
             </div>
 
             {/* Hero image */}
             <figure className="mt-7 overflow-hidden border border-[#2f2b22] bg-[#0a0a08] sm:mt-8">
-              <Image src={visual.image} alt={guide.title[locale] as string} width={1200} height={600} className="w-full object-cover" priority unoptimized />
+              <SafeImage src={visual.image} alt={guide.title[locale] as string} width={1200} height={600} className="w-full object-cover" priority unoptimized />
             </figure>
 
             {/* TL;DR Quick Take */}
@@ -108,7 +108,7 @@ export default async function GuideDetailPage({ params }: Props) {
                   return (
                     <div key={`img-${i}`} className="space-y-5 sm:space-y-6">
                       <figure className="overflow-hidden border border-[#2f2b22] bg-[#0a0a08]">
-                        <Image src={visual.image} alt={copy(locale, "游戏界面参考", "Gameplay reference", "ゲーム画面参考")} width={1200} height={600} className="w-full object-cover" unoptimized />
+                        <SafeImage src={visual.image} alt={copy(locale, "游戏界面参考", "Gameplay reference", "ゲーム画面参考")} width={1200} height={600} className="w-full object-cover" unoptimized />
                       </figure>
                       <BlockRender block={block} i={i} />
                     </div>
@@ -189,7 +189,7 @@ function BlockRender({ block, i }: { block: MarkdownBlock; i: number }) {
   if (block.type === "h3") return <h3 key={i} className="pt-2 text-[17px] font-semibold leading-tight text-[#f1d39a] sm:text-[18px]"><Rich text={block.text} /></h3>;
   if (block.type === "ul") return <ul key={i} className="space-y-1.5">{block.items.map((item, j) => <li key={j} className="flex gap-2.5"><span className="mt-[0.55rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[#c87925]" /><span><Rich text={item} /></span></li>)}</ul>;
   if (block.type === "ol") return <ol key={i} className="space-y-1.5">{block.items.map((item, j) => <li key={j} className="flex gap-2"><span className="w-5 shrink-0 text-right text-sm font-semibold text-[#c87925]">{j + 1}.</span><span><Rich text={item} /></span></li>)}</ol>;
-  if (block.type === "img") return <figure key={i} className="my-6 overflow-hidden border border-[#2f2b22] bg-[#0a0a08]"><Image src={block.src.startsWith("http") ? "/game/screenshots/screenshot-1.jpg" : block.src} alt={block.alt} width={1200} height={600} className="w-full object-cover" unoptimized /></figure>;
+  if (block.type === "img") return <figure key={i} className="my-6 overflow-hidden border border-[#2f2b22] bg-[#0a0a08]"><SafeImage src={block.src.startsWith("http") ? "/game/screenshots/screenshot-1.jpg" : block.src} alt={block.alt} width={1200} height={600} className="w-full object-cover" unoptimized /></figure>;
   if (block.type === "code") return <pre key={i} className="overflow-x-auto rounded-sm border border-[#2c281f] bg-[#0d0c0a] px-4 py-3 text-[13px] leading-6 text-[#f1d39a]"><code>{block.text}</code></pre>;
   if (block.type === "table") return <div key={i} className="my-6 overflow-x-auto border border-[#2c281f]"><table className="w-full min-w-[480px] text-left text-[13px] sm:text-[14px]"><thead className="bg-[#11100d] text-[11px] uppercase tracking-[0.1em] text-[#8b8170]"><tr>{block.headers.map((h) => <th key={h} className="px-3 py-2.5">{h}</th>)}</tr></thead><tbody>{block.rows.filter((r) => !r.every((c) => /^-+$/.test(c))).map((r, ri) => <tr key={ri} className="border-t border-[#2c281f]">{r.map((c, ci) => <td key={ci} className="px-3 py-2.5 text-[#d8cab0]">{c}</td>)}</tr>)}</tbody></table></div>;
   return <p key={i}><Rich text={block.text} /></p>;
@@ -210,7 +210,7 @@ function Rich({ text }: { text: string }) {
           const [, label, href] = link;
           const external = href.startsWith("http");
           return (
-            <a key={i} href={href} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined} className="text-[#f0c040] underline decoration-[#6a4a1e] underline-offset-4 transition-colors hover:text-[#fff2c7]">
+            <a key={i} href={href} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined} className="text-accent-bright underline decoration-[#6a4a1e] underline-offset-4 transition-colors hover:text-[#fff2c7]">
               {label}
             </a>
           );
@@ -230,7 +230,7 @@ function SidebarRow({ label, value }: { label: string; value: string }) {
 }
 
 function SidebarLink({ href, icon, label }: { href: string; icon: React.ReactNode; label: string }) {
-  return <Link href={href} className="flex items-center justify-between gap-2 rounded-sm py-1.5 text-[#d8cab0] transition-colors hover:bg-[#11100d] hover:text-[#f0c040]"><span className="flex items-center gap-2 truncate">{icon}{label}</span><ArrowRight className="h-3 w-3 shrink-0" /></Link>;
+  return <Link href={href} className="flex items-center justify-between gap-2 rounded-sm py-1.5 text-[#d8cab0] transition-colors hover:bg-[#11100d] hover:text-accent-bright"><span className="flex items-center gap-2 truncate">{icon}{label}</span><ArrowRight className="h-3 w-3 shrink-0" /></Link>;
 }
 
 function RefItem({ item, locale, compact }: { item: RawItem; locale: Locale; compact?: boolean }) {
@@ -239,15 +239,15 @@ function RefItem({ item, locale, compact }: { item: RawItem; locale: Locale; com
   const name = itemName(item, locale);
   if (compact) {
     return (
-      <Link href={`/${locale}/items/${item.slug}`} className="flex items-center gap-2.5 rounded-sm py-1 text-[13px] transition-colors hover:text-[#f0c040]">
-        <span className="flex h-7 w-7 shrink-0 items-center justify-center border border-[#2c281f] bg-[#070706]">{icon ? <Image src={icon} alt={name} width={18} height={18} className="object-contain" data-pixel unoptimized /> : <CheckCircle2 className="h-3 w-3 text-[#8b8170]" />}</span>
+      <Link href={`/${locale}/items/${item.slug}`} className="flex items-center gap-2.5 rounded-sm py-1 text-[13px] transition-colors hover:text-accent-bright">
+        <span className="flex h-7 w-7 shrink-0 items-center justify-center border border-[#2c281f] bg-[#070706]">{icon ? <SafeImage src={icon} alt={name} width={18} height={18} className="object-contain" data-pixel unoptimized /> : <CheckCircle2 className="h-3 w-3 text-[#8b8170]" />}</span>
         <span className="min-w-0 truncate text-[#eadfca]">{name}</span>
       </Link>
     );
   }
   return (
     <Link href={`/${locale}/items/${item.slug}`} className="flex items-center gap-3 rounded-sm border border-[#2c281f] bg-[#0d0c0a] p-3 transition-colors hover:border-[#c87925]">
-      <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-[#2c281f] bg-[#070706]">{icon ? <Image src={icon} alt={name} width={28} height={28} className="object-contain" data-pixel unoptimized /> : <CheckCircle2 className="h-4 w-4 text-[#8b8170]" />}</span>
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-[#2c281f] bg-[#070706]">{icon ? <SafeImage src={icon} alt={name} width={28} height={28} className="object-contain" data-pixel unoptimized /> : <CheckCircle2 className="h-4 w-4 text-[#8b8170]" />}</span>
       <span className="min-w-0"><span className="block truncate text-[13px] font-medium text-[#eadfca]">{name}</span><span className="block text-[11px] text-[#8b8170]">{market?.lowest ? `$${market.lowest.toFixed(2)}` : item.type}</span></span>
     </Link>
   );

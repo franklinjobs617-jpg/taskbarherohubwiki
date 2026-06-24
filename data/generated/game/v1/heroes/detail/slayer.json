@@ -63,7 +63,7 @@
   "DeadIconPath": "UI/Icon/Hero/HeroDead_601",
   "PrefabPath": "Prefab/Hero/Hero_601",
   "AnimatorPath": "Animation/Hero/601/Hero_601",
-  "icon": "/game/heroes/portraits/Hero_601.png",
+  "icon": "/game/heroes/portraits/Hero_601_5773.png",
   "dead_icon": "/game/heroes/portraits/HeroDead_601.png",
   "animations_folder": "/game/heroes/Slayer",
   "skill_name_i18n": null,

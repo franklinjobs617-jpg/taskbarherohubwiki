@@ -25,7 +25,6 @@
     "AttributeKey": null,
     "SoundKey": 1100011,
     "levels": [],
-    "icon": null,
     "slug": "id-10001"
   },
   {
@@ -131,7 +130,6 @@
         "value": 4300
       }
     ],
-    "icon": "/game/skills/Skill_10101.png",
     "slug": "piercing-thrust"
   },
   {
@@ -237,7 +235,6 @@
         "value": 5700
       }
     ],
-    "icon": "/game/skills/Skill_10201.png",
     "slug": "shield-charge"
   },
   {
@@ -343,7 +340,6 @@
         "value": 3300
       }
     ],
-    "icon": "/game/skills/Skill_10301.png",
     "slug": "retribution-strike"
   },
   {
@@ -449,7 +445,6 @@
         "value": 1850
       }
     ],
-    "icon": "/game/skills/Skill_10401.png",
     "slug": "aegis-field"
   },
   {
@@ -555,7 +550,6 @@
         "value": 200
       }
     ],
-    "icon": "/game/skills/Skill_10501.png",
     "slug": "sacred-blade"
   },
   {
@@ -661,7 +655,6 @@
         "value": 1200
       }
     ],
-    "icon": "/game/skills/Skill_10601.png",
     "slug": "unyielding-will"
   },
   {
@@ -690,7 +683,6 @@
     "AttributeKey": null,
     "SoundKey": 1200011,
     "levels": [],
-    "icon": null,
     "slug": "id-20001"
   },
   {
@@ -796,7 +788,6 @@
         "value": 2400
       }
     ],
-    "icon": "/game/skills/Skill_20101.png",
     "slug": "rapid-fire"
   },
   {
@@ -902,7 +893,6 @@
         "value": 3060
       }
     ],
-    "icon": "/game/skills/Skill_20201.png",
     "slug": "scatter-shot"
   },
   {
@@ -1008,7 +998,6 @@
         "value": 4490
       }
     ],
-    "icon": "/game/skills/Skill_20301.png",
     "slug": "arrow-rain"
   },
   {
@@ -1114,7 +1103,6 @@
         "value": 1400
       }
     ],
-    "icon": "/game/skills/Skill_20401.png",
     "slug": "swift-surge"
   },
   {
@@ -1220,7 +1208,6 @@
         "value": 3880
       }
     ],
-    "icon": "/game/skills/Skill_20501.png",
     "slug": "piercing-arrow"
   },
   {
@@ -1326,7 +1313,6 @@
         "value": 3700
       }
     ],
-    "icon": "/game/skills/Skill_20601.png",
     "slug": "skewer-shot"
   },
   {
@@ -1355,7 +1341,6 @@
     "AttributeKey": null,
     "SoundKey": 1300011,
     "levels": [],
-    "icon": null,
     "slug": "id-30001"
   },
   {
@@ -1461,7 +1446,6 @@
         "value": 4950
       }
     ],
-    "icon": "/game/skills/Skill_30101.png",
     "slug": "fireball"
   },
   {
@@ -1567,7 +1551,6 @@
         "value": 2580
       }
     ],
-    "icon": "/game/skills/Skill_30201.png",
     "slug": "ice-orb"
   },
   {
@@ -1673,7 +1656,6 @@
         "value": 4980
       }
     ],
-    "icon": "/game/skills/Skill_30301.png",
     "slug": "lightning"
   },
   {
@@ -1779,7 +1761,6 @@
         "value": 3650
       }
     ],
-    "icon": "/game/skills/Skill_30401.png",
     "slug": "flame-hydra"
   },
   {
@@ -1885,7 +1866,6 @@
         "value": 1940
       }
     ],
-    "icon": "/game/skills/Skill_30501.png",
     "slug": "snowstorm"
   },
   {
@@ -1991,7 +1971,6 @@
         "value": 9550
       }
     ],
-    "icon": "/game/skills/Skill_30601.png",
     "slug": "meteor-strike"
   },
   {
@@ -2020,7 +1999,6 @@
     "AttributeKey": null,
     "SoundKey": 1400011,
     "levels": [],
-    "icon": null,
     "slug": "id-40001"
   },
   {
@@ -2126,7 +2104,6 @@
         "value": 280
       }
     ],
-    "icon": "/game/skills/Skill_40101.png",
     "slug": "heal"
   },
   {
@@ -2232,7 +2209,6 @@
         "value": 1400
       }
     ],
-    "icon": "/game/skills/Skill_40201.png",
     "slug": "blessing-of-might"
   },
   {
@@ -2338,7 +2314,6 @@
         "value": 7900
       }
     ],
-    "icon": "/game/skills/Skill_40301.png",
     "slug": "wrath-of-heaven"
   },
   {
@@ -2444,7 +2419,6 @@
         "value": 1920
       }
     ],
-    "icon": "/game/skills/Skill_40401.png",
     "slug": "sanctuary"
   },
   {
@@ -2550,7 +2524,6 @@
         "value": 55
       }
     ],
-    "icon": "/game/skills/Skill_40501.png",
     "slug": "blessing-of-warding"
   },
   {
@@ -2656,7 +2629,6 @@
         "value": 750
       }
     ],
-    "icon": "/game/skills/Skill_40601.png",
     "slug": "resurrection"
   },
   {
@@ -2685,7 +2657,6 @@
     "AttributeKey": null,
     "SoundKey": 1500011,
     "levels": [],
-    "icon": null,
     "slug": "id-50001"
   },
   {
@@ -2791,7 +2762,6 @@
         "value": 9430
       }
     ],
-    "icon": "/game/skills/Skill_50101.png",
     "slug": "explosive-bolt"
   },
   {
@@ -2897,7 +2867,6 @@
         "value": 3450
       }
     ],
-    "icon": "/game/skills/Skill_50201.png",
     "slug": "frost-bolt"
   },
   {
@@ -3003,7 +2972,6 @@
         "value": 12
       }
     ],
-    "icon": "/game/skills/Skill_50301.png",
     "slug": "quick-loader"
   },
   {
@@ -3109,7 +3077,6 @@
         "value": 5500
       }
     ],
-    "icon": "/game/skills/Skill_50401.png",
     "slug": "charge-trap"
   },
   {
@@ -3215,7 +3182,6 @@
         "value": 3190
       }
     ],
-    "icon": "/game/skills/Skill_50501.png",
     "slug": "crossbow-turret"
   },
   {
@@ -3321,7 +3287,6 @@
         "value": 4500
       }
     ],
-    "icon": "/game/skills/Skill_50601.png",
     "slug": "shock-bolt"
   },
   {
@@ -3350,7 +3315,6 @@
     "AttributeKey": null,
     "SoundKey": 1600011,
     "levels": [],
-    "icon": null,
     "slug": "id-60001"
   },
   {
@@ -3456,7 +3420,6 @@
         "value": 5350
       }
     ],
-    "icon": "/game/skills/Skill_60101.png",
     "slug": "slam-jump"
   },
   {
@@ -3562,7 +3525,6 @@
         "value": 9800
       }
     ],
-    "icon": "/game/skills/Skill_60201.png",
     "slug": "crushing-blow"
   },
   {
@@ -3668,7 +3630,6 @@
         "value": 950
       }
     ],
-    "icon": "/game/skills/Skill_60301.png",
     "slug": "commander-s-cry"
   },
   {
@@ -3774,7 +3735,6 @@
         "value": 5950
       }
     ],
-    "icon": "/game/skills/Skill_60401.png",
     "slug": "ground-slam"
   },
   {
@@ -3880,7 +3840,6 @@
         "value": 1720
       }
     ],
-    "icon": "/game/skills/Skill_60501.png",
     "slug": "axe-spin"
   },
   {
@@ -3986,7 +3945,6 @@
         "value": 6700
       }
     ],
-    "icon": "/game/skills/Skill_60601.png",
     "slug": "bloodlust"
   },
   {
@@ -4015,7 +3973,6 @@
     "AttributeKey": null,
     "SoundKey": 11001111,
     "levels": [],
-    "icon": null,
     "slug": "id-100111"
   },
   {
@@ -4044,7 +4001,6 @@
     "AttributeKey": null,
     "SoundKey": 11002111,
     "levels": [],
-    "icon": null,
     "slug": "id-100211"
   },
   {
@@ -4073,7 +4029,6 @@
     "AttributeKey": null,
     "SoundKey": 11002211,
     "levels": [],
-    "icon": null,
     "slug": "id-100221"
   },
   {
@@ -4102,7 +4057,6 @@
     "AttributeKey": null,
     "SoundKey": 11002311,
     "levels": [],
-    "icon": null,
     "slug": "id-100231"
   },
   {
@@ -4131,7 +4085,6 @@
     "AttributeKey": null,
     "SoundKey": 11003111,
     "levels": [],
-    "icon": null,
     "slug": "id-100311"
   },
   {
@@ -4160,7 +4113,6 @@
     "AttributeKey": null,
     "SoundKey": 11004111,
     "levels": [],
-    "icon": null,
     "slug": "id-100411"
   },
   {
@@ -4189,7 +4141,6 @@
     "AttributeKey": null,
     "SoundKey": 11004211,
     "levels": [],
-    "icon": null,
     "slug": "id-100421"
   },
   {
@@ -4218,7 +4169,6 @@
     "AttributeKey": null,
     "SoundKey": 11004311,
     "levels": [],
-    "icon": null,
     "slug": "id-100431"
   },
   {
@@ -4247,7 +4197,6 @@
     "AttributeKey": null,
     "SoundKey": 11005111,
     "levels": [],
-    "icon": null,
     "slug": "id-100511"
   },
   {
@@ -4276,7 +4225,6 @@
     "AttributeKey": null,
     "SoundKey": 11005211,
     "levels": [],
-    "icon": null,
     "slug": "id-100521"
   },
   {
@@ -4305,7 +4253,6 @@
     "AttributeKey": null,
     "SoundKey": 11005311,
     "levels": [],
-    "icon": null,
     "slug": "id-100531"
   },
   {
@@ -4334,7 +4281,6 @@
     "AttributeKey": null,
     "SoundKey": 11090111,
     "levels": [],
-    "icon": null,
     "slug": "id-109011"
   },
   {
@@ -4363,7 +4309,6 @@
     "AttributeKey": null,
     "SoundKey": 11090211,
     "levels": [],
-    "icon": null,
     "slug": "id-109021"
   },
   {
@@ -4392,7 +4337,6 @@
     "AttributeKey": null,
     "SoundKey": 11090311,
     "levels": [],
-    "icon": null,
     "slug": "id-109031"
   },
   {
@@ -4421,7 +4365,6 @@
     "AttributeKey": null,
     "SoundKey": 11090411,
     "levels": [],
-    "icon": null,
     "slug": "id-109041"
   },
   {
@@ -4450,7 +4393,6 @@
     "AttributeKey": null,
     "SoundKey": 11090511,
     "levels": [],
-    "icon": null,
     "slug": "id-109051"
   },
   {
@@ -4479,7 +4421,6 @@
     "AttributeKey": null,
     "SoundKey": 12090111,
     "levels": [],
-    "icon": null,
     "slug": "id-209011"
   },
   {
@@ -4508,7 +4449,6 @@
     "AttributeKey": null,
     "SoundKey": 12090211,
     "levels": [],
-    "icon": null,
     "slug": "id-209021"
   },
   {
@@ -4537,7 +4477,6 @@
     "AttributeKey": null,
     "SoundKey": 12090311,
     "levels": [],
-    "icon": null,
     "slug": "id-209031"
   },
   {
@@ -4566,7 +4505,6 @@
     "AttributeKey": null,
     "SoundKey": 12090411,
     "levels": [],
-    "icon": null,
     "slug": "id-209041"
   },
   {
@@ -4595,7 +4533,6 @@
     "AttributeKey": null,
     "SoundKey": 12090511,
     "levels": [],
-    "icon": null,
     "slug": "id-209051"
   },
   {
@@ -4624,7 +4561,6 @@
     "AttributeKey": null,
     "SoundKey": 13090111,
     "levels": [],
-    "icon": null,
     "slug": "id-309011"
   },
   {
@@ -4653,7 +4589,6 @@
     "AttributeKey": null,
     "SoundKey": 13090211,
     "levels": [],
-    "icon": null,
     "slug": "id-309021"
   },
   {
@@ -4682,7 +4617,6 @@
     "AttributeKey": null,
     "SoundKey": 13090311,
     "levels": [],
-    "icon": null,
     "slug": "id-309031"
   },
   {
@@ -4711,7 +4645,6 @@
     "AttributeKey": null,
     "SoundKey": 13090411,
     "levels": [],
-    "icon": null,
     "slug": "id-309041"
   },
   {
@@ -4740,7 +4673,6 @@
     "AttributeKey": null,
     "SoundKey": 13090511,
     "levels": [],
-    "icon": null,
     "slug": "id-309051"
   },
   {
@@ -4769,8 +4701,7 @@
     "AttributeKey": null,
     "SoundKey": 12001111,
     "levels": [],
-    "icon": null,
-    "slug": "id-200111 "
+    "slug": "id-200111"
   },
   {
     "SkillKey": "200211 ",
@@ -4798,8 +4729,7 @@
     "AttributeKey": null,
     "SoundKey": 12002111,
     "levels": [],
-    "icon": null,
-    "slug": "id-200211 "
+    "slug": "id-200211"
   },
   {
     "SkillKey": "200221 ",
@@ -4827,8 +4757,7 @@
     "AttributeKey": null,
     "SoundKey": 12002211,
     "levels": [],
-    "icon": null,
-    "slug": "id-200221 "
+    "slug": "id-200221"
   },
   {
     "SkillKey": "200231 ",
@@ -4856,8 +4785,7 @@
     "AttributeKey": null,
     "SoundKey": 12002311,
     "levels": [],
-    "icon": null,
-    "slug": "id-200231 "
+    "slug": "id-200231"
   },
   {
     "SkillKey": "200241 ",
@@ -4885,8 +4813,7 @@
     "AttributeKey": null,
     "SoundKey": 12002411,
     "levels": [],
-    "icon": null,
-    "slug": "id-200241 "
+    "slug": "id-200241"
   },
   {
     "SkillKey": "200311 ",
@@ -4914,8 +4841,7 @@
     "AttributeKey": null,
     "SoundKey": 12003111,
     "levels": [],
-    "icon": null,
-    "slug": "id-200311 "
+    "slug": "id-200311"
   },
   {
     "SkillKey": "200411 ",
@@ -4943,8 +4869,7 @@
     "AttributeKey": null,
     "SoundKey": 12004111,
     "levels": [],
-    "icon": null,
-    "slug": "id-200411 "
+    "slug": "id-200411"
   },
   {
     "SkillKey": "200421 ",
@@ -4972,8 +4897,7 @@
     "AttributeKey": null,
     "SoundKey": 12004211,
     "levels": [],
-    "icon": null,
-    "slug": "id-200421 "
+    "slug": "id-200421"
   },
   {
     "SkillKey": "200511 ",
@@ -5001,8 +4925,7 @@
     "AttributeKey": null,
     "SoundKey": 12005111,
     "levels": [],
-    "icon": null,
-    "slug": "id-200511 "
+    "slug": "id-200511"
   },
   {
     "SkillKey": "200611 ",
@@ -5030,8 +4953,7 @@
     "AttributeKey": null,
     "SoundKey": 12006111,
     "levels": [],
-    "icon": null,
-    "slug": "id-200611 "
+    "slug": "id-200611"
   },
   {
     "SkillKey": "200621 ",
@@ -5059,8 +4981,7 @@
     "AttributeKey": null,
     "SoundKey": 12006211,
     "levels": [],
-    "icon": null,
-    "slug": "id-200621 "
+    "slug": "id-200621"
   },
   {
     "SkillKey": "200711 ",
@@ -5088,8 +5009,7 @@
     "AttributeKey": null,
     "SoundKey": 12007111,
     "levels": [],
-    "icon": null,
-    "slug": "id-200711 "
+    "slug": "id-200711"
   },
   {
     "SkillKey": "200811 ",
@@ -5117,8 +5037,7 @@
     "AttributeKey": null,
     "SoundKey": 12008111,
     "levels": [],
-    "icon": null,
-    "slug": "id-200811 "
+    "slug": "id-200811"
   },
   {
     "SkillKey": "200911 ",
@@ -5146,8 +5065,7 @@
     "AttributeKey": null,
     "SoundKey": 12009111,
     "levels": [],
-    "icon": null,
-    "slug": "id-200911 "
+    "slug": "id-200911"
   },
   {
     "SkillKey": "201111 ",
@@ -5175,8 +5093,7 @@
     "AttributeKey": null,
     "SoundKey": 12011111,
     "levels": [],
-    "icon": null,
-    "slug": "id-201111 "
+    "slug": "id-201111"
   },
   {
     "SkillKey": 201211,
@@ -5204,7 +5121,6 @@
     "AttributeKey": null,
     "SoundKey": 12010111,
     "levels": [],
-    "icon": null,
     "slug": "id-201211"
   },
   {
@@ -5233,8 +5149,7 @@
     "AttributeKey": null,
     "SoundKey": 13001111,
     "levels": [],
-    "icon": null,
-    "slug": "id-300111 "
+    "slug": "id-300111"
   },
   {
     "SkillKey": "300121 ",
@@ -5262,8 +5177,7 @@
     "AttributeKey": null,
     "SoundKey": 13001211,
     "levels": [],
-    "icon": null,
-    "slug": "id-300121 "
+    "slug": "id-300121"
   },
   {
     "SkillKey": "300131 ",
@@ -5291,8 +5205,7 @@
     "AttributeKey": null,
     "SoundKey": 13001311,
     "levels": [],
-    "icon": null,
-    "slug": "id-300131 "
+    "slug": "id-300131"
   },
   {
     "SkillKey": "300211 ",
@@ -5320,8 +5233,7 @@
     "AttributeKey": null,
     "SoundKey": 13002111,
     "levels": [],
-    "icon": null,
-    "slug": "id-300211 "
+    "slug": "id-300211"
   },
   {
     "SkillKey": "300311 ",
@@ -5349,8 +5261,7 @@
     "AttributeKey": null,
     "SoundKey": 13003111,
     "levels": [],
-    "icon": null,
-    "slug": "id-300311 "
+    "slug": "id-300311"
   },
   {
     "SkillKey": "300411 ",
@@ -5378,8 +5289,7 @@
     "AttributeKey": null,
     "SoundKey": 13004111,
     "levels": [],
-    "icon": null,
-    "slug": "id-300411 "
+    "slug": "id-300411"
   },
   {
     "SkillKey": "300421 ",
@@ -5407,8 +5317,7 @@
     "AttributeKey": null,
     "SoundKey": 13004211,
     "levels": [],
-    "icon": null,
-    "slug": "id-300421 "
+    "slug": "id-300421"
   },
   {
     "SkillKey": "300431 ",
@@ -5436,8 +5345,7 @@
     "AttributeKey": null,
     "SoundKey": 13004311,
     "levels": [],
-    "icon": null,
-    "slug": "id-300431 "
+    "slug": "id-300431"
   },
   {
     "SkillKey": "300441 ",
@@ -5465,8 +5373,7 @@
     "AttributeKey": null,
     "SoundKey": 13004411,
     "levels": [],
-    "icon": null,
-    "slug": "id-300441 "
+    "slug": "id-300441"
   },
   {
     "SkillKey": "300511 ",
@@ -5494,8 +5401,7 @@
     "AttributeKey": null,
     "SoundKey": 13005111,
     "levels": [],
-    "icon": null,
-    "slug": "id-300511 "
+    "slug": "id-300511"
   },
   {
     "SkillKey": "300611 ",
@@ -5523,8 +5429,7 @@
     "AttributeKey": null,
     "SoundKey": 13006111,
     "levels": [],
-    "icon": null,
-    "slug": "id-300611 "
+    "slug": "id-300611"
   },
   {
     "SkillKey": "300711 ",
@@ -5552,8 +5457,7 @@
     "AttributeKey": null,
     "SoundKey": 13007111,
     "levels": [],
-    "icon": null,
-    "slug": "id-300711 "
+    "slug": "id-300711"
   },
   {
     "SkillKey": "300811 ",
@@ -5581,8 +5485,7 @@
     "AttributeKey": null,
     "SoundKey": 13008111,
     "levels": [],
-    "icon": null,
-    "slug": "id-300811 "
+    "slug": "id-300811"
   },
   {
     "SkillKey": "300821 ",
@@ -5610,8 +5513,7 @@
     "AttributeKey": null,
     "SoundKey": 13008211,
     "levels": [],
-    "icon": null,
-    "slug": "id-300821 "
+    "slug": "id-300821"
   },
   {
     "SkillKey": "300831 ",
@@ -5639,8 +5541,7 @@
     "AttributeKey": null,
     "SoundKey": 13008311,
     "levels": [],
-    "icon": null,
-    "slug": "id-300831 "
+    "slug": "id-300831"
   },
   {
     "SkillKey": "300841 ",
@@ -5668,8 +5569,7 @@
     "AttributeKey": null,
     "SoundKey": 13008411,
     "levels": [],
-    "icon": null,
-    "slug": "id-300841 "
+    "slug": "id-300841"
   },
   {
     "SkillKey": "300911 ",
@@ -5697,8 +5597,7 @@
     "AttributeKey": null,
     "SoundKey": 13009111,
     "levels": [],
-    "icon": null,
-    "slug": "id-300911 "
+    "slug": "id-300911"
   },
   {
     "SkillKey": 301015,
@@ -5726,7 +5625,6 @@
     "AttributeKey": null,
     "SoundKey": 13010111,
     "levels": [],
-    "icon": null,
     "slug": "id-301015"
   },
   {
@@ -5755,7 +5653,6 @@
     "AttributeKey": null,
     "SoundKey": 13010211,
     "levels": [],
-    "icon": null,
     "slug": "id-301025"
   },
   {
@@ -5784,7 +5681,6 @@
     "AttributeKey": null,
     "SoundKey": 13010311,
     "levels": [],
-    "icon": null,
     "slug": "id-301035"
   },
   {
@@ -5813,7 +5709,6 @@
     "AttributeKey": null,
     "SoundKey": 13010411,
     "levels": [],
-    "icon": null,
     "slug": "id-301045"
   },
   {
@@ -5842,7 +5737,6 @@
     "AttributeKey": null,
     "SoundKey": 13011111,
     "levels": [],
-    "icon": null,
-    "slug": "id-301111 "
+    "slug": "id-301111"
   }
 ]

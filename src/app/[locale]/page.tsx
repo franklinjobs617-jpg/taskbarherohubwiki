@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { SafeImage } from "@/components/ui/safe-image";
 import Link from "next/link";
 import { Boxes, Map, PawPrint, Search, ShieldAlert, Sparkles, Target } from "lucide-react";
 import { HeroCard } from "@/components/tbh/cards";
@@ -55,8 +55,6 @@ export default async function HomePage({ params }: Props) {
     { href: "/pets", icon: PawPrint, label: "Pet Unlock Route", desc: copy(locale, { zh: "目标、击杀数、最佳关卡", en: "Target, kills, best stage", ja: "対象、討伐数、最適場所", ko: "대상, 처치 수, 추천 장소" }) },
     { href: "/runes", icon: Sparkles, label: "Rune Priority", desc: copy(locale, { zh: "规划符文优先级", en: "Plan rune priorities", ja: "ルーン優先度", ko: "룬 우선순위" }) },
     { href: "/market", icon: ShieldAlert, label: "Market Risk", desc: copy(locale, { zh: "价格、挂单和风险标签", en: "Price, listings, risk labels", ja: "価格、出品数、リスク", ko: "가격, 매물, 위험 라벨" }) },
-    { href: "/server-status", icon: ShieldAlert, label: "Server Status", desc: copy(locale, { zh: "Maintenance, error 500, error 401", en: "Maintenance, error 500, error 401", ja: "Maintenance, error 500, error 401", ko: "Maintenance, error 500, error 401" }) },
-    { href: "/updates", icon: Sparkles, label: "Updates", desc: copy(locale, { zh: "Official news, data, market status", en: "Official news, data, market status", ja: "Official news, data, market status", ko: "Official news, data, market status" }) },
   ];
   const targets = [
     { label: "Soulstone", href: "/tools/drop-finder?q=Soulstone" },
@@ -85,15 +83,16 @@ export default async function HomePage({ params }: Props) {
         },
       }} />
 
-      <section className="grid gap-6 border-b border-[#27272a] pb-8 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-center">
-        <div>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#d4a017]">
+      {/* Hero Section */}
+      <section className="grid gap-6 border-b-2 border-border-default pb-8 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-center">
+        <div className="animate-fade-in-up">
+          <p className="section-eyebrow">
             {copy(locale, { zh: "玩家操作台", en: "Player action hub", ja: "プレイヤーハブ", ko: "플레이어 허브" })}
           </p>
-          <h1 className="mt-3 max-w-3xl text-[28px] font-semibold leading-tight text-white sm:text-[38px]">
+          <h1 className="mt-3 max-w-3xl font-pixel text-heading-xl font-bold leading-tight text-text-primary sm:text-[42px]">
             TBH: Task Bar Hero Wiki
           </h1>
-          <p className="mt-3 max-w-2xl text-[14px] leading-6 text-[#9d9d9d] sm:text-[15px]">
+          <p className="mt-3 max-w-2xl text-body-lg leading-relaxed text-text-secondary">
             {copy(locale, {
               zh: "5,944 装备与材料、6 职业、197 符文、120 关卡、61 怪物，4 语种。全部数据直接来自游戏文件挖掘，可查可验证。",
               en: "5,944 items, 6 classes, 197 runes, 120 stages, 61 monsters in 4 languages. Every number is datamined and verifiable.",
@@ -102,98 +101,109 @@ export default async function HomePage({ params }: Props) {
             })}
           </p>
 
-          <div className="mt-4 grid max-w-2xl grid-cols-2 gap-2 border border-[#27272a] bg-[#0d0d0d] sm:grid-cols-4">
+          {/* Quick Stats */}
+          <div className="mt-5 grid max-w-2xl grid-cols-2 gap-0 border-2 border-border-default bg-bg-panel sm:grid-cols-4">
             {[
               { v: "5,944", l: copy(locale, { zh: "装备/材料/宝箱", en: "items", ja: "アイテム", ko: "아이템" }), href: "/items" },
               { v: "6", l: copy(locale, { zh: "可玩职业", en: "hero classes", ja: "ヒーロー", ko: "직업" }), href: "/heroes" },
               { v: "120", l: copy(locale, { zh: "关卡", en: "stages", ja: "ステージ", ko: "스테이지" }), href: "/map" },
               { v: "197", l: copy(locale, { zh: "符文节点", en: "runes", ja: "ルーン", ko: "룬" }), href: "/runes" },
             ].map((s) => (
-              <Link key={s.l} href={localizedPath(locale, s.href)} className="px-3 py-3 text-center hover:bg-[#18181b]">
-                <p className="font-mono text-2xl font-semibold text-[#f0c040]">{s.v}</p>
-                <p className="mt-1 text-[10px] uppercase tracking-[0.12em] text-[#9d9d9d]">{s.l}</p>
+              <Link key={s.l} href={localizedPath(locale, s.href)} className="px-3 py-4 text-center hover:bg-bg-surface transition-colors border-r-2 border-border-default last:border-r-0">
+                <p className="font-pixel text-heading font-semibold text-accent">{s.v}</p>
+                <p className="mt-1 text-caption font-mono uppercase tracking-[0.1em] text-text-muted">{s.l}</p>
               </Link>
             ))}
           </div>
 
-          <div className="mt-4 flex flex-wrap gap-2">
-            <Link href={localizedPath(locale, "/items")} className="inline-flex items-center gap-2 bg-[#d4a017] px-4 py-2 text-sm font-semibold text-black hover:bg-[#f0c040]">
+          {/* CTA Buttons */}
+          <div className="mt-5 flex flex-wrap gap-3">
+            <Link href={localizedPath(locale, "/items")} className="btn btn-primary">
               <Boxes className="h-4 w-4" />
-              {copy(locale, { zh: "Browse gear", en: "Browse gear", ja: "装備を見る", ko: "장비 보기" })}
+              {copy(locale, { zh: "浏览装备", en: "Browse gear", ja: "装備を見る", ko: "장비 보기" })}
             </Link>
-            <Link href={localizedPath(locale, "/map")} className="inline-flex items-center gap-2 border border-[#d4a017] bg-transparent px-4 py-2 text-sm font-semibold text-[#d4a017] hover:bg-[#18181b]">
+            <Link href={localizedPath(locale, "/map")} className="btn">
               <Map className="h-4 w-4" />
-              {copy(locale, { zh: "Open portal", en: "Open portal", ja: "ポータルを開く", ko: "포털 열기" })}
+              {copy(locale, { zh: "关卡地图", en: "Stage Map", ja: "ポータル", ko: "포털" })}
             </Link>
           </div>
-          <form action={localizedPath(locale, "/tools/drop-finder")} className="mt-5 flex max-w-2xl border border-[#3f2f10] bg-[#0d0d0d]">
-            <Search className="ml-3 h-4 w-4 shrink-0 self-center text-[#d4a017]" />
+
+          {/* Search Bar */}
+          <form action={localizedPath(locale, "/tools/drop-finder")} className="search-glass mt-5 flex max-w-2xl">
+            <Search className="ml-4 h-4 w-4 shrink-0 self-center text-accent" />
             <input
               name="q"
-              className="min-w-0 flex-1 bg-transparent px-3 py-3 text-[14px] text-white outline-none placeholder:text-[#6c6c6c]"
+              className="search-glass-input"
               placeholder={copy(locale, { zh: "搜索 item、material、chest、monster、stage、pet", en: "Search item, material, chest, monster, stage, pet", ja: "item / material / chest / monster / stage / pet", ko: "item / material / chest / monster / stage / pet" })}
             />
-            <button className="shrink-0 bg-[#d4a017] px-4 py-3 text-sm font-semibold text-black hover:bg-[#f0c040]">
+            <button className="btn-primary shrink-0 m-1.5">
               {copy(locale, { zh: "搜索", en: "Search", ja: "検索", ko: "검색" })}
             </button>
           </form>
+
+          {/* Quick Links */}
           <div className="mt-4 flex flex-wrap gap-2">
             {targets.map((target) => (
-              <Link key={target.label} href={localizedPath(locale, target.href)} className="border border-[#27272a] bg-[#0d0d0d] px-3 py-1.5 text-xs text-[#d8d1c2] hover:border-[#d4a017]">
+              <Link key={target.label} href={localizedPath(locale, target.href)} className="chip hover:border-accent-dim hover:text-text-primary transition-colors">
                 {target.label}
               </Link>
             ))}
           </div>
         </div>
-        <div className="overflow-hidden border border-[#4d281e] bg-[#101010]">
-          <Image src="/game/home-hero-overview.png" alt="TaskBar Hero overview" width={786} height={186} priority unoptimized className="h-auto w-full object-cover" data-pixel />
+
+        {/* Hero Image */}
+        <div className="panel-gold overflow-hidden">
+          <SafeImage src="/game/home-hero-overview.png" alt="TaskBar Hero overview" width={786} height={186} priority unoptimized className="h-auto w-full object-cover" data-pixel />
         </div>
       </section>
 
-      <section className="border-b border-[#27272a] py-6">
-        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+      {/* Task Cards */}
+      <section className="border-b-2 border-border-default py-8">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 stagger-children">
           {tasks.map((task) => {
             const Icon = task.icon;
             return (
-              <Link key={task.href} href={localizedPath(locale, task.href)} className="group border border-[#27272a] bg-[#0d0d0d] p-4 transition hover:border-[#d4a017]/70 hover:bg-[#111]">
-                <Icon className="h-5 w-5 text-[#d4a017]" />
-                <p className="mt-3 text-[15px] font-semibold text-white group-hover:text-[#f0c040]">{task.label}</p>
-                <p className="mt-1 text-[12px] leading-5 text-[#8c8577]">{task.desc}</p>
+              <Link key={task.href} href={localizedPath(locale, task.href)} className="card card-interactive p-5">
+                <Icon className="h-5 w-5 text-accent" />
+                <p className="mt-3 font-pixel text-ui-lg font-semibold text-text-primary group-hover:text-accent">{task.label}</p>
+                <p className="mt-1.5 text-body-sm leading-5 text-text-secondary">{task.desc}</p>
               </Link>
             );
           })}
         </div>
       </section>
 
-      <section className="border-b border-[#27272a] py-6">
-        <div className="mb-4 flex items-center justify-between gap-3">
+      {/* Hero Classes */}
+      <section className="border-b-2 border-border-default py-8">
+        <div className="mb-5 flex items-center justify-between gap-3">
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#6c6c6c]">Heroes</p>
-            <h2 className="mt-1 text-[22px] font-semibold text-white">
+            <p className="section-eyebrow">Heroes</p>
+            <h2 className="section-title mt-1">
               {copy(locale, { zh: "英雄职业", en: "Hero Classes", ja: "ヒーロークラス", ko: "영웅 클래스" })}
             </h2>
           </div>
-          <Link href={localizedPath(locale, "/heroes")} className="text-sm text-[#f0c040] hover:underline">
-            {copy(locale, { zh: "全部英雄", en: "All heroes", ja: "全ヒーロー", ko: "전체 영웅" })}
+          <Link href={localizedPath(locale, "/heroes")} className="text-body text-accent hover:text-accent-bright font-pixel transition-colors">
+            {copy(locale, { zh: "全部英雄 →", en: "All heroes →", ja: "全ヒーロー →", ko: "전체 영웅 →" })}
           </Link>
         </div>
-        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3 stagger-children">
           {heroes.map((hero) => (
             <HeroCard key={hero.HeroKey} hero={hero} locale={locale} />
           ))}
         </div>
       </section>
 
-      <section className="py-6">
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
+      {/* Stats Footer */}
+      <section className="py-8">
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6 stagger-children">
           {stats.map((stat) => (
-            <Link key={stat.href} href={localizedPath(locale, stat.href)} className="border border-[#27272a] bg-[#0d0d0d] p-4 text-center hover:border-[#d4a017]">
-              <p className="font-mono text-2xl font-semibold text-white">{stat.value.toLocaleString()}</p>
-              <p className="mt-1 text-[10px] uppercase tracking-[0.12em] text-[#6c6c6c]">{stat.label}</p>
+            <Link key={stat.href} href={localizedPath(locale, stat.href)} className="stat-tile text-center hover:border-accent-dim transition-colors">
+              <p className="stat-value">{stat.value.toLocaleString()}</p>
+              <p className="stat-label">{stat.label}</p>
             </Link>
           ))}
         </div>
-        <p className="mt-4 text-[11px] text-[#6c6c6c]">v1 / 2026-06-08</p>
+        <p className="mt-5 text-center text-caption font-mono text-text-muted">v1 / 2026-06-08 · Datamined daily · 4 languages</p>
       </section>
     </PageShell>
   );
