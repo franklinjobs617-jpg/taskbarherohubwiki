@@ -52,7 +52,7 @@ Its hero page is strong because it combines base attributes, active skills, pass
 - Hero detail pages rebuilt with class visual, weapon icons, base stat grid, active skill, passive nodes, stat priority, risks, related items, effects, guides, and builds.
 - Guide center rebuilt around user tasks rather than raw categories.
 - R2 upload script added: `npm run upload:r2`.
-- Market sync deploy script added: `npm run deploy:worker`.
+- Cloudflare deploy script added: `npm run deploy`.
 
 ## Next Content Blocks
 

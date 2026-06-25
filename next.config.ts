@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 
+import("@opennextjs/cloudflare").then((m) => m.initOpenNextCloudflareForDev());
+
 const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {

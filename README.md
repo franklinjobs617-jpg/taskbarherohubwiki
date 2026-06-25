@@ -1,8 +1,8 @@
 # TaskBar Hero Fan Site
 
-双语 TaskBar Hero 粉丝资料站。当前版本目标是中文优先、英文完整，并以保守数据策略上线：有真实数据才显示市场价格、掉率和收益；数据不足时只显示正式说明。
+TaskBar Hero fan site built with Next.js, Tailwind CSS, and `next-intl`.
 
-## 本地开发
+## Local Development
 
 ```bash
 npm install
@@ -10,168 +10,106 @@ npm run normalize
 npm run dev
 ```
 
-访问：
+Default local URLs:
 
 - `http://localhost:3000/zh`
 - `http://localhost:3000/en`
+- `http://localhost:3000/ja`
+- `http://localhost:3000/ko`
 
-## 数据目录
+## Data Layout
 
-原始数据：
+Source data:
 
-- `data/raw/*.json`
-- `data/raw/images/**`
+- `tbh_data/**`
+- `tbh_external/**`
 
-生成数据：
+Generated data:
 
 - `data/generated/**`
 
-攻略内容：
+Static media:
 
-- `content/guides/zh/**`
-- `content/guides/en/**`
+- `public/game/**`
 
-项目内置的页面读取规范化后的本地数据。上线后，R2 用于公开分发 JSON 和图片。
+## Cloudflare Workers Deployment
 
-## 内容规则
+This repository is configured for Next.js on Cloudflare Workers through `@opennextjs/cloudflare`.
 
-- 中文和英文页面必须等价完整。
-- 不生成假 Steam 价格。
-- 不生成假掉率。
-- 收益工具在缺少掉率、市场价或清图时间时不输出收益数字。
-- 攻略只写数据决策口径，不写保证收益、稳赚或最强结论。
+Key deployment files:
 
-## Vercel 部署
+- `wrangler.jsonc`
+- `open-next.config.ts`
+- `public/_headers`
 
-项目根目录：
+Required environment variables:
 
 ```text
-D:\Vir\tbh-fan-site
-```
-
-Build command：
-
-```bash
-npm run build
-```
-
-`package.json` 已固定：
-
-```bash
-next build --webpack
-```
-
-必填环境变量：
-
-```text
-NEXT_PUBLIC_SITE_URL=https://你的域名
-NEXT_PUBLIC_R2_DATA_URL=https://你的R2公开域名或自定义域名
-```
-
-可选环境变量：
-
-```text
+NEXT_PUBLIC_SITE_URL=https://taskbarherohub.wiki
+NEXT_PUBLIC_R2_DATA_URL=https://your-r2-public-domain
 NEXT_PUBLIC_GAME_VERSION=game-v1
+NEXT_PUBLIC_GA_ID=G-NCXRNDQ4Q0
 ```
 
-## Cloudflare R2
+Recommended deployment flow:
 
-Bucket：
+```bash
+npm run normalize
+npm run upload:r2
+npm run deploy
+```
+
+Local Cloudflare preview:
+
+```bash
+npm run preview
+```
+
+## R2 Upload
+
+Upload generated JSON and static game assets to R2:
+
+```bash
+npm run upload:r2
+```
+
+Default bucket:
 
 ```text
 taskbarhero
 ```
 
-上传路径：
-
-```text
-game/v1/**
-market/v1/**
-assets/game/**
-```
-
-本地生成：
+Override bucket name:
 
 ```bash
-npm run normalize
-```
-
-批量上传到 R2：
-
-```bash
+$env:R2_BUCKET="your-bucket-name"
 npm run upload:r2
 ```
 
-脚本会上传：
+The upload script maps:
 
 - `data/generated/game/**` -> `game/**`
 - `data/generated/market/**` -> `market/**`
 - `public/game/**` -> `assets/game/**`
 
-默认 bucket 是 `taskbarhero`。如果 bucket 名不同：
+## Verification
+
+Non-build checks:
 
 ```bash
-$env:R2_BUCKET="你的bucket名"
-npm run upload:r2
-```
-
-R2 必须开启公开访问或绑定自定义域名，否则前台无法读取 JSON 和图片。
-
-## 市场数据同步
-
-目录：
-
-```text
-workers/market-fetcher
-```
-
-配置：
-
-```text
-workers/market-fetcher/wrangler.toml
-```
-
-绑定：
-
-```text
-R2_BUCKET=taskbarhero
-```
-
-定时：
-
-```text
-*/15 * * * *
-```
-
-当前市场同步只写入缺失状态，不抓取也不伪造价格：
-
-- `market/v1/latest.json`
-
-只有真实抓到并匹配到 Steam 市场名称的数据，才能写入最低价、中位价、挂单数和趋势。
-
-部署市场同步：
-
-```bash
-npm run deploy:worker
-```
-
-## 验证命令
-
-```bash
-npm run normalize
+npm run check:mojibake
 npm run lint
-npm run build
+npm run cf-typegen
 ```
 
-上线后检查：
+Important production routes:
 
 - `/zh`
 - `/en`
+- `/ja`
+- `/ko`
 - `/zh/items`
-- `/en/items`
-- `/zh/guides`
-- `/en/guides`
+- `/zh/heroes`
 - `/zh/market`
-- `/en/market`
 - `/sitemap.xml`
 - `/robots.txt`
