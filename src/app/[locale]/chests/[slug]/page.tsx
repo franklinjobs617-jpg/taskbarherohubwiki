@@ -9,8 +9,8 @@ import { RarityBadge } from "@/components/tbh/badges";
 import { Section } from "@/components/tbh/cards";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { ItemIcon } from "@/components/ui/item-icon";
-import { assetPath, itemBySlug, itemName, type Locale } from "@/lib/game-data/data";
-import { extStages, formatDropRate } from "@/lib/game-data/external";
+import { assetPath, ensureGameData, itemBySlug, itemName, type Locale } from "@/lib/game-data/data";
+import { ensureExternalData, extStages, formatDropRate } from "@/lib/game-data/external";
 import { graphChestByKey, graphStageByKey } from "@/lib/game-data/graph";
 import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
@@ -19,6 +19,7 @@ type Props = { params: Promise<{ locale: Locale; slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
+  await Promise.all([ensureGameData(), ensureExternalData()]);
   const chest = itemBySlug(slug);
   const name = chest ? itemName(chest, locale) : "Chest";
   // Only index chests that appear in at least one stage's drop table

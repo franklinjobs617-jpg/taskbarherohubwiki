@@ -7,7 +7,7 @@ import { FaqBlock } from "@/components/tbh/faq-block";
 import { entityFaqs } from "@/lib/game-data/faqs";
 import { RarityBadge } from "@/components/tbh/badges";
 import { PageHeader, PageShell } from "@/components/tbh/page";
-import { allItems, stageBySlug, stageName, type Locale } from "@/lib/game-data/data";
+import { allItems, ensureGameData, stageBySlug, stageName, type Locale } from "@/lib/game-data/data";
 import { formatChance, getStageDecision } from "@/lib/game-data/decisions";
 import { graphChestByKey, graphStageByKey } from "@/lib/game-data/graph";
 import { localizedPath } from "@/lib/locale-path";
@@ -25,6 +25,7 @@ function localItemSlug(itemKey: number, fallback: string) {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
+  await ensureGameData();
   const localStage = stageBySlug(slug);
   const graphStage = localStage ? graphStageByKey(localStage.key) : graphStageByKey(Number(slug));
   const name = localStage ? stageName(localStage, locale) : graphStage?.name ?? "Stage";

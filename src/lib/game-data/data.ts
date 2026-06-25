@@ -1,12 +1,4 @@
-﻿import itemsJson from "@/../tbh_data/items.json";
-import itemDetailsJson from "@/../tbh_data/items_detail.json";
-import heroesJson from "@/../tbh_data/heroes.json";
-import stagesJson from "@/../tbh_data/stages.json";
-import runesJson from "@/../tbh_data/runes.json";
-import skillsJson from "@/../tbh_data/skills.json";
-import monstersJson from "@/../tbh_data/monsters.json";
-import marketLatestJson from "@/../data/generated/market/v1/latest.json";
-import dropsJson from "@/../data/generated/drops.json";
+﻿import { fetchR2Json } from "@/lib/r2-fetch";
 
 export type Locale = "zh" | "en" | "ja" | "ko";
 export type Localized = Record<string, string>;
@@ -179,28 +171,123 @@ export type Build = {
   updatedAt: string;
 };
 
-const items = itemsJson as RawItem[];
-const details = itemDetailsJson as Record<string, ItemDetail>;
-const heroes = heroesJson as Hero[];
-const stages = stagesJson as Stage[];
-const runes = runesJson as Rune[];
-const skills = skillsJson as Skill[];
-const monsters = monstersJson as Monster[];
-const marketLatest = marketLatestJson as { updatedAt?: string; items?: MarketRecord[] };
-const marketByItemSlug = new Map((marketLatest.items ?? []).map((row) => [row.slug, row]));
-const dropsRaw = dropsJson as Record<string, unknown>;
-const dropsByItemSlug: Record<string, DropSource[]> = {};
-// Filter out invalid entries
-for (const [slug, sources] of Object.entries(dropsRaw)) {
-  if (Array.isArray(sources) && sources.length > 0 && typeof sources[0] === "object" && sources[0] !== null) {
-    dropsByItemSlug[slug] = sources as DropSource[];
-  }
+// ── Runtime data loading (from R2 CDN in production) ──
+
+/** R2/CDN paths for game data files */
+const R2 = {
+  items: "game/v1/items/index.en.json",
+  itemsDetail: "game/v1/items_detail.json",
+  heroes: "game/v1/heroes/index.en.json",
+  stages: "game/v1/stages/index.en.json",
+  runes: "game/v1/runes/index.en.json",
+  skills: "game/v1/skills/index.en.json",
+  monsters: "game/v1/monsters/index.en.json",
+  drops: "game/v1/drops.json",
+  market: "market/v1/latest.json",
+};
+
+// Module-level cache — shared across requests within the same Worker instance
+let _items: RawItem[] | null = null;
+let _details: Record<string, ItemDetail> = {};
+let _heroes: Hero[] | null = null;
+let _stages: Stage[] | null = null;
+let _runes: Rune[] | null = null;
+let _skills: Skill[] | null = null;
+let _monsters: Monster[] | null = null;
+let _marketLatest: { updatedAt?: string; items?: MarketRecord[] } = {};
+const _marketByItemSlug = new Map<string, MarketRecord>();
+const _dropsByItemSlug: Record<string, DropSource[]> = {};
+
+// Deduplicate concurrent preloads
+let _preloadPromise: Promise<void> | null = null;
+
+/**
+ * Preload all game data from R2 CDN. Safe to call multiple times —
+ * subsequent calls return the cached promise. Must be called before
+ * any synchronous data accessor.
+ */
+export async function ensureGameData(): Promise<void> {
+  // Already fully loaded
+  if (_items) return;
+
+  // Another caller is already preloading — wait for it
+  if (_preloadPromise) return _preloadPromise;
+
+  _preloadPromise = (async () => {
+    try {
+      const [items, itemsDetail, heroes, stages, runes, skills, monsters, dropsRaw, marketLatestRaw] =
+        await Promise.all([
+          fetchR2Json<RawItem[]>(R2.items),
+          fetchR2Json<Record<string, ItemDetail>>(R2.itemsDetail).catch(() => ({})),
+          fetchR2Json<Hero[]>(R2.heroes),
+          fetchR2Json<Stage[]>(R2.stages),
+          fetchR2Json<Rune[]>(R2.runes),
+          fetchR2Json<Skill[]>(R2.skills),
+          fetchR2Json<Monster[]>(R2.monsters).catch(() => [] as Monster[]),
+          fetchR2Json<Record<string, unknown>>(R2.drops).catch(() => ({})),
+          fetchR2Json<MarketRecord[] | { updatedAt?: string; items?: MarketRecord[] }>(R2.market).catch(() => [] as MarketRecord[]),
+        ]);
+
+      _items = items;
+      _details = itemsDetail as Record<string, ItemDetail>;
+      _heroes = heroes;
+      _stages = stages;
+      _runes = runes;
+      _skills = skills;
+      _monsters = monsters;
+
+      // Index market data by item slug. Handles both formats:
+      // - Object: { updatedAt, items: [{slug, ...}, ...] }
+      // - Array:  [{slug, ...}, ...]
+      const marketLatest = marketLatestRaw as
+        | MarketRecord[]
+        | { updatedAt?: string; items?: MarketRecord[] };
+      if (Array.isArray(marketLatest)) {
+        _marketLatest = { items: marketLatest };
+        for (const row of marketLatest) {
+          _marketByItemSlug.set(row.slug, row);
+        }
+      } else {
+        _marketLatest = marketLatest;
+        if (marketLatest.items) {
+          for (const row of marketLatest.items) {
+            _marketByItemSlug.set(row.slug, row);
+          }
+        }
+      }
+
+      // Index drops data by item slug (filter invalid entries)
+      for (const [slug, sources] of Object.entries(dropsRaw)) {
+        if (
+          Array.isArray(sources) &&
+          sources.length > 0 &&
+          typeof sources[0] === "object" &&
+          sources[0] !== null
+        ) {
+          _dropsByItemSlug[slug] = sources as DropSource[];
+        }
+      }
+    } catch (error) {
+      console.error("Failed to preload game data from R2:", error);
+      // Initialize with empty defaults so the site still renders
+      _items = _items ?? [];
+      _heroes = _heroes ?? [];
+      _stages = _stages ?? [];
+      _runes = _runes ?? [];
+      _skills = _skills ?? [];
+      _monsters = _monsters ?? [];
+    }
+  })();
+
+  return _preloadPromise;
 }
 
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://taskbarherohub.wiki";
 export const DATA_VERSION = process.env.NEXT_PUBLIC_GAME_VERSION ?? "game-v1";
 export const UPDATED_AT = "2026-06-08";
-export const MARKET_UPDATED_AT = marketLatest.updatedAt ?? UPDATED_AT;
+export function MARKET_UPDATED_AT() {
+  return _marketLatest.updatedAt ?? UPDATED_AT;
+}
 
 export const gradeNames: Record<string, Partial<Record<Locale, string>>> = {
   COMMON: { zh: "普通", en: "Common", ja: "コモン" },
@@ -261,28 +348,30 @@ export function assetPath(path: string | null | undefined) {
 }
 
 export function allItems() {
-  return items;
+  return _items ?? [];
 }
 
 export function gearPreviewItem(gear: string | null | undefined) {
-  if (!gear) return null;
-  return items.find((item) => item.type === "GEAR" && item.gear === gear && item.icon) ?? null;
+  if (!gear || !_items) return null;
+  return _items.find((item) => item.type === "GEAR" && item.gear === gear && item.icon) ?? null;
 }
 
 export function itemBySlug(slug: string) {
-  return items.find((item) => item.slug === slug) ?? null;
+  if (!_items) return null;
+  return _items.find((item) => item.slug === slug) ?? null;
 }
 
 export function itemDetail(id: number) {
-  return details[String(id)] ?? null;
+  return _details[String(id)] ?? null;
 }
 
 export function allHeroes() {
-  return heroes;
+  return _heroes ?? [];
 }
 
 export function heroBySlug(slug: string) {
-  return heroes.find((hero) => (hero.slug ?? hero.ClassType?.toLowerCase()) === slug) ?? null;
+  if (!_heroes) return null;
+  return _heroes.find((hero) => (hero.slug ?? hero.ClassType?.toLowerCase()) === slug) ?? null;
 }
 
 export function heroName(hero: Hero, locale: Locale) {
@@ -294,7 +383,7 @@ export function heroSlug(hero: Hero) {
 }
 
 export function allStages() {
-  return stages;
+  return _stages ?? [];
 }
 
 export function stageSlug(stage: Stage) {
@@ -302,9 +391,10 @@ export function stageSlug(stage: Stage) {
 }
 
 export function stageBySlug(slug: string) {
+  if (!_stages) return null;
   const normalized = decodeURIComponent(slug).toLowerCase();
   const alias = parseStageAlias(normalized);
-  return stages.find((stage) => {
+  return _stages.find((stage) => {
     if (stageSlug(stage) === normalized || String(stage.key) === normalized) return true;
     return Boolean(
       alias &&
@@ -330,11 +420,11 @@ export function stageName(stage: Stage, locale: Locale) {
 }
 
 export function allRunes() {
-  return runes;
+  return _runes ?? [];
 }
 
 export function allSkills() {
-  return skills;
+  return _skills ?? [];
 }
 
 export function skillName(skill: Skill, locale: Locale) {
@@ -342,21 +432,24 @@ export function skillName(skill: Skill, locale: Locale) {
 }
 
 export function skillBySlug(slug: string) {
-  return skills.find((s) => s.slug === slug) ?? null;
+  if (!_skills) return null;
+  return _skills.find((s) => s.slug === slug) ?? null;
 }
 
 export function allMonsters() {
-  return monsters;
+  return _monsters ?? [];
 }
 
 export function chestItems() {
-  return items.filter((item) => item.type === "STAGEBOX");
+  if (!_items) return [];
+  return _items.filter((item) => item.type === "STAGEBOX");
 }
 
 export function effectRows(locale: Locale) {
-  return Object.entries(details).flatMap(([id, detail]) => {
+  if (!_items) return [];
+  return Object.entries(_details).flatMap(([id, detail]) => {
     if (!detail.matEffects?.groups) return [];
-    const item = items.find((entry) => String(entry.id) === id);
+    const item = _items!.find((entry) => String(entry.id) === id);
     if (!item) return [];
     return Object.entries(detail.matEffects.groups).flatMap(([part, rows]) =>
       rows.map((row, index) => ({
@@ -375,7 +468,7 @@ export function effectRows(locale: Locale) {
 
 export function marketForItem(item: RawItem): MarketRecord | null {
   if (!item.marketable) return null;
-  const realMarket = marketByItemSlug.get(item.slug);
+  const realMarket = _marketByItemSlug.get(item.slug);
   if (realMarket) return realMarket;
   return {
     slug: item.slug,
@@ -398,15 +491,17 @@ export function hasIndexableMarketData(market: MarketRecord | null | undefined):
 }
 
 export function marketRows() {
-  return items
+  if (!_items) return [];
+  return _items
     .map((item) => ({ item, market: marketForItem(item) }))
     .filter((row): row is { item: RawItem; market: MarketRecord } => Boolean(row.market))
     .sort((a, b) => itemName(a.item, "en").localeCompare(itemName(b.item, "en")));
 }
 
 export function marketBySlug(slug: string) {
+  if (!_items) return null;
   const decoded = decodeURIComponent(slug);
-  const item = items.find((entry) => entry.slug === decoded || itemName(entry, "en") === decoded) ?? null;
+  const item = _items.find((entry) => entry.slug === decoded || itemName(entry, "en") === decoded) ?? null;
   if (!item) return null;
   const market = marketForItem(item);
   if (!market) return null;
@@ -414,11 +509,11 @@ export function marketBySlug(slug: string) {
 }
 
 export function dropsForItem(slug: string): DropSource[] {
-  return dropsByItemSlug[slug] ?? [];
+  return _dropsByItemSlug[slug] ?? [];
 }
 
 export function hasDropData(slug: string): boolean {
-  const drops = dropsByItemSlug[slug];
+  const drops = _dropsByItemSlug[slug];
   return Array.isArray(drops) && drops.length > 0;
 }
 
@@ -510,7 +605,7 @@ export function bestStageForItem(slug: string): FarmingStage | null {
 }
 
 export function allItemsWithDrops(): Array<{ slug: string; sourceCount: number; stageCount: number }> {
-  return Object.entries(dropsByItemSlug)
+  return Object.entries(_dropsByItemSlug)
     .filter(([, sources]) => Array.isArray(sources) && sources.length > 0)
     .map(([slug, sources]) => ({
       slug,
@@ -829,21 +924,23 @@ export function buildsForHero(heroName: string): Build[] {
 
 /** Get heroes that can equip a given gear type slot */
 export function heroesForGearType(gearType: string | null | undefined): Hero[] {
-  if (!gearType) return [];
-  return heroes.filter((h) => h.MainWeaponGearType === gearType || h.SubWeaponGearType === gearType);
+  if (!gearType || !_heroes) return [];
+  return _heroes.filter((h) => h.MainWeaponGearType === gearType || h.SubWeaponGearType === gearType);
 }
 
 /** Get monsters that appear in a given stage */
 export function monstersForStage(stageKey: number): Monster[] {
-  return monsters.filter((m) => m.stages?.some((s) => s.key === stageKey));
+  if (!_monsters) return [];
+  return _monsters.filter((m) => m.stages?.some((s) => s.key === stageKey));
 }
 
 /** Get stages where a given monster appears */
 export function stagesForMonster(monsterKey: number): Stage[] {
-  const monster = monsters.find((m) => m.MonsterKey === monsterKey);
+  if (!_monsters || !_stages) return [];
+  const monster = _monsters.find((m) => m.MonsterKey === monsterKey);
   if (!monster?.stages) return [];
   return monster.stages
-    .map((s) => stages.find((st) => st.key === s.key))
+    .map((s) => _stages!.find((st) => st.key === s.key))
     .filter((s): s is Stage => s != null);
 }
 

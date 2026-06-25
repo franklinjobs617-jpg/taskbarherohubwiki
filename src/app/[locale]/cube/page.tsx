@@ -3,23 +3,10 @@ import { SafeImage } from "@/components/ui/safe-image";
 import Link from "next/link";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
-import { assetPath, type Locale } from "@/lib/game-data/data";
+import { allItems, assetPath, type Locale, type RawItem } from "@/lib/game-data/data";
 import { pageAlternates } from "@/lib/seo";
-import itemsJson from "@/../tbh_data/items.json";
 
 type Props = { params: Promise<{ locale: Locale }> };
-
-type RawItem = {
-  id: number;
-  slug: string;
-  name: Record<string, string>;
-  grade: string;
-  type: string;
-  gear: string | null;
-  icon: string | null;
-};
-
-const items = itemsJson as RawItem[];
 
 const MATERIAL_TYPES = [
   { key: "DECORATION", zh: "装饰 (Decoration)", en: "Decoration", ja: "装飾", desc_zh: "嵌入装备获得属性加成。不同部位有不同效果。", desc_en: "Socket into gear for stat bonuses. Different slots get different effects." },
@@ -45,12 +32,14 @@ export default async function CubePage({ params }: Props) {
   const { locale } = await params;
   const isZh = locale === "zh";
 
+  const gameItems = allItems();
+
   const materialsByType: Record<string, RawItem[]> = {};
   for (const mt of MATERIAL_TYPES) {
     materialsByType[mt.key] = [];
   }
 
-  for (const item of items) {
+  for (const item of gameItems) {
     if (item.type !== "MATERIAL") continue;
     // Determine type from ID range (game-specific logic)
     const id = item.id;

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { type Locale } from "@/lib/game-data/data";
+import { fetchR2Json } from "@/lib/r2-fetch";
 import { pageAlternates } from "@/lib/seo";
-import buffsJson from "@/../tbh_data/buffs.json";
 
 type Props = { params: Promise<{ locale: Locale }>; searchParams: Promise<{ stat?: string; type?: string }> };
 
@@ -16,7 +16,17 @@ type RawBuff = {
   icon?: string;
 };
 
-const buffs = buffsJson as RawBuff[];
+let _buffsCache: RawBuff[] | null = null;
+
+async function loadBuffs(): Promise<RawBuff[]> {
+  if (_buffsCache) return _buffsCache;
+  try {
+    _buffsCache = await fetchR2Json<RawBuff[]>("game/v1/buffs.json");
+  } catch {
+    _buffsCache = [];
+  }
+  return _buffsCache;
+}
 
 const STAT_LABELS: Record<string, Partial<Record<Locale, string>>> = {
   AttackSpeed: { zh: "攻击速度", en: "Attack Speed", ja: "攻撃速度" },
@@ -44,11 +54,12 @@ function statLabel(stat: string, locale: Locale): string {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const allBuffs = await loadBuffs();
   return {
     title: locale === "zh" ? "TBH Buff 与 Debuff 效果表" : "TBH Buffs & Debuffs",
     description: locale === "zh"
-      ? `全部 ${buffs.length} 个 Buff 和 Debuff 效果：属性类型、加成方式和数值。`
-      : `All ${buffs.length} buffs and debuffs: stat type, modifier, and values.`,
+      ? `全部 ${allBuffs.length} 个 Buff 和 Debuff 效果：属性类型、加成方式和数值。`
+      : `All ${allBuffs.length} buffs and debuffs: stat type, modifier, and values.`,
     alternates: pageAlternates(locale, "/buffs"),
   };
 }
@@ -58,7 +69,8 @@ export default async function BuffsPage({ params, searchParams }: Props) {
   const sp = await searchParams;
   const isZh = locale === "zh";
 
-  let visibleBuffs = buffs;
+  const allBuffs = await loadBuffs();
+  let visibleBuffs = allBuffs;
   if (sp.type === "buff") visibleBuffs = visibleBuffs.filter((b) => b.BuffType === "Buff");
   else if (sp.type === "debuff") visibleBuffs = visibleBuffs.filter((b) => b.BuffType === "Debuff");
   if (sp.stat) visibleBuffs = visibleBuffs.filter((b) => b.STATTYPE === sp.stat);

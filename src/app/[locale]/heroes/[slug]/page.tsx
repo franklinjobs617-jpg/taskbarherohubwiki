@@ -13,6 +13,7 @@ import {
   allSkills,
   assetPath,
   builds,
+  ensureGameData,
   gearPreviewItem,
   heroBySlug,
   heroName,
@@ -29,6 +30,7 @@ type Props = { params: Promise<{ locale: Locale; slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
+  await ensureGameData();
   const hero = heroBySlug(slug);
   const name = hero ? heroName(hero, locale) : locale === "zh" ? "英雄" : "Hero";
   return {

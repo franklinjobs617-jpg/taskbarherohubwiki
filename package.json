@@ -19,7 +19,9 @@
     "enrich:data": "node scripts/build-enriched-data.mjs",
     "graph:build": "node scripts/build-graph-index.mjs",
     "upload:r2": "node scripts/upload-r2.mjs",
+    "upload:worker-data": "node scripts/upload-worker-data.mjs",
     "deploy:worker": "npm run deploy",
+    
     "verify:pages": "node scripts/verify-pages.mjs",
     "check:mojibake": "node scripts/check-mojibake.mjs",
     "prebuild": "npm run check:mojibake",

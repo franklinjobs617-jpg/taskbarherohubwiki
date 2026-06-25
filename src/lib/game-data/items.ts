@@ -1,14 +1,28 @@
 import type { Item, SlotType, Grade, ItemType, Locale } from "./types";
+import { fetchR2Json } from "@/lib/r2-fetch";
+import { allItems, itemBySlug as dataItemBySlug } from "./data";
 
-// Load from bundled JSON. R2 data loading can be added through the same public API.
-// Import is dynamic to allow tree-shaking on pages that do not need items.
+// Re-export from data.ts for backward compatibility after ensureGameData() has been called
 let _allItems: Item[] | null = null;
 
 async function loadItems(): Promise<Item[]> {
   if (_allItems) return _allItems;
-  const items = await import("@/../tbh_data/items.json");
-  _allItems = items.default as Item[];
-  return _allItems;
+  // In production, items come from data.ts (loaded via R2 CDN)
+  // The allItems() function there returns the cached R2 data
+  const items = allItems();
+  if (items.length > 0) {
+    _allItems = items as unknown as Item[];
+    return _allItems;
+  }
+  // Fallback: direct R2 fetch
+  try {
+    const data = await fetchR2Json<Item[]>("game/v1/items/index.en.json");
+    _allItems = data;
+    return _allItems;
+  } catch {
+    // Final fallback — return empty
+    return [];
+  }
 }
 
 export async function getAllItems(): Promise<Item[]> {
@@ -16,6 +30,10 @@ export async function getAllItems(): Promise<Item[]> {
 }
 
 export async function getItemBySlug(slug: string): Promise<Item | null> {
+  // Prefer the data.ts cache (faster, synchronous)
+  const fromData = dataItemBySlug(slug);
+  if (fromData) return fromData as unknown as Item;
+
   const items = await loadItems();
   return items.find((i) => i.slug === slug) ?? null;
 }

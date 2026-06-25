@@ -5,7 +5,9 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { NavProvider } from "@/components/layout/nav-provider";
 import { SiteFooter } from "@/components/layout/site-footer";
-import { isLocale, SITE_URL } from "@/lib/game-data/data";
+import { isLocale, SITE_URL, ensureGameData } from "@/lib/game-data/data";
+import { ensureGraphData } from "@/lib/game-data/graph";
+import { ensureExternalData } from "@/lib/game-data/external";
 
 type Props = {
   children: React.ReactNode;
@@ -63,6 +65,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
+
+  // Preload all game data from R2 CDN in production. In development,
+  // ensureGameData returns immediately (data not yet loaded — pages
+  // will fall back to local imports). This is a no-op for cached data.
+  await Promise.all([
+    ensureGameData(),
+    ensureGraphData(),
+    ensureExternalData(),
+  ]);
+
   const messages = await getMessages();
 
   return (

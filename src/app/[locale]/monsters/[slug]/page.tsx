@@ -7,7 +7,7 @@ import { Breadcrumb } from "@/components/tbh/breadcrumb";
 import { FaqBlock } from "@/components/tbh/faq-block";
 import { entityFaqs } from "@/lib/game-data/faqs";
 import { PageHeader, PageShell } from "@/components/tbh/page";
-import { allMonsters, allStages, text, type Locale } from "@/lib/game-data/data";
+import { allMonsters, allStages, ensureGameData, text, type Locale } from "@/lib/game-data/data";
 import { extPets } from "@/lib/game-data/external";
 import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
@@ -27,6 +27,7 @@ function findMonster(slug: string) {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
+  await ensureGameData();
   const monster = findMonster(slug);
   if (!monster) return { title: "Not found" };
   const name = text(monster.MonsterNameStringKey_i18n, locale, `Monster ${monster.MonsterKey}`);

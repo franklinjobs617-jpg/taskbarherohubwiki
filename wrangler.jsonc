@@ -17,5 +17,11 @@
   ],
   "images": {
     "binding": "IMAGES"
-  }
+  },
+  "r2_buckets": [
+    {
+      "binding": "R2_DATA",
+      "bucket_name": "taskbarhero"
+    }
+  ]
 }

@@ -1,8 +1,9 @@
 /**
  * External data bridge. Lazy-loads normalized reference data at runtime.
- * Uses server-only dynamic require to avoid webpack bundling large JSON files.
+ * Fetches from R2 CDN in production; falls back to local require in dev.
  */
 import "server-only";
+import { fetchR2Json } from "@/lib/r2-fetch";
 
 export type ExtItem = {
   key: number;
@@ -111,40 +112,60 @@ export type ExtEffect = {
   }>;
 };
 
-function loadJson<T>(filename: string): T {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  return require(`@/../tbh_external/${filename}`) as T;
+const R2_EXT = "game/v1/enriched"; // External data is under enriched/ on R2
+
+let _extItems: ExtItem[] | null = null;
+let _extStages: ExtStage[] | null = null;
+let _extRunes: ExtRune[] | null = null;
+let _extPets: ExtPet[] | null = null;
+let _extEffects: ExtEffect[] | null = null;
+
+let _extPreloadPromise: Promise<void> | null = null;
+
+export async function ensureExternalData(): Promise<void> {
+  if (_extItems) return;
+  if (_extPreloadPromise) return _extPreloadPromise;
+
+  _extPreloadPromise = (async () => {
+    try {
+      const [items, stages, runesData, pets, effects] = await Promise.all([
+        fetchR2Json<ExtItem[]>(`${R2_EXT}/items.json`).catch(() => null),
+        fetchR2Json<ExtStage[]>(`${R2_EXT}/stages.json`).catch(() => null),
+        fetchR2Json<{ runes: ExtRune[] }>(`${R2_EXT}/runes.json`).catch(() => null),
+        fetchR2Json<ExtPet[]>(`${R2_EXT}/pets.json`).catch(() => null),
+        fetchR2Json<ExtEffect[]>(`${R2_EXT}/effects.json`).catch(() => null),
+      ]);
+      if (items) _extItems = items;
+      if (stages) _extStages = stages;
+      if (runesData) _extRunes = runesData.runes;
+      if (pets) _extPets = pets;
+      if (effects) _extEffects = effects;
+    } catch (error) {
+      console.error("Failed to preload external data from R2:", error);
+    }
+  })();
+
+  return _extPreloadPromise;
 }
 
-let _items: ExtItem[] | null = null;
-let _stages: ExtStage[] | null = null;
-let _runes: ExtRune[] | null = null;
-let _pets: ExtPet[] | null = null;
-let _effects: ExtEffect[] | null = null;
-
 export function extItems(): ExtItem[] {
-  if (!_items) _items = loadJson<ExtItem[]>("items.json");
-  return _items;
+  return _extItems ?? [];
 }
 
 export function extStages(): ExtStage[] {
-  if (!_stages) _stages = loadJson<ExtStage[]>("stages.json");
-  return _stages;
+  return _extStages ?? [];
 }
 
 export function extRunes(): ExtRune[] {
-  if (!_runes) _runes = loadJson<{ runes: ExtRune[] }>("runes.json").runes;
-  return _runes;
+  return _extRunes ?? [];
 }
 
 export function extPets(): ExtPet[] {
-  if (!_pets) _pets = loadJson<ExtPet[]>("pets.json");
-  return _pets;
+  return _extPets ?? [];
 }
 
 export function extEffects(): ExtEffect[] {
-  if (!_effects) _effects = loadJson<ExtEffect[]>("effects.json");
-  return _effects;
+  return _extEffects ?? [];
 }
 
 export function extIconPath(extIcon: string, type?: string): string {

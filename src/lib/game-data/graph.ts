@@ -1,5 +1,6 @@
 import "server-only";
 import { allItems, allMonsters, assetPath } from "./data";
+import { fetchR2Json } from "@/lib/r2-fetch";
 
 export type GraphDrop = {
   itemKey: number;
@@ -121,28 +122,57 @@ export type StageExplorerStage = {
   }>;
 };
 
-function loadJson<T>(filename: string): T {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  return require(`@/../data/generated/game/v1/graph/${filename}`) as T;
-}
+const R2_GRAPH = {
+  stages: "game/v1/graph/stages.json",
+  chests: "game/v1/graph/chests.json",
+  monsters: "game/v1/graph/monsters.json",
+};
 
 let stagesCache: GraphStage[] | null = null;
 let chestsCache: GraphChest[] | null = null;
 let monstersCache: GraphMonster[] | null = null;
 
+async function loadGraphData<T>(path: string, cacheRef: { current: T | null }): Promise<T> {
+  if (cacheRef.current) return cacheRef.current;
+  try {
+    const data = await fetchR2Json<T>(path);
+    cacheRef.current = data;
+    return data;
+  } catch {
+    return [] as unknown as T;
+  }
+}
+
+let _graphPreloadPromise: Promise<void> | null = null;
+
+export async function ensureGraphData(): Promise<void> {
+  if (stagesCache) return;
+  if (_graphPreloadPromise) return _graphPreloadPromise;
+
+  _graphPreloadPromise = (async () => {
+    const [stages, chests, monsters] = await Promise.all([
+      fetchR2Json<GraphStage[]>(R2_GRAPH.stages).catch(() => []),
+      fetchR2Json<GraphChest[]>(R2_GRAPH.chests).catch(() => []),
+      fetchR2Json<GraphMonster[]>(R2_GRAPH.monsters).catch(() => []),
+    ]);
+    stagesCache = stages as GraphStage[];
+    chestsCache = chests as GraphChest[];
+    monstersCache = monsters as GraphMonster[];
+  })();
+
+  return _graphPreloadPromise;
+}
+
 export function graphStages() {
-  stagesCache ??= loadJson<GraphStage[]>("stages.json");
-  return stagesCache;
+  return stagesCache ?? [];
 }
 
 export function graphChests() {
-  chestsCache ??= loadJson<GraphChest[]>("chests.json");
-  return chestsCache;
+  return chestsCache ?? [];
 }
 
 export function graphMonsters() {
-  monstersCache ??= loadJson<GraphMonster[]>("monsters.json");
-  return monstersCache;
+  return monstersCache ?? [];
 }
 
 export function graphStageByKey(key: number) {

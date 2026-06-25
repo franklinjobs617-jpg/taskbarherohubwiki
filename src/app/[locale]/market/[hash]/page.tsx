@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { ConfidenceBadge } from "@/components/tbh/badges";
 import { Section } from "@/components/tbh/cards";
 import { DataNotice, PageShell } from "@/components/tbh/page";
-import { hasIndexableMarketData, itemDetail, itemName, marketBySlug, slotNames, type Locale } from "@/lib/game-data/data";
+import { ensureGameData, hasIndexableMarketData, itemDetail, itemName, marketBySlug, slotNames, type Locale } from "@/lib/game-data/data";
 import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 
@@ -12,6 +12,7 @@ type Props = { params: Promise<{ locale: Locale; hash: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, hash } = await params;
+  await ensureGameData();
   const row = marketBySlug(hash);
   if (!row) return { title: "Not found" };
   const name = itemName(row.item, locale);
