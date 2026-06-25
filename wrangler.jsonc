@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "taskbarherohub",
+  "name": "taskbarherohubwiki",
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-06-25",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
@@ -12,7 +12,7 @@
   "services": [
     {
       "binding": "WORKER_SELF_REFERENCE",
-      "service": "taskbarherohub"
+      "service": "taskbarherohubwiki"
     }
   ],
   "images": {

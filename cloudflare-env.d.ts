@@ -4,7 +4,7 @@
 interface __BaseEnv_CloudflareEnv {
 	IMAGES: ImagesBinding;
 	ASSETS: Fetcher;
-	WORKER_SELF_REFERENCE: Fetcher /* taskbarherohub */;
+	WORKER_SELF_REFERENCE: Fetcher /* taskbarherohubwiki */;
 }
 declare namespace Cloudflare {
 	interface Env extends __BaseEnv_CloudflareEnv {}
