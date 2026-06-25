@@ -19,7 +19,16 @@ const nextConfig: NextConfig = {
     ],
     unoptimized: false,
   },
-  // Exclude large data directories from webpack build — loaded from R2 at runtime
+  // The app reads large local JSON payloads from the R2/CDN runtime path in production.
+  // Keep them out of Next.js server output tracing so they are not copied into the Worker bundle.
+  outputFileTracingExcludes: {
+    "/*": [
+      "./tbh_data/**/*",
+      "./tbh_external/**/*",
+      "./data/generated/**/*",
+    ],
+  },
+  // Keep local dev watchers off the large data trees.
   webpack: (config) => {
     config.watchOptions = {
       ...config.watchOptions,
@@ -29,7 +38,6 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
-      // Cache static pages at the edge
       {
         source: "/:path*",
         headers: [
@@ -41,7 +49,6 @@ const nextConfig: NextConfig = {
           { key: "Content-Security-Policy", value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://pagead2.googlesyndication.com https://partner.googleadservices.com https://www.google-analytics.com; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://*.r2.cloudflarestorage.com https://cdn.taskbarherohub.wiki; frame-src https://*.googlesyndication.com https://googleads.g.doubleclick.net;" },
         ],
       },
-      // API routes should never be cached
       {
         source: "/api/:path*",
         headers: [
