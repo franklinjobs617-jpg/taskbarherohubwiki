@@ -471,10 +471,31 @@ img.pixel {
     flex-wrap: wrap;
   }
 
-  .search-glass > .btn-primary {
-    min-height: 44px;
-    min-width: 88px;
+  .search-glass > .search-glass-btn {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
+}
+
+.search-glass-btn {
+  background: var(--color-bg-surface);
+  color: var(--color-accent);
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: var(--font-pixel);
+  font-size: var(--text-body-sm);
+  padding: 0 24px;
+  cursor: pointer;
+  transition: all var(--duration) var(--ease-out);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-glass-btn:hover {
+  background: rgba(240, 168, 48, 0.1);
+  color: var(--color-accent-hover);
 }
 
 /* ═══════════════════════════════════════════

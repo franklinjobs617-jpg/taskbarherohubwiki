@@ -150,7 +150,7 @@ export default async function HomePage({ params }: Props) {
               className="search-glass-input"
               placeholder={copy(locale, { zh: "搜索 item、material、chest、monster、stage、pet", en: "Search item, material, chest, monster, stage, pet", ja: "item / material / chest / monster / stage / pet", ko: "item / material / chest / monster / stage / pet" })}
             />
-            <button className="btn-primary shrink-0 m-1.5">
+            <button className="search-glass-btn shrink-0">
               {copy(locale, { zh: "搜索", en: "Search", ja: "検索", ko: "검색" })}
             </button>
           </form>
