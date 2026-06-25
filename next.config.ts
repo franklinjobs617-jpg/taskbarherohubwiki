@@ -19,20 +19,11 @@ const nextConfig: NextConfig = {
     ],
     unoptimized: false,
   },
-  // Exclude large data directories from the build — they're loaded from R2 at runtime
-  outputFileTracingExcludes: {
-    "*": ["tbh_data/**", "tbh_external/**", "data/generated/game/**", "data/generated/market/**", "!data/generated/market/v1/latest.json"],
-  },
-  experimental: {
-    cpus: 1,
-    staticGenerationMaxConcurrency: 1,
-  },
-  reactStrictMode: true,
+  // Exclude large data directories from webpack build — loaded from R2 at runtime
   webpack: (config) => {
-    // Ignore large data directories during build — they're fetched from R2 at runtime
     config.watchOptions = {
       ...config.watchOptions,
-      ignored: ["**/tbh_data/**", "**/tbh_external/**", "**/data/generated/game/**"],
+      ignored: ["**/tbh_data/**", "**/tbh_external/**"],
     };
     return config;
   },
