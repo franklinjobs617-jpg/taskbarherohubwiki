@@ -5,13 +5,15 @@ import { HeroCard, Section } from "@/components/tbh/cards";
 import { HeroCompareMatrix, HeroRadar } from "@/components/tbh/hero-compare";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
-import { SITE_URL, allHeroes, heroName, heroSlug, type Locale } from "@/lib/game-data/data";
+import { SITE_URL, allHeroes, heroName, heroSlug, type Locale , ensureHeroes } from "@/lib/game-data/data";
 import { heroProfile, heroWeaponLabel } from "@/lib/hero-content";
 import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  await ensureHeroes();
+
   const { locale } = await params;
   return {
     title: locale === "zh" ? "TBH 英雄数据对比｜6 职业属性雷达图、Build 与武器推荐" : "TBH Hero Comparison — Radar Charts, Builds & Weapon Guide",
@@ -24,6 +26,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function HeroesPage({ params }: Props) {
+  await ensureHeroes();
+
   const { locale } = await params;
   const isZh = locale === "zh";
   const heroes = allHeroes();

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader, PageShell } from "@/components/tbh/page";
-import { allItems, marketRows, UPDATED_AT, DATA_VERSION, type Locale } from "@/lib/game-data/data";
+import { allItems, marketRows, UPDATED_AT, DATA_VERSION, type Locale , ensureItems, ensureMarket } from "@/lib/game-data/data";
 import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 
@@ -11,6 +11,9 @@ const steamNewsUrl = "https://store.steampowered.com/news/app/3678970";
 const steamStoreUrl = "https://store.steampowered.com/app/3678970/TBH_Task_Bar_Hero/";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  await ensureItems();
+  await ensureMarket();
+
   const { locale } = await params;
   return {
     title: locale === "zh" ? "TaskBar Hero 更新记录-物品、掉率与市场变化" : "TaskBar Hero Updates",
@@ -19,6 +22,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function UpdatesPage({ params }: Props) {
+  await ensureItems();
+  await ensureMarket();
+
   const { locale } = await params;
   const isZh = locale === "zh";
   const marketCount = marketRows().length;

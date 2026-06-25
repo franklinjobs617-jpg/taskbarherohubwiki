@@ -1,3 +1,4 @@
+import { ensureExtEffects } from "@/lib/game-data/external";
 import type { Metadata } from "next";
 import { SafeImage } from "@/components/ui/safe-image";
 import Link from "next/link";
@@ -9,6 +10,8 @@ import { pageAlternates } from "@/lib/seo";
 type Props = { params: Promise<{ locale: Locale }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  await ensureExtEffects();
+
   const { locale } = await params;
   return {
     title: locale === "zh" ? "材料效果表 — 装饰、雕刻、铭刻属性" : locale === "ja" ? "素材効果表 — 装飾、刻印、銘刻" : "Material Effects — Decoration, Engraving & Inscription",
@@ -17,6 +20,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function EffectsPage({ params }: Props) {
+  await ensureExtEffects();
+
   const { locale } = await params;
   const rows = effectRows(locale).slice(0, 260);
   const groups = Array.from(

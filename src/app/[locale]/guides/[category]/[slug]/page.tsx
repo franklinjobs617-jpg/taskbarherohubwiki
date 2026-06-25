@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, CheckCircle2, Clock3, Coins, PackageCheck, ShieldAlert } from "lucide-react";
 import { ConfidenceBadge } from "@/components/tbh/badges";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
-import { allItems, assetPath, itemName, marketForItem, type Locale, type RawItem } from "@/lib/game-data/data";
+import { allItems, assetPath, itemName, marketForItem, type Locale, type RawItem , ensureItems, ensureMarket } from "@/lib/game-data/data";
 import { getGuideContent, getGuideStaticParams, renderMarkdownish, type MarkdownBlock } from "@/lib/guides";
 
 type Props = { params: Promise<{ locale: Locale; category: string; slug: string }> };
@@ -30,6 +30,9 @@ function copy(locale: Locale, zh: string, en: string, ja: string) {
 export function generateStaticParams() { return getGuideStaticParams(); }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  await ensureItems();
+  await ensureMarket();
+
   const { locale, category, slug } = await params;
   const guide = await getGuideContent(locale, category, slug);
   if (!guide) return { title: "Guide" };
@@ -41,6 +44,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function GuideDetailPage({ params }: Props) {
+  await ensureItems();
+  await ensureMarket();
+
   const { locale, category, slug } = await params;
   const guide = await getGuideContent(locale, category, slug);
   if (!guide) notFound();

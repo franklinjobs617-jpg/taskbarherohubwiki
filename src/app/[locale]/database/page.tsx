@@ -12,7 +12,7 @@ import {
   Swords,
 } from "lucide-react";
 import { PageHeader, PageShell } from "@/components/tbh/page";
-import { allHeroes, allItems, allMonsters, allStages, chestItems, type Locale } from "@/lib/game-data/data";
+import { allHeroes, allItems, allMonsters, allStages, chestItems, type Locale , ensureItems, ensureHeroes, ensureStages, ensureMonsters } from "@/lib/game-data/data";
 import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 
@@ -35,6 +35,11 @@ function txt(locale: Locale, values: Record<string, string>) {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  await ensureItems();
+  await ensureHeroes();
+  await ensureStages();
+  await ensureMonsters();
+
   const { locale } = await params;
   return {
     title:
@@ -54,6 +59,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function DatabaseHubPage({ params }: Props) {
+  await ensureItems();
+  await ensureHeroes();
+  await ensureStages();
+  await ensureMonsters();
+
   const { locale } = await params;
   const itemCount = allItems().length;
   const heroCount = allHeroes().length;

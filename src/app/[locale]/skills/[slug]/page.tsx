@@ -10,11 +10,11 @@ import { SkillIcon } from "@/components/tbh/skill-icon";
 import {
   allHeroes,
   allSkills,
-  ensureGameData,
   heroName,
   skillBySlug,
   skillName,
   type Locale,
+  ensureHeroes, ensureSkills,
 } from "@/lib/game-data/data";
 import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
@@ -26,8 +26,10 @@ function txt(locale: Locale, values: Record<string, string>) {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  await ensureHeroes();
+  await ensureSkills();
+
   const { locale, slug } = await params;
-  await ensureGameData();
   const skill = skillBySlug(slug);
   return {
     title: skill ? skillName(skill, locale) : "Skill",
@@ -36,11 +38,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  await ensureGameData();
   return allSkills().map((s) => ({ slug: s.slug ?? String(s.SkillKey) }));
 }
 
 export default async function SkillDetailPage({ params }: Props) {
+  await ensureHeroes();
+  await ensureSkills();
+
   const { locale, slug } = await params;
   const skill = skillBySlug(slug);
   if (!skill) notFound();

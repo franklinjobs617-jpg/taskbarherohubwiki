@@ -3,7 +3,7 @@ import { SafeImage } from "@/components/ui/safe-image";
 import Link from "next/link";
 import { MapPin, PawPrint, Star, Target } from "lucide-react";
 import { PageHeader, PageShell } from "@/components/tbh/page";
-import { allStages, stageSlug, type Locale } from "@/lib/game-data/data";
+import { allStages, stageSlug, type Locale , ensureStages } from "@/lib/game-data/data";
 import { getPetUnlockPlan } from "@/lib/game-data/decisions";
 import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
@@ -23,6 +23,8 @@ function stageHref(locale: Locale, farm: { act: number; stageNo: number } | null
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  await ensureStages();
+
   const { locale } = await params;
   return {
     title: locale === "zh" ? "TBH 宠物解锁 | 最佳关卡、目标与击杀数" : "TBH Pets Unlock | Best Stages, Targets & Kill Counts",
@@ -32,6 +34,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function PetsPage({ params, searchParams }: Props) {
+  await ensureStages();
+
   const { locale } = await params;
   const sp = await searchParams;
   const plan = getPetUnlockPlan(locale);

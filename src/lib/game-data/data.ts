@@ -1,4 +1,4 @@
-﻿import { fetchR2Json } from "@/lib/r2-fetch";
+import { fetchR2Json } from "@/lib/r2-fetch";
 
 export type Locale = "zh" | "en" | "ja" | "ko";
 export type Localized = Record<string, string>;
@@ -199,49 +199,130 @@ const _marketByItemSlug = new Map<string, MarketRecord>();
 const _dropsByItemSlug: Record<string, DropSource[]> = {};
 
 // Deduplicate concurrent preloads
-let _preloadPromise: Promise<void> | null = null;
-
-/**
- * Preload all game data from R2 CDN. Safe to call multiple times —
- * subsequent calls return the cached promise. Must be called before
- * any synchronous data accessor.
- */
-export async function ensureGameData(): Promise<void> {
-  // Already fully loaded
+let _preloadItems: Promise<void> | null = null;
+export async function ensureItems(): Promise<void> {
   if (_items) return;
-
-  // Another caller is already preloading — wait for it
-  if (_preloadPromise) return _preloadPromise;
-
-  _preloadPromise = (async () => {
+  if (_preloadItems) return _preloadItems;
+  _preloadItems = (async () => {
     try {
-      const [items, itemsDetail, heroes, stages, runes, skills, monsters, dropsRaw, marketLatestRaw] =
-        await Promise.all([
-          fetchR2Json<RawItem[]>(R2.items),
-          fetchR2Json<Record<string, ItemDetail>>(R2.itemsDetail).catch(() => ({})),
-          fetchR2Json<Hero[]>(R2.heroes),
-          fetchR2Json<Stage[]>(R2.stages),
-          fetchR2Json<Rune[]>(R2.runes),
-          fetchR2Json<Skill[]>(R2.skills),
-          fetchR2Json<Monster[]>(R2.monsters).catch(() => [] as Monster[]),
-          fetchR2Json<Record<string, unknown>>(R2.drops).catch(() => ({})),
-          fetchR2Json<MarketRecord[] | { updatedAt?: string; items?: MarketRecord[] }>(R2.market).catch(() => [] as MarketRecord[]),
-        ]);
+      _items = await fetchR2Json<RawItem[]>(R2.items);
+      const detail = await fetchR2Json<Record<string, ItemDetail>>(R2.itemsDetail).catch(() => ({}));
+      _details = detail as Record<string, ItemDetail>;
+    } catch (error) {
+      console.error("Failed to preload items:", error);
+      _items = [];
+    }
+  })();
+  return _preloadItems;
+}
 
-      _items = items;
-      _details = itemsDetail as Record<string, ItemDetail>;
-      _heroes = heroes;
-      _stages = stages;
-      _runes = runes;
-      _skills = skills;
-      _monsters = monsters;
+let _preloadHeroes: Promise<void> | null = null;
+export async function ensureHeroes(): Promise<void> {
+  if (_heroes) return;
+  if (_preloadHeroes) return _preloadHeroes;
+  _preloadHeroes = (async () => {
+    try {
+      _heroes = await fetchR2Json<Hero[]>(R2.heroes);
+    } catch (error) {
+      console.error("Failed to preload heroes:", error);
+      _heroes = [];
+    }
+  })();
+  return _preloadHeroes;
+}
 
-      // Index market data by item slug. Handles both formats:
-      // - Object: { updatedAt, items: [{slug, ...}, ...] }
-      // - Array:  [{slug, ...}, ...]
-      const marketLatest = marketLatestRaw as
-        | MarketRecord[]
-        | { updatedAt?: string; items?: MarketRecord[] };
+let _preloadStages: Promise<void> | null = null;
+export async function ensureStages(): Promise<void> {
+  if (_stages) return;
+  if (_preloadStages) return _preloadStages;
+  _preloadStages = (async () => {
+    try {
+      _stages = await fetchR2Json<Stage[]>(R2.stages);
+    } catch (error) {
+      console.error("Failed to preload stages:", error);
+      _stages = [];
+    }
+  })();
+  return _preloadStages;
+}
+
+let _preloadRunes: Promise<void> | null = null;
+export async function ensureRunes(): Promise<void> {
+  if (_runes) return;
+  if (_preloadRunes) return _preloadRunes;
+  _preloadRunes = (async () => {
+    try {
+      _runes = await fetchR2Json<Rune[]>(R2.runes);
+    } catch (error) {
+      console.error("Failed to preload runes:", error);
+      _runes = [];
+    }
+  })();
+  return _preloadRunes;
+}
+
+let _preloadSkills: Promise<void> | null = null;
+export async function ensureSkills(): Promise<void> {
+  if (_skills) return;
+  if (_preloadSkills) return _preloadSkills;
+  _preloadSkills = (async () => {
+    try {
+      _skills = await fetchR2Json<Skill[]>(R2.skills);
+    } catch (error) {
+      console.error("Failed to preload skills:", error);
+      _skills = [];
+    }
+  })();
+  return _preloadSkills;
+}
+
+let _preloadMonsters: Promise<void> | null = null;
+export async function ensureMonsters(): Promise<void> {
+  if (_monsters) return;
+  if (_preloadMonsters) return _preloadMonsters;
+  _preloadMonsters = (async () => {
+    try {
+      _monsters = await fetchR2Json<Monster[]>(R2.monsters).catch(() => []);
+    } catch (error) {
+      console.error("Failed to preload monsters:", error);
+      _monsters = [];
+    }
+  })();
+  return _preloadMonsters;
+}
+
+let _preloadDrops: Promise<void> | null = null;
+export async function ensureDrops(): Promise<void> {
+  if (Object.keys(_dropsByItemSlug).length > 0) return;
+  if (_preloadDrops) return _preloadDrops;
+  _preloadDrops = (async () => {
+    try {
+      const dropsRaw = await fetchR2Json<Record<string, unknown>>(R2.drops).catch(() => ({}));
+      for (const [slug, sources] of Object.entries(dropsRaw)) {
+        if (
+          Array.isArray(sources) &&
+          sources.length > 0 &&
+          typeof sources[0] === "object" &&
+          sources[0] !== null
+        ) {
+          _dropsByItemSlug[slug] = sources as DropSource[];
+        }
+      }
+    } catch (error) {
+      console.error("Failed to preload drops:", error);
+    }
+  })();
+  return _preloadDrops;
+}
+
+let _preloadMarket: Promise<void> | null = null;
+export async function ensureMarket(): Promise<void> {
+  if (_marketLatest.items) return;
+  if (_preloadMarket) return _preloadMarket;
+  _preloadMarket = (async () => {
+    try {
+      const marketLatestRaw = await fetchR2Json<MarketRecord[] | { updatedAt?: string; items?: MarketRecord[] }>(R2.market).catch(() => []);
+      const marketLatest = marketLatestRaw as MarketRecord[] | { updatedAt?: string; items?: MarketRecord[] };
       if (Array.isArray(marketLatest)) {
         _marketLatest = { items: marketLatest };
         for (const row of marketLatest) {
@@ -255,31 +336,29 @@ export async function ensureGameData(): Promise<void> {
           }
         }
       }
-
-      // Index drops data by item slug (filter invalid entries)
-      for (const [slug, sources] of Object.entries(dropsRaw)) {
-        if (
-          Array.isArray(sources) &&
-          sources.length > 0 &&
-          typeof sources[0] === "object" &&
-          sources[0] !== null
-        ) {
-          _dropsByItemSlug[slug] = sources as DropSource[];
-        }
-      }
     } catch (error) {
-      console.error("Failed to preload game data from R2:", error);
-      // Initialize with empty defaults so the site still renders
-      _items = _items ?? [];
-      _heroes = _heroes ?? [];
-      _stages = _stages ?? [];
-      _runes = _runes ?? [];
-      _skills = _skills ?? [];
-      _monsters = _monsters ?? [];
+      console.error("Failed to preload market:", error);
     }
   })();
+  return _preloadMarket;
+}
 
-  return _preloadPromise;
+/**
+ * Preload all game data from R2 CDN.
+ * Prefer calling the granular ensure* functions (e.g. ensureItems(), ensureHeroes()) 
+ * when you only need specific datasets.
+ */
+export async function ensureGameData(): Promise<void> {
+  await Promise.all([
+    ensureItems(),
+    ensureHeroes(),
+    ensureStages(),
+    ensureRunes(),
+    ensureSkills(),
+    ensureMonsters(),
+    ensureDrops(),
+    ensureMarket(),
+  ]);
 }
 
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://taskbarherohub.wiki";

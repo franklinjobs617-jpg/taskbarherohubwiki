@@ -5,7 +5,7 @@ import { RarityBadge } from "@/components/tbh/badges";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
 import { ItemIcon } from "@/components/ui/item-icon";
-import { SITE_URL, assetPath, chestItems, type Locale } from "@/lib/game-data/data";
+import { SITE_URL, assetPath, chestItems, type Locale , ensureItems } from "@/lib/game-data/data";
 import { getChestDecision } from "@/lib/game-data/decisions";
 import { localizedPath } from "@/lib/locale-path";
 import { RelatedPages } from "@/components/tbh/related-pages";
@@ -25,6 +25,8 @@ function rate(value: number | null | undefined) {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  await ensureItems();
+
   const { locale } = await params;
   return {
     title: text(locale, {
@@ -47,6 +49,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ChestsPage({ params, searchParams }: Props) {
+  await ensureItems();
+
   const { locale } = await params;
   const sp = await searchParams;
   const q = sp.q?.trim().toLowerCase() ?? "";

@@ -5,9 +5,7 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { NavProvider } from "@/components/layout/nav-provider";
 import { SiteFooter } from "@/components/layout/site-footer";
-import { isLocale, SITE_URL, ensureGameData } from "@/lib/game-data/data";
-import { ensureGraphData } from "@/lib/game-data/graph";
-import { ensureExternalData } from "@/lib/game-data/external";
+import { isLocale, SITE_URL } from "@/lib/game-data/data";
 
 type Props = {
   children: React.ReactNode;
@@ -66,14 +64,8 @@ export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
 
-  // Preload all game data from R2 CDN in production. In development,
-  // ensureGameData returns immediately (data not yet loaded — pages
-  // will fall back to local imports). This is a no-op for cached data.
-  await Promise.all([
-    ensureGameData(),
-    ensureGraphData(),
-    ensureExternalData(),
-  ]);
+  // Data is now loaded on-demand per page component instead of preloading all at the layout level
+  // to avoid hitting Cloudflare Workers CPU/Memory limits.
 
   const messages = await getMessages();
 

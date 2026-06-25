@@ -3,7 +3,7 @@ import { Coins, Route, Sparkles, UnlockKeyhole } from "lucide-react";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { RuneTreePlanner, type RuneNode } from "@/components/tbh/rune-tree-planner";
 import { type Locale } from "@/lib/game-data/data";
-import { extRunes } from "@/lib/game-data/external";
+import { extRunes , ensureExtRunes } from "@/lib/game-data/external";
 import { pageAlternates } from "@/lib/seo";
 import { RelatedPages } from "@/components/tbh/related-pages";
 import { HowToUse } from "@/components/tbh/how-to-use";
@@ -11,6 +11,8 @@ import { HowToUse } from "@/components/tbh/how-to-use";
 type Props = { params: Promise<{ locale: Locale }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  await ensureExtRunes();
+
   const { locale } = await params;
   return {
     title: copy(
@@ -30,6 +32,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function RunesPage({ params }: Props) {
+  await ensureExtRunes();
+
   const { locale } = await params;
   const runes = extRunes() as RuneNode[];
   const unlocks = runes.filter((rune) => rune.isUnlock);

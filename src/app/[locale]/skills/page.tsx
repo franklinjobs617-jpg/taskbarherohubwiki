@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { SkillIcon } from "@/components/tbh/skill-icon";
-import { allHeroes, allSkills, heroName, skillName, type Locale } from "@/lib/game-data/data";
+import { allHeroes, allSkills, heroName, skillName, type Locale , ensureHeroes, ensureSkills } from "@/lib/game-data/data";
 import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 
@@ -10,6 +10,9 @@ type Props = { params: Promise<{ locale: Locale }> };
 type SearchParams = Promise<{ hero?: string }>;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  await ensureHeroes();
+  await ensureSkills();
+
   const { locale } = await params;
   return {
     title: locale === "zh" ? "TaskBar Hero 技能数据库｜主动与被动技能" : "TaskBar Hero Skills Database",
@@ -21,6 +24,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function SkillsPage({ params, searchParams }: Props & { searchParams: SearchParams }) {
+  await ensureHeroes();
+  await ensureSkills();
+
   const { locale } = await params;
   const sp = await searchParams;
   const isZh = locale === "zh";

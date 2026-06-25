@@ -1,17 +1,21 @@
 import type { Metadata } from "next";
 import { StageCard } from "@/components/tbh/cards";
 import { DataNotice, PageHeader, PageShell } from "@/components/tbh/page";
-import { allStages, type Locale } from "@/lib/game-data/data";
+import { allStages, type Locale , ensureStages } from "@/lib/game-data/data";
 import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  await ensureStages();
+
   const { locale } = await params;
   return { title: locale === "zh" ? "TaskBar Hero 刷图对比｜经验、金币与数据状态" : "TaskBar Hero Farming Compare", alternates: pageAlternates(locale, "/tools/farming-compare") };
 }
 
 export default async function FarmingComparePage({ params }: Props) {
+  await ensureStages();
+
   const { locale } = await params;
   const isZh = locale === "zh";
   const stages = allStages().sort((a, b) => (b.expPerClear ?? 0) - (a.expPerClear ?? 0)).slice(0, 16);

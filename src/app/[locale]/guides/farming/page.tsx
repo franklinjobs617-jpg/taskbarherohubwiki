@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { SafeImage } from "@/components/ui/safe-image";
 import Link from "next/link";
 import { PageHeader, PageShell } from "@/components/tbh/page";
-import { allMonsters, allStages, type Locale } from "@/lib/game-data/data";
+import { allMonsters, allStages, type Locale , ensureStages, ensureMonsters } from "@/lib/game-data/data";
 import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale }> };
@@ -14,6 +14,9 @@ function monsterPortrait(portrait?: string | null): string | null {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  await ensureStages();
+  await ensureMonsters();
+
   const { locale } = await params;
   return {
     title: locale === "zh"
@@ -27,6 +30,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function FarmingHubPage({ params }: Props) {
+  await ensureStages();
+  await ensureMonsters();
+
   const { locale } = await params;
   const isZh = locale === "zh";
   const stages = allStages();

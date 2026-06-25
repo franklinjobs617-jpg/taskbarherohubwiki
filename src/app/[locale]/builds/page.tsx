@@ -3,13 +3,15 @@ import Link from "next/link";
 import { ConfidenceBadge } from "@/components/tbh/badges";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
-import { builds, heroBySlug, heroName, SITE_URL, type Locale } from "@/lib/game-data/data";
+import { builds, heroBySlug, heroName, SITE_URL, type Locale , ensureHeroes } from "@/lib/game-data/data";
 import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  await ensureHeroes();
+
   const { locale } = await params;
   return {
     title: locale === "zh" ? "TBH Build 路线推荐｜6 英雄配装、属性优先与符文方向" : "TBH Build Routes — 6 Heroes Gear, Stats & Rune Direction",
@@ -21,6 +23,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function BuildsPage({ params }: Props) {
+  await ensureHeroes();
+
   const { locale } = await params;
   const isZh = locale === "zh";
 

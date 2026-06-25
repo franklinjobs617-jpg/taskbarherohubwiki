@@ -3,7 +3,7 @@ import { SafeImage } from "@/components/ui/safe-image";
 import Link from "next/link";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
-import { allItems, assetPath, type Locale, type RawItem } from "@/lib/game-data/data";
+import { allItems, assetPath, type Locale, type RawItem , ensureItems } from "@/lib/game-data/data";
 import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale }> };
@@ -18,6 +18,8 @@ const MATERIAL_TYPES = [
 ];
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  await ensureItems();
+
   const { locale } = await params;
   return {
     title: locale === "zh" ? "TBH Hero-dric Cube 系统｜材料分类与合成指南" : "TBH Hero-dric Cube — Materials & Synthesis Guide",
@@ -29,6 +31,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function CubePage({ params }: Props) {
+  await ensureItems();
+
   const { locale } = await params;
   const isZh = locale === "zh";
 

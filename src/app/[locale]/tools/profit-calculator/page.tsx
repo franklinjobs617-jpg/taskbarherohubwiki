@@ -1,16 +1,22 @@
 import type { Metadata } from "next";
 import { DataNotice, PageHeader, PageShell } from "@/components/tbh/page";
-import { allStages, chestItems, stageName, type Locale } from "@/lib/game-data/data";
+import { allStages, chestItems, stageName, type Locale , ensureItems, ensureStages } from "@/lib/game-data/data";
 import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  await ensureItems();
+  await ensureStages();
+
   const { locale } = await params;
   return { title: locale === "zh" ? "TaskBar Hero 收益计算器｜金币、经验与市场数据检查" : "TaskBar Hero Profit Calculator", alternates: pageAlternates(locale, "/tools/profit-calculator") };
 }
 
 export default async function ProfitCalculatorPage({ params }: Props) {
+  await ensureItems();
+  await ensureStages();
+
   const { locale } = await params;
   const isZh = locale === "zh";
   const stages = allStages().slice(0, 40);

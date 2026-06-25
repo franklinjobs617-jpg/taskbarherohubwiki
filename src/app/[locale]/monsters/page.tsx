@@ -3,7 +3,7 @@ import { SafeImage } from "@/components/ui/safe-image";
 import Link from "next/link";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
-import { allMonsters, allStages, text, type Locale } from "@/lib/game-data/data";
+import { allMonsters, allStages, text, type Locale , ensureStages, ensureMonsters } from "@/lib/game-data/data";
 import { pageAlternates } from "@/lib/seo";
 import { RelatedPages } from "@/components/tbh/related-pages";
 import { HowToUse } from "@/components/tbh/how-to-use";
@@ -11,6 +11,9 @@ import { HowToUse } from "@/components/tbh/how-to-use";
 type Props = { params: Promise<{ locale: Locale }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  await ensureStages();
+  await ensureMonsters();
+
   const { locale } = await params;
   return {
     title: locale === "zh" ? "TBH 怪物图鉴｜61 种怪物、掉落与出现关卡" : "TBH Monster Bestiary — 61 Monsters, Drops & Stage Locations",
@@ -30,6 +33,9 @@ function monsterPortrait(monster: { portrait?: string | null }): string | null {
 }
 
 export default async function MonstersPage({ params }: Props) {
+  await ensureStages();
+  await ensureMonsters();
+
   const { locale } = await params;
   const isZh = locale === "zh";
   const monsters = allMonsters();

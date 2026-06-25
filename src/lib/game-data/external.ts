@@ -120,32 +120,89 @@ let _extRunes: ExtRune[] | null = null;
 let _extPets: ExtPet[] | null = null;
 let _extEffects: ExtEffect[] | null = null;
 
-let _extPreloadPromise: Promise<void> | null = null;
-
-export async function ensureExternalData(): Promise<void> {
+let _preloadExtItems: Promise<void> | null = null;
+export async function ensureExtItems(): Promise<void> {
   if (_extItems) return;
-  if (_extPreloadPromise) return _extPreloadPromise;
-
-  _extPreloadPromise = (async () => {
+  if (_preloadExtItems) return _preloadExtItems;
+  _preloadExtItems = (async () => {
     try {
-      const [items, stages, runesData, pets, effects] = await Promise.all([
-        fetchR2Json<ExtItem[]>(`${R2_EXT}/items.json`).catch(() => null),
-        fetchR2Json<ExtStage[]>(`${R2_EXT}/stages.json`).catch(() => null),
-        fetchR2Json<{ runes: ExtRune[] }>(`${R2_EXT}/runes.json`).catch(() => null),
-        fetchR2Json<ExtPet[]>(`${R2_EXT}/pets.json`).catch(() => null),
-        fetchR2Json<ExtEffect[]>(`${R2_EXT}/effects.json`).catch(() => null),
-      ]);
+      const items = await fetchR2Json<ExtItem[]>(`${R2_EXT}/items.json`).catch(() => null);
       if (items) _extItems = items;
-      if (stages) _extStages = stages;
-      if (runesData) _extRunes = runesData.runes;
-      if (pets) _extPets = pets;
-      if (effects) _extEffects = effects;
-    } catch (error) {
-      console.error("Failed to preload external data from R2:", error);
+    } catch (e) {
+      console.error("Failed to preload ext items:", e);
     }
   })();
+  return _preloadExtItems;
+}
 
-  return _extPreloadPromise;
+let _preloadExtStages: Promise<void> | null = null;
+export async function ensureExtStages(): Promise<void> {
+  if (_extStages) return;
+  if (_preloadExtStages) return _preloadExtStages;
+  _preloadExtStages = (async () => {
+    try {
+      const stages = await fetchR2Json<ExtStage[]>(`${R2_EXT}/stages.json`).catch(() => null);
+      if (stages) _extStages = stages;
+    } catch (e) {
+      console.error("Failed to preload ext stages:", e);
+    }
+  })();
+  return _preloadExtStages;
+}
+
+let _preloadExtRunes: Promise<void> | null = null;
+export async function ensureExtRunes(): Promise<void> {
+  if (_extRunes) return;
+  if (_preloadExtRunes) return _preloadExtRunes;
+  _preloadExtRunes = (async () => {
+    try {
+      const runesData = await fetchR2Json<{ runes: ExtRune[] }>(`${R2_EXT}/runes.json`).catch(() => null);
+      if (runesData) _extRunes = runesData.runes;
+    } catch (e) {
+      console.error("Failed to preload ext runes:", e);
+    }
+  })();
+  return _preloadExtRunes;
+}
+
+let _preloadExtPets: Promise<void> | null = null;
+export async function ensureExtPets(): Promise<void> {
+  if (_extPets) return;
+  if (_preloadExtPets) return _preloadExtPets;
+  _preloadExtPets = (async () => {
+    try {
+      const pets = await fetchR2Json<ExtPet[]>(`${R2_EXT}/pets.json`).catch(() => null);
+      if (pets) _extPets = pets;
+    } catch (e) {
+      console.error("Failed to preload ext pets:", e);
+    }
+  })();
+  return _preloadExtPets;
+}
+
+let _preloadExtEffects: Promise<void> | null = null;
+export async function ensureExtEffects(): Promise<void> {
+  if (_extEffects) return;
+  if (_preloadExtEffects) return _preloadExtEffects;
+  _preloadExtEffects = (async () => {
+    try {
+      const effects = await fetchR2Json<ExtEffect[]>(`${R2_EXT}/effects.json`).catch(() => null);
+      if (effects) _extEffects = effects;
+    } catch (e) {
+      console.error("Failed to preload ext effects:", e);
+    }
+  })();
+  return _preloadExtEffects;
+}
+
+export async function ensureExternalData(): Promise<void> {
+  await Promise.all([
+    ensureExtItems(),
+    ensureExtStages(),
+    ensureExtRunes(),
+    ensureExtPets(),
+    ensureExtEffects(),
+  ]);
 }
 
 export function extItems(): ExtItem[] {

@@ -5,7 +5,7 @@ import { RarityBadge } from "@/components/tbh/badges";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
 import { ItemIcon } from "@/components/ui/item-icon";
-import { DATA_VERSION, SITE_URL, assetPath, hasIndexableMarketData, itemName, marketRows, slotNames, UPDATED_AT, type Locale } from "@/lib/game-data/data";
+import { DATA_VERSION, SITE_URL, assetPath, hasIndexableMarketData, itemName, marketRows, slotNames, UPDATED_AT, type Locale , ensureMarket } from "@/lib/game-data/data";
 import { getMarketDecision } from "@/lib/game-data/decisions";
 import { localizedPath } from "@/lib/locale-path";
 import { RelatedPages } from "@/components/tbh/related-pages";
@@ -21,6 +21,8 @@ function txt(locale: Locale, values: Record<Locale | "en", string>) {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  await ensureMarket();
+
   const { locale } = await params;
   return {
     title: locale === "zh" ? "TBH 市场风险 | Sell、Keep、Farm 判断" : "TBH Market Risk | Sell, Keep, Farm Decisions",
@@ -30,6 +32,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function MarketPage({ params, searchParams }: Props) {
+  await ensureMarket();
+
   const { locale } = await params;
   const isZh = locale === "zh";
   const sp = await searchParams;

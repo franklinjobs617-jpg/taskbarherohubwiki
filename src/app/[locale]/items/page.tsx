@@ -5,8 +5,8 @@ import { ItemCard } from "@/components/tbh/cards";
 import { RarityBadge } from "@/components/tbh/badges";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
-import { SITE_URL, allItems, assetPath, bestStageForItem, gradeNames, itemName, marketForItem, slotNames, type Locale } from "@/lib/game-data/data";
-import { extItems } from "@/lib/game-data/external";
+import { SITE_URL, allItems, assetPath, bestStageForItem, gradeNames, itemName, marketForItem, slotNames, type Locale , ensureItems, ensureMarket } from "@/lib/game-data/data";
+import { extItems , ensureExtItems } from "@/lib/game-data/external";
 import { RelatedPages } from "@/components/tbh/related-pages";
 import { HowToUse } from "@/components/tbh/how-to-use";
 
@@ -18,6 +18,10 @@ type Props = {
 const HERO_CLASSES = ["Knight", "Ranger", "Sorcerer", "Priest", "Hunter", "Slayer"] as const;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  await ensureItems();
+  await ensureMarket();
+  await ensureExtItems();
+
   const { locale } = await params;
   return {
     title: locale === "zh" ? "物品数据库 — 装备、材料、掉落与市场价格" : locale === "ja" ? "アイテムデータベース — 装備、材料、ドロップ" : "Item Database — Gear, Materials, Drops & Market Prices",
@@ -29,6 +33,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ItemsPage({ params, searchParams }: Props) {
+  await ensureItems();
+  await ensureMarket();
+  await ensureExtItems();
+
   const { locale } = await params;
   const sp = await searchParams;
   const isZh = locale === "zh";

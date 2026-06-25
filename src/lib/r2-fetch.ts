@@ -65,8 +65,7 @@ async function _doFetch<T>(path: string): Promise<T> {
     } catch (error) {
       lastError = error;
       if (attempt === 0) {
-        // Brief delay before retry
-        await new Promise((r) => setTimeout(r, 500));
+        // No delay in Workers environment as it counts against CPU time limit
       }
     }
   }

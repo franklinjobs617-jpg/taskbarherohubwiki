@@ -17,6 +17,7 @@ import {
   heroBySlug,
   heroName,
   type Locale,
+  ensureHeroes,
 } from "@/lib/game-data/data";
 import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
@@ -29,6 +30,8 @@ function txt(locale: Locale, values: Record<string, string>) {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  await ensureHeroes();
+
   const { locale, slug } = await params;
   const build = buildBySlug(slug);
   return {
@@ -39,6 +42,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function BuildDetailPage({ params }: Props) {
+  await ensureHeroes();
+
   const { locale, slug } = await params;
   const build = buildBySlug(slug);
   if (!build) notFound();

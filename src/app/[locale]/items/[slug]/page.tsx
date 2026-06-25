@@ -12,7 +12,7 @@ import { DropHeatmap } from "@/components/tbh/drop-heatmap";
 import { DropSourceDetails, ItemQuickAnswer } from "@/components/tbh/item-drop-details";
 import { PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
-import { allItems, assetPath, dropsForItem, ensureGameData, hasDropData, itemBySlug, itemDetail, itemName, marketForItem, shouldIndexItem, slotNames, text, type Locale } from "@/lib/game-data/data";
+import { allItems, assetPath, dropsForItem, hasDropData, itemBySlug, itemDetail, itemName, marketForItem, shouldIndexItem, slotNames, text, type Locale , ensureItems, ensureDrops, ensureMarket } from "@/lib/game-data/data";
 import { localizedPath } from "@/lib/locale-path";
 
 type Props = { params: Promise<{ locale: Locale; slug: string }> };
@@ -65,8 +65,11 @@ function itemContext(itemSlug: string, itemType: string, locale: Locale): string
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  await ensureItems();
+  await ensureDrops();
+  await ensureMarket();
+
   const { locale, slug } = await params;
-  await ensureGameData();
   const item = itemBySlug(slug);
   if (!item) return { title: "Not found" };
   const name = itemName(item, locale);
@@ -104,6 +107,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ItemDetailPage({ params }: Props) {
+  await ensureItems();
+  await ensureDrops();
+  await ensureMarket();
+
   const { locale, slug } = await params;
   const item = itemBySlug(slug);
   if (!item) notFound();

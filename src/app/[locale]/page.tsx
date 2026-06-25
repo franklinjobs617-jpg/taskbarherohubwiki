@@ -5,8 +5,8 @@ import { Boxes, Map, PawPrint, Search, ShieldAlert, Sparkles, Target } from "luc
 import { HeroCard } from "@/components/tbh/cards";
 import { PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
-import { allHeroes, allItems, allRunes, allStages, chestItems, marketRows, SITE_URL, type Locale } from "@/lib/game-data/data";
-import { extPets } from "@/lib/game-data/external";
+import { allHeroes, allItems, allRunes, allStages, chestItems, marketRows, SITE_URL, type Locale , ensureItems, ensureHeroes, ensureStages, ensureRunes, ensureMarket } from "@/lib/game-data/data";
+import { extPets , ensureExtPets } from "@/lib/game-data/external";
 import { localizedPath } from "@/lib/locale-path";
 
 type Props = { params: Promise<{ locale: Locale }> };
@@ -16,6 +16,13 @@ function copy(locale: Locale, values: Record<Locale | "en", string>) {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  await ensureItems();
+  await ensureHeroes();
+  await ensureStages();
+  await ensureRunes();
+  await ensureMarket();
+  await ensureExtPets();
+
   const { locale } = await params;
   return {
     title: copy(locale, {
@@ -38,6 +45,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function HomePage({ params }: Props) {
+  await ensureItems();
+  await ensureHeroes();
+  await ensureStages();
+  await ensureRunes();
+  await ensureMarket();
+  await ensureExtPets();
+
   const { locale } = await params;
   const heroes = allHeroes();
   const stats = [

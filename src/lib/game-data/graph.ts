@@ -143,24 +143,54 @@ async function loadGraphData<T>(path: string, cacheRef: { current: T | null }): 
   }
 }
 
-let _graphPreloadPromise: Promise<void> | null = null;
+let _preloadGraphStages: Promise<void> | null = null;
+export async function ensureGraphStages(): Promise<void> {
+  if (stagesCache) return;
+  if (_preloadGraphStages) return _preloadGraphStages;
+  _preloadGraphStages = (async () => {
+    try {
+      stagesCache = await fetchR2Json<GraphStage[]>(R2_GRAPH.stages).catch(() => []);
+    } catch (e) {
+      console.error("Failed to preload graph stages:", e);
+    }
+  })();
+  return _preloadGraphStages;
+}
+
+let _preloadGraphChests: Promise<void> | null = null;
+export async function ensureGraphChests(): Promise<void> {
+  if (chestsCache) return;
+  if (_preloadGraphChests) return _preloadGraphChests;
+  _preloadGraphChests = (async () => {
+    try {
+      chestsCache = await fetchR2Json<GraphChest[]>(R2_GRAPH.chests).catch(() => []);
+    } catch (e) {
+      console.error("Failed to preload graph chests:", e);
+    }
+  })();
+  return _preloadGraphChests;
+}
+
+let _preloadGraphMonsters: Promise<void> | null = null;
+export async function ensureGraphMonsters(): Promise<void> {
+  if (monstersCache) return;
+  if (_preloadGraphMonsters) return _preloadGraphMonsters;
+  _preloadGraphMonsters = (async () => {
+    try {
+      monstersCache = await fetchR2Json<GraphMonster[]>(R2_GRAPH.monsters).catch(() => []);
+    } catch (e) {
+      console.error("Failed to preload graph monsters:", e);
+    }
+  })();
+  return _preloadGraphMonsters;
+}
 
 export async function ensureGraphData(): Promise<void> {
-  if (stagesCache) return;
-  if (_graphPreloadPromise) return _graphPreloadPromise;
-
-  _graphPreloadPromise = (async () => {
-    const [stages, chests, monsters] = await Promise.all([
-      fetchR2Json<GraphStage[]>(R2_GRAPH.stages).catch(() => []),
-      fetchR2Json<GraphChest[]>(R2_GRAPH.chests).catch(() => []),
-      fetchR2Json<GraphMonster[]>(R2_GRAPH.monsters).catch(() => []),
-    ]);
-    stagesCache = stages as GraphStage[];
-    chestsCache = chests as GraphChest[];
-    monstersCache = monsters as GraphMonster[];
-  })();
-
-  return _graphPreloadPromise;
+  await Promise.all([
+    ensureGraphStages(),
+    ensureGraphChests(),
+    ensureGraphMonsters(),
+  ]);
 }
 
 export function graphStages() {

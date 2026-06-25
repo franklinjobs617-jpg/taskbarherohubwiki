@@ -7,9 +7,9 @@ import { FaqBlock } from "@/components/tbh/faq-block";
 import { entityFaqs } from "@/lib/game-data/faqs";
 import { RarityBadge } from "@/components/tbh/badges";
 import { PageHeader, PageShell } from "@/components/tbh/page";
-import { allItems, ensureGameData, stageBySlug, stageName, type Locale } from "@/lib/game-data/data";
+import { allItems, stageBySlug, stageName, type Locale , ensureItems, ensureStages } from "@/lib/game-data/data";
 import { formatChance, getStageDecision } from "@/lib/game-data/decisions";
-import { graphChestByKey, graphStageByKey } from "@/lib/game-data/graph";
+import { graphChestByKey, graphStageByKey , ensureGraphStages, ensureGraphChests } from "@/lib/game-data/graph";
 import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 
@@ -24,8 +24,12 @@ function localItemSlug(itemKey: number, fallback: string) {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  await ensureItems();
+  await ensureStages();
+  await ensureGraphStages();
+  await ensureGraphChests();
+
   const { locale, slug } = await params;
-  await ensureGameData();
   const localStage = stageBySlug(slug);
   const graphStage = localStage ? graphStageByKey(localStage.key) : graphStageByKey(Number(slug));
   const name = localStage ? stageName(localStage, locale) : graphStage?.name ?? "Stage";
@@ -47,6 +51,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function StageDetailPage({ params }: Props) {
+  await ensureItems();
+  await ensureStages();
+  await ensureGraphStages();
+  await ensureGraphChests();
+
   const { locale, slug } = await params;
   const decision = getStageDecision(slug, locale);
   if (!decision?.graphStage) notFound();

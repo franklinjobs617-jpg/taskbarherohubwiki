@@ -7,8 +7,8 @@ import { Breadcrumb } from "@/components/tbh/breadcrumb";
 import { FaqBlock } from "@/components/tbh/faq-block";
 import { entityFaqs } from "@/lib/game-data/faqs";
 import { PageHeader, PageShell } from "@/components/tbh/page";
-import { allMonsters, allStages, ensureGameData, text, type Locale } from "@/lib/game-data/data";
-import { extPets } from "@/lib/game-data/external";
+import { allMonsters, allStages, text, type Locale , ensureStages, ensureMonsters } from "@/lib/game-data/data";
+import { extPets , ensureExtPets } from "@/lib/game-data/external";
 import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 
@@ -26,8 +26,11 @@ function findMonster(slug: string) {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  await ensureStages();
+  await ensureMonsters();
+  await ensureExtPets();
+
   const { locale, slug } = await params;
-  await ensureGameData();
   const monster = findMonster(slug);
   if (!monster) return { title: "Not found" };
   const name = text(monster.MonsterNameStringKey_i18n, locale, `Monster ${monster.MonsterKey}`);
@@ -41,6 +44,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function MonsterDetailPage({ params }: Props) {
+  await ensureStages();
+  await ensureMonsters();
+  await ensureExtPets();
+
   const { locale, slug } = await params;
   const monster = findMonster(slug);
   if (!monster) notFound();

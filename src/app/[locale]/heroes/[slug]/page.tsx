@@ -13,7 +13,6 @@ import {
   allSkills,
   assetPath,
   builds,
-  ensureGameData,
   gearPreviewItem,
   heroBySlug,
   heroName,
@@ -22,6 +21,8 @@ import {
   slotNames,
   text,
   type Locale,
+  ensureHeroes,
+  ensureSkills,
 } from "@/lib/game-data/data";
 import { heroProfile, heroWeaponLabel } from "@/lib/hero-content";
 import { pageAlternates } from "@/lib/seo";
@@ -29,8 +30,10 @@ import { pageAlternates } from "@/lib/seo";
 type Props = { params: Promise<{ locale: Locale; slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  await ensureHeroes();
+  await ensureSkills();
+
   const { locale, slug } = await params;
-  await ensureGameData();
   const hero = heroBySlug(slug);
   const name = hero ? heroName(hero, locale) : locale === "zh" ? "英雄" : "Hero";
   return {
@@ -44,6 +47,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function HeroDetailPage({ params }: Props) {
+  await ensureHeroes();
+  await ensureSkills();
+
   const { locale, slug } = await params;
   const hero = heroBySlug(slug);
   if (!hero) notFound();
