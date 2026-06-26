@@ -3,6 +3,8 @@ import { PageHeader, PageShell } from "@/components/tbh/page";
 import type { Locale } from "@/lib/game-data/data";
 import { pageAlternates } from "@/lib/seo";
 
+export const dynamic = "force-static";
+
 type Props = { params: Promise<{ locale: Locale }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

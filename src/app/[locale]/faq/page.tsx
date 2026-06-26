@@ -6,6 +6,8 @@ import type { Locale } from "@/lib/game-data/data";
 import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 
+export const dynamic = "force-static";
+
 type Props = { params: Promise<{ locale: Locale }> };
 const steamDiscussionsUrl = "https://steamcommunity.com/app/3678970/discussions/0/";
 const discordUrl = "https://discord.gg/kSRUY8N8GA";

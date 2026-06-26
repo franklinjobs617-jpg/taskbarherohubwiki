@@ -3,6 +3,7 @@ import Script from "next/script";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { CookieConsentBanner } from "@/components/layout/cookie-consent";
 import { NavProvider } from "@/components/layout/nav-provider";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { isLocale, SITE_URL } from "@/lib/game-data/data";
@@ -74,7 +75,10 @@ export default async function LocaleLayout({ children, params }: Props) {
       <head>
         <link rel="llms" href="/llms.txt" />
         <meta name="llms:generated" content="2026-06-08" />
-        {process.env.NODE_ENV === "production" ? (
+        {/* AdSense script — enable only after AdSense account is fully approved.
+            Loading adsbygoogle.js before approval may confuse manual reviewers.
+            Set NEXT_PUBLIC_ADSENSE_APPROVED=true after receiving approval email. */}
+        {process.env.NODE_ENV === "production" && process.env.NEXT_PUBLIC_ADSENSE_APPROVED === "true" ? (
           <script
             async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3383070348689557"
@@ -88,6 +92,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <NavProvider>{children}</NavProvider>
             <SiteFooter />
           </div>
+          <CookieConsentBanner />
         </NextIntlClientProvider>
         <Script id="ld-website" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify({
