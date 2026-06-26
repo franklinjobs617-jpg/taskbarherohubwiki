@@ -7,12 +7,13 @@ import { Breadcrumb } from "@/components/tbh/breadcrumb";
 import { FaqBlock } from "@/components/tbh/faq-block";
 import { entityFaqs } from "@/lib/game-data/faqs";
 import { ConfidenceBadge, RarityBadge } from "@/components/tbh/badges";
-import { ItemCard, MarketPrice, Section } from "@/components/tbh/cards";
+import { ItemCard, Section } from "@/components/tbh/cards";
 import { DropHeatmap } from "@/components/tbh/drop-heatmap";
 import { DropSourceDetails, ItemQuickAnswer } from "@/components/tbh/item-drop-details";
 import { PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
-import { allItems, assetPath, dropsForItem, hasDropData, itemBySlug, itemDetail, itemName, marketForItem, shouldIndexItem, slotNames, text, type Locale , ensureItems, ensureDrops, ensureMarket } from "@/lib/game-data/data";
+import { assetPath, itemName, slotNames, text, type Locale } from "@/lib/game-data/data";
+import { getItemPageData } from "@/lib/game-data/v2";
 import { localizedPath } from "@/lib/locale-path";
 
 type Props = { params: Promise<{ locale: Locale; slug: string }> };
@@ -65,16 +66,13 @@ function itemContext(itemSlug: string, itemType: string, locale: Locale): string
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  await ensureItems();
-  await ensureDrops();
-  await ensureMarket();
-
   const { locale, slug } = await params;
-  const item = itemBySlug(slug);
-  if (!item) return { title: "Not found" };
+  const pageData = await getItemPageData(slug);
+  if (!pageData) return { title: "Not found" };
+  const { item, drops } = pageData;
   const name = itemName(item, locale);
-  const hasDrops = hasDropData(slug);
-  const dropCount = hasDrops ? dropsForItem(slug).length : 0;
+  const hasDrops = drops.length > 0;
+  const dropCount = drops.length;
 
   const titleByLocale: Record<string, string> = {
     zh: `${name}｜掉落位置、属性与市场状态 — TBH Wiki`,
@@ -102,30 +100,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: titleByLocale[locale] ?? titleByLocale.en,
     description: descByLocale[locale] ?? descByLocale.en,
     alternates: { canonical: locale === "en" ? `/items/${slug}` : `/${locale}/items/${slug}`, languages: { zh: `/zh/items/${slug}`, en: `/items/${slug}`, ja: `/ja/items/${slug}`, ko: `/ko/items/${slug}`, "x-default": `/items/${slug}` } },
-    robots: shouldIndexItem(slug) ? undefined : { index: false, follow: true },
+    robots: pageData.shouldIndex ? undefined : { index: false, follow: true },
   };
 }
 
 export default async function ItemDetailPage({ params }: Props) {
-  await ensureItems();
-  await ensureDrops();
-  await ensureMarket();
-
   const { locale, slug } = await params;
-  const item = itemBySlug(slug);
-  if (!item) notFound();
-  const detail = itemDetail(item.id);
-  const market = marketForItem(item);
+  const pageData = await getItemPageData(slug);
+  if (!pageData) notFound();
+  const { item, detail, market, drops, related } = pageData;
   const name = itemName(item, locale);
   const enName = itemName(item, "en");
   const isZh = locale === "zh";
   const isJa = locale === "ja";
   const icon = assetPath(item.icon);
   const description = text(detail?.desc, locale, "");
-  const related = allItems().filter((entry) => entry.id !== item.id && (entry.grade === item.grade || entry.gear === item.gear) && entry.type === item.type).slice(0, 8);
   const context = itemContext(slug, item.type, locale);
-  const hasDrops = hasDropData(slug);
-  const drops = dropsForItem(slug);
+  const hasDrops = drops.length > 0;
   const lpath = (path: string) => localizedPath(locale, path);
   const isEntityGapTarget = slug.includes("soulstone") || slug.includes("anniversary-coin") || enName === "Stage Boss Box 6";
 
@@ -160,7 +151,7 @@ export default async function ItemDetailPage({ params }: Props) {
         <span className="text-text-secondary">{name}</span>
       </nav>
 
-      <ItemQuickAnswer itemSlug={slug} marketPrice={market?.lowest} locale={locale} />
+      <ItemQuickAnswer itemSlug={slug} marketPrice={market?.lowest} locale={locale} dropSources={drops} />
 
       {isEntityGapTarget ? (
         <section className="mt-6 border border-[#3a2d12] bg-[#171105] p-5">
@@ -219,7 +210,13 @@ export default async function ItemDetailPage({ params }: Props) {
           <div className="mt-5 border-t border-border-default pt-4">
             <p className="text-xs text-text-muted">{isZh ? "市场状态" : "Market status"}</p>
             <div className="mt-2 flex items-center justify-between gap-3">
-              <MarketPrice item={item} />
+              {market?.lowest ? (
+                <span className="text-lg font-semibold text-accent-bright">${market.lowest.toFixed(2)}</span>
+              ) : item.marketable ? (
+                <span className="text-[11px] text-text-muted">{isZh ? "暂无市场数据" : "No market data"}</span>
+              ) : (
+                <span className="text-[11px] text-text-muted">{isZh ? "不可交易" : "Not tradable"}</span>
+              )}
               <ConfidenceBadge value={market?.confidence ?? "missing"} />
             </div>
             {market ? <Link href={lpath(`/market/${item.slug}`)} className="mt-2 inline-block text-xs text-accent-bright hover:underline">{isZh ? "查看市场状态" : "Open market status"}</Link> : null}
@@ -255,7 +252,7 @@ export default async function ItemDetailPage({ params }: Props) {
           {/* Drop Heatmap */}
           {hasDrops && (
             <Section title={isZh ? "掉落热力图" : "Drop Heatmap"} eyebrow={isZh ? "点击关卡查看详情，颜色越深掉落越多" : "Click for details — darker = more drops"}>
-              <DropHeatmap itemSlug={slug} locale={locale} />
+              <DropHeatmap itemSlug={slug} locale={locale} dropSources={drops} />
             </Section>
           )}
 
@@ -281,7 +278,7 @@ export default async function ItemDetailPage({ params }: Props) {
 
           {hasDrops && (
             <Section title={isZh ? "掉落来源详情" : "Drop Source Details"} eyebrow={isZh ? "按宝箱类型分组，点击展开" : "Grouped by chest type — click to expand"}>
-              <DropSourceDetails itemSlug={slug} selectedStage={null} locale={locale} />
+              <DropSourceDetails itemSlug={slug} selectedStage={null} locale={locale} dropSources={drops} />
             </Section>
           )}
 

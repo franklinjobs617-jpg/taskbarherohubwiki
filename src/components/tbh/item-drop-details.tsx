@@ -2,22 +2,24 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { bestFarmingStages, dropsForItem, type DropSource, type FarmingStage, type Locale } from "@/lib/game-data/data";
+import { dropsForItem, type DropSource, type FarmingStage, type Locale } from "@/lib/game-data/data";
 import { localizedPath } from "@/lib/locale-path";
 
 export function ItemQuickAnswer({
   itemSlug,
   marketPrice,
   locale,
+  dropSources,
 }: {
   itemSlug: string;
   marketPrice?: number | null;
   locale: Locale;
+  dropSources?: DropSource[];
 }) {
   const isZh = locale === "zh";
-  const bestStages = bestFarmingStages(itemSlug, 1);
+  const drops = dropSources ?? dropsForItem(itemSlug);
+  const bestStages = bestFarmingStagesFromDrops(drops, 1);
   const best = bestStages[0];
-  const drops = dropsForItem(itemSlug);
   const lpath = (path: string) => localizedPath(locale, path);
 
   if (!drops.length) return null;
@@ -68,13 +70,15 @@ export function DropSourceDetails({
   itemSlug,
   selectedStage,
   locale,
+  dropSources,
 }: {
   itemSlug: string;
   selectedStage: FarmingStage | null;
   locale: Locale;
+  dropSources?: DropSource[];
 }) {
   const isZh = locale === "zh";
-  const drops = dropsForItem(itemSlug);
+  const drops = dropSources ?? dropsForItem(itemSlug);
 
   if (!drops.length) {
     return (
@@ -94,6 +98,36 @@ export function DropSourceDetails({
       )}
     </div>
   );
+}
+
+function bestFarmingStagesFromDrops(dropSources: DropSource[], limit = 5): FarmingStage[] {
+  if (!dropSources.length) return [];
+  const stageMap = new Map<number, FarmingStage>();
+
+  for (const source of dropSources) {
+    for (const stage of source.stages) {
+      const effectiveRate = (source.drop_chance / 100) * (stage.rate / 1000);
+      const existing = stageMap.get(stage.key);
+      if (existing) {
+        existing.boxes.push({ name: source.box_name, rate: effectiveRate });
+        existing.totalDropChance += effectiveRate;
+        continue;
+      }
+      stageMap.set(stage.key, {
+        stageKey: stage.key,
+        act: stage.act,
+        no: stage.no,
+        diff: stage.diff,
+        stageSlug: stage.slug,
+        boxes: [{ name: source.box_name, rate: effectiveRate }],
+        totalDropChance: effectiveRate,
+      });
+    }
+  }
+
+  return Array.from(stageMap.values())
+    .sort((a, b) => b.totalDropChance - a.totalDropChance)
+    .slice(0, limit);
 }
 
 function SelectedStageView({ stage, locale }: { stage: FarmingStage; locale: Locale }) {

@@ -41,6 +41,12 @@ yarn-error.log*
 .dev.vars*
 !.dev.vars.example
 
+# generated SEO/R2 data
+/data/generated/
+/public/game/v2/
+/public/sitemap.xml
+/public/sitemaps/
+
 # cloudflare wrangler state (large binary cache)
 .wrangler/
 

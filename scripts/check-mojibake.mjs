@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { execFileSync } from "node:child_process";
 
@@ -20,6 +20,7 @@ for (const root of roots) {
   for (const file of listFiles(root)) {
     if (file === "scripts/check-mojibake.mjs") continue;
     if (!textExtensions.has(file.slice(file.lastIndexOf(".")))) continue;
+    if (!existsSync(join(process.cwd(), file))) continue;
     const text = readFileSync(join(process.cwd(), file), "utf8");
     const lines = text.split(/\r?\n/);
     lines.forEach((line, index) => {

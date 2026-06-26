@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { bestFarmingStages, dropsForItem, type DropSource, type FarmingStage, type Locale } from "@/lib/game-data/data";
+import { dropsForItem, type DropSource, type FarmingStage, type Locale } from "@/lib/game-data/data";
 import { localizedPath } from "@/lib/locale-path";
 
 const DIFFICULTIES = ["NORMAL", "NIGHTMARE", "HELL", "TORMENT"] as const;
@@ -52,18 +52,20 @@ export function DropHeatmap({
   locale,
   onStageSelect,
   selectedStage,
+  dropSources,
 }: {
   itemSlug: string;
   locale: Locale;
   onStageSelect?: (stage: FarmingStage | null) => void;
   selectedStage?: number | null;
+  dropSources?: DropSource[];
 }) {
   const [difficulty, setDifficulty] = useState<Difficulty>("NORMAL");
   const [hoveredStage, setHoveredStage] = useState<number | null>(null);
 
   const isZh = locale === "zh";
-  const dropSources = useMemo(() => dropsForItem(itemSlug), [itemSlug]);
-  const bestStages = useMemo(() => bestFarmingStages(itemSlug, 10), [itemSlug]);
+  const activeDropSources = useMemo(() => dropSources ?? dropsForItem(itemSlug), [dropSources, itemSlug]);
+  const bestStages = useMemo(() => bestFarmingStagesFromDrops(activeDropSources, 10), [activeDropSources]);
   const lpath = (path: string) => localizedPath(locale, path);
 
   // Build stage grid: 3 acts × 10 stages
@@ -74,17 +76,17 @@ export function DropHeatmap({
         // Generate stage key: 1act00no + type(0=normal field) + diff
         const diffCode = DIFFICULTIES.indexOf(difficulty) + 1;
         const key = diffCode * 1000 + act * 100 + no;
-        const density = getDropDensity(key, dropSources);
+        const density = getDropDensity(key, activeDropSources);
         grid.push({ act, no, key, density });
       }
     }
     return grid;
-  }, [dropSources, difficulty]);
+  }, [activeDropSources, difficulty]);
 
   // Best stage for this item
   const bestStage = bestStages[0];
 
-  if (!dropSources.length) {
+  if (!activeDropSources.length) {
     return (
       <div className="border border-border-default bg-bg-panel p-4 text-center text-sm text-text-muted">
         {isZh ? "暂无掉落数据" : "No drop data available yet"}
@@ -219,4 +221,34 @@ export function DropHeatmap({
       )}
     </div>
   );
+}
+
+function bestFarmingStagesFromDrops(dropSources: DropSource[], limit = 5): FarmingStage[] {
+  if (!dropSources.length) return [];
+  const stageMap = new Map<number, FarmingStage>();
+
+  for (const source of dropSources) {
+    for (const stage of source.stages) {
+      const effectiveRate = (source.drop_chance / 100) * (stage.rate / 1000);
+      const existing = stageMap.get(stage.key);
+      if (existing) {
+        existing.boxes.push({ name: source.box_name, rate: effectiveRate });
+        existing.totalDropChance += effectiveRate;
+        continue;
+      }
+      stageMap.set(stage.key, {
+        stageKey: stage.key,
+        act: stage.act,
+        no: stage.no,
+        diff: stage.diff,
+        stageSlug: stage.slug,
+        boxes: [{ name: source.box_name, rate: effectiveRate }],
+        totalDropChance: effectiveRate,
+      });
+    }
+  }
+
+  return Array.from(stageMap.values())
+    .sort((a, b) => b.totalDropChance - a.totalDropChance)
+    .slice(0, limit);
 }

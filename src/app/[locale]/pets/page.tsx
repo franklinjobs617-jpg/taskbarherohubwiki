@@ -5,6 +5,7 @@ import { MapPin, PawPrint, Star, Target } from "lucide-react";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { allStages, stageSlug, type Locale , ensureStages } from "@/lib/game-data/data";
 import { getPetUnlockPlan } from "@/lib/game-data/decisions";
+import { ensureExtPets } from "@/lib/game-data/external";
 import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 import { RelatedPages } from "@/components/tbh/related-pages";
@@ -34,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function PetsPage({ params, searchParams }: Props) {
-  await ensureStages();
+  await Promise.all([ensureStages(), ensureExtPets()]);
 
   const { locale } = await params;
   const sp = await searchParams;

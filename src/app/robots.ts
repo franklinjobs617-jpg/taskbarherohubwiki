@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
-import { SITE_URL } from "@/lib/game-data/data";
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://taskbarherohub.wiki";
 
 export default function robots(): MetadataRoute.Robots {
   return {

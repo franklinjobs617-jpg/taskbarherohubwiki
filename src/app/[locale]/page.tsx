@@ -2,27 +2,95 @@ import type { Metadata } from "next";
 import { SafeImage } from "@/components/ui/safe-image";
 import Link from "next/link";
 import { Boxes, Map, PawPrint, Search, ShieldAlert, Sparkles, Target } from "lucide-react";
-import { HeroCard } from "@/components/tbh/cards";
+import { HeroPortrait } from "@/components/tbh/hero-portrait";
 import { PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
-import { allHeroes, allItems, allRunes, allStages, chestItems, marketRows, SITE_URL, type Locale , ensureItems, ensureHeroes, ensureStages, ensureRunes, ensureMarket } from "@/lib/game-data/data";
-import { extPets , ensureExtPets } from "@/lib/game-data/external";
+import { type Hero, type Locale } from "@/lib/game-data/data";
+import { heroProfile, heroWeaponLabel } from "@/lib/hero-content";
 import { localizedPath } from "@/lib/locale-path";
 
 type Props = { params: Promise<{ locale: Locale }> };
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://taskbarherohub.wiki";
+const STATIC_COUNTS = {
+  items: 5944,
+  chests: 59,
+  stages: 120,
+  pets: 8,
+  runes: 197,
+  market: 0,
+};
+const HOME_HEROES: Hero[] = [
+  {
+    HeroKey: 101,
+    ClassType: "Knight",
+    slug: "knight",
+    HeroNameKey_i18n: { zh: "骑士", en: "Knight", ja: "ナイト", ko: "기사" },
+    MainWeaponGearType: "SWORD",
+    SubWeaponGearType: "SHIELD",
+    MaxHp: 130,
+    AttackDamage: 2,
+  },
+  {
+    HeroKey: 201,
+    ClassType: "Ranger",
+    slug: "ranger",
+    HeroNameKey_i18n: { zh: "游侠", en: "Ranger", ja: "レンジャー", ko: "레인저" },
+    MainWeaponGearType: "BOW",
+    SubWeaponGearType: "ARROW",
+    MaxHp: 60,
+    AttackDamage: 1,
+  },
+  {
+    HeroKey: 301,
+    ClassType: "Sorcerer",
+    slug: "sorcerer",
+    HeroNameKey_i18n: { zh: "法师", en: "Sorcerer", ja: "ソーサラー", ko: "마법사" },
+    MainWeaponGearType: "STAFF",
+    SubWeaponGearType: "ORB",
+    MaxHp: 50,
+    AttackDamage: 2,
+  },
+  {
+    HeroKey: 401,
+    ClassType: "Priest",
+    slug: "priest",
+    HeroNameKey_i18n: { zh: "牧师", en: "Priest", ja: "プリースト", ko: "사제" },
+    MainWeaponGearType: "SCEPTER",
+    SubWeaponGearType: "TOME",
+    MaxHp: 95,
+    AttackDamage: 1,
+    DLCAppId: 4427410,
+  },
+  {
+    HeroKey: 501,
+    ClassType: "Hunter",
+    slug: "hunter",
+    HeroNameKey_i18n: { zh: "猎人", en: "Hunter", ja: "ハンター", ko: "헌터" },
+    MainWeaponGearType: "CROSSBOW",
+    SubWeaponGearType: "BOLT",
+    MaxHp: 70,
+    AttackDamage: 2,
+    DLCAppId: 4427420,
+  },
+  {
+    HeroKey: 601,
+    ClassType: "Slayer",
+    slug: "slayer",
+    HeroNameKey_i18n: { zh: "杀手", en: "Slayer", ja: "スレイヤー", ko: "슬레이어" },
+    MainWeaponGearType: "AXE",
+    SubWeaponGearType: "HATCHET",
+    MaxHp: 115,
+    AttackDamage: 2,
+    DLCAppId: 4427430,
+  },
+];
 
 function copy(locale: Locale, values: Record<Locale | "en", string>) {
   return values[locale] ?? values.en;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  await ensureItems();
-  await ensureHeroes();
-  await ensureStages();
-  await ensureRunes();
-  await ensureMarket();
-  await ensureExtPets();
-
   const { locale } = await params;
   return {
     title: copy(locale, {
@@ -45,22 +113,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function HomePage({ params }: Props) {
-  await ensureItems();
-  await ensureHeroes();
-  await ensureStages();
-  await ensureRunes();
-  await ensureMarket();
-  await ensureExtPets();
-
   const { locale } = await params;
-  const heroes = allHeroes();
   const stats = [
-    { href: "/items", label: copy(locale, { zh: "物品", en: "Items", ja: "アイテム", ko: "아이템" }), value: allItems().length },
-    { href: "/chests", label: copy(locale, { zh: "宝箱", en: "Chests", ja: "宝箱", ko: "상자" }), value: chestItems().length },
-    { href: "/map", label: copy(locale, { zh: "关卡", en: "Stages", ja: "ステージ", ko: "스테이지" }), value: allStages().length },
-    { href: "/pets", label: copy(locale, { zh: "宠物", en: "Pets", ja: "ペット", ko: "펫" }), value: extPets().length },
-    { href: "/runes", label: copy(locale, { zh: "符文", en: "Runes", ja: "ルーン", ko: "룬" }), value: allRunes().length },
-    { href: "/market", label: copy(locale, { zh: "市场", en: "Market", ja: "市場", ko: "시장" }), value: marketRows().length },
+    { href: "/items", label: copy(locale, { zh: "物品", en: "Items", ja: "アイテム", ko: "아이템" }), value: STATIC_COUNTS.items },
+    { href: "/chests", label: copy(locale, { zh: "宝箱", en: "Chests", ja: "宝箱", ko: "상자" }), value: STATIC_COUNTS.chests },
+    { href: "/map", label: copy(locale, { zh: "关卡", en: "Stages", ja: "ステージ", ko: "스테이지" }), value: STATIC_COUNTS.stages },
+    { href: "/pets", label: copy(locale, { zh: "宠物", en: "Pets", ja: "ペット", ko: "펫" }), value: STATIC_COUNTS.pets },
+    { href: "/runes", label: copy(locale, { zh: "符文", en: "Runes", ja: "ルーン", ko: "룬" }), value: STATIC_COUNTS.runes },
+    { href: "/market", label: copy(locale, { zh: "市场", en: "Market", ja: "市場", ko: "시장" }), value: STATIC_COUNTS.market },
   ];
   const tasks = [
     { href: "/tools/drop-finder", icon: Target, label: "Find Drops", desc: copy(locale, { zh: "最佳关卡、概率、预计次数", en: "Best stage, chance, expected runs", ja: "周回先、確率、必要回数", ko: "추천 장소, 확률, 예상 횟수" }) },
@@ -201,8 +261,8 @@ export default async function HomePage({ params }: Props) {
           </Link>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3 stagger-children">
-          {heroes.map((hero) => (
-            <HeroCard key={hero.HeroKey} hero={hero} locale={locale} />
+          {HOME_HEROES.map((hero) => (
+            <HomeHeroCard key={hero.HeroKey} hero={hero} locale={locale} />
           ))}
         </div>
       </section>
@@ -220,5 +280,45 @@ export default async function HomePage({ params }: Props) {
         <p className="mt-5 text-center text-caption font-mono text-text-muted">v1 / 2026-06-08 · Datamined daily · 4 languages</p>
       </section>
     </PageShell>
+  );
+}
+
+function localizedHeroName(hero: Hero, locale: Locale) {
+  const value = hero.HeroNameKey_i18n?.[locale];
+  return value ?? hero.ClassType ?? `Hero ${hero.HeroKey}`;
+}
+
+function HomeHeroCard({ hero, locale }: { hero: Hero; locale: Locale }) {
+  const name = localizedHeroName(hero, locale);
+  const profile = heroProfile(hero, locale);
+  const slug = hero.slug ?? hero.ClassType?.toLowerCase() ?? String(hero.HeroKey);
+
+  return (
+    <Link
+      href={localizedPath(locale, `/heroes/${slug}`)}
+      className="group block overflow-hidden border border-border-strong bg-bg-panel transition hover:-translate-y-0.5 hover:border-accent hover:bg-bg-panel"
+    >
+      <HeroPortrait heroKey={hero.HeroKey} fallbackText={name} size="card" />
+      <div className="p-4">
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0">
+            <p className="truncate text-lg font-semibold text-text-primary group-hover:text-accent-bright">{name}</p>
+            <p className="mt-1 text-xs uppercase tracking-[0.16em] text-text-muted">{hero.ClassType}</p>
+          </div>
+          {hero.DLCAppId ? (
+            <span className="shrink-0 border border-accent-dim bg-accent-soft px-2 py-1 text-[10px] font-semibold text-accent-bright">DLC</span>
+          ) : null}
+        </div>
+        <p className="mt-3 text-xs leading-5 text-text-secondary">{heroWeaponLabel(hero, locale)}</p>
+        <p className="mt-3 line-clamp-2 min-h-10 text-sm leading-5 text-text-secondary">{profile.playstyle}</p>
+        <div className="mt-4 grid grid-cols-3 gap-2 text-center text-xs">
+          <span className="border-2 border-border-default bg-bg-panel px-2 py-1.5 text-text-primary">HP {hero.MaxHp ?? "-"}</span>
+          <span className="border-2 border-border-default bg-bg-panel px-2 py-1.5 text-text-primary">ATK {hero.AttackDamage ?? "-"}</span>
+          <span className="border-2 border-border-default bg-bg-panel px-2 py-1.5 text-text-primary">
+            {copy(locale, { zh: "难度", en: "Diff", ja: "難度", ko: "난이도" })} {profile.difficulty}
+          </span>
+        </div>
+      </div>
+    </Link>
   );
 }

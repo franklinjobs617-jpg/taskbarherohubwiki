@@ -5,10 +5,15 @@ import { ItemCard } from "@/components/tbh/cards";
 import { RarityBadge } from "@/components/tbh/badges";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
-import { SITE_URL, allItems, assetPath, bestStageForItem, gradeNames, itemName, marketForItem, slotNames, type Locale , ensureItems, ensureMarket } from "@/lib/game-data/data";
-import { extItems , ensureExtItems } from "@/lib/game-data/external";
+import { SITE_URL, assetPath, gradeNames, slotNames, type Locale } from "@/lib/game-data/data";
+import {
+  getItemIndexLight,
+  getItemIndexPreview,
+  indexMarketForItem,
+  itemIndexName,
+  type ItemIndexEntry,
+} from "@/lib/game-data/v2";
 import { RelatedPages } from "@/components/tbh/related-pages";
-import { HowToUse } from "@/components/tbh/how-to-use";
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -18,10 +23,6 @@ type Props = {
 const HERO_CLASSES = ["Knight", "Ranger", "Sorcerer", "Priest", "Hunter", "Slayer"] as const;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  await ensureItems();
-  await ensureMarket();
-  await ensureExtItems();
-
   const { locale } = await params;
   return {
     title: locale === "zh" ? "物品数据库 — 装备、材料、掉落与市场价格" : locale === "ja" ? "アイテムデータベース — 装備、材料、ドロップ" : "Item Database — Gear, Materials, Drops & Market Prices",
@@ -33,18 +34,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ItemsPage({ params, searchParams }: Props) {
-  await ensureItems();
-  await ensureMarket();
-  await ensureExtItems();
-
   const { locale } = await params;
   const sp = await searchParams;
   const isZh = locale === "zh";
   const query = sp.q?.trim().toLowerCase();
-  let rows = allItems();
+  const hasActiveFilters = Boolean(
+    query || sp.grade || sp.slot || sp.type || sp.market || sp.class || sp.price || sp.obtainable,
+  );
+  let rows: ItemIndexEntry[] = hasActiveFilters
+    ? await getItemIndexLight()
+    : await getItemIndexPreview();
 
-  const extData = extItems();
-  const extById = new Map(extData.map((item) => [item.key, item]));
   // Type filter
   if (sp.type) rows = rows.filter((item) => item.type === sp.type);
   // Grade filter
@@ -52,11 +52,11 @@ export default async function ItemsPage({ params, searchParams }: Props) {
   // Slot filter
   if (sp.slot) rows = rows.filter((item) => item.gear === sp.slot);
   // Market filter
-  if (sp.market === "1") rows = rows.filter((item) => Boolean(marketForItem(item)));
+  if (sp.market === "1") rows = rows.filter((item) => Boolean(indexMarketForItem(item)));
   // Price range filter (2.8)
   if (sp.price && sp.price !== "any") {
     rows = rows.filter((item) => {
-      const lowest = marketForItem(item)?.lowest;
+      const lowest = indexMarketForItem(item)?.lowest;
       if (lowest == null) return sp.price === "gt50" ? false : true;
       if (sp.price === "lt1") return lowest < 1;
       if (sp.price === "1to10") return lowest >= 1 && lowest < 10;
@@ -66,30 +66,27 @@ export default async function ItemsPage({ params, searchParams }: Props) {
     });
   }
   // Obtainable only filter (2.9)
-  if (sp.obtainable === "1") rows = rows.filter((item) => extById.get(item.id)?.obtainable !== false);
+  if (sp.obtainable === "1") rows = rows.filter((item) => item.obtainable !== false);
   // Class filter — use external data for hero compatibility
   if (sp.class) {
-    const classItemKeys = new Set(
-      extData.filter((ei) => ei.classes.includes(sp.class!)).map((ei) => ei.key)
-    );
-    rows = rows.filter((item) => classItemKeys.has(item.id));
+    rows = rows.filter((item) => item.classFit?.includes(sp.class!));
   }
   // Text search
   if (query) {
     rows = rows.filter((item) =>
-      itemName(item, locale).toLowerCase().includes(query) ||
-      itemName(item, "en").toLowerCase().includes(query) ||
+      itemIndexName(item, locale).toLowerCase().includes(query) ||
+      itemIndexName(item, "en").toLowerCase().includes(query) ||
       item.slug.includes(query)
     );
   }
 
-  rows = rows.sort((a, b) => (b.level ?? 0) - (a.level ?? 0)).slice(0, 360);
+  rows = rows.sort((a, b) => (b.level ?? 0) - (a.level ?? 0)).slice(0, 50);
   const grades = Object.keys(gradeNames);
   const slots = Object.keys(slotNames);
 
   // Count items per class for badge display
   const classCounts = Object.fromEntries(
-    HERO_CLASSES.map((cls) => [cls, extData.filter((ei) => ei.classes.includes(cls) && ei.type !== "STAGEBOX").length])
+    HERO_CLASSES.map((cls) => [cls, rows.filter((item) => item.classFit?.includes(cls) && item.type !== "STAGEBOX").length])
   );
 
   return (
@@ -243,19 +240,18 @@ export default async function ItemsPage({ params, searchParams }: Props) {
           <tbody>
             {rows.map((item) => {
               const icon = assetPath(item.icon);
-              const ext = extById.get(item.id);
-              const market = marketForItem(item);
-              const bestStage = bestStageForItem(item.slug);
-              const classFit = ext?.classes?.slice(0, 3) ?? [];
+              const market = indexMarketForItem(item);
+              const classFit = item.classFit?.slice(0, 3) ?? [];
+              const name = itemIndexName(item, locale);
               return (
                 <tr key={item.id} className="border-t border-border-default hover:bg-bg-panel">
                   <td className="px-3 py-2">
                     <Link href={`/${locale}/items/${item.slug}`} className="flex min-w-0 items-center gap-3">
                       <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-border-default bg-bg-canvas">
-                        {icon ? <SafeImage src={icon} alt={itemName(item, locale)} width={32} height={32} className="object-contain" data-pixel unoptimized /> : null}
+                        {icon ? <SafeImage src={icon} alt={name} width={32} height={32} className="object-contain" data-pixel unoptimized /> : null}
                       </span>
                       <span className="min-w-0">
-                        <span className="block truncate font-semibold text-white hover:text-accent-bright">{itemName(item, locale)}</span>
+                        <span className="block truncate font-semibold text-white hover:text-accent-bright">{name}</span>
                         <span className="mt-0.5 block"><RarityBadge grade={item.grade} locale={locale} /></span>
                       </span>
                     </Link>
@@ -277,12 +273,12 @@ export default async function ItemsPage({ params, searchParams }: Props) {
                     ) : <span className="text-text-muted">-</span>}
                   </td>
                   <td className="px-3 py-2">
-                    {bestStage ? (
+                    {item.hasDrops ? (
                       <Link href={`/${locale}/tools/drop-finder`} className="text-accent-bright hover:underline">
-                        {bestStage.diff} {bestStage.act}-{bestStage.no} / {(bestStage.totalDropChance * 100).toFixed(2)}%
+                        {isZh ? "查看掉落" : "View drops"}
                       </Link>
                     ) : (
-                      <span className="text-text-muted">{ext?.obtainable ? (isZh ? "可获取" : "Obtainable") : (isZh ? "暂无掉落" : "No drop")}</span>
+                      <span className="text-text-muted">{item.obtainable ? (isZh ? "可获取" : "Obtainable") : (isZh ? "暂无掉落" : "No drop")}</span>
                     )}
                   </td>
                   <td className="px-3 py-2">

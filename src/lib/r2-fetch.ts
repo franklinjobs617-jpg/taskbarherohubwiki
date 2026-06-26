@@ -16,8 +16,6 @@ const R2_CDN_BASE = process.env.NEXT_PUBLIC_R2_DATA_URL || "https://cdn.taskbarh
 const cache = new Map<string, unknown>();
 const pendingFetches = new Map<string, Promise<unknown>>();
 
-let isProd = typeof process !== "undefined" && process.env.NODE_ENV === "production";
-
 function cdnUrl(path: string): string {
   const cleanPath = path.replace(/^\//, "");
   return `${R2_CDN_BASE}/${cleanPath}`;
@@ -51,11 +49,18 @@ export async function fetchR2Json<T>(path: string): Promise<T> {
 async function _doFetch<T>(path: string): Promise<T> {
   const url = cdnUrl(path);
   let lastError: unknown;
+  const cacheOptions:
+    | { cache: "force-cache"; next: { revalidate: number } }
+    | undefined =
+    (path.startsWith("game/v2/") && path !== "game/v2/items/index-light.json") ||
+    path === "market/v1/latest.json"
+      ? { cache: "force-cache" as const, next: { revalidate: 86400 } }
+      : undefined;
 
   // Retry once on failure
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
-      const response = await fetch(url);
+      const response = await fetch(url, cacheOptions);
       if (!response.ok) {
         throw new Error(`R2 fetch failed: ${url} (HTTP ${response.status})`);
       }
