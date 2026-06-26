@@ -1,22 +1,18 @@
 "use client";
 
-import { useState } from "react";
-import { allHeroes, heroName, type Hero, type Locale } from "@/lib/game-data/data";
+import { heroName, type Hero, type Locale } from "@/lib/game-data/data";
 
 type HeroStat = { label: string; value: number; maxValue: number };
 
-function getHeroStats(hero: Hero, locale: Locale): HeroStat[] {
+function getHeroStats(hero: Hero, heroes: Hero[], locale: Locale): HeroStat[] {
   const isZh = locale === "zh";
   // Normalize stats to 0-100 scale for radar chart
-  const all = allHeroes();
-  const maxHp = Math.max(...all.map((h) => h.MaxHp ?? 0));
-  const maxAtk = Math.max(...all.map((h) => h.AttackDamage ?? 0));
-  const maxAspd = Math.max(...all.map((h) => h.AttackSpeed ?? 0));
-  const maxCrit = Math.max(...all.map((h) => h.CriticalChance ?? 0));
-  const maxCritDmg = Math.max(...all.map((h) => h.CriticalDamage ?? 0));
-  const maxArmor = Math.max(...all.map((h) => h.Armor ?? 0));
-  const maxSpeed = Math.max(...all.map((h) => h.MovementSpeed ?? 0));
-
+  const maxHp = Math.max(1, ...heroes.map((h) => h.MaxHp ?? 0));
+  const maxAtk = Math.max(1, ...heroes.map((h) => h.AttackDamage ?? 0));
+  const maxAspd = Math.max(1, ...heroes.map((h) => h.AttackSpeed ?? 0));
+  const maxCrit = Math.max(1, ...heroes.map((h) => h.CriticalChance ?? 0));
+  const maxCritDmg = Math.max(1, ...heroes.map((h) => h.CriticalDamage ?? 0));
+  const maxArmor = Math.max(1, ...heroes.map((h) => h.Armor ?? 0));
   return [
     { label: isZh ? "生命" : "HP", value: ((hero.MaxHp ?? 0) / maxHp) * 100, maxValue: 100 },
     { label: isZh ? "攻击" : "ATK", value: ((hero.AttackDamage ?? 0) / maxAtk) * 100, maxValue: 100 },
@@ -30,14 +26,16 @@ function getHeroStats(hero: Hero, locale: Locale): HeroStat[] {
 // SVG Radar Chart for one hero
 export function HeroRadar({
   hero,
+  heroes,
   locale,
   size = 200,
 }: {
   hero: Hero;
+  heroes: Hero[];
   locale: Locale;
   size?: number;
 }) {
-  const stats = getHeroStats(hero, locale);
+  const stats = getHeroStats(hero, heroes, locale);
   const center = size / 2;
   const radius = (size / 2) * 0.7;
   const angleStep = (2 * Math.PI) / stats.length;
@@ -111,8 +109,7 @@ export function HeroRadar({
 }
 
 // Side-by-side hero comparison
-export function HeroCompareMatrix({ locale }: { locale: Locale }) {
-  const heroes = allHeroes();
+export function HeroCompareMatrix({ heroes, locale }: { heroes: Hero[]; locale: Locale }) {
   const isZh = locale === "zh";
 
   // Calculate role scores from real stats

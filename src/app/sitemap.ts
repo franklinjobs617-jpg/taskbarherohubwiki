@@ -1,6 +1,29 @@
 import type { MetadataRoute } from "next";
-import { achievements, allHeroes, allItems, allMonsters, allStages, builds, chestItems, ensureGameData, guides, hasIndexableMarketData, marketForItem, shouldIndexItem, SITE_URL, stageSlug, UPDATED_AT, wikiArticles } from "@/lib/game-data/data";
-import { ensureExternalData, extStages } from "@/lib/game-data/external";
+import {
+  achievements,
+  allHeroes,
+  allItems,
+  allMonsters,
+  allStages,
+  builds,
+  chestItems,
+  ensureHeroes,
+  ensureItemIndex,
+  ensureMarket,
+  ensureMonsters,
+  ensureStages,
+  guides,
+  hasIndexableMarketData,
+  marketForItem,
+  shouldIndexItem,
+  SITE_URL,
+  stageSlug,
+  UPDATED_AT,
+  wikiArticles,
+} from "@/lib/game-data/data";
+import { ensureExtStages, extStages } from "@/lib/game-data/external";
+
+export const revalidate = 86400;
 
 const locales = ["en", "zh", "ja", "ko"] as const;
 const guideLocales = ["en", "zh", "ja"] as const;
@@ -21,8 +44,14 @@ function withAlternates(path: string, availableLocales: readonly SitemapLocale[]
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  await ensureGameData();
-  await ensureExternalData();
+  await Promise.all([
+    ensureItemIndex(),
+    ensureHeroes(),
+    ensureStages(),
+    ensureMonsters(),
+    ensureMarket(),
+    ensureExtStages(),
+  ]);
 
   const updated = new Date(UPDATED_AT);
   const staticPaths = [

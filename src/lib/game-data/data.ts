@@ -200,20 +200,39 @@ const _dropsByItemSlug: Record<string, DropSource[]> = {};
 
 // Deduplicate concurrent preloads
 let _preloadItems: Promise<void> | null = null;
-export async function ensureItems(): Promise<void> {
+export async function ensureItemIndex(): Promise<void> {
   if (_items) return;
   if (_preloadItems) return _preloadItems;
   _preloadItems = (async () => {
     try {
       _items = await fetchR2Json<RawItem[]>(R2.items);
-      const detail = await fetchR2Json<Record<string, ItemDetail>>(R2.itemsDetail).catch(() => ({}));
-      _details = detail as Record<string, ItemDetail>;
     } catch (error) {
       console.error("Failed to preload items:", error);
       _items = [];
     }
   })();
   return _preloadItems;
+}
+
+let _preloadItemDetails: Promise<void> | null = null;
+export async function ensureItemDetails(): Promise<void> {
+  if (Object.keys(_details).length > 0) return;
+  if (_preloadItemDetails) return _preloadItemDetails;
+  _preloadItemDetails = (async () => {
+    try {
+      const detail = await fetchR2Json<Record<string, ItemDetail>>(R2.itemsDetail).catch(() => ({}));
+      _details = detail as Record<string, ItemDetail>;
+    } catch (error) {
+      console.error("Failed to preload item details:", error);
+      _details = {};
+    }
+  })();
+  return _preloadItemDetails;
+}
+
+export async function ensureItems(): Promise<void> {
+  await ensureItemIndex();
+  await ensureItemDetails();
 }
 
 let _preloadHeroes: Promise<void> | null = null;

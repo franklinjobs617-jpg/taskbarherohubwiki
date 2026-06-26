@@ -125,7 +125,7 @@ export default async function HeroesPage({ params }: Props) {
       </div>
 
       <Section title={isZh ? "角色属性评分对比" : "Class Stat Comparison"}>
-        <HeroCompareMatrix locale={locale} />
+        <HeroCompareMatrix heroes={heroes} locale={locale} />
       </Section>
 
       <Section title={isZh ? "英雄雷达图" : "Hero Radar Charts"} eyebrow={isZh ? "6 维度属性可视化" : "6-dimension stat visualization"}>
@@ -133,7 +133,7 @@ export default async function HeroesPage({ params }: Props) {
           {heroes.map((hero) => (
             <div key={hero.HeroKey} className="flex flex-col items-center gap-2 border border-border-default bg-bg-panel p-3">
               <p className="text-xs font-medium text-text-secondary">{heroName(hero, locale)}</p>
-              <HeroRadar hero={hero} locale={locale} size={140} />
+              <HeroRadar hero={hero} heroes={heroes} locale={locale} size={140} />
               <Link
                 href={`/${locale}/heroes/${heroSlug(hero)}`}
                 className="text-[10px] text-amber-400 hover:underline"
