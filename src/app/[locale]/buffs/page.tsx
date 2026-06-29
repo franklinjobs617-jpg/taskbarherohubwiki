@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { type Locale } from "@/lib/game-data/data";
+import { localizedPath } from "@/lib/locale-path";
 import { fetchR2Json } from "@/lib/r2-fetch";
 import { pageAlternates } from "@/lib/seo";
 
@@ -91,19 +92,19 @@ export default async function BuffsPage({ params, searchParams }: Props) {
 
       <div className="mb-4 flex flex-wrap gap-1.5">
         <span className="self-center text-xs text-text-muted mr-1">{isZh ? "属性：" : "Stat:"}</span>
-        <Link href={`/${locale}/buffs`} className={`border px-2.5 py-1 text-xs ${!sp.stat && !sp.type ? "border-accent bg-accent-soft text-accent-bright" : "border-border-strong text-text-secondary hover:border-accent"}`}>
+        <Link href={localizedPath(locale, `/buffs`)} className={`border px-2.5 py-1 text-xs ${!sp.stat && !sp.type ? "border-accent bg-accent-soft text-accent-bright" : "border-border-strong text-text-secondary hover:border-accent"}`}>
           {isZh ? "全部" : "All"}
         </Link>
-        <Link href={`/${locale}/buffs?type=buff`} className={`border px-2.5 py-1 text-xs ${sp.type === "buff" ? "border-accent bg-accent-soft text-accent-bright" : "border-border-strong text-text-secondary hover:border-accent"}`}>
+        <Link href={localizedPath(locale, `/buffs?type=buff`)} className={`border px-2.5 py-1 text-xs ${sp.type === "buff" ? "border-accent bg-accent-soft text-accent-bright" : "border-border-strong text-text-secondary hover:border-accent"}`}>
           {isZh ? "Buff" : "Buff"}
         </Link>
-        <Link href={`/${locale}/buffs?type=debuff`} className={`border px-2.5 py-1 text-xs ${sp.type === "debuff" ? "border-accent bg-accent-soft text-accent-bright" : "border-border-strong text-text-secondary hover:border-accent"}`}>
+        <Link href={localizedPath(locale, `/buffs?type=debuff`)} className={`border px-2.5 py-1 text-xs ${sp.type === "debuff" ? "border-accent bg-accent-soft text-accent-bright" : "border-border-strong text-text-secondary hover:border-accent"}`}>
           {isZh ? "Debuff" : "Debuff"}
         </Link>
         {Object.keys(STAT_LABELS).slice(0, 8).map((stat) => (
           <Link
             key={stat}
-            href={`/${locale}/buffs?stat=${stat}`}
+            href={localizedPath(locale, `/buffs?stat=${stat}`)}
             className={`border px-2.5 py-1 text-xs ${sp.stat === stat ? "border-accent bg-accent-soft text-accent-bright" : "border-border-strong text-text-secondary hover:border-accent"}`}
           >
             {statLabel(stat, locale)}

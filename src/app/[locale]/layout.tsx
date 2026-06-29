@@ -7,6 +7,7 @@ import { CookieConsentBanner } from "@/components/layout/cookie-consent";
 import { NavProvider } from "@/components/layout/nav-provider";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { isLocale, SITE_URL } from "@/lib/game-data/data";
+import { localizedUrl } from "@/lib/locale-path";
 
 type Props = {
   children: React.ReactNode;
@@ -30,11 +31,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ? "完整的 TBH: Task Bar Hero Wiki。搜索物品、对比英雄、查询掉落位置、查看 Steam 市场价格，并规划刷图路线。"
       : "The complete TBH: Task Bar Hero wiki. Search items, compare hero classes, find drop locations, check Steam Market prices, and plan your farming route.",
     metadataBase: new URL(SITE_URL),
-    robots: { index: true, follow: true },
-    alternates: {
-      canonical: locale === "en" ? "/" : `/${locale}`,
-      languages: { en: "/", zh: "/zh", ja: "/ja", ko: "/ko", "x-default": "/" },
-    },
     openGraph: {
       type: "website",
       siteName: "TBH: Task Bar Hero Wiki",
@@ -109,7 +105,7 @@ export default async function LocaleLayout({ children, params }: Props) {
               "@type": "SearchAction",
               target: {
                 "@type": "EntryPoint",
-                urlTemplate: `${SITE_URL}/{locale}/items?q={search_term_string}`,
+                urlTemplate: `${localizedUrl(locale, "/items")}?q={search_term_string}`,
               },
               "query-input": "required name=search_term_string",
             },

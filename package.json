@@ -26,8 +26,9 @@
     
     "verify:pages": "node scripts/verify-pages.mjs",
     "check:mojibake": "node scripts/check-mojibake.mjs",
+    "check:locale-links": "node scripts/check-locale-links.mjs",
     "prebuild": "npm run check:mojibake && npm run build:static-data",
-    "lint": "eslint"
+    "lint": "npm run check:locale-links && eslint"
   },
   "dependencies": {
     "@mdx-js/react": "^3.1.1",

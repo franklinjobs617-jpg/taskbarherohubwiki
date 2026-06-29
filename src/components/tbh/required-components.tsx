@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LocaleSwitcher } from "@/components/layout/locale-switcher";
+import { localizedPath } from "@/lib/locale-path";
 import {
   DropRateTable,
   EntityCard,
@@ -34,7 +35,7 @@ export {
 
 export function SearchCommand({ locale }: { locale: Locale }) {
   return (
-    <form action={`/${locale}/items`} className="flex border border-border-strong bg-bg-panel p-2">
+    <form action={localizedPath(locale, `/items`)} className="flex border border-border-strong bg-bg-panel p-2">
       <input
         name="q"
         className="min-w-0 flex-1 bg-transparent px-2 text-sm outline-none"
@@ -73,7 +74,7 @@ export function RelatedItems({ items, locale }: { items: RawItem[]; locale: Loca
   return (
     <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
       {items.map((item) => (
-        <Link key={item.id} href={`/${locale}/items/${item.slug}`} className="border border-border-default bg-bg-panel p-3 hover:border-accent">
+        <Link key={item.id} href={localizedPath(locale, `/items/${item.slug}`)} className="border border-border-default bg-bg-panel p-3 hover:border-accent">
           <p className="truncate text-sm text-text-primary">{itemName(item, locale)}</p>
           <p className="mt-1 text-xs text-text-muted">{item.grade}</p>
         </Link>

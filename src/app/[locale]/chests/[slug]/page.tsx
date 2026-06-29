@@ -213,7 +213,7 @@ export default async function ChestDetailPage({ params }: Props) {
                 {dropStages.map(({ stage: s, drop }) => (
                   <tr key={s.key} className="border-t border-border-default hover:bg-bg-panel">
                     <td className="px-3 py-3">
-                      <Link href={`/${locale}/stages/${s.label.toLowerCase().replace(".", "-")}`} className="font-medium text-accent-bright hover:underline">
+                      <Link href={localizedPath(locale, `/stages/${s.label.toLowerCase().replace(".", "-")}`)} className="font-medium text-accent-bright hover:underline">
                         <span className="flex items-center gap-1.5">
                           <MapPin className="h-3 w-3" />
                           {s.label} {s.name}
@@ -247,10 +247,10 @@ export default async function ChestDetailPage({ params }: Props) {
       {/* ── Cross-links ── */}
       <Section title={isZh ? "相关入口" : "Related"}>
         <div className="flex flex-wrap gap-2">
-          <Link href={`/${locale}/chests`} className="border border-border-strong px-3 py-2 text-sm text-text-primary hover:border-accent">
+          <Link href={localizedPath(locale, `/chests`)} className="border border-border-strong px-3 py-2 text-sm text-text-primary hover:border-accent">
             {isZh ? "全部宝箱" : "All Chests"}
           </Link>
-          <Link href={`/${locale}/map`} className="border border-border-strong px-3 py-2 text-sm text-text-primary hover:border-accent">
+          <Link href={localizedPath(locale, `/map`)} className="border border-border-strong px-3 py-2 text-sm text-text-primary hover:border-accent">
             {isZh ? "关卡地图" : "Map"}
           </Link>
         </div>

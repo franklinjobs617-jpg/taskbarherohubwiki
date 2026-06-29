@@ -3,6 +3,7 @@ import { SafeImage } from "@/components/ui/safe-image";
 import Link from "next/link";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { allMonsters, allStages, type Locale , ensureStages, ensureMonsters } from "@/lib/game-data/data";
+import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale }> };
@@ -74,18 +75,18 @@ export default async function FarmingHubPage({ params }: Props) {
       <div className="space-y-8">
         {/* Quick tools */}
         <div className="grid gap-3 sm:grid-cols-3">
-          <Link href={`/${locale}/tools/farming-calculator`} className="group rounded-sm border border-amber-600/40 bg-amber-600/5 p-4 transition-colors hover:border-amber-400">
+          <Link href={localizedPath(locale, `/tools/farming-calculator`)} className="group rounded-sm border border-amber-600/40 bg-amber-600/5 p-4 transition-colors hover:border-amber-400">
             <p className="text-sm font-semibold text-amber-400">{isZh ? "🧮 Farming 计算器" : "🧮 Farming Calculator"}</p>
             <p className="mt-1 text-xs text-text-secondary">{isZh ? "找物品掉落、查关卡收益、并排对比，含概率模拟" : "Find item drops, stage profits, comparison, probability sim"}</p>
             <span className="mt-2 inline-block text-[10px] text-amber-400/60 group-hover:text-amber-400 transition-colors">
               {isZh ? "打开工具 →" : "Open tool →"}
             </span>
           </Link>
-          <Link href={`/${locale}/guides/farming/gold-farming-route`} className="group rounded-sm border border-border-default bg-bg-panel p-4 transition-colors hover:border-accent-dim">
+          <Link href={localizedPath(locale, `/guides/farming/gold-farming-route`)} className="group rounded-sm border border-border-default bg-bg-panel p-4 transition-colors hover:border-accent-dim">
             <p className="text-sm font-semibold text-white">{isZh ? "💰 金币路线" : "💰 Gold Route"}</p>
             <p className="mt-1 text-xs text-text-secondary">{isZh ? "最赚钱的关卡和策略" : "Most profitable stages and strategy"}</p>
           </Link>
-          <Link href={`/${locale}/guides/farming/exp-farming-route`} className="group rounded-sm border border-border-default bg-bg-panel p-4 transition-colors hover:border-accent-dim">
+          <Link href={localizedPath(locale, `/guides/farming/exp-farming-route`)} className="group rounded-sm border border-border-default bg-bg-panel p-4 transition-colors hover:border-accent-dim">
             <p className="text-sm font-semibold text-white">{isZh ? "⭐ 经验路线" : "⭐ EXP Route"}</p>
             <p className="mt-1 text-xs text-text-secondary">{isZh ? "快速升级的最佳关卡" : "Best stages for fast leveling"}</p>
           </Link>
@@ -120,7 +121,7 @@ export default async function FarmingHubPage({ params }: Props) {
                         {i < 3 ? ["🥇","🥈","🥉"][i] : i + 1}
                       </td>
                       <td className="px-3 py-2">
-                        <Link href={`/${locale}/stages/${s.key}`} className="font-medium text-white hover:text-amber-400">
+                        <Link href={localizedPath(locale, `/stages/${s.key}`)} className="font-medium text-white hover:text-amber-400">
                           {s.difficulty} A{s.act}-{s.no} {s.name?.["en-US"] ?? ""}
                         </Link>
                       </td>
@@ -173,7 +174,7 @@ export default async function FarmingHubPage({ params }: Props) {
                         {i < 3 ? ["🥇","🥈","🥉"][i] : i + 1}
                       </td>
                       <td className="px-3 py-2">
-                        <Link href={`/${locale}/stages/${s.key}`} className="font-medium text-white hover:text-amber-400">
+                        <Link href={localizedPath(locale, `/stages/${s.key}`)} className="font-medium text-white hover:text-amber-400">
                           {s.difficulty} A{s.act}-{s.no} {s.name?.["en-US"] ?? ""}
                         </Link>
                       </td>
@@ -199,11 +200,11 @@ export default async function FarmingHubPage({ params }: Props) {
 
         {/* Bottom links */}
         <section className="grid gap-2 border-t border-border-default pt-6 sm:grid-cols-2">
-          <Link href={`/${locale}/guides/farming/chest-drop-guide`} className="group rounded-sm border border-border-default bg-bg-panel p-3 text-xs transition-colors hover:border-accent-dim">
+          <Link href={localizedPath(locale, `/guides/farming/chest-drop-guide`)} className="group rounded-sm border border-border-default bg-bg-panel p-3 text-xs transition-colors hover:border-accent-dim">
             <p className="font-medium text-white group-hover:text-amber-400 transition-colors">{isZh ? "宝箱掉落指南" : "Chest Drop Guide"}</p>
             <p className="mt-1 text-text-muted">{isZh ? "宝箱类型、掉落机制和如何判断刷取目标" : "Chest types, drop mechanics, and how to choose farming targets"}</p>
           </Link>
-          <Link href={`/${locale}/guides/economy/steam-market-guide`} className="group rounded-sm border border-border-default bg-bg-panel p-3 text-xs transition-colors hover:border-accent-dim">
+          <Link href={localizedPath(locale, `/guides/economy/steam-market-guide`)} className="group rounded-sm border border-border-default bg-bg-panel p-3 text-xs transition-colors hover:border-accent-dim">
             <p className="font-medium text-white group-hover:text-amber-400 transition-colors">{isZh ? "Steam 市场指南" : "Steam Market Guide"}</p>
             <p className="mt-1 text-text-muted">{isZh ? "如何判断物品是否值得卖" : "How to decide if an item is worth selling"}</p>
           </Link>

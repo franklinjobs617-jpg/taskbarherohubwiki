@@ -3,15 +3,18 @@
  * Each returns a plain object suitable for JSON.stringify and injection via <script type="application/ld+json">.
  */
 
-const BASE_URL = "https://tbhguides.com";
+import { SITE_URL } from "@/lib/locale-path";
+
+const BASE_URL = SITE_URL;
 
 // ---------------------------------------------------------------------------
 // Shared helpers
 // ---------------------------------------------------------------------------
 
 function localeUrl(path: string, locale?: string): string {
+  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
   const prefix = locale && locale !== "en" ? `/${locale}` : "";
-  return `${BASE_URL}${prefix}${path}`;
+  return `${BASE_URL}${prefix}${normalizedPath === "/" && prefix ? "" : normalizedPath}`;
 }
 
 function personOrOrganization(): object {

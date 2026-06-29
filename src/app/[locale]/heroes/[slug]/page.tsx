@@ -9,6 +9,7 @@ import { entityFaqs } from "@/lib/game-data/faqs";
 import { Section } from "@/components/tbh/cards";
 import { HeroPortrait } from "@/components/tbh/hero-portrait";
 import { DataNotice, PageHeader, PageShell } from "@/components/tbh/page";
+import { localizedPath } from "@/lib/locale-path";
 import {
   allSkills,
   assetPath,
@@ -196,17 +197,17 @@ export default async function HeroDetailPage({ params }: Props) {
 
       <Section title={isZh ? "选了这个英雄之后该看什么？" : "What should I check after choosing this hero?"} eyebrow={isZh ? "下一步" : "Next steps"}>
         <div className="grid gap-2 md:grid-cols-3">
-          <Link href={`/${locale}/items?slot=${hero.MainWeaponGearType ?? ""}`} className="border border-border-default bg-bg-panel p-4 hover:border-accent">
+          <Link href={localizedPath(locale, `/items?slot=${hero.MainWeaponGearType ?? ""}`)} className="border border-border-default bg-bg-panel p-4 hover:border-accent">
             <BadgeInfo className="mb-3 h-4 w-4 text-accent" />
             <p className="font-medium text-text-primary">{isZh ? "查看主武器物品" : "Open main-weapon items"}</p>
             <p className="mt-2 text-sm text-text-secondary">{hero.MainWeaponGearType ? slotNames[hero.MainWeaponGearType]?.[locale] ?? hero.MainWeaponGearType : "-"}</p>
           </Link>
-          <Link href={`/${locale}/effects`} className="border border-border-default bg-bg-panel p-4 hover:border-accent">
+          <Link href={localizedPath(locale, `/effects`)} className="border border-border-default bg-bg-panel p-4 hover:border-accent">
             <Shield className="mb-3 h-4 w-4 text-accent" />
             <p className="font-medium text-text-primary">{isZh ? "匹配材料效果" : "Match material effects"}</p>
             <p className="mt-2 text-sm text-text-secondary">{profile.statPriority.join(" / ")}</p>
           </Link>
-          <Link href={`/${locale}/guides/beginner/class-guide`} className="border border-border-default bg-bg-panel p-4 hover:border-accent">
+          <Link href={localizedPath(locale, `/guides/beginner/class-guide`)} className="border border-border-default bg-bg-panel p-4 hover:border-accent">
             <ArrowRight className="mb-3 h-4 w-4 text-accent" />
             <p className="font-medium text-text-primary">{isZh ? "阅读职业选择指南" : "Read class guide"}</p>
             <p className="mt-2 text-sm text-text-secondary">{isZh ? "用阶段、武器和风险反推职业。" : "Choose by phase, weapons, and risk."}</p>
@@ -218,7 +219,7 @@ export default async function HeroDetailPage({ params }: Props) {
         {relatedBuilds.length ? (
           <div className="grid gap-2 md:grid-cols-3">
             {relatedBuilds.map((build) => (
-              <Link key={build.slug} href={`/${locale}/builds/${build.slug}`} className="border border-border-default bg-bg-panel p-4 hover:border-accent">
+              <Link key={build.slug} href={localizedPath(locale, `/builds/${build.slug}`)} className="border border-border-default bg-bg-panel p-4 hover:border-accent">
                 <p className="text-text-primary">{build.title[locale]}</p>
                 <p className="mt-2 text-xs text-text-muted">{build.evidence}</p>
               </Link>

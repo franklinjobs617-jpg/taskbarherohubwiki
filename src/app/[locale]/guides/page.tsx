@@ -4,6 +4,7 @@ import { BarChart3, BookOpen, Boxes, Coins, Route, ShieldQuestion, Swords } from
 import { GuideCard, Section } from "@/components/tbh/cards";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { guides, type Locale } from "@/lib/game-data/data";
+import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale }> };
@@ -30,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function GuidesPage({ params }: Props) {
   const { locale } = await params;
-  const guideHref = (category: string, slug: string) => `/${locale}/guides/${category}/${slug}`;
+  const guideHref = (category: string, slug: string) => localizedPath(locale, `/guides/${category}/${slug}`);
   const tasks = [
     {
       icon: ShieldQuestion,
@@ -105,7 +106,7 @@ export default async function GuidesPage({ params }: Props) {
               {rows.map((guide) => (
                 <GuideCard
                   key={guide.slug}
-                  href={`/${locale}/guides/${guide.category}/${guide.slug}`}
+                  href={localizedPath(locale, `/guides/${guide.category}/${guide.slug}`)}
                   title={guide.title[locale] ?? guide.title.en ?? ""}
                   description={guide.description[locale] ?? guide.description.en ?? ""}
                   evidence={guide.evidence}

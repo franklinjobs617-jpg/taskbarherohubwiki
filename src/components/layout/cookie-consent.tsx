@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { localizedPath } from "@/lib/locale-path";
 
 const STORAGE_KEY = "tbh-cookie-consent";
 
@@ -86,7 +87,7 @@ export function CookieConsentBanner() {
 
   const t = T[locale] ?? T.en;
 
-  const privacyPath = locale === "en" ? "/privacy" : `/${locale}/privacy`;
+  const privacyPath = localizedPath(locale, "/privacy");
 
   const accept = () => {
     localStorage.setItem(STORAGE_KEY, "accepted");

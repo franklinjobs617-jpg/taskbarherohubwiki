@@ -4,6 +4,7 @@ import Link from "next/link";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
 import { allMonsters, allStages, text, type Locale , ensureStages, ensureMonsters } from "@/lib/game-data/data";
+import { localizedPath, localizedUrl } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 import { RelatedPages } from "@/components/tbh/related-pages";
 import { HowToUse } from "@/components/tbh/how-to-use";
@@ -74,7 +75,7 @@ export default async function MonstersPage({ params }: Props) {
           return (
             <Link
               key={monster.MonsterKey}
-              href={`/${locale}/monsters/${monster.slug ?? monster.MonsterKey}`}
+              href={localizedPath(locale, `/monsters/${monster.slug ?? monster.MonsterKey}`)}
               className="group flex items-center gap-3 rounded-sm border border-border-default bg-bg-panel p-3 transition-colors hover:border-amber-600/40"
             >
               <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-sm border border-border-default bg-bg-canvas">

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Fragment } from "react";
-import { localizedPath } from "@/lib/locale-path";
+import { localizedPath, localizedUrl } from "@/lib/locale-path";
 import type { Locale } from "@/lib/game-data/data";
 
 export type BreadcrumbItem = { label: string; href?: string };
@@ -45,9 +45,6 @@ export function breadcrumbJsonLd(
   items: BreadcrumbItem[],
   locale: Locale,
 ) {
-  const baseUrl = "https://tbhguides.com";
-  const localePrefix = locale === "en" ? "" : `/${locale}`;
-
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -56,7 +53,7 @@ export function breadcrumbJsonLd(
       position: i + 1,
       name: item.label,
       item: item.href
-        ? `${baseUrl}${localePrefix}${item.href}`
+        ? localizedUrl(locale, item.href)
         : undefined,
     })),
   };

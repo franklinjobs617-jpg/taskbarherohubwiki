@@ -596,6 +596,45 @@ export function marketRows() {
     .sort((a, b) => itemName(a.item, "en").localeCompare(itemName(b.item, "en")));
 }
 
+function normalizeMarketLookup(value: string) {
+  return decodeURIComponent(value).trim().toLowerCase();
+}
+
+function slugifyMarketLookup(value: string) {
+  return normalizeMarketLookup(value)
+    .replace(/['’]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function humanizeMarketLookup(value: string) {
+  return normalizeMarketLookup(value)
+    .replace(/[-_]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function itemMatchesMarketAlias(item: RawItem, rawValue: string) {
+  const normalized = normalizeMarketLookup(rawValue);
+  const slugified = slugifyMarketLookup(rawValue);
+  const aliases = new Set([
+    normalizeMarketLookup(item.slug),
+    normalizeMarketLookup(itemName(item, "en")),
+    slugifyMarketLookup(itemName(item, "en")),
+  ]);
+  const market = _marketByItemSlug.get(item.slug);
+  if (market?.marketHash) {
+    aliases.add(normalizeMarketLookup(market.marketHash));
+    aliases.add(slugifyMarketLookup(market.marketHash));
+  }
+  return aliases.has(normalized) || aliases.has(slugified);
+}
+
+function itemFromMarketAlias(rawValue: string) {
+  if (!_items) return null;
+  return _items.find((item) => itemMatchesMarketAlias(item, rawValue)) ?? null;
+}
+
 export function marketBySlug(slug: string) {
   if (!_items) return null;
   const decoded = decodeURIComponent(slug);
@@ -604,6 +643,37 @@ export function marketBySlug(slug: string) {
   const market = marketForItem(item);
   if (!market) return null;
   return { item, market };
+}
+
+export function resolveLegacyMarketRedirectTarget(rawSlug: string): string | null {
+  if (!_items) return null;
+
+  const decoded = decodeURIComponent(rawSlug).trim();
+  if (!decoded) return null;
+
+  const directItem = itemFromMarketAlias(decoded);
+  if (directItem && decoded !== directItem.slug) {
+    return shouldIndexMarket(directItem.slug)
+      ? `/market/${directItem.slug}`
+      : `/items/${directItem.slug}`;
+  }
+
+  const strippedNumericPrefix = decoded.replace(/^\d+(?:[-_]+)?/, "");
+  if (strippedNumericPrefix && strippedNumericPrefix !== decoded) {
+    const legacyItem = itemFromMarketAlias(strippedNumericPrefix);
+    if (legacyItem) {
+      return shouldIndexMarket(legacyItem.slug)
+        ? `/market/${legacyItem.slug}`
+        : `/items/${legacyItem.slug}`;
+    }
+  }
+
+  const searchTerm = humanizeMarketLookup(strippedNumericPrefix || decoded);
+  if (searchTerm && searchTerm.length >= 3) {
+    return `/market?q=${encodeURIComponent(searchTerm)}`;
+  }
+
+  return null;
 }
 
 export function dropsForItem(slug: string): DropSource[] {

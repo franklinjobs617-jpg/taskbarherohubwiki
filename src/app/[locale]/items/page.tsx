@@ -5,7 +5,7 @@ import { ItemCard } from "@/components/tbh/cards";
 import { RarityBadge } from "@/components/tbh/badges";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
-import { SITE_URL, assetPath, gradeNames, slotNames, type Locale } from "@/lib/game-data/data";
+import { assetPath, gradeNames, slotNames, type Locale } from "@/lib/game-data/data";
 import {
   getItemIndexLight,
   getItemIndexPreview,
@@ -14,6 +14,8 @@ import {
   type ItemIndexEntry,
 } from "@/lib/game-data/v2";
 import { RelatedPages } from "@/components/tbh/related-pages";
+import { localizedPath, localizedUrl } from "@/lib/locale-path";
+import { pageAlternates } from "@/lib/seo";
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -29,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: locale === "zh"
       ? "5,944 件装备/材料/宝箱，10 档稀有度。按名称、职业、部位、市场状态筛选，看掉率、关卡和价格。支持中英文搜索和市场价格筛选。"
       : "5,944 gear, materials, and chests across 10 rarities. Filter by name, class, slot, and market status. See drop rate, source stage, and price. Supports bilingual search and market status.",
-    alternates: { canonical: locale === "en" ? "/items" : `/${locale}/items`, languages: { zh: "/zh/items", en: "/items", ja: "/ja/items", ko: "/ko/items", "x-default": "/items" } },
+    alternates: pageAlternates(locale, "/items"),
   };
 }
 
@@ -102,7 +104,7 @@ export default async function ItemsPage({ params, searchParams }: Props) {
         itemListElement: rows.slice(0, 50).map((item, i) => ({
           "@type": "ListItem",
           position: i + 1,
-          url: `${SITE_URL}${locale === "en" ? "" : "/" + locale}/items/${item.slug}`,
+          url: localizedUrl(locale, `/items/${item.slug}`),
         })),
       }} />
       <PageHeader
@@ -172,7 +174,7 @@ export default async function ItemsPage({ params, searchParams }: Props) {
           {HERO_CLASSES.map((cls) => (
             <Link
               key={cls}
-              href={`/${locale}/items?class=${cls}`}
+              href={localizedPath(locale, `/items?class=${cls}`)}
               className={`pill text-xs ${sp.class === cls ? "active" : ""}`}
             >
               {cls} <span className="text-text-muted">{classCounts[cls] ?? 0}</span>
@@ -181,20 +183,20 @@ export default async function ItemsPage({ params, searchParams }: Props) {
         </div>
         {/* Type + market quick links */}
         <div className="flex flex-wrap gap-1.5">
-          <Link href={`/${locale}/items?market=1`} className={`pill text-xs ${sp.market === "1" ? "active" : ""}`}>
+          <Link href={localizedPath(locale, `/items?market=1`)} className={`pill text-xs ${sp.market === "1" ? "active" : ""}`}>
             {isZh ? "可交易" : "Marketable"}
           </Link>
-          <Link href={`/${locale}/items?type=GEAR`} className={`pill text-xs ${sp.type === "GEAR" ? "active" : ""}`}>
+          <Link href={localizedPath(locale, `/items?type=GEAR`)} className={`pill text-xs ${sp.type === "GEAR" ? "active" : ""}`}>
             {isZh ? "装备" : "Gear"}
           </Link>
-          <Link href={`/${locale}/items?type=MATERIAL`} className={`pill text-xs ${sp.type === "MATERIAL" ? "active" : ""}`}>
+          <Link href={localizedPath(locale, `/items?type=MATERIAL`)} className={`pill text-xs ${sp.type === "MATERIAL" ? "active" : ""}`}>
             {isZh ? "材料" : "Materials"}
           </Link>
-          <Link href={`/${locale}/items?type=STAGEBOX`} className={`pill text-xs ${sp.type === "STAGEBOX" ? "active" : ""}`}>
+          <Link href={localizedPath(locale, `/items?type=STAGEBOX`)} className={`pill text-xs ${sp.type === "STAGEBOX" ? "active" : ""}`}>
             {isZh ? "宝箱" : "Chests"}
           </Link>
           {(sp.class || sp.type || sp.grade || sp.slot || sp.market || sp.price || sp.obtainable) ? (
-            <Link href={`/${locale}/items`} className="pill text-xs text-text-secondary hover:text-text-primary">
+            <Link href={localizedPath(locale, `/items`)} className="pill text-xs text-text-secondary hover:text-text-primary">
               {isZh ? "清除" : "Clear"}
             </Link>
           ) : null}
@@ -209,11 +211,11 @@ export default async function ItemsPage({ params, searchParams }: Props) {
             { k: "10to50", zh: "$10-50", en: "$10-50" },
             { k: "gt50", zh: "$50+", en: "$50+" },
           ].map((p) => (
-            <Link key={p.k} href={`/${locale}/items?price=${p.k}`} className={`pill text-xs ${sp.price === p.k ? "active" : ""}`}>
+            <Link key={p.k} href={localizedPath(locale, `/items?price=${p.k}`)} className={`pill text-xs ${sp.price === p.k ? "active" : ""}`}>
               {isZh ? p.zh : p.en}
             </Link>
           ))}
-          <Link href={`/${locale}/items?obtainable=1`} className={`pill text-xs ${sp.obtainable === "1" ? "active" : ""}`}>
+          <Link href={localizedPath(locale, `/items?obtainable=1`)} className={`pill text-xs ${sp.obtainable === "1" ? "active" : ""}`}>
             {isZh ? "仍可获取" : "Obtainable only"}
           </Link>
         </div>
@@ -246,7 +248,7 @@ export default async function ItemsPage({ params, searchParams }: Props) {
               return (
                 <tr key={item.id} className="border-t border-border-default hover:bg-bg-panel">
                   <td className="px-3 py-2">
-                    <Link href={`/${locale}/items/${item.slug}`} className="flex min-w-0 items-center gap-3">
+                    <Link href={localizedPath(locale, `/items/${item.slug}`)} className="flex min-w-0 items-center gap-3">
                       <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-border-default bg-bg-canvas">
                         {icon ? <SafeImage src={icon} alt={name} width={32} height={32} className="object-contain" data-pixel unoptimized /> : null}
                       </span>
@@ -274,7 +276,7 @@ export default async function ItemsPage({ params, searchParams }: Props) {
                   </td>
                   <td className="px-3 py-2">
                     {item.hasDrops ? (
-                      <Link href={`/${locale}/tools/drop-finder`} className="text-accent-bright hover:underline">
+                      <Link href={localizedPath(locale, `/tools/drop-finder`)} className="text-accent-bright hover:underline">
                         {isZh ? "查看掉落" : "View drops"}
                       </Link>
                     ) : (
@@ -293,9 +295,9 @@ export default async function ItemsPage({ params, searchParams }: Props) {
                   </td>
                   <td className="px-3 py-2">
                     <div className="flex flex-col gap-1">
-                      <Link href={`/${locale}/items/${item.slug}`} className="text-accent-bright hover:underline">{isZh ? "决策页" : "Decision"}</Link>
+                      <Link href={localizedPath(locale, `/items/${item.slug}`)} className="text-accent-bright hover:underline">{isZh ? "决策页" : "Decision"}</Link>
                       {item.gear ? (
-                        <Link href={`/${locale}/items?slot=${item.gear}&grade=${item.grade}`} className="text-[10px] text-text-muted hover:text-text-secondary">
+                        <Link href={localizedPath(locale, `/items?slot=${item.gear}&grade=${item.grade}`)} className="text-[10px] text-text-muted hover:text-text-secondary">
                           {isZh ? "对比同档 →" : "Compare →"}
                         </Link>
                       ) : null}

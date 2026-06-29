@@ -3,7 +3,7 @@ import Link from "next/link";
 import { EyeOff, Shield, Swords, Target, TrendingUp, Trophy } from "lucide-react";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { allAchievements, type Locale } from "@/lib/game-data/data";
-import { localizedPath } from "@/lib/locale-path";
+import { localizedPath, localizedUrl } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 import { itemList } from "@/lib/schema-ld";
 
@@ -56,7 +56,7 @@ export default async function AchievementsPage({ params }: Props) {
   const jsonLd = itemList(
     all.map((a, i) => ({
       name: txt(locale, a.name),
-      url: `https://tbhguides.com${locale === "en" ? "" : `/${locale}`}/achievements/${a.slug}`,
+      url: localizedUrl(locale, `/achievements/${a.slug}`),
       position: i + 1,
     })),
   );

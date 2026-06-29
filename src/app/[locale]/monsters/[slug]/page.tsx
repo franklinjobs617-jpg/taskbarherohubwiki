@@ -130,7 +130,7 @@ export default async function MonsterDetailPage({ params }: Props) {
               {monsterStages.map(({ key, boss, spawnPct, perClear, stage }) => (
                 <Link
                   key={key}
-                  href={`/${locale}/stages/${stage!.key}`}
+                  href={localizedPath(locale, `/stages/${stage!.key}`)}
                   className="flex items-center gap-2 rounded-sm border border-border-default bg-bg-panel px-3 py-2 text-xs transition-colors hover:border-accent-dim"
                 >
                   <span className={`h-1.5 w-1.5 rounded-full ${boss ? "bg-red-400" : "bg-emerald-400"}`} />
@@ -163,7 +163,7 @@ export default async function MonsterDetailPage({ params }: Props) {
               <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-text-muted">
                 {isZh ? "← 相关系统" : "← Related"}
               </p>
-              <Link href={`/${locale}/monsters`} className="flex items-center gap-2 rounded-sm border border-border-default bg-bg-panel p-3 text-xs transition-colors hover:border-accent-dim group">
+              <Link href={localizedPath(locale, `/monsters`)} className="flex items-center gap-2 rounded-sm border border-border-default bg-bg-panel p-3 text-xs transition-colors hover:border-accent-dim group">
                 <Swords className="h-4 w-4 shrink-0 text-text-muted group-hover:text-amber-400" />
                 <span className="text-text-secondary group-hover:text-text-primary">{isZh ? "全部怪物图鉴" : "All Monsters"}</span>
               </Link>
@@ -173,7 +173,7 @@ export default async function MonsterDetailPage({ params }: Props) {
                 {isZh ? "下一步 →" : "Next Steps →"}
               </p>
               {relatedPets.length > 0 && relatedPets.map((pet) => (
-                <Link key={pet.key} href={`/${locale}/pets`} className="flex items-center gap-2 rounded-sm border border-amber-600/20 bg-amber-600/5 p-3 text-xs transition-colors hover:border-amber-400 group">
+                <Link key={pet.key} href={localizedPath(locale, `/pets`)} className="flex items-center gap-2 rounded-sm border border-amber-600/20 bg-amber-600/5 p-3 text-xs transition-colors hover:border-amber-400 group">
                   <PawPrint className="h-4 w-4 shrink-0 text-amber-400" />
                   <span className="flex-1 text-text-secondary group-hover:text-text-primary">
                     {isZh ? `击杀 ${pet.unlock.count ?? "?"} 只可解锁宠物: ${pet.name}` : `Kill ${pet.unlock.count ?? "?"} to unlock pet: ${pet.name}`}
@@ -182,7 +182,7 @@ export default async function MonsterDetailPage({ params }: Props) {
                 </Link>
               ))}
               {monsterStages.length > 0 && (
-                <Link href={`/${locale}/tools/farming-calculator`} className="flex items-center gap-2 rounded-sm border border-border-default bg-bg-panel p-3 text-xs transition-colors hover:border-accent-dim group">
+                <Link href={localizedPath(locale, `/tools/farming-calculator`)} className="flex items-center gap-2 rounded-sm border border-border-default bg-bg-panel p-3 text-xs transition-colors hover:border-accent-dim group">
                   <ArrowRight className="h-4 w-4 shrink-0 text-text-muted group-hover:text-amber-400" />
                   <span className="text-text-secondary group-hover:text-text-primary">{isZh ? "Farming 计算器 — 找出最佳刷怪关卡" : "Farming Calculator — find best stage"}</span>
                 </Link>

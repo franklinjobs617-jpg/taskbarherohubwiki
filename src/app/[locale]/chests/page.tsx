@@ -5,11 +5,12 @@ import { RarityBadge } from "@/components/tbh/badges";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
 import { ItemIcon } from "@/components/ui/item-icon";
-import { SITE_URL, assetPath, chestItems, type Locale , ensureItems } from "@/lib/game-data/data";
+import { assetPath, chestItems, type Locale , ensureItems } from "@/lib/game-data/data";
 import { getChestDecision } from "@/lib/game-data/decisions";
-import { localizedPath } from "@/lib/locale-path";
+import { localizedPath, localizedUrl } from "@/lib/locale-path";
 import { RelatedPages } from "@/components/tbh/related-pages";
 import { HowToUse } from "@/components/tbh/how-to-use";
+import { pageAlternates } from "@/lib/seo";
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -41,10 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ja: "装備レベル、宝箱タイプ、入手ステージ、取引可能内容で宝箱を絞り込みます。",
       ko: "장비 레벨, 상자 유형, 출처 스테이지, 거래 가능 내용으로 상자를 필터링합니다.",
     }),
-    alternates: {
-      canonical: locale === "en" ? "/chests" : `/${locale}/chests`,
-      languages: { zh: "/zh/chests", en: "/chests", ja: "/ja/chests", ko: "/ko/chests", "x-default": "/chests" },
-    },
+    alternates: pageAlternates(locale, "/chests"),
   };
 }
 
@@ -74,7 +72,7 @@ export default async function ChestsPage({ params, searchParams }: Props) {
         itemListElement: rows.slice(0, 50).map((row, i) => ({
           "@type": "ListItem",
           position: i + 1,
-          url: `${SITE_URL}${locale === "en" ? "" : "/" + locale}/chests/${row.localItem?.slug ?? row.chest?.slug}`,
+          url: localizedUrl(locale, `/chests/${row.localItem?.slug ?? row.chest?.slug}`),
         })),
       }} />
       <PageHeader

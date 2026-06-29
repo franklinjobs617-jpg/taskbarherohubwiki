@@ -81,12 +81,12 @@ export default async function PetsPage({ params, searchParams }: Props) {
           { k: "Chest", zh: "宝箱优先", en: "Chest", ja: "宝箱", ko: "상자" },
           { k: "DLC", zh: "DLC", en: "DLC", ja: "DLC", ko: "DLC" },
         ].map((p) => (
-          <Link key={p.k} href={`/${locale}/pets?priority=${p.k}`} className={`pill text-xs ${filterPriority === p.k ? "active" : ""}`}>
+          <Link key={p.k} href={localizedPath(locale, `/pets?priority=${p.k}`)} className={`pill text-xs ${filterPriority === p.k ? "active" : ""}`}>
             {locale === "zh" ? p.zh : locale === "ja" ? p.ja : locale === "ko" ? p.ko : p.en}
           </Link>
         ))}
         {filterPriority && filterPriority !== "any" ? (
-          <Link href={`/${locale}/pets`} className="pill text-xs text-text-secondary hover:text-text-primary">
+          <Link href={localizedPath(locale, `/pets`)} className="pill text-xs text-text-secondary hover:text-text-primary">
             {txt(locale, { zh: "清除", en: "Clear", ja: "クリア", ko: "초기화" })}
           </Link>
         ) : null}
@@ -117,7 +117,7 @@ export default async function PetsPage({ params, searchParams }: Props) {
             <div className="mt-3 flex items-center justify-between border-t border-border-default pt-3 text-[11px]">
               <span className="text-text-muted">{txt(locale, { zh: "按优先级", en: "Priority", ja: "優先度", ko: "우선순위" })}: {row.priority}</span>
               <Link
-                href={`/${locale}/pets?priority=${row.priority}&compare=${row.pet.key}`}
+                href={localizedPath(locale, `/pets?priority=${row.priority}&compare=${row.pet.key}`)}
                 className="text-accent hover:text-accent-bright"
                 title={txt(locale, { zh: "对比同优先级其他宠物", en: "Compare with other pets of same priority", ja: "同優先度のペットと比較", ko: "같은 우선순위 펫과 비교" })}
               >

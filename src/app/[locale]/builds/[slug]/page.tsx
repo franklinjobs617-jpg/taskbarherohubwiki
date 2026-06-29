@@ -19,7 +19,7 @@ import {
   type Locale,
   ensureHeroes,
 } from "@/lib/game-data/data";
-import { localizedPath } from "@/lib/locale-path";
+import { localizedPath, localizedUrl } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 import { articleSchema } from "@/lib/schema-ld";
 
@@ -59,7 +59,7 @@ export default async function BuildDetailPage({ params }: Props) {
   const jsonLd = articleSchema({
     headline: title,
     description,
-    url: `https://tbhguides.com${locale === "en" ? "" : `/${locale}`}/builds/${slug}`,
+    url: localizedUrl(locale, `/builds/${slug}`),
     datePublished: build.updatedAt,
     dateModified: build.updatedAt,
   });

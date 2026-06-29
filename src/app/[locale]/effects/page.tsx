@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ConfidenceBadge } from "@/components/tbh/badges";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { assetPath, effectRows, type Locale } from "@/lib/game-data/data";
+import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale }> };
@@ -59,7 +60,7 @@ export default async function EffectsPage({ params }: Props) {
           return (
             <article key={group.slug} className="overflow-hidden border border-border-default bg-bg-panel transition-colors hover:border-accent/60">
               <div className="grid gap-0 lg:grid-cols-[260px_1fr]">
-                <Link href={`/${locale}/items/${group.item.slug}`} className="flex items-center gap-4 border-b border-border-default bg-[#11100d] p-4 lg:border-b-0 lg:border-r">
+                <Link href={localizedPath(locale, `/items/${group.item.slug}`)} className="flex items-center gap-4 border-b border-border-default bg-[#11100d] p-4 lg:border-b-0 lg:border-r">
                   <span className="flex h-14 w-14 shrink-0 items-center justify-center border border-border-strong bg-[#070707]">
                     {icon ? (
                       <SafeImage src={icon} alt={group.material} width={40} height={40} className="object-contain" data-pixel unoptimized />

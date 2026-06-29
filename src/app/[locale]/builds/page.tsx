@@ -3,8 +3,8 @@ import Link from "next/link";
 import { ConfidenceBadge } from "@/components/tbh/badges";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
-import { builds, heroBySlug, heroName, SITE_URL, type Locale , ensureHeroes } from "@/lib/game-data/data";
-import { localizedPath } from "@/lib/locale-path";
+import { builds, heroBySlug, heroName, type Locale , ensureHeroes } from "@/lib/game-data/data";
+import { localizedPath, localizedUrl } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale }> };
@@ -52,7 +52,7 @@ export default async function BuildsPage({ params }: Props) {
         itemListElement: builds.map((b, i) => ({
           "@type": "ListItem", position: i + 1,
           name: b.title[locale] ?? b.title.en ?? "",
-          url: `${SITE_URL}/${locale}/builds/${b.slug}`,
+          url: localizedUrl(locale, `/builds/${b.slug}`),
         })),
       }]} />
       <PageHeader
@@ -122,7 +122,7 @@ export default async function BuildsPage({ params }: Props) {
                 return (
                   <Link
                     key={build.slug}
-                    href={`/${locale}/builds/${build.slug}`}
+                    href={localizedPath(locale, `/builds/${build.slug}`)}
                     className="group border border-border-default bg-bg-panel p-4 transition-colors hover:border-amber-600/50"
                   >
                     <div className="flex items-center justify-between">

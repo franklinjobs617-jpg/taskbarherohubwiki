@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { ConfidenceBadge } from "@/components/tbh/badges";
 import { Section } from "@/components/tbh/cards";
 import { DataNotice, PageShell } from "@/components/tbh/page";
-import {  hasIndexableMarketData, itemDetail, itemName, marketBySlug, slotNames, type Locale , ensureMarket } from "@/lib/game-data/data";
+import { hasIndexableMarketData, itemDetail, itemName, marketBySlug, resolveLegacyMarketRedirectTarget, slotNames, type Locale, ensureMarket } from "@/lib/game-data/data";
 import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: locale === "zh" ? `${name} Steam 市场状态｜TaskBar Hero` : `${name} Steam Market Status`,
     description: locale === "zh" ? `${name} 的可交易状态、Steam 市场名称、数据状态和卖出风险。` : `${name} tradability, Steam market name, data status, and sale risk.`,
-    alternates: pageAlternates(locale, `/market/${hash}`),
+    alternates: pageAlternates(locale, `/market/${row.item.slug}`),
     robots: { index: indexable, follow: true },
   };
 }
@@ -31,7 +31,17 @@ export default async function MarketDetailPage({ params }: Props) {
 
   const { locale, hash } = await params;
   const row = marketBySlug(hash);
-  if (!row) notFound();
+  if (!row) {
+    const legacyTarget = resolveLegacyMarketRedirectTarget(hash);
+    if (legacyTarget) redirect(localizedPath(locale, legacyTarget));
+    notFound();
+  }
+  if (hash !== row.item.slug) {
+    const target = hasIndexableMarketData(row.market)
+      ? `/market/${row.item.slug}`
+      : `/items/${row.item.slug}`;
+    redirect(localizedPath(locale, target));
+  }
   const { item, market } = row;
   const isZh = locale === "zh";
   const detail = itemDetail(item.id);

@@ -14,6 +14,7 @@ import {
   type Locale,
   type RawItem,
 } from "./data";
+import { localizedPath } from "@/lib/locale-path";
 import { extPets } from "./external";
 import { graphChestByKey, graphChests, graphStageByKey, type GraphChest } from "./graph";
 
@@ -220,7 +221,7 @@ export function getPetUnlockPlan(locale: Locale) {
       killCount: pet.unlock.count ?? null,
       bestFarmStage: pet.unlock.farm ?? null,
       priority,
-      mapLink: pet.unlock.farm ? `/${locale}/stages/${pet.unlock.farm.act}-${pet.unlock.farm.stageNo}` : null,
+      mapLink: pet.unlock.farm ? localizedPath(locale, `/stages/${pet.unlock.farm.act}-${pet.unlock.farm.stageNo}`) : null,
     };
   });
   const find = (predicate: (row: (typeof pets)[number]) => boolean) => pets.find(predicate) ?? null;

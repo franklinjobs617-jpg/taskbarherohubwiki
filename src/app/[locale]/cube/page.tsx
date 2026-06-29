@@ -4,6 +4,7 @@ import Link from "next/link";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
 import { allItems, assetPath, type Locale, type RawItem , ensureItems } from "@/lib/game-data/data";
+import { localizedPath } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale }> };
@@ -98,7 +99,7 @@ export default async function CubePage({ params }: Props) {
                   return (
                   <Link
                     key={item.slug}
-                    href={`/${locale}/items/${item.slug}`}
+                    href={localizedPath(locale, `/items/${item.slug}`)}
                     className="flex items-center gap-2 rounded-sm border border-border-default bg-bg-panel px-3 py-1.5 text-xs transition-colors hover:border-accent-dim group"
                   >
                     <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-sm border border-border-default bg-bg-canvas">
@@ -129,21 +130,21 @@ export default async function CubePage({ params }: Props) {
       {/* Quick links */}
       <div className="mt-8 grid gap-2 border-t border-border-default pt-6 sm:grid-cols-3">
         <Link
-          href={`/${locale}/effects`}
+          href={localizedPath(locale, `/effects`)}
           className="rounded-sm border border-border-default bg-bg-panel p-3 text-xs transition-colors hover:border-accent-dim"
         >
           <p className="font-medium text-white">{isZh ? "材料效果速查" : "Material Effects"}</p>
           <p className="mt-1 text-text-muted">{isZh ? "查看每种材料的具体属性加成" : "Check specific stat bonuses per material"}</p>
         </Link>
         <Link
-          href={`/${locale}/guides/cube/cube-materials`}
+          href={localizedPath(locale, `/guides/cube/cube-materials`)}
           className="rounded-sm border border-border-default bg-bg-panel p-3 text-xs transition-colors hover:border-accent-dim"
         >
           <p className="font-medium text-white">{isZh ? "Cube 材料指南" : "Cube Materials Guide"}</p>
           <p className="mt-1 text-text-muted">{isZh ? "深度攻略：如何选择和保留材料" : "In-depth guide on material selection"}</p>
         </Link>
         <Link
-          href={`/${locale}/tools/farming-calculator`}
+          href={localizedPath(locale, `/tools/farming-calculator`)}
           className="rounded-sm border border-border-default bg-bg-panel p-3 text-xs transition-colors hover:border-accent-dim"
         >
           <p className="font-medium text-white">{isZh ? "Farming 计算器" : "Farming Calculator"}</p>

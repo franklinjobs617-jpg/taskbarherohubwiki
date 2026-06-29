@@ -7,6 +7,8 @@ import { ConfidenceBadge } from "@/components/tbh/badges";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
 import { allItems, assetPath, itemName, marketForItem, type Locale, type RawItem , ensureItems, ensureMarket } from "@/lib/game-data/data";
 import { getGuideContent, getGuideStaticParams, renderMarkdownish, type MarkdownBlock } from "@/lib/guides";
+import { localizedPath, localizedUrl } from "@/lib/locale-path";
+import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale; category: string; slug: string }> };
 
@@ -39,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: guide.title[locale] as string,
     description: guide.description[locale] as string,
-    alternates: { canonical: locale === "en" ? `/guides/${category}/${slug}` : `/${locale}/guides/${category}/${slug}`, languages: { zh: `/zh/guides/${category}/${slug}`, en: `/guides/${category}/${slug}`, ja: `/ja/guides/${category}/${slug}`, ko: `/ko/guides/${category}/${slug}`, "x-default": `/guides/${category}/${slug}` } },
+    alternates: pageAlternates(locale, `/guides/${category}/${slug}`),
   };
 }
 
@@ -58,8 +60,8 @@ export default async function GuideDetailPage({ params }: Props) {
   return (
     <div className="min-h-screen bg-[#070706]" style={{ backgroundImage: "radial-gradient(circle at 18% 0%, rgba(200,121,37,0.06), transparent 34rem)" }}>
       <SeoJsonLd data={[
-        { "@context": "https://schema.org", "@type": "Article", headline: guide.title[locale] as string, description: guide.description[locale] as string, dateModified: guide.updatedAt, inLanguage: locale },
-        { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Guides", item: `/${locale}/guides` }, { "@type": "ListItem", position: 2, name: guide.title[locale] as string }] },
+        { "@context": "https://schema.org", "@type": "Article", headline: guide.title[locale] as string, description: guide.description[locale] as string, url: localizedUrl(locale, `/guides/${category}/${slug}`), dateModified: guide.updatedAt, inLanguage: locale },
+        { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Guides", item: localizedUrl(locale, `/guides`) }, { "@type": "ListItem", position: 2, name: guide.title[locale] as string, item: localizedUrl(locale, `/guides/${category}/${slug}`) }] },
       ]} />
 
       <div className="mx-auto max-w-[1080px] px-5 py-8 sm:py-12">
@@ -68,7 +70,7 @@ export default async function GuideDetailPage({ params }: Props) {
           <article className="min-w-0">
             {/* Breadcrumb */}
             <div className="mb-4 flex flex-wrap items-center gap-2 text-[12px] text-[#8b8170]">
-              <Link href={`/${locale}/guides`} className="hover:text-accent-bright transition-colors">{copy(locale, "攻略", "Guides", "ガイド")}</Link>
+              <Link href={localizedPath(locale, `/guides`)} className="hover:text-accent-bright transition-colors">{copy(locale, "攻略", "Guides", "ガイド")}</Link>
               <span className="text-text-muted">/</span>
               <span className="uppercase tracking-[0.16em] text-[#c87925]">{guide.category}</span>
             </div>
@@ -175,10 +177,10 @@ export default async function GuideDetailPage({ params }: Props) {
                 </SidebarBlock>
               )}
               <SidebarBlock title={copy(locale, "下一步", "Next", "次に見る")}>
-                <SidebarLink href={`/${locale}/market`} icon={<Coins className="h-3.5 w-3.5" />} label={copy(locale, "市场价格", "Market", "市場")} />
-                <SidebarLink href={`/${locale}/chests`} icon={<PackageCheck className="h-3.5 w-3.5" />} label={copy(locale, "宝箱掉落", "Chests", "宝箱")} />
-                {guide.relatedTools.map((tool) => <SidebarLink key={tool} href={`/${locale}/tools/${tool}`} icon={<Clock3 className="h-3.5 w-3.5" />} label={tool} />)}
-                <SidebarLink href={`/${locale}/guides`} icon={<ArrowRight className="h-3.5 w-3.5" />} label={copy(locale, "全部攻略", "All guides", "全ガイド")} />
+                <SidebarLink href={localizedPath(locale, `/market`)} icon={<Coins className="h-3.5 w-3.5" />} label={copy(locale, "市场价格", "Market", "市場")} />
+                <SidebarLink href={localizedPath(locale, `/chests`)} icon={<PackageCheck className="h-3.5 w-3.5" />} label={copy(locale, "宝箱掉落", "Chests", "宝箱")} />
+                {guide.relatedTools.map((tool) => <SidebarLink key={tool} href={localizedPath(locale, `/tools/${tool}`)} icon={<Clock3 className="h-3.5 w-3.5" />} label={tool} />)}
+                <SidebarLink href={localizedPath(locale, `/guides`)} icon={<ArrowRight className="h-3.5 w-3.5" />} label={copy(locale, "全部攻略", "All guides", "全ガイド")} />
               </SidebarBlock>
             </div>
           </aside>
@@ -245,14 +247,14 @@ function RefItem({ item, locale, compact }: { item: RawItem; locale: Locale; com
   const name = itemName(item, locale);
   if (compact) {
     return (
-      <Link href={`/${locale}/items/${item.slug}`} className="flex items-center gap-2.5 rounded-sm py-1 text-[13px] transition-colors hover:text-accent-bright">
+      <Link href={localizedPath(locale, `/items/${item.slug}`)} className="flex items-center gap-2.5 rounded-sm py-1 text-[13px] transition-colors hover:text-accent-bright">
         <span className="flex h-7 w-7 shrink-0 items-center justify-center border border-[#2c281f] bg-[#070706]">{icon ? <SafeImage src={icon} alt={name} width={18} height={18} className="object-contain" data-pixel unoptimized /> : <CheckCircle2 className="h-3 w-3 text-[#8b8170]" />}</span>
         <span className="min-w-0 truncate text-[#eadfca]">{name}</span>
       </Link>
     );
   }
   return (
-    <Link href={`/${locale}/items/${item.slug}`} className="flex items-center gap-3 rounded-sm border border-[#2c281f] bg-[#0d0c0a] p-3 transition-colors hover:border-[#c87925]">
+    <Link href={localizedPath(locale, `/items/${item.slug}`)} className="flex items-center gap-3 rounded-sm border border-[#2c281f] bg-[#0d0c0a] p-3 transition-colors hover:border-[#c87925]">
       <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-[#2c281f] bg-[#070706]">{icon ? <SafeImage src={icon} alt={name} width={28} height={28} className="object-contain" data-pixel unoptimized /> : <CheckCircle2 className="h-4 w-4 text-[#8b8170]" />}</span>
       <span className="min-w-0"><span className="block truncate text-[13px] font-medium text-[#eadfca]">{name}</span><span className="block text-[11px] text-[#8b8170]">{market?.lowest ? `$${market.lowest.toFixed(2)}` : item.type}</span></span>
     </Link>

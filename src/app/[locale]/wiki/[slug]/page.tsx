@@ -7,7 +7,7 @@ import { Breadcrumb } from "@/components/tbh/breadcrumb";
 import { Section } from "@/components/tbh/cards";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { wikiArticles, wikiBySlug, type Locale } from "@/lib/game-data/data";
-import { localizedPath } from "@/lib/locale-path";
+import { localizedPath, localizedUrl } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 import { articleSchema } from "@/lib/schema-ld";
 
@@ -40,7 +40,7 @@ export default async function WikiDetailPage({ params }: Props) {
   const jsonLd = articleSchema({
     headline: title,
     description,
-    url: `https://tbhguides.com${locale === "en" ? "" : `/${locale}`}/wiki/${slug}`,
+    url: localizedUrl(locale, `/wiki/${slug}`),
     datePublished: article.updatedAt,
     dateModified: article.updatedAt,
   });

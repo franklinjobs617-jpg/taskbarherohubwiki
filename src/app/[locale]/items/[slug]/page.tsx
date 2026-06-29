@@ -14,7 +14,8 @@ import { PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
 import { assetPath, itemName, slotNames, text, type Locale } from "@/lib/game-data/data";
 import { getItemPageData } from "@/lib/game-data/v2";
-import { localizedPath } from "@/lib/locale-path";
+import { localizedPath, localizedUrl } from "@/lib/locale-path";
+import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale; slug: string }> };
 
@@ -99,7 +100,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: titleByLocale[locale] ?? titleByLocale.en,
     description: descByLocale[locale] ?? descByLocale.en,
-    alternates: { canonical: locale === "en" ? `/items/${slug}` : `/${locale}/items/${slug}`, languages: { zh: `/zh/items/${slug}`, en: `/items/${slug}`, ja: `/ja/items/${slug}`, ko: `/ko/items/${slug}`, "x-default": `/items/${slug}` } },
+    alternates: pageAlternates(locale, `/items/${slug}`),
     robots: pageData.shouldIndex ? undefined : { index: false, follow: true },
   };
 }
@@ -124,12 +125,13 @@ export default async function ItemDetailPage({ params }: Props) {
     <PageShell>
       <Breadcrumb locale={locale} items={[{ label: "Home", href: "/" }, { label: isZh ? "物品" : isJa ? "アイテム" : "Items", href: "/items" }, { label: name }]} />
       <SeoJsonLd data={[
-        { "@context": "https://schema.org", "@type": "WebPage", name, inLanguage: locale, dateModified: "2026-06-08" },
+        { "@context": "https://schema.org", "@type": "WebPage", name, url: localizedUrl(locale, `/items/${slug}`), inLanguage: locale, dateModified: "2026-06-08" },
         ...(item.marketable ? [{
           "@context": "https://schema.org",
           "@type": "Product",
           name,
           description: context ?? description,
+          url: localizedUrl(locale, `/items/${slug}`),
           sku: String(item.id),
           category: item.gear ? `${item.type}/${item.gear}` : item.type,
           image: icon ? [`${icon}`] : [],

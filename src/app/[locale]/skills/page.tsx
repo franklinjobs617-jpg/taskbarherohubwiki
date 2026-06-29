@@ -67,7 +67,7 @@ export default async function SkillsPage({ params, searchParams }: Props & { sea
       <div className="mb-5 flex flex-wrap gap-1.5">
         <span className="self-center text-xs text-text-muted mr-1">{isZh ? "筛选：" : "Filter:"}</span>
         <Link
-          href={`/${locale}/skills`}
+          href={localizedPath(locale, `/skills`)}
           className={`border px-2.5 py-1 text-xs ${!selectedHero ? "border-accent bg-accent-soft text-accent-bright" : "border-border-strong text-text-secondary hover:border-accent"}`}
         >
           {isZh ? "全部" : "All"}
@@ -75,7 +75,7 @@ export default async function SkillsPage({ params, searchParams }: Props & { sea
         {heroes.map((hero) => (
           <Link
             key={hero.HeroKey}
-            href={`/${locale}/skills?hero=${hero.ClassType ?? hero.HeroKey}`}
+            href={localizedPath(locale, `/skills?hero=${hero.ClassType ?? hero.HeroKey}`)}
             className={`border px-2.5 py-1 text-xs ${
               (selectedHero?.HeroKey === hero.HeroKey)
                 ? "border-accent bg-accent-soft text-accent-bright"
@@ -121,7 +121,7 @@ export default async function SkillsPage({ params, searchParams }: Props & { sea
                   {selectedHero ? null : (
                     <td className="px-3 py-3">
                       {hero ? (
-                        <Link href={`/${locale}/heroes/${hero.ClassType?.toLowerCase() ?? hero.HeroKey}`} className="text-accent-bright hover:underline">
+                        <Link href={localizedPath(locale, `/heroes/${hero.ClassType?.toLowerCase() ?? hero.HeroKey}`)} className="text-accent-bright hover:underline">
                           {heroName(hero, locale)}
                         </Link>
                       ) : <span className="text-text-muted">-</span>}

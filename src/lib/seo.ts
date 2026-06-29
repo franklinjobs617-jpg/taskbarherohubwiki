@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import type { Locale } from "@/lib/game-data/data";
+import { localizedPath } from "@/lib/locale-path";
 
 export function pageAlternates(locale: Locale, path: string): Metadata["alternates"] {
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
-  const enPath = normalizedPath;
-  const zhPath = `/zh${normalizedPath}`;
-  const jaPath = `/ja${normalizedPath}`;
-  const koPath = `/ko${normalizedPath}`;
+  const enPath = localizedPath("en", normalizedPath);
+  const zhPath = localizedPath("zh", normalizedPath);
+  const jaPath = localizedPath("ja", normalizedPath);
+  const koPath = localizedPath("ko", normalizedPath);
 
   return {
-    canonical: locale === "en" ? enPath : `/${locale}${normalizedPath}`,
+    canonical: localizedPath(locale, normalizedPath),
     languages: {
       en: enPath,
       zh: zhPath,

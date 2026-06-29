@@ -7,11 +7,11 @@ import { PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
 import { type Hero, type Locale } from "@/lib/game-data/data";
 import { heroProfile, heroWeaponLabel } from "@/lib/hero-content";
-import { localizedPath } from "@/lib/locale-path";
+import { localizedPath, localizedUrl, SITE_URL } from "@/lib/locale-path";
+import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale }> };
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://taskbarherohub.wiki";
 const STATIC_COUNTS = {
   items: 5944,
   chests: 59,
@@ -105,10 +105,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ja: "アイテム、素材、宝箱、モンスター、ステージ、ペットを検索し、周回先、確率、必要回数、解放ルート、市場状態を確認。",
       ko: "아이템, 재료, 상자, 몬스터, 스테이지, 펫을 검색하고 파밍 장소, 확률, 예상 횟수, 해금 루트, 시장 상태를 확인합니다.",
     }),
-    alternates: {
-      canonical: locale === "en" ? "/" : `/${locale}`,
-      languages: { en: "/", zh: "/zh", ja: "/ja", ko: "/ko", "x-default": "/" },
-    },
+    alternates: pageAlternates(locale, "/"),
   };
 }
 
@@ -152,7 +149,7 @@ export default async function HomePage({ params }: Props) {
         url: SITE_URL,
         potentialAction: {
           "@type": "SearchAction",
-          target: `${SITE_URL}/tools/drop-finder?q={search_term_string}`,
+          target: `${localizedUrl(locale, "/tools/drop-finder")}?q={search_term_string}`,
           "query-input": "required name=search_term_string",
         },
       }} />

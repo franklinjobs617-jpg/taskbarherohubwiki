@@ -5,8 +5,9 @@ import { HeroCard, Section } from "@/components/tbh/cards";
 import { HeroCompareMatrix, HeroRadar } from "@/components/tbh/hero-compare";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
-import { SITE_URL, allHeroes, heroName, heroSlug, type Locale , ensureHeroes } from "@/lib/game-data/data";
+import { allHeroes, heroName, heroSlug, type Locale , ensureHeroes } from "@/lib/game-data/data";
 import { heroProfile, heroWeaponLabel } from "@/lib/hero-content";
+import { localizedPath, localizedUrl } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale }> };
@@ -61,7 +62,7 @@ export default async function HeroesPage({ params }: Props) {
         itemListElement: heroes.map((hero, i) => ({
           "@type": "ListItem",
           position: i + 1,
-          url: `${SITE_URL}${locale === "en" ? "" : "/" + locale}/heroes/${heroSlug(hero)}`,
+          url: localizedUrl(locale, `/heroes/${heroSlug(hero)}`),
         })),
       }} />
       <PageHeader
@@ -97,7 +98,7 @@ export default async function HeroesPage({ params }: Props) {
               </div>
               <div className="border border-[#2c2c2c] bg-bg-canvas p-3">
                 <p className="text-xs text-text-muted">{isZh ? "下一步" : "Next step"}</p>
-                <Link href={`/${locale}/guides/beginner/class-guide`} className="mt-1 inline-flex items-center gap-1 text-sm text-accent-bright">
+                <Link href={localizedPath(locale, `/guides/beginner/class-guide`)} className="mt-1 inline-flex items-center gap-1 text-sm text-accent-bright">
                   {isZh ? "职业选择指南" : "Class guide"} <ArrowRight className="h-3 w-3" />
                 </Link>
               </div>
@@ -135,7 +136,7 @@ export default async function HeroesPage({ params }: Props) {
               <p className="text-xs font-medium text-text-secondary">{heroName(hero, locale)}</p>
               <HeroRadar hero={hero} heroes={heroes} locale={locale} size={140} />
               <Link
-                href={`/${locale}/heroes/${heroSlug(hero)}`}
+                href={localizedPath(locale, `/heroes/${heroSlug(hero)}`)}
                 className="text-[10px] text-amber-400 hover:underline"
               >
                 {isZh ? "详情 →" : "Details →"}
@@ -170,7 +171,7 @@ export default async function HeroesPage({ params }: Props) {
                     <td className="px-3 py-3 text-text-secondary">{profile.phase}</td>
                     <td className="px-3 py-3 text-text-secondary">{profile.statPriority.join(" / ")}</td>
                     <td className="px-3 py-3">
-                      <Link href={`/${locale}/heroes/${slug}`} className="inline-flex items-center gap-1 text-accent-bright hover:text-[#ffd76a]">
+                      <Link href={localizedPath(locale, `/heroes/${slug}`)} className="inline-flex items-center gap-1 text-accent-bright hover:text-[#ffd76a]">
                         {isZh ? "打开" : "Open"} <ArrowRight className="h-3 w-3" />
                       </Link>
                     </td>
@@ -184,17 +185,17 @@ export default async function HeroesPage({ params }: Props) {
 
       <Section title={isZh ? "选好英雄后还要看什么？" : "What should I check after picking a hero?"} eyebrow="Journey">
         <div className="grid gap-2 md:grid-cols-3">
-          <Link href={`/${locale}/skills`} className="border border-border-default bg-bg-panel p-4 hover:border-accent">
+          <Link href={localizedPath(locale, `/skills`)} className="border border-border-default bg-bg-panel p-4 hover:border-accent">
             <BookOpen className="mb-3 h-4 w-4 text-accent" />
             <p className="font-medium text-text-primary">{isZh ? "查主动/被动技能" : "Check active and passive skills"}</p>
             <p className="mt-2 text-sm leading-6 text-text-secondary">{isZh ? "确认技能类型、伤害关键词和节点方向。" : "Verify skill type, damage keywords, and node direction."}</p>
           </Link>
-          <Link href={`/${locale}/effects`} className="border border-border-default bg-bg-panel p-4 hover:border-accent">
+          <Link href={localizedPath(locale, `/effects`)} className="border border-border-default bg-bg-panel p-4 hover:border-accent">
             <Shield className="mb-3 h-4 w-4 text-accent" />
             <p className="font-medium text-text-primary">{isZh ? "匹配材料效果" : "Match material effects"}</p>
             <p className="mt-2 text-sm leading-6 text-text-secondary">{isZh ? "把职业优先属性映射到 Decoration、Engraving、Inscription。" : "Map class stat priority to Decoration, Engraving, and Inscription effects."}</p>
           </Link>
-          <Link href={`/${locale}/builds`} className="border border-border-default bg-bg-panel p-4 hover:border-accent">
+          <Link href={localizedPath(locale, `/builds`)} className="border border-border-default bg-bg-panel p-4 hover:border-accent">
             <Swords className="mb-3 h-4 w-4 text-accent" />
             <p className="font-medium text-text-primary">{isZh ? "查看推荐 Build" : "View recommended builds"}</p>
             <p className="mt-2 text-sm leading-6 text-text-secondary">{isZh ? "每个职业的前期、中期和后期配装路线。" : "Early, mid, and endgame gear routes for each class."}</p>

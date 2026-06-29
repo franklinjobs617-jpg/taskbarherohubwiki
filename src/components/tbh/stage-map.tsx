@@ -6,6 +6,7 @@ import { useMemo, useState } from "react";
 import { Boxes, Clock3, Coins, Crosshair, Skull, Swords, Zap } from "lucide-react";
 import type { Locale } from "@/lib/game-data/data";
 import type { StageExplorerStage } from "@/lib/game-data/graph";
+import { localizedPath } from "@/lib/locale-path";
 
 const DIFFICULTIES = ["NORMAL", "NIGHTMARE", "HELL", "TORMENT"] as const;
 type Difficulty = (typeof DIFFICULTIES)[number];
@@ -212,7 +213,7 @@ export function StageMap({ locale, stages }: { locale: Locale; stages: StageExpl
                   {selected.difficulty} / {selected.waves ?? "?"} waves / {selected.monsters.length} {t(locale, "种怪物", "monster types")}
                 </p>
               </div>
-              <Link href={`/${locale}/stages/${selected.key}`} className="text-sm font-semibold text-[#7f8cff] hover:text-[#bcc4ff]">
+              <Link href={localizedPath(locale, `/stages/${selected.key}`)} className="text-sm font-semibold text-[#7f8cff] hover:text-[#bcc4ff]">
                 {t(locale, "完整详情", "Full details")} →
               </Link>
             </div>
@@ -248,7 +249,7 @@ export function StageMap({ locale, stages }: { locale: Locale; stages: StageExpl
                   {selected.drops.map((drop) => (
                     <div key={`${drop.itemKey}-${drop.sourceType}`} className="grid items-center gap-3 border border-border-default bg-[#11111c] px-3 py-3 md:grid-cols-[92px_1fr_auto]">
                       <span className="text-xs font-black uppercase tracking-[0.14em] text-[#777]">{drop.sourceType}</span>
-                      <Link href={`/${locale}/chests/${drop.itemSlug}`} className="flex min-w-0 items-center gap-3 text-[#7f8cff] hover:text-[#bcc4ff]">
+                      <Link href={localizedPath(locale, `/chests/${drop.itemSlug}`)} className="flex min-w-0 items-center gap-3 text-[#7f8cff] hover:text-[#bcc4ff]">
                         {drop.icon ? <SafeImage src={drop.icon} alt="" width={24} height={24} className="object-contain" unoptimized /> : <Boxes className="h-4 w-4" />}
                         <span className="truncate font-semibold">{drop.name}</span>
                       </Link>
@@ -264,7 +265,7 @@ export function StageMap({ locale, stages }: { locale: Locale; stages: StageExpl
                   {selected.drops.flatMap((drop) => drop.contents.slice(0, 6).map((content) => ({ ...content, chest: drop.name }))).slice(0, 12).map((content) => (
                     <Link
                       key={`${content.chest}-${content.itemKey}`}
-                      href={`/${locale}/items/${content.itemSlug}`}
+                      href={localizedPath(locale, `/items/${content.itemSlug}`)}
                       className="group border border-border-default bg-bg-deep p-3 transition hover:border-accent/70"
                     >
                       <div className="flex items-start gap-3">
@@ -400,7 +401,7 @@ function MonsterButton({
 }) {
   return (
     <Link
-      href={`/${locale}/monsters/${monster.key}`}
+      href={localizedPath(locale, `/monsters/${monster.key}`)}
       className={`flex min-w-0 items-center gap-3 border px-3 py-2 transition ${
         active ? "border-[#a15a00] bg-[#2a120d]" : "border-border-default bg-[#11111c] hover:border-[#4b4b55]"
       }`}

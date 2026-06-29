@@ -5,11 +5,12 @@ import { RarityBadge } from "@/components/tbh/badges";
 import { PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
 import { ItemIcon } from "@/components/ui/item-icon";
-import { DATA_VERSION, SITE_URL, assetPath, hasIndexableMarketData, itemName, marketRows, slotNames, UPDATED_AT, type Locale , ensureMarket } from "@/lib/game-data/data";
+import { DATA_VERSION, assetPath, hasIndexableMarketData, itemName, marketRows, slotNames, UPDATED_AT, type Locale , ensureMarket } from "@/lib/game-data/data";
 import { getMarketDecision } from "@/lib/game-data/decisions";
-import { localizedPath } from "@/lib/locale-path";
+import { localizedPath, localizedUrl } from "@/lib/locale-path";
 import { RelatedPages } from "@/components/tbh/related-pages";
 import { HowToUse } from "@/components/tbh/how-to-use";
+import { pageAlternates } from "@/lib/seo";
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -24,10 +25,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   await ensureMarket();
 
   const { locale } = await params;
+  const hasLiveMarketData = marketRows().some(({ market }) => hasIndexableMarketData(market));
   return {
     title: locale === "zh" ? "TBH 市场风险 | Sell、Keep、Farm 判断" : "TBH Market Risk | Sell, Keep, Farm Decisions",
     description: locale === "zh" ? "查看最低挂单、挂单数、数据更新时间、自用价值、掉落上下文和 Sell/Keep/Farm 风险标签。" : "Check lowest listing, listing count, freshness, self-use value, drop context, and Sell/Keep/Farm risk labels.",
-    alternates: { canonical: locale === "en" ? "/market" : `/${locale}/market`, languages: { zh: "/zh/market", en: "/market", ja: "/ja/market", ko: "/ko/market", "x-default": "/market" } },
+    alternates: pageAlternates(locale, "/market"),
+    robots: { index: hasLiveMarketData, follow: true },
   };
 }
 
@@ -60,7 +63,7 @@ export default async function MarketPage({ params, searchParams }: Props) {
         itemListElement: rows.slice(0, 50).map(({ item }, i) => ({
           "@type": "ListItem",
           position: i + 1,
-          url: `${SITE_URL}${locale === "en" ? "" : "/" + locale}/market/${item.slug}`,
+          url: localizedUrl(locale, `/market/${item.slug}`),
         })),
       }} />
       <PageHeader
@@ -111,7 +114,7 @@ export default async function MarketPage({ params, searchParams }: Props) {
           { k: "lowest_desc", zh: "价格降序", en: "Price ↓" },
           { k: "listings_desc", zh: "挂单数多", en: "Listings ↓" },
         ].map((s) => (
-          <Link key={s.k} href={`/${locale}/market?sort=${s.k}`} className={`pill text-xs ${sort === s.k ? "active" : ""}`}>
+          <Link key={s.k} href={localizedPath(locale, `/market?sort=${s.k}`)} className={`pill text-xs ${sort === s.k ? "active" : ""}`}>
             {isZh ? s.zh : s.en}
           </Link>
         ))}
