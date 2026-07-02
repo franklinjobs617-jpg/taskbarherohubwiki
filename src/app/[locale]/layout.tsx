@@ -6,8 +6,8 @@ import { notFound } from "next/navigation";
 import { CookieConsentBanner } from "@/components/layout/cookie-consent";
 import { NavProvider } from "@/components/layout/nav-provider";
 import { SiteFooter } from "@/components/layout/site-footer";
-import { isLocale, SITE_URL } from "@/lib/game-data/data";
-import { localizedUrl } from "@/lib/locale-path";
+import { isLocale } from "@/lib/game-data/data";
+import { localizedUrl, SITE_URL } from "@/lib/locale-path";
 
 type Props = {
   children: React.ReactNode;
@@ -15,6 +15,7 @@ type Props = {
 };
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "G-NCXRNDQ4Q0";
+const SITE_SEARCH_PATH = "/tools/drop-finder";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -71,16 +72,6 @@ export default async function LocaleLayout({ children, params }: Props) {
       <head>
         <link rel="llms" href="/llms.txt" />
         <meta name="llms:generated" content="2026-06-08" />
-        {/* AdSense script — enable only after AdSense account is fully approved.
-            Loading adsbygoogle.js before approval may confuse manual reviewers.
-            Set NEXT_PUBLIC_ADSENSE_APPROVED=true after receiving approval email. */}
-        {process.env.NODE_ENV === "production" && process.env.NEXT_PUBLIC_ADSENSE_APPROVED === "true" ? (
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3383070348689557"
-            crossOrigin="anonymous"
-          />
-        ) : null}
       </head>
       <body className="min-h-full bg-bg-deep text-text-secondary antialiased">
         <NextIntlClientProvider messages={messages}>
@@ -105,7 +96,7 @@ export default async function LocaleLayout({ children, params }: Props) {
               "@type": "SearchAction",
               target: {
                 "@type": "EntryPoint",
-                urlTemplate: `${localizedUrl(locale, "/items")}?q={search_term_string}`,
+                urlTemplate: `${localizedUrl(locale, SITE_SEARCH_PATH)}?q={search_term_string}`,
               },
               "query-input": "required name=search_term_string",
             },

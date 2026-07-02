@@ -1,15 +1,39 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { Search } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { localizedPath } from "@/lib/locale-path";
 
 const T: Record<string, { title: string; desc: string; home: string; search: string; popular: string }> = {
-  zh: { title: "椤甸潰鏈壘鍒?", desc: "浣犺闂殑椤甸潰涓嶅瓨鍦ㄣ€傝瘯璇曟悳绱㈡垨娴忚鐑棬椤甸潰銆?", home: "杩斿洖棣栭〉", search: "鎼滅储鐗╁搧...", popular: "鐑棬椤甸潰" },
-  en: { title: "Page Not Found", desc: "The page you're looking for doesn't exist. Try searching or browse popular pages.", home: "Go Home", search: "Search items...", popular: "Popular Pages" },
-  ja: { title: "銉氥兗銈稿亴瑕嬨仱銇嬨倞銇俱仜銈?", desc: "銇婃帰銇椼伄銉氥兗銈稿伅瀛樺湪銇椼伨銇涖倱銆傛绱仚銈嬨亱浜烘皸銉氥兗銈搞倰瑕嬨仸銇忋仩銇曘亜銆?", home: "銉涖兗銉犮伀鎴汇倠", search: "銈偆銉嗐儬銈掓绱?..", popular: "浜烘皸銉氥兗銈?" },
-  ko: { title: "韼橃澊歆€毳?彀眷潉 靾?鞐嗢姷雼堧嫟", desc: "彀眷溂鞁滊姅 韼橃澊歆€臧€ 臁挫灛頃橃 鞎婌姷雼堧嫟. 瓴€靸夗晿瓯半倶 鞚戈赴 韼橃澊歆€毳?霊橂煬氤挫劯鞖?", home: "頇堨溂搿?", search: "鞎勳澊韰?瓴€靸?..", popular: "鞚戈赴 韼橃澊歆€" },
+  zh: {
+    title: "页面未找到",
+    desc: "你访问的页面不存在。可以尝试搜索，或先浏览这些热门页面。",
+    home: "返回首页",
+    search: "搜索物品...",
+    popular: "热门页面",
+  },
+  en: {
+    title: "Page Not Found",
+    desc: "The page you're looking for doesn't exist. Try searching or browse popular pages.",
+    home: "Go Home",
+    search: "Search items...",
+    popular: "Popular Pages",
+  },
+  ja: {
+    title: "ページが見つかりません",
+    desc: "お探しのページは存在しません。検索するか、人気のページを確認してください。",
+    home: "ホームへ戻る",
+    search: "アイテムを検索...",
+    popular: "人気ページ",
+  },
+  ko: {
+    title: "페이지를 찾을 수 없습니다",
+    desc: "요청한 페이지가 존재하지 않습니다. 검색하거나 인기 페이지를 먼저 확인하세요.",
+    home: "홈으로 이동",
+    search: "아이템 검색...",
+    popular: "인기 페이지",
+  },
 };
 
 export function NotFoundContent() {

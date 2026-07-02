@@ -7,7 +7,7 @@ import { PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
 import { type Hero, type Locale } from "@/lib/game-data/data";
 import { heroProfile, heroWeaponLabel } from "@/lib/hero-content";
-import { localizedPath, localizedUrl, SITE_URL } from "@/lib/locale-path";
+import { localizedPath, localizedUrl } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale }> };
@@ -144,14 +144,15 @@ export default async function HomePage({ params }: Props) {
     <PageShell>
       <SeoJsonLd data={{
         "@context": "https://schema.org",
-        "@type": "WebSite",
+        "@type": "CollectionPage",
         name: "TBH: Task Bar Hero Wiki",
-        url: SITE_URL,
-        potentialAction: {
-          "@type": "SearchAction",
-          target: `${localizedUrl(locale, "/tools/drop-finder")}?q={search_term_string}`,
-          "query-input": "required name=search_term_string",
-        },
+        url: localizedUrl(locale, "/"),
+        description: copy(locale, {
+          zh: "搜索物品、材料、宝箱、怪物、关卡和宠物，查看刷图关卡、掉率、预计次数、宠物路线和市场状态。",
+          en: "Search items, materials, chests, monsters, stages, and pets for farming stages, rates, expected runs, unlock routes, and market status.",
+          ja: "アイテム、素材、宝箱、モンスター、ステージ、ペットを検索し、周回先、確率、必要回数、解放ルート、市場状況を確認。",
+          ko: "아이템, 재료, 상자, 몬스터, 스테이지, 펫을 검색하고 파밍 경로, 확률, 예상 횟수, 해금 루트, 시장 상태를 확인하세요.",
+        }),
       }} />
 
       {/* Hero Section */}

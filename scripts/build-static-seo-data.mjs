@@ -4,9 +4,9 @@ import path from "node:path";
 const root = process.cwd();
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://taskbarherohub.wiki";
 const cdnBase = process.env.NEXT_PUBLIC_R2_DATA_URL ?? "https://cdn.taskbarherohub.wiki";
-const updatedAt = "2026-06-08";
+const updatedAt = new Date().toISOString().split("T")[0];
 const locales = ["en", "zh", "ja", "ko"];
-const guideLocales = ["en", "zh", "ja"];
+const guideLocales = ["en", "zh", "ja", "ko"];
 const sitemapLimit = 45000;
 
 const paths = {
@@ -76,7 +76,10 @@ function hasRealMarketData(market) {
 
 function shouldIndexItem(item, dropsBySlug, marketBySlug) {
   if (item.type === "STAGEBOX") return false;
-  return true;
+  const hasDrops = Boolean(dropsBySlug[item.slug]?.length);
+  const market = marketBySlug.get(item.slug);
+  const hasRealMarket = hasRealMarketData(market);
+  return hasDrops || hasRealMarket;
 }
 
 function shouldIndexChest(chest, dropsBySlug, chestIdsInStages) {
@@ -107,8 +110,24 @@ function urlEntry(url, lastModified, changeFrequency, priority) {
   ].join("\n");
 }
 
+function urlEntryWithAlternates(url, lastModified, changeFrequency, priority, alternates) {
+  const lines = [
+    "  <url>",
+    `    <loc>${escapeXml(url)}</loc>`,
+    ...alternates.map(
+      ([hreflang, altUrl]) =>
+        `    <xhtml:link rel="alternate" hreflang="${hreflang}" href="${escapeXml(altUrl)}"/>`,
+    ),
+    `    <lastmod>${lastModified}</lastmod>`,
+    `    <changefreq>${changeFrequency}</changefreq>`,
+    `    <priority>${priority.toFixed(2)}</priority>`,
+    "  </url>",
+  ];
+  return lines.join("\n");
+}
+
 function sitemapXml(entries) {
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.join("\n")}\n</urlset>\n`;
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${entries.join("\n")}\n</urlset>\n`;
 }
 
 function sitemapIndexXml(files) {
@@ -297,45 +316,67 @@ async function main() {
     "/tools", "/wiki", "/database", "/achievements",
   ];
 
+  function allLocaleAlts(localeList, urlPath) {
+    return localeList.map((l) => [l, toUrl(l, urlPath)]);
+  }
+
+  function withDefault(localeList, urlPath) {
+    const alts = allLocaleAlts(localeList, urlPath);
+    alts.push(["x-default", toUrl("en", urlPath)]);
+    return alts;
+  }
+
   const groups = {
-    "static.xml": locales.flatMap((locale) =>
-      staticPaths.map((urlPath) => urlEntry(toUrl(locale, urlPath), updated, "weekly", urlPath === "" ? 1 : 0.7)),
+    "static.xml": staticPaths.map((urlPath) =>
+      urlEntryWithAlternates(toUrl("en", urlPath), updated, "weekly", urlPath === "" ? 1 : 0.7, withDefault(locales, urlPath)),
     ),
     "items-1.xml": items
       .filter((item) => item.type !== "STAGEBOX" && shouldIndexItem(item, dropsBySlug, marketBySlug))
-      .flatMap((item) => locales.map((locale) => urlEntry(toUrl(locale, `/items/${item.slug}`), updated, "monthly", 0.65))),
+      .map((item) => {
+        const urlPath = `/items/${item.slug}`;
+        return urlEntryWithAlternates(toUrl("en", urlPath), updated, "monthly", 0.65, withDefault(locales, urlPath));
+      }),
     "market-1.xml": items
       .filter((item) => hasRealMarketData(marketBySlug.get(item.slug)))
-      .flatMap((item) => locales.map((locale) => urlEntry(toUrl(locale, `/market/${item.slug}`), updated, "daily", 0.7))),
+      .map((item) => {
+        const urlPath = `/market/${item.slug}`;
+        return urlEntryWithAlternates(toUrl("en", urlPath), updated, "daily", 0.7, withDefault(locales, urlPath));
+      }),
     "chests.xml": items
       .filter((item) => shouldIndexChest(item, dropsBySlug, chestIdsInStages))
-      .flatMap((item) => locales.map((locale) => urlEntry(toUrl(locale, `/chests/${item.slug}`), updated, "monthly", 0.6))),
-    "stages.xml": stages.flatMap((stage) => {
+      .map((item) => {
+        const urlPath = `/chests/${item.slug}`;
+        return urlEntryWithAlternates(toUrl("en", urlPath), updated, "monthly", 0.6, withDefault(locales, urlPath));
+      }),
+    "stages.xml": stages.map((stage) => {
       const urlPath = `/stages/${stageSlug(stage)}`;
-      return locales.map((locale) => urlEntry(toUrl(locale, urlPath), updated, "monthly", 0.6));
+      return urlEntryWithAlternates(toUrl("en", urlPath), updated, "monthly", 0.6, withDefault(locales, urlPath));
     }),
-    "heroes.xml": heroes.flatMap((hero) => {
+    "heroes.xml": heroes.map((hero) => {
       const urlPath = `/heroes/${hero.slug ?? hero.ClassType?.toLowerCase() ?? hero.HeroKey}`;
-      return locales.map((locale) => urlEntry(toUrl(locale, urlPath), updated, "monthly", 0.6));
+      return urlEntryWithAlternates(toUrl("en", urlPath), updated, "monthly", 0.6, withDefault(locales, urlPath));
     }),
-    "monsters.xml": monsters.flatMap((monster) => {
+    "monsters.xml": monsters.map((monster) => {
       const urlPath = `/monsters/${monster.slug ?? monster.MonsterKey}`;
-      return locales.map((locale) => urlEntry(toUrl(locale, urlPath), updated, "monthly", 0.6));
+      return urlEntryWithAlternates(toUrl("en", urlPath), updated, "monthly", 0.6, withDefault(locales, urlPath));
     }),
     "guides.xml": [
-      ...staticSlugs.guides.flatMap((guide) => {
+      ...staticSlugs.guides.map((guide) => {
         const urlPath = `/guides/${guide.category}/${guide.slug}`;
-        return guideLocales.map((locale) => urlEntry(toUrl(locale, urlPath), updated, "weekly", 0.75));
+        return urlEntryWithAlternates(toUrl("en", urlPath), updated, "weekly", 0.75, withDefault(guideLocales, urlPath));
       }),
-      ...staticSlugs.builds.flatMap((build) =>
-        locales.map((locale) => urlEntry(toUrl(locale, `/builds/${build.slug}`), updated, "weekly", 0.6)),
-      ),
-      ...staticSlugs.wikiArticles.flatMap((article) =>
-        locales.map((locale) => urlEntry(toUrl(locale, `/wiki/${article.slug}`), updated, "weekly", 0.7)),
-      ),
-      ...staticSlugs.achievements.flatMap((achievement) =>
-        locales.map((locale) => urlEntry(toUrl(locale, `/achievements/${achievement.slug}`), updated, "monthly", 0.6)),
-      ),
+      ...staticSlugs.builds.map((build) => {
+        const urlPath = `/builds/${build.slug}`;
+        return urlEntryWithAlternates(toUrl("en", urlPath), updated, "weekly", 0.6, withDefault(locales, urlPath));
+      }),
+      ...staticSlugs.wikiArticles.map((article) => {
+        const urlPath = `/wiki/${article.slug}`;
+        return urlEntryWithAlternates(toUrl("en", urlPath), updated, "weekly", 0.7, withDefault(locales, urlPath));
+      }),
+      ...staticSlugs.achievements.map((achievement) => {
+        const urlPath = `/achievements/${achievement.slug}`;
+        return urlEntryWithAlternates(toUrl("en", urlPath), updated, "monthly", 0.6, withDefault(locales, urlPath));
+      }),
     ],
   };
 

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AlertTriangle, ExternalLink, ShieldAlert, Wrench } from "lucide-react";
+import { FaqBlock } from "@/components/tbh/faq-block";
 import { Section } from "@/components/tbh/cards";
 import { DataNotice, PageHeader, PageShell } from "@/components/tbh/page";
 import { SeoJsonLd } from "@/components/tbh/seo-json-ld";
-import { SITE_URL, type Locale } from "@/lib/game-data/data";
-import { localizedPath } from "@/lib/locale-path";
+import type { Locale } from "@/lib/game-data/data";
+import { localizedPath, SITE_URL } from "@/lib/locale-path";
 import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale }> };
@@ -17,10 +18,27 @@ const discordUrl = "https://discord.gg/kSRUY8N8GA";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const isZh = locale === "zh";
+  const isJa = locale === "ja";
+  const isKo = locale === "ko";
+
+  const titleByLocale: Record<string, string> = {
+    zh: "TBH: Task Bar Hero 服务器状态、维护公告与错误处理 | TBH Wiki",
+    en: "Task Bar Hero Server Status, Maintenance, Error 500 & 401 | TBH Wiki",
+    ja: "TBH: Task Bar Hero サーバーステータス、メンテナンス、エラー500・401 | TBH Wiki",
+    ko: "TBH: Task Bar Hero 서버 상태, 점검, 오류 500 및 401 | TBH Wiki",
+  };
+
+  const descByLocale: Record<string, string> = {
+    zh: "TBH: Task Bar Hero 服务器状态、维护公告、错误 500/401、无法启动等问题的非官方排查指南。附带官方来源链接。",
+    en: "Check what to do when TBH: Task Bar Hero shows maintenance, server errors, error 500, error 401, or Discord/server status questions. Unofficial troubleshooting with official source links.",
+    ja: "TBH: Task Bar Hero のメンテナンス、サーバーエラー、エラー500・401、起動しない場合の非公式トラブルシューティング。公式ソースへのリンク付き。",
+    ko: "TBH: Task Bar Hero의 점검, 서버 오류, 오류 500/401, 실행 불가 문제에 대한 비공식 문제 해결 가이드. 공식 출처 링크 포함.",
+  };
+
   return {
-    title: "Task Bar Hero Server Status, Maintenance, Error 500 & 401 | TBH Wiki",
-    description:
-      "Check what to do when TBH: Task Bar Hero shows maintenance, server errors, error 500, error 401, or Discord/server status questions. Unofficial troubleshooting with official source links.",
+    title: titleByLocale[locale] ?? titleByLocale.en,
+    description: descByLocale[locale] ?? descByLocale.en,
     alternates: pageAlternates(locale, "/server-status"),
   };
 }
@@ -153,6 +171,17 @@ export default async function ServerStatusPage({ params }: Props) {
           </div>
         </div>
       </Section>
+
+      <FaqBlock
+        faqs={[
+          { question: "Is the TBH server down right now?", answer: "This wiki cannot confirm real-time server status. Check Steam News for maintenance announcements and Steam Discussions for player reports. The Discord community may also have real-time updates from other players." },
+          { question: "What should I do if I see error 500?", answer: "Error 500 is a server-side error. Restart Steam and the game first. If it persists, check Steam News for maintenance notices and Steam Discussions for other players reporting the same issue. Do not modify game files or reinstall until you've confirmed the issue is not server-side." },
+          { question: "What does error 401 mean?", answer: "Error 401 indicates an authentication or session problem. Confirm your Steam login is active, then restart Steam. If the game is in maintenance, wait for service to resume before attempting fixes." },
+          { question: "How can I check if maintenance is happening?", answer: "Open Steam News for TBH: Task Bar Hero, check Steam Discussions, and visit the Discord server. These three sources together provide the most reliable picture of current server state." },
+          { question: "Can I trade items during maintenance?", answer: "Avoid trading during maintenance or known server issues. Market data may be stale, listings may not update, and item transfers could fail or cause inventory issues. Wait for confirmed stable service before making market decisions." },
+        ]}
+        title="Frequently asked questions about server status"
+      />
 
       <Section title="Related wiki pages" eyebrow="Internal links">
         <div className="grid gap-2 md:grid-cols-4">

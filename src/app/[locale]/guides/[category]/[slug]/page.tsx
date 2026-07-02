@@ -21,6 +21,9 @@ const guideVisuals: Record<string, { image: string; zh: string; en: string; ja: 
   "chest-drop-guide": { image: "/game/guide-images/chest-drop-guide.jpg", zh: "宝箱要同时看来源、等级范围和真实掉率。", en: "Chests need source, level range, and real drop-rate context.", ja: "宝箱は来源、レベル範囲、実ドロップ率を合わせて見る。" },
   "gold-farming-route": { image: "/game/guide-images/gold-farming-route.jpg", zh: "金币效率来自稳定清图，不来自想象中的高价掉落。", en: "Gold efficiency comes from stable clears, not imagined rare drops.", ja: "ゴールド効率は安定周回から生まれ、想像上の高額ドロップからは生まれない。" },
   "exp-farming-route": { image: "/game/guide-images/exp-farming-route.jpg", zh: "经验路线要看每分钟击杀、每轮经验和清图时间。", en: "EXP routes depend on kills per minute, XP per run, and clear time.", ja: "経験値ルートは撃破密度、1周経験値、クリア時間で判断する。" },
+  "ranger-build-guide": { image: "/game/guide-images/ranger-guide.jpg", zh: "100 攻速全职业最快，Multi Shot 清场，Evasion 重置攻击。", en: "100 base ASPD — fastest in the game. Multi Shot clears, Evasion resets attacks.", ja: "100の基礎攻撃速度で最速。マルチショットで殲滅、エヴェイジョンで攻撃リセット。" },
+  "sorcerer-build-guide": { image: "/game/guide-images/sorcerer-guide.jpg", zh: "1650% 爆伤 + 50% 暴击率，玻璃大炮，Teleport 是命。", en: "1650% crit damage + 50% crit chance. Glass cannon. Teleport is life.", ja: "1650%クリダメ+50%クリ率。紙装甲。テレポートが命。" },
+  "priest-build-guide": { image: "/game/guide-images/priest-guide.jpg", zh: "95 HP + 30 防 最安全职业，挂机续航/辅助/刷图三路线。", en: "95 HP + 30 armor. Safest class with sustain, support, and farming builds.", ja: "HP95+装甲30の最安全クラス。持続・サポート・周回の3路線。" },
 };
 
 function copy(locale: Locale, zh: string, en: string, ja: string) {
@@ -199,6 +202,24 @@ function BlockRender({ block, i }: { block: MarkdownBlock; i: number }) {
   if (block.type === "ol") return <ol key={i} className="space-y-1.5">{block.items.map((item, j) => <li key={j} className="flex gap-2"><span className="w-5 shrink-0 text-right text-sm font-semibold text-[#c87925]">{j + 1}.</span><span><Rich text={item} /></span></li>)}</ol>;
   if (block.type === "img") return <figure key={i} className="my-6 overflow-hidden border border-[#2f2b22] bg-[#0a0a08]"><SafeImage src={block.src.startsWith("http") ? "/game/screenshots/screenshot-1.jpg" : block.src} alt={block.alt} width={1200} height={600} className="w-full object-cover" unoptimized /></figure>;
   if (block.type === "code") return <pre key={i} className="overflow-x-auto rounded-sm border border-[#2c281f] bg-[#0d0c0a] px-4 py-3 text-[13px] leading-6 text-[#f1d39a]"><code>{block.text}</code></pre>;
+  if (block.type === "table") return (
+    <div key={i} className="overflow-x-auto">
+      <table className="w-full border-collapse border border-[#2c281f] text-sm leading-6 text-[#d8cab0]">
+        <thead>
+          <tr className="bg-[#1a170e]">
+            {block.headers.map((h, j) => <th key={j} className="border border-[#2c281f] px-3 py-2 text-left font-semibold text-[#f1d39a]">{h}</th>)}
+          </tr>
+        </thead>
+        <tbody>
+          {block.rows.map((row, j) => (
+            <tr key={j} className="even:bg-[#0d0c0a]">
+              {row.map((cell, k) => <td key={k} className="border border-[#2c281f] px-3 py-2">{cell}</td>)}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
   if (block.type === "table") return <div key={i} className="my-6 overflow-x-auto border border-[#2c281f]"><table className="w-full min-w-[480px] text-left text-[13px] sm:text-[14px]"><thead className="bg-[#11100d] text-[11px] uppercase tracking-[0.1em] text-[#8b8170]"><tr>{block.headers.map((h) => <th key={h} className="px-3 py-2.5">{h}</th>)}</tr></thead><tbody>{block.rows.filter((r) => !r.every((c) => /^-+$/.test(c))).map((r, ri) => <tr key={ri} className="border-t border-[#2c281f]">{r.map((c, ci) => <td key={ci} className="px-3 py-2.5 text-[#d8cab0]">{c}</td>)}</tr>)}</tbody></table></div>;
   return <p key={i}><Rich text={block.text} /></p>;
 }

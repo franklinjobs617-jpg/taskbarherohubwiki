@@ -1,4 +1,5 @@
 import { fetchR2Json } from "@/lib/r2-fetch";
+import { SITE_URL } from "@/lib/locale-path";
 
 export type Locale = "zh" | "en" | "ja" | "ko";
 export type Localized = Record<string, string>;
@@ -168,6 +169,8 @@ export type Build = {
   farmingRoute?: { stageKey: number; reason: Partial<Record<Locale, string>> } | null;
   /** Related alternative build slugs */
   alternativeBuilds?: string[];
+  /** Strategy explanation — how to play this build effectively */
+  strategy?: Partial<Record<Locale, string>>;
   updatedAt: string;
 };
 
@@ -380,12 +383,12 @@ export async function ensureGameData(): Promise<void> {
   ]);
 }
 
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://taskbarherohub.wiki";
 export const DATA_VERSION = process.env.NEXT_PUBLIC_GAME_VERSION ?? "game-v1";
 export const UPDATED_AT = "2026-06-08";
 export function MARKET_UPDATED_AT() {
   return _marketLatest.updatedAt ?? UPDATED_AT;
 }
+export { SITE_URL };
 
 export const gradeNames: Record<string, Partial<Record<Locale, string>>> = {
   COMMON: { zh: "普通", en: "Common", ja: "コモン" },
@@ -848,6 +851,30 @@ export const guides: Guide[] = [
     evidence: "editorial",
     updatedAt: UPDATED_AT,
   },
+  {
+    slug: "ranger-build-guide",
+    category: "heroes",
+    title: { zh: "游侠 (Ranger) 全面 Build 指南", en: "Ranger Complete Build Guide", ja: "レンジャービルドガイド" },
+    description: { ja: "レンジャーの序盤・中盤・終盤のビルド、スキル優先度、ルーン選択、おすすめ周回ステージ。攻撃速度100と回避を活かした高速戦術。", zh: "Ranger 全阶段 Build 指南，涵盖前期速刷、中期 farming、Boss 打法。核心属性：攻速、暴击、移速。", en: "Complete Ranger build guide covering early speed farming, mid-game farming, and boss strategies. Core stats: ASPD, crit, and movement speed." },
+    evidence: "editorial",
+    updatedAt: UPDATED_AT,
+  },
+  {
+    slug: "sorcerer-build-guide",
+    category: "heroes",
+    title: { zh: "法师 (Sorcerer) 全面 Build 指南", en: "Sorcerer Complete Build Guide", ja: "ソーサラービルドガイド" },
+    description: { ja: "ソーサラーの全フェーズビルド。1650%の基本クリティカルダメージと50%のクリティカル率を活かした魔法特化構成。", zh: "Sorcerer 全阶段 Build 指南。利用 1650% 基础暴击伤害和 50% 暴击率，构建法系爆发输出。", en: "Complete Sorcerer build guide. Leverage 1650% base crit damage and 50% crit chance for devastating magic burst." },
+    evidence: "editorial",
+    updatedAt: UPDATED_AT,
+  },
+  {
+    slug: "priest-build-guide",
+    category: "heroes",
+    title: { zh: "牧师 (Priest) 全面 Build 指南", en: "Priest Complete Build Guide", ja: "プリーストビルドガイド" },
+    description: { ja: "プリーストの生存特化・サポート・ファームビルド。95HPと30装甲を活かした長時間放置戦術。", zh: "Priest 全阶段 Build 指南。生存、辅助和 farming 三种路线，利用 95 HP 和 30 护甲的均衡属性。", en: "Complete Priest build guide. Three playstyles: sustain, support, and farming. Balanced 95 HP and 30 armor make Priest the safest idle class." },
+    evidence: "editorial",
+    updatedAt: UPDATED_AT,
+  },
 ];
 
 export const builds: Build[] = [
@@ -862,6 +889,7 @@ export const builds: Build[] = [
     statPriority: ["HP", "Armor", "Block", "HP Regen"],
     farmingRoute: { stageKey: 2, reason: { en: "Normal 1-2 — safe for early gear building", zh: "普通 1-2 — 安全刷前期装备" } },
     alternativeBuilds: ["knight-farm-mid", "knight-boss-endgame"],
+    strategy: { en: "Play this build like an immovable wall. Let enemies come to you — your Block + Shield Bash combo stuns and absorbs most damage. Focus on keeping Taunt active to control aggro. Switch to offensive runes only after you can survive 10 consecutive clears without dropping below 50% HP.", zh: "玩这个 Build 就像一堵墙。让敌人来找你——Block + Shield Bash 组合能晕眩并吸收大部分伤害。保持 Taunt 激活控制仇恨。在你能连续 10 次通关不掉到 50% HP 以下之前，不要换防御以外的符文。" },
     updatedAt: UPDATED_AT,
   },
   {
@@ -874,6 +902,7 @@ export const builds: Build[] = [
     statPriority: ["HP", "Attack Damage", "Armor", "Attack Speed"],
     farmingRoute: { stageKey: 22, reason: { en: "Nightmare 1-2 — good balance of gold and survivability", zh: "噩梦 1-2 — 金币与生存的平衡点" } },
     alternativeBuilds: ["knight-shield-early", "knight-boss-endgame"],
+    strategy: { en: "Transition from pure tank to farming hybrid. Cleave replaces single-target skills for faster clear. Keep Block as safety net — you still need survival to sustain long farming sessions. This build is about efficiency: kill faster, loot more, die never.", zh: "从纯坦克向刷图混合转型。用 Cleave 替换单体技能加快清图。保留 Block 作为安全网——你仍然需要生存来支撑长时间刷图。这个 Build 的核心是效率：杀更快，捡更多，永不死。" },
     updatedAt: UPDATED_AT,
   },
   {
@@ -886,6 +915,7 @@ export const builds: Build[] = [
     statPriority: ["HP", "Armor", "Block", "HP Regen"],
     farmingRoute: { stageKey: 82, reason: { en: "Hell 1-2 — boss drops high-grade gear", zh: "地狱 1-2 — Boss 掉高品装备" } },
     alternativeBuilds: ["knight-shield-early", "knight-farm-mid"],
+    strategy: { en: "Pure boss tank. Your job is to survive every boss mechanic so your team can DPS freely. Shield Wall gives you a damage immunity window — time it with boss rage phases. This build trades all farming speed for guaranteed boss kills. Only use when you can already farm efficiently and want to push boss progression.", zh: "纯 Boss 坦克。你的工作是承受所有 Boss 机制让队友自由输出。Shield Wall 提供免伤窗口——配合 Boss 狂暴阶段使用。这个 Build 用所有清图速度换取 Boss 击杀保障。只在你能高效刷图并想推进 Boss 进度时使用。" },
     updatedAt: UPDATED_AT,
   },
   // ── Ranger ──
@@ -899,6 +929,7 @@ export const builds: Build[] = [
     statPriority: ["Attack Speed", "Attack Damage", "Movement Speed", "Critical Chance"],
     farmingRoute: { stageKey: 3, reason: { en: "Normal 1-3 — fast clear, good early drops", zh: "普通 1-3 — 快速清图，掉落不错" } },
     alternativeBuilds: ["ranger-farm-mid", "ranger-boss-mid"],
+    strategy: { en: "Speed is your weapon. With 100 base ASPD, you outrun and out-hit most enemies before they reach you. Stay mobile — Evasion isn't just defensive, it resets your attack cycle. Prioritize stages with spread-out enemies where Multi Shot shines.", zh: "速度就是你的武器。100 基础攻速让你在敌人靠近之前就击杀他们。Evasion 不只是防御，它重置你的攻击循环。优先选择怪物分散的关卡，让 Multi Shot 发挥最大效果。" },
     updatedAt: UPDATED_AT,
   },
   {
@@ -923,6 +954,7 @@ export const builds: Build[] = [
     statPriority: ["Critical Damage", "Critical Chance", "Attack Damage", "Attack Speed"],
     farmingRoute: { stageKey: 43, reason: { en: "Nightmare 3-3 — boss drops rare materials", zh: "噩梦 3-3 — Boss 掉稀有材料" } },
     alternativeBuilds: ["ranger-farm-mid"],
+    strategy: { en: "Boss-hunting variant. Trade clearing speed for single-target burst. Snipe + Critical Eye delivers devastating opening damage. This build is NOT for farming — use it when you need specific boss materials or are pushing progression milestones.", zh: "Boss 狩猎变体。用清图速度换单体爆发。Snipe + Critical Eye 造成毁灭性的开局伤害。这个 Build 不是用来 farming 的——在需要特定 Boss 材料或推进进度里程碑时使用。" },
     updatedAt: UPDATED_AT,
   },
   // ── Sorcerer ──
@@ -936,6 +968,7 @@ export const builds: Build[] = [
     statPriority: ["Critical Chance", "Critical Damage", "Cast Speed", "Attack Damage"],
     farmingRoute: { stageKey: 1, reason: { en: "Normal 1-1 — safe start for fragile caster", zh: "普通 1-1 — 脆皮法师的安全起手" } },
     alternativeBuilds: ["sorcerer-material-endgame"],
+    strategy: { en: "Early caster farming. Fireball clears packs, Arcane Blast finishes. You are the glassiest of glass cannons — positioning is everything. Teleport out before enemies close range. If you see your HP bar move, you waited too long.", zh: "前期法师刷图。Fireball 清群怪，Arcane Blast 收尾。你是玻璃大炮中的玻璃大炮——站位就是一切。在敌人靠近之前用 Teleport 拉开距离。如果你看到血条动了，已经太晚了。" },
     updatedAt: UPDATED_AT,
   },
   {
@@ -948,6 +981,7 @@ export const builds: Build[] = [
     statPriority: ["Critical Damage", "Critical Chance", "Cast Speed", "Attack Damage"],
     farmingRoute: { stageKey: 83, reason: { en: "Hell 1-3 — high material drop rate", zh: "地狱 1-3 — 高材料掉率" } },
     alternativeBuilds: ["sorcerer-farm-early", "sorcerer-boss-endgame"],
+    strategy: { en: "Material farming specialization. Firestorm + Arcane Nova clears large areas for maximum loot. Drop rate runes compound with your high kill speed. Use the Farming Calculator to find stages with your target materials. Swap Mana Shield in when survivability becomes an issue.", zh: "材料刷取特化。Firestorm + Arcane Nova 大范围清图最大化掉落率。掉率符文与你的高击杀速度叠加。用 Farming Calculator 找到目标材料的关卡。生存有问题时换上 Mana Shield。" },
     updatedAt: UPDATED_AT,
   },
   {
@@ -960,6 +994,7 @@ export const builds: Build[] = [
     statPriority: ["Critical Damage", "Critical Chance", "Cast Speed", "Max HP"],
     farmingRoute: { stageKey: 93, reason: { en: "Torment 1-3 — highest-grade boss loot", zh: "折磨 1-3 — 最高品 Boss 掉落" } },
     alternativeBuilds: ["sorcerer-material-endgame"],
+    strategy: { en: "Pure boss burst. One rotation of Arcane Nova + Firestorm should delete most of a boss HP bar. This build requires excellent gear to work — do not attempt before lvl 80+ gear. The risk is real: if the boss survives your burst, you likely won't survive the counter-attack.", zh: "纯 Boss 爆发。一个 Arcane Nova + Firestorm 循环应该能干掉 Boss 大半管血。这个 Build 需要优秀装备支撑——在 80 级以上装备之前不要尝试。风险是真实的：如果 Boss 扛住了你的爆发，你大概率扛不住反击。" },
     updatedAt: UPDATED_AT,
   },
   // ── Priest ──
@@ -973,6 +1008,7 @@ export const builds: Build[] = [
     statPriority: ["HP Regen", "Max HP", "Armor", "Cooldown"],
     farmingRoute: { stageKey: 4, reason: { en: "Normal 1-4 — gentle start, safe idle", zh: "普通 1-4 — 温和起手，安全挂机" } },
     alternativeBuilds: ["priest-sustain-support", "priest-farm-mid"],
+    strategy: { en: "Safe early start. Priest needs less gear than other classes to idle effectively. Prioritize HP Regen above all else — with enough regen you become death-proof. Holy Shield provides an emergency buffer. This build's main goal: survive until you can equip mid-game gear.", zh: "安全前期开局。牧师比其他职业需要更少的装备就能有效挂机。HP Regen 是所有属性中最优先的——足够高的回血让你变得不死。Holy Shield 提供紧急缓冲。这个 Build 的主要目标：活到你能装备中期装备。" },
     updatedAt: UPDATED_AT,
   },
   {
@@ -984,7 +1020,8 @@ export const builds: Build[] = [
     runePath: [{ runeName: "AllHeroHpRegen", priority: "must", reason: { en: "Infinite sustain", zh: "无限续航" } }, { runeName: "AllHeroArmor", priority: "must", reason: { en: "Damage reduction", zh: "减伤" } }, { runeName: "AdditionalExp", priority: "optional", reason: { en: "Passive leveling", zh: "被动升级" } }],
     statPriority: ["HP Regen", "Max HP", "Cooldown", "Armor"],
     farmingRoute: { stageKey: 24, reason: { en: "Nightmare 1-4 — consistent idle returns", zh: "噩梦 1-4 — 稳定挂机收益" } },
-    alternativeBuilds: ["priest-sustain-early", "priest-farm-mid"],
+    alternativeBuilds: ["priest-sustain-support", "priest-farm-mid"],
+    strategy: { en: "The unkillable start. With 95 HP and 30 armor, Priest has the best early survivability. Focus on HP Regen runes first — they let you idle indefinitely. Heal + Holy Shield makes you nearly immortal against normal stage enemies. Use this to build your initial gear set without risk.", zh: "不死开局。95 HP + 30 护甲，牧师拥有最好前期生存能力。优先 HP Regen 符文——让你无限挂机。Heal + Holy Shield 让你在普通关卡几乎不死。用这个 Build 零风险建立初期装备。" },
     updatedAt: UPDATED_AT,
   },
   {
@@ -997,6 +1034,7 @@ export const builds: Build[] = [
     statPriority: ["Attack Damage", "HP Regen", "Max HP", "Attack Speed"],
     farmingRoute: { stageKey: 34, reason: { en: "Nightmare 2-4 — gold efficiency sweet spot", zh: "噩梦 2-4 — 金币效率甜点" } },
     alternativeBuilds: ["priest-sustain-support"],
+    strategy: { en: "Farming efficiency build. Holy Nova clears packs faster than Smite alone. The key metric for this build is NOT kill speed but sustainability — if you die, you lose farming time. If you can maintain 100% survival rate, swap defensive runes for offensive ones.", zh: "刷图效率 Build。Holy Nova 的清群速度比 Smite 更快。这个 Build 的关键指标不是击杀速度而是续航性——如果死了就损失刷图时间。如果你能保持 100% 生存率，把防御符文换成进攻符文。" },
     updatedAt: UPDATED_AT,
   },
   // ── Hunter (DLC) ──
@@ -1010,6 +1048,7 @@ export const builds: Build[] = [
     statPriority: ["Critical Chance", "Attack Speed", "Attack Damage", "Critical Damage"],
     farmingRoute: { stageKey: 5, reason: { en: "Normal 1-5 — build early gear foundation", zh: "普通 1-5 — 建立前期装备基础" } },
     alternativeBuilds: ["hunter-crit-burst"],
+    strategy: { en: "DLC crit-start. 45% base crit gives you a head start over most classes. Precision Shot + Rapid Fire is a strong early combo. Mark high-value targets with Hunters Mark before engaging. Early priority: get Critical Chance to 60%+ via runes and gear.", zh: "DLC 暴击开局。45% 基础暴击给了你比大多数职业更好的起点。Precision Shot + Rapid Fire 是强力前中期组合。战斗前用 Hunters Mark 标记高价值目标。前期优先通过符文和装备把暴击率堆到 60%+。" },
     updatedAt: UPDATED_AT,
   },
   {
@@ -1022,6 +1061,7 @@ export const builds: Build[] = [
     statPriority: ["Critical Chance", "Critical Damage", "Attack Speed", "Attack Damage"],
     farmingRoute: { stageKey: 45, reason: { en: "Nightmare 3-5 — DLC hero sweet spot", zh: "噩梦 3-5 — DLC 英雄甜点" } },
     alternativeBuilds: ["hunter-farm-early", "hunter-boss-endgame"],
+    strategy: { en: "Mid-game crit machine. With 65%+ crit rate and high ASPD, Hunter becomes a sustained DPS powerhouse. The priority shift from crit chance to crit damage is the key transition point — once you hit 65% crit, stack crit damage aggressively.", zh: "中期暴击机器。65%+ 暴击率和高攻速让猎人成为持续 DPS 主力。从暴击率到暴击伤害的优先级转变是关键转折点——一旦达到 65% 暴击率，开始猛堆暴击伤害。" },
     updatedAt: UPDATED_AT,
   },
   {
@@ -1034,6 +1074,7 @@ export const builds: Build[] = [
     statPriority: ["Critical Damage", "Critical Chance", "Attack Damage", "Attack Speed"],
     farmingRoute: { stageKey: 95, reason: { en: "Torment 3-5 — ultimate boss farming", zh: "折磨 3-5 — 终极 Boss 刷取" } },
     alternativeBuilds: ["hunter-crit-burst"],
+    strategy: { en: "Boss assassin. 2000%+ crit damage means each Precision Shot is a potential one-shot. This build has zero wave-clear capability — use it ONLY for boss stages. Pair with a support or switch build for farming. Requires Torment-grade gear to reach the damage breakpoints.", zh: "Boss 刺客。2000%+ 暴击伤害意味着每个 Precision Shot 都可能是一击必杀。这个 Build 完全没有清图能力——只在 Boss 关卡使用。需要折磨级别的装备才能达到伤害阈值。" },
     updatedAt: UPDATED_AT,
   },
   // ── Slayer (DLC) ──
@@ -1047,6 +1088,7 @@ export const builds: Build[] = [
     statPriority: ["HP Regen", "Max HP", "Attack Damage", "Life Steal"],
     farmingRoute: { stageKey: 6, reason: { en: "Normal 1-6 — learn Slayer mechanics safely", zh: "普通 1-6 — 安全学习狂战机制" } },
     alternativeBuilds: ["slayer-high-risk-dps"],
+    strategy: { en: "Slayer is the hardest class to play. Skills cost HP — use Blood Strike only when you can afford the HP loss. Vampiric Aura should be your first priority; without it you will kill yourself. Start on Normal difficulty and only move up when you can clear without using potions.", zh: "狂战是最难玩的职业。技能消耗 HP——只在你能承受时使用 Blood Strike。Vampiric Aura 是你的第一优先级；没有它你会自杀。从普通难度开始，只有在你不需要用药水就能通关时才提升难度。" },
     updatedAt: UPDATED_AT,
   },
   {
@@ -1059,6 +1101,7 @@ export const builds: Build[] = [
     statPriority: ["Critical Damage", "HP Regen", "Attack Damage", "Attack Speed"],
     farmingRoute: { stageKey: 96, reason: { en: "Torment 3-6 — maximum risk, maximum reward", zh: "折磨 3-6 — 最高风险，最高回报" } },
     alternativeBuilds: ["slayer-farm-early", "slayer-boss-endgame"],
+    strategy: { en: "Maximum DPS — minimum safety. 1800% crit damage is nothing without survival. Your HP Regen MUST outpace your skill-costing HP loss or this build is suicide. Start conservatively, add offensive runes one at a time until you find the edge. The difference between 'strong' and 'dead' is one misclick.", zh: "最大 DPS——最小安全。1800% 暴击伤害没有生存就是零。你的 HP Regen 必须超过技能消耗的 HP，否则这个 Build 就是自杀。保守起手，逐个添加进攻符文，直到找到临界点。"强"和"死"的区别就是一次误操作。" },
     updatedAt: UPDATED_AT,
   },
   {
@@ -1071,6 +1114,7 @@ export const builds: Build[] = [
     statPriority: ["Critical Damage", "Attack Damage", "HP Regen", "Attack Speed"],
     farmingRoute: { stageKey: 100, reason: { en: "Torment 3-10 — marathon boss farming", zh: "折磨 3-10 — 马拉松式 Boss 刷取" } },
     alternativeBuilds: ["slayer-high-risk-dps"],
+    strategy: { en: "Speedkill specialist. Berserk + Frenzy = maximum damage output window. This build is NOT sustainable — it's a burst build designed to end fights before your HP runs out. If a boss survives longer than 15 seconds, you probably lose. Use only when you have endgame gear and know boss patterns perfectly.", zh: "速杀专家。Berserk + Frenzy = 最大伤害输出窗口。这个 Build 不持久——它是爆发 Build，设计在 HP 耗尽之前结束战斗。如果 Boss 存活超过 15 秒，你可能就输了。只在拥有后期装备并完全熟悉 Boss 模式时使用。" },
     updatedAt: UPDATED_AT,
   },
 ];

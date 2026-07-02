@@ -108,6 +108,18 @@ export default async function BuildDetailPage({ params }: Props) {
 
       <PageHeader kicker="Build" title={title} description={description} />
 
+      {/* Build Strategy — unique per build, added to eliminate thin content */}
+      {build.strategy ? (
+        <section className="mt-6 border-l-[3px] border-amber-500 bg-amber-500/5 px-5 py-4">
+          <h2 className="text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-400">
+            {isZh ? "玩法策略" : isJa ? "戦略" : "Strategy"}
+          </h2>
+          <p className="mt-2 text-sm leading-7 text-text-secondary">
+            {txt(locale, build.strategy)}
+          </p>
+        </section>
+      ) : null}
+
       {/* Hero + Phase overview */}
       <div className="mt-6 grid gap-4 md:grid-cols-2">
         <div className="flex items-center gap-4 border border-border-default bg-bg-panel p-4">

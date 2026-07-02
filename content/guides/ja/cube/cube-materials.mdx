@@ -1,53 +1,136 @@
 ---
 gameVersion: "game-v1"
-tldr: "素材はレア度より効果タイプで分類する|取引可能素材も自分で使う価値を先に見る|Cube は目的ステータスがある時だけ使う|市場データなしなら判断は保留|Decoration、Engraving、Inscription の違いを理解する"
-mistakes: "素材を全部ジャンク扱いする|目的なしに Cube を使う|用途を見ず価格だけ見る|Normal/Nightmare/Hell の素材差を無視する|高級素材をすぐ交換する装備に使う"
-faq: "素材の優先度は？=>効果タイプ、レア度、取引可否の順で見ます。|Cube はいつ使う？=>目的ステータスと対応素材が揃った時だけです。|使わない素材は売る？=>希少性と将来用途を確認してからです。|3タイプの違いは？=>装備部位と効果範囲が違います。Effects ページで確認します。|何個残す？=>使う可能性がある素材は最低数個残します。|高級素材は常に良い？=>強いですが、寿命の短い装備には過剰投資です。"
+tldr: "Classify materials by effect type BEFORE checking rarity|Don't auto-sell tradable materials — check self-use first|Use Cube only with a specific target stat in mind|Cube cost escalates per session — plan 1-2 attempts|Match material tier to your gear level — Torment materials on a level-20 item is waste|Decoration, Engraving, and Inscription do different jobs — learn which matters for your build"
+mistakes: "Bulk-selling materials as 'junk' without checking effects|Crafting with Cube without a target stat|Reading price without understanding the material's use case|Ignoring material tier differences (Normal vs. Nightmare vs. Hell)|Using high-tier materials for low-priority stats"
+faq: "How do I tier materials=>By effect type first, rarity second, and tradability third. An effect you need is always more valuable than a rare effect you can't use.|When should I use the Cube=>Only after you've chosen a target stat and confirmed you have the right materials. Random Cube use wastes resources.|Can I sell materials I'm not using=>First check if they're scarce and useful later. Then check market data. Selling a material you need to buy back later is a net loss.|What's the difference between Decoration, Engraving, and Inscription=>They apply to different gear parts and offer different stat ranges. Check the Effects page for specific mappings.|How many materials should I keep=>Keep at least one stack of each material type your class might use. Excess can be sold or used for Cube experiments.|Are high-tier materials always better=>They provide stronger effects, but may be overkill for early-game gear. Match material tier to your gear's expected lifespan."
 relatedItems: "minor-ruby|ruby|scroll-of-common-inscription|soulstone-normal|soulstone-nightmare|diamond|emerald"
 relatedTools: "profit-calculator"
 ---
 
-## 素材は隠れた中核
+## Why Materials Are the Hidden Backbone
 
-素材はバッグのゴミではありません。装備、Cube、市場、終盤最適化をつなぐ資源です。武器ダメージだけを見るプレイヤーより、素材を理解するプレイヤーの方が選択肢を多く持てます。
+Materials are not inventory clutter — they are the connection between your gear, Cube crafting, market trading, and late-game optimization. A player who understands materials has more options, stronger gear, and better market sense than one who only looks at weapon damage.
 
-素材を見る3軸：
-1. **効果タイプ**——Decoration、Engraving、Inscription。
-2. **ランク**——Common から Cosmic まで効果が変わります。
-3. **取引可否**——クラフト価値とは別に市場価値を持つ場合があります。
+Judge every material by three dimensions:
+1. **Effect type** — Decoration, Engraving, or Inscription — each targets different gear parts and stat ranges
+2. **Rarity/tier** — Common through Cosmic materials have progressively stronger effects
+3. **Tradability** — Tradable materials have market value independent of their crafting value
 
-## 効果タイプ
+## The Three Layers of Material Effects
 
-- **Decoration**——主に武器と防具。ダメージ、防御、HP など直接的な強化。
-- **Engraving**——主にアクセサリ。クリティカル、速度、機能系。
-- **Inscription**——幅広い装備に特殊効果を加える用途。
+### Layer 1: Effect Type
+- **Decoration** — Applied to weapons and armor. Typically provides direct stat increases (damage, defense, HP).
+- **Engraving** — Applied to accessories. Often provides specialized stats (critical, speed, utility).
+- **Inscription** — Applied to any gear. Can add unique modifiers or convert stats.
 
-素材を使う前に、対応部位、装備の寿命、他素材との比較を確認します。
+Each effect type has a home on specific gear parts. Check the Effects page (`/effects`) for the complete mapping of material → effect type → gear part → stat.
 
-## Cube のチェックリスト
+### Layer 2: Gear Part Target
+Materials don't work on everything. A weapon-only Decoration won't help your armor. Before using a material:
+- Confirm which gear part it targets
+- Check if that gear piece is worth upgrading (will you replace it soon?)
+- Compare the stat increase against other materials you could use on the same slot
 
-Cube は強いですが、資源を消費します。目的なしに押してはいけません。
+### Layer 3: Game Phase
+- **Early game (Act 1-2, Normal-Hard)**: Prioritize survival stats (HP, armor, block). Materials that add clear speed come later.
+- **Mid game (Act 2-3, Hard-Nightmare)**: Balance damage and defense. Start using Cube with specific targets.
+- **Late game (Act 3+, Nightmare-Hell)**: Optimize for specific builds. Material effects become multipliers on already-strong base gear.
 
-1. 伸ばしたいステータスを決める。
-2. 対応素材が足りるか確認する。
-3. ベース装備が投資に値するか見る。
-4. 他装備に使う機会費用を考える。
-5. 市場で代替装備を買う方が安くないか見る。
+## Cube Usage Checklist
 
-## ロックと Alchemy
+The Cube system lets you add and customize stats on items. It's powerful but resource-intensive. Never use Cube without a plan:
 
-Cube 前にバッグを整理します。装備中の装備、高価な素材、実験したいベース装備は先にロックします。ロックは面倒な作業ではなく、重要資源を誤消費しないための安全装置です。
+1. **Pick a target stat** — What exactly are you trying to improve? (e.g., "more physical damage" or "higher critical chance")
+2. **Confirm material availability** — Do you have enough materials for the attempt?
+3. **Check the base item** — Is the gear piece worth investing in? A level-10 item isn't worth Cube materials.
+4. **Consider opportunity cost** — Could these same materials be more valuable on a different item?
+5. **Check market alternatives** — Sometimes buying an upgraded item is cheaper than crafting the upgrade yourself.
 
-1. 新ドロップを部位、レベル、効果で確認。
-2. 自用または取引候補をロック。
-3. 低レベル重複品や明らかな不要素材を処理。
-4. Cube 前に投資価値を再確認。
-5. 結果を記録し、同じ素材を無駄に繰り返さない。
+### Warning Signs You're Using Cube Wrong
+- You're clicking "craft" without knowing what stat you want
+- You're using high-tier materials on gear you'll replace in 5 levels
+- You're choosing materials by rarity rather than by the stat they provide
+- You have no idea what the material actually does
 
-## 市場判断
+## Item Locking and Alchemy Habits
 
-自職で使う素材は残します。関係ない素材は実価格と供給がある時だけ売却候補です。市場データがない高ランク素材は安く売らず、用途が分かるまで保留します。
+Clean your inventory before using Cube. High-value materials, equipped gear, and base items you plan to test should be locked first. Locking is not busywork; it prevents key resources from being consumed during batch cleanup, Alchemy, or inventory sorting.
 
-## 参考にした情報
+Use this workflow:
 
-本ページは本サイトの素材/効果データを主軸にし、Mobalytics の [Tips and Tricks](https://mobalytics.gg/news/guides/tbh-taskbar-hero-tips-and-tricks) にあるロック、Cube、Alchemy の操作提醒を照合しています。
+1. Review new drops by slot, level, and effect type.
+2. Lock anything that may be self-use or tradable.
+3. Then process low-level duplicates, clearly useless materials, and experiment gear.
+4. Before using Cube, confirm the base item is worth investing in.
+5. After the craft, record the result so you do not burn the same material type repeatedly.
+
+Alchemy and Cube are not about emptying the bag. They are about turning uncertain resources into reliable progression. If you cannot answer "why am I consuming this?", stop.
+
+## Cube Mechanics Explained
+
+The Hero-dric Cube is not a simple "put material in, get stats out" machine. Understanding how it works helps you make better decisions:
+
+### How Cube Stat Assignment Works
+
+The Cube assigns stats based on the **material type** you insert, not random chance. Specifically:
+- **Decoration materials** (gems, crystals, stones) → Direct stat increases on weapons and armor. A Ruby always adds fire-related damage, an Emerald adds earth-related stats.
+- **Engraving materials** (scrolls, inks) → Specialized stats on accessories. These tend to modify critical rate, speed, or elemental resistance.
+- **Inscription materials** → Unique modifiers that can go on any gear slot. These are rarer and more powerful.
+
+The stat ranges depend on:
+- Material tier (Normal vs. Nightmare vs. Hell vs. Torment drops)
+- Material rarity (Common through Cosmic)
+- Target gear slot (weapon vs. armor vs. accessory)
+
+### Cube Cost Progression
+
+Each Cube attempt costs more than the last within the same session:
+- First attempt: Base material cost
+- Second attempt: Higher material cost or additional material requirements
+- Third+ attempt: Significantly escalating costs
+
+**Strategic implication:** Plan your Cube sessions carefully. Do 1-2 attempts per session unless you have a clear target and abundant materials. Bulk Cube attempts are only efficient when you have confirmed the stat range and have backup materials.
+
+### Material Tier Matching
+
+Match material tier to your gear's level range:
+
+| Material Source | Best For Gear Level | Notes |
+|---|---|---|
+| Normal stages | 1-30 | Starter gear, learning phase |
+| Hard stages | 20-50 | Early progression |
+| Nightmare stages | 40-80 | Mid-game investment |
+| Hell stages | 70-100 | Serious endgame gear |
+| Torment stages | 90-120 | Min-max territory |
+
+Using a Torment-tier material on a level-20 weapon is wasteful. The stat boost is capped by the gear's base stats — high-tier materials can't turn a low-level item into a late-game piece.
+
+### Material Combinations
+
+Some Cube recipes use multiple materials to achieve hybrid effects:
+- **Fire + Earth** materials → Hybrid damage types
+- **Critical + Speed** materials → Attack speed scaling builds
+- **Defense + HP** materials → Tank optimization
+
+The exact combinations depend on what you have available. Use the Effects page (`/effects`) to verify which combination produces the stat you need.
+
+## Market Decision for Materials
+
+Tradable materials sit at the intersection of crafting value and market value:
+
+- **Materials needed by your class** → Keep. The self-use value almost always exceeds market value.
+- **Materials irrelevant to your class** → Check market data. If real price and volume exist, selling may be right.
+- **High-tier materials with no market data** → Keep. Don't risk underselling something rare.
+- **Common materials with consistent market data** → Bulk-sell if you have clear excess.
+
+## Material Inventory Strategy
+
+A practical approach to managing materials:
+1. **Keep 2-3 of each useful material** as a crafting reserve
+2. **Watchlist rare materials** until you understand their full use case
+3. **Sell only when** you have excess AND real market data AND the material isn't needed for an upcoming Cube target
+4. **Re-evaluate after class changes** — switching from Knight to Sorcerer means your material priorities completely change
+
+## Evidence Used
+
+This guide is based primarily on this site's material/effect data and cross-checks Mobalytics' [Tips and Tricks](https://mobalytics.gg/news/guides/tbh-taskbar-hero-tips-and-tricks) for public advice on item locking, Cube, Alchemy, and basic operations. The external guide supplies operational reminders; this site adds the decision framework around material effects, gear slots, market risk, and timing.

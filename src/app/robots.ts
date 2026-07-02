@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://taskbarherohub.wiki";
+import { SITE_URL } from "@/lib/locale-path";
 
 export default function robots(): MetadataRoute.Robots {
   return {
